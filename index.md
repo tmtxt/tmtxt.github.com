@@ -11,7 +11,7 @@ tagline: Where the awesomeness is shared!
 ![My avatar][avatar]
   
 *Currently*: Studying Bachelor of Information Technology at RMIT University Vietnam  
-*History*: Graduated Aptech Computer Education  
+*History*: Graduated from Aptech Computer Education  
   
 ## Articles list
 <ul class="posts">
