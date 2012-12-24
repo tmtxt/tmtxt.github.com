@@ -2,8 +2,8 @@
 layout: post
 title: "Conkeror and How it changed the way I surf the web"
 description: ""
-category: 
-tags: []
+category: blog posts
+tags: [conkeror, emacs, web browser]
 ---
 {% include JB/setup %}
 [img1]: /images/2012-12-24-conkeror-and-how-it-changed-the-way-i-surf-the-web/keyboard-oriented.png

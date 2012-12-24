@@ -12,10 +12,3 @@ tagline: Where the awesomeness is shared!
 *Full name*: Tran Xuan Truong  
 *Currently*: Studying Bachelor of Information Technology at RMIT University Vietnam  
 *History*: Graduated from Aptech Computer Education  
-  
-## Articles list
-<ul class="posts">
-  {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
