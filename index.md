@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Welcome to the Blog of the nerds!
+title: Where the nerds gather!
 tagline: Where the awesomeness is shared!
 ---
 {% include JB/setup %}
