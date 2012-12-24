@@ -1,10 +1,9 @@
 ---
 layout: post
 title: "Conkeror and How it changed the way I surf the web"
-root: "../../../../"
-description: ""
+description: "My thinking about conkeror web browser"
 category: 
-tags: []
+tags: [conkeror, tutorial, emacs, web-browser]
 ---
 {% include JB/setup %}
 [img1]: /images/2012-12-24-conkeror-and-how-it-changed-the-way-i-surf-the-web/keyboard-oriented.png
@@ -52,4 +51,6 @@ Conkeror Homepage: <http://conkeror.org/>
 My conkeror on github: <https://github.com/tommytxtruong/conkerorrc>  
 Follow me and we can exchange the experience.  
   
+I also post this on RMIT VN IT Club Website, you can see it here: <http://rmitc.org/2012/12/conkeror-and-how-it-changed-the-way-i-surf-the-web/>  
+    
 Coming up next: Conkeror – Getting Started
