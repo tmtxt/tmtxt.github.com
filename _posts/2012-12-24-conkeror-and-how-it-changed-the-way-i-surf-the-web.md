@@ -46,6 +46,9 @@ One example the rc file in rebinding keys for conkeror.
 
 Conkeror Homepage: <http://conkeror.org/>  
 My conkeror on github: <https://github.com/tommytxtruong/conkerorrc>  
-*Follow me and we can exchange the experience.*
+*Follow me and we can exchange the experience.*  
+
+I also posted this article on the website of RMIT Vietnam IT Club  
+Link: <http://rmitc.org/2012/12/conkeror-and-how-it-changed-the-way-i-surf-the-web/>  
 
 Coming up next: **Conkeror - Getting Started**
