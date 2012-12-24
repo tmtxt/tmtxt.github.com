@@ -95,6 +95,6 @@ Now Conkeror is ready to run on your computer. If you want, you can the the tuto
 
  
 
-Conkeror Homepage: <http://conkeror.org/>
-My conkeror on github: <https://github.com/tommytxtruong/conkerorrc>
+Conkeror Homepage: <http://conkeror.org/>  
+My conkeror on github: <https://github.com/tommytxtruong/conkerorrc>  
 Follow me and we can exchange the experience.
