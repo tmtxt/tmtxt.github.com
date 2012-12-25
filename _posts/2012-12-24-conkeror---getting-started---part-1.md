@@ -9,7 +9,7 @@ tags: [conkeror, tutorial, emacs, web browser]
 
 > **Note**: before you read, I just want to remind you that Conkeror is not for newbie or non-IT users. It might take you a lot of time to get used to it. So if you are not programmers, please close this article and go back. But once you got used to it, you will feel extremely comfortable and get your work done faster.  
 > Again, if you are not really interested in, read this article [Conkeror and how it changed the way I surf the web](/2012/12/24/conkeror-and-how-it-changed-the-way-i-surf-the-web) to be convinced or just leave this page. Don't just try and give up early and blame me to waste your time :LOL:.  
-> If you intersted in, let's go!
+> If you interested in, let's go!
 
 **__Conkeror Installation __**
 
