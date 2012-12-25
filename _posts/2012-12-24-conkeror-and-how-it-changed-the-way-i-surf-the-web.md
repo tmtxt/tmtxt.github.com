@@ -6,9 +6,9 @@ category: blog
 tags: [conkeror, emacs, web browser]
 ---
 {% include JB/setup %}
-[img1]: /images/2012-12-24-conkeror-and-how-it-changed-the-way-i-surf-the-web/keyboard-oriented.png
-[img2]: /images/2012-12-24-conkeror-and-how-it-changed-the-way-i-surf-the-web/simplicity.png
-[img3]: /images/2012-12-24-conkeror-and-how-it-changed-the-way-i-surf-the-web/init.png
+[img1]: /site-files/2012-12-24-conkeror-and-how-it-changed-the-way-i-surf-the-web/keyboard-oriented.png
+[img2]: /site-files/2012-12-24-conkeror-and-how-it-changed-the-way-i-surf-the-web/simplicity.png
+[img3]: /site-files/2012-12-24-conkeror-and-how-it-changed-the-way-i-surf-the-web/init.png
 
 For those of you who haven't known about Conkeror yet, here is a brief description about it:
 
@@ -51,4 +51,4 @@ My conkeror on github: <https://github.com/tommytxtruong/conkerorrc>
 I also posted this article on the website of RMIT Vietnam IT Club  
 Link: <http://rmitc.org/2012/12/conkeror-and-how-it-changed-the-way-i-surf-the-web/>  
 
-Coming up next: **Conkeror - Getting Started**
+Coming up next: **[Conkeror - Getting Started](/2012/12/24/conkeror---getting-started---part-1)**

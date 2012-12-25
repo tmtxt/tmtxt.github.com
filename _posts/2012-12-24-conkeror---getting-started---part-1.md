@@ -7,6 +7,10 @@ tags: [conkeror, tutorial, emacs, web browser]
 ---
 {% include JB/setup %}
 
+> **Note**: before you read, I just want to remind you that Conkeror is not for newbie or non-IT users. It might take you a lot of time to get used to it. So if you are not programmers, please close this article and go back. But once you got used to it, you will feel extremely comfortable and get your work done faster.  
+> Again, if you are not really interested in, read this article [Conkeror and how it changed the way I surf the web](/2012/12/24/conkeror-and-how-it-changed-the-way-i-surf-the-web) to be convinced or just leave this page. Don't just try and give up early and blame me to waste your time :LOL:.  
+> If you intersted in, let's go!
+
 **__Conkeror Installation __**
 
 Of course, the very first thing when we want to use a software is to install it. Conkeror is based on XULRunner, which is the core of Firefox, too. There are two ways that we can run Conkeror on our computer. First, install it using XULRunner. The other way is to install it based on Firefox. Conkeror is just like a GUI, and it run based on the XULRunner or Firefox. So if we want to use Conkeror, we need 2 things, Conkeror and either XULRunner or Firefox. Here is the comparison between 2 methods:
@@ -79,7 +83,7 @@ Hit Return (Enter on Windows) when you're done and see the magic ;)
 
 Conkeror should appear and there should be something looks like this
 
-![Conkeror Main Window](/images/2012-12-24-conkeror-getting-started-part-1/conkeror-main.png) 
+![Conkeror Main Window](/site-files/2012-12-24-conkeror-getting-started-part-1/conkeror-main.png) 
 
 The installation steps look complicated when you first time see it. But in fact it's just one command: firefox --app /path/to/application.ini. Call firefox and pass the application.ini path as the argument and you're ready to run Conkeror
 
@@ -98,3 +102,5 @@ Now Conkeror is ready to run on your computer. If you want, you can the the tuto
 Conkeror Homepage: <http://conkeror.org/>  
 My conkeror on github: <https://github.com/tommytxtruong/conkerorrc>  
 Follow me and we can exchange the experience.
+
+Next: **[Conkeror - Getting Started - Part 2](/2012/12/25/conkeror---getting-started---part-2/)**
