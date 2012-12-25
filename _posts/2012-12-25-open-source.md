@@ -2,7 +2,7 @@
 layout: post
 title: "Open source"
 description: ""
-category: blog posts
+category: blog
 tags: [fun, comic, open-source, richard-stallman]
 ---
 {% include JB/setup %}

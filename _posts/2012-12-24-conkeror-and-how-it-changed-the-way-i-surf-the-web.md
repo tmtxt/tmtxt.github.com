@@ -2,7 +2,7 @@
 layout: post
 title: "Conkeror and How it changed the way I surf the web"
 description: ""
-category: blog posts
+category: blog
 tags: [conkeror, emacs, web browser]
 ---
 {% include JB/setup %}
