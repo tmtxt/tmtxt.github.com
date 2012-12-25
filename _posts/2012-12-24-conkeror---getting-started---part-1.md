@@ -17,13 +17,13 @@ Of course, the very first thing when we want to use a software is to install it.
 
 Install using Firefox
 
-> Conkeror is automatically updated when Firefox is updated.  
-> Can not set Conkeror as default browser on Mac OS but it is possible on Ubuntu, I don't know on windows since I don't use Windows anymore :LOL:
+> * Conkeror is automatically updated when Firefox is updated.
+> * Can not set Conkeror as default browser on Mac OS but it is possible on Ubuntu, I don't know on windows since I don't use Windows anymore :LOL:
 
 Install using XULRunner
 
-> Have to manually update Conkeror when Firefox is updated (on Mac OS), especially now Firefox releases new version too fast. I didn't test it on Ubuntu but I saw the command so I thought it can be updated automatically.  
-> Can set Conkeror as default browser on MacOS. Again, I need someone to test it on other OS for me!
+> * Have to manually update Conkeror when Firefox is updated (on Mac OS), especially now Firefox releases new version too fast. I didn't test it on Ubuntu but I saw the command so I thought it can be updated automatically.  
+> * Can set Conkeror as default browser on MacOS. Again, I need someone to test it on other OS for me!
 
  
 
