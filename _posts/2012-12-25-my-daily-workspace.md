@@ -2,8 +2,8 @@
 layout: post
 title: "My daily workspace"
 description: ""
-category: 
-tags: []
+category: blog
+tags: [image, galerry, workspace]
 ---
 {% include JB/setup %}
 
