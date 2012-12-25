@@ -8,7 +8,7 @@ tags: [conkeror, tutorial, emacs, web browser]
 {% include JB/setup %}
 
 > **Note**: before you read, I just want to remind you that Conkeror is not for newbie or non-IT users. It might take you a lot of time to get used to it. So if you are not programmers, please close this article and go back. But once you got used to it, you will feel extremely comfortable and get your work done faster.  
-> Again, if you are not really interested in, read this article [Conkeror and how it changed the way I surf the web](/2012/12/24/conkeror-and-how-it-changed-the-way-i-surf-the-web) to be convinced or just leave this page. Don't just try and give up early and blame me to waste your time :LOL:.  
+> Again, if you are not really interested in, read this article [Conkeror and how it changed the way I surf the web](/2012/12/24/conkeror-and-how-it-changed-the-way-i-surf-the-web) to be convinced or just leave this page. Don't just try and give up early and blame me on wasting your time :LOL:.  
 > If you interested in, let's go!
 
 **__Conkeror Installation __**
@@ -31,11 +31,11 @@ So if you are using Ubuntu, I recommend you to install it based on Firefox. On M
 
  
 
-*Update*: I thought someone has fixed the problem that we can not set Conkeror as the default browser on MacOS when we install it using Firefox but I haven't tested it yet. I will update soon when I have time to try it.
+**__Update__**: I thought someone has fixed the problem that we can not set Conkeror as the default browser on MacOS when we install it using Firefox but I haven't tested it yet. I will update soon when I have time to try it.
 
  
 
-*Note*: There is currently a problem with the downloading system if you are using Firefox/XULRunner version 14 or above (now the XULRunner and Firefox have the same version number), so if you don't mind, just install the lastest Firefox/XULRunner version and enjoy Conkeror. Otherwise, I advise you to install Firefox/XULRunner 12 bacause Firefox/XULRunner 13 is rubbish. Don't worry too much since Firefox/XULRunner releases the new version too fast so there are little changes in each version ;) Just use the 12 version, it is adequate, and wait until someone fix it and contribute the Conkeror or you can be the hero ;)
+**__Note__**: There is currently a problem with the downloading system if you are using Firefox/XULRunner version 14 or above (now the XULRunner and Firefox have the same version number), so if you don't mind, just install the lastest Firefox/XULRunner version and enjoy Conkeror. Otherwise, I advise you to install Firefox/XULRunner 12 bacause Firefox/XULRunner 13 is rubbish. Don't worry too much since Firefox/XULRunner releases the new version too fast so there are little changes in each version ;) Just use the 12 version, it is adequate, and wait until someone fix it and contribute the Conkeror or you can be the hero ;)
 
  
 
@@ -43,9 +43,9 @@ So if you are using Ubuntu, I recommend you to install it based on Firefox. On M
 
 Here is the list of things you need to prepare in order to run Conkeror
 
-Firefox, again I recommend Firefox version 12 ;)
+**Firefox** again I recommend Firefox version 12 ;)
 
-Git, you need git to obtain conkeror source code. Please, forget the SVN. I hate it anyway :LOL:
+**Git** you need git to obtain conkeror source code. Please, forget the SVN. I hate it anyway :LOL:
 
  
 
@@ -55,7 +55,7 @@ First, you need to obtain Conkeror from the repo, open up Terminal and type this
 
     git clone git://repo.or.cz/conkeror.git
 
-Alternatively, you can download a snapshot archive from this link: http://repo.or.cz/w/conkeror.git?a=snapshot;h=master;sf=tgz and then extract it
+Alternatively, you can download a snapshot archive from this link: <http://repo.or.cz/w/conkeror.git?a=snapshot;h=master;sf=tgz> and then extract it
 
 I recommend you to use git to clone that repo cause it's easy to update conkeror.
 
@@ -69,9 +69,9 @@ Open up terminal again, type this at the prompt
 
     firefox --app /path/to/application.ini
 
-In that command above, firefox is the command to run your Firefox browser. On windows, it's usually the path to firefox.exe file. On MacOS, open finder and browse to your Firefox.app location, right click on it -> Show Package Contents, continue to go to folder Contents->MacOS, there is a file named "firefox" there. Drag and drop it into your terminal, and continue to type the rest "--app /path/to/application.ini". On ubuntu, if you have firefox loaded into your $PATH, simply type firefox.
+In that command above, **firefox** is the command to run your Firefox browser. On windows, it's usually the path to firefox.exe file. On MacOS, open finder and browse to your Firefox.app location, right click on it -> Show Package Contents, continue to go to folder Contents->MacOS, there is a file named "firefox" there. Drag and drop it into your terminal, and continue to type the rest "**--app /path/to/application.ini**". On ubuntu, if you have firefox loaded into your $PATH, simply type **firefox**.
 
-/path/to/application.ini to the path to the application.ini file I mentioned before.
+**/path/to/application.ini** to the path to the application.ini file I mentioned before.
 
  
 
@@ -95,7 +95,7 @@ Instead of typing that command everytime you want to launch conkeror, simply jus
 
 Now Conkeror is ready to run on your computer. If you want, you can the the tutorial that you see or you can close it now and wait for my next post :LOL:
 
- 
+-----
 
 Conkeror Homepage: <http://conkeror.org/>  
 My conkeror on github: <https://github.com/tommytxtruong/conkerorrc>  
