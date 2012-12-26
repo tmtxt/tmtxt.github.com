@@ -39,14 +39,11 @@ Like any other open source software, conkeror users can be the developers, too. 
 
 We can easily customize all the key bindings based on our favor. And like many other unix applications, it also has the rc file so just put everything you need in that rc file and customize conkeror as you like. You can look up on the conkeror site and the wiki and then add any features that the community contribute to or you can implement some new features by yourself.
 
-```javascript
-// next and previous buffer
-define_key(default_global_keymap, "A-z", "buffer-previous"); //one hand user
-define_key(default_global_keymap, "C-j", "buffer-previous"); //two hands user
-define_key(default_global_keymap, "A-x", "buffer-next"); //one hand user
-define_key(default_global_keymap, "C-l", "buffer-next"); //two hands user
-```
-
+	// next and previous buffer
+	define_key(default_global_keymap, "A-z", "buffer-previous"); //one hand user
+	define_key(default_global_keymap, "C-j", "buffer-previous"); //two hands user
+	define_key(default_global_keymap, "A-x", "buffer-next"); //one hand user
+	define_key(default_global_keymap, "C-l", "buffer-next"); //two hands user
 One example the rc file in rebinding keys for conkeror.
 
 **There are still many other awesome features in conkeror.**
