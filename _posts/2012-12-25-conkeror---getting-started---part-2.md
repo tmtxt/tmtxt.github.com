@@ -29,10 +29,10 @@ Control and Shift key are popular to you. The special is the Alt key and Meta ke
 
 *Note*: on OSX, the option+key produces a dead key, which means you cannot use it as a modifier key in conkeror, to fix it, download this file USExtendedNoDeadKey.keylayout] from this [link](http://conkeror.org/Keyboard?action=AttachFile&do=view&target=USExtendedNoDeadKey.keylayout) or this [link](/site-files/2012-12-25-conkeror---getting-started---part-2/USExtendedNoDeadKey.keylayout) and put it into ~/Library/Keyboard Layouts/. Log out and log in back. Open System Preferences > Language & Text > Input Sources, select the layout US (NDK). After that, put this into your conkerorrc file
 
-		modifiers.M = new modifier(function (event) { return event.altKey; },  
-		function (event) { event.altKey = true; });  
-		modifiers.A = new modifier(function (event) { return event.metaKey; },  
-		function (event) { event.metaKey = true; });  
+	modifiers.M = new modifier(function (event) { return event.altKey; },  
+	function (event) { event.altKey = true; });  
+	modifiers.A = new modifier(function (event) { return event.metaKey; },  
+	function (event) { event.metaKey = true; });  
 
 Now you understand the modifier notation in conkeror. If a key binding is "C-n", it means "Ctrl + n", "C-h t" means "Ctrl + h and then t", "C-x C-f" means "Ctrl + x and Ctrl + f".
 
