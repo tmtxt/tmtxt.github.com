@@ -2,8 +2,8 @@
 layout: post
 title: "Vim’s Awesomeness #1: The basic stuff"
 description: ""
-category: 
-tags: []
+category: blog
+tags: [vim, text, editor, RMIT, tutorial]
 ---
 {% include JB/setup %}
 
