@@ -53,7 +53,9 @@ Here is the list of things you need to prepare in order to run Conkeror
 
 First, you need to obtain Conkeror from the repo, open up Terminal and type this at the prompt. Remember you need to have git installed before.
 
-    git clone git://repo.or.cz/conkeror.git
+```
+git clone git://repo.or.cz/conkeror.git
+```
 
 Alternatively, you can download a snapshot archive from this link: <http://repo.or.cz/w/conkeror.git?a=snapshot;h=master;sf=tgz> and then extract it
 
@@ -67,7 +69,9 @@ After cloning the repo or extracting the archive, open up the directory where yo
 
 Open up terminal again, type this at the prompt
 
-    firefox --app /path/to/application.ini
+```
+firefox --app /path/to/application.ini
+```
 
 In that command above, **firefox** is the command to run your Firefox browser. On windows, it's usually the path to firefox.exe file. On MacOS, open finder and browse to your Firefox.app location, right click on it -> Show Package Contents, continue to go to folder Contents->MacOS, there is a file named "firefox" there. Drag and drop it into your terminal, and continue to type the rest "**--app /path/to/application.ini**". On ubuntu, if you have firefox loaded into your $PATH, simply type **firefox**.
 
