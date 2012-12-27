@@ -69,7 +69,9 @@ That post did mention Pathogen, which I will explain in the next section:
 
 First install **Pathogen**. Download the [pathogen.vim](https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim) file then put it in **~/.vim/autoload** (you may have to create the folder **autoload** first). Then in your vimrc, put this line at the beginning of the file (if you have followed all the instructions in the nvie blog above then you don’t have to enter this line):
 
-	  call pathogen#infect()
+```
+call pathogen#infect()
+```
 
 Now to install most plugins, you can just copy its folder into **~/.vim/bundle/** like this:
 
