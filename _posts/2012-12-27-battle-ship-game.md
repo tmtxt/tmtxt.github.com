@@ -2,8 +2,8 @@
 layout: post
 title: "Battle Ship game"
 description: ""
-category: 
-tags: []
+category: blog
+tags: [game, java, netbeans, assignment, RMIT, battleship]
 ---
 {% include JB/setup %}
 
