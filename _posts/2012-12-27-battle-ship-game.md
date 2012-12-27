@@ -16,7 +16,7 @@ Battleship is a turn-based strategy game for 2 players. In this game, each playe
 # Download
 
 Here is the source of the game on Github: [Battle Ship Game on Github](https://github.com/tommytxtruong/battleship)  
-The actual source is the BattleShip folder which is a Netbeas project. Import it with Netbeans and have fun ;) Remember this is just for my assignment.
+The actual source is the BattleShip folder which is a Netbeas project. Import it into Netbeans and have fun ;) Remember this is just for my assignment.
 
 # How to play
 
