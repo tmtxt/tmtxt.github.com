@@ -4,14 +4,8 @@ title: Where the nerds gather!
 tagline: Where the awesomeness is shared!
 ---
 {% include JB/setup %}
-[avatar]: /files/index/ava.JPG
 
-# About me
-<br/>
-![My avatar][avatar]  
-*Full name*: Tran Xuan Truong  
-*Currently*: Studying Bachelor of Information Technology at RMIT University Vietnam  
-*History*: Graduated from Aptech Computer Education  
+<p align="center"><img src="/files/index/cover.png" /></p>
 
 # Lastest Posts
 <ul class="posts">
@@ -19,3 +13,7 @@ tagline: Where the awesomeness is shared!
 <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
 {% endfor %}
 </ul>
+
+# Subscribe to News Feed
+
+**I'm a geek** blog news feed: [News Feed](/atom.xml)
