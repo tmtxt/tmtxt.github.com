@@ -2,9 +2,13 @@
 <html lang="en">
   <head>
 
+	<!-- this is for highlight.js - a syntax highlighting framework -->
 	<link rel="stylesheet" href="/highlight.js/styles/default.css">
 	<script src="/highlight.js/highlight.pack.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
+
+	<!-- google search for website -->
+	<!-- {% include google_ajax_search.html %} -->
 
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
@@ -40,6 +44,8 @@
             {% assign group = 'navigation' %}
             {% include JB/pages_list %}
           </ul>
+		  <!-- <div id="search"> -->
+		  <!-- </div> -->
         </div>
       </div>
     </div>
