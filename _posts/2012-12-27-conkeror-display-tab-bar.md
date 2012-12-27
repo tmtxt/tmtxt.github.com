@@ -19,9 +19,11 @@ If this is the first time you've been to Conkeror, you will find it a bit diffic
 
 In your **.conkerorrc** directory, create a folder named **themes**. Download this file [tommytxtruong.zip](/files/2012-12-27-conkeror-display-tab-bar/tommytxtruong.zip) and then extract it into the **themes** directory you've just created. After that, add this to your **.conkerorrc** file or any .js file (init.js) inside the **.conkerorrc** directory.
 
-    theme_load_paths.unshift("~/.conkerorrc/themes/");
-	theme_unload("default");
-	theme_load("tommytxtruong");
+{% highlight javascript %}
+theme_load_paths.unshift("~/.conkerorrc/themes/");
+theme_unload("default");
+theme_load("tommytxtruong");
+{% endhighlight %}
 
 Now restart Conkeror to see the changes ;)
 
