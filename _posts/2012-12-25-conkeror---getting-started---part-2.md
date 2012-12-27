@@ -29,20 +29,22 @@ Control and Shift key are popular to you. The special is the Alt key and Meta ke
 
 *Note*: on OSX, the option+key produces a dead key, which means you cannot use it as a modifier key in conkeror, to fix it, download this file USExtendedNoDeadKey.keylayout] from this [link](http://conkeror.org/Keyboard?action=AttachFile&do=view&target=USExtendedNoDeadKey.keylayout) or this [link](/files/2012-12-25-conkeror---getting-started---part-2/USExtendedNoDeadKey.keylayout) and put it into ~/Library/Keyboard Layouts/. Log out and log in back. Open System Preferences > Language & Text > Input Sources, select the layout US (NDK). After that, put this into your conkerorrc file
 
-	modifiers.M = new modifier(function (event) { return event.altKey; },  
-	function (event) { event.altKey = true; });  
-	modifiers.A = new modifier(function (event) { return event.metaKey; },  
-	function (event) { event.metaKey = true; });  
+{% highlight javascript %}
+modifiers.M = new modifier(function (event) { return event.altKey; },
+                           function (event) { event.altKey = true; });
+modifiers.A = new modifier(function (event) { return event.metaKey; },
+                           function (event) { event.metaKey = true; });
+{% endhighlight %}
 
 Now you understand the modifier notation in conkeror. If a key binding is "C-n", it means "Ctrl + n", "C-h t" means "Ctrl + h and then t", "C-x C-f" means "Ctrl + x and Ctrl + f".
 
 # Some useful key bindings
 
-  	   C-g : abort the what is currently running (page loading, command, key sequence)  
-	   C-h t : show the conkeror tutorial  
-	   C-h k : discribe what a key binding does  
-	   C-h f : discribe function  
-	   C-h b : show all key bindings
+    C-g : abort the what is currently running (page loading, command, key sequence)  
+	C-h t : show the conkeror tutorial  
+	C-h k : discribe what a key binding does  
+	C-h f : discribe function  
+	C-h b : show all key bindings
 
 #### You're ready! Now open up your conkeror and read the tutorial and start.
 
