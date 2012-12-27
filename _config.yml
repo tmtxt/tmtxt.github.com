@@ -10,7 +10,7 @@ pygments: true
 # so be sure to set them if your theme uses them.
 #
 title : I'm a geek
-tagline: Site Tagline
+tagline: 
 author :
   name : Trường TX
   email : tommytxtruong@gmail.com
