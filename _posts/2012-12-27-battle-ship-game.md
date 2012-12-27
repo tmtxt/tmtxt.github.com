@@ -9,7 +9,7 @@ tags: [game, java, netbeans, assignment, RMIT, battleship]
 
 # BattleShip Game
 
-    This is my assignment 2 in the Programming 2 course at RMIT
+> This is my assignment 2 in the Programming 2 course at RMIT
 
 Battleship is a turn-based strategy game for 2 players. In this game, each player has 5 ships placed on a grid. Player cannot see the opponent’s ships. The game will end when one of two players has no more ships on his grid.
 
