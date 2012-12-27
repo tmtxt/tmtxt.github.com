@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Source"
+title: "Page Source"
 description: ""
 group: navigation
 ---
