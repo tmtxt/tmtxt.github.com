@@ -6,9 +6,9 @@ category: blog
 tags: [conkeror, emacs, web browser]
 ---
 {% include JB/setup %}
-[img1]: /site-files/2012-12-24-conkeror-and-how-it-changed-the-way-i-surf-the-web/keyboard-oriented.png
-[img2]: /site-files/2012-12-24-conkeror-and-how-it-changed-the-way-i-surf-the-web/simplicity.png
-[img3]: /site-files/2012-12-24-conkeror-and-how-it-changed-the-way-i-surf-the-web/init.png
+[img1]: /files/2012-12-24-conkeror-and-how-it-changed-the-way-i-surf-the-web/keyboard-oriented.png
+[img2]: /files/2012-12-24-conkeror-and-how-it-changed-the-way-i-surf-the-web/simplicity.png
+[img3]: /files/2012-12-24-conkeror-and-how-it-changed-the-way-i-surf-the-web/init.png
 
 For those of you who haven't known about Conkeror yet, here is a brief description about it:
 

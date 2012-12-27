@@ -4,7 +4,7 @@ title: Where the nerds gather!
 tagline: Where the awesomeness is shared!
 ---
 {% include JB/setup %}
-[avatar]: /site-files/index/ava.JPG
+[avatar]: /files/index/ava.JPG
 
 # About me
 <br/>

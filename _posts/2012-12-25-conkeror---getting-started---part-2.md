@@ -11,7 +11,7 @@ tags: [conkeror, tutorial, emacs, web browser]
 
 The first time you open Conkeror, it will show you the tutorial. It is the basic thing you need to know to use Conkeror. Moreover, in Conkeror, you can even view all the lists of functions, key bindings, what this key combination do,... So if you get stuck, just open them. Here I will show you how.
 
-![Conkeror Tutorial](/site-files/2012-12-25-conkeror---getting-started---part-2/tutorial.png)
+![Conkeror Tutorial](/files/2012-12-25-conkeror---getting-started---part-2/tutorial.png)
 
 # The RC file
 
@@ -27,7 +27,7 @@ The first you need to know is the key notation. Conkeror is built based on emacs
 
 Control and Shift key are popular to you. The special is the Alt key and Meta key. On OSX, the command key is the Meta key, the option key is the Alt key. In other OS, usually, the alt key on your keyboard is considered as Meta key, the windows key on your keyboard is consider as Alt key.
 
-*Note*: on OSX, the option+key produces a dead key, which means you cannot use it as a modifier key in conkeror, to fix it, download this file USExtendedNoDeadKey.keylayout] from this [link](http://conkeror.org/Keyboard?action=AttachFile&do=view&target=USExtendedNoDeadKey.keylayout) or this [link](/site-files/2012-12-25-conkeror---getting-started---part-2/USExtendedNoDeadKey.keylayout) and put it into ~/Library/Keyboard Layouts/. Log out and log in back. Open System Preferences > Language & Text > Input Sources, select the layout US (NDK). After that, put this into your conkerorrc file
+*Note*: on OSX, the option+key produces a dead key, which means you cannot use it as a modifier key in conkeror, to fix it, download this file USExtendedNoDeadKey.keylayout] from this [link](http://conkeror.org/Keyboard?action=AttachFile&do=view&target=USExtendedNoDeadKey.keylayout) or this [link](/files/2012-12-25-conkeror---getting-started---part-2/USExtendedNoDeadKey.keylayout) and put it into ~/Library/Keyboard Layouts/. Log out and log in back. Open System Preferences > Language & Text > Input Sources, select the layout US (NDK). After that, put this into your conkerorrc file
 
 	modifiers.M = new modifier(function (event) { return event.altKey; },  
 	function (event) { event.altKey = true; });  

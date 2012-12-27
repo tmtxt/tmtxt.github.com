@@ -81,7 +81,7 @@ Hit Return (Enter on Windows) when you're done and see the magic ;)
 
 Conkeror should appear and there should be something looks like this
 
-![Conkeror Main Window](/site-files/2012-12-24-conkeror-getting-started-part-1/conkeror-main.png) 
+![Conkeror Main Window](/files/2012-12-24-conkeror-getting-started-part-1/conkeror-main.png) 
 
 The installation steps look complicated when you first time see it. But in fact it's just one command: firefox --app /path/to/application.ini. Call firefox and pass the application.ini path as the argument and you're ready to run Conkeror
 
