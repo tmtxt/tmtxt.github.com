@@ -13,6 +13,11 @@ tags: [game, java, netbeans, assignment, RMIT, battleship]
 
 Battleship is a turn-based strategy game for 2 players. In this game, each player has 5 ships placed on a grid. Player cannot see the opponent’s ships. The game will end when one of two players has no more ships on his grid.
 
+# Download
+
+Here is the source of the game on Github: [Battle Ship Game on Github](https://github.com/tommytxtruong/battleship)  
+The actual source is the BattleShip folder which is a Netbeas project. Import it with Netbeans and have fun ;) Remember this is just for my assignment.
+
 # How to play
 
 ### Start Game Window
@@ -45,11 +50,7 @@ The game ends when one of the two has no more ships.
 To play again, click **Play Again**.
 To quit game, click **Quit**.
 
-# Download
-
-Here is the source of the game on Github: [Battle Ship Game on Github](https://github.com/tommytxtruong/battleship)  
-The actual source is the BattleShip folder which is a Netbeas project. Import it with Netbeans and have fun ;) Remember this is just for my assignment.
-
+# Additional information
 Additional information (requirement, design, diagrams,...) can be found in those files in the source:
 * COSC2082_2012B_assign2.dot
 * Programming 2 – Assignment 2.pdf
