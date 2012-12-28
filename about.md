@@ -18,4 +18,5 @@ group: navigation
 # Contact me
 **Email**: <tommytxtruong@gmail.com>  
 **Facebook**: <http://facebook.com/mr.truong.tx>  
+**Github**: <https://github.com/tommytxtruong>  
 Sorry currently I'm not using Twitter.
