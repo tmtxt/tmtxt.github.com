@@ -3,7 +3,7 @@ layout: post
 title: "IT's way of celebrating the Christmas"
 description: ""
 category: 
-tags: []
+tags: [fun, image, christmas, IT]
 ---
 {% include JB/setup %}
 

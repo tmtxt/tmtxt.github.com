@@ -3,7 +3,7 @@ layout: post
 title: "Conkeror Reopen Closed tab"
 description: ""
 category: 
-tags: []
+tags: [conkeror, tutorial, close, buffer, web-browser]
 ---
 {% include JB/setup %}
 

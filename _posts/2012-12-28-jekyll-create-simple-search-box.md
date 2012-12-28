@@ -3,7 +3,7 @@ layout: post
 title: "Jekyll Create Simple Search box"
 description: ""
 category: 
-tags: []
+tags: [jekyll, search, tutorial, google]
 ---
 {% include JB/setup %}
 
