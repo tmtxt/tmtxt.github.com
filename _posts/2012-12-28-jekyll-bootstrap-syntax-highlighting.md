@@ -78,18 +78,18 @@ Jekyll has built-in support for syntax-highlighting via Pygments. If you want to
 {% highlight bash %}
 $ sudo apt-get install python-pygments
 {% endhighlight %}
-* On Mac OS
+* On Mac OS  
 Check the python version
 {% highlight bash %}
 $ python --version  
 Python 2.7.2
 {% endhighlight %}
 Download the Setuptools package [here](http://pypi.python.org/pypi/setuptools#files). Select the package corresponding to your python version.  
-cd to the directory you've just donwloaded it and run this command
+Next, cd to the directory you've just donwloaded it and run this command
 {% highlight bash %}
 $ sudo sh setuptools-0.6c11-py2.6.egg
 {% endhighlight %}
-install pygments
+Install pygments
 {% highlight bash %}
 $ sudo easy_install Pygments
 {% endhighlight %}
