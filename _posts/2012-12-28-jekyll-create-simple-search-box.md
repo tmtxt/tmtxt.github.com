@@ -47,5 +47,3 @@ Ok, now you're done ;)
 # More
 
 Actually this is a very simple Google search box that can be applied for any site not just Jekyll. Simply create a form in your page and include the script in the js file and Google will do the rest for you.
-
-{% youtube mTwoMGCtPT8 %}
