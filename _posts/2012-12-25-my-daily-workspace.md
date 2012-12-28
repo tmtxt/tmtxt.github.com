@@ -9,8 +9,6 @@ tags: [image, galerry, workspace]
 
 ## A gallery about my daily used app on my computer
 
-*Click the image to enlarge*
-
 **Web Browser** Conkeror
 
 ![conkeror](/files/2012-12-25-my-daily-workspace/browser.png)
