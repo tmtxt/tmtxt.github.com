@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Conkeror Reopen Closed tab"
+title: "Conkeror - Reopen Closed tab"
 description: ""
 category: 
 tags: [conkeror, tutorial, close, buffer, web-browser]

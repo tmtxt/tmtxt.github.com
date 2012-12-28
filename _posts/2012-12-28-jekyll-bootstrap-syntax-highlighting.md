@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Jekyll Bootstrap syntax highlighting"
+title: "Jekyll Bootstrap - syntax highlighting"
 description: ""
 category: 
 tags: [jekyll, syntax-highlighting, tutorial]

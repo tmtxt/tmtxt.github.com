@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Jekyll Create Simple Search box"
+title: "Jekyll - Create Simple Search box"
 description: ""
 category: 
 tags: [jekyll, search, tutorial, google]
