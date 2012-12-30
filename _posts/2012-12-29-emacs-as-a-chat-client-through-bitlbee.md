@@ -3,7 +3,7 @@ layout: post
 title: "Emacs as a Chat client through Bitlbee"
 description: ""
 category: 
-tags: []
+tags: [emacs, tutorial, bitlbee, chat, erc]
 ---
 {% include JB/setup %}
 

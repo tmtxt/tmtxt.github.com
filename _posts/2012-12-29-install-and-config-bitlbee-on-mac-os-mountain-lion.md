@@ -3,7 +3,7 @@ layout: post
 title: "Install - Config Bitlbee on Mac Mountain Lion"
 description: ""
 category: 
-tags: []
+tags: [bitlbee, mac, mountain-lion, tutorial]
 ---
 {% include JB/setup %}
 
