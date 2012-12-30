@@ -14,6 +14,8 @@ tagline: Where the awesomeness is shared!
 {% endfor %}
 </ul>
 
+#### For more posts, please visit --> [Archive page](/archive.html)
+
 # Subscribe to News Feed
 
 **I'm a geek** blog news feed: [News Feed](/atom.xml)
