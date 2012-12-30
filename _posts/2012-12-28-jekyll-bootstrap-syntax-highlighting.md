@@ -75,22 +75,22 @@ Jekyll has built-in support for syntax-highlighting via Pygments. If you want to
 #### Install pygments on local computer
 
 * On Ubuntu, just one command
-{% highlight bash %}
+{% highlight sh %}
 $ sudo apt-get install python-pygments
 {% endhighlight %}
 * On Mac OS  
 Check the python version
-{% highlight bash %}
+{% highlight sh %}
 $ python --version  
 Python 2.7.2
 {% endhighlight %}
 Download the Setuptools package [here](http://pypi.python.org/pypi/setuptools#files). Select the package corresponding to your python version.  
 Next, cd to the directory you've just donwloaded it and run this command
-{% highlight bash %}
+{% highlight sh %}
 $ sudo sh setuptools-0.6c11-py2.6.egg
 {% endhighlight %}
 Install pygments
-{% highlight bash %}
+{% highlight sh %}
 $ sudo easy_install Pygments
 {% endhighlight %}
 
@@ -102,7 +102,7 @@ In the config.yaml file inside the root directory of your jekyll website, set py
 
 #### Generate pygments
 
-{% highlight bash %}
+{% highlight sh %}
 $ cd path/to/jekyll/project/folder
 $ pygmentize -S default -f html > pygments.css
 {% endhighlight %}

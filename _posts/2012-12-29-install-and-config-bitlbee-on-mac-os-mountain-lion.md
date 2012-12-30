@@ -33,7 +33,7 @@ it into your computer.
 
 After finishing MacPort installation, open Terminal and type in this command
 
-{% highlight bash %}
+{% highlight sh %}
 sudo port install bitlbee
 {% endhighlight %}
 
@@ -48,7 +48,7 @@ read the config. We need some extra steps.
 First we need to have the bitlbee.conf file to store all the config of bitlbee.
 Open up terminal again, cd to the this directory
 
-{% highlight bash %}
+{% highlight sh %}
 cd /opt/local/etc/bitlbee
 {% endhighlight %}
 
@@ -57,7 +57,7 @@ you will see a file named bitlbee.conf.sample here. This is a sample of the
 config file. What we need to do now is to rename it to remove the .sample
 trailing. Issue this command to rename it
 
-{% highlight bash %}
+{% highlight sh %}
 sudo mv bitlbee.conf.sample bitlbee.conf
 {% endhighlight %}
 
@@ -87,7 +87,7 @@ src="/files/2012-12-29-install-and-config-bitlbee-on-mac-os-mountain-lion/uid.pn
 Now back to the terminal window and run this command to edit the config file
 we've just renamed.
 
-{% highlight bash %}
+{% highlight sh %}
 sudo emacs bitlbee.conf
 {% endhighlight %}
 
@@ -125,10 +125,10 @@ Ctrl-x Ctrl-c to exit emacs.
 Finally, you need to change the owner of the directories that bitlbee uses to
 your account. Open Terminal and execute those commands
 
-{% highlight bash %}
+{% highlight sh %}
 sudo chown -R your-user-name:your-group-name /opt/local/etc/bitlbee
 {% endhighlight %}
-{% highlight bash %}
+{% highlight sh %}
 sudo chown -R your-user-name:your-group-name /opt/local/var/lib/bitlbee
 {% endhighlight %}
 
