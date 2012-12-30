@@ -117,7 +117,7 @@ User = your-user-name
 
 Replace **your-user-name** with your username. Actually, when installing bitlee,
 it will create a user named bitlbee however I don't know why on my Mac it didn't
-so I let run as my username.
+so I let it run as my username.
 
 The rest just leave it default. Press Ctrl-x Ctrl-s to save the file and then
 Ctrl-x Ctrl-c to exit emacs.
@@ -138,5 +138,5 @@ name and group name.
 Now you're ready to run **bitlbee** by typing **bitlbee** into terminal and hit
 **return**.
 
-> This little f~~king stuff took me more than 1 hours to install and config. Why
+> This little <span>f**cking</span> stuff took me more than 1 hours to install and config. Why
 > it's so complicated! >.<
