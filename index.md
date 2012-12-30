@@ -14,7 +14,7 @@ tagline: Where the awesomeness is shared!
 {% endfor %}
 </ul>
 
-#### For more posts, please visit --> [Archive page](/archive.html)
+#### For a full list, please visit --> [Archive page](/archive.html)
 
 # Subscribe to News Feed
 
