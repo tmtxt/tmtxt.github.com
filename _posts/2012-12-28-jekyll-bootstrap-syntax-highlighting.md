@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Jekyll Bootstrap - syntax highlighting"
+title: "Jekyll Bootstrap - Syntax highlighting"
 description: ""
 category: 
 tags: [jekyll, syntax-highlighting, tutorial]
@@ -98,7 +98,7 @@ $ sudo easy_install Pygments
 
 In the config.yaml file inside the root directory of your jekyll website, set pygments to true
 
-> pygments: true
+    pygments: true
 
 #### Generate pygments
 
