@@ -3,7 +3,7 @@ layout: post
 title: "P.S I love you"
 description: ""
 category: 
-tags: []
+tags: [fun, image, ps, playstation]
 ---
 {% include JB/setup %}
 
