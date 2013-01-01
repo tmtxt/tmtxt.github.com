@@ -34,7 +34,7 @@ it into your computer.
 After finishing MacPort installation, open Terminal and type in this command
 
 {% highlight sh %}
-sudo port install bitlbee
+$ sudo port install bitlbee
 {% endhighlight %}
 
 Provide it your root password and wait until MacPort successfully installed
@@ -49,7 +49,7 @@ First we need to have the bitlbee.conf file to store all the config of bitlbee.
 Open up terminal again, cd to the this directory
 
 {% highlight sh %}
-cd /opt/local/etc/bitlbee
+$ cd /opt/local/etc/bitlbee
 {% endhighlight %}
 
 Type **ls** and press **return**,
@@ -58,37 +58,26 @@ config file. What we need to do now is to rename it to remove the .sample
 trailing. Issue this command to rename it
 
 {% highlight sh %}
-sudo mv bitlbee.conf.sample bitlbee.conf
+$ sudo mv bitlbee.conf.sample bitlbee.conf
 {% endhighlight %}
 
 Type **ls** again and hit **return** to see if the file name is successfully changed.
 
 Now you can run **bitlbee**, but wait! If you connect to bitlbee server and register an
 account there, it will return an error that the program does not have enough
-permission. We need some more configuration to make it run properly.
-
-Before doing the next steps, you need to determine your username and group. Do
-not close terminal. Open **System Preference**, click on **User & Group**, click on the lock.
-
-<p align="center"><img
-src="/files/2012-12-29-install-and-config-bitlbee-on-mac-os-mountain-lion/lock.png"></p>
-
-You need to input your password. After that, right click on your account on the
-left sidebar and select **Advanced Option**.
-
-<p align="center"><img
-src="/files/2012-12-29-install-and-config-bitlbee-on-mac-os-mountain-lion/advanced.png"></p>
-
-Look at the textbox Group and Account name to see the current user name and group.
-
-<p align="center"><img
-src="/files/2012-12-29-install-and-config-bitlbee-on-mac-os-mountain-lion/uid.png"></p>
-
-Now back to the terminal window and run this command to edit the config file
-we've just renamed.
+permission. The solution is that change bitlbee to run on your user account.
+Run this command in terminal
 
 {% highlight sh %}
-sudo emacs bitlbee.conf
+$ whoami
+{% endhighlight %}
+
+The ouput result is your current username. Write it down for later use.
+
+Continue run this command to edit the bitlbee.conf file
+
+{% highlight sh %}
+$ sudo emacs bitlbee.conf
 {% endhighlight %}
 
 Find this line
@@ -119,17 +108,15 @@ Replace **your-user-name** with your username. Actually, when installing bitlee,
 it will create a user named bitlbee however I don't know why on my Mac it didn't
 so I let it run as my username.
 
-The rest just leave it default. Press Ctrl-x Ctrl-s to save the file and then
+The rest just leave it unchanged. Press Ctrl-x Ctrl-s to save the file and then
 Ctrl-x Ctrl-c to exit emacs.
 
 Finally, you need to change the owner of the directories that bitlbee uses to
 your account. Open Terminal and execute those commands
 
 {% highlight sh %}
-sudo chown -R your-user-name:your-group-name /opt/local/etc/bitlbee
-{% endhighlight %}
-{% highlight sh %}
-sudo chown -R your-user-name:your-group-name /opt/local/var/lib/bitlbee
+$ sudo chown -R your-user-name /opt/local/etc/bitlbee
+$ sudo chown -R your-user-name /opt/local/var/lib/bitlbee
 {% endhighlight %}
 
 Replace your-user-name and your-group-name in the commands above with your user
