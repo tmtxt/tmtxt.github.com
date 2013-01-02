@@ -41,23 +41,10 @@ $ bitlbee -D
 
 # Connect Emacs to Bitlbee server
 
-Add this to your .emacs
-
-{% highlight cl %}
-(defun tmtxt-connect-bitlbee-localhost ()
-  "Connect to IM networks using bitlbee."
-  (interactive)
-  (erc :server "localhost" :port 6667 :nick "tmtxt"))
-{% endhighlight %}
-
-If you're using localhost and the default port, the above code is fine.
-Otherwise, replace **localhost** with the server name and **6667** with the
-server port.
-
-Eval that region or restart your emacs for the changes to take effect. 
-
-Press M-x and type tmtxt-connect-bitlbee-localhost and hit return. A new window
-should appear like this
+In Emacs, press M-x, type in **erc** and input server address (localhost if
+you installed bitlbee server on your own computer) and port (default is 6667).
+If this is the first time you connect to bitlbee server, choose a user and type
+in any password that you want.
 
 ![Bitlbee localhost](/files/2012-12-29-emacs-as-a-chat-client-through-bitlbee/localhost.png)
 
