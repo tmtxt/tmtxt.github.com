@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Ubuntu for phones is now released"
+title: "Ubuntu for phones is now introduced"
 description: ""
 category: 
 tags: [news, ubuntu, phone, linux]
