@@ -3,6 +3,7 @@ layout: post
 title: "Vim’s Awesomeness #1: The basic stuff"
 description: ""
 category: blog
+thumbnail: /files/2012-12-27-vims-awesomeness-1-the-basic-stuff/logo.png
 tags: [vim, text, editor, RMIT, tutorial]
 ---
 {% include JB/setup %}

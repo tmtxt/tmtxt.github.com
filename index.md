@@ -6,9 +6,9 @@ tagline: Where the awesomeness is shared!
 {% include JB/setup %}
 
 <div class="hero-unit">
-  <h1>Heading</h1>
-  <p>Tagline</p>
-  <p><a class="btn btn-primary btn-large">Learn more</a></p>
+  <h1>Welcome to my blog</h1>
+  <p>A blog for the IT guys</p>
+  <p><a class="btn btn-primary btn-large" href="/about.html">About me</a></p>
 </div>
 
 <div class="row">

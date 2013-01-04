@@ -3,6 +3,7 @@ layout: post
 title: "P.S I love you"
 description: ""
 category: 
+thumbnail: /files/2012-12-31-ps-i-love-you/thumbnail.jpg
 tags: [fun, image, ps, playstation]
 ---
 {% include JB/setup %}

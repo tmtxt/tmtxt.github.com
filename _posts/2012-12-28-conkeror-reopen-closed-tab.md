@@ -3,6 +3,7 @@ layout: post
 title: "Conkeror - Reopen Closed tab"
 description: ""
 category: 
+thumbnail: /files/2012-12-24-conkeror-getting-started-part-1/conkeror-main.png
 tags: [conkeror, tutorial, close, buffer, web-browser]
 ---
 {% include JB/setup %}

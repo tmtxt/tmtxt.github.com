@@ -3,6 +3,7 @@ layout: post
 title: "Conkeror - Display Tab bar"
 description: ""
 category: 
+thumbnail: /files/2012-12-27-conkeror-display-tab-bar/tab.png
 tags: []
 ---
 {% include JB/setup %}

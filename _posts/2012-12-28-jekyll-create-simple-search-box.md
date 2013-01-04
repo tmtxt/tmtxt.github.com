@@ -3,6 +3,7 @@ layout: post
 title: "Jekyll Bootstrap - Create Simple Search box"
 description: ""
 category: 
+thumbnail: /files/2012-12-28-jekyll-create-simple-search-box/thumbnail.jpg
 tags: [jekyll, search, tutorial, google]
 ---
 {% include JB/setup %}
