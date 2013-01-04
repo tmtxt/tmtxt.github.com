@@ -14,6 +14,8 @@ group: navigation
 **Full name**: Tran Xuan Truong  
 **Currently**: Studying Bachelor of Information Technology at RMIT University Vietnam  
 **History**: Graduated from Aptech Computer Education  
+**Interest**: Computer, Programming, Unix-based, Shell, Open Source Software,...
+**Style**: Keyboard-Oriented, Study by myself,...
 
 # Contact me
 **Email**: <tommytxtruong@gmail.com>  
