@@ -6,8 +6,14 @@ tagline: Where the awesomeness is shared!
 {% include JB/setup %}
 
 <div class="hero-unit">
-  <h1>Welcome to my blog</h1>
+  <h1>Welcome Funky Nerdy blog</h1>
   <p>A blog for the IT guys</p>
+  <p>You feel the use of computer is so boring? You feel that you are left
+  behind by the technology?<br />
+  What do you want for now?<br />
+  Wanna break the it? Wanna change everything? Wanna be awesome? Wanna
+  be different? Wanna be pro?<br />
+  Let's go!</p>
   <p><a class="btn btn-primary btn-large" href="/about.html">About me</a></p>
 </div>
 
