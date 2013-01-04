@@ -8,17 +8,17 @@
     <hr>
     <div class="pagination">
       <ul>
-      {% if page.previous %}
+		{% if page.previous %}
         <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a></li>
-      {% else %}
+		{% else %}
         <li class="prev disabled"><a>&larr; Previous</a></li>
-      {% endif %}
+		{% endif %}
         <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a></li>
-      {% if page.next %}
+		{% if page.next %}
         <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a></li>
-      {% else %}
+		{% else %}
         <li class="next disabled"><a>Next &rarr;</a>
-      {% endif %}
+		  {% endif %}
       </ul>
     </div>
 	<div class="fb-like" data-send="false" data-width="450" data-show-faces="true"></div>
@@ -30,16 +30,25 @@
     <h4>Published</h4>
     <div class="date"><span>{{ page.date | date_to_long_string }}</span></div>
 
-  {% unless page.tags == empty %}
+	{% unless page.tags == empty %}
     <h4>Tags</h4>
     <ul class="tag_box">
-    {% assign tags_list = page.tags %}
-    {% include JB/tags_list %}
+      {% assign tags_list = page.tags %}
+      {% include JB/tags_list %}
     </ul>
-  {% endunless %}  
+	{% endunless %}  
 
 	<!-- about me column -->
 	{% include about_me_column.html %}
 	<!-- end about me column -->
+
+	<!-- page thumbnail, for testing -->
+	<!-- {% if page.thumbnail %} -->
+    <!-- <h4>thumbnail</h4> -->
+    <!-- <ul class="tag_box"> -->
+	<!--   {{ page.thumbnail }} -->
+    <!-- </ul> -->
+	<!-- {% endif %}   -->
+	<!-- end page thumbnail -->
   </div>
 </div>

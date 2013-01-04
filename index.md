@@ -5,14 +5,54 @@ tagline: Where the awesomeness is shared!
 ---
 {% include JB/setup %}
 
-<p align="center"><img src="/files/index/cover.png" /></p>
+<div class="hero-unit">
+  <h1>Heading</h1>
+  <p>Tagline</p>
+  <p><a class="btn btn-primary btn-large">Learn more</a></p>
+</div>
 
-# Lastest Posts
-<ul class="posts">
-{% for post in site.posts limit:20 %}
-<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+<div class="row">
+  {% for post in site.posts limit:3 %}
+  <div class="span4">
+    <a href="{{ BASE_PATH }}{{ post.url }}"><h2>{{ post.title }}</h2></a>
+	<hr />
+	<p>{% if post.thumbnail %}
+	<img src="{{ post.thumbnail }}" style="height: 280px" align="center" />
+	{% else %}
+	<img src="/assets/themes/tmtxt-responsive/images/no-thumnail.jpg"
+  style="height: 280px" align="center" />
+	{% endif %}</p>
+	<p>&nbsp;</p>
+	<p>
+	{{ post.content | strip_html | truncatewords:20 }}
+	</p>
+	<p>
+	<a class="btn" href="{{ BASE_PATH }}{{ post.url }}">Read more...</a>
+	</p>
+  </div>
+  {% endfor %}
+</div>
+
+<h1>Lastest Posts</h1>
+{% for post in site.posts limit:15 offset:3 %}
+<hr />
+<div class="row">
+  <div class="span2">
+    {% if post.thumbnail %}
+	<img src="{{ post.thumbnail }}" align="center" />
+	{% else %}
+	<img src="/assets/themes/tmtxt-responsive/images/no-thumnail.jpg" align="center" />
+	{% endif %}
+  </div>
+  <div class="span10">
+    <p><a href="{{ BASE_PATH }}{{ post.url }}"><h3>{{ post.title }}</h3></a></p>
+	<p>{{ post.content | strip_html | truncatewords: 40 }}
+	</p>
+  </div>
+</div>
 {% endfor %}
-</ul>
+
+<p>&nbsp;</p>
 
 #### For a full list, please visit --> [Archive page](/archive.html)
 

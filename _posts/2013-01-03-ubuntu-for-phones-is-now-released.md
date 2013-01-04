@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "Ubuntu for phones is now introduced"
+title: "Ubuntu for phones is announced"
 description: ""
 category: 
+thumbnail: /files/2013-01-03-ubuntu-for-phones-is-now-released/thumbnail.png
 tags: [news, ubuntu, phone, linux]
 ---
 {% include JB/setup %}

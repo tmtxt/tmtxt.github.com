@@ -1,15 +1,16 @@
 ---
 layout: post
-title: "Introduction to MacPorts - The MacOS package manager"
+title: "MacPorts - The MacOS package manager"
 description: ""
 category: 
+thumbnail: /files/2013-01-01-macports---the-macos-package-manager/macports.png
 tags: [introduction, tutorial, macports, package-manager, macos]
 ---
 {% include JB/setup %}
 
 # Introduction
 
-For Ubuntu Linux. we have a powerful package manager called **apt** which makes
+For Ubuntu Linux, we have a powerful package manager called **apt** which makes
 the installation, uninstallation and management of package much easier. Sadly,
 for MacOS users, we don't have that powerful tool. The appearance of
 **MacPorts**, an open source package manager for MacOS, has changed the way we

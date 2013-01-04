@@ -3,6 +3,7 @@ layout: post
 title: "Battle Ship game"
 description: ""
 category: blog
+thumbnail: /files/2012-12-27-battle-ship-game/start.png
 tags: [game, java, netbeans, assignment, RMIT, battleship]
 ---
 {% include JB/setup %}
