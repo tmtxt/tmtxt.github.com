@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Codestagram Instagram for coders"
+title: "Codestagram - Instagram for coders"
 description: ""
 category: 
 thumbnail: /files/2013-01-03-codestagram-instagram-for-coders/codestagram.png
