@@ -7,7 +7,7 @@ tagline: Where the awesomeness is shared!
 
 <div class="hero-unit">
   <h1>Welcome Funky Nerdy blog</h1>
-  <p>A blog for the IT guys</p>
+  <p>A blog by IT guy and for the IT guys</p>
   <p>You feel the use of computer is so boring? You feel that you are left
   behind by the technology?<br />
   What do you want for now?<br />
