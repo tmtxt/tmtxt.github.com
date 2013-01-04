@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Why OpenPhoto will defeat Picasa and Flickr"
+title: "Why OpenPhoto will defeat Picasa, Flickr"
 description: ""
 category: 
 thumbnail: /files/2013-01-04-why-openphoto-will-defeat-picasa-and-flickr/thumbnail.png
