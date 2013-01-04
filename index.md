@@ -39,7 +39,9 @@ tagline: Where the awesomeness is shared!
   {% endfor %}
 </div>
 
-<h1>Lastest Posts</h1>
+<p>&nbsp;</p>
+
+<h1>--&gt;Latest Posts&lt;--</h1>
 {% for post in site.posts limit:15 offset:3 %}
 <hr />
 <div class="row">
