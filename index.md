@@ -66,4 +66,4 @@ tagline: Where the awesomeness is shared!
 
 # Subscribe to News Feed
 
-**I'm a geek** blog news feed: [News Feed](/atom.xml)
+**Funky Nerdy** blog news feed: [News Feed](/atom.xml)
