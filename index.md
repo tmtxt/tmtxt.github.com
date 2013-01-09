@@ -52,8 +52,6 @@ tagline: Where the awesomeness is shared!
 	{% endfor %}  
 </ul>
 
-<p>&nbsp;</p>
-
 #### For a full list, please visit --> [Archive page](/archive.html)
 
 # Subscribe to News Feed
