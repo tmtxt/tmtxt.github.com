@@ -42,23 +42,15 @@ tagline: Where the awesomeness is shared!
 <p>&nbsp;</p>
 
 <h1>--&gt; Latest Posts &lt;--</h1>
-{% for post in site.posts limit:15 offset:3 %}
-<hr />
-<div class="row">
-  <div class="span2">
-    {% if post.thumbnail %}
-	<img src="{{ post.thumbnail }}" align="center" />
-	{% else %}
-	<img src="/assets/themes/tmtxt-responsive/images/no-thumnail.jpg" align="center" />
-	{% endif %}
-  </div>
-  <div class="span10">
-    <p><a href="{{ BASE_PATH }}{{ post.url }}"><h3>{{ post.title }}</h3></a></p>
-	<p>{{ post.content | strip_html | truncatewords: 40 }}
-	</p>
-  </div>
-</div>
-{% endfor %}
+<ul class="posts">  
+	{% for post in site.posts limit:15 offset:3 %}  
+	   <li>  
+		   <span>{{ post.date | date_to_string }}</span> &raquo;  
+		   <a href="{{ BASE_PATH }}{{ post.url }}">  
+		   {{ post.title }}</a>  
+	   </li>  
+	{% endfor %}  
+</ul>
 
 <p>&nbsp;</p>
 
