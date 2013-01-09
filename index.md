@@ -54,6 +54,4 @@ tagline: Where the awesomeness is shared!
 
 #### For a full list, please visit --> [Archive page](/archive.html)
 
-# Subscribe to News Feed
-
-**Funky Nerdy** blog news feed: [News Feed](/atom.xml)
+#### Subscribe to [News Feed](/atom.xml)
