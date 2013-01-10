@@ -16,7 +16,7 @@ Fortunately, there is a solution for it. However, it's a bit annoyed and you
 have to get used to those crazy curly brackets. I really don't like it but I
 still have to use it until I find a better solution
 
-For example the with this liquid code:
+One example with this liquid code:
 
 {% highlight html %}
 {{ "{% for post in site.posts limit:5 "}}%}
