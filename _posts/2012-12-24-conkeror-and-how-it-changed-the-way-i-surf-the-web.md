@@ -6,9 +6,6 @@ category: blog
 tags: [conkeror, emacs, web browser]
 ---
 {% include JB/setup %}
-[img1]: /files/2012-12-24-conkeror-and-how-it-changed-the-way-i-surf-the-web/keyboard-oriented.png
-[img2]: /files/2012-12-24-conkeror-and-how-it-changed-the-way-i-surf-the-web/simplicity.png
-[img3]: /files/2012-12-24-conkeror-and-how-it-changed-the-way-i-surf-the-web/init.png
 
 For those of you who haven't known about Conkeror yet, here is a brief description about it:
 
@@ -21,13 +18,15 @@ The first time I heard about conkeror was in 2010. And now it becomes my daily u
 Yes as I mentioned above in the description, it's a keyboard-oriented browser. This is the most impressing feature of Conkeror. I love conkeror right at the first time I saw my cousin used it. I knew I had found the right browser for me. Most of the time you don't need to move your hand out of the keyboard, or even out the home row area. This can speed up the way we use our computer many times.
 
 One example is in the photo below. This is how conkeror follow a link in the web page.
-![Conkeror Keyboard Navigation][img1]
+<p align="center"><img src="/files/2012-12-24-conkeror-and-how-it-changed-the-way-i-surf-the-web/keyboard-oriented.png" />
+</p>
 
 Of course, there are much more things we can do with conkeror using the keyboard, eg saving images, downloading file, jumping to specific tab, running command, copying a specific block of text, interact with form,...
 
 # Simplicity and Less Resource Consuming
 
-![Conkeror's simplicity][img2]
+<p align="center"><img src="/files/2012-12-24-conkeror-and-how-it-changed-the-way-i-surf-the-web/simplicity.png" />
+</p>
 
 Yes! As you can see in the picture above, it's simple, extremely simple. Simplicity makes it different from other web browser. Despite of the difficulty for beginner, once you get used to it, you will feel extrememely comfortable. There are no button, no address bar, nearly nothing but the web page so we can easily concentrate on the content of the website. Also it is highly appropriate for modern computer with the wide screen, maximize the web page display area. After a long time get used to the animated effects, I come back to the simplest thing.
 
@@ -56,5 +55,3 @@ My conkeror on github: <https://github.com/tommytxtruong/conkerorrc>
 
 I also posted this article on the website of RMIT Vietnam IT Club  
 Link: <http://rmitc.org/2012/12/conkeror-and-how-it-changed-the-way-i-surf-the-web/>  
-
-Coming up next: **[Conkeror - Getting Started](/2012/12/24/conkeror---getting-started---part-1)**

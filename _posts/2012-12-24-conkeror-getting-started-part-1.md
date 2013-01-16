@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Conkeror - Getting started - Part 1"
+title: "Conkeror - Getting Started - Part 1"
 description: ""
 category: blog
 tags: [conkeror, tutorial, emacs, web browser]
