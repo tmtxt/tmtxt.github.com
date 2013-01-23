@@ -10,9 +10,9 @@ tags: [jekyll boostrap, blog, geek]
 
 # Why we need Jekyll?
 
-Many of you should have known or have used some popular blogging platform like
+Many of you should have known or have used some popular blogging platforms like
 Wordpress or Blogspot. They are all great platforms that have been developed for
-such a long time and have a big community. However, they also have some
+a long time and have a big community. However, they also have some
 disadvantages.
 
 * Have you ever found that Wordpress or Blogspot too complex and too difficult to
@@ -37,24 +37,24 @@ better solution.
 So what Jekyll do is just to parse your content, mainly written in markdown
 text, to a static website. It's also the engine used behind the Github pages.
 
-# Merits of Jekyll
+# Advantages of Jekyll
 
 ## It's static and It's fast
 
-As I mentioned before, what Jekyll do is to parse your markdown content to
-static html pages. Since it's static so it's really fast. Unlike the other
-dynamic platforms, everytime you load the pages, Jekyll server do nothing but
-return you a static html page.  
+As I mentioned before, what Jekyll does is to parse your markdown content to
+static html pages. Since it's static, it's really fast. Unlike the other
+dynamic platforms, everytime you load the pages, Jekyll server does nothing but
+returns you a static html page.  
 
-It's static but it doesn't mean that it doesn't not have the features like
-Wordpress or Blogspot. Jekyll has all blogging features including posts, comment
-system, tagging, archive,...
+It's static but it doesn't mean that it does not have the features like
+Wordpress or Blogspot. Jekyll has all those blogging features including posts,
+commenting system, tagging, archive,...
 
 ## Deployment
 
-Since Jekyll is the engine used behind Github, you can have a blog deployed on
-Github at no cost. You can even buy your own domain and follow the instruction
-on Github to setup Github to host your Jekyll blog with your own domain.
+Since Jekyll is the engine used behind Github, you can have your blog deployed on
+Github with no cost. You can even buy your own domain and follow the instruction
+on Github to setup Github to host your Jekyll blog with that domain.
 Moreover, you can set up your own Jekyll server on your own computer or on your
 VPS,... 
 
@@ -63,13 +63,14 @@ VPS,...
 Back to the problem I have discussed above, I hate WYSIWYG editors cause they
 generate too much unused markup code and even sometimes can break my content
 display. To fix it, I have to manually edit the markup code, which is extremely
-painful when I have a long post. It make me feel difficult to concentrate on my
+painful when I have a long post. It makes me feel difficult to concentrate on my
 main content.  
 
-Jekyll is different. It let you use markdown in your post and then generate the
+Jekyll is different. It lets you use markdown in your posts and then generate the
 html pages from the markdown code. Markdown concentrates on the content not the
-display like markup. It can be display even in plain text and the reader still
-can understand and easy focus on what the content is.
+display like markup. It can be displayed even in plain text and the readers still
+can understand and easy focus on what the content is. Moreover, it's very easy
+for you to get used to.
 
 ## Code Highlighting
 
@@ -95,15 +96,25 @@ of this.
 Jekyll uses no database. The website is just a collection of text files so that
 it's extremely easy to backup and manage. You don't have to worry about backing
 up and restoring the site code, theme, posts, database,... if you have done
-anything wrong. Since they are all text files so you can use git to manage all
+anything wrong. Since they are all text files so you can use **git** to manage all
 the code, themes as well as posts and pages. It also help you publish websites
-from terminal by typing the push command. If you use Github as the website
+from terminal by typing the **push** command. If you use Github as the website
 host, it's even more convinence because Github itself uses git.  
 
-If you use powerful text editor such as emacs, you can find many packages that
-help you in managing code version with git in a very convenience and elegant way.
+If you use a powerful text editor, such as emacs, you can find many packages that
+help you in managing code version with git in a very convenience and elegant way
+(**magit** in my case).
 
 ## Extensible
 
 Jekyll has a growing community. You can find many plugins that help you extend
 your Jekyll blog ability like emoticon, video embedding,...
+
+# Reference
+
+Jekyll Bootstrap Homepage: <http://jekyllbootstrap.com/>  
+Ruhoh (another static blog generator): <http://ruhoh.com/>  
+Octopress (another framework based on Jekyll): <http://octopress.org/>  
+Markdown in Jekyll:
+<https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#wiki-code>  
+Sites built with Jekyll: <https://github.com/mojombo/jekyll/wiki/Sites>
