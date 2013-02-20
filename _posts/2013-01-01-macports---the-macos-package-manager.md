@@ -84,7 +84,7 @@ $ sudo port upgrade outdated
 To list all installed packages, type:
 
 {% highlight sh %}
-$ sudo list installed
+$ sudo port list installed
 {% endhighlight %}
 
 So those are some basic commands for MacPorts, actually, the most inportant is
