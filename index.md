@@ -17,33 +17,33 @@ tagline: Where the awesomeness is shared!
   <p><a class="btn btn-primary btn-large" href="/about.html">About me</a></p>
 </div>
 
-<div class="row">
-  {% for post in site.posts limit:3 %}
-  <div class="span4">
-    <a href="{{ BASE_PATH }}{{ post.url }}"><h2>{{ post.title }}</h2></a>
-	<hr />
-	<p>{% if post.thumbnail %}
-	<img src="{{ post.thumbnail }}" style="height: 280px" align="center" />
-	{% else %}
-	<img src="/assets/themes/tmtxt-responsive/images/no-thumnail.jpg"
-  style="height: 280px" align="center" />
-	{% endif %}</p>
-	<p>&nbsp;</p>
-	<p>
-	{{ post.content | strip_html | truncatewords:20 }}
-	</p>
-	<p>
-	<a class="btn" href="{{ BASE_PATH }}{{ post.url }}">Read more...</a>
-	</p>
-  </div>
-  {% endfor %}
-</div>
+<!-- <div class="row"> -->
+<!--   {% for post in site.posts limit:3 %} -->
+<!--   <div class="span4"> -->
+<!--     <a href="{{ BASE_PATH }}{{ post.url }}"><h2>{{ post.title }}</h2></a> -->
+<!-- 	<hr /> -->
+<!-- 	<p>{% if post.thumbnail %} -->
+<!-- 	<img src="{{ post.thumbnail }}" style="height: 280px" align="center" /> -->
+<!-- 	{% else %} -->
+<!-- 	<img src="/assets/themes/tmtxt-responsive/images/no-thumnail.jpg" -->
+<!--   style="height: 280px" align="center" /> -->
+<!-- 	{% endif %}</p> -->
+<!-- 	<p>&nbsp;</p> -->
+<!-- 	<p> -->
+<!-- 	{{ post.content | strip_html | truncatewords:20 }} -->
+<!-- 	</p> -->
+<!-- 	<p> -->
+<!-- 	<a class="btn" href="{{ BASE_PATH }}{{ post.url }}">Read more...</a> -->
+<!-- 	</p> -->
+<!--   </div> -->
+<!--   {% endfor %} -->
+<!-- </div> -->
 
 <p>&nbsp;</p>
 
 <h1>--&gt; Latest Posts &lt;--</h1>
 <ul class="posts">  
-	{% for post in site.posts limit:15 offset:3 %}  
+	{% for post in site.posts limit:15%}  
 	   <li>  
 		   <span>{{ post.date | date_to_string }}</span> &raquo;  
 		   <a href="{{ BASE_PATH }}{{ post.url }}">  
