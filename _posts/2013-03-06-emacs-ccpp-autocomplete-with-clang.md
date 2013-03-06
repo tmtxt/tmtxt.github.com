@@ -29,10 +29,11 @@ If you have all those requirements, now you can start installing Clang
 autocomplete. In fact, it's a source for Autocomplete plugin, that's why we need
 Autocomplete installed.
 
-You need to clone the auto-complete-clang source from github. I advise cloning
-it into your .emacs.d directory. After that, add this to your .emacs or init.el
-(if you use the modern style of .emacs) to load it to emacs' load-path and
-activate auto-complete-clang.
+You need to clone the
+[auto-complete-clang source](https://github.com/brianjcj/auto-complete-clang)
+from github. I advise cloning it into your .emacs.d directory. After that, add
+this to your .emacs or init.el (if you use the modern style of .emacs) to load
+it to emacs' load-path and activate auto-complete-clang.
 
 {% highlight cl %}
 (add-to-list 'load-path "~/.emacs.d/auto-complete-clang/")
