@@ -25,15 +25,22 @@ experiments. You can also install it using Emacs Package Manager. To see how to
 get Autocomplete and Yasnippet work together, see this article
 [Config Yasnippet and Autocomplete on Emacs](/2013/01/06/config-yasnippet-and-autocomplete-on-emacs/).
 
-If you have all those requirements, now you can start installing Clang
-autocomplete. In fact, it's a source for Autocomplete plugin, that's why we need
-Autocomplete installed.
+Before installing this package, you should also check whether your system has
+installed "clang" or not via command "clang --version" in terminal. If you get
+nothing from terminal, which means you haven't installed "clang" yet. If you are
+on linux, you can try those 2 commands "sudo apt-get update", "sudo apt-get
+install clang" and check it again. Until clang works fine, you can continue to
+following instructions.
+
+If your computer has satisfied those requirements, now you can start installing
+Clang autocomplete. In fact, it's a source for Autocomplete plugin, that's why
+we need Autocomplete installed.
 
 You need to clone the
 [auto-complete-clang source](https://github.com/brianjcj/auto-complete-clang)
-from github. I advise cloning it into your .emacs.d directory. After that, add
-this to your .emacs or init.el (if you use the modern style of .emacs) to load
-it to emacs' load-path and activate auto-complete-clang.
+from github. I advise you to clone it into your .emacs.d directory. After that,
+add this to your .emacs or init.el (if you use the modern style of .emacs) to
+load it to emacs' load-path and activate auto-complete-clang.
 
 {% highlight cl %}
 (add-to-list 'load-path "~/.emacs.d/auto-complete-clang/")
