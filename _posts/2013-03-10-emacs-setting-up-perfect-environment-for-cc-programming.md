@@ -69,8 +69,8 @@ to check whether it is in the load-path).
 
 {% highlight cl %}
 (require 'auto-complete-clang)
-(global-set-key (kbd "C-C") 'ac-complete-clang)
-;; replace C-C with a key binding that you want
+(define-key c++-mode-map (kbd "C-S-<return>") 'ac-complete-clang)
+;; replace C-S-<return> with a key binding that you want
 {% endhighlight %}
 
 The last package that I'd like to recomend you is the **member-function**
