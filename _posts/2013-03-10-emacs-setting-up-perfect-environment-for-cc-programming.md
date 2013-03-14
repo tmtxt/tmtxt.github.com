@@ -56,8 +56,8 @@ installation and configuration guide in that post above
 # Auto Completion and Code Snippets
 
 Emacs cannot compete with the other IDE if it doesn't have those auto completion
-and snippet inserting function. They improve the programmers' effeciency many
-times. Read this article
+and snippet inserting function. They improve the programmers' effeciency very
+much. Read this article
 [Config Yasnippet and Autocomplete on Emacs](/2013/01/06/config-yasnippet-and-autocomplete-on-emacs/)
 to know how to config autocomplete and yasnippet so that they can work together.
 
