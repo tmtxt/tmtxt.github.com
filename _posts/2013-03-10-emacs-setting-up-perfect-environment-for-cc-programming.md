@@ -45,7 +45,7 @@ to your .emacs
 (setq autopair-autowrap t)
 {% endhighlight %}
 
-# ECB - Emacs Code Browser - Transform Emacs to a real IDE
+# ECB - Transform Emacs to a real IDE
 
 Have a look at this [post](/2013/03/10/ecb---emacs-code-browser/ ) and the
 screenshot below to see how powerful and useful ECB is. You can also find the
