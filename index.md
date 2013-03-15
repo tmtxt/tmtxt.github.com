@@ -14,15 +14,13 @@ tagline: Where the awesomeness is shared!
 <p>&nbsp;</p>
 
 <h1>--&gt; Latest Posts &lt;--</h1>
-<ul class="posts">  
-	{% for post in site.posts limit:15%}  
-	   <li>  
-		   <span>{{ post.date | date_to_string }}</span> &raquo;  
-		   <a href="{{ BASE_PATH }}{{ post.url }}">  
-		   {{ post.title }}</a>  
-	   </li>  
-	{% endfor %}  
-</ul>
+<hr/>
+{% for post in site.posts limit:5%}
+<h1><a href="{{ BASE_PATH }}{{ post.url }}" class="btn btn-danger btn-large">{{ post.title }}</a></h1>
+&raquo; <span><u>{{ post.date | date_to_string }}</u></span>
+&raquo; {{ post.content }}
+<hr/>
+{% endfor %}
 
 #### For a full list, please visit --> [Archive page](/archive.html)
 
