@@ -1,0 +1,10 @@
+<script language="Javascript" type="text/javascript">
+  // the standard URL should be used
+  var normalized_location;
+  normalized_location = window.location.origin + window.location.pathname;
+
+  // if the current URL is not the standard URL, redirect it to standard URL
+  if(window.location.toString() != normalized_location){
+    window.location = normalized_location;
+  }
+</script>
