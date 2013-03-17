@@ -73,6 +73,16 @@ Show source files in directories buffer
 (setq ecb-show-sources-in-directories-buffer 'always)
 {% endhighlight %}
 
+By defaul, ECB hide the compilation window. Everytime you compile, it display
+the compilation message to the same window as the buffer that I'm editing.
+This is really annoying because I want to see all the messages so that I can fix
+the error in my code easily. To keep a persistent compile window in ECB, add
+this to your .emacs
+
+{% highlight cl %}
+(setq ecb-compile-window-height 12)
+{% endhighlight %}
+
 Some key bindings for quick interation with ECB, replace them with the key
 bindings that you want.
 
@@ -84,10 +94,11 @@ bindings that you want.
 (global-set-key (kbd "C-;") 'ecb-show-ecb-windows)
 (global-set-key (kbd "C-'") 'ecb-hide-ecb-windows)
 ;;; quick navigation between ecb windows
-(global-set-key (kbd "C-!") 'ecb-goto-window-edit1)
-(global-set-key (kbd "C-@") 'ecb-goto-window-directories)
-(global-set-key (kbd "C-#") 'ecb-goto-window-sources)
-(global-set-key (kbd "C-$") 'ecb-goto-window-methods)
+(global-set-key (kbd "C-)") 'ecb-goto-window-edit1)
+(global-set-key (kbd "C-!") 'ecb-goto-window-directories)
+(global-set-key (kbd "C-@") 'ecb-goto-window-sources)
+(global-set-key (kbd "C-#") 'ecb-goto-window-methods)
+(global-set-key (kbd "C-$") 'ecb-goto-window-compilation)
 {% endhighlight %}
 
 # Some of My Functions
