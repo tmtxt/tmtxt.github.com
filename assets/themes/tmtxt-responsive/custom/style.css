@@ -19,3 +19,8 @@ html, body {
 #unicode-item {
 	font-family: Times New Roman;
 }
+
+.index-post-title {
+	color:red;
+	font-weight:bold;
+}

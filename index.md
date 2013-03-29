@@ -16,7 +16,7 @@ tagline: Where the awesomeness is shared!
 <h1>--&gt; Latest Posts &lt;--</h1>
 <hr/>
 {% for post in site.posts limit:5%}
-<h1><a href="{{ BASE_PATH }}{{ post.url }}" class="btn btn-danger btn-large">{{ post.title }}</a></h1>
+<h1><a href="{{ BASE_PATH }}{{ post.url }}" class="index-post-title">{{ post.title }}</a></h1>
 &raquo; <span><u>{{ post.date | date_to_string }}</u></span>
 &raquo; {{ post.content }}
 <hr/>
