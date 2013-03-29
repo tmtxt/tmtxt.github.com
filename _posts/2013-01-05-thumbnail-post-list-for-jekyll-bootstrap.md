@@ -2,7 +2,7 @@
 layout: post
 title: "Thumbnail Post List for Jekyll Bootstrap"
 description: ""
-category: 
+category: Jekyll
 thumbnail: /files/2013-01-05-thumbnail-post-list-for-jekyll-bootstrap/thumbnail.png
 tags: [tutorial, thumbnail, post, jekyll, bootstrap]
 ---

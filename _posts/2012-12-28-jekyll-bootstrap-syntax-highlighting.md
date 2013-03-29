@@ -2,7 +2,7 @@
 layout: post
 title: "Jekyll Bootstrap - Syntax highlighting"
 description: ""
-category: 
+category: Jekyll
 thumbnail: /files/2012-12-28-jekyll-bootstrap-syntax-highlighting/thumbnail.png
 tags: [jekyll, syntax-highlighting, tutorial]
 ---

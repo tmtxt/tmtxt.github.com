@@ -2,7 +2,7 @@
 layout: post
 title: "Password Management with Emacs"
 description: ""
-category: 
+category: Emacs
 thumbnail: 
 tags: [tutorial, emacs, password management]
 ---

@@ -2,14 +2,14 @@
 layout: post
 title: "Conkeror and How it changed the way I surf the web"
 description: ""
-category: blog
+category: Conkeror Web Browser
 tags: [conkeror, emacs, web browser]
 ---
 {% include JB/setup %}
 
 For those of you who haven't known about Conkeror yet, here is a brief description about it:
 
-> Conkeror is a keyboard-oriented, highly-customizable, highly-extensible web browser based on Mozilla XULRunner, written mainly in JavaScript, and inspired by exceptional software such as Emacs and vi. Conkeror features a sophisticated keyboard system, allowing users to run commands and interact with content in powerful and novel ways.  It is self-documenting, featuring a powerful interactive help system.
+	Conkeror is a keyboard-oriented, highly-customizable, highly-extensible web browser based on Mozilla XULRunner, written mainly in JavaScript, and inspired by exceptional software such as Emacs and vi. Conkeror features a sophisticated keyboard system, allowing users to run commands and interact with content in powerful and novel ways.  It is self-documenting, featuring a powerful interactive help system.
 
 The first time I heard about conkeror was in 2010. And now it becomes my daily used application. Though I still use many other web browsers (Chrome, Firefox, Safari and Opera), Conkeror is my main web browser and usually the first app I open when I start my computer. Here are some key features that make me really impressed in Conkeror.
 
@@ -38,7 +38,7 @@ Like any other open source software, conkeror users can be the developers, too. 
 
 We can easily customize all the key bindings based on our favor. And like many other unix applications, it also has the rc file so just put everything you need in that rc file and customize conkeror as you like. You can look up on the conkeror site and the wiki and then add any features that the community contribute to or you can implement some new features by yourself.
 
-{% highlight javascript %}
+{% highlight js %}
 // next and previous buffer
 define_key(default_global_keymap, "A-z", "buffer-previous"); //one hand user
 define_key(default_global_keymap, "C-j", "buffer-previous"); //two hands user

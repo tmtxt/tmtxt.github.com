@@ -2,7 +2,7 @@
 layout: post
 title: "Config Yasnippet and Autocomplete on Emacs"
 description: ""
-category: 
+category: Emacs
 thumbnail: /files/2013-01-06-config-yasnippet-and-autocomplete-on-emacs/thumbnail.png
 tags: [yasnippet, autocomplete, emacs, tutorial, config]
 ---

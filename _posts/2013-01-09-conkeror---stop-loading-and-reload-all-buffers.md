@@ -2,7 +2,7 @@
 layout: post
 title: "Conkeror - Stop Loading and Reload all buffers"
 description: ""
-category: 
+category: Conkeror Web Browser
 thumbnail: /files/2012-12-24-conkeror-getting-started-part-1/conkeror-main.png
 tags: [tutorial, conkeror, buffers]
 ---

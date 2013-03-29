@@ -2,7 +2,7 @@
 layout: post
 title: "Jekyll Bootstrap - Blogging platform for geeks"
 description: ""
-category: 
+category: Jekyll
 thumbnail: /files/2012-12-27-jekyll-create-a-list-of-lastest-posts/thumbnail.png
 tags: [jekyll boostrap, blog, geek]
 ---

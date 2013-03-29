@@ -2,7 +2,7 @@
 layout: post
 title: "Backup Emacs Packages using Package Manager"
 description: ""
-category: 
+category: Emacs
 thumbnail: /files/2013-01-06-config-yasnippet-and-autocomplete-on-emacs/thumbnail.png
 tags: [emacs, package manager, tutorial]
 ---

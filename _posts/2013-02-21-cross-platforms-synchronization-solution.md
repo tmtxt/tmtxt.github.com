@@ -2,7 +2,7 @@
 layout: post
 title: "Cross Platforms Synchronization Solution"
 description: ""
-category: 
+category: Misc
 thumbnail: 
 tags: [synchronization, sync, cross platforms]
 ---

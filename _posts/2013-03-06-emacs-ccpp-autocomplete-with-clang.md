@@ -2,7 +2,7 @@
 layout: post
 title: "Emacs - C/C++ Autocomplete with Clang"
 description: ""
-category: 
+category: Emacs
 thumbnail: 
 tags: [clang, emacs, tutorial, autocomplete]
 ---

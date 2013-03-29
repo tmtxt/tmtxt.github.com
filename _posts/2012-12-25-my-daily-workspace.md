@@ -2,7 +2,7 @@
 layout: post
 title: "My daily workspace"
 description: ""
-category: blog
+category: Misc
 thumbnail: /files/2012-12-25-my-daily-workspace/thumbnail.png
 tags: [image, galerry, workspace]
 ---

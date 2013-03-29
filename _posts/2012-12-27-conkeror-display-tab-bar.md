@@ -2,7 +2,7 @@
 layout: post
 title: "Conkeror - Display Tab bar"
 description: ""
-category: 
+category: Conkeror Web Browser
 thumbnail: /files/2012-12-27-conkeror-display-tab-bar/tab.png
 tags: []
 ---

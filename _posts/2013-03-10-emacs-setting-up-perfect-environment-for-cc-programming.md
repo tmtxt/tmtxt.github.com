@@ -2,7 +2,7 @@
 layout: post
 title: "Emacs - Setting up perfect environment for C/C++ Programming"
 description: ""
-category: 
+category: Emacs
 thumbnail: 
 tags: [tutorial, emacs, programming, setup]
 ---

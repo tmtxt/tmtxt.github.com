@@ -2,7 +2,7 @@
 layout: post
 title: "Conkeror - Getting Started - Part 2"
 description: ""
-category: blog
+category: Conkeror Web Browser
 tags: [conkeror, tutorial, emacs, web browser]
 ---
 {% include JB/setup %}

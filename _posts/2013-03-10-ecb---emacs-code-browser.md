@@ -2,7 +2,7 @@
 layout: post
 title: "Install and Config ECB on Emacs"
 description: ""
-category: 
+category: Emacs
 thumbnail: 
 tags: [ecb, emacs, tutorial]
 ---

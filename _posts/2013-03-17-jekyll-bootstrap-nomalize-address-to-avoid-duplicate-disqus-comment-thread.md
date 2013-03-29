@@ -2,7 +2,7 @@
 layout: post
 title: "Jekyll Bootstrap - Nomalize address to avoid duplicate Disqus comment thread"
 description: ""
-category: 
+category: Jekyll
 thumbnail: 
 tags: [tutorial, jekyll, jekyll boostrap, disqus, comment, normalize address]
 ---
