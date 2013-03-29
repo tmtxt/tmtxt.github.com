@@ -18,7 +18,7 @@ group: navigation
 **Style**: Keyboard-Oriented, Study by myself,...
 
 # Contact me
-**Linkedin**: <http://www.linkedin.com/profile/view?id=235954733>
+**Linkedin**: <http://www.linkedin.com/profile/view?id=235954733>  
 **Email**: <tommytxtruong@gmail.com>  
 **Facebook**: <http://facebook.com/mr.truong.tx>  
 **Github**: <https://github.com/tommytxtruong>  
