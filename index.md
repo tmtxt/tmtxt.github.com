@@ -13,13 +13,16 @@ tagline: Where the awesomeness is shared!
 
 <p>&nbsp;</p>
 
-<h1>--&gt; Latest Posts &lt;--</h1>
+# Posts List
+
 <hr/>
-{% for post in site.posts limit:5%}
-<h1><a href="{{ BASE_PATH }}{{ post.url }}" class="index-post-title">{{ post.title }}</a></h1>
-&raquo; <span><u>{{ post.date | date_to_string }}</u></span>
-&raquo; {{ post.content }}
-<hr/>
+
+{% for category in site.categories %} 
+  <h2 id="{{ category[0] }}-ref">{{ category[0] | join: "/" }}</h2>
+  <ul>
+    {% assign pages_list = category[1] %}  
+    {% include JB/pages_list %}
+  </ul>
 {% endfor %}
 
 #### For a full list, please visit --> [Archive page](/archive.html)
