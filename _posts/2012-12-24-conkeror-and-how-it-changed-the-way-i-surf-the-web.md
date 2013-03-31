@@ -9,7 +9,12 @@ tags: [conkeror, emacs, web browser]
 
 For those of you who haven't known about Conkeror yet, here is a brief description about it:
 
-	Conkeror is a keyboard-oriented, highly-customizable, highly-extensible web browser based on Mozilla XULRunner, written mainly in JavaScript, and inspired by exceptional software such as Emacs and vi. Conkeror features a sophisticated keyboard system, allowing users to run commands and interact with content in powerful and novel ways.  It is self-documenting, featuring a powerful interactive help system.
+	Conkeror is a keyboard-oriented, highly-customizable, highly-extensible web
+	browser based on Mozilla XULRunner, written mainly in JavaScript, and
+	inspired by exceptional software such as Emacs and vi. Conkeror features a
+	sophisticated keyboard system, allowing users to run commands and interact
+	with content in powerful and novel ways.  It is self-documenting, featuring
+	a powerful interactive help system.
 
 The first time I heard about conkeror was in 2010. And now it becomes my daily used application. Though I still use many other web browsers (Chrome, Firefox, Safari and Opera), Conkeror is my main web browser and usually the first app I open when I start my computer. Here are some key features that make me really impressed in Conkeror.
 
@@ -18,15 +23,13 @@ The first time I heard about conkeror was in 2010. And now it becomes my daily u
 Yes as I mentioned above in the description, it's a keyboard-oriented browser. This is the most impressing feature of Conkeror. I love conkeror right at the first time I saw my cousin used it. I knew I had found the right browser for me. Most of the time you don't need to move your hand out of the keyboard, or even out the home row area. This can speed up the way we use our computer many times.
 
 One example is in the photo below. This is how conkeror follow a link in the web page.
-<p align="center"><img src="/files/2012-12-24-conkeror-and-how-it-changed-the-way-i-surf-the-web/keyboard-oriented.png" />
-</p>
+![Keyboard-Oriented](/files/2012-12-24-conkeror-and-how-it-changed-the-way-i-surf-the-web/keyboard-oriented.png)
 
 Of course, there are much more things we can do with conkeror using the keyboard, eg saving images, downloading file, jumping to specific tab, running command, copying a specific block of text, interact with form,...
 
 # Simplicity and Less Resource Consuming
 
-<p align="center"><img src="/files/2012-12-24-conkeror-and-how-it-changed-the-way-i-surf-the-web/simplicity.png" />
-</p>
+![Simplicity](/files/2012-12-24-conkeror-and-how-it-changed-the-way-i-surf-the-web/simplicity.png )
 
 Yes! As you can see in the picture above, it's simple, extremely simple. Simplicity makes it different from other web browser. Despite of the difficulty for beginner, once you get used to it, you will feel extrememely comfortable. There are no button, no address bar, nearly nothing but the web page so we can easily concentrate on the content of the website. Also it is highly appropriate for modern computer with the wide screen, maximize the web page display area. After a long time get used to the animated effects, I come back to the simplest thing.
 
@@ -49,9 +52,9 @@ One example the rc file in rebinding keys for conkeror.
 
 **There are still many other awesome features in conkeror.**
 
-Conkeror Homepage: <http://conkeror.org/>  
-My conkeror on github: <https://github.com/tommytxtruong/conkerorrc>  
-*Follow me and we can exchange the experience.*  
+Conkeror Homepage: <http://conkeror.org/>
+My conkeror on github: <https://github.com/tommytxtruong/conkerorrc>
+*Follow me and we can exchange the experience.*
 
-I also posted this article on the website of RMIT Vietnam IT Club  
-Link: <http://rmitc.org/2012/12/conkeror-and-how-it-changed-the-way-i-surf-the-web/>  
+I also posted this article on the website of RMIT Vietnam IT Club
+Link: <http://rmitc.org/2012/12/conkeror-and-how-it-changed-the-way-i-surf-the-web/>
