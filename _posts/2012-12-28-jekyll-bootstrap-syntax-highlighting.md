@@ -132,7 +132,7 @@ $ pygmentize -S default -f html > pygments.css
 
 It will generate a file named pygments.css in your website root directory.
 
-### 2.4.2 Automatic Installation and Generation
+### 2.4.2 Lazy Installation and Generation
 
 There is another easier way to get Pygments work with your blog. Just download
 this file
