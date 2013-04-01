@@ -8,7 +8,10 @@ tags: [conkeror, tutorial, close, buffer, web-browser]
 ---
 {% include JB/setup %}
 
-Anyone of you who have been using Conkeror all know that Conkeror does not have **Reopen last Closed Tab** function. How painful it is compare to the other browsers! But we can do it by ourself by adding out own code into the .conkerorrc file.
+Anyone of you who have been using Conkeror all know that Conkeror does not have
+**Reopen last Closed Tab** function. How painful it is compare to the other
+browsers! But we can do it by ourself by adding out own code into the
+.conkerorrc file.
 
 First, we have to create an Array to hold the closed tabs.
 
@@ -16,7 +19,9 @@ First, we have to create an Array to hold the closed tabs.
 var my_closed_buffers = new Array();
 {% endhighlight %}
 
-Next, rewrite the built in close buffer function to make Conkeror save the current tab URL before closing it. In the code below I save only maximum 10 closed buffers. If you want you can set it more.
+Next, rewrite the built in close buffer function to make Conkeror save the
+current tab URL before closing it. In the code below I save only maximum 10
+closed buffers. If you want you can set it more.
 
 {% highlight javascript %}
 //save the URL of the current buffer before closing it
@@ -32,7 +37,8 @@ interactive("my-close-and-save-current-buffer",
 	});
 {% endhighlight %}
 
-Rebind the key so that when press **q**, Conkeror call our new function instead of its built in one.
+Rebind the key so that when press **q**, Conkeror call our new function instead
+of its built in one.
 
 {% highlight javascript %}
 undefine_key(default_global_keymap, "q");
@@ -56,7 +62,8 @@ interactive("my-open-closed-buffer",
   });
 {% endhighlight %}
 
-Finally, bind it to whatever key combination you want to reopen the last closed buffer.
+Finally, bind it to whatever key combination you want to reopen the last closed
+buffer.
 
 {% highlight javascript %}
 define_key(default_global_keymap, "A-W", "my-open-closed-buffer")

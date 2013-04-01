@@ -8,11 +8,16 @@ tags: [jekyll, syntax-highlighting, tutorial]
 ---
 {% include JB/setup %}
 
-Jekyll is a blog for hacker so of course it must have syntax highlighting. There are several ways to activate syntax highlighting in Jekyll. I'll show you 2 popular ways that many people use.
+Jekyll is a blog for hacker so of course it must have syntax highlighting. There
+are several ways to activate syntax highlighting in Jekyll. I'll show you 2
+popular ways that many people use.
 
 # 1. Highlight.js
 
-This is a very easy way to have syntax highlighting in jekyll because it works automatically. That means you don't have to do anything. Once you have include **highlight.js**, it will auto find code blocks, detect language and highlight them for you.
+This is a very easy way to have syntax highlighting in jekyll because it works
+automatically. That means you don't have to do anything. Once you have include
+**highlight.js**, it will auto find code blocks, detect language and highlight
+them for you.
 
 ### Advantages:
 
@@ -31,7 +36,10 @@ This is a very easy way to have syntax highlighting in jekyll because it works a
 
 ### Installation
 
-There are to ways to use **Highlight.js**. First is to download the package, extract it into your website directory and include this in your template file (usually /_includes/themes/theme-name/default.html). Remember to edit link to point to the right position.
+There are to ways to use **Highlight.js**. First is to download the package,
+extract it into your website directory and include this in your template file
+(usually /_includes/themes/theme-name/default.html). Remember to edit link to
+point to the right position.
 
 {% highlight html %}
 <link rel="stylesheet" href="styles/default.css">
@@ -39,7 +47,10 @@ There are to ways to use **Highlight.js**. First is to download the package, ext
 <script>hljs.initHighlightingOnLoad();</script>
 {% endhighlight %}
 
-The second method is much faster and easier. **Highlight.js** is also hosted at Yandex so you even don't need to download and install it. Just include this in your template file (usually /_includes/themes/theme-name/default.html) and you're done ;)
+The second method is much faster and easier. **Highlight.js** is also hosted at
+Yandex so you even don't need to download and install it. Just include this in
+your template file (usually /_includes/themes/theme-name/default.html) and
+you're done ;)
 
 {% highlight html %}
 <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css">
@@ -49,16 +60,20 @@ The second method is much faster and easier. **Highlight.js** is also hosted at 
 
 ### Usage
 
-Just indent your code blocks by one tab or at least 4 spaces. The rest is automatically done for you.
+Just indent your code blocks by one tab or at least 4 spaces. The rest is
+automatically done for you.
 
 # 2. Pygments (recommended)
 
-Jekyll has built-in support for syntax-highlighting via Pygments. If you want to use it, make sure you run jekyll with Pygments support. I'll show how later.
+Jekyll has built-in support for syntax-highlighting via Pygments. If you want to
+use it, make sure you run jekyll with Pygments support. I'll show how later.
 
 ### Advantages:
 
-* Beautiful syntax and code highlighting with support for more then 100 languages
-* Don't have to worry about the code blocks's format. Just copy and paste from the source code.
+* Beautiful syntax and code highlighting with support for more then 100
+  languages
+* Don't have to worry about the code blocks's format. Just copy and paste from
+  the source code.
 
 ### Disadvantages:
 
@@ -76,21 +91,32 @@ Jekyll has built-in support for syntax-highlighting via Pygments. If you want to
 #### Install pygments on local computer
 
 * On Ubuntu, just one command
+
 {% highlight sh %}
 $ sudo apt-get install python-pygments
 {% endhighlight %}
-* On Mac OS  
+
+* On Mac OS
+
 Check the python version
+
 {% highlight sh %}
 $ python --version  
 Python 2.7.2
 {% endhighlight %}
-Download the Setuptools package [here](http://pypi.python.org/pypi/setuptools#files). Select the package corresponding to your python version.  
+
+Download the Setuptools package
+[here](http://pypi.python.org/pypi/setuptools#files). Select the package
+corresponding to your python version.  
+
 Next, cd to the directory you've just donwloaded it and run this command
+
 {% highlight sh %}
 $ sudo sh setuptools-0.6c11-py2.6.egg
 {% endhighlight %}
+
 Install pygments
+
 {% highlight sh %}
 $ sudo easy_install Pygments
 {% endhighlight %}
@@ -107,11 +133,14 @@ In the config.yaml file inside the root directory of your jekyll website, set py
 $ cd path/to/jekyll/project/folder
 $ pygmentize -S default -f html > pygments.css
 {% endhighlight %}
+
 It will generate a file named pygments.css in your website root directory.
 
 #### Include pygments.css
 
-The last step is to include the css file in your template file (usually /_includes/themes/theme-name/default.html). Put this code in the head area of you template
+The last step is to include the css file in your template file (usually
+/_includes/themes/theme-name/default.html). Put this code in the head area of
+you template
 
 {% highlight html %}
 <link rel="stylesheet" href="/pygments.css">
@@ -123,4 +152,6 @@ The last step is to include the css file in your template file (usually /_includ
 	   your code goes here  
 	{{ "{% endhighlight "}}%}
 
-Replace language with the language name (ruby, C, javascript,...).
+Replace language with the one of the available lexers that you want. List of all
+lexers can be found [here](http://pygments.org/docs/lexers/).
+

@@ -8,11 +8,15 @@ tags: [jekyll, search, tutorial, google]
 ---
 {% include JB/setup %}
 
-Jekyll is great! However, it lacks one important thing compare to the other blog systems. It's the search function. I've sucessfully implemented a simple Google search box in my jekyll blog. Below are the steps.
+Jekyll is great! However, it lacks one important thing compare to the other blog
+systems. It's the search function. I've sucessfully implemented a simple Google
+search box in my jekyll blog. Below are the steps.
 
 # Implement a Search box
 
-First, create a file named **my_google_search.html** in the <span><b>_includes</b></span> folder in your jekyll website directory. Add this code to the newly created html file
+First, create a file named **my_google_search.html** in the
+<span><b>_includes</b></span> folder in your jekyll website directory. Add this
+code to the newly created html file
 
 {% highlight html %}
 <script language="Javascript" type="text/javascript">
@@ -27,7 +31,8 @@ First, create a file named **my_google_search.html** in the <span><b>_includes</
 
 Replace **http://yoursite.com** with the URL of your site.
 
-Next, open up your template file (usually /_includes/themes/theme-name/default.html), add this line in the head area.
+Next, open up your template file (usually
+/_includes/themes/theme-name/default.html), add this line in the head area.
 
 {% highlight html %}
 <!-- my custom google search -->
@@ -47,4 +52,6 @@ Ok, now you're done ;)
 
 # More
 
-Actually this is a very simple Google search box that can be applied for any site not just Jekyll. Simply create a form in your page and include the script in the js file and Google will do the rest for you.
+Actually this is a very simple Google search box that can be applied for any
+site not just Jekyll. Simply create a form in your page and include the script
+in the js file and Google will do the rest for you.
