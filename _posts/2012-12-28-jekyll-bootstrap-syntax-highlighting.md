@@ -19,22 +19,22 @@ automatically. That means you don't have to do anything. Once you have include
 **highlight.js**, it will auto find code blocks, detect language and highlight
 them for you.
 
-### Advantages:
+## 1.1 Advantages:
 
 * Easy to use  
 * Easy to update (just replace the js file or even auto update)
 
-### Disadvantages:
+## 1.2 Disadvantages:
 
 * Not very-well syntax highlighting but acceptable
 * You will have to format the code blocks manually (indent, new line,...)
 
-### Information
+## 1.3 Information
 
 **Highlight.js homepage**: <http://softwaremaniacs.org/soft/highlight/en/>  
 **Demo**: <http://softwaremaniacs.org/media/soft/highlight/test.html>
 
-### Installation
+## 1.4 Installation
 
 There are to ways to use **Highlight.js**. First is to download the package,
 extract it into your website directory and include this in your template file
@@ -58,7 +58,7 @@ you're done ;)
 <script>hljs.initHighlightingOnLoad();</script>
 {% endhighlight %}
 
-### Usage
+## 1.5 Usage
 
 Just indent your code blocks by one tab or at least 4 spaces. The rest is
 automatically done for you.
@@ -68,27 +68,29 @@ automatically done for you.
 Jekyll has built-in support for syntax-highlighting via Pygments. If you want to
 use it, make sure you run jekyll with Pygments support. I'll show how later.
 
-### Advantages:
+## 2.1 Advantages:
 
 * Beautiful syntax and code highlighting with support for more then 100
   languages
 * Don't have to worry about the code blocks's format. Just copy and paste from
   the source code.
 
-### Disadvantages:
+## 2.2 Disadvantages:
 
 * Not as easy to install as highlight.js (but I will demonstrate how LOL)
 * Can not be auto-update (but may change in the future)
 
-### Information
+## 2.3 Information
 
 **Pygments on github**: <https://github.com/mojombo/jekyll/wiki/Liquid-Extensions>  
 **Pygments homepage**: <http://pygments.org/>  
 **Supported languages list**: <http://pygments.org/languages/>
 
-### Installation
+## 2.4 Installation
 
-#### Install pygments on local computer
+### 2.4.1 Manual Pygments Installation and Generation
+
+#### Install Pygments on local computer
 
 * On Ubuntu, just one command
 
@@ -121,12 +123,6 @@ Install pygments
 $ sudo easy_install Pygments
 {% endhighlight %}
 
-#### Enable pygments
-
-In the config.yaml file inside the root directory of your jekyll website, set pygments to true
-
-    pygments: true
-
 #### Generate pygments
 
 {% highlight sh %}
@@ -136,7 +132,20 @@ $ pygmentize -S default -f html > pygments.css
 
 It will generate a file named pygments.css in your website root directory.
 
-#### Include pygments.css
+### 2.4.2 Automatic Installation and Generation
+
+There is another easier way to get Pygments work with your blog. Just download
+this file
+[pygments.css](/files/2012-12-28-jekyll-bootstrap-syntax-highlighting/pygments.css)
+and put it in the root directory of your Jekyll blog.
+
+## 2.5 Enable pygments
+
+In the config.yaml file inside the root directory of your jekyll website, set pygments to true
+
+    pygments: true
+
+## 2.6 Include pygments.css
 
 The last step is to include the css file in your template file (usually
 /_includes/themes/theme-name/default.html). Put this code in the head area of
@@ -146,7 +155,7 @@ you template
 <link rel="stylesheet" href="/pygments.css">
 {% endhighlight %}
 
-### Usage
+## 2.7 Usage
 
     {{ "{% highlight language "}}%}  
 	   your code goes here  
