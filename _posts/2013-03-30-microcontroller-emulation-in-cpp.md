@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Microcontroller Emulation in C++"
+title: "Simple Microcontroller Emulation in C++"
 description: ""
 category: Misc
 thumbnail: 
