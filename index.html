@@ -120,11 +120,36 @@ title: Trường TX Blog
 	</div>
 
 	<!-- searchbox -->
-	<form class="navbar-search pull-left" onsubmit="tmtxt_search_google()" >
-      <input type="text" id="tmtxt-google-search"
-			 class="search-query" placeholder="Search this blog">
-	  <button type="submit" class="btn">Search</button>
-	</form>
+	<div>
+	  <form class="navbar-search pull-left" onsubmit="tmtxt_search_google()" >
+		<input type="text" id="tmtxt-google-search"
+			   class="search-query" placeholder="Search this blog">
+		<button type="submit" class="btn">Search</button>
+	  </form>
+	</div>
+	<br/>
+	<br/>
+	
+	<!-- categories list -->
+	<div>
+	  <h3>Categories</h3>
+	  <ul>
+		{% for category in site.categories %} 
+		<li>
+		  <a href="/categories.html#{{category[0]}}-ref">{{category[0]}}</a>
+		</li>
+		{% endfor %}
+	  </ul>
+	</div>
+
+	<!-- recent post -->
+	<h3>Recent Posts</h3>
+	<ul>
+	  {% for post in site.posts limit:10 %}
+	  <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+	  {% endfor %}
+	</ul>	
+	
   </div>
 </div>
 
