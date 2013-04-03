@@ -52,4 +52,4 @@ $ sudo defaults delete com.apple.loginwindow LoginHook
 
 ----------
 
-Idead from this post: <http://osxdaily.com/2011/08/25/disable-reopen-windows-when-logging-back-in-in-mac-os-x-lion-completely/>
+Idea from this post: <http://osxdaily.com/2011/08/25/disable-reopen-windows-when-logging-back-in-in-mac-os-x-lion-completely/>
