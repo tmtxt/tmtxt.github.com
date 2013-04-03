@@ -20,7 +20,7 @@ title: Trường TX Blog
 	<!-- here add you post markup -->
 	<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
 	<p class="author">
-	  <span class="date" style="color:darkgreen">{{post.date}}</span>
+	  <span class="date" style="color:darkgreen">Posted {{post.date | date: "%d %B %Y"}}</span>
 	</p>
 	<div>
 	  {{ post.content | strip_html | truncatewords:100 }}
