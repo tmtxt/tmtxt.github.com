@@ -17,6 +17,8 @@ logging back in" option in the Shutdown/Restart dialog, my Mac often reopen all
 my last running applications. I have to wait for all of those stuffs to
 completed open and then I can use my computer normally.
 
+![Restart Dialog](/files/2013-04-03-macos-permanently-disable-reopen-windows-when-logging-back/disable-reopen-windows.jpg)
+
 I was very upset and decided to find a solution to completely disable that
 feature. And here is the solution.
 
