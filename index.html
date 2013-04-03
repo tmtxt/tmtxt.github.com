@@ -56,18 +56,58 @@ title: Trường TX Blog
 	{% endfor %}
 
 	<!-- Pagination links -->
-	<div class="pagination">
-	  {% if paginator.previous_page %}
-	  <a href="/page{{paginator.previous_page}}" class="previous">Previous</a>
-	  {% else %}
-	  <span class="previous">Previous</span>
-	  {% endif %}
-	  <span class="page_number ">Page: {{paginator.page}} of {{paginator.total_pages}}</span>
-	  {% if paginator.next_page %}
-	  <a href="/page{{paginator.next_page}}" class="next ">Next</a>
-	  {% else %}
-	  <span class="next ">Next</span>
-	  {% endif %}
+	<div class="pagination pagination-centered">
+	  <ul>
+		<!-- first page link -->
+		{% if paginator.previous_page %}
+		<li>
+		  <a href="/index.html">&laquo;&laquo;</a>
+		</li>
+		{% else %}
+		<li class="disabled">
+		  <a href="#">&laquo;&laquo;</a>
+		</li>
+		{% endif %}
+
+		<!-- previous page link -->
+		{% if paginator.previous_page %}
+		<li>
+		  <a href="/page{{paginator.previous_page}}">&laquo;</a>
+		</li>
+		{% else %}
+		<li class="disabled">
+		  <a href="#">&laquo;</a>
+		</li>
+		{% endif %}
+
+		<!-- current page -->
+		<li class="active">
+		  <span class="page_number ">Page: {{paginator.page}} of
+			{{paginator.total_pages}}</span>
+		</li>
+
+		<!-- next page link -->
+		{% if paginator.next_page %}
+		<li>
+		  <a href="/page{{paginator.next_page}}">&raquo;</a>
+		</li>
+		{% else %}
+		<li class="disabled">
+		  <a href="#">&raquo;</a>
+		</li>
+		{% endif %}
+
+		<!-- last page link -->
+		{% if paginator.next_page %}
+		<li>
+		  <a href="/page{{ paginator.total_pages }}">&raquo;&raquo;</a>
+		</li>
+		{% else %}
+		<li class="disabled">
+		  <a href="#">&raquo;&raquo;</a>
+		</li>
+		{% endif %}
+      </ul>
 	</div>
 	
   </div>
