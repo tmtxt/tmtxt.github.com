@@ -24,3 +24,11 @@ html, body {
 	color:red;
 	font-weight:bold;
 }
+
+.hero-unit h2 {
+  margin-bottom: 0;
+  font-size: 40px;
+  line-height: 1;
+  color: inherit;
+  letter-spacing: -1px;
+}
