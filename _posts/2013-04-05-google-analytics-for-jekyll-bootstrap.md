@@ -8,7 +8,7 @@ tags: [google, analytics, jekyll]
 ---
 {% include JB/setup %}
 
-> This blog post demonstrates how to config and use Google Analytics for Jekyll
+> This blog post demonstrates how to config Google Analytics for Jekyll
 > Bootstrap to monitor website view, user, traffic, etc. The manual on Jekyll
 > Bootstrap site is not so clear and comprehensive for those who is new to
 > Google Analytics and Jekyll Bootstrap.
