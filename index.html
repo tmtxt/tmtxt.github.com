@@ -42,7 +42,7 @@ title: Trường TX Blog
 	</p>
 	<!-- post content -->
 	<div>
-	  {{ post.content | strip_html | truncatewords:100 }}
+	  {{ post.content | more: "excerpt" }}
 	</div>
 
 	<!-- read more button -->
