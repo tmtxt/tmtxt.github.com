@@ -11,7 +11,7 @@ tags: [emacs, dired, rsync, file copy]
 > **Update**: I have implemented a better version of this code. The new version is
 > able to display progress separately and auto hide the rsync window after
 > finishing copying. You can look at this post
-> [Emacs - Async File copying with Rsync - Update Show progress separately and Auto hide after finish](/2013/04/06/emacs-async-file-copying-with-rsync-update-show-progress-and-auto-hide-after-finish/)
+> [Emacs - Async File copying with Rsync - Update](/2013/04/06/emacs-async-file-copying-with-rsync-update/)
 
 Emacs Dired mode is a great alternative for the default file explorer
 application on

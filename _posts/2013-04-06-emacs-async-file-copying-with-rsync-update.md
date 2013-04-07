@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Emacs - Async File copying with Rsync - Update Show progress separately and Auto hide after finish"
+title: "Emacs - Async File copying with Rsync - Update"
 description: ""
 category: Emacs
 thumbnail: 
