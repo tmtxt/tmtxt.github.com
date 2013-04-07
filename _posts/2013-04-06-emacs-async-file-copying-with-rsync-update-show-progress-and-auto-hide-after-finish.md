@@ -27,72 +27,77 @@ This is the new code. Put it in your .emacs, replace the my old rsync function
 if you have already use it.
 
 {% highlight cl %}
-;;; rsync
-;;; only run on Unix-based system
-(tmtxt/in '(darwin gnu/linux)
-  ;; function to kill the buffer and the window of rsync
-  (defun tmtxt/kill-rsync-buffer-and-window ()
-	(kill-buffer (window-buffer tmtxt/new-rsync-window))
-	(delete-window tmtxt/new-rsync-window))
-  
-  ;; function for handling rsync process events
-  (defun tmtxt/rsync-window-handler (process event)
-	;; check if the process status is exit, then kill the buffer and the window
-	;; that contain that process after 5 seconds (for the user to see the output)
-	(when (equal (process-status process) 'exit)
-	  ;; print the message
-	  (print "Rsync process completed.\nThe window will be closed automatically in 5s."
-			 (window-buffer tmtxt/new-rsync-window))
-	  (set-window-point tmtxt/new-rsync-window
-						(buffer-size (window-buffer tmtxt/new-rsync-window)))
-	  ;; kill the buffer and window after 5 seconds
-	  (run-at-time "5 sec" nil 'tmtxt/kill-rsync-buffer-and-window)))
+;; function to kill the buffer and the window of rsync
+(defun tmtxt/kill-rsync-buffer-and-window ()
+  (kill-buffer (window-buffer tmtxt/new-rsync-window))
+  (delete-window tmtxt/new-rsync-window))
 
-  ;; the rsync function
-  (defun tmtxt/dired-rsync (dest)
-	(interactive
-	 ;; offer dwim target as the suggestion
-	 (list (expand-file-name (read-file-name "Rsync to:" (dired-dwim-target-directory)))))
-	;; store all selected files into "files" list
-	(let ((files (dired-get-marked-files nil current-prefix-arg)))
-	  
-	  ;; the rsync command
-	  (setq tmtxt/rsync-command "rsync -arvz --progress ")
-	  ;; add all selected file names as arguments to the rsync command
-	  (dolist (file files)
-		(setq tmtxt/rsync-command
-			  (concat tmtxt/rsync-command
-					  (shell-quote-argument file)
-					  " ")))
-	  ;; append the destination
+;; function for handling rsync process events
+(defun tmtxt/rsync-window-handler (process event)
+  ;; check if the process status is exit, then kill the buffer and the window
+  ;; that contain that process after 5 seconds (for the user to see the output)
+  (when (equal (process-status process) 'exit)
+	;; print the message
+	(print "Rsync process completed.\nThe window will be closed automatically in 5s."
+		   (window-buffer tmtxt/new-rsync-window))
+	(set-window-point tmtxt/new-rsync-window
+					  (buffer-size (window-buffer tmtxt/new-rsync-window)))
+	;; kill the buffer and window after 5 seconds
+	(run-at-time "5 sec" nil 'tmtxt/kill-rsync-buffer-and-window)))
+
+;; the rsync function
+(defun tmtxt/dired-rsync (dest)
+  (interactive
+   ;; offer dwim target as the suggestion
+   (list (expand-file-name (read-file-name "Rsync to:" (dired-dwim-target-directory)))))
+
+  ;; function body starts here
+  (let								;init some variables
+	  ;; store all selected files into "files" list
+	  ((files (dired-get-marked-files nil current-prefix-arg))
+	   ;; the current window for switch back after finish
+	   (tmtxt/current-window-before-rsync (selected-window))
+	   ;; the height of the rsync window
+	   (tmtxt/new-rsync-window-height (- (window-height) 10))
+	   ;; init those variables to nil
+	   tmtxt/rsync-command)
+	
+	;; the rsync command
+	(setq tmtxt/rsync-command "rsync -arvz --progress ")
+	;; add all selected file names as arguments to the rsync command
+	(dolist (file files)
 	  (setq tmtxt/rsync-command
 			(concat tmtxt/rsync-command
-					(shell-quote-argument dest)))
+					(shell-quote-argument file)
+					" ")))
+	;; append the destination
+	(setq tmtxt/rsync-command
+		  (concat tmtxt/rsync-command
+				  (shell-quote-argument dest)))
 
-	  ;; the current window
-	  (setq tmtxt/current-window-before-rsync (selected-window))
-	  ;; split the window and set the newly created window to tmtxt/new-window
-	  (setq tmtxt/new-rsync-window-height (- (window-height) 10))
-	  (setq tmtxt/new-rsync-window
-			(split-window (frame-root-window) tmtxt/new-rsync-window-height 'below))
-	  ;; switch to the new window
-	  (select-window tmtxt/new-rsync-window)
-	  ;; not allow the new window to be select by other-window
-	  (set-window-parameter tmtxt/new-rsync-window 'no-other-window t)
-	  ;; not popup new window for rsync
-	  (add-to-list 'same-window-buffer-names "*rsync*")
-	  
-	  ;; run the async shell command
-	  (async-shell-command tmtxt/rsync-command "*rsync*")
+	
+	;; split the window and set the newly created window to tmtxt/new-window
+	(setq tmtxt/new-rsync-window
+		  (split-window (frame-root-window) tmtxt/new-rsync-window-height 'below))
+	;; switch to the new window
+	(select-window tmtxt/new-rsync-window)
+	;; not allow the new window to be select by other-window
+	(set-window-parameter tmtxt/new-rsync-window 'no-other-window t)
+	;; not popup new window for rsync
+	(add-to-list 'same-window-buffer-names "*rsync*")
+	
+	;; run the async shell command
+	(async-shell-command tmtxt/rsync-command "*rsync*")
 
-	  ;; add event handler for the rsync process
-	  (set-process-sentinel (get-buffer-process (window-buffer tmtxt/new-rsync-window))
-							'tmtxt/rsync-window-handler)
-	  
-	  ;; finally, switch to the previous window
-	  (select-window tmtxt/current-window-before-rsync)))
+	;; add event handler for the rsync process
+	(set-process-sentinel (get-buffer-process (window-buffer tmtxt/new-rsync-window))
+						  'tmtxt/rsync-window-handler)
+	
+	;; finally, switch to the previous window
+	(select-window tmtxt/current-window-before-rsync)))
+
   ;;; bind it to C-c C-r
-  (define-key dired-mode-map (kbd "C-c C-r") 'tmtxt/dired-rsync))
+(define-key dired-mode-map (kbd "C-c C-r") 'tmtxt/dired-rsync)
 {% endhighlight %}
 
 To use it, open up a dired window, select some file that you want to copy and
