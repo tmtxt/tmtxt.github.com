@@ -23,7 +23,7 @@ files.
 
 # Implementation
 
-This is the new code. Put it in your .emacs, replace the my old rsync function
+This is the new code. Put it in your .emacs, replace with my old rsync function
 if you have already use it.
 
 {% highlight cl %}
