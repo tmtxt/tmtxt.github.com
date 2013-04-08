@@ -25,3 +25,5 @@ server, you can find it in this
 [page](https://help.github.com/articles/setting-up-a-custom-domain-with-pages)
 
 ![namecheap](/files/2013-04-07-setting-up-custom-domain-for-github-pages/namecheap.png)
+
+It can take up to a whole day for the new domain to point to github, be patient!
