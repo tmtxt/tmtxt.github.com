@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Emacs - Setting up perfect environment for C/C++ Programming"
+title: "Emacs - Setting up perfect environment for C/C++ Programming - Part 1"
 description: ""
 category: Emacs
 thumbnail: 
@@ -82,3 +82,6 @@ package.el and then add this to your init file
 (require 'member-function)
 (setq mf--source-file-extension "cpp")
 {% endhighlight %}
+
+**Continue to Part 2 here**:
+[Emacs - Setting up Perfect C/C++ programming environment - Part 2](/2013/04/12/emacs-setting-up-perfect-cc-programming-environment/)
