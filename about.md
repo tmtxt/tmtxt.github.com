@@ -38,6 +38,7 @@ Vietnam
 * SQL, MySQL,...
 * HTML, CSS, Javascript
 * PHP  
+* Git
 ...
 
 # History
