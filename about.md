@@ -70,3 +70,5 @@ the same time).
 **Facebook**: <http://facebook.com/mr.truong.tx>  
 
 **Github**: <https://github.com/tommytxtruong>  
+
+**Twitter**: <https://twitter.com/tommytxtruong>
