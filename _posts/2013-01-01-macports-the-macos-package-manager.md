@@ -42,7 +42,7 @@ Now you can enjoy one of the most powerful package manager on MacOS. :)
 To list all available ports, type this command (it takes a few minutes to load)
 
 {% highlight sh %}
-$ port search portname
+$ port list all
 {% endhighlight %}
 
 To search for a port, type:
