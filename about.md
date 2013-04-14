@@ -63,12 +63,21 @@ the same time).
 
 # Contact me
 
-**Linkedin**: <http://www.linkedin.com/pub/tran-xuan-truong/67/2b/a65>  
-
-**Email**: <tommytxtruong@gmail.com>  
-
-**Facebook**: <http://facebook.com/mr.truong.tx>  
-
-**Github**: <https://github.com/tommytxtruong>  
-
-**Twitter**: <https://twitter.com/tommytxtruong>
+<a href="https://twitter.com/tommytxtruong" target="_blank">
+<img src="/files/index/twitter.png" />
+</a>
+<a href="http://facebook.com/mr.truong.tx" target="_blank">
+<img src="/files/index/facebook.png" />
+</a>
+<a href="http://www.linkedin.com/pub/tran-xuan-truong/67/2b/a65" target="_blank">
+<img src="/files/index/linkedin.png" />
+</a>
+<a href="mailto:tommy.txtruong@gmail.com" target="_blank">
+<img src="/files/index/email.png" />
+</a>
+<a href="skype:tommy.txtruong?chat">
+<img src="/files/index/skype.png" />
+</a>
+<a href="https://github.com/tommytxtruong">
+<img src="/files/index/github.png" />
+</a>
