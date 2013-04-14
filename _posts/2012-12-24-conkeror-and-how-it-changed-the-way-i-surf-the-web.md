@@ -9,12 +9,12 @@ tags: [conkeror, emacs, web browser]
 
 For those of you who haven't known about Conkeror yet, here is a brief description about it:
 
-	Conkeror is a keyboard-oriented, highly-customizable, highly-extensible web
-	browser based on Mozilla XULRunner, written mainly in JavaScript, and
-	inspired by exceptional software such as Emacs and vi. Conkeror features a
-	sophisticated keyboard system, allowing users to run commands and interact
-	with content in powerful and novel ways.  It is self-documenting, featuring
-	a powerful interactive help system.
+> Conkeror is a keyboard-oriented, highly-customizable, highly-extensible web
+> browser based on Mozilla XULRunner, written mainly in JavaScript, and
+> inspired by exceptional software such as Emacs and vi. Conkeror features a
+> sophisticated keyboard system, allowing users to run commands and interact
+> with content in powerful and novel ways.  It is self-documenting, featuring
+> a powerful interactive help system.
 
 The first time I heard about conkeror was in 2010. And now it becomes my daily used application. Though I still use many other web browsers (Chrome, Firefox, Safari and Opera), Conkeror is my main web browser and usually the first app I open when I start my computer. Here are some key features that make me really impressed in Conkeror.
 
