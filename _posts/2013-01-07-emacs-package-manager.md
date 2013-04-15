@@ -58,11 +58,14 @@ Add this piece of code to your .emacs. Replace tmtxt with any namespace that you
 {% endhighlight %}
 
 Replace **package1 package2 package3 package4 package5** with the packages that
-you want. Each package is separated by a space. What those lines code do is that
+you want. Each package is separated by a space. What those lines of code do is that
 everytime emacs start, it will check for those required packages. If they are
 missing, emacs will automatically install them and add them to the load path.
 You don't have to worry about which packages you have installed or where they
 are, whether they are in the load path. Emacs will do those stuff automatically
 for you.
 
-Those are not my code, just the one I collected.
+Those are not my code, just the one I have collected.
+
+**Note**: Another article on how to manage packages in Emacs using el-get is
+presented [here](/2013/04/15/emacs-package-manger-using-el-get/).
