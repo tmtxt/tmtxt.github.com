@@ -63,21 +63,20 @@ the same time).
 
 # Contact me
 
-<a href="https://twitter.com/tommytxtruong" target="_blank">
-<img src="/files/index/twitter.png" />
-</a>
-<a href="http://facebook.com/mr.truong.tx" target="_blank">
-<img src="/files/index/facebook.png" />
-</a>
-<a href="http://www.linkedin.com/pub/tran-xuan-truong/67/2b/a65" target="_blank">
-<img src="/files/index/linkedin.png" />
-</a>
-<a href="mailto:tommy.txtruong@gmail.com" target="_blank">
-<img src="/files/index/email.png" />
-</a>
-<a href="skype:tommy.txtruong?chat">
-<img src="/files/index/skype.png" />
-</a>
-<a href="https://github.com/tommytxtruong">
-<img src="/files/index/github.png" />
-</a>
+**Email**: [me@truongtx.me](mailto:me@truongtx.me)
+
+**Email**: [truong.tranxuan@rmitc.org](mailto:truong.tranxuan@rmitc.org)
+
+**Email**: [tommy.txtruong@gmail.com](mailto:tommy.txtruong@gmail.com)
+
+**Twitter**: <https://twitter.com/tommytxtruong>
+
+**Facebook**: <http://facebook.com/mr.truong.tx>
+
+**Linkedin**: <http://www.linkedin.com/pub/tran-xuan-truong/67/2b/a65>
+
+**Skype**: [tommy.txtruong](skype:tommy.txtruong?chat)
+
+**Github**: <https://github.com/tommytxtruong>
+
+**Google Plus**: <https://plus.google.com/114414080610977988569/>
