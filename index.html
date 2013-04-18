@@ -58,15 +58,6 @@ title: Trường TX Blog
 	  <a href="{{ post.url }}">Read more...</a>
 	</div>
 	<br/>
-
-	<!-- share button -->
-	<!-- facebook share -->
-	<div>
-	  <div class="fb-like" data-href="http://truongtx.me{{ post.url }}"
-		   data-send="false" data-layout="button_count" data-width="450"
-		   data-show-faces="false"></div>
-	</div>
-	
 	<hr/>
 	{% endfor %}
 
@@ -149,8 +140,43 @@ title: Trường TX Blog
 	  <p>&nbsp;</p>
 	</div>
 
+	<div>
+	  <h3>Share to your friends</h3>
+	  <!-- facebook -->
+	  <div class="fb-like" data-send="false" data-width="450" data-show-faces="true"></div>
+
+	  <!-- google + -->
+	  <!-- Place this tag where you want the +1 button to render. -->
+	  <div class="g-plusone" data-size="tall" data-annotation="inline" data-width="300"></div>
+	  <!-- Place this tag after the last +1 button tag. -->
+	  <script type="text/javascript">
+		(function() {
+		var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		po.src = 'https://apis.google.com/js/plusone.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		})();
+	  </script>
+
+	  <!-- twitter -->
+	  <a href="https://twitter.com/share" class="twitter-share-button"
+		 data-via="tommytxtruong">Tweet</a>
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	  <a href="https://twitter.com/tommytxtruong" class="twitter-follow-button"
+		 data-show-count="false">Follow @tommytxtruong</a>
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	  <!-- linkedin -->
+	  <div>
+		<script src="//platform.linkedin.com/in.js" type="text/javascript">
+		  lang: en_US
+		</script>
+		<script type="IN/Share" data-counter="right"></script>
+	  </div>
+	</div>
+
 	<!-- social -->
 	<div>
+	  <h3>Contact me</h3>
 	  <a href="https://twitter.com/tommytxtruong" target="_blank">
 		<img src="/files/index/twitter.png" width="20px" />
 	  </a>&nbsp;
