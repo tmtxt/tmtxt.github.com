@@ -3,7 +3,7 @@ layout: post
 title: "Color Theming in Emacs 24"
 description: ""
 category: Emacs
-thumbnail: 
+thumbnail: /files/thumbnails/emacs.png
 tags: [theme, emacs, emacs 24, color theming, tutorial]
 ---
 {% include JB/setup %}

@@ -3,7 +3,7 @@ layout: post
 title: "Install and Config ECB on Emacs"
 description: ""
 category: Emacs
-thumbnail: 
+thumbnail: /files/thumbnails/emacs.png
 tags: [ecb, emacs, tutorial]
 ---
 {% include JB/setup %}

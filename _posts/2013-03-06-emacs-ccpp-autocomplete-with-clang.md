@@ -3,7 +3,7 @@ layout: post
 title: "Emacs - C/C++ Autocomplete with Clang"
 description: ""
 category: Emacs
-thumbnail: 
+thumbnail: /files/thumbnails/emacs.png
 tags: [clang, emacs, tutorial, autocomplete]
 ---
 {% include JB/setup %}

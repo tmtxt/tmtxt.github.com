@@ -3,7 +3,7 @@ layout: post
 title: "Setting up Custom domain for Github Pages"
 description: ""
 category: Jekyll
-thumbnail: 
+thumbnail: /files/thumbnails/github.png
 tags: [github, domain, jekyll]
 ---
 {% include JB/setup %}

@@ -3,7 +3,7 @@ layout: post
 title: "Emacs - Sort Directories first in Dired"
 description: ""
 category: Emacs
-thumbnail: 
+thumbnail: /files/thumbnails/emacs.png
 tags: [emacs, dired, directory]
 ---
 {% include JB/setup %}

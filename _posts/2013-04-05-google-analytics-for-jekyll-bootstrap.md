@@ -3,7 +3,7 @@ layout: post
 title: "Google Analytics for Jekyll Bootstrap"
 description: ""
 category: Jekyll
-thumbnail: 
+thumbnail: /files/thumbnails/google.png
 tags: [google, analytics, jekyll]
 ---
 {% include JB/setup %}

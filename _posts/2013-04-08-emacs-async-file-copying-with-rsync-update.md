@@ -3,7 +3,7 @@ layout: post
 title: "Emacs - Async File copying with Rsync - Update Apr 8 2013"
 description: ""
 category: Emacs
-thumbnail: 
+thumbnail: /files/thumbnails/emacs.png
 tags: [emacs, rsync, dired]
 ---
 {% include JB/setup %}

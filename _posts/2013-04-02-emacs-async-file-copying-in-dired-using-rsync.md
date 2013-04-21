@@ -3,7 +3,7 @@ layout: post
 title: "Emacs - Async File Copying in Dired using Rsync"
 description: ""
 category: Emacs
-thumbnail: 
+thumbnail: /files/thumbnails/emacs.png
 tags: [emacs, dired, rsync, file copy]
 ---
 {% include JB/setup %}

@@ -3,7 +3,7 @@ layout: post
 title: "Emacs Package Manger using el-get"
 description: ""
 category: Emacs
-thumbnail: 
+thumbnail: /files/thumbnails/emacs.png
 tags: [emacs, package manger, el-get]
 ---
 {% include JB/setup %}

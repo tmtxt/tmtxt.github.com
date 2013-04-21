@@ -3,7 +3,7 @@ layout: post
 title: "Password Management with Emacs"
 description: ""
 category: Emacs
-thumbnail: 
+thumbnail: /files/thumbnails/emacs.png
 tags: [tutorial, emacs, password management]
 ---
 {% include JB/setup %}

@@ -3,7 +3,7 @@ layout: post
 title: "Emacs - Setting up perfect environment for C/C++ Programming - Part 1"
 description: ""
 category: Emacs
-thumbnail: 
+thumbnail: /files/thumbnails/emacs.png
 tags: [tutorial, emacs, programming, setup]
 ---
 {% include JB/setup %}
