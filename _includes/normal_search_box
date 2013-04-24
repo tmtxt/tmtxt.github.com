@@ -1,0 +1,14 @@
+<!-- searchbox -->
+<div>
+  <form class="navbar-search pull-left" onsubmit="tmtxt_search_google()" >
+	<input type="text" id="tmtxt-google-search"
+		   class="search-query" placeholder="Search this blog">
+	<button type="submit" class="btn">Search</button>
+  </form>
+</div>
+<br/>
+<br/>
+
+<div>
+  <p>&nbsp;</p>
+</div>
