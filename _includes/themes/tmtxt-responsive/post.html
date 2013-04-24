@@ -25,12 +25,12 @@
   </div>
   
   <div class="span4">
-    <h4>Published</h4>
+    <h3>Published</h3>
     <div class="date"><span>{{ page.date | date_to_long_string }}</span></div>
 	<hr />
 
 	{% unless page.tags == empty %}
-    <h4>Tags</h4>
+    <h3>Tags</h3>
     <ul class="tag_box">
       {% assign tags_list = page.tags %}
       {% include JB/tags_list %}
@@ -38,44 +38,12 @@
 	{% endunless %}  
 	<hr />
 
-	<h4>Social Sharing</h4>
-	<!-- facebook -->
-	<div class="fb-like" data-send="false" data-width="450" data-show-faces="true"></div>
-
-	<!-- google + -->
-	<!-- Place this tag where you want the +1 button to render. -->
-	<div class="g-plusone" data-size="tall" data-annotation="inline" data-width="300"></div>
-	<!-- Place this tag after the last +1 button tag. -->
-	<script type="text/javascript">
-	  (function() {
-      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-      po.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-	  })();
-	</script>
-
-	<!-- twitter -->
-	<div>
-	<a href="https://twitter.com/share" class="twitter-share-button"
-	   data-via="tommytxtruong">Tweet</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	<a href="https://twitter.com/tommytxtruong" class="twitter-follow-button"
-	   data-show-count="false">Follow @tommytxtruong</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-	<!-- linkedin -->
-	<div>
-	  <script src="//platform.linkedin.com/in.js" type="text/javascript">
-		lang: en_US
-	  </script>
-	  <script type="IN/Share" data-counter="right"></script>
-	</div>
+	{% include social_share_buttons %}
 
 	<hr/>
 
 	<!-- social -->
-	<h4>Contact me</h4>
+	<h3>Contact me</h3>
 	<div>
 	  <a href="https://twitter.com/tommytxtruong" target="_blank">
 		<img src="/files/index/twitter.png" />
@@ -101,7 +69,7 @@
 	</div>
 	<hr/>
 
-	<h4>Related Posts</h4>
+	<h3>Related Posts</h3>
 	<ul>
 	  {% for post in site.related_posts limit:5 %}
 	  <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
@@ -109,7 +77,7 @@
 	</ul>
 	<hr />
 
-	<h4>Recent Posts</h4>
+	<h3>Recent Posts</h3>
 	<ul>
 	  {% for post in site.posts limit:5 %}
 	  <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
