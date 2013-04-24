@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Dired as Default file manager - Dired Async"
+title: "Dired as Default File Manager - Dired Async"
 description: ""
 category: Emacs
 thumbnail: /files/thumbnails/emacs.png

@@ -49,7 +49,17 @@ lovers.
 # Content
 
 * **Part 1**:
-[Dired as Default File Manager - Basic Tips](/2013/04/24/dired-as-default-file-manager-2-basic-tips/)
+[Dired as Default File Manager - Basic Tips](/2013/04/24/dired-as-default-file-manager-2-basic-tips/)  
+* **Part 2**:
+[Dired as Default File Manager - Dired Details](/2013/04/24/dired-as-default-file-manager-3-dired-details/)  
+* **Part 3**:
+[Dired as Default File Manager - More Advanced Tips](/2013/04/24/dired-as-default-file-manager-4-more-advanced-tips/)  
+* **Part 4**:
+[Dired as Default File Manager - Customize ls command](/2013/04/25/dired-as-default-file-manager-5-customize-ls-command/)  
+* **Part 5**:
+[Dired as Default File Manager - Customize Faces](/2013/04/25/dired-as-default-file-manager-6-customize-faces/)  
+* **Part 6**:
+[Dired as Default File Manager - Dired Async](/2013/04/25/dired-as-default-file-manager-7-dired-async/)  
 
 **More**: You can follow me on Twitter, Facebook or Google+ and you will be
 notified when there's new part.  
