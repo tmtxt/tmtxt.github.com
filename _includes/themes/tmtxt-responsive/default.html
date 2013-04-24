@@ -12,47 +12,47 @@
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
-		</script>
-		<![endif]-->
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+	</script>
+	<![endif]-->
 
-	<!-- jquery  -->
-    <script src="/assets/themes/tmtxt-responsive/jquery/jquery-1.8.3.min.js"></script>
+	   <!-- jquery  -->
+       <script src="/assets/themes/tmtxt-responsive/jquery/jquery-1.8.3.min.js"></script>
 
-    <!-- Bootstrap -->
-    <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.min.css"
-		  rel="stylesheet" media="screen">
-    <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap-responsive.min.css"
-		  rel="stylesheet" media="screen">	
-    <script src="{{ ASSET_PATH }}/bootstrap/js/bootstrap.min.js"></script>
+       <!-- Bootstrap -->
+       <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.min.css"
+			 rel="stylesheet" media="screen">
+       <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap-responsive.min.css"
+			 rel="stylesheet" media="screen">	
+       <script src="{{ ASSET_PATH }}/bootstrap/js/bootstrap.min.js"></script>
 
-	<!-- elusive icon -->
-	<!-- <link href="{{ ASSET_PATH }}/elusive-iconfont/css/elusive-webfont.css" -->
-	<!-- 		 rel="stylesheet"> -->
+	   <!-- elusive icon -->
+	   <!-- <link href="{{ ASSET_PATH }}/elusive-iconfont/css/elusive-webfont.css" -->
+				  <!-- 		 rel="stylesheet"> -->
 
-	<!-- pygments code highlighting -->
-	<link rel="stylesheet" href="/assets/pygments/pygments.css">
+				  <!-- pygments code highlighting -->
+				  <link rel="stylesheet" href="/assets/pygments/pygments.css">
 
-	<!-- favicon -->
-    <link rel="shortcut icon" href="/images/favicon.ico">
-    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon.png">
+				  <!-- favicon -->
+				  <link rel="shortcut icon" href="/images/favicon.ico">
+				  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+				  <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon.png">
+				  <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon.png">
 
-	<!---------------------------------------------------->
-	<!-- my custom included files -->
-	
-	<!-- my custom google search -->
-	{% include tmtxt_google_search.html %}
+				  <!---------------------------------------------------->
+				  <!-- my custom included files -->
+				  
+				  <!-- my custom google search -->
+				  {% include tmtxt_google_search.html %}
 
-	<!-- normalize address -->
-	{% include normalize_address.html %}
+				  <!-- normalize address -->
+				  {% include normalize_address.html %}
 
-	<!-- custom css -->
-	<link rel="stylesheet" href="{{ ASSET_PATH }}/custom/style.css">
+				  <!-- custom css -->
+				  <link rel="stylesheet" href="{{ ASSET_PATH }}/custom/style.css">
 
-	<!-- end my custom included files -->
-	<!---------------------------------------------------->
+				  <!-- end my custom included files -->
+				  <!---------------------------------------------------->
 
   </head>
 
@@ -85,9 +85,21 @@
 		  <!-- navbar items -->
 		  <div class="nav-collapse collapse navbar-responsive-collapse">
 			<ul class="nav">
+			  <!-- navigation item -->
               {% assign pages_list = site.pages %}
               {% assign group = 'navigation' %}
               {% include JB/pages_list %}
+
+			  <!-- dropdown list to show projects -->
+			  <li class="dropdown" id="preview-menu">
+				<a class="dropdown-toggle" data-toggle="dropdown"
+				   href="#">Project <b class="caret"></b></a>
+				<ul class="dropdown-menu" id="swatch-menu">
+				  {% assign pages_list = site.pages %}
+				  {% assign group = 'project' %}
+				  {% include JB/pages_list %}
+				</ul>
+			  </li>
 			</ul>
 
 			<!-- my custom google search -->
