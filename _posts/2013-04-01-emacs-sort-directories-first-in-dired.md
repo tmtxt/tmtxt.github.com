@@ -8,6 +8,8 @@ tags: [emacs, dired, directory]
 ---
 {% include JB/setup %}
 
+> This post is now moved to new address at [Dired as Default File Manager - Customize ls command](/2013/04/25/dired-as-default-file-manager-5-customize-ls-command/)
+
 # Problem with Emacs Dired mode
 
 Emacs now become my daily used application because of it convenience. I even use
@@ -29,7 +31,7 @@ version of **ls** has the option to sort directories first.
 
 Unfortanately, the MacOS version doesn't. But don't worry, you can install the
 GNU one from Macports. If you haven't installed MacPorts yet, take a look at this
-[article](/2013/01/01/macports---the-macos-package-manager/). After finishing
+[article](/2013/01/01/macports-the-macos-package-manager/). After finishing
 installing MacPorts, open up terminal and install **coreutils** and
 **findutils** by this command
 
