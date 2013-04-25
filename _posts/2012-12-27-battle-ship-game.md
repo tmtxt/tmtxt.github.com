@@ -4,7 +4,7 @@ title: "My Battle Ship game"
 description: ""
 category: Misc
 thumbnail: /files/2012-12-27-battle-ship-game/start.png
-tags: [game, java, netbeans, assignment, RMIT, battleship]
+tags: [game, java, battleship]
 ---
 {% include JB/setup %}
 

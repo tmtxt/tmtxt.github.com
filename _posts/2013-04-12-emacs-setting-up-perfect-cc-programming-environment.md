@@ -4,7 +4,7 @@ title: "Emacs - Setting up Perfect C/C++ programming environment - Part 2"
 description: ""
 category: Emacs
 thumbnail: /files/thumbnails/emacs.png
-tags: [tutorial, emacs, programming, setup]
+tags: [emacs, programming environment]
 ---
 {% include JB/setup %}
 

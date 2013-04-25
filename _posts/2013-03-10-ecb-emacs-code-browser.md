@@ -4,7 +4,7 @@ title: "Install and Config ECB on Emacs"
 description: ""
 category: Emacs
 thumbnail: /files/thumbnails/emacs.png
-tags: [ecb, emacs, tutorial]
+tags: [ecb, emacs]
 ---
 {% include JB/setup %}
 

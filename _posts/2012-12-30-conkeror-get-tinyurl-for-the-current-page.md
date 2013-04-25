@@ -4,7 +4,7 @@ title: "Conkeror - Get tinyurl for the current page"
 description: ""
 category: Conkeror Web Browser
 thumbnail: /files/2012-12-30-conkeror---get-tinyurl-for-the-current-page/tinyurl.png
-tags: [conkeror, tutorial, tinyurl]
+tags: [conkeror, tinyurl]
 ---
 {% include JB/setup %}
 

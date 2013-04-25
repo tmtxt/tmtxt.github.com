@@ -4,7 +4,7 @@ title: "Jekyll Bootstrap - Recents and Related Posts section"
 description: ""
 category: Jekyll
 thumbnail: /files/2013-01-09-jekyll-bootstrap-recents-related-posts-column/thumbnail.png
-tags: [tutorial, jekyll, bootstrap, posts]
+tags: [jekyll]
 ---
 {% include JB/setup %}
 

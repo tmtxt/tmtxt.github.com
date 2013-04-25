@@ -4,7 +4,7 @@ title: "Conkeror - Display Tab bar"
 description: ""
 category: Conkeror Web Browser
 thumbnail: /files/2012-12-27-conkeror-display-tab-bar/tab.png
-tags: []
+tags: [conkeror, emacs, browser]
 ---
 {% include JB/setup %}
 

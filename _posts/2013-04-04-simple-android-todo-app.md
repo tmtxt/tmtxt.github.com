@@ -4,7 +4,7 @@ title: "Simple Android TODO App"
 description: ""
 category: Misc
 thumbnail: 
-tags: [android, TODO, application]
+tags: [android]
 ---
 {% include JB/setup %}
 

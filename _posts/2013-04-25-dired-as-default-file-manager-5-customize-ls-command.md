@@ -4,7 +4,7 @@ title: "Dired as Default File Manager - Customize ls command"
 description: ""
 category: Emacs
 thumbnail: /files/thumbnails/emacs.png
-tags: [emacs, dired, file manager, ls command]
+tags: [emacs, dired, file manager, ls]
 ---
 {% include JB/setup %}
 

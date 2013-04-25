@@ -4,7 +4,7 @@ title: "Cross Platforms Synchronization Solution"
 description: ""
 category: Misc
 thumbnail: 
-tags: [synchronization, sync, cross platforms]
+tags: [synchronization]
 ---
 {% include JB/setup %}
 

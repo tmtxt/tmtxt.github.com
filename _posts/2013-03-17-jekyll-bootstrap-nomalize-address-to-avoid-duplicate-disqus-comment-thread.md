@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Jekyll Bootstrap - Nomalize address to avoid duplicate Disqus comment thread"
+title: "Jekyll - Nomalize address to avoid duplicate Disqus comment thread"
 description: ""
 category: Jekyll
 thumbnail: 
-tags: [tutorial, jekyll, jekyll boostrap, disqus, comment, normalize address]
+tags: [jekyll, disqus]
 ---
 {% include JB/setup %}
 

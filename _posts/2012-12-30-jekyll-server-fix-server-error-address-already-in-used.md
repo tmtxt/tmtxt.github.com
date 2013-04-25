@@ -4,7 +4,7 @@ title: "Jekyll server - Fix Server error - Address already in used"
 description: ""
 category: Jekyll
 thumbnail: /files/2012-12-27-jekyll-create-a-list-of-lastest-posts/thumbnail.png
-tags: [tutorial, jekyll, fix, error, jekyll-server]
+tags: [jekyll]
 ---
 {% include JB/setup %}
 

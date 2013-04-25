@@ -4,7 +4,7 @@ title: "Password Management with Emacs"
 description: ""
 category: Emacs
 thumbnail: /files/thumbnails/emacs.png
-tags: [tutorial, emacs, password management]
+tags: [emacs, password management]
 ---
 {% include JB/setup %}
 

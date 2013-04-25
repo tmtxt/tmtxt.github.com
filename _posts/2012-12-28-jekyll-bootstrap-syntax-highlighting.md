@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Jekyll Bootstrap - Syntax highlighting"
+title: "Jekyll - Syntax highlighting"
 description: ""
 category: Jekyll
 thumbnail: /files/2012-12-28-jekyll-bootstrap-syntax-highlighting/thumbnail.png
-tags: [jekyll, syntax-highlighting, tutorial]
+tags: [jekyll, syntax highlighting]
 ---
 {% include JB/setup %}
 

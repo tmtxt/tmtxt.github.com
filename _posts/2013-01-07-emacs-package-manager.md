@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Emacs Packages Manager"
+title: "Emacs Packages Manager using package.el"
 description: ""
 category: Emacs
 thumbnail: /files/2013-01-06-config-yasnippet-and-autocomplete-on-emacs/thumbnail.png
-tags: [emacs, package manager, tutorial]
+tags: [emacs, package manager]
 ---
 {% include JB/setup %}
 

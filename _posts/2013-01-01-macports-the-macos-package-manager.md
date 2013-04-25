@@ -4,7 +4,7 @@ title: "MacPorts - The MacOS package manager"
 description: ""
 category: Misc
 thumbnail: /files/2013-01-01-macports---the-macos-package-manager/macports.png
-tags: [introduction, tutorial, macports, package-manager, macos]
+tags: [macports, package manager, macos]
 ---
 {% include JB/setup %}
 

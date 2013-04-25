@@ -4,7 +4,7 @@ title: "Setting up Custom domain for Github Pages"
 description: ""
 category: Jekyll
 thumbnail: /files/thumbnails/github.png
-tags: [github, domain, jekyll]
+tags: [github, jekyll]
 ---
 {% include JB/setup %}
 

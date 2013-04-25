@@ -4,7 +4,7 @@ title: "MacOS - Permanently Disable Reopen Windows when Logging back"
 description: ""
 category: Misc
 thumbnail: /files/thumbnails/macos.png
-tags: [tutorial, macos, reopen windows, disable]
+tags: [macos]
 ---
 {% include JB/setup %}
 

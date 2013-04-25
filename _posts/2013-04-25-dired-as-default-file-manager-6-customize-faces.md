@@ -4,7 +4,7 @@ title: "Dired as Default File Manager - Customize Faces"
 description: ""
 category: Emacs
 thumbnail: /files/thumbnails/emacs.png
-tags: [emacs, file manager, dired, faces]
+tags: [emacs, file manager, dired]
 ---
 {% include JB/setup %}
 

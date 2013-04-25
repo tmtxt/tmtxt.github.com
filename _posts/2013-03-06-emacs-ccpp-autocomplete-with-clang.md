@@ -4,7 +4,7 @@ title: "Emacs - C/C++ Autocomplete with Clang"
 description: ""
 category: Emacs
 thumbnail: /files/thumbnails/emacs.png
-tags: [clang, emacs, tutorial, autocomplete]
+tags: [clang, emacs, autocomplete]
 ---
 {% include JB/setup %}
 

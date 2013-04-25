@@ -4,7 +4,7 @@ title: "Disable 4G LTE on Samsung Galaxy Note 1 Korea Android 4.0.4"
 description: ""
 category: Misc
 thumbnail: 
-tags: [tips, tutorial, 4g, lte, samsung, galaxy note]
+tags: [lte, galaxy note, android]
 ---
 {% include JB/setup %}
 

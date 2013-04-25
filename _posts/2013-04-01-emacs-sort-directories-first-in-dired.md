@@ -4,7 +4,7 @@ title: "Emacs - Sort Directories first in Dired"
 description: ""
 category: Emacs
 thumbnail: /files/thumbnails/emacs.png
-tags: [emacs, dired, directory]
+tags: [emacs, dired]
 ---
 {% include JB/setup %}
 

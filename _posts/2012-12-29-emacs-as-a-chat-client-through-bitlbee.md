@@ -4,7 +4,7 @@ title: "Emacs as a Chat client through Bitlbee"
 description: ""
 category: Emacs
 thumbnail: /files/2012-12-29-emacs-as-a-chat-client-through-bitlbee/thumbnail.png
-tags: [emacs, tutorial, bitlbee, chat, erc]
+tags: [emacs, bitlbee, chat, erc]
 ---
 {% include JB/setup %}
 

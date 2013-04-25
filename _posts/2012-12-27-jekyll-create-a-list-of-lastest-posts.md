@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Jekyll Bootstrap - Create a list of Lastest Posts"
+title: "Jekyll - Create a list of Lastest Posts"
 description: ""
 category: Jekyll
 thumbnail: /files/2012-12-27-jekyll-create-a-list-of-lastest-posts/thumbnail.png
-tags: [tutorial, jekyll, posts-list, tip, liquid]
+tags: [jekyll]
 ---
 {% include JB/setup %}
 

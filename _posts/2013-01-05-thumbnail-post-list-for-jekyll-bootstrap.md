@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Thumbnail Post List for Jekyll Bootstrap"
+title: "Thumbnail Post List for Jekyll"
 description: ""
 category: Jekyll
 thumbnail: /files/2013-01-05-thumbnail-post-list-for-jekyll-bootstrap/thumbnail.png
-tags: [tutorial, thumbnail, post, jekyll, bootstrap]
+tags: [jekyll]
 ---
 {% include JB/setup %}
 
