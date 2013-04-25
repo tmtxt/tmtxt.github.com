@@ -48,6 +48,7 @@ files and then s-o to open it using the default program on Mac OS.
 
 **Ubuntu**: Source:
 <https://github.com/ubolonton/.emacs.d/blob/master/config/ublt-dired.el>  
+You need to replace **gnome-open** with your open command in your OS.
 
 {% highlight cl %}
 (defun ublt/dired-open-native ()
@@ -109,6 +110,7 @@ Both functions on MacOS and Ubuntu are bounded to s-u.
 {% endhighlight %}
 
 **Ubuntu** (hasn't been checked yet)
+You need to replace **gnome-open** with your open command in your OS.
 
 {% highlight cl %}
 (tmtxt/in '(darwin)
