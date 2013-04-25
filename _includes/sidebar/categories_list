@@ -1,0 +1,10 @@
+<div>
+  <h3>Categories</h3>
+  <ul>
+	{% for category in site.categories %} 
+	<li>
+	  <a href="/categories.html#{{category[0]}}-ref">{{category[0]}}</a>
+	</li>
+	{% endfor %}
+  </ul>
+</div>

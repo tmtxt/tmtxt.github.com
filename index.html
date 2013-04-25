@@ -140,33 +140,19 @@ title: Trường TX Blog
 	</div>
 
 	<!-- searchbox -->
-	{% include normal_search_box %}
+	{% include sidebar/search_box %}
 
 	<!-- social sharing buttons -->
-	{% include social_share_buttons %}
+	{% include sidebar/social_share_buttons %}
 	
 	<!-- contact me -->
-	{% include contact_me %}
+	{% include sidebar/contact_me %}
 	
 	<!-- categories list -->
-	<div>
-	  <h3>Categories</h3>
-	  <ul>
-		{% for category in site.categories %} 
-		<li>
-		  <a href="/categories.html#{{category[0]}}-ref">{{category[0]}}</a>
-		</li>
-		{% endfor %}
-	  </ul>
-	</div>
+	{% include sidebar/categories_list %}
 
 	<!-- recent post -->
-	<h3>Recent Posts</h3>
-	<ul>
-	  {% for post in site.posts limit:10 %}
-	  <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-	  {% endfor %}
-	</ul>	
+	{% include sidebar/recent_posts_list %}
 	
   </div>
 </div>
