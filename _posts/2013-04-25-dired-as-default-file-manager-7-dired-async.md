@@ -12,7 +12,10 @@ tags: [emacs, file manager, dired, dired async]
 > [Dired as Default File Manager](/2013/04/24/dired-as-default-file-manager-1-introduction/).
 
 All this section I focus on **tmtxt-dired-async**, which is a tiny library that
-I devloped to help the use of Dired become easier.
+I devloped to help the use of Dired become easier. Actually, the code is a bit
+long so that I cannot post it here, that will make my post become messy.
+Instead, I move all those functions to a separate file and post it here for easy
+installation.
 
 tmtxt-dired-async is a library for Emacs Dired mode to copy, compress,
 decompress files
