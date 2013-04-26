@@ -2,24 +2,21 @@
 <div>
   <h3>Contact me</h3>
   <a href="https://twitter.com/tommytxtruong" target="_blank">
-	<img src="/files/index/twitter.png" width="20px" />
+	<i class="icon-twitter icon-2x"></i>
   </a>&nbsp;
   <a href="http://facebook.com/mr.truong.tx" target="_blank">
-	<img src="/files/index/facebook.png" width="20px" />
+	<i class="icon-facebook icon-2x"></i>
   </a>&nbsp;
   <a href="http://www.linkedin.com/pub/tran-xuan-truong/67/2b/a65" target="_blank">
-	<img src="/files/index/linkedin.png" width="20px" />
+	<i class="icon-linkedin icon-2x"></i>
   </a>&nbsp;
   <a href="mailto:me@truongtx.me" target="_blank">
-	<img src="/files/index/email.png" width="20px" />
-  </a>&nbsp;
-  <a href="skype:tommy.txtruong?chat">
-	<img src="/files/index/skype.png" width="20px" />
+	<i class="icon-envelope icon-2x"></i>
   </a>&nbsp;
   <a href="https://github.com/tommytxtruong">
-	<img src="/files/index/github.png" width="20px" />
+	<i class="icon-github icon-2x"></i>
   </a>&nbsp;
   <a href="https://plus.google.com/114414080610977988569/">
-	<img src="/files/index/gplus.png" width="20px" />
+	<i class="icon-google-plus icon-2x"></i>
   </a>&nbsp;
 </div>
