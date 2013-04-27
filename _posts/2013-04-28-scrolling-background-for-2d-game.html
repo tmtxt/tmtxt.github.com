@@ -1,0 +1,132 @@
+---
+layout: post
+title: "Infinite Scrolling Background for 2D Game"
+description: ""
+category: Misc
+thumbnail: 
+tags: [libgdx]
+---
+{% include JB/setup %}
+
+<p>
+Last month, I started researching LibGDX, a game engine mainly targeted for Android.
+Also, this was the first time I worked with a game engine.
+</p>
+
+<p>
+My goal is to develop a platform game like
+<a href="https://play.google.com/store/apps/details?id=com.nekki.vector">Vector</a>
+but much simpler. This is also inspired by
+<a href="https://play.google.com/store/apps/details?id=com.imangi.templerun">Temple Run</a>.
+The main character keeps running and avoid being chased by the NPC. Precisely, I
+have to say that the main character just stays at one place and the background
+keeps moving backward.
+</p>
+
+<p>
+The first problem that I encounterd was the infinite scrolling background. I
+have researched through Google with many solutions. However, all of them are too
+complex to solve that simple task. The code can be up to 100 lines long with
+tons of complicated mathematical formula to calculate how to scroll the
+background. Finally, I gave up and decided to come up with my own solution.
+Amazingly, it took me only less than 15 minutes and about 10 lines of code to
+archive it.
+</p>
+
+<p>
+The theory is very simple. Assume that you have a background file names bg.jpg,
+what you have to do now is to draw that background, move and loop it side by
+side. Let's look at the image below and I'll explain
+</p>
+
+<p>
+<img src="/files/2013-04-11-parallax-scrolling-background-for-2d-game/bg1.png" />
+</p>
+
+</p>
+Actually, what we have to do it is just move the separator and draw 2 background
+image on two sides of it. When the separator reach the screen edge, move it back
+to the other screen edge and then continue all the previous steps.
+</p>
+
+<p>
+Let's look at the video of this very simple example (sorry for the bad video
+quality).
+</p>
+
+<p>
+<iframe width="560" height="315" src="http://www.youtube.com/embed/_7kVZSEO_4k" frameborder="0" allowfullscreen></iframe>
+</p>
+
+<p>
+Here is the code which I implemented using
+<a href="http://code.google.com/p/libgdx/">LibGdx</a>. For other engine, it would be
+similar, the same theory, just different implementation. The demo code below is
+very dirty, so don't use it in the production.
+</p>
+
+</p>
+First, declare a the background texture and the camera. The currentBgX is the
+current X position on the co-ordinate of the separator. lastTimeBg is used for
+determine the time between each time the background move.
+</p>
+
+{% highlight java %}
+OrthographicCamera camera;
+Texture background;
+float currentBgX;
+long lastTimeBg;
+{% endhighlight %}
+
+In the create() method, init those variable
+
+{% highlight java %}
+// Init the camera
+camera = new OrthographicCamera();
+camera.setToOrtho(false, 800, 480);
+
+// Init the background image
+background = new Texture(Gdx.files.internal("bg.jpg"));
+
+// the separator first appear at the position 800 (the edge of the screen, see
+// the camera above)
+currentBgX = 800;
+
+// set lastTimeBg to current time
+lastTimeBg = TimeUtils.nanoTime();
+{% endhighlight %}
+
+In the render() function, draw the background on both sides of the sepearator
+between the batch.begin() and batch.end() block
+
+{% highlight java %}
+batch.begin();
+// draw the first background
+batch.draw(background, currentBgX - 800, 0);
+// draw the second background
+batch.draw(background, currentBgX, 0);
+batch.end();
+{% endhighlight %}
+
+Also, in the render() method, we need to move the separator
+
+{% highlight java %}
+// move the separator each 1s
+if(TimeUtils.nanoTime() - lastTimeBg > 100000000){
+	// move the separator 50px
+	currentBgX -= 50;
+	// set the current time to lastTimeBg
+	lastTimeBg = TimeUtils.nanoTime();
+}
+
+// if the seprator reaches the screen edge, move it back to the first position
+if(currentBgX == 0){
+	currentBgX = 800;
+}
+{% endhighlight %}
+
+You can download the source
+<a href="/files/2013-04-11-parallax-scrolling-background-for-2d-game/repeatedbg.zip">
+here</a>
+After downloading, import those 4 projects into Eclipse. Depending on your
+preference, you can run the project as an Android app, Desktop app or HTML5 app.
