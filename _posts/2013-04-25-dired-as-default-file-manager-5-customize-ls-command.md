@@ -38,7 +38,7 @@ If you want to use those GNU version commands, eg **ls**, **cp**, **chmod**,
 etc, in terminal, add this to your .bash_profile or .zshrc
 
 {% highlight sh %}
-$ export PATH=$PATH:/opt/local/libexec/gnubin
+$ export PATH=/opt/local/libexec/gnubin:$PATH:
 {% endhighlight %}
 
 After that, restart terminal and type this command to test
