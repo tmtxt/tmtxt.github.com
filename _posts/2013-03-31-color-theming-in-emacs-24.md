@@ -23,6 +23,8 @@ all those facets as well as previewing color in Emacs. You can even copy from
 other theme and then customize it a bit to make it yours. Here is some tips on
 how to create a custom theme with Emacs 24.
 
+<!-- more -->
+
 # Create Custom Color Theming in Emacs 24
 
 Emacs 24 provides a new function named **deftheme** to define a new theme.

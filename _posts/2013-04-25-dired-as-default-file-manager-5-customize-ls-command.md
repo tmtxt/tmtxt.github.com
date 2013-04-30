@@ -18,6 +18,8 @@ based on the result returned from **ls** command (of course, I'm talking about
 Unix-based system, not Windows). We can customize the way it displays by adding
 some more arguments for the **ls** command.
 
+<!-- more -->
+
 # Preparation ls program
 
 If you are using a GNU Linux based OS, everything is just simple. The GNU

@@ -22,6 +22,8 @@ large and multiple files, it show one annoying drawback. When we want to copy or
 move a big file, Emacs will be entirely blocked until the copying/renaming
 process complete.
 
+<!-- more -->
+
 There are several methods to fix this problem. My solution is to replace copy
 command with **rsync** and execute it asynchronously so that the rsync process
 can execute in the background while you can still interact with Emacs normally.

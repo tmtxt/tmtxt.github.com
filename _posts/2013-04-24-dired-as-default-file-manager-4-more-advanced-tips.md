@@ -19,6 +19,8 @@ cursor to stay at the
 current file, remove **(call-interactively 'dired-previous-line)** in the code.
 Change s-b to the key binding that you like
 
+<!-- more -->
+
 {% highlight cl %}
 (defun dired-mark-backward ()
   (interactive)

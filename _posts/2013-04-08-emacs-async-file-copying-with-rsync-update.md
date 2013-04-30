@@ -19,6 +19,8 @@ other-window. As a result, the rsync feature now does not affact my current
 work. I can continue what I'm currently doing while leaving rsync take care of my
 files.
 
+<!-- more -->
+
 **Note**: it would not run on Windows computers.
 
 # Implementation

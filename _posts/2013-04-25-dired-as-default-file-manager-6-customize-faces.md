@@ -20,6 +20,8 @@ If you haven't known about Emacs 24 Color Theming yet, have a look at this post
 [Color Theming in Emacs 24](/2013/03/31/color-theming-in-emacs-24/). This post
 just lists some useful faces that you can customize for Dired.
 
+<!-- more -->
+
 **For Dired**
 
 * **dired-directory**: Face used for subdirectories.

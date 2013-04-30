@@ -23,6 +23,8 @@ eyes out of the screen and move my hands out of the keyboard. Especially when I
 work at night, I usually turn off the light and I can see nothing but my screen
 and I don't want to waste time looking for my mouse.
 
+<!-- more -->
+
 As a result, I really hate the default file manager on my Mac, Finder (or
 Windows Explorer that I used to work with in the past), which decreases my speed
 considerably. I have been constantly looking for a better solution until I found

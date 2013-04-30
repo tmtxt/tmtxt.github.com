@@ -21,6 +21,8 @@ This is a simple Task Management Application (To-do list manager). It helps you
 in managing and organize your daily works include what you need to do, when is
 the due date for the task, who will be involved in the activity, etc.
 
+<!-- more -->
+
 # Main Entities
 
 At the core of the functional requirements of this application are the following

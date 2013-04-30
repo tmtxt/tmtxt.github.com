@@ -14,6 +14,8 @@ this
 [article](http://code.google.com/p/libgdx-users/wiki/SimpleDirectionGestureDetector).
 The code on that link contains errors. Here is the fixed version of it.
 
+<!-- more -->
+
 Create a class name SimpleDirectionGestureDetector
 
 {% highlight java %}

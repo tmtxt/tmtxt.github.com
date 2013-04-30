@@ -23,8 +23,9 @@ asynchronously. It also provides the ability to mark files in multiple
 directories and then copy all of them into a destination library. This
 library is designed for Unix-based system like MacOS, Ubuntu,...
 
-The
-reason why I developed this library is to overcome Emacs Dired's
+<!-- more -->
+
+The reason why I developed this library is to overcome Emacs Dired's
 drawbacks. Everytime I need to copy, move, compress, uncompress,... big
 files, Emacs is blocked until those processes finish execution. That's
 really annoying. This extension helps solve that problem by providing

@@ -13,6 +13,8 @@ tags: [google, analytics, jekyll]
 > Bootstrap site is not so clear and comprehensive for those who is new to
 > Google Analytics and Jekyll Bootstrap.
 
+<!-- more -->
+
 # Register for Google Analytics
 
 First, you need to register a Google analytics account. Go to this link

@@ -24,6 +24,8 @@ the picture below and then click Save. **204.232.175.78** is the ip of github
 server, you can find it in this
 [page](https://help.github.com/articles/setting-up-a-custom-domain-with-pages)
 
+<!-- more -->
+
 ![namecheap](/files/2013-04-07-setting-up-custom-domain-for-github-pages/namecheap.png)
 
 It can take up to a whole day for the new domain to take effect, be patient!

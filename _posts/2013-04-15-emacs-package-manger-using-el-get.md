@@ -17,6 +17,8 @@ which is very powerful and especially suitable for complex packages called
 installation process by automatically fetch and install the package that you
 want as well as all its dependencies.
 
+<!-- more -->
+
 # Installation
 
 el-get needs to be installed in **~/.emacs.d/el-get/el-get**. Create a directory

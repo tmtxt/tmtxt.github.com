@@ -3,7 +3,7 @@ layout: post
 title: "Dired as Default File Manager - Basic Tips"
 description: ""
 category: Emacs
-thumbnail: files/thumbnails/emacs.png
+thumbnail: /files/thumbnails/emacs.png
 tags: [emacs, dired, file manager]
 ---
 {% include JB/setup %}
@@ -14,6 +14,8 @@ tags: [emacs, dired, file manager]
 Before reading this, you should have a look at this page
 [Dired - GNU Emacs Manual](http://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html)
 to know some basic commands to use Dired properly.
+
+<!-- more -->
 
 # Always Recursion
 

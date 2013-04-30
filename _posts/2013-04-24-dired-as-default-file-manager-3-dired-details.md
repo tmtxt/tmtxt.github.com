@@ -17,6 +17,8 @@ can easily install both of them through package.el (see this post
 
 To activate it, add this to your .emacs
 
+<!-- more -->
+
 {% highlight cl %}
 (require 'dired-details+)
 {% endhighlight %}

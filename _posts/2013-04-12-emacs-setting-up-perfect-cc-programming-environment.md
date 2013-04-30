@@ -13,6 +13,8 @@ This is a continue to the first part in this post
 This time, I'll demonstrate some more tips to help make your Emacs a powerful
 IDE for C/C++ programming
 
+<!-- more -->
+
 # Syntax Checking on the fly
 
 Flymake is a package which comes with Emacs 23 and above to help Emacs perform
