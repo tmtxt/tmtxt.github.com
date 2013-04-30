@@ -51,19 +51,37 @@ group: project
 (define-key dired-mode-map (kbd "C-c C-r") 'tmtxt/dired-async-rsync)
 {% endhighlight %}
 
-	<h2>3.2 Asynchronously Compress files</h2>
+	<h2>3.2 Asynchronously Copy files (with delete option)</h2>
+	This feature is similar to the above feature. It also uses rsync to copy
+	file. However, it includes the delete option for rsync to ensure that you have
+	the destination folder exactly the same as the source directory
+{% highlight cl %}
+(define-key dired-mode-map (kbd "C-c C-t") 'tmtxt/dired-async-rsync-delete)
+{% endhighlight %}
+	
+	Set the deletion method for rsync delete
+{% highlight cl %}
+(setq-default tmtxt/dired-async-rsync-delete-method "--delete-after")
+{% endhighlight %}
+
+	<h2>3.3 Asynchronously Compress files</h2>
 	Compress all marked files.
 {% highlight cl %}
 (define-key dired-mode-map (kbd "C-c C-z") 'tmtxt/dired-async-zip)
 {% endhighlight %}
 
-	<h2>3.3 Asynchronously Decompress files</h2>
-	Decompress the zip file at point.
-	{% highlight cl %}
-	(define-key dired-mode-map (kbd "C-c C-u") 'tmtxt/dired-async-unzip)
-	{% endhighlight %}
+	Set the compression level, from 0-9
+{% highlight cl %}
+(setq-default tmtxt/dired-async-zip-compression-level "9")
+{% endhighlight %}
 
-	<h2>3.4 Copy from multiple directories</h2>
+	<h2>3.4 Asynchronously Decompress files</h2>
+	Decompress the zip file at point.
+{% highlight cl %}
+(define-key dired-mode-map (kbd "C-c C-u") 'tmtxt/dired-async-unzip)
+{% endhighlight %}
+
+	<h2>3.5 Copy from multiple directories</h2>
 	This feature allows you to select many files from multi directories and then
 	copy all of them to a destination folder.
 {% highlight cl %}
@@ -76,6 +94,17 @@ group: project
 	remove the current file at point from the waiting list. C-c C-e to empty the
 	waiting list. Finally, C-c C-v to copy all files in the list to the current
 	directory.
+
+	<h2>3.6 Other config</h2>
+	Set the time to close the result window after finish, measured in second
+{% highlight cl %}
+(setq-default tmtxt/dired-async-post-process-window-show-time "5")
+{% endhighlight %}
+
+	Set the height for the result window, measured in the number of lines
+{% highlight cl %}
+(setq-default tmtxt/dired-async-result-window-height 10)
+{% endhighlight %}
 
 	<h1>4. Screenshots</h1>
 	<p>Here are some screenshots from my Emacs</p>
