@@ -60,8 +60,12 @@ title: Trường TX Blog
 	  </div>
 	  <div class="span9">
 		<!-- post content -->
-		<div>
-		  {{ post.content | strip_html | truncatewords:100 }}
+		<div class="post-content-truncate">
+		  {% if post.content contains "<!-- more -->" %}
+		  	{{ post.content | split:"<!-- more -->" | first % }}
+		  {% else %}
+		  	{{ post.content | strip_html | truncatewords:100 }}
+		  {% endif %}
 		</div>
 
 		<!-- read more button -->
