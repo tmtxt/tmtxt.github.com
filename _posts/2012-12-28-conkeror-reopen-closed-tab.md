@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "Conkeror - Reopen Closed tab"
 description: ""
 category: Conkeror Web Browser

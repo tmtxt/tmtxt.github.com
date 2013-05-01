@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "Dired as Default File Manager - Customize Faces"
 description: ""
 category: Emacs

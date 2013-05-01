@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "Thumbnail Post List for Jekyll"
 description: ""
 category: Jekyll

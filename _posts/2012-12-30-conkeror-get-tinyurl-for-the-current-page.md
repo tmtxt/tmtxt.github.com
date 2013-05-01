@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "Conkeror - Get tinyurl for the current page"
 description: ""
 category: Conkeror Web Browser

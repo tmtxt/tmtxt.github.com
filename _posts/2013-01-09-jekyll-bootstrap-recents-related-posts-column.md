@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "Jekyll - Recents and Related Posts section"
 description: ""
 category: Jekyll

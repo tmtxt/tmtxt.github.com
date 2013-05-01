@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "Jekyll - Nomalize address to avoid duplicate Disqus comment thread"
 description: ""
 category: Jekyll

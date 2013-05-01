@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "Google Analytics for Jekyll Bootstrap"
 description: ""
 category: Jekyll

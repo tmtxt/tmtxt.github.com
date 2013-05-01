@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "MacPorts - The MacOS package manager"
 description: ""
 category: Misc

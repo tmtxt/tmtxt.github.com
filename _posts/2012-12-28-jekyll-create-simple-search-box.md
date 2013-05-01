@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "Jekyll Bootstrap - Create Simple Search box"
 description: ""
 category: Jekyll

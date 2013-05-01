@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "Emacs as a Chat client through Bitlbee"
 description: ""
 category: Emacs

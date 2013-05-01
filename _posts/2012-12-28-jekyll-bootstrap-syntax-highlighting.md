@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "Jekyll - Syntax highlighting"
 description: ""
 category: Jekyll

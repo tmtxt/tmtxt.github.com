@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "Emacs - Sort Directories first in Dired"
 description: ""
 category: Emacs

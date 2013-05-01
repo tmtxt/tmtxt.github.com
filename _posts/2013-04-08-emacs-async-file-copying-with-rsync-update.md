@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "Emacs - Async File copying with Rsync - Update Apr 8 2013"
 description: ""
 category: Emacs

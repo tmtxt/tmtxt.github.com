@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "Emacs Package Manger using el-get"
 description: ""
 category: Emacs

@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "Emacs Packages Manager using package.el"
 description: ""
 category: Emacs

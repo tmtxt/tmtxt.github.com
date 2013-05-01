@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "Config Yasnippet and Autocomplete on Emacs"
 description: ""
 category: Emacs

@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "Conkeror - Display Tab bar"
 description: ""
 category: Conkeror Web Browser

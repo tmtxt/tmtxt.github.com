@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "Color Theming in Emacs 24"
 description: ""
 category: Emacs

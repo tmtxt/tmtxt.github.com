@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "VLC - Normalize media files"
 description: ""
 category: Misc

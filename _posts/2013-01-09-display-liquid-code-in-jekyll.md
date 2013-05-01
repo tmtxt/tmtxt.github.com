@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "Display Liquid code in Jekyll"
 description: ""
 category: Jekyll

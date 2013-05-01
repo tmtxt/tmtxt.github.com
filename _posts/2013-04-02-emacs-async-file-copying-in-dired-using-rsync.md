@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "Emacs - Async File Copying in Dired using Rsync"
 description: ""
 category: Emacs

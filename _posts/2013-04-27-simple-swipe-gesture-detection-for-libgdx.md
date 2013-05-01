@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "Simple Swipe Gesture Detection for LibGdx"
 description: ""
 category: Misc

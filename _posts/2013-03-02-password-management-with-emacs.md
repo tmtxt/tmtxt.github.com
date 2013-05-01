@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "Password Management with Emacs"
 description: ""
 category: Emacs

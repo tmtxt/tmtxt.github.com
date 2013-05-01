@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "Jekyll - Blogging platform for geeks"
 description: ""
 category: Jekyll

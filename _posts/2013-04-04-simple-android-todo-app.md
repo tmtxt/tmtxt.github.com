@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "Simple Android TODO App"
 description: ""
 category: Misc

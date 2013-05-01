@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "Dired as Default File Manager - Introduction"
 description: ""
 category: Emacs

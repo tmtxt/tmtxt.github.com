@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "Emacs - C/C++ Autocomplete with Clang"
 description: ""
 category: Emacs

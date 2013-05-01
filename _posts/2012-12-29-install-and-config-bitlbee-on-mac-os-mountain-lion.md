@@ -1,5 +1,6 @@
 ---
 layout: post
+showtn: yes
 title: "Install - Config Bitlbee on Mac Mountain Lion using MacPorts"
 description: ""
 category: Misc
