@@ -28,6 +28,8 @@ section.
 <!-- more -->
 {% endhighlight %}
 
+<!-- more -->
+
 # Display the Preview
 
 Next, open your index.html file or the page which is currently display your post
