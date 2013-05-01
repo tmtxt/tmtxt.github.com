@@ -27,6 +27,8 @@ define_key(default_global_keymap, "A-h",
           });
 {% endhighlight %}
 
+<!-- more -->
+
 ## Reload all buffer (key A-r)
 
 {% highlight javascript %}

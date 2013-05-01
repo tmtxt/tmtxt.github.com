@@ -14,6 +14,8 @@ tags: [workspace]
 
 ![conkeror](/files/2012-12-25-my-daily-workspace/browser.png)
 
+<!-- more -->
+
 **Terminal**
 
 ![terminal](/files/2012-12-25-my-daily-workspace/terminal.png)

@@ -19,6 +19,8 @@ First, we have to create an Array to hold the closed tabs.
 var my_closed_buffers = new Array();
 {% endhighlight %}
 
+<!-- more -->
+
 Next, rewrite the built in close buffer function to make Conkeror save the
 current tab URL before closing it. In the code below I save only maximum 10
 closed buffers. If you want you can set it more.

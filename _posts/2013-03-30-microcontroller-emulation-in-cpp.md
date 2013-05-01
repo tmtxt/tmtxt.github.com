@@ -16,6 +16,8 @@ tags: [c++, microcontroller emulation]
     other university assignment. I just posted it here to show my work and share
     with other people. So... Use it at your own risk.
 
+<!-- more -->
+
 # Microcontroller Emulation Program
 
 Emulator programs or emulator modules have been around since the first home

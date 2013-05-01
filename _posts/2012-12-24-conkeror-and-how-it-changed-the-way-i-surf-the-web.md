@@ -18,6 +18,8 @@ For those of you who haven't known about Conkeror yet, here is a brief descripti
 
 The first time I heard about conkeror was in 2010. And now it becomes my daily used application. Though I still use many other web browsers (Chrome, Firefox, Safari and Opera), Conkeror is my main web browser and usually the first app I open when I start my computer. Here are some key features that make me really impressed in Conkeror.
 
+<!-- more -->
+
 # Keyboard-oriented
 
 Yes as I mentioned above in the description, it's a keyboard-oriented browser. This is the most impressing feature of Conkeror. I love conkeror right at the first time I saw my cousin used it. I knew I had found the right browser for me. Most of the time you don't need to move your hand out of the keyboard, or even out the home row area. This can speed up the way we use our computer many times.

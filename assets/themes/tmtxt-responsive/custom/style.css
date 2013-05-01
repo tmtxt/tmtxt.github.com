@@ -47,3 +47,7 @@ html, body {
 	font-size: 18.75px;
 	color: #333;
 }
+
+.post-content-truncate img {
+	max-width: 400px;
+}

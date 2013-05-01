@@ -19,6 +19,8 @@ method is to setup your private Bitlbee server and connect to it. Of course I
 choose the second way because the first one is not for the nerds :LOL:. And also
 you cannot install or config the server if you're using a public server.
 
+<!-- more -->
+
 # Install Bitlbee
 
 If you wish to use the easy method or you just want to try **Bitlbee** first,

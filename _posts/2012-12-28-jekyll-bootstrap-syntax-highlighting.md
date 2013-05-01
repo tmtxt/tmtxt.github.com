@@ -24,6 +24,8 @@ them for you.
 * Easy to use  
 * Easy to update (just replace the js file or even auto update)
 
+<!-- more -->
+
 ## 1.2 Disadvantages:
 
 * Not very-well syntax highlighting but acceptable

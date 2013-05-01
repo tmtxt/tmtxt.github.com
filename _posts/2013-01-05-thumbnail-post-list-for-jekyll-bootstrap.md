@@ -21,6 +21,8 @@ you can still apply those steps with a few tweaks.
 
 You can have a look at my homepage to see the demo.
 
+<!-- more -->
+
 # Add Thumbnail property for post
 
 By default Jekyll do not support thumbnail image property for post so we need to

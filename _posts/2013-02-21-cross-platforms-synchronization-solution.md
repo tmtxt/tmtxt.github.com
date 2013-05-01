@@ -14,6 +14,8 @@ Ubuntu, iOS, Android, Blackberry, Symbian,... I want to keep them all in sync so
 that I can easily manage and access my data on any devices. Here are some of my
 currently used and known solutions for keeping them in sync.
 
+<!-- more -->
+
 # Contacts and Calendar sync
 
 Sync solution for each platform

@@ -17,6 +17,8 @@ will have to reinstall those packages again, and add them to the load-path
 manually. Here is a simple solution that will help us automate the installation
 process.
 
+<!-- more -->
+
 # Load Emacs package manager and Add more source
 
 Emacs is not a package manager, and we should load its package manager and also

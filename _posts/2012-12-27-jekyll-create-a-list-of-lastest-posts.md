@@ -24,6 +24,8 @@ appear.
 </ul>
 {% endhighlight %}
 
+<!-- more -->
+
 Actually, it is nearly the same with the default post list jekyll auto creates
 in the index file when installing jekyll. I just add the **limit:20** in the
 **for** loop so that when I have many posts the list will not expand too long.

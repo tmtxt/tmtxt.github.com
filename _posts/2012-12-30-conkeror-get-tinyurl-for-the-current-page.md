@@ -32,5 +32,7 @@ define_browser_object_class(
 define_key(content_buffer_normal_keymap, "* q", "browser-object-tinyurl");
 {% endhighlight %}
 
+<!-- more -->
+
 To get the tinyurl of the current page, simply press <span><b>* q c</b></span>,
 the generated tinyurl now is copied to your clipboard.

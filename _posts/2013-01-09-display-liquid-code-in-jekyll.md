@@ -21,6 +21,8 @@ brackets. I really don't like it but it can be faster with short liquid code.
 
 One example with this liquid code:
 
+<!-- more -->
+
 {% highlight html %}
 {{ "{% for post in site.posts limit:5 "}}%}
 {{ "{% endfor "}}%}

@@ -25,6 +25,8 @@ with your IRC clients to connect to other chat services like Yahoo, FB, Gtalk,..
 
 **Bitlbee Homepage**: <http://www.bitlbee.org/>
 
+<!-- more -->
+
 # Installation
 
 First you need to install [MacPort](http://www.macports.org/), a package manager

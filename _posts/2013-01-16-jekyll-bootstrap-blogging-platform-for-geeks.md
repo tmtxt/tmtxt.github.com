@@ -28,6 +28,8 @@ complicated for us to focus on the main content.
 If you feel annoyed with those problems, it's time for you to find another
 better solution.
 
+<!-- more -->
+
 # What is Jekyll?
 
 > Jekyll is a parsing engine bundled as a ruby gem used to build static websites

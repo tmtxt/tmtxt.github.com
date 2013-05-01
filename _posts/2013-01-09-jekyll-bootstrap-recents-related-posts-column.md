@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Jekyll Bootstrap - Recents and Related Posts section"
+title: "Jekyll - Recents and Related Posts section"
 description: ""
 category: Jekyll
 thumbnail: /files/2013-01-09-jekyll-bootstrap-recents-related-posts-column/thumbnail.png
@@ -22,6 +22,8 @@ in the post template (usually **/_includes/themes/theme-name/post.html**).
   {{ "{% endfor "}}%}
 </ul>
 {% endhighlight %}
+
+<!-- more -->
 
 ## Recent Posts
 

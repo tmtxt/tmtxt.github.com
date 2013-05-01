@@ -14,6 +14,8 @@ ECB, stands for Emacs Code Browser, tranforms your emacs from a text editor to a
 real IDE for coding. Once activated, it can display some useful information that
 help you program more effectively. The ECB's informational windows can contain:
 
+<!-- more -->
+
 * A directory tree,
 * a list of source files in the current directory,
 * a list of functions/classes/methods/... in the current file, (ECB uses

@@ -13,6 +13,8 @@ have been using Emacs since I began learning C while my classmates used vim,
 which was taught by the lecturer. Now I haven't found any better solution for me
 in C/C++ programming.
 
+<!-- more -->
+
 # Basic configuartion
 
 By default, Emacs automatically enables major C/C++ mode whenever you open a

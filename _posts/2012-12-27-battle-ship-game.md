@@ -21,6 +21,8 @@ game will end when one of two players has no more ships on his grid.
 Here is the source of the game on Github:
 [Battle Ship Game on Github](https://github.com/tommytxtruong/battleship)
 
+<!-- more -->
+
 The actual source is the BattleShip folder which is a Netbeas project. Import it
 into Netbeans and have fun ;) Remember this is just for my assignment.
 

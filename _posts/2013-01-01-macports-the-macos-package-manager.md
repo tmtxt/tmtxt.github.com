@@ -20,6 +20,8 @@ source applications. You can even export all your installed packages and then
 let **MacPorts** automatically reinstall them for your when you have you
 computer reinstalled or when you migrate to another system.
 
+<!-- more -->
+
 # Installation
 
 The easiest way to install **MacPorts** is to download the .pkg installer

@@ -13,6 +13,8 @@ The first time you open Conkeror, it will show you the tutorial. It is the basic
 
 ![Conkeror Tutorial](/files/2012-12-25-conkeror---getting-started---part-2/tutorial.png)
 
+<!-- more -->
+
 # The RC file
 
 Like many other Unix-based application, conkeror also has its own rc file. The rc file is your own script and is auto loaded when conkeror start. The rc file location is $HOME/.conkerorrc where $HOME is your home directory. The .conkerorrc can be a text file written in javascript or a directory. If it's an directory, Conkeror will loads all the file with the extension .js in that directory. If you want to have your own config, just put them into the rc file.

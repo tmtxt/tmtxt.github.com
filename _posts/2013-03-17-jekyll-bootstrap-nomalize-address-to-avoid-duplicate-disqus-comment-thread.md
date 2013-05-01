@@ -20,6 +20,8 @@ The solution for this is to normalize the URL of the site to make them all
 follow one convention. Because Jekyll sites are static websites, we need a
 language that can run on client. This can be solved by using javascript.
 
+<!-- more -->
+
 Inside the <span><b>_includes</b></span> folder under the root directory of your website, create
 a new file named normalize_address.html with this content
 

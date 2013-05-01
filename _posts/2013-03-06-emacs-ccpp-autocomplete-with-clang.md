@@ -16,6 +16,8 @@ C/C++ and even Objective C programming.
 If you haven't known what is Clang yet, have a look at this article
 [Clang on Wikipedia](http://en.wikipedia.org/wiki/Clang)
 
+<!-- more -->
+
 # Requirements & Installation
 
 First, you have to install AutoComplete for Emacs. You can install it using

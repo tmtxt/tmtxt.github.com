@@ -19,6 +19,8 @@ to go to **Setting -> More -> Mobile Networks -> Pref** and select the prefered
 network type. However, there is no option called pref or something like that
 there.
 
+<!-- more -->
+
 After researching through the internet, I found that there is a Carrier Hidden
 Menu inside the phone app and we can change many settings there. Still, I don't
 know why they do not put these general preferences into Settings :-|

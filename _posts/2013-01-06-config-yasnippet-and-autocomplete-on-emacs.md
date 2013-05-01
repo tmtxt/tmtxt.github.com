@@ -18,6 +18,8 @@ simply install them using **package.el**. After that, add this to your **.emacs*
 
 First, activate yasnippet.
 
+<!-- more -->
+
 {% highlight cl %}
 ;;; yasnippet
 ;;; should be loaded before auto complete so that they can work together

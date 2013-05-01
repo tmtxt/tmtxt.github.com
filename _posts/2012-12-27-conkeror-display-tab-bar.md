@@ -20,6 +20,8 @@ Everytime you want to switch to the other buffer, you have to type **C-x b**,
 which is very hard for you to imagine which and how many web pages are currently
 opened. In this post, I'll show you how to make Conkeror display the tab bar.
 
+<!-- more -->
+
 ![Conkeror Tab bar](/files/2012-12-27-conkeror-display-tab-bar/tab.png)
 
 **Note**: If you Conkeror rc file, which is the **.conkerorrc** file in you Home

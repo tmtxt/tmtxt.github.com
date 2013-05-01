@@ -19,6 +19,8 @@ something similar to this
 [2012-12-30 00:10:58] WARN  TCPServer Error: Address already in use - bind(2)
 {% endhighlight %}
 
+<!-- more -->
+
 That means there's already some other process or jekyll running on the port that
 jekyll uses and
 because of some reasons they do not close automatically. To fix this, open

@@ -18,6 +18,8 @@ It's an interface to
 your computer. If you're on MacOS, you can easily install it from Macports by
 executing the command **sudo port install gnupg**.
 
+<!-- more -->
+
 # Usage
 
 First, make sure that you have GnuPG installed on your computer by typing

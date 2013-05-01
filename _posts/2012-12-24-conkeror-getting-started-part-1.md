@@ -11,6 +11,8 @@ tags: [conkeror, emacs, web browser]
 > Again, if you are not really interested in, read this article [Conkeror and how it changed the way I surf the web](/2012/12/24/conkeror-and-how-it-changed-the-way-i-surf-the-web) to be convinced or just leave this page. Don't just try and give up early and blame me on wasting your time :LOL:.  
 > If you interested in, let's go!
 
+<!-- more -->
+
 **__Conkeror Installation __**
 
 Of course, the very first thing when we want to use a software is to install it.
