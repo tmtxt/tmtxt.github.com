@@ -1,0 +1,38 @@
+<h3>Tag Cloud</h3>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+  if(!$('#myCanvas').tagcanvas({
+  textColour: '#157ab5',
+  outlineColour: '#ff00ff',
+  reverse: true,
+  depth: 0.8,
+  weight: true,
+  weightSizeMin: 10,
+  weightSizeMax: 40,
+  wheelZoom: false,
+  maxSpeed: 0.05
+  },'tags')) {
+  // something went wrong, hide the canvas container
+  $('#myCanvasContainer').hide();
+  }
+  });
+</script>
+
+<div id="myCanvasContainer">
+  <canvas width="300" height="300" id="myCanvas">
+    <p>Anything in here will be replaced on browsers that support the canvas element</p>
+  </canvas>
+</div>
+<div id="tags">
+  <ul>
+	{% for tag in site.tags %}
+		<li>
+		  <a href="/tags.html#{{ tag | first}}-ref"
+			 style="font-size: {{tag | last | size | times:100 | divided_by:site.tags.size}}pt">
+			{{ tag | first }}
+		  </a>
+		</li>
+	{% endfor %}
+  </ul>
+</div>
