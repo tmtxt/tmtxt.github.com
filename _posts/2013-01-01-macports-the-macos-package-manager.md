@@ -1,6 +1,6 @@
 ---
 layout: post
-showtn: yes
+showtn: 
 title: "MacPorts - The MacOS package manager"
 description: ""
 category: Misc
@@ -21,8 +21,6 @@ source applications. You can even export all your installed packages and then
 let **MacPorts** automatically reinstall them for your when you have you
 computer reinstalled or when you migrate to another system.
 
-<!-- more -->
-
 # Installation
 
 The easiest way to install **MacPorts** is to download the .pkg installer
@@ -33,6 +31,8 @@ detail, please visit [this link](http://www.macports.org/install.php).
 After finish the installtion, you should consider update **MacPorts**.
 Fortunately, **MacPorts** has the built-in feature to selfupdate. Everything you
 need to do is to execute this command
+
+<!-- more -->
 
 {% highlight sh %}
 $ sudo port -v selfupdate

@@ -1,6 +1,6 @@
 ---
 layout: post
-showtn: yes
+showtn: 
 title: "Conkeror - Stop Loading and Reload all buffers"
 description: ""
 category: Conkeror Web Browser

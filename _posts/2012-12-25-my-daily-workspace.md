@@ -1,6 +1,6 @@
 ---
 layout: post
-showtn: yes
+showtn: 
 title: "My daily workspace"
 description: ""
 category: Misc

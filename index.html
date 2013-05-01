@@ -48,6 +48,9 @@ title: Trường TX Blog
 		</a>
 	  </span>
 	</p>
+
+	<!-- if allow show thumbnail -->
+	{% if post.showtn %}
 	<div class="row-fluid">
 	  <div class="span3 hidden-phone">
 		<!-- post thumbnail -->
@@ -59,6 +62,8 @@ title: Trường TX Blog
 		{% endif %}
 	  </div>
 	  <div class="span9">
+	{% endif %}
+	
 		<!-- post content -->
 		<div class="post-content-truncate">
 		  {% if post.content contains "<!-- more -->" %}
@@ -72,8 +77,12 @@ title: Trường TX Blog
 		<div>
 		  <a href="{{ post.url }}">Read more...</a>
 		</div>
+
+	<!-- if allow show thumbnail -->
+	{% if post.showtn %}
 	  </div>
 	</div>
+	{% endif %}
 	
 	<br/>
 	<hr/>

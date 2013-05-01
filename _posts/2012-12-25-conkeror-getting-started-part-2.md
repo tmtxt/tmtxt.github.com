@@ -1,6 +1,6 @@
 ---
 layout: post
-showtn: yes
+showtn: 
 title: "Conkeror - Getting Started - Part 2"
 description: ""
 category: Conkeror Web Browser
