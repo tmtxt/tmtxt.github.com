@@ -13,7 +13,7 @@ I usually open many buffers in conkeror (50-100 buffers). Also, I have auto save
 mode enable so everytime I start Conkeror, it automatically loads all of those
 buffers. That can cause my network overload. Moreover, sometimes I need reload
 all the currently opend buffers to see all the changes. So I wrote those 2
-little pieces of code to help me archive it. Here are they:
+little pieces of code to help me achieve it. Here are they:
 
 ## Stop loading all buffer (key A-h)
 

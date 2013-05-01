@@ -37,7 +37,7 @@ easier for you to follow. To do that, add this to your .emacs
 
 Another thing to consider is the brackets. Often when I program, I want the
 computer to add the closing bracket for me so that I can avoid those silly
-errors. **Autopair** is a plugin package for emacs that can help us archive that
+errors. **Autopair** is a plugin package for emacs that can help us achieve that
 task. You can install it through package.el or cloning it from the source. After
 finishing installation, make sure that it's in your load-path and then add this
 to your .emacs

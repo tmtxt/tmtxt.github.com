@@ -83,7 +83,7 @@ instead of the default one on MacOS. Add this to your .emacs
 The last step is to config Dired mode. You need to tell Dired to add more
 arguments to the **ls** call so that it can display correctly. The library
 called **dired-sort-map**, which you can find
-[here](http://emacswiki.org/emacs/dired-sort-map.el), call help you archive that
+[here](http://emacswiki.org/emacs/dired-sort-map.el), can help you achieve that
 task. Download the **dired-sort-map.el** file from the link above, put it in
 your .emacs.d folder or somewhere that Emacs can find it in the load path.
 Finally, add those lines to your .emacs
