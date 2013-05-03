@@ -26,6 +26,10 @@ Agent 069 - The main character
 
 Comming soon
 
+# Source code
+
+Source code is hosted on Github at <https://github.com/tommytxtruong/agent-069>
+
 # Game rule
 
 The user guides the character to dodge the obstacles to finish the scene. The
