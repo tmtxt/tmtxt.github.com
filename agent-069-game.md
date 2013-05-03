@@ -242,3 +242,7 @@ You have jump and shoot this obstacle
 
 ## Main Scene music
 - [mainscene_music.mp3](http://www.freesound.org)
+
+----
+
+{% include sidebar/social_share_buttons %}
