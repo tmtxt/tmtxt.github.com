@@ -246,6 +246,12 @@ You have jump and shoot this obstacle
 ## Main Scene music
 - [mainscene_music.mp3](http://www.freesound.org)
 
+# Developers
+
+* Tran Xuan Truong <me@truongtx.me>  
+* Bui Thanh Nhan <nhan.buithanh@rmitc.org>  
+* Ngo Tan Thinh
+
 ----
 
 {% include sidebar/social_share_buttons %}
