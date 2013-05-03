@@ -20,11 +20,10 @@ stages.
 ![Player](/files/2013-05-02-agent-069-game/player-normal.png )  
 Agent 069 - The main character
 
-<!-- more -->
-
 # Download link
 
-Comming soon
+Download the apk for Android: [Agent 069 APK](/files/2013-05-02-agent-069-game/a069.apk)
+
 
 # Source code
 
