@@ -22,7 +22,7 @@ Agent 069 - The main character
 
 # Download link
 
-Download the apk for Android: [Agent 069 APK](/files/2013-05-02-agent-069-game/a069.apk)
+Download the apk for Android: [Agent 069 APK](/a069.apk)
 
 
 # Source code
