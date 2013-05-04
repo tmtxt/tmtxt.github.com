@@ -90,6 +90,6 @@ also set the **weightSizeMin** and **weightSizeMax** if you want.
 # Result
 
 Here is the result of the code above. You can have a look at the source file
-[here](herehttps://github.com/tommytxtruong/tommytxtruong.github.com/blob/master/_includes/sidebar/tag_cloud).
+[here](https://github.com/tommytxtruong/tommytxtruong.github.com/blob/master/_includes/sidebar/tag_cloud).
 
 {% include sidebar/tag_cloud %}
