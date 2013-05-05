@@ -18,9 +18,7 @@ To mark file backward (mark file and move the cursot back to the previous line,
 opposite with when you press m), add this to your .emacs. If you just want the
 cursor to stay at the
 current file, remove **(call-interactively 'dired-previous-line)** in the code.
-Change s-b to the key binding that you like
-
-<!-- more -->
+Change s-b to the key binding that you like.
 
 {% highlight cl %}
 (defun dired-mark-backward ()
@@ -30,6 +28,8 @@ Change s-b to the key binding that you like
   (call-interactively 'dired-previous-line))
 (define-key dired-mode-map (kbd "s-b") 'dired-mark-backward)
 {% endhighlight %}
+
+<!-- more -->
 
 # Open files by default programs
 

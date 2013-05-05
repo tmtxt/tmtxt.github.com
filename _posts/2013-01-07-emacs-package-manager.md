@@ -18,8 +18,6 @@ will have to reinstall those packages again, and add them to the load-path
 manually. Here is a simple solution that will help us automate the installation
 process.
 
-<!-- more -->
-
 # Load Emacs package manager and Add more source
 
 Emacs is not a package manager, and we should load its package manager and also
@@ -38,6 +36,8 @@ Add this to your .emacs
   (add-to-list 'package-archives source t))
 (package-initialize)
 {% endhighlight %}
+
+<!-- more -->
 
 Now start emacs and press M-x, type in **list-packages** to see all available,
 installed as well as built-in packages. To install a package, simple hit return

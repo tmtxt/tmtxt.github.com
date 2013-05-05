@@ -19,13 +19,13 @@ based on the result returned from **ls** command (of course, I'm talking about
 Unix-based system, not Windows). We can customize the way it displays by adding
 some more arguments for the **ls** command.
 
-<!-- more -->
-
-# Preparation ls program
+# Prepare ls program
 
 If you are using a GNU Linux based OS, everything is just simple. The GNU
 version of **ls** has many options for you to play with and you can skip to the
 next part.
+
+<!-- more -->
 
 Unfortanately, the MacOS version doesn't. But don't worry, you can install the
 GNU one from Macports. If you haven't installed MacPorts yet, take a look at this

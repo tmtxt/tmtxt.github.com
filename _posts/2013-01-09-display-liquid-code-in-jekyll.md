@@ -15,7 +15,7 @@ tranform it into html to display in the generated file. Sometimes this can even
 lead to some errors which make the post can not be generated to html.
 Fortunately, there are solutions for it.
 
-# Using extra brackets
+# 1. Using extra brackets
 
 This solution is a bit annoyed and you have to get used to those crazy curly
 brackets. I really don't like it but it can be faster with short liquid code.
@@ -52,7 +52,7 @@ And the result in your markdown should look similar to this
 {% capture text %}|.|. "|.|. BASE_PATH ",|,|,|,|{% endcapture %}
 {% include JB/liquid_raw %}
 
-# Using Jekyll's liquid_raw
+# 2. Using Jekyll's liquid_raw
 
 This is a simpler method. However, for some liquid tag like <b>{{ "{{ BASE_PATH "}}}}</b>, if you want display the liquid closing tag, you must have space
 between the curly brackets.
@@ -75,7 +75,7 @@ liquid closing bracket<b> } </b>. So if you put **.|.|.|.|** continuously,
 jekyll can misunderstand and translate it into three opening brackets. Instead,
 break them down by putting space between them.
 
-### Summary
+# Summary
 
 Displaying liquid code in jekyll is really an annoying task. So try to avoid it
 as much as you can.

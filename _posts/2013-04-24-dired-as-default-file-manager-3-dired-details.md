@@ -18,14 +18,14 @@ can easily install both of them through package.el (see this post
 
 To activate it, add this to your .emacs
 
-<!-- more -->
-
 {% highlight cl %}
 (require 'dired-details+)
 {% endhighlight %}
 
 This picture illustrates how dired-details looks like. You can use **(** or
 **)** to toggle hide (like the left window) or show (like the right window) details.
+
+<!-- more -->
 
 ![Dired mode in my Emacs](/files/2013-04-06-dired-mode-as-default-file-manager/dired.png)  
 

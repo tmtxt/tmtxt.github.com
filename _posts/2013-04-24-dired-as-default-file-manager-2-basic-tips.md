@@ -16,8 +16,6 @@ Before reading this, you should have a look at this page
 [Dired - GNU Emacs Manual](http://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html)
 to know some basic commands to use Dired properly.
 
-<!-- more -->
-
 # Always Recursion
 
 * Always recursively delete directory
@@ -38,6 +36,8 @@ Set this variable to non-nil, Dired will try to guess a default target
 directory. This means: if there is a dired buffer displayed in the next window,
 use its current subdir, instead of the current subdir of this dired buffer. The
 target is used in the prompt for file copy, rename etc.
+
+<!-- more -->
 
 {% highlight cl %}
 (setq dired-dwim-target t)

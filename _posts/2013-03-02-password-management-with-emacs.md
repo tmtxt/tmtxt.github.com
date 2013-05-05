@@ -19,12 +19,12 @@ It's an interface to
 your computer. If you're on MacOS, you can easily install it from Macports by
 executing the command **sudo port install gnupg**.
 
-<!-- more -->
-
 # Usage
 
 First, make sure that you have GnuPG installed on your computer by typing
 **which gpg** in terminal. On MacOS, you can find it on Macports.
+
+<!-- more -->
 
 To use EasyPG, simply just add **.gpg** to anyfile that you want to encrypt. For
 example, I wish to use markdown mode to organize my password file, visit that

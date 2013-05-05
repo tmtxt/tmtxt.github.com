@@ -17,8 +17,6 @@ C/C++ and even Objective C programming.
 If you haven't known what is Clang yet, have a look at this article
 [Clang on Wikipedia](http://en.wikipedia.org/wiki/Clang)
 
-<!-- more -->
-
 # Requirements & Installation
 
 First, you have to install AutoComplete for Emacs. You can install it using
@@ -27,6 +25,8 @@ install Yasnippet. This is not compulsory but is encouraged for better
 experiments. You can also install it using Emacs Package Manager. To see how to
 get Autocomplete and Yasnippet work together, see this article
 [Config Yasnippet and Autocomplete on Emacs](/2013/01/06/config-yasnippet-and-autocomplete-on-emacs/).
+
+<!-- more -->
 
 Before installing this package, you should also check whether your system has
 installed "clang" or not via command "clang --version" in terminal. If you get

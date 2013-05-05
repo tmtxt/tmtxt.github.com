@@ -17,8 +17,6 @@ tags: [c++, microcontroller emulation]
     other university assignment. I just posted it here to show my work and share
     with other people. So... Use it at your own risk.
 
-<!-- more -->
-
 # Microcontroller Emulation Program
 
 Emulator programs or emulator modules have been around since the first home
@@ -38,6 +36,8 @@ input, processing and output. Microcontrollers are found in many household
 appliances ranging from alarm clocks to videocassette recorders, from car engine
 management units to washing machines, from microwave ovens to remote-control air
 conditioning units.
+
+<!-- more -->
 
 The microcontroller is programmable – a programmer loads a program into its
 memory, and the microcontroller executes that program. Input and output is

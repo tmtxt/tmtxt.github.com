@@ -14,8 +14,6 @@ tags: [google, analytics, jekyll]
 > Bootstrap site is not so clear and comprehensive for those who is new to
 > Google Analytics and Jekyll Bootstrap.
 
-<!-- more -->
-
 # Register for Google Analytics
 
 First, you need to register a Google analytics account. Go to this link
@@ -27,6 +25,8 @@ Select **Website** as the target that you want to track. After that, select
 Classic Analytics method.
 
 ![Select](/files/2013-04-05-google-analytics-for-jekyll-bootstrap/classic.png)
+
+<!-- more -->
 
 Scroll down and fill in the form some information about your website. When you
 finish, click **Get Tracking ID** button

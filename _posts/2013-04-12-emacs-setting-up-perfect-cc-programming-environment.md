@@ -14,8 +14,6 @@ This is a continue to the first part in this post
 This time, I'll demonstrate some more tips to help make your Emacs a powerful
 IDE for C/C++ programming
 
-<!-- more -->
-
 # Syntax Checking on the fly
 
 Flymake is a package which comes with Emacs 23 and above to help Emacs perform
@@ -28,6 +26,8 @@ just add this to your .emacs
 {% highlight cl %}
 (require 'flymake)
 {% endhighlight %}
+
+<!-- more -->
 
 Flymake requires a
 makefile with the file name **Makefile** (capital M) to use with it. Also, your

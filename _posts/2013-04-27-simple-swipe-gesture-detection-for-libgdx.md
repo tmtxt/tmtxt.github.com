@@ -15,6 +15,8 @@ this
 [article](http://code.google.com/p/libgdx-users/wiki/SimpleDirectionGestureDetector).
 The code on that link contains errors. Here is the fixed version of it.
 
+![Gesture](/files/2013-04-11-simple-gesture-detection-for-libgdx/thumbnail.png)
+
 <!-- more -->
 
 Create a class name SimpleDirectionGestureDetector

@@ -20,8 +20,6 @@ other-window. As a result, the rsync feature now does not affact my current
 work. I can continue what I'm currently doing while leaving rsync take care of my
 files.
 
-<!-- more -->
-
 **Note**: it would not run on Windows computers.
 
 # Implementation
@@ -32,6 +30,8 @@ if you have already use it.
 **Update 8 Apr 2013**: I have improved the code a little bit so that later it
 will be much easier for me to add new async function like moving,
 compressing,... Also, this time, you can run multiple rsync process.
+
+<!-- more -->
 
 **tmtxt/dired-async function**: run the input command asynchronously
 

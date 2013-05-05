@@ -18,11 +18,11 @@ screen's ratio is 16:10 but most of my videos are in 4:3 or 16:9 ratio.
 The word normalize here means that to force all the media files to behave in a
 same way so that I can enjoy them without worrying to adjust for each file.
 
-<!-- more -->
-
 # Normalize Audio
 
 ![Normalize Audio](/files/2013-04-27-vlc-normalize-media-files/audio.png)
+
+<!-- more -->
 
 Open VLC Preferences panel, head to the **Audio** tab, select **Volume
 Normalizer** and adjust the number in the beside textbox (from 0.5-10). The lower
