@@ -91,9 +91,7 @@ use it, make sure you run jekyll with Pygments support. I'll show how later.
 
 ## 2.4 Installation
 
-### 2.4.1 Manual Pygments Installation and Generation
-
-#### Install Pygments on local computer
+### 2.4.1 Install Pygments on local computer
 
 * On Ubuntu, just one command
 
@@ -126,7 +124,7 @@ Install pygments
 $ sudo easy_install Pygments
 {% endhighlight %}
 
-#### Generate pygments
+### 2.4.2 Generate pygments
 
 {% highlight sh %}
 $ cd path/to/jekyll/project/folder
@@ -134,13 +132,6 @@ $ pygmentize -S default -f html > pygments.css
 {% endhighlight %}
 
 It will generate a file named pygments.css in your website root directory.
-
-### 2.4.2 Lazy Installation and Generation
-
-There is another easier way to get Pygments work with your blog. Just download
-this file
-[pygments.css](/files/2012-12-28-jekyll-bootstrap-syntax-highlighting/pygments.css)
-and put it in the root directory of your Jekyll blog.
 
 ## 2.5 Enable pygments
 
