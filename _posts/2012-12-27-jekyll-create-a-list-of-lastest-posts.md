@@ -1,7 +1,7 @@
 ---
 layout: post
 showtn: yes
-title: "Jekyll - Create a list of Lastest Posts"
+title: "Jekyll - Create a list of Latest Posts"
 description: ""
 category: Jekyll
 thumbnail: /files/2012-12-27-jekyll-create-a-list-of-lastest-posts/thumbnail.png
