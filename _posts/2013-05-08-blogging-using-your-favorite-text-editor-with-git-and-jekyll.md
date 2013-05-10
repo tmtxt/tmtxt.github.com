@@ -163,7 +163,7 @@ But wait, that's not enough. It still lacks some basic features of a blog for
 geeks like Image embedding, Syntax highlighting,... In the next part, I'll
 comtinue with those advanced features.
 
-**Part 2**: comming soon
+**Part 2**: [Blogging using your favorite Text editor with Git and Jekyll - Part 2]({% post_url 2013-05-09-blogging-using-your-favorite-text-editor-with-git-and-jekyll %})
 
 Visit the [Jekyll section](/categories.html#Jekyll-ref)
 for more tips in making your Jekyll site more attracting.
