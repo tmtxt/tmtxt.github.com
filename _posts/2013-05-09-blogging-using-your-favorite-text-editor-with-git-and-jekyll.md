@@ -13,6 +13,8 @@ Continue from my previous post [Blogging using your favorite Text editor with Gi
 this time, I'll demonstrate some more advanced tips to help you get used to
 blogging with Jekyll.
 
+<!-- more -->
+
 # Blog configuration
 
 By default, Jekyll stores all your global site configuration in
