@@ -45,8 +45,7 @@
 	<!-- contact me -->
 	{% include sidebar/contact_me %}
 
-	<!-- google adsense -->
-	{% include sidebar/google_adsense %}
+	
 	<hr/>
 
 	<h3>Related Posts</h3>
@@ -62,7 +61,11 @@
 	  {% for post in site.posts limit:5 %}
 	  <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
 	  {% endfor %}
-	</ul>	
+	</ul>
+	<hr/>
+
+	<!-- google adsense -->
+	{% include sidebar/google_adsense %}
 
   </div>
 </div>
