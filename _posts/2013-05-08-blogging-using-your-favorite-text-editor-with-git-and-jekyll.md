@@ -83,8 +83,7 @@ It can take up to 10 minutes for your site ready to serve for the first time, be
 To preview your site locally, cd to the site directory and run Jekyll
 
 {% highlight console %}
-$ git clone https://github.com/plusjade/jekyll-bootstrap.git
-$ cd jekyll-bootstrap
+$ cd USERNAME.github.com
 $ jekyll --server
 {% endhighlight %}
 
