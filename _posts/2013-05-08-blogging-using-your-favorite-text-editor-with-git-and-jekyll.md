@@ -78,7 +78,7 @@ $ git remote set-url origin git@github.com:USERNAME/USERNAME.github.com.git
 $ git push origin master
 {% endhighlight %}
 
-It can take up to 10 minuted for your site ready to serve, be patient!
+It can take up to 10 minutes for your site ready to serve for the first time, be patient!
 
 To preview your site locally, cd to the site directory and run Jekyll
 
