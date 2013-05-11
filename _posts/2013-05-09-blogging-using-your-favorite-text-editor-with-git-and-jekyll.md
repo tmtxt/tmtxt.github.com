@@ -48,6 +48,15 @@ Also, in the config file, you'll find a section about analytics. Here is a
 tutorial on how to set-up Google analytics (free) for your Jekyll Bootstrap blog
 [Google Analytics for Jekyll Bootstrap]({% post_url 2013-04-05-google-analytics-for-jekyll-bootstrap %}).
 
+# HTML Content
+
+Usually, you compose post in Jekyll with markdown mode. However, for some
+special cases, when you need complex format or layout for your post or maybe you
+need to embed some html code into the post content, you can change from markdown
+to html. Just rename the post file extension from .md to .html and then start
+writing your post content in HTML (not markdown since Jekyll will not parse
+markdown data in .html file).
+
 # Media Embedding and File Attachment
 
 Jekyll treats all files/folders begin with <span>_</span> specially. For other

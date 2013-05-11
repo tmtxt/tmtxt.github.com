@@ -92,7 +92,7 @@ $ jekyll --server
 Jekyll is designed to work with markdown. It stores most of your content in
 markdown and then parse the data into html. You can still create your your
 content in html form for some special cases (will be discussed later). However,
-using markdown is faster and much easy to compose. Spend about 5 minutes to get
+using markdown is faster and much easier to compose. Spend about 5 minutes to get
 used with markdown syntax
 [http://daringfireball.net/projects/markdown/syntax](http://daringfireball.net/projects/markdown/syntax).
 It's really easy to understand.
