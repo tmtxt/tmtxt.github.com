@@ -13,7 +13,7 @@ Jekyll does not offer Preview post feature by default. There are plenty of
 plugins that can help us achieve that task. However, since many Jekyll sites are
 hosted on Github and Github prohibits us to run plugins (maybe for security
 reason), we may have to deploy Jekyll site on our own server or
-generate the site locally and the push it onto Github. Today, after reading some
+generate the site locally and then push it onto Github. Today, after reading some
 Liquid documentation, I have found a solution that can help us show the preview
 of the post using only the built-in Jekyll Liquid tag with **split** and
 **first** filter.
