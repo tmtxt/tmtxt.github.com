@@ -32,100 +32,138 @@ group: project
 	</p>
 
 	<h1>2. Installation</h1>
-	Clone
+	<p>Clone
 	the <a href="https://github.com/tommytxtruong/tmtxt-dired-async">repo</a>
 	and put it somewhere in your load-path<br/>
-	Add this to your .emacs
+	  Add this to your .emacs</p>
+	<p>
 {% highlight cl %}
 (require 'tmtxt-dired-async)
 {% endhighlight %}
+	</p>
 
 	<h1>3. Features</h1>
-	You don't have to follow the key bindings below, you can change them to
-	whatever you want. They are just examples.
+	<p>You don't have to follow the key bindings below, you can change them to
+	  whatever you want. They are just examples.</p>
 
 	<h2>3.1 Asynchronously Copy files</h2>
-	This feature uses rsync for file copying. To use it, simply mark the files
-	that you want and then activate this function.
+	<p>This feature uses rsync for file copying. To use it, simply mark the files
+	  that you want and then activate this function.</p>
+	<p>
 {% highlight cl %}
 (define-key dired-mode-map (kbd "C-c C-r") 'tmtxt/dired-async-rsync)
 {% endhighlight %}
+	</p>
 
-	Show the progress when copy
+	<p>Show the progress when copy</p>
+	<p>
 {% highlight cl %}
 (setq-default tmtxt/dired-async-rsync-show-progress t)
 {% endhighlight %}
+	</p>
 
-	Show verbosity when copy
+	<p>Show verbosity when copy</p>
+	<p>
 {% highlight cl %}
 (setq-default tmtxt/dired-async-rsync-show-verbosity t)
 {% endhighlight %}
+	</p>
 
-	Use archive mode when copy (to preserve time stamp)
+	<p>Use archive mode when copy (to preserve time stamp)</p>
+	<p>
 {% highlight cl %}
 (setq-default tmtxt/dired-async-rsync-archive-mode t)
 {% endhighlight %}
+	</p>
 
-	Use compression mode when copy
+	<p>Use compression mode when copy</p>
+	<p>
 {% highlight cl %}
 (setq-default tmtxt/dired-async-rsync-compress-mode t)
 {% endhighlight %}
+	</p>
 
 	<h2>3.2 Asynchronously Copy files (with delete option)</h2>
-	This feature is similar to the above feature. It also uses rsync to copy
+	<p>This feature is similar to the above feature. It also uses rsync to copy
 	file and the same config with the above. However, it includes the delete option
 	for rsync to ensure that you have the destination folder exactly the same as the
-	source directory
+	  source directory</p>
+	<p>
 {% highlight cl %}
 (define-key dired-mode-map (kbd "C-c C-t") 'tmtxt/dired-async-rsync-delete)
 {% endhighlight %}
+	</p>
 	
-	Set the deletion method for rsync delete (--delete-after, --delete-during, --delete-before)
+	<p>Set the deletion method for rsync delete (--delete-after,
+	--delete-during, --delete-before)</p>
+	<p>
 {% highlight cl %}
 (setq-default tmtxt/dired-async-rsync-delete-method "--delete-after")
 {% endhighlight %}
+	</p>
 
 	<h2>3.3 Asynchronously Compress files</h2>
-	Compress all marked files.
+	<p>Compress all marked files.</p>
+	<p>
 {% highlight cl %}
 (define-key dired-mode-map (kbd "C-c C-z") 'tmtxt/dired-async-zip)
-{% endhighlight %}
+{% endhighlight %}</p>
 
-	Set the compression level, from 0-9
+	<p>Set the compression level, from 0-9</p>
+	<p>
 {% highlight cl %}
 (setq-default tmtxt/dired-async-zip-compression-level "9")
 {% endhighlight %}
+	</p>
 
 	<h2>3.4 Asynchronously Decompress files</h2>
-	Decompress the zip file at point.
+	<p>Decompress the zip file at point.</p>
+	<p>
 {% highlight cl %}
 (define-key dired-mode-map (kbd "C-c C-u") 'tmtxt/dired-async-unzip)
 {% endhighlight %}
+	</p>
 
 	<h2>3.5 Copy from multiple directories</h2>
-	This feature allows you to select many files from multi directories and then
-	copy all of them to a destination folder.
+	<p>This feature allows you to select many files from multi directories and then
+	  copy all of them to a destination folder.</p>
+	<p>
 {% highlight cl %}
 (define-key dired-mode-map (kbd "C-c C-a") 'tmtxt/dired-async-rsync-multiple-mark-file)
 (define-key dired-mode-map (kbd "C-c C-e") 'tmtxt/dired-async-rsync-multiple-empty-list)
 (define-key dired-mode-map (kbd "C-c C-d") 'tmtxt/dired-async-rsync-multiple-remove-item)
 (define-key dired-mode-map (kbd "C-c C-v") 'tmtxt/dired-async-rsync-multiple)
 {% endhighlight %}
-	C-c C-a to add the file at point to the list for later copy. C-c C-d to
-	remove the current file at point from the waiting list. C-c C-e to empty the
-	waiting list. Finally, C-c C-v to copy all files in the list to the current
-	directory.
+	</p>
+	<p>
+	  C-c C-a to add the file at point to the list for later copy. C-c C-d to
+	  remove the current file at point from the waiting list. C-c C-e to empty the
+	  waiting list. Finally, C-c C-v to copy all files in the list to the current
+	  directory.
+	</p>
 
-	<h2>3.6 Other config</h2>
-	Set the time to close the result window after finish, measured in second
+	<h2>3.6 Stop all current async tasks</h2>
+	<p>This function helps you stop all currently running async taks.</p>
+	<p>
+{% highlight cl %}
+(define-key dired-mode-map (kbd "C-c C-k") 'tmtxt/dired-async-kill-all)
+{% endhighlight %}
+	</p>
+
+	<h2>3.7 Other config</h2>
+	<p>Set the time to close the result window after finish, measured in second</p>
+	<p>
 {% highlight cl %}
 (setq-default tmtxt/dired-async-post-process-window-show-time "5")
 {% endhighlight %}
+	</p>
 
-	Set the height for the result window, measured in the number of lines
+	<p>Set the height for the result window, measured in the number of lines</p>
+	<p>
 {% highlight cl %}
 (setq-default tmtxt/dired-async-result-window-height 10)
 {% endhighlight %}
+	</p>
 
 	<h1>4. Screenshots</h1>
 	<p>Here are some screenshots from my Emacs</p>
