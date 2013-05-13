@@ -55,28 +55,30 @@ group: project
 {% endhighlight %}
 	</p>
 
-	<p>Show the progress when copy</p>
+	<p>
+	  Show the progress when copy (nil to not show).
+	</p>
 	<p>
 {% highlight cl %}
 (setq-default tmtxt/dired-async-rsync-show-progress t)
 {% endhighlight %}
 	</p>
 
-	<p>Show verbosity when copy</p>
+	<p>Show verbosity when copy (nil to not show).</p>
 	<p>
 {% highlight cl %}
 (setq-default tmtxt/dired-async-rsync-show-verbosity t)
 {% endhighlight %}
 	</p>
 
-	<p>Use archive mode when copy (to preserve time stamp)</p>
+	<p>Use archive mode when copy (to preserve time stamp, nil to not preserve)</p>
 	<p>
 {% highlight cl %}
 (setq-default tmtxt/dired-async-rsync-archive-mode t)
 {% endhighlight %}
 	</p>
 
-	<p>Use compression mode when copy</p>
+	<p>Use compression mode when copy (nil to not use).</p>
 	<p>
 {% highlight cl %}
 (setq-default tmtxt/dired-async-rsync-compress-mode t)
