@@ -135,7 +135,7 @@ root directory. The blog post is just a plain text file writtent in markdow
 mode. Open one file in your favorite editor and start composing (in markdown).
 To delete one post, simply delete the post file.
 
-Finally, run **jekyll --server** (as shown before) to preview your site locally.
+Finally, run `jekyll --server` (as shown before) to preview your site locally.
 
 More information here:
 [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
