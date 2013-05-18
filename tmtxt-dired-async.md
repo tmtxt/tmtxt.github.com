@@ -126,7 +126,7 @@ remove the current file at point from the waiting list. **C-c C-e** to empty the
 waiting list. Finally, **C-c C-v** to copy all files in the list to the current
 directory.
 
-## Get multiple files size
+## Get size of multiple files
 
 This feature uses the command `du` to calculate the total size of all marked
 files.
