@@ -50,9 +50,10 @@ to your .emacs
 
 # ECB - Transform Emacs to a real IDE
 
-Have a look at this [post](/2013/03/10/ecb---emacs-code-browser/ ) and the
-screenshot below to see how powerful and useful ECB is. You can also find the
-installation and configuration guide in that post above
+Have a look at this post
+[Install and Config ECB on Emacs]({% post_url 2013-03-10-ecb-emacs-code-browser %})
+and the screenshot below to see how powerful and useful ECB is. You can also
+find the installation and configuration guide in that post above.
 
 ![ECB Screenshot](/files/2013-03-10-ecb---emacs-code-browser/ecb.png )
 
