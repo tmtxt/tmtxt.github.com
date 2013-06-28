@@ -25,13 +25,15 @@ Conkeror, we need 2 things, Conkeror and either XULRunner or Firefox.
 
 I recommend you to install it based on Firefox.
 
-**__Note__**: There is currently a problem with the downloading system if you are using Firefox/XULRunner version 14 or above (now the XULRunner and Firefox have the same version number), so if you don't mind, just install the lastest Firefox/XULRunner version and enjoy Conkeror. Otherwise, I advise you to install Firefox/XULRunner 12 bacause Firefox/XULRunner 13 is rubbish. Don't worry too much since Firefox/XULRunner releases the new version too fast so there are little changes in each version ;) Just use the 12 version, it is adequate, and wait until someone fix it and contribute the Conkeror or you can be the hero ;)
+	Update: the downloading system seems to be fixed in Firefox 21, so I now recommend you to install it base on Firefox 21. Don't care about the note below.
+
+> Note: There is currently a problem with the downloading system if you are using Firefox/XULRunner version 14 or above (now the XULRunner and Firefox have the same version number), so if you don't mind, just install the lastest Firefox/XULRunner version and enjoy Conkeror. Otherwise, I advise you to install Firefox/XULRunner 12. Don't worry too much since Firefox/XULRunner releases the new version too fast so there are little changes in each version ;) Just use the 12 version, it is adequate, and wait until someone fix it and contribute the Conkeror or you can be the hero ;)
 
 ## Preparation:  
 
 Here is the list of things you need to prepare in order to run Conkeror
 
-**Firefox** again I recommend Firefox version 12 ;)
+**Firefox** again I recommend Firefox version 21 ;)
 
 **Git** you need git to obtain conkeror source code. Please, forget the SVN. I hate it anyway :LOL:
 
