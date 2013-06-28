@@ -98,10 +98,11 @@ VirtualBox, Qt,...
 
 # Migration
 
-Since **Macports** is a package manager, it can make the migration process
+Since **Macports** is a package manager, it has the built-in support to make the
+migration process
 become easier. You don't have to remember which packages you've installed.
 Everything you need is to export the installed packages list and bring it to the
-destination system where you want it to be reinstalled.
+destination system where you want them to be reinstalled.
 
 To export the list of installed ports, type:
 
