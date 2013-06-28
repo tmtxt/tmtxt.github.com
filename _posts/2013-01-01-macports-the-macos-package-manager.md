@@ -12,12 +12,13 @@ tags: [macports, package manager, macos]
 # Introduction
 
 For Ubuntu Linux, we have a powerful package manager called **apt** which makes
-the installation, uninstallation and management of package much easier. Sadly,
+the installation, uninstallation and management of packages much easier. Sadly,
 for MacOS users, we don't have that powerful tool. The appearance of
 **MacPorts**, an open source package manager for MacOS, has changed the way we
 install and manage our packages. With the help of **MacPorts**, MacOS users can
-now quickly install, keep track of the changes, update and maintain many open
-source applications. You can even export all your installed packages and then
+now quickly install, keep track of the changes, update and maintain many
+open-source
+applications. You can even export all your installed packages and then
 let **MacPorts** automatically reinstall them for your when you have you
 computer reinstalled or when you migrate to another system.
 
@@ -28,8 +29,8 @@ The easiest way to install **MacPorts** is to download the .pkg installer
 to your current OS. Alternatively, you can build it from source. For more
 detail, please visit [this link](http://www.macports.org/install.php).
 
-After finish the installtion, you should consider update **MacPorts**.
-Fortunately, **MacPorts** has the built-in feature to selfupdate. Everything you
+After finishing the installation, you should consider update **MacPorts**.
+Fortunately, **MacPorts** has the built-in feature for selfupdating. Everything you
 need to do is to execute this command
 
 <!-- more -->
