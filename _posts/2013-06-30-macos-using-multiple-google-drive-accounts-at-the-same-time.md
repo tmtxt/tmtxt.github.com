@@ -209,6 +209,13 @@ change the user id number.
 
 ![User ID](/files/2013-06-30-macos-using-multiple-google-drive-accounts-at-the-same-time/uid.png)
 
+# Known Issues
+
+- Proxifier: if you are connecting to a network through Proxifier, this method
+will not work.
+- Total Finder: Total Finder auto quit when start GDrive as another user. You
+can then re-open it later. This is not a big problem.
+
 # Bonus Images from my Mac
 
 ![Bonus](/files/2013-06-30-macos-using-multiple-google-drive-accounts-at-the-same-time/bonus1.png)
