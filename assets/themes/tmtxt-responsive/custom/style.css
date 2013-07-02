@@ -50,6 +50,9 @@ html, body {
 
 .post-content-truncate img {
 	max-width: 400px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 h1 {
