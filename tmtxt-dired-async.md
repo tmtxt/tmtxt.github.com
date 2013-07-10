@@ -166,3 +166,4 @@ Set the height for the result window, measured in the number of lines
 {% highlight cl %}
 (setq-default tmtxt/dired-async-result-window-height 10)
 {% endhighlight %}
+ 
