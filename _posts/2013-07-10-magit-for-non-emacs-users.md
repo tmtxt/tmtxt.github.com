@@ -19,6 +19,8 @@ which can help that kind of people and act as a gateway drug to Emacs. Moreover,
 Emacs users can use it for working with files on a remote server to avoid having
 to install all the Emacs GUI and the full user init **.emacs.d** folder.
 
+![Screenshot](/files/2013-07-10-magit-for-non-emacs-users/ss.png)
+
 <!-- more -->
 
 This is for Emacs in terminal version 23+. OSX's default one is 22. To check for
