@@ -13,8 +13,6 @@ tags: [git, jekyll, blog]
 > this time, I'll demonstrate some more advanced tips to help you get used to
 > blogging with Jekyll.
 
-<!-- more -->
-
 # Blog configuration
 
 By default, Jekyll stores all your global site configuration in
@@ -23,6 +21,8 @@ site). Jekyll Bootstrap has comes with some pre-config that you can customize
 like Site title, Author information,... You can also customize post URL style
 using some Jekyll template variables follow the instruction here
 <http://jekyllrb.com/docs/permalinks/>.
+
+<!-- more -->
 
 One of the most important feature of a blog is the commenting system. Again,
 Jekyll Bootstrap has the built-in config to help you integrate a commenting
