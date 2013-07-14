@@ -65,9 +65,7 @@ the same time).
 
 **Email**: [me@truongtx.me](mailto:me@truongtx.me)
 
-**Email**: [truong.tranxuan@rmitc.org](mailto:truong.tranxuan@rmitc.org)
-
-**Email**: [tommy.txtruong@gmail.com](mailto:tommy.txtruong@gmail.com)
+**Email**: [truong.tranxuan@rmitc.org](mailto:truong.tranxuan@rmitc.org) or [truong.tx@rmitc.org](mailto:truong.tx@rmitc.org)
 
 **Twitter**: <https://twitter.com/tommytxtruong>
 
