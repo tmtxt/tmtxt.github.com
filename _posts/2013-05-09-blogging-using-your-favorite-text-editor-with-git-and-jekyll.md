@@ -17,9 +17,10 @@ tags: [git, jekyll, blog]
 
 By default, Jekyll stores all your global site configuration in
 `_config.yml` file (can be found in the root directory of the
-site). Jekyll Bootstrap has comes with some pre-config that you can customize
+site). Jekyll Bootstrap has comes with some pre-defined configurations
+that you can customize
 like Site title, Author information,... You can also customize post URL style
-using some Jekyll template variables follow the instruction here
+using some Jekyll template variables followed the instruction here
 <http://jekyllrb.com/docs/permalinks/>.
 
 <!-- more -->
@@ -64,7 +65,7 @@ files/folders in your web directory, it just copies everything to the compiled
 site so you can easily access/link to those files by relative path. For example,
 you have a folder named `images` inside the root directory of your site.
 Inside that folder, you have some image files (img1.jpg, img2.jpg, img3.jpg,...)
-that you want to embed inside your post simply just give the relative path from
+that you want to embed inside your post, simply give the relative path from
 root to that file
 
 In HTML
@@ -90,7 +91,7 @@ directory of your site.
 That's quite enough for a simple static blog. You can do even more than that
 like customizing the blog's theme, setup pagination for your site, create RSS
 feeds, deploy it to your custom domain,... Here are some other posts on what I
-have don with Jekyll
+have done with Jekyll
 
 * [Jekyll - Create a list of Latest Posts]({% post_url 2012-12-27-jekyll-create-a-list-of-lastest-posts %})
 * [Jekyll - Syntax highlighting]({% post_url 2012-12-28-jekyll-bootstrap-syntax-highlighting %})
