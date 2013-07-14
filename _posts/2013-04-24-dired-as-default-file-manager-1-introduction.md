@@ -22,7 +22,7 @@ way to interact with my computer. It helps me concentrate on what I'm
 working with on the screen and speed up my work because I don't have to move my
 eyes out of the screen and move my hands out of the keyboard. Especially when I
 work at night, I usually turn off the light and I can see nothing but my screen
-and I don't want to waste time looking for my mouse.
+and I don't want to waste my time looking for the mouse.
 
 <!-- more -->
 
@@ -41,7 +41,7 @@ After a long time getting used to and researching Emacs Dired mode, I have
 collected some useful tips and developed some features to make Dired completely
 replace my default file manager. This post is a collection of all those useful
 tips as well as the functions that I developed. Also, the content in this
-article assumes that you already have the basic about Emacs and Dired.
+article assumes that you already have the basic knowledge about Emacs and Dired.
 
 **Note**: Most of the tips as well as the functions presented in this series are
 designed for MacOS and Ubuntu. However, you can apply them for many other
@@ -66,4 +66,4 @@ lovers.
 
 **More**: You can follow me on Twitter, Facebook or Google+ and you will be
 notified when there's new part.  
-Click here [About me](/about.html) for more information.
+Click [About me](/about.html) for more information.
