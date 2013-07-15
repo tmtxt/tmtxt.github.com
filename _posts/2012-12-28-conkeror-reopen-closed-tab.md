@@ -11,7 +11,7 @@ tags: [conkeror, emacs, browser]
 
 Anyone of you who have been using Conkeror all know that Conkeror does not have
 **Reopen last Closed Tab** function. How painful it is compare to the other
-browsers! But we can do it by ourself by adding out own code into the
+browsers! But we can do it by ourself by adding our own code into the
 .conkerorrc file.
 
 First, we have to create an Array to hold the closed tabs.
@@ -22,9 +22,9 @@ var my_closed_buffers = new Array();
 
 <!-- more -->
 
-Next, rewrite the built in close buffer function to make Conkeror save the
+Next, rewrite the built-in close buffer function to make Conkeror save the
 current tab URL before closing it. In the code below I save only maximum 10
-closed buffers. If you want you can set it more.
+closed buffers. If you want you can set it to more.
 
 {% highlight javascript %}
 //save the URL of the current buffer before closing it
@@ -41,7 +41,7 @@ interactive("my-close-and-save-current-buffer",
 {% endhighlight %}
 
 Rebind the key so that when press **q**, Conkeror call our new function instead
-of its built in one.
+of its built-in one.
 
 {% highlight javascript %}
 undefine_key(default_global_keymap, "q");

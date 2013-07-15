@@ -18,11 +18,11 @@ The first time you open Conkeror, it will show you the tutorial. It is the basic
 
 # The RC file
 
-Like many other Unix-based application, conkeror also has its own rc file. The rc file is your own script and is auto loaded when conkeror start. The rc file location is $HOME/.conkerorrc where $HOME is your home directory. The .conkerorrc can be a text file written in javascript or a directory. If it's an directory, Conkeror will loads all the file with the extension .js in that directory. If you want to have your own config, just put them into the rc file.
+Like many other Unix-based application, conkeror also has its own rc file. The rc file is your own script and is auto loaded when conkeror starts. The rc file location is $HOME/.conkerorrc where $HOME is your home directory. The .conkerorrc can be a text file written in javascript or a directory. If it's a directory, Conkeror will loads all the files with the extension .js in that directory. If you want to have your own config, just put them into the rc file.
 
 # Understanding the terms and notation
 
-The first you need to know is the key notation. Conkeror is built based on emacs style so it uses modifier keys nearly all the time. There are some basic modifier keys in Conkeror, they are:  
+The first thing you need to know is the key notation. Conkeror is built based on emacs style so it uses modifier keys nearly all the time. There are some basic modifier keys in Conkeror, they are:  
 * Control (C-)
 * Shift (S-)
 * Alt (A-)
@@ -30,7 +30,7 @@ The first you need to know is the key notation. Conkeror is built based on emacs
 
 Control and Shift key are popular to you. The special is the Alt key and Meta key. On OSX, the command key is the Meta key, the option key is the Alt key. In other OS, usually, the alt key on your keyboard is considered as Meta key, the windows key on your keyboard is consider as Alt key.
 
-*Note*: on OSX, the option+key produces a dead key, which means you cannot use it as a modifier key in conkeror, to fix it, download this file USExtendedNoDeadKey.keylayout] from this [link](http://conkeror.org/Keyboard?action=AttachFile&do=view&target=USExtendedNoDeadKey.keylayout) or this [link](/files/2012-12-25-conkeror---getting-started---part-2/USExtendedNoDeadKey.keylayout) and put it into ~/Library/Keyboard Layouts/. Log out and log in back. Open System Preferences > Language & Text > Input Sources, select the layout US (NDK). After that, put this into your conkerorrc file
+*Note*: on OSX, the option+key produces a dead key, which means you cannot use it as a modifier key in conkeror. To fix it, download this file USExtendedNoDeadKey.keylayout from this [link](http://conkeror.org/Keyboard?action=AttachFile&do=view&target=USExtendedNoDeadKey.keylayout) or this [link](/files/2012-12-25-conkeror---getting-started---part-2/USExtendedNoDeadKey.keylayout) and put it into ~/Library/Keyboard Layouts/. Log out and log in back. Open System Preferences > Language & Text > Input Sources, select the layout US (NDK). After that, put this into your conkerorrc file
 
 {% highlight javascript %}
 modifiers.M = new modifier(function (event) { return event.altKey; },

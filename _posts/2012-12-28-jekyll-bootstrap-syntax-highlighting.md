@@ -80,7 +80,7 @@ use it, make sure you run jekyll with Pygments support. I'll show how later.
 
 ## 2.2 Disadvantages:
 
-* Not as easy to install as highlight.js (but I will demonstrate how LOL)
+* Not as easy to install as highlight.js (but I will demonstrate how)
 * Can not be auto-update (but may change in the future)
 
 ## 2.3 Information
@@ -112,7 +112,7 @@ Download the Setuptools package
 [here](http://pypi.python.org/pypi/setuptools#files). Select the package
 corresponding to your python version.  
 
-Next, cd to the directory you've just donwloaded it and run this command
+Next, cd to the directory you've just downloaded it and run this command
 
 {% highlight sh %}
 $ sudo sh setuptools-0.6c11-py2.6.egg

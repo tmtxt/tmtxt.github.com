@@ -9,14 +9,12 @@ tags: [virtualbox, bootcamp]
 ---
 {% include JB/setup %}
 
-It's a bit complicated when first setup VirtualBox to boot a virtual machine
+It's a bit complicated when I first setup VirtualBox to boot a virtual machine
 from my Bootcamp partition on my Mac. Unlike Parallel where everything is
 automatically set up, in VirtualBox, we need to manually create the virtual
 machine file by command line and change the permission properly for the virtual
-machines to work. This is a summary of what I have configured as well as how to
+machine to work. This is a summary of what I have configured as well as how to
 automate everything.
-
-<!-- more -->
 
 # Change the permission
 
@@ -26,6 +24,8 @@ write on it. Open terminal and execute the command
 {% highlight console %}
 $ df -h
 {% endhighlight %}
+
+<!-- more -->
 
 ![df](/files/2013-07-11-virtualbox-on-bootcamp-partition-guide/df.png)
 
