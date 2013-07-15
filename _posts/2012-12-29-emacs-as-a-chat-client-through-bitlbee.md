@@ -14,10 +14,10 @@ has built-in support for ERC chat client. And now I used it as my chat client
 instead of Adium and the <span>f**king</span> Yahoo Messenger for Mac.
 
 There are
-two way to run a chat client through Bitlbee. First is to connect to a public
-Bitlbee server, register an account and start using the services. The second
+two ways to run a chat client through Bitlbee. First is to connect to a public
+Bitlbee server, register an account and start using the service. The second
 method is to setup your private Bitlbee server and connect to it. Of course I
-choose the second way because the first one is not for the nerds :LOL:. And also
+choose the second way because I don't trust the first one. And also
 you cannot install or config the server if you're using a public server.
 
 <!-- more -->
@@ -35,9 +35,9 @@ like me, I have an article
 demonstrate how to install and config it on Mac OS Mountain Lion. I see the
 instruction is easy but the real situation on my Mac is so complicated >.< I
 don't know how the installation prcess happens on other OS so if you have
-expreienced, please share with me. After finish installation, you need to run
-Bitlbee as Daemon mode by either edit the config file to set **RunMode =
-ForkDaemon** or run bitlbee with the argument **-D** like this
+expreienced, please share with me. After finishing installation, you need to run
+Bitlbee in Daemon mode by either editting the config file to set **RunMode =
+ForkDaemon** or running bitlbee with the argument **-D** like this
 
 {% highlight sh %}
 $ bitlbee -D
@@ -53,8 +53,4 @@ in any password that you want.
 ![Bitlbee localhost](/files/2012-12-29-emacs-as-a-chat-client-through-bitlbee/localhost.png)
 
 Now you're successfully connected bitlbee server. Type in help to show the help
-or go to the next article to know how to use ;))
-
------
-
-**Next**: Basic Bitlbee usage.
+on how to use Bitlebee.

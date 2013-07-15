@@ -11,7 +11,8 @@ tags: [macports, package manager, macos]
 
 # Introduction
 
-For Ubuntu Linux, we have a powerful package manager called **apt** which makes
+For Ubuntu Linux (and Mint), we have a powerful package manager called
+**apt-get**, which makes
 the installation, uninstallation and management of packages much easier. Sadly,
 for MacOS users, we don't have that powerful tool. The appearance of
 **MacPorts**, an open source package manager for MacOS, has changed the way we
@@ -19,7 +20,7 @@ install and manage our packages. With the help of **MacPorts**, MacOS users can
 now quickly install, keep track of the changes, update and maintain many
 open-source
 applications. You can even export all your installed packages and then
-let **MacPorts** automatically reinstall them for your when you have you
+let **MacPorts** automatically reinstall them for you when you have your
 computer reinstalled or when you migrate to another system.
 
 # Installation
@@ -29,7 +30,7 @@ The easiest way to install **MacPorts** is to download the .pkg installer
 to your current OS. Alternatively, you can build it from source. For more
 detail, please visit [this link](http://www.macports.org/install.php).
 
-After finishing the installation, you should consider update **MacPorts**.
+After finishing the installation, you should consider updating **MacPorts**.
 Fortunately, **MacPorts** has the built-in feature for selfupdating. Everything you
 need to do is to execute this command
 
@@ -61,7 +62,8 @@ To get info of a port, type:
 $ port info portname
 {% endhighlight %}
 
-To install a port, execute this command. The installed apps are usually put in /Application/MacPorts
+To install a port, execute this command. The installed apps are usually put in
+/Application/MacPorts
 
 {% highlight sh %}
 $ sudo port install portname
@@ -91,7 +93,8 @@ To list all installed packages, type:
 $ sudo port list installed
 {% endhighlight %}
 
-So those are some basic commands for MacPorts, actually, the most inportant is
+So those are some basic commands for MacPorts. Actually, the most inportant ones
+are
 **install**, **uninstall** and **upgrade**. Now you can use **MacPorts** to
 install many open source application like VLC, Emacs, Handbrake, iTerm,
 VirtualBox, Qt,...

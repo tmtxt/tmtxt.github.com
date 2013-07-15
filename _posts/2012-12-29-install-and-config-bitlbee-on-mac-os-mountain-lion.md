@@ -21,7 +21,7 @@ Quote from Bitlbee homepage
 > Twitter microblogging network (plus all other Twitter API compatible services
 > like identi.ca and status.net).
 
-In short, Bitlbee is like an IRC server where you can connect to and then use it
+In short, Bitlbee is an IRC server where you can connect to and use it
 with your IRC clients to connect to other chat services like Yahoo, FB, Gtalk,...
 
 **Bitlbee Homepage**: <http://www.bitlbee.org/>
@@ -49,7 +49,7 @@ read the config. We need some extra steps.
 
 # Configuration
 
-First we need to have the bitlbee.conf file to store all the config of bitlbee.
+Next, we need to have the *bitlbee.conf* file to store all the config of bitlbee.
 Open up terminal again, cd to the this directory
 
 {% highlight sh %}
@@ -129,5 +129,5 @@ name and group name.
 Now you're ready to run **bitlbee** by typing **bitlbee** into terminal and hit
 **return**.
 
-> This little <span>f**cking</span> stuff took me more than 1 hours to install and config. Why
+> This little stuff took me more than 1 hours to install and config. Why
 > it's so complicated! >.<

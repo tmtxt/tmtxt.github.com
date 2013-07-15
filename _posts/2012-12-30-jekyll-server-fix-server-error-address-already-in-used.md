@@ -14,7 +14,7 @@ you will encounter an error that tells you **Address is already in used**. The
 error output in the console when you run the command **jekyll --server** is
 something similar to this
 
-{% highlight sh %}
+{% highlight console %}
 [2012-12-30 00:10:58] INFO  ruby 1.9.3 (2012-11-10) [x86_64-darwin12.2.0]
 [2012-12-30 00:10:58] WARN  TCPServer Error: Address already in use - bind(2)
 [2012-12-30 00:10:58] WARN  TCPServer Error: Address already in use - bind(2)
@@ -28,14 +28,14 @@ because of some reasons they do not close automatically. To fix this, open
 Terminal and run this command to list all process running at port 4000 (jekyll's
 default port)
 
-{% highlight sh %}
-lsof -wni tcp:4000
+{% highlight console %}
+$ lsof -wni tcp:4000
 {% endhighlight %}
 
 After that issue this command
 
-{% highlight sh %}
-kill PID
+{% highlight console %}
+$ kill PID
 {% endhighlight %}
 
 Replace PID with the PID of the running process. Now run the jekyll server

@@ -9,8 +9,8 @@ tags: [jekyll, search]
 ---
 {% include JB/setup %}
 
-Jekyll is great! However, it lacks one important thing compare to the other blog
-systems. It's the search function. I've sucessfully implemented a simple Google
+Jekyll is great! However, it lacks one important thing compare to the other blogging
+systems. It's the search function. I've implemented a simple Google
 search box in my jekyll blog. Below are the steps.
 
 # Implement a Search box
