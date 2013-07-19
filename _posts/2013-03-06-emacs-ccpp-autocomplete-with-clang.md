@@ -23,16 +23,17 @@ First, you have to install AutoComplete for Emacs. You can install it using
 [Emacs Package Manager](/2013/01/07/emacs-package-manager/). The next step is to
 install Yasnippet. This is not compulsory but is encouraged for better
 experiments. You can also install it using Emacs Package Manager. To see how to
-get Autocomplete and Yasnippet work together, see this article
+get Autocomplete and Yasnippet to work together, see this article
 [Config Yasnippet and Autocomplete on Emacs](/2013/01/06/config-yasnippet-and-autocomplete-on-emacs/).
 
 <!-- more -->
 
 Before installing this package, you should also check whether your system has
-installed "clang" or not via command "clang --version" in terminal. If you get
+installed "clang" or not via this command `clang --version` in terminal. If you get
 nothing from terminal, which means you haven't installed "clang" yet. If you are
-on linux, you can try those 2 commands "sudo apt-get update", "sudo apt-get
-install clang" and check it again. Until clang works fine, you can continue to
+on linux, you can try those 2 commands `sudo apt-get update`,
+`sudo apt-get install clang` and check it again. Until clang works fine, you can
+continue the
 following instructions.
 
 If your computer has satisfied those requirements, now you can start installing

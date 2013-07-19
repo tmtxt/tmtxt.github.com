@@ -12,10 +12,10 @@ tags: [ecb, emacs]
 # Introduction
 
 ECB, stands for Emacs Code Browser, tranforms your emacs from a text editor to a
-real IDE for coding. Once activated, it can display some useful information that
+real IDE for coding. Once activated, it can display many useful information that
 help you program more effectively. The ECB's informational windows can contain:
 
-* A directory tree,
+* a directory tree,
 * a list of source files in the current directory,
 * a list of functions/classes/methods/... in the current file, (ECB uses
   the Semantic Bovinator, or Imenu, or etags, for getting this list so all
@@ -24,7 +24,7 @@ help you program more effectively. The ECB's informational windows can contain:
 * a history of recently visited files,
 * the Speedbar and
 * output from compilation (the "*compilation*" window) and other modes like
-  help, grep etc. or whatever a user defines to be displayed in this
+  help, grep, etc. or whatever the user defines to be displayed in that
   window.
 
 For more information, please visit [ECB Homepage](http://ecb.sourceforge.net/).
@@ -39,13 +39,13 @@ Here is the ECB screenshot from my Emacs
 
 # Installation
 
-ECB requires CEDET version 1.0+, which is distributed with Emacs version 24.
+ECB requires CEDET version 1.0+, which is included in Emacs version 24.
 
 You can install ECB manually by cloning the package and add it to your
 load-path. However, there is another convinience method, that is to use
 package.el. If you haven't known it yet, have a look at this post
-[Emacs Package Manager](/2013/01/07/emacs-package-manager/ ). To install it, M-x
-and type in list-package RET, C-s and search for ecb, RET and select Install.
+[Emacs Package Manager](/2013/01/07/emacs-package-manager/ ). To install it, `M-x`
+and type in `list-package` `RET`, `C-s` and search for **ecb**, `RET` and select **Install**.
 After that, add this to your .emacs or init.el file
 
 {% highlight cl %}
@@ -54,9 +54,9 @@ After that, add this to your .emacs or init.el file
 (require 'ecb-autoloads)
 {% endhighlight %}
 
-Now, everything you need to run ECB is to type M-x ecb-activate RET and ECB is now
+Now, everything you need to run ECB is to type `M-x` `ecb-activate` `RET` and ECB is now
 ready for you to use. When you want to stop it, just execute the command
-ecb-deactivate.
+`ecb-deactivate`.
 
 # Some Basic Configurations
 
@@ -76,7 +76,7 @@ Show source files in directories buffer
 (setq ecb-show-sources-in-directories-buffer 'always)
 {% endhighlight %}
 
-By defaul, ECB hide the compilation window. Everytime you compile, it display
+By default, ECB hides the compilation window. Everytime I compile, it displays
 the compilation message to the same window as the buffer that I'm editing.
 This is really annoying because I want to see all the messages so that I can fix
 the error in my code easily. To keep a persistent compile window in ECB, add
@@ -106,8 +106,8 @@ bindings that you want.
 
 # Some of My Functions
 
-Personally, I don't like those function ecb-deactivate, ecb-show-ecb-windows,
-ecb-hide-ecb-windows since I usually have to opening windows in Emacs. When
+Personally, I don't like those function `ecb-deactivate`, `ecb-show-ecb-windows`,
+`ecb-hide-ecb-windows` since I usually have to open multiple windows in Emacs. When
 deactivate or hide ECB window, it does not automatically restore the window
 layout and switch to the buffer that I'm editing. Similar problem happens when I
 try to show ecb window again. Because of that, I wrote those functions to
