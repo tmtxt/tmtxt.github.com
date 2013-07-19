@@ -1,7 +1,7 @@
 ---
 layout: post
 showtn: 
-title: "Jekyll - Recents and Related Posts section"
+title: "Jekyll Bootstrap - Recents and Related Posts section"
 description: ""
 category: Jekyll
 thumbnail: /files/2013-01-09-jekyll-bootstrap-recents-related-posts-column/thumbnail.png

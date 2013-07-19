@@ -20,13 +20,13 @@ disadvantages.
 backup and restore?  
 * Have you ever encountered the problem when you want to display a piece of
 programming code in Wordpress, Blogspot,...?  
-* Have you ever feel annoyed by the useless code that their WYSIWYG editor
-generates? And to fix them you have to edit the markup manually, which is very
+* Have you ever feel annoyed by the useless code that their WYSIWYG editors
+generate? And to fix them you have to edit the markup manually, which is very
 complicated for us to focus on the main content.
 * Have you ever noticed that they took a long time to load the pages?
 * And so on...
 
-If you feel annoyed with those problems, it's time for you to find another
+If you feel annoyed with these problems, it's time for you to find another
 better solution.
 
 <!-- more -->
