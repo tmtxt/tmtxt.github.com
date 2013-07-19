@@ -67,7 +67,7 @@ the same time).
 
 **Email**: [truong.tranxuan@rmitc.org](mailto:truong.tranxuan@rmitc.org) or [truong.tx@rmitc.org](mailto:truong.tx@rmitc.org)
 
-**Twitter**: <https://twitter.com/tommytxtruong>
+**Twitter**: <https://twitter.com/me_truong_tx>
 
 **Facebook**: <http://facebook.com/mr.truong.tx>
 
@@ -75,6 +75,6 @@ the same time).
 
 **Skype**: [tommy.txtruong](skype:tommy.txtruong?chat)
 
-**Github**: <https://github.com/tommytxtruong>
+**Github**: <https://github.com/tmtxt>
 
 **Google Plus**: <https://plus.google.com/114414080610977988569/>
