@@ -6,7 +6,7 @@ group: navigation
 ---
 {% include JB/setup %}
 
-## The source code of this blog is hosted on [Github Source](https://github.com/tommytxtruong/tommytxtruong.github.com)
+## The source code of this blog is hosted on [Github Source](https://github.com/tmtxt/tmtxt.github.com)
 
 <p align="center"><img src="/files/source/geek.png" width="600px" /></p>
 
