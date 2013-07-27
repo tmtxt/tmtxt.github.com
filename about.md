@@ -63,18 +63,10 @@ the same time).
 
 # Contact me
 
-**Email**: [me@truongtx.me](mailto:me@truongtx.me)
-
-**Email**: [truong.tranxuan@rmitc.org](mailto:truong.tranxuan@rmitc.org) or [truong.tx@rmitc.org](mailto:truong.tx@rmitc.org)
-
-**Twitter**: <https://twitter.com/me_truong_tx>
-
-**Facebook**: <http://facebook.com/mr.truong.tx>
-
-**Linkedin**: <http://www.linkedin.com/pub/tran-xuan-truong/67/2b/a65>
-
-**Skype**: [tommy.txtruong](skype:tommy.txtruong?chat)
-
-**Github**: <https://github.com/tmtxt>
-
-**Google Plus**: <https://plus.google.com/114414080610977988569/>
+**Email**: [me@truongtx.me](mailto:me@truongtx.me)  
+**Twitter**: <https://twitter.com/mr_truong_tx>  
+**Facebook**: <http://facebook.com/mr.truong.tx>  
+**Linkedin**: <http://www.linkedin.com/pub/tran-xuan-truong/67/2b/a65>  
+**Skype**: [tommy.txtruong](skype:tommy.txtruong?chat)  
+**Github**: <https://github.com/tmtxt>  
+**Google Plus**: <https://plus.google.com/113017921382592685682/>
