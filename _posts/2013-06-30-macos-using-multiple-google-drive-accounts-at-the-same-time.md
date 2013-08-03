@@ -200,7 +200,7 @@ $ dscacheutil -q user
 {% endhighlight %}
 
 For example, you want to change the user id to 402, execute the above command
-and search for the user id 403 in the output. If there is no match result, that
+and search for the user id 402 in the output. If there is no match result, that
 means that user id is available and you can use it.
 
 To change the user id, go to **System Preferences**, **User & Group**, right
