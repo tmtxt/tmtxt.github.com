@@ -63,7 +63,7 @@ the same time).
 
 # Contact me
 
-**Email**: [me@truongtx.me](mailto:me@truongtx.me)  
+**Email**: [gmail](mailto:tommytxtruong@gmail.com)  
 **Twitter**: <https://twitter.com/mr_truong_tx>  
 **Facebook**: <http://facebook.com/mr.truong.tx>  
 **Linkedin**: <http://www.linkedin.com/pub/tran-xuan-truong/67/2b/a65>  
