@@ -3,7 +3,7 @@ layout: post
 showtn: 
 title: "Conkeror - Display Tab bar"
 description: ""
-category: Conkeror Web Browser
+category: conkeror
 thumbnail: /files/2012-12-27-conkeror-display-tab-bar/tab.png
 tags: [conkeror, emacs, browser]
 ---

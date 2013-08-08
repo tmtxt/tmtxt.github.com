@@ -3,7 +3,7 @@ layout: post
 showtn: yes
 title: "Conkeror - Reopen Closed tab"
 description: ""
-category: Conkeror Web Browser
+category: conkeror
 thumbnail: /files/2012-12-24-conkeror-getting-started-part-1/conkeror-main.png
 tags: [conkeror, emacs, browser]
 ---
