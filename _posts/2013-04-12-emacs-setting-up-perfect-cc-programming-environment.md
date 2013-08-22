@@ -47,7 +47,7 @@ flymake upon opening any file for which syntax checking is available.
 (add-hook 'find-file-hook 'flymake-find-file-hook)
 {% endhighlight %}
 
-You make also want to config key bindings for
+You may also want to config key bindings for
 **flymake-display-err-menu-for-current-line**, **flymake-goto-next-error**,
 **flymake-goto-previous-error** for quick navigation between errors.
 
