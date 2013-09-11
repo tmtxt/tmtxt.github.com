@@ -149,8 +149,8 @@ and move functions.
 
 I'm currently developing some functions that help emacs dired execute tasks
 asynchonously (since dired is my default my management application). I'm
-currently in those final weeks of the semester so I don't have much tim. If you
-want those features, wait for me to finish my semester n May.
+currently in those final weeks of the semester so I don't have much time. If you
+want those features, wait for me to finish my semester in May.
 
 # Screenshots
 
