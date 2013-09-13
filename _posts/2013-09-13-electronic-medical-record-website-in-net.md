@@ -16,6 +16,8 @@ to implement an Electronic Medical Record website using ASP.Net. I have put much
 effort on this website (although I don't like .Net and Windows). The source code
 is host on Github and you are free to use it at your own risk.
 
+<!-- more -->
+
 # Overview of the website
 
 The website is about an Electronic Medical Record (EMR) system that support
@@ -51,9 +53,9 @@ Simply clone it into your local computer and run.
 
 # Requirements to run
 
-Microsoft Visual Studio 2012+
-Microsoft .Net Framework 4.5+
-Microsoft SQL Server 2008+
+- Microsoft Visual Studio 2012+
+- Microsoft .Net Framework 4.5+
+- Microsoft SQL Server 2008+
 
 # Database Deployment Instruction
 
