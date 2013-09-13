@@ -16,7 +16,7 @@ function. Today, I have improved that function so that rsync window will dislay
 progress separately from my currently working windows. Moreover, after finishing
 copying, it will show the message and automatically close the progress window
 after 5 seconds. Also, the rsync progress window can not be selected by call
-other-window. As a result, the rsync feature now does not affact my current
+other-window. As a result, the rsync feature now does not affect my current
 work. I can continue what I'm currently doing while leaving rsync take care of my
 files.
 
