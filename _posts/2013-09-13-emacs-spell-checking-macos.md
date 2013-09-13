@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Emacs Spell Checking on MacOS"
+title: "Emacs Spelling Checking on MacOS"
 description: ""
 category: Emacs
 thumbnail: 
