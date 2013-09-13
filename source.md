@@ -2,7 +2,6 @@
 layout: page
 title: "Page Source"
 description: ""
-group: navigation
 ---
 {% include JB/setup %}
 

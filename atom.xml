@@ -1,6 +1,6 @@
 ---
 layout: nil
-title : Atom Feed
+title : RSS
 group: navigation
 ---
 <?xml version="1.0" encoding="utf-8"?>
