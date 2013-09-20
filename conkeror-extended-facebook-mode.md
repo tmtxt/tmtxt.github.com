@@ -10,6 +10,24 @@ An extension for Conkeror's Facebook mode to help browse Facebook faster. It
 extends the built-in Facebook mode to provide more commands to interact with
 Facebook News Feed, Story, Comment, Like,...
 
+# Installation
+
+Clone the repo on Github at
+[CEFM Repo](https://github.com/tmtxt/conkeror-extended-facebook-mode) and put it
+inside your .conkerorrc folder. After that, add this to your init file
+
+{% highlight js %}
+let (path = get_home_directory()) {
+  // add to load path
+  path.appendRelativePath(".conkerorrc");
+  path.appendRelativePath("conkeror-extended-facebook-mode");
+  load_paths.unshift(make_uri(path).spec);
+
+  // include the library
+  require("conkeror-extended-facebook-mode.js");  
+};
+{% endhighlight %}
+
 # Fallthrough keys for Facebook shortcuts
 
 This extension lets you use some Facebook's shortcut keys for navigating on the
