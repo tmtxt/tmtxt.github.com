@@ -29,20 +29,27 @@ unbind those keys from Conkeror.
 # Open News Feed story in new buffer
 
 When you browsing the News Feed with **j** and **k**, there is a little vertical
-bar to indicate which story you're in. Simply invoke
+bar (old-style news feed) or a thin border around the avatar image of the story
+to indicate which story you're in. Simply invoke
 **facebook-open-current-story-new-buffer** to open that story in new buffer or
 **facebook-open-current-story-new-buffer-background** to open it in a new
-background buffer. You can bind these two commands to some keystrokes for quick
+background buffer.
+
+<p align="center">
+<img src="/files/conkeror-extended-facebook-mode/indicator.png" />
+</p>
+
+<p align="center">
+<img src="/files/conkeror-extended-facebook-mode/indicator-new.png" />
+</p>
+
+You can also bind these two commands to some keystrokes for quick
 navigation.
 
 {% highlight js %}
 define_key(facebook_keymap, "C-M-o", "facebook-open-current-story-new-buffer");
 define_key(facebook_keymap, "C-S-o", "facebook-open-current-story-new-buffer-background");
 {% endhighlight %}
-
-<p>&nbsp;</p>
-
-![Indicator](/files/conkeror-extended-facebook-mode/indicator.png)
 
 # Other features
 
