@@ -7,7 +7,7 @@ group: project
 {% include JB/setup %}
 
 An extension for Conkeror's Facebook mode to help browse Facebook faster. It
-extends the build-in Facebook mode to provide more commands to interact with
+extends the built-in Facebook mode to provide more commands to interact with
 Facebook News Feed, Story, Comment, Like,...
 
 # Fallthrough keys for Facebook shortcuts
@@ -23,8 +23,8 @@ site.
 - **m** - New Message
 - **q** - search for a friend to chat with
 
-For the other keys, from 0-9, I haven't found the problem that prevents me from
-unbind those keys from Conkeror.
+For the other keys, from 0-9, I haven't found the problem that prevents me making
+those keys fall through from Conkeror.
 
 # Open News Feed story in new buffer
 
@@ -53,5 +53,5 @@ define_key(facebook_keymap, "C-S-o", "facebook-open-current-story-new-buffer-bac
 
 # Other features
 
-This is the very first version of the library so of course it doesn't have much
+This is just the very first version so of course it doesn't have much
 features. However, I'll add more later
