@@ -28,7 +28,7 @@ let (path = get_home_directory()) {
 };
 {% endhighlight %}
 
-# Fallthrough keys for Facebook shortcuts
+# Facebook's default keyboard shortcuts
 
 This extension lets you use some Facebook's shortcut keys for navigating on the
 site.
@@ -41,8 +41,13 @@ site.
 - **m** - New Message
 - **q** - search for a friend to chat with
 
-For the other keys, from 0-9, I haven't found the problem that prevents me making
-those keys fall through from Conkeror.
+For the other keys, from 0-9, there is a little problem so that I have to
+implement some custom functions for performing their functionalities but have
+not finished all.
+
+- **3** - Open Friend Requests panel
+- **4** - Open Messages panel
+- **5** - Open Notifications panel
 
 # Open News Feed story in new buffer
 
