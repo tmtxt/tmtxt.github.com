@@ -7,7 +7,7 @@ group: project
 {% include JB/setup %}
 
 An extension for Conkeror's Facebook mode to help browse Facebook faster. It
-extends the build-in Facebook mode to provide more commands to interactive with
+extends the build-in Facebook mode to provide more commands to interact with
 Facebook News Feed, Story, Comment, Like,...
 
 # Fallthrough keys for Facebook shortcuts
