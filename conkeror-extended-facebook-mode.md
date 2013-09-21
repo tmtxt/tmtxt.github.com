@@ -34,8 +34,7 @@ This extension lets you use some Facebook's shortcut keys for navigating on the
 site.
 
 - **/** - Search
-- **Enter** - Focus on the text box when making a post
-- **c** - Comment when on a story in News Feed
+- **Enter** - Make comment or Focus on the text box when making a post
 - **j** and **k** - Scroll between News Feed stories
 - **l** - like or unlike a selected story
 - **m** - New Message
