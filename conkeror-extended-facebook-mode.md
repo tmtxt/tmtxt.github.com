@@ -104,7 +104,7 @@ define_key(facebook_keymap, "C-C", "facebook-cycle-conversations");
 {% endhighlight %}
 
 Now in every facebook page, type **q** to search for a friend to chat, press
-**C-C** to jump to the next chat conversation. Usually if you press **Esc**, the
+**C-C** to jump to the next chat conversation. Usually when you press **Esc**, the
 current chat conversation will be closed. If you want to continue browsing
 Facebook without closing it, you can see the steps how to achieve it in this
 post [Using Esc key in Conkeror]({%post_url 2013-08-08-using-esc-key-in-conkeror%}).
