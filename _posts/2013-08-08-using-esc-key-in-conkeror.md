@@ -35,9 +35,9 @@ To solve this problem, we need two Esc keys in Conkeror. Simply define an alias
 to the Esc key in the .conkerorrc file, for example
 
 {% highlight js %}
-define_key_alias("C-[", "escape");
+define_key_alias("C-o", "escape");
 {% endhighlight %}
 
 Now when you want Conkeror to unfocus the current element only, just press the
-alias key C-[. Pressing Esc key will cause Conkeror to activate the page's key
+alias key C-o. Pressing Esc key will cause Conkeror to activate the page's key
 binding for Esc.
