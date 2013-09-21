@@ -105,7 +105,7 @@ for the next person,... For easy imagination, see the picture below
 </p>
 
 Everything will be great if there is a handy keystroke
-for cycling through chat conversations. CEFM provides a useful command named
+for cycling through the chat conversations. **CEFM** provides a useful command named
 **facebook-cycle-conversations** to help you solve this problem. Simply bind it
 to a keystroke that you want, for example
 
