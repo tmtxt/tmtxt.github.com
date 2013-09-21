@@ -19,3 +19,6 @@ version release.
 Conkeror Extended Facebook Mode: [Homepage](/conkeror-extended-facebook-mode.html)
 
 <!-- more -->
+
+In this very first version, I have only implemented 2 features. They are
+Fallthroughkeys and Open News Feed Story in new buffer

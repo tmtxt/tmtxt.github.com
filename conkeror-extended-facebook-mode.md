@@ -74,6 +74,46 @@ define_key(facebook_keymap, "C-M-o", "facebook-open-current-story-new-buffer");
 define_key(facebook_keymap, "C-S-o", "facebook-open-current-story-new-buffer-background");
 {% endhighlight %}
 
+# Cycle through chat conversions with keyboard
+
+Facebook chat is very convenient but can be very painful, too. Facebook page
+contains too many elements, from links on sidebar, news
+feed,... to the textboxes in status update, chat conversations,... This will
+slow down your productivity if you're Facebook-addicted (like me) since Conkeror
+have to process too many hint links and you also have to look for the right hint
+number and type exactly that number (can be up to 3 digits) if you want to chat.
+Moreover, if you usually chat with many people at the same time, this can become
+a nightmare. You have to follow the textbox (with 3 digits hinting number) for
+chatting with the first person and then unfocus it, follow again another textbox
+for the next person,... For easy imagination, see the picture below
+
+<p align="center">
+<img src="/files/conkeror-extended-facebook-mode/fbchat1.png" />
+</p>
+
+<p align="center">
+<img src="/files/conkeror-extended-facebook-mode/fbchat2.png" />
+</p>
+
+Everything will be great if there is a handy keystroke
+for cycling through chat conversations. CEFM provides a useful command named
+**facebook-cycle-conversations** to help you solve this problem. Simply bind it
+to a keystroke that you want, for example
+
+{% highlight js %}
+define_key(facebook_keymap, "C-C", "facebook-cycle-conversations");
+{% endhighlight %}
+
+Now in every facebook page, type **q** to search for a friend to chat, press
+**C-C** to jump to the next chat conversation. Usually if you press **Esc**, the
+current chat conversation will be closed. If you want to continue browsing
+Facebook without closing it, you can see the steps how to achieve it in this
+post [Using Esc key in Conkeror]({%post_url 2013-08-08-using-esc-key-in-conkeror%}).
+
+<p align="center">
+<img src="/files/conkeror-extended-facebook-mode/fbchat3.png" />
+</p>
+
 # Other features
 
 This is just the very first version so of course it doesn't have much
