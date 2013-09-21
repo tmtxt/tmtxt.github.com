@@ -6,6 +6,16 @@ group: project
 ---
 {% include JB/setup %}
 
+# Table of Contents
+
+- [Introduction](#introduction)
+- [Installation](#installation)
+- [Facebook's default keyboard shortcuts](#facebooks_default_keyboard_shortcuts)
+- [Open News Feed story in new buffer](#open_news_feed_story_in_new_buffer)
+- [Cycle through chat conversions with keyboard](#cycle_through_chat_conversations_with_keyboard)
+
+# Introduction
+
 An extension for Conkeror's Facebook mode to help browse Facebook faster. It
 extends the built-in Facebook mode to provide more commands to interact with
 Facebook News Feed, Story, Comment, Like,...
