@@ -2,7 +2,7 @@
 layout: post
 title: "Release of Conkeror Mac Modeline Buttons - CMMB"
 description: ""
-category: misc
+category: conkeror
 thumbnail: 
 showtn: no
 tags: [conkeror, mac, modeline, cmmb]
