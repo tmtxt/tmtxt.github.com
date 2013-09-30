@@ -162,13 +162,13 @@ cmmb_image_path = "/path/to/images/folder";
 First, create an empty array for holding the widgets
 
 {% highlight js %}
-var cmmb_navigation_widgets = new Array();
+var my_button_widgets = new Array();
 {% endhighlight %}
 
 Second, create an array for button definitions
 
 {% highlight js %}
-cmmb_navigation_buttons = [
+my_buttons = [
     ["find-url", "open"],
     ["find-url-new-buffer", "new"],
     ["back", "go-back"],
@@ -192,10 +192,10 @@ By default, the images are located under
 Next, define an interactive command like this and pass in the two arrays that
 you have created before. This command is for adding the buttons
 {% highlight js %}
-interactive("cmmb-add-navigation-buttons",
+interactive("cmmb-add-my-buttons",
 	"Add basic navigation buttons to the mode line",
 	function(I){
-	  cmmb_add_buttons(cmmb_navigation_buttons, true, cmmb_navigation_widgets);
+	  cmmb_add_buttons(my_buttons, true, my_button_widgets);
 	});
 {% endhighlight %}
 
@@ -203,10 +203,10 @@ After that, define another interactive command for removing modeline buttons
 and pass in the widgets array that you have created before
 
 {% highlight js %}
-interactive("cmmb-remove-navigation-buttons",
+interactive("cmmb-remove-my-buttons",
 	"Remove navigation buttons from mode line", 
 	function(I){
-	  cmmb_remove_buttons(cmmb_navigation_widgets);
+	  cmmb_remove_buttons(my_button_widgets);
 	});
 {% endhighlight %}
 
@@ -216,7 +216,7 @@ If you don't want to use interactive commands, just want the buttons to be added
 automatically when you start conkeror, replace the interactive commands with
 
 {% highlight js %}
-cmmb_add_buttons(cmmb_navigation_buttons, true, cmmb_navigation_widgets);
+cmmb_add_buttons(my_buttons, true, my_button_widgets);
 {% endhighlight %}
 
 You can add many button lists without interfering other buttons list.
