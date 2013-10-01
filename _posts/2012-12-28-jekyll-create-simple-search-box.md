@@ -46,7 +46,7 @@ Finally, add a form where you want the search box to appear
 
 {% highlight html %}
 <!-- my custom google search -->
-<form onsubmit="tmtxt_search_google()" >
+<form onsubmit="my_search_google()" >
   <input type="text" id="my-google-search">
 </form>
 {% endhighlight %}
