@@ -2,7 +2,7 @@
 layout: post
 title: "Mozrepl in combination with Emacs for developing Conkeror"
 description: ""
-category: Emacs
+category: conkeror
 thumbnail: 
 showtn: no
 tags: [mozrepl, emacs, mozilla]
