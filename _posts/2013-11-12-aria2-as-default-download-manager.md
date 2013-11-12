@@ -23,7 +23,7 @@ offers a free version but the
 functionality is limited. Also, Folx 3 has removed the ability to download
 torrent file. DownThemAll requires Firefox to be opened. uTorrent and
 Transmission are just torrent specialized. But the most annoying problem for me
-is that they are not light-weight applications. I want some simple, light-weight
+is that they are not light-weight applications. I want some simple, free
 but light-weight app that can support multiple protocols from http, ftp to
 torrent.
 
