@@ -2,4 +2,18 @@
 layout: default
 ---
 {% include JB/setup %}
-{% include themes/tmtxt-responsive/page.html %}
+
+<div class="content">
+  <div class="page-header">
+	<h1>
+	  {{ page.title }}<br/>
+	  {% if page.description %}<small>{{ page.description }}</small>{% endif %}
+	</h1>
+  </div>
+
+  <div class="row">
+	<div class="col-md-12">
+      {{ content }}
+	</div>
+  </div>
+</div>

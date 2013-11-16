@@ -1,46 +1,41 @@
-<!-- facebook like script -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=146685865483698";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<!-- end facebook like script -->
+<!-- <ul class="fa-ul"> -->
+  <!-- facebook -->
+  <!-- <li> -->
+	
+	<a href="#"
+   onclick="popUp=window.open('http://www.facebook.com/sharer.php?src=bm&v=4&i=1279479932&u={{site.production_url}}{{page.url}}&t={{page.title}}',
+			'popupwindow',
+			'scrollbars=yes,width=800,height=600');popUp.focus();return
+			false"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+  <!-- </li> -->
 
-<div>
-<h3>Share to your friends</h3>
-<!-- facebook -->
-<div class="fb-like" data-send="false" data-width="450" data-show-faces="true"></div>
+  <!-- twitter -->
+  <!-- <li> -->
+	
+	<a href="#"
+   onclick="popUp=window.open('http://twitter.com/share',
+			'popupwindow',
+			'scrollbars=yes,width=800,height=600');popUp.focus();return
+			false"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+  <!-- </li> -->
 
-<!-- google + -->
-<!-- Place this tag where you want the +1 button to render. -->
-<div class="g-plusone" data-size="tall" data-annotation="inline" data-width="300"></div>
-<!-- Place this tag after the last +1 button tag. -->
-<script type="text/javascript">
-(function() {
-var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-po.src = 'https://apis.google.com/js/plusone.js';
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-})();
-</script>
+  <!-- linkedin -->
+  <!-- <li> -->
+	
+	<a href="#"
+   onclick="popUp=window.open('http://www.linkedin.com/shareArticle?mini=true&url={{site.production_url}}{{page.url}}&title={{page.title}}&source=http://truongtx.me',
+			'popupwindow',
+			'scrollbars=yes,width=800,height=600');popUp.focus();return
+			false"><i class="fa fa-linkedin fa-fw fa-3x"></i></a>
+  <!-- </li> -->
 
-<!-- twitter -->
-<div>
-<a href="https://twitter.com/share" class="twitter-share-button"
-data-via="mr_truong_tx">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-<a href="https://twitter.com/mr_truong_tx" class="twitter-follow-button"
-data-show-count="false">Follow @mr_truong_tx</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-</div>
-
-<!-- linkedin -->
-<div>
-<script src="//platform.linkedin.com/in.js" type="text/javascript">
-lang: en_US
-</script>
-<script type="IN/Share" data-counter="right"></script>
-</div>
-</div>
+  <!-- google plus -->
+  <!-- <li> -->
+	
+	<a href="#"
+   onclick="popUp=window.open('https://plus.google.com/share?url={{site.production_url}}{{page.url}}',
+			'popupwindow',
+			'scrollbars=yes,width=800,height=600');popUp.focus();return
+			false"><i class="fa fa-google-plus fa-fw fa-3x"></i></a>
+  <!-- </li> -->
+<!-- </ul> -->

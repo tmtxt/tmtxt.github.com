@@ -1,6 +1,116 @@
----
-theme :
-  name : tmtxt-responsive
----
 {% include JB/setup %}
-{% include themes/tmtxt-responsive/default.html %}
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>{{ page.title }}</title>
+	
+	{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+	{% if site.author.name %}<meta name="author" content="{{ site.author.name }}">{% endif %}
+
+	<!-- bootstrap -->
+	<script src="{{ASSET_PATH}}/js/jquery.js"></script>			 <!-- jquery -->
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link href="{{ASSET_PATH}}/css/bootstrap.min.css" rel="stylesheet">
+	<script src="{{ASSET_PATH}}/js/bootstrap.min.js"></script>
+
+	<!-- others -->
+	<link rel="stylesheet" href="/assets/css/pygments.css"> <!-- pygments -->
+	<meta charset="UTF-8">										 <!-- unicode -->
+	<link rel="stylesheet" href="{{ASSET_PATH}}/css/font-awesome.min.css"> <!-- font awesome -->
+	
+	<!-- custom -->
+	{% include normalize_address %}
+	{% include google_search %}
+	<link rel="stylesheet" href="/assets/css/custom.css"> <!-- pygments -->
+  </head>
+
+  <body>
+
+	<!-- navigation bar -->
+	<nav class="navbar navbar-default bs-docs-nav" role="navigation">
+	  <div class="container">
+	  <!-- Brand and toggle get grouped for better mobile display -->
+	  <div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		  <span class="sr-only">Toggle navigation</span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="{{HOME_PATH}}">{{site.title}}</a>
+	  </div>
+
+	  <!-- Collect the nav links, forms, and other content for toggling -->
+	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<ul class="nav navbar-nav">
+		  <li><a href="{{BASE_PATH}}/categories.html">Categories</a></li>
+		  <li><a href="{{BASE_PATH}}/archive.html">Archive</a></li>
+		  <li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact <b class="caret"></b></a>
+			<ul class="dropdown-menu">
+			  <li><img src="{{BASE_PATH}}/files/index/id.jpg"
+			  class="img-responsive hidden-xs"></li>
+			  <li class="divider hidden-xs"></li>
+			  <li><a href="mailto:me@truongtx.me">
+				  <i class="fa fa-envelope fa-lg"></i> Email</a></li>
+			  <li><a href="https://twitter.com/mr_truong_tx">
+				  <i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+			  <li><a href="http://facebook.com/mr.truong.tx">
+				  <i class="fa fa-facebook-square fa-lg"></i> Facebook</a></li>
+			  <li><a href="http://www.linkedin.com/pub/tran-xuan-truong/67/2b/a65">
+				  <i class="fa fa-linkedin-square fa-lg"></i> Linkedin</a></li>
+			  <li><a href="https://plus.google.com/113017921382592685682/">
+				  <i class="fa fa-google-plus-square fa-lg"></i> Google+</a></li>
+			  <li><a href="https://github.com/tmtxt">
+				  <i class="fa fa-github-square fa-lg"></i> Github</a></li>
+			  <li class="divider"></li>
+			  <li><a href="{{BASE_PATH}}/about.html">About me</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Project <b class="caret"></b></a>
+			<ul class="dropdown-menu">
+			  <li><a href="{{BASE_PATH}}/conkeror-mac-modeline-buttons.html">Conkeror
+			  Mac Modeline Buttons</a></li>
+			  <li><a href="{{BASE_PATH}}/conkeror-extended-facebook-mode.html">Conkeror
+			  Extended Facebook Mode</a></li>
+			  <li><a href="{{BASE_PATH}}/tmtxt-dired-async.html">tmtxt-dired-async</a></li>
+			  <li><a href="{{BASE_PATH}}/agent-069-game.html">Agent 069 Android Game</a></li>
+			  <li>
+				<a href="{% post_url 2013-09-13-electronic-medical-record-website-in-net %}">
+				  Electronic Medical Record website</a></li>
+			</ul>
+		  </li>
+		</ul>
+		<form class="navbar-form navbar-left" role="search" onsubmit="tmtxt_search_google()">
+		  <div class="form-group">
+			<input type="text" class="form-control" placeholder="Search" id="tmtxt-google-search">
+		  </div>
+		</form>
+	  </div><!-- /.navbar-collapse -->
+	  </div>
+	</nav>
+	<!-- end nav bar -->
+
+	<div class="container">
+	  <!-- content of the page -->
+        {{ content }}
+      
+	  <!-- footer -->
+      <footer style="text-align: center">
+        <p>&copy; {{ site.author.name }} 2012 
+          with help from
+		  <a href="http://jekyllbootstrap.com" target="_blank"
+			 title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and
+		  <a href="http://twitter.github.com/bootstrap/"
+			 target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+	</div>
+
+	<!-- analytic -->
+    {% include JB/analytics %}
+  </body>
+</html>
