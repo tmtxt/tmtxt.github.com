@@ -13,7 +13,7 @@
   <!-- <li> -->
 	
 	<a href="#"
-   onclick="popUp=window.open('http://twitter.com/share',
+   onclick="popUp=window.open('https://twitter.com/intent/tweet?original_referer={{site.production_url}}{{page.url}}&text={{page.title}}&tw_p=tweetbutton&url={{site.production_url}}{{page.url}}&via=mr_truong_tx',
 			'popupwindow',
 			'scrollbars=yes,width=800,height=600');popUp.focus();return
 			false"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
