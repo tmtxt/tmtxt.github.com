@@ -16,8 +16,6 @@ tags: [emacs, dired async, dired, file manager]
 > 
 > The update fixes some minor issues and add some more features as below
 
-<!-- more -->
-
 # Get size of multiple files
 
 This feature uses the command `du` to calculate the total size of all marked
@@ -34,6 +32,8 @@ This function helps you stop all currently running async taks.
 {% highlight cl %}
 (define-key dired-mode-map (kbd "C-c C-k") 'tmtxt/dired-async-kill-all)
 {% endhighlight %}
+
+<!-- more -->
 
 # Jump to the end of the output buffer
 

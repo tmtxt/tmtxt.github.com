@@ -17,8 +17,6 @@ You can find the information as well as the instruction on how to install and
 use at the package's homepage
 <http://truongtx.me/conkeror-extended-facebook-mode.html>
 
-<!-- more -->
-
 # Cycle through chat conversions with keyboard
 
 Everything will be great if there is a handy keystroke
@@ -49,3 +47,5 @@ not finished all, they will appear in the next version.
 - **3** - Open Friend Requests panel
 - **4** - Open Messages panel
 - **5** - Open Notifications panel
+
+<!-- more -->

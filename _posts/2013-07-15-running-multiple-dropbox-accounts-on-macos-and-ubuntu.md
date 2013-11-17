@@ -20,8 +20,6 @@ However, normally, we can use just one dropbox account at a time on our
 computer. This article will demonstrates two methods to bypass Dropbox desktop
 application and force it to run with multiple accounts concurrently.
 
-<!-- more -->
-
 # Run as another user
 
 Have a look at the this post [Exploit Unix user account feature]({% post_url 2013-07-11-exploit-unix-user-account-feature%}),
@@ -41,6 +39,8 @@ If you are on MacOS, you can refer to this article
 [MacOS - Using multiple Google Drive accounts at the same time]({% post_url 2013-06-30-macos-using-multiple-google-drive-accounts-at-the-same-time %}).
 You can follow the instruction there with a few changes to automate everything
 on MacOS.
+
+<!-- more -->
 
 ![MacOS](/files/2013-07-12-running-multiple-dropbox-accounts-on-macos-and-ubuntu/macos.png)
 

@@ -18,8 +18,6 @@ its packages
 into **/opt/local**, which make it difficult when you want to re-install your
 whole system or migrate to a new Mac because it's outside your home directory.
 
-<!-- more -->
-
 The solution is to install Macports into your home directory and config it to
 put all its stuff into your home directory, too. By using this method, you can
 easily backup your home directory and start your work immediately with all your
@@ -32,6 +30,8 @@ that need sudo permission). One example that I have encountered is Mysql server.
 It needs to create another user to run the instance of Mysql but I think we can
 config it (I have not tried yet). To fix this, simply install 2 instances of
 Macports, one using the default installer and one in your home directory.
+
+<!-- more -->
 
 # Install Macports to Home directory
 

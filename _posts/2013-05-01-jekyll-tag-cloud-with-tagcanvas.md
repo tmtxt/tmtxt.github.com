@@ -33,8 +33,6 @@ to your file's path)
 
 In your site template, put this where you want the Tag Cloud to appear
 
-<!-- more -->
-
 {% highlight html %}
 {% raw %}
 <div id="myCanvasContainer">
@@ -56,6 +54,8 @@ In your site template, put this where you want the Tag Cloud to appear
 </div>
 {% endraw %}
 {% endhighlight %}
+
+<!-- more -->
 
 This code will generate a TagCanvas element and all tags belong to your Jekyll
 site and also the size of each tag corresponding to its number of post.

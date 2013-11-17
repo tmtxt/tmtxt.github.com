@@ -20,8 +20,6 @@ I've written a small function
 to help me quickly open a new terminal window at the current directory
 that I'm browsing in Emacs (MacOS only).
 
-<!-- more -->
-
 {% highlight cl %}
 ;; default terminal application path
 (defvar tmtxt/macos-default-terminal-app-path
@@ -37,6 +35,8 @@ For MacOS only"
 						   " "
 						   (shell-quote-argument (file-truename default-directory)))))
 {% endhighlight %}
+
+<!-- more -->
 
 When you want to use the function, you need to set the variable
 **tmtxt/macos-default-terminal-app-path** to the absolute path to your terminal

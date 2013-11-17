@@ -28,8 +28,6 @@ section.
 <!-- more -->
 {% endhighlight %}
 
-<!-- more -->
-
 # Display the Preview
 
 Next, open your index.html file or the page which is currently display your post
@@ -47,6 +45,8 @@ need to add two filters that I mentioned before to the tag.
 </div>
 {% endraw %}
 {% endhighlight %}
+
+<!-- more -->
 
 The code above will check if the post content contains the the separator string,
 it will display the part before that string. Otherwise, it will strip all html

@@ -26,14 +26,14 @@ organize the music library by artist, album, playlist,... You can then listen to
 your collection online from any computer with an Internet connection and ofline
 on Android with the help of Google Play Music app.
 
-<!-- more -->
-
 # Requirements
 
 * At least one computer (Windows, MacOS, Linux) for uploading music
 * An Android device (for on-the-go music)
 * A Google account
 * Google Music Play app musiXmatch (if you use Android)
+
+<!-- more -->
 
 # Google Music
 

@@ -25,8 +25,6 @@ write on it. Open terminal and execute the command
 $ df -h
 {% endhighlight %}
 
-<!-- more -->
-
 ![df](/files/2013-07-11-virtualbox-on-bootcamp-partition-guide/df.png)
 
 Locate your bootcamp partition, remember the corresponding file in **/dev**
@@ -44,6 +42,8 @@ this volume. There are several ways to do this. You can open Finder and click
 eject the drive or eject it in disk utility. However, I prefer command line and
 also I will use it later for the automation step. This is the command for
 unmounting the volume
+
+<!-- more -->
 
 {% highlight console %}
 $ diskutil unmount /Volumes/BOOTCAMP

@@ -16,8 +16,6 @@ that image will appear. If the Esc key is pressed, that layer will disappear and
 you will be taken to the previous page. Similar things happen in some gallery
 pages, too.
 
-<!-- more -->
-
 However, in Conkeror, when the Esc key is pressed, the browser will release the
 focus on the currently focused element (if any) and after that move the focus to
 the top frame. In some circumstances, it can cause problem when both the current
@@ -28,6 +26,8 @@ Look at this example below, you cursor is now inside a textbox. After typing
 some text, you want to unfocus the current textbox and then follow the button
 (Share Photo) to share that post to your timeline. But if you press Esc, the
 dialog will disappear because Facebook also bind the Esc key to Close the dialog.
+
+<!-- more -->
 
 ![Example](/files/2013-08-08-using-esc-key-in-conkeror/example.png)
 

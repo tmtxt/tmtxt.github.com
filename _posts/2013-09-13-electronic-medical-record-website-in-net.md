@@ -16,8 +16,6 @@ to implement an Electronic Medical Record website using ASP.Net. I have put much
 effort on this website (although I don't like .Net and Windows). The source code
 is host on Github and you are free to use it at your own risk.
 
-<!-- more -->
-
 # Overview of the website
 
 The website is about an Electronic Medical Record (EMR) system that support
@@ -35,6 +33,8 @@ Visit, Prescription, Lab Order, Drug,
 Drug Group, Medical Service, Medical Service Group, ICD, ICD Chapter and User. For
 each entity, the website provides 6 basic operations: add new, update, delete,
 view all, view one item and search.
+
+<!-- more -->
 
 # Design details
 

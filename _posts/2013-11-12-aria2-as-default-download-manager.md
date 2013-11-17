@@ -27,8 +27,6 @@ is that they are not light-weight applications. I want some simple, free
 but light-weight app that can support multiple protocols from http, ftp to
 torrent.
 
-<!-- more -->
-
 Finally, I found **aria2**, a CLI download manager that can satisfy all
 my demands. When disk cache is off, the physical memory usage is typically 4MiB
 (normal HTTP/FTP downloads) to 9MiB (BitTorrent downloads). CPU usage in
@@ -46,6 +44,8 @@ Here are the steps on how to setup aria2 client on a Unix/Linux system.
 
 **Note**: If you'are using Linux, there are an application that is the GUI
 wrapper for aria2 called [uGet](http://ugetdm.com/).
+
+<!-- more -->
 
 # Install aria2
 

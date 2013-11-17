@@ -17,8 +17,6 @@ Jekyll Bootstrap (an pre-implemented website in Jekyll), Git and hosted it on
 Github for free. Also, you can deploy it on your
 own server or use Github to host it with your custom domain.
 
-<!-- more -->
-
 # Requirement
 
 * As I mentioned above, Jekyll is a blogging platform for geeks, not for newbie.
@@ -36,6 +34,8 @@ demonstrate using Emacs (because I use Emacs) but it's up to you.
 * The last requirement is to have [Ruby](http://www.ruby-lang.org/en/downloads/),
 [RubyGems](http://rubygems.org/pages/download) and [Git](http://git-scm.com/)
 installed on your computer.
+
+<!-- more -->
 
 # Setting up
 

@@ -16,8 +16,6 @@ folder. Finder does not have any built-in feature for copying the current path
 using the keyboard. However, we can use a workaround with help from Apple
 Automator.
 
-<!-- more -->
-
 # Finder
 
 To copy the current path in Finder, open Automator and create a new Service.
@@ -42,6 +40,8 @@ If you want it to copy as quoted, you can change `POSIX path` to
 
 Save the service with a name that you want. Remember that name so we
 can use it later to bind a shortcut key for it.
+
+<!-- more -->
 
 Next, open **System Preferences**, **Keyboard**, and select tab
 **Keyboard Shortcuts**. Under **Application Shortcuts** section, click **+**

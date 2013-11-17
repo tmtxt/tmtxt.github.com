@@ -16,8 +16,6 @@ Mozrepl, an extension that *"lets us program Firefox and other Mozilla-based
 applications from the inside"* (quoted from Mozrepl homepage). This article is
 to summarize the steps on to set up Mozrepl in Conkeror and Emacs.
 
-<!-- more -->
-
 # Install Mozrepl extension for Conkeror
 
 You cannot directly install Mozrepl for Conkeror from Mozilla Add-ons page.
@@ -38,6 +36,8 @@ code as the file's content
 
 Next, open your .conkerorrc and add this piece of code inside it to start the
 Mozrepl immediately when Conkeror start and then load the config file above.
+
+<!-- more -->
 
 {% highlight js %}
 user_pref('extensions.mozrepl.autoStart', true);

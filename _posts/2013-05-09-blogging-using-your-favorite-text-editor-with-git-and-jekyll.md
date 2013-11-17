@@ -23,8 +23,6 @@ like Site title, Author information,... You can also customize post URL style
 using some Jekyll template variables followed the instruction here
 <http://jekyllrb.com/docs/permalinks/>.
 
-<!-- more -->
-
 One of the most important feature of a blog is the commenting system. Again,
 Jekyll Bootstrap has the built-in config to help you integrate a commenting
 system to your blog. Here is the example (you can see in the config file)
@@ -44,6 +42,8 @@ comments :
     width: 580
     colorscheme: lightp
 {% endhighlight %}
+
+<!-- more -->
 
 Also, in the config file, you'll find a section about analytics. Here is a
 tutorial on how to set-up Google analytics (free) for your Jekyll Bootstrap blog

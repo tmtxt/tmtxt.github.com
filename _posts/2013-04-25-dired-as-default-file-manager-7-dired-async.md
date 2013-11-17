@@ -24,8 +24,6 @@ asynchronously. It also provides the ability to mark files in multiple
 directories and then copy all of them into a destination library. This
 library is designed for Unix-based system like MacOS, Ubuntu,...
 
-<!-- more -->
-
 The reason why I developed this library is to overcome Emacs Dired's
 drawbacks. Everytime I need to copy, move, compress, uncompress,... big
 files, Emacs is blocked until those processes finish execution. That's
@@ -35,6 +33,8 @@ display the output to the user.
 
 Furthermore, it also display the progress of the current task as well as notify
 you when the task finish and automatically close the output window for you.
+
+<!-- more -->
 
 All the description, key features as well as how to install and usage are
 presented on the project homepage.

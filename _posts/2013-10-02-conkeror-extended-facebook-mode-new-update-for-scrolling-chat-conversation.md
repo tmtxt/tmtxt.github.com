@@ -18,8 +18,6 @@ conversation for viewing the conversation history. The command
 the current chat conversation that you are in. Simply bind it to any key stroke
 that you want to use, for example
 
-<!-- more -->
-
 {% highlight js %}
 define_key(facebook_keymap, "C-I", "facebook-scroll-up-current-coversation");
 define_key(facebook_keymap, "C-K", "facebook-scroll-down-current-coversation");
@@ -34,3 +32,5 @@ facebook_mode_scroll_gap = 50;
 
 For more information about the mode, visit its homepage at
 <http://truongtx.me/conkeror-extended-facebook-mode.html>
+
+<!-- more -->

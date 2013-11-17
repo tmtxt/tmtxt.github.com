@@ -19,8 +19,6 @@ for check the spelling. In most GNU/Linux distros, these programs are
 pre-installed in the OS so you don't need to do anything in order to use
 flyspell-mode, just type **M-x** and flyspell-mode.
 
-<!-- more -->
-
 However, MacOS is not shipped with any spell checker program so you will receive
 the error `Searching for program: No such file or directory` when you try to
 activate flyspell-mode in Emacs. We need to configure a bit for Emacs on MacOS
@@ -30,6 +28,8 @@ First, you need to install aspell, a spell checker program from macports. If
 you're not familiar with macports, have a look at this post
 [MacPorts - The MacOS package manager]({% post_url 2013-01-01-macports-the-macos-package-manager%}).
 Install aspell from macports using this command
+
+<!-- more -->
 
 {% highlight console %}
 $ sudo port install aspell
