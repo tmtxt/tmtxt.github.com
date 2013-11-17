@@ -25,7 +25,13 @@
 	<link rel="stylesheet" href="/assets/css/custom.css"> <!-- pygments -->
   </head>
 
-  <body style="background-color:#ACDED6;background-image:url('{{ASSET_PATH}}/images/bg.gif');background-repeat:repeat-x;background-attachment:fixed;">
+  <body style="background-color:#ACDED6;
+			   background-image:
+			   	url('{{ASSET_PATH}}/images/bg.gif'),
+				url('{{ASSET_PATH}}/images/tree.png');
+			   background-repeat:repeat-x, repeat-x;
+			   background-attachment:fixed, fixed;
+			   background-position: top left, bottom left;">
 
 	<!-- navigation bar -->
 	<nav class="navbar navbar-default bs-docs-nav" role="navigation">
@@ -100,14 +106,14 @@
       
 	  <!-- footer -->
       <footer style="text-align: center">
-        <p>&copy; {{ site.author.name }} 2012 
-          with help from
-		  <a href="http://jekyllbootstrap.com" target="_blank"
-			 title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
-          and
-		  <a href="http://twitter.github.com/bootstrap/"
-			 target="_blank">Twitter Bootstrap</a>
-        </p>
+        <!-- <p style="color:white;">&copy; {{ site.author.name }} 2012  -->
+        <!--   with help from -->
+		<!--   <a href="http://jekyllbootstrap.com" target="_blank" -->
+		<!-- 	 title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a> -->
+        <!--   and -->
+		<!--   <a href="http://twitter.github.com/bootstrap/" -->
+		<!-- 	 target="_blank">Twitter Bootstrap</a> -->
+        <!-- </p> -->
       </footer>
 	</div>
 
