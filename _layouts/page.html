@@ -3,17 +3,20 @@ layout: default
 ---
 {% include JB/setup %}
 
-<div class="content">
-  <div class="page-header">
+<div class="panel panel-default">
+  <div class="panel-heading">
 	<h1>
-	  {{ page.title }}<br/>
-	  {% if page.description %}<small>{{ page.description }}</small>{% endif %}
-	</h1>
+		{{ page.title }}<br/>
+		{% if page.description %}<small>{{ page.description }}</small>{% endif %}
+	  </h1>
   </div>
+  <div class="panel-body">
+	
 
-  <div class="row">
-	<div class="col-md-12">
-      {{ content }}
+	<div class="row">
+	  <div class="col-md-12">
+		{{ content }}
+	  </div>
 	</div>
-  </div>
+  </div>  
 </div>

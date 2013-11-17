@@ -5,43 +5,46 @@ title: Trường TX Blog
 
 <!-- post preview -->
 {% for post in paginator.posts %}
-<div class="content">
-  <div class="row">
-	<div class="col-md-12">
 
-	  <!-- title -->
-	  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+<div class="row">
+  <div class="col-md-12">
 
-	  <!-- post info -->
-	  <p class="post-info">
-		<i class="fa fa-calendar"></i>
-		<span class="date" style="color:darkgreen">
-		  {{post.date | date: "%d %B %Y"}}
-		</span>
-		&nbsp; &nbsp; &nbsp;
-		<i class="fa fa-folder-o"></i> 
-		<a href="/categories.html#{{ post.category }}-ref" style="color:darkgreen">
-		  {{ post.category }}
-		</a>
-	  </p>
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+		<!-- title -->
+		<h1 style="margin-top:10px;margin-bottom:10px;"><a href="{{ post.url }}">{{ post.title }}</a></h1>
 
-	  <!-- post content -->
-	  <div class="post-content-truncate">
-		{% if post.content contains "<!-- more -->" %}
-			{{ post.content | split:"<!-- more -->" | first % }}
-		{% else %}
-			{{ post.content | strip_html | truncatewords:100 }}
-		{% endif %}
+		<!-- post info -->
+		<p class="post-info">
+		  <i class="fa fa-calendar"></i>
+		  <span class="date" style="color:darkgreen">
+			{{post.date | date: "%d %B %Y"}}
+		  </span>
+		  &nbsp; &nbsp; &nbsp;
+		  <i class="fa fa-folder-o"></i> 
+		  <a href="/categories.html#{{ post.category }}-ref" style="color:darkgreen">
+			{{ post.category }}
+		  </a>
+		</p>
 	  </div>
-
-	  <!-- read more button -->
-	  <div>
-		<a href="{{ post.url }}">Read more...</a>
+	  <div class="panel-body">
+		<!-- post content -->
+		<div class="post-content-truncate">
+		  {% if post.content contains "<!-- more -->" %}
+		  {{ post.content | split:"<!-- more -->" | first % }}
+		  {% else %}
+		  {{ post.content | strip_html | truncatewords:100 }}
+		  {% endif %}
+		</div>
+		<!-- read more button -->
+		<div>
+		  <a href="{{ post.url }}">Read more...</a>
+		</div>
 	  </div>
-	  
 	</div>
   </div>
 </div>
+
 {% endfor %}
 
 <!-- pagination section -->

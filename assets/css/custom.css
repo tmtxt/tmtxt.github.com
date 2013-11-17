@@ -10,7 +10,12 @@
   padding-bottom:10px;
 }
 
-.content img {
+.panel img {
+	max-width:100%;
+	height: auto;
+}
+
+.row img {
 	max-width:100%;
 	height: auto;
 }
