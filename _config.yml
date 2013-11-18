@@ -15,13 +15,11 @@ tagline:
 author :
   name : Trường TX
   email : me@truongtx.me
-  github : tommytxtruong
-  twitter : tommytxtruong
-  feedburner : feedname
-
-# My custom variable
-themen : tmtxt                  # theme name
-assetp: /assets/themes/tmtxt
+  github : tmtxt
+  twitter : mr_truong_tx
+  facebook : mr.truong.tx
+  linkedin : tmtxt
+  google_plus : TrầnXuânTrường
   
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
