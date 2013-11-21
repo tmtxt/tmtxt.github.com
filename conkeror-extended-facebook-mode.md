@@ -14,6 +14,7 @@ group: project
 - [Open News Feed story in new buffer](#open_news_feed_story_in_new_buffer)
 - [Cycle through chat conversions with keyboard](#cycle_through_chat_conversations_with_keyboard)
 - [Scroll the current chat conversation with keyboard](#scroll_the_current_chat_conversation_with_keyboard)
+- [Expand Content](#expand_content)
 
 # Introduction
 
@@ -45,27 +46,36 @@ This extension lets you use some Facebook's shortcut keys for navigating on the
 site.
 
 - **/** - Search
-- **Enter** - Make comment or Focus on the text box when making a post
+- **c** - Make comment
+- **p** - Focus on the text box when making a post
 - **j** and **k** - Scroll between News Feed stories
-- **l** - like or unlike a selected story
+- **l** - Like or unlike a selected story
 - **m** - New Message
-- **q** - search for a friend to chat with
+- **q** - Search for a friend to chat with
 
-For the other keys, from 0-9, there is a little problem so that I have to
-implement some custom functions for performing their functionalities but have
-not finished all.
+# Commands for quick access
 
-- **3** - Open Friend Requests panel
-- **4** - Open Messages panel
-- **5** - Open Notifications panel
+There are some simple commands for quick access most-used element on page
+
+- **cefm-open-home** - Open Home page
+- **cefm-open-friend-request** - Open Friend Requests panel
+- **cefm-open-messages** - Open Messages panel
+- **cefm-open-notification** - Open Notifications panel
+- **cefm-quick-logout** - Quickly logout Facebook
+
+Some usage examples
+
+{% highlight js %}
+define_key(facebook_keymap, "1", "cefm-open-home");
+{% endhighlight %}
 
 # Open News Feed story in new buffer
 
 When you browsing the News Feed with **j** and **k**, there is a little vertical
 bar (old-style news feed) or a thin border around the avatar image of the story
 to indicate which story you're in. Simply invoke
-**facebook-open-current-story-new-buffer** to open that story in new buffer or
-**facebook-open-current-story-new-buffer-background** to open it in a new
+**cefm-open-current-story-new-buffer** to open that story in new buffer or
+**cefm-open-current-story-new-buffer-background** to open it in a new
 background buffer.
 
 <p align="center">
@@ -80,8 +90,8 @@ You can also bind these two commands to some keystrokes for quick
 navigation.
 
 {% highlight js %}
-define_key(facebook_keymap, "C-M-o", "facebook-open-current-story-new-buffer");
-define_key(facebook_keymap, "C-S-o", "facebook-open-current-story-new-buffer-background");
+define_key(facebook_keymap, "C-M-o", "cefm-open-current-story-new-buffer");
+define_key(facebook_keymap, "C-S-o", "cefm-open-current-story-new-buffer-background");
 {% endhighlight %}
 
 # Cycle through chat conversions with keyboard
@@ -107,11 +117,11 @@ for the next person,... For easy imagination, see the picture below
 
 Everything will be great if there is a handy keystroke
 for cycling through the chat conversations. **CEFM** provides a useful command named
-**facebook-cycle-conversations** to help you solve this problem. Simply bind it
+**cefm-cycle-conversations** to help you solve this problem. Simply bind it
 to a keystroke that you want, for example
 
 {% highlight js %}
-define_key(facebook_keymap, "C-C", "facebook-cycle-conversations");
+define_key(facebook_keymap, "C-C", "cefm-cycle-conversations");
 {% endhighlight %}
 
 Now in every facebook page, type **q** to search for a friend to chat, press
@@ -128,19 +138,34 @@ post [Using Esc key in Conkeror]({%post_url 2013-08-08-using-esc-key-in-conkeror
 
 Usually, while you are chatting with your friend, you want to scroll up the
 conversation for viewing the conversation history. The command
-**facebook-scroll-up-current-coversation** and
-**facebook-scroll-down-current-coversation** will help you easily scroll through
+**cefm-scroll-up-current-coversation** and
+**cefm-scroll-down-current-coversation** will help you easily scroll through
 the current chat conversation that you are in. Simply bind it to any key stroke
 that you want to use, for example
 
 {% highlight js %}
-define_key(facebook_keymap, "C-I", "facebook-scroll-up-current-coversation");
-define_key(facebook_keymap, "C-K", "facebook-scroll-down-current-coversation");
+define_key(facebook_keymap, "C-I", "cefm-scroll-up-current-coversation");
+define_key(facebook_keymap, "C-K", "cefm-scroll-down-current-coversation");
 {% endhighlight %}
 
 You can also config the scroll gap (the distance for each scroll) by setting the
 following variable
 
 {% highlight js %}
-facebook_mode_scroll_gap = 50;
+cefm_mode_scroll_gap = 50;
 {% endhighlight %}
+
+# Expand content
+
+Some story contents or image captions are so long that Facebook have to hide
+them and you have to click on **See More...** link to see the full content.
+**CEFM** now has a command for clicking on that link using the keyboard. Bind it
+to any keystroke that you want, for example
+
+{% highlight js %}
+define_key(facebook_keymap, "C-M-E", "cefm-expand-content");
+{% endhighlight %}
+
+When you activate this command, if there is a story that being selected, the
+content of that story will be expand, otherwise, it will expand the first one it
+can find (image caption in image page).
