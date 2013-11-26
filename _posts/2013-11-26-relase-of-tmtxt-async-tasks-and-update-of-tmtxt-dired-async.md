@@ -22,7 +22,10 @@ command). The shell command keep running and print out the result for you to
 keep track of the process and the window contains that command can be
 automatically closed after a specified time period when it finish executing. For
 more information, demo as well as how to use the package, please visit it's
-homepage at [http://truongtx.me/tmtxt-async-tasks.html](/tmtxt-async-tasks.html).
+homepage at
+[http://truongtx.me/tmtxt-async-tasks.html](/tmtxt-async-tasks.html).
+
+<!-- more -->
 
 # Update of tmtxt-dired-async
 
