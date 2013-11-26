@@ -6,10 +6,6 @@ group: project
 ---
 {% include JB/setup %}
 
-> For discussing, Q&A, please contact me via the email or comment in this
-> post  
-> [Dired as Default File Manager - Dired Async]({% post_url 2013-04-25-dired-as-default-file-manager-7-dired-async %})
-
 # Asynchoronous execution library for Emacs Dired
 
 A library for Emacs Dired mode to copy, compress, decompress files
@@ -25,7 +21,10 @@ display the output to the user.
 
 # Installation
 
-Clone this repo and put it somewhere in your load-path  
+**tmtxt-dired-async** replies on **tmtxt-async-tasks** so before using it,
+please install [tmtxt-async-tasks](/tmtxt-async-tasks.html) first.
+
+After that, clone this repo and put it somewhere in your load-path  
 Add this to your .emacs
 
 {% highlight cl %}
@@ -37,54 +36,38 @@ Add this to your .emacs
 You don't have to follow the key bindings below, you can change them to whatever
 you want. They are just examples.
 
-## Asynchronously Copy files
+## Asynchronously Copy/Sync files
 
 This feature uses `rsync` for file copying. To use it, simply mark the files
 that you want and then activate this function.
 
 {% highlight cl %}
-(define-key dired-mode-map (kbd "C-c C-r") 'tmtxt/dired-async-rsync)
+(define-key dired-mode-map (kbd "C-c C-r") 'tda/rsync)
 {% endhighlight %}
 
-Show the progress when copy (nil to not show).
+To `rsync` with `--delete` option to create an exact copy of the source files
+(synchronize files), use this function
 
 {% highlight cl %}
-(setq-default tmtxt/dired-async-rsync-show-progress t)
+(define-key dired-mode-map (kbd "C-c C-r") 'tda/rsync-delete)
 {% endhighlight %}
 
-Show verbosity when copy (nil to not show).
+Sometimes **rsync** need sudo permission for preserving file attributes. In that
+case, there are 2 alternative commands for the above ones. They are
+**tda/rsync-sudo** and **tda/rsync-delete-sudo**.
+
+If your rsync program is outside of the **PATH**, set the path to the rsync
+executable for this variable
 
 {% highlight cl %}
-(setq-default tmtxt/dired-async-rsync-show-verbosity t)
+(set-default tda/rsync-command-name "/path/to/rsync")
 {% endhighlight %}
 
-Use archive mode when copy (to preserve time stamp, nil to not use)
+To change the arguments passed into rsync command, set it for this variable. The
+default is `-avz --progress`.
 
 {% highlight cl %}
-(setq-default tmtxt/dired-async-rsync-archive-mode t)
-{% endhighlight %}
-
-User compression mode when copy (nil to not use).
-
-{% highlight cl %}
-(setq-default tmtxt/dired-async-rsync-compress-mode t)
-{% endhighlight %}
-
-## Asynchronously Copy files (with delete option)
-
-This feature is similar to the above feature. It also uses `rsync` to copy
-file and the same config with the above. However, it includes the delete option
-for rsync to ensure that you have the destination folder exactly the same as the
-source directory
-
-{% highlight cl %}
-(define-key dired-mode-map (kbd "C-c C-t") 'tmtxt/dired-async-rsync-delete)
-{% endhighlight %}
-
-Set the deletion method for rsync delete (--delete-after, --delete-during, --delete-before)
-
-{% highlight cl %}
-(setq-default tmtxt/dired-async-rsync-delete-method "--delete-after")
+(set-default tda/rsync-arguments "-avz --progress")
 {% endhighlight %}
 
 ## Asynchronously Compress files
@@ -92,13 +75,15 @@ Set the deletion method for rsync delete (--delete-after, --delete-during, --del
 Compress all marked files.
 
 {% highlight cl %}
-(define-key dired-mode-map (kbd "C-c C-z") 'tmtxt/dired-async-zip)
+(define-key dired-mode-map (kbd "C-c C-z") 'tda/zip)
 {% endhighlight %}
 
-Set the compression level, from 0-9
+If you want to use another `zip` command, not the system's default one, set the
+path to executable file and it arguments for these 2 variables
 
 {% highlight cl %}
-(setq-default tmtxt/dired-async-zip-compression-level "9")
+(setq-default tda/zip-command "/path/to/zip/command")
+(setq-default tda/zip-argument "-ru9")
 {% endhighlight %}
 
 ## Asynchronously Decompress files
@@ -106,7 +91,15 @@ Set the compression level, from 0-9
 Decompress the zip file at point.
 
 {% highlight cl %}
-(define-key dired-mode-map (kbd "C-c C-u") 'tmtxt/dired-async-unzip)
+(define-key dired-mode-map (kbd "C-c C-u") 'tda/unzip)
+{% endhighlight %}
+
+If you want to use another `unzip` command, not the system's default one, set the
+path to executable file and it arguments for these 2 variables
+
+{% highlight cl %}
+(setq-default tda/unzip-command "/path/to/unzip/command")
+(setq-default tda/unzip-argument "")
 {% endhighlight %}
 
 ## Copy from multiple directories
@@ -115,10 +108,10 @@ This feature allows you to select many files from multi directories and then
 copy all of them to a destination folder.
 
 {% highlight cl %}
-(define-key dired-mode-map (kbd "C-c C-a") 'tmtxt/dired-async-rsync-multiple-mark-file)
-(define-key dired-mode-map (kbd "C-c C-e") 'tmtxt/dired-async-rsync-multiple-empty-list)
-(define-key dired-mode-map (kbd "C-c C-d") 'tmtxt/dired-async-rsync-multiple-remove-item)
-(define-key dired-mode-map (kbd "C-c C-v") 'tmtxt/dired-async-rsync-multiple)
+(define-key dired-mode-map (kbd "C-c C-a") 'tda/rsync-multiple-mark-file)
+(define-key dired-mode-map (kbd "C-c C-e") 'tda/rsync-multiple-empty-list)
+(define-key dired-mode-map (kbd "C-c C-d") 'tda/rsync-multiple-remove-item)
+(define-key dired-mode-map (kbd "C-c C-v") 'tda/rsync-multiple)
 {% endhighlight %}
 
 **C-c C-a** to add the file at point to the list for later copy. **C-c C-d** to
@@ -135,35 +128,10 @@ files.
 (define-key dired-mode-map (kbd "C-c C-s") 'tmtxt/dired-async-get-files-size)
 {% endhighlight %}
 
-## Stop all current async tasks
-
-This function helps you stop all currently running async taks.
-
-{% highlight cl %}
-(define-key dired-mode-map (kbd "C-c C-k") 'tmtxt/dired-async-kill-all)
-{% endhighlight %}
-
-## Jump to the end of the output buffer
-
-Sometimes, the point in the output buffer stucks somewhere in the middle of the
-output buffer and will not auto scroll for user to track the progress. Activate
-this function to fix it.
+If you want to use another `unzip` command, not the system's default one, set the
+path to executable file and it arguments for these 2 variables
 
 {% highlight cl %}
-(define-key dired-mode-map (kbd "C-c C-n") 'tmtxt/dired-async-move-all-points-to-end)
+(setq-default tda/get-file-size-command "/path/to/du/command")
+(setq-default tda/get-files-size-arguments "-hc")
 {% endhighlight %}
-
-## Other config
-
-Set the time to close the result window after finish, measured in second
-
-{% highlight cl %}
-(setq-default tmtxt/dired-async-post-process-window-show-time "5")
-{% endhighlight %}
-
-Set the height for the result window, measured in the number of lines
-
-{% highlight cl %}
-(setq-default tmtxt/dired-async-result-window-height 10)
-{% endhighlight %}
- 

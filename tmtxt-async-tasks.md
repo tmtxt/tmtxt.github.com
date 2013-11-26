@@ -46,6 +46,21 @@ execute. The output of the command will be printed into the new window at the
 bottom. After finishing execution, it will wait for 5s (can be changed) and
 then close the window automatically.
 
+# Stop all current async tasks
+
+This function helps you stop all currently running async tasks. The function
+name is `tat/kill-all`
+
+# Jump to the end of the output buffer
+
+Sometimes, the point in the output buffer stucks somewhere in the middle of the
+output buffer and will not auto scroll for user to track the progress. Activate
+this function to fix it.
+
+{% highlight cl %}
+(global-set-key (kbd "C-c C-n") 'tat/move-to-bottom-all)
+{% endhighlight %}
+
 # Using in your code
 
 In you code, if you want to to execute a shell command, call the function
@@ -71,3 +86,9 @@ The height is measured by the number of lines.
 {% highlight cl %}
 (setq-default tat/window-height 10)
 {% endhighlight %}
+
+# For using with Dired
+
+I have another package that relies on this package for using with Dired to copy,
+synchronize, compress, decompress,... files. If you want, visit it home page at
+[tmtxt-dired-async](/tmtxt-dired-async.html).
