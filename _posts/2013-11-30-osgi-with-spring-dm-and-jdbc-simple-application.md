@@ -27,14 +27,14 @@ chance to research more about this technology to enhance this application.
 Here are steps of how to make that simple application. I also included the
 source code so you can download it to test.
 
-<!-- more -->
-
 # Setting up the database
 
 First you need to setup the database. In my example, I used MySQL and MySqlJDBC
 for connecting to the database. Create a new database named **test_osgi** in
 your MySql. After that,
 create 2 tables with the structure like this
+
+<!-- more -->
 
 {% highlight sql %}
 CREATE  TABLE IF NOT EXISTS `test_osgi`.`DRUGGROUP` (

@@ -25,8 +25,6 @@ more information, demo as well as how to use the package, please visit it's
 homepage at
 [http://truongtx.me/tmtxt-async-tasks.html](/tmtxt-async-tasks.html).
 
-<!-- more -->
-
 # Update of tmtxt-dired-async
 
 With the release of *tmtxt-async-tasks*, *tmtxt-dired-async* should be updated,
@@ -39,3 +37,5 @@ changed many option variables for easier usage
 so if you want to upgrade, please change the function name accordingly.
 You can see all the new name at the project's homepage
 [http://truongtx.me/tmtxt-dired-async.html](/tmtxt-dired-async.html).
+
+<!-- more -->

@@ -20,8 +20,6 @@ project's home page at [CEFM Homepage](/conkeror-extended-facebook-mode.html).
 If you upgrade from a version before 21 Nov 2013, please consider reading these
 post because I have changed some functions' names.
 
-<!-- more -->
-
 # Remove pre-keybindings for some Quick access commands
 
 Before that, CEFM bound **3**, **4**, **5** to the 3 commands
@@ -41,6 +39,8 @@ Since this release, I have changed the prefix of all commans from facebook- to
 cefm-. That is to prevent duplicate commands if Conkeror includes some commands
 for Facebook with the same name. You need to change your key bindings in order
 to use the new version. Here is the list of changes
+
+<!-- more -->
 
 - **facebook-open-current-story-new-buffer** -> **cefm-open-current-story-new-buffer**
 - **facebook-open-current-story-new-buffer-background** -> **cefm-open-current-story-new-buffer-background**
