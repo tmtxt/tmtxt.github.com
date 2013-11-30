@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "OSGI with Spring DM and JDBC - Simple application"
+title: "OSGI with Spring Dynamic Module and JDBC - Simple application"
 description: ""
 category: misc
 thumbnail: 
@@ -699,7 +699,7 @@ g! start 18
 g! start 19
 {% endhighlight %}
 
-# Download link
+# Download Link
 
 You can clone the source code from github
 <https://github.com/tmtxt/osgi-springdm-jdbc>
