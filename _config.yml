@@ -20,6 +20,7 @@ author :
   facebook : mr.truong.tx
   linkedin : tmtxt
   google_plus : TrầnXuânTrường
+  stack_exchange: 3687663
   
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
@@ -102,7 +103,7 @@ JB :
   analytics :
     provider : google 
     google : 
-        tracking_id : 'UA-39878123-1'
+        tracking_id : 'UA-46261463-1'
     getclicky :
       site_id : 
     mixpanel :
