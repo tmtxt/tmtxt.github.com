@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Why I write blog"
+title: "Why I blog"
 description: ""
 category: misc
 thumbnail: 
