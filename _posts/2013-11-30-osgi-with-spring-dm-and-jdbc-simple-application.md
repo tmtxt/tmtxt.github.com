@@ -702,8 +702,8 @@ g! start 19
 # Download Link
 
 You can clone the source code from github
-<https://github.com/tmtxt/osgi-springdm-jdbc>
+[https://github.com/tmtxt/osgi-springdm-jdbc](https://github.com/tmtxt/osgi-springdm-jdbc)
 
 # Reference Links
 
-<http://www.baptiste-wicht.com/2010/07/osgi-spring-dynamic-modules-hello-world/>
+[http://www.baptiste-wicht.com/2010/07/osgi-spring-dynamic-modules-hello-world/](http://www.baptiste-wicht.com/2010/07/osgi-spring-dynamic-modules-hello-world/)

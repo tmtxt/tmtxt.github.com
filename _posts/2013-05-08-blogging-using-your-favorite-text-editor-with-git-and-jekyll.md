@@ -138,7 +138,7 @@ For Emacs user, you don't need to open terminal to execute those command since
 Emacs has its own terminal emulator. Just open that directory in Emacs and press s-L
 (shell-command) and run the command you want.
 
-All posts will be store in the <span>_posts</span> directory inside the site's
+All posts will be store in the **\_posts** directory inside the site's
 root directory. The blog post is just a plain text file writtent in markdow
 mode. Open one file in your favorite editor and start composing (in markdown).
 To delete one post, simply delete the post file.

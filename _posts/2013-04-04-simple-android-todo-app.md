@@ -81,7 +81,7 @@ Android phones/tablets/computers with Android OS 4.0 or above
 # Download and Installation
 
 To install the software, follow this link
-<https://github.com/tommytxtruong/iDo/blob/master/build/iDo.apk> and select
+[https://github.com/tommytxtruong/iDo/blob/master/build/iDo.apk](https://github.com/tommytxtruong/iDo/blob/master/build/iDo.apk) and select
 *View Raw* to download. After finishing the download, copy that file into phone
 memory and install it. You're ready to use the application.
 

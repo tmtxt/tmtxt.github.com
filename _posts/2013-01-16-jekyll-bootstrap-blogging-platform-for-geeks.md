@@ -115,9 +115,9 @@ your Jekyll blog ability like emoticon, video embedding,...
 
 # Reference
 
-Jekyll Bootstrap Homepage: <http://jekyllbootstrap.com/>  
-Ruhoh (another static blog generator): <http://ruhoh.com/>  
-Octopress (another framework based on Jekyll): <http://octopress.org/>  
+Jekyll Bootstrap Homepage: [http://jekyllbootstrap.com/](http://jekyllbootstrap.com/)  
+Ruhoh (another static blog generator): [http://ruhoh.com/](http://ruhoh.com/)  
+Octopress (another framework based on Jekyll): [http://octopress.org/](http://octopress.org/)  
 Markdown in Jekyll:
-<https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#wiki-code>  
-Sites built with Jekyll: <https://github.com/mojombo/jekyll/wiki/Sites>
+[https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#wiki-code](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#wiki-code)  
+Sites built with Jekyll: [https://github.com/mojombo/jekyll/wiki/Sites](https://github.com/mojombo/jekyll/wiki/Sites)

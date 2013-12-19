@@ -17,7 +17,7 @@ tags: [google, analytics, jekyll]
 # Register for Google Analytics
 
 First, you need to register a Google analytics account. Go to this link
-<https://www.google.com/analytics/> and Sign In with your Google account. If
+[https://www.google.com/analytics/](https://www.google.com/analytics/) and Sign In with your Google account. If
 this is the first time you use Google Analytics, it will ask you to create a new
 Google Analytics account. This is different from your Google account.
 
@@ -41,7 +41,7 @@ step.
 
 # Config Jekyll Bootstrap site
 
-Open up the <span><b>_config.yml</b></span> file in your Jekyll site's root
+Open up the **\_config.yml** file in your Jekyll site's root
 directory. Find the analytics config and replace the default tracking_id with
 the one you've just registered.
 

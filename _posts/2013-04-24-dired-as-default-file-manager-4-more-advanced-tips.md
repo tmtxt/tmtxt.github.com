@@ -37,7 +37,7 @@ Both functions on MacOS and Ubuntu are bounded to s-o. You can mark multiple
 files and then s-o to open it using the default program on Mac OS.
 
 **Mac OS**: Source:
-<http://blog.nguyenvq.com/2009/12/01/file-management-emacs-dired-to-replace-finder-in-mac-os-x-and-other-os/>  
+[http://blog.nguyenvq.com/2009/12/01/file-management-emacs-dired-to-replace-finder-in-mac-os-x-and-other-os/](http://blog.nguyenvq.com/2009/12/01/file-management-emacs-dired-to-replace-finder-in-mac-os-x-and-other-os/)  
 
 {% highlight cl %}
 (defun dired-do-shell-mac-open-vqn ()
@@ -50,7 +50,7 @@ files and then s-o to open it using the default program on Mac OS.
 {% endhighlight %}
 
 **Ubuntu**: Source:
-<https://github.com/ubolonton/.emacs.d/blob/master/config/ublt-dired.el>  
+[https://github.com/ubolonton/.emacs.d/blob/master/config/ublt-dired.el](https://github.com/ubolonton/.emacs.d/blob/master/config/ublt-dired.el)  
 You need to replace **gnome-open** with your open command in your OS.
 
 {% highlight cl %}
@@ -70,7 +70,7 @@ You need to replace **gnome-open** with your open command in your OS.
 # Unmount disk in Dired
 
 Source:
-<http://blog.nguyenvq.com/2009/12/01/file-management-emacs-dired-to-replace-finder-in-mac-os-x-and-other-os/>  
+[http://blog.nguyenvq.com/2009/12/01/file-management-emacs-dired-to-replace-finder-in-mac-os-x-and-other-os/](http://blog.nguyenvq.com/2009/12/01/file-management-emacs-dired-to-replace-finder-in-mac-os-x-and-other-os/)  
 Both functions on MacOS and Ubuntu are bounded to s-u.
 
 **MacOS**

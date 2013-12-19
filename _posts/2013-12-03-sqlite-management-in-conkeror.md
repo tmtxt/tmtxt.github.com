@@ -19,11 +19,11 @@ data from within Conkeror.
 
 First, you need to install the **SQLite Manager** add-on from Mozilla extensions
 page. Open Conkeror and follow this url
-<https://addons.mozilla.org/en-US/firefox/addon/sqlite-manager/>. In my case,
+[https://addons.mozilla.org/en-US/firefox/addon/sqlite-manager/](https://addons.mozilla.org/en-US/firefox/addon/sqlite-manager/). In my case,
 everything I need to do is to click on the Download button and the extension
 installer will do the rest. However, if you encounter any problem, take a look
 at how to forced install the extension on Conkeror's page
-<http://conkeror.org/Extensions>.
+[http://conkeror.org/Extensions](http://conkeror.org/Extensions).
 
 <!-- more -->
 

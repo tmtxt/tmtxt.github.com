@@ -16,7 +16,7 @@ search box in my jekyll blog. Below are the steps.
 # Implement a Search box
 
 First, create a file named **my_google_search.html** in the
-includes folder in your jekyll website directory. Add this
+**\_includes** folder in your jekyll website directory. Add this
 code to the newly created html file
 
 <!-- more -->

@@ -51,7 +51,7 @@ load it to emacs' load-path and activate auto-complete-clang.
 (require 'auto-complete-clang)
 {% endhighlight %}
 
-Finally, bind it to a key binding for using. I bind it to <span>C-`</span> so that it do
+Finally, bind it to a key binding for using. I bind it to **C-\`** so that it do
 not conflict with autocomplete or yasnippet
 
 {% highlight cl %}

@@ -23,7 +23,7 @@ language that can run on client. This can be solved by using javascript.
 
 <!-- more -->
 
-Inside the <span><b>_includes</b></span> folder under the root directory of your website, create
+Inside the **\_includes** folder under the root directory of your website, create
 a new file named normalize_address.html with this content
 
 {% highlight html %}
@@ -42,7 +42,7 @@ a new file named normalize_address.html with this content
 The code above handles the URL, removes the unnecessary part in the URL and
 redirects viewers to the new normalized URL. Next, we need to include it into our
 layout so that it is auto-loaded everytime the guests view the page. Open
-the file **default.html** in <span><b>_includes/themes/your-current-theme/</b></span>
+the file **default.html** in **\_includes/themes/your-current-theme/**
 (your-current-theme is the name of your current using theme). Add this to the
 header of the page
 

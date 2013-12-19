@@ -69,7 +69,7 @@ $ yum install aria2
 {% endhighlight %}
 
 For other platforms, have a look at
-<http://sourceforge.net/apps/trac/aria2/wiki/Download>.
+[http://sourceforge.net/apps/trac/aria2/wiki/Download](http://sourceforge.net/apps/trac/aria2/wiki/Download).
 
 When you have finished installing **aria2**, use this command to check
 
@@ -87,7 +87,7 @@ $ git clone https://github.com/ziahamza/webui-aria2.git
 {% endhighlight %}
 
 If you don't have git installed, just go to the repo page on github at
-<https://github.com/ziahamza/webui-aria2> and select the button
+[https://github.com/ziahamza/webui-aria2](https://github.com/ziahamza/webui-aria2) and select the button
 **Download Zip**. Download it to your computer and extract it.
 
 # Start using aria2
@@ -103,7 +103,7 @@ Start **aria2** using the following command
 
 {% highlight console %}
 $ touch session.txt
-$ aria2c --enable-rpc --rpc-listen-all --save-session=session.txt -isession.txt -x16 -k1M
+$ aria2c --enable-rpc --rpc-listen-all --save-session=session.txt -isession.txt
 {% endhighlight %}
 
 Now **aria2** should be running and listening on port 6800. You should see
@@ -134,7 +134,7 @@ If you are tired of typing the long command again and again, simply assign an
 alias for it in your shell rc file (.bashrc, .zshrc,...).
 
 {% highlight sh %}
-alias myaria2='aria2c --enable-rpc --rpc-listen-all --save-session=session.txt -isession.txt -x16 -k1M'
+alias myaria2='aria2c --enable-rpc --rpc-listen-all --save-session=session.txt -isession.txt'
 {% endhighlight %}
 
 This solution still requires you to cd to your download folder manually and
@@ -147,7 +147,7 @@ like this.
 {% highlight sh %}
 cd ~/down
 touch session.txt
-aria2c --enable-rpc --rpc-listen-all --save-session=session.txt -isession.txt -x16 -k1M
+aria2c --enable-rpc --rpc-listen-all --save-session=session.txt -isession.txt
 {% endhighlight %}
 
 Next, change the permission to make it executable by the command

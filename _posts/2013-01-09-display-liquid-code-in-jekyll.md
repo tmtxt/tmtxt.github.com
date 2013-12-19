@@ -57,13 +57,13 @@ And the result in your markdown should look similar to this
 This method is for people who use Jekyll Bootstrap. If you don't, go to this
 blog repo on Github
 [tmtxt.github.com](https://github.com/tmtxt/tmtxt.github.com), open the
-<b>_includes</b>, **JB** folder, copy the <b>liquid_raw</b> file and follow these
+**\_includes**, **JB** folder, copy the <b>liquid_raw</b> file and follow these
 below steps.
 
 This is a simpler method. However, for some liquid tag like <b>{{ "{{ BASE_PATH "}}}}</b>, if you want display the liquid closing tag, you must have space
 between the curly brackets.
 
-By default, there is a directory called **JB** inside the <b>_includes</b> folder.
+By default, there is a directory called **JB** inside the **\_includes** folder.
 Inside it we have a file named <b>liquid_raw</b>. We will use it to display our
 liquid code. Open it and read the comment inside that file to know how to
 display the liquid code.

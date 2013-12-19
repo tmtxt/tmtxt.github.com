@@ -16,12 +16,12 @@ tags: [git, jekyll, blog]
 # Blog configuration
 
 By default, Jekyll stores all your global site configuration in
-`_config.yml` file (can be found in the root directory of the
+**\_config.yml** file (can be found in the root directory of the
 site). Jekyll Bootstrap has comes with some pre-defined configurations
 that you can customize
 like Site title, Author information,... You can also customize post URL style
 using some Jekyll template variables followed the instruction here
-<http://jekyllrb.com/docs/permalinks/>.
+[http://jekyllrb.com/docs/permalinks/](http://jekyllrb.com/docs/permalinks/).
 
 One of the most important feature of a blog is the commenting system. Again,
 Jekyll Bootstrap has the built-in config to help you integrate a commenting
@@ -60,7 +60,7 @@ markdown data in .html file).
 
 # Media Embedding and File Attachment
 
-Jekyll treats all files/folders begin with <span>_</span> specially. For other
+Jekyll treats all files/folders begin with \_ specially. For other
 files/folders in your web directory, it just copies everything to the compiled
 site so you can easily access/link to those files by relative path. For example,
 you have a folder named `images` inside the root directory of your site.

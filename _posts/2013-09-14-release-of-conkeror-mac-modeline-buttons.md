@@ -13,7 +13,7 @@ Today, I have finished my first package for Conkeror: Conkeror Mac Modeline
 Buttons. This is a really useful package for people who are new to Conkeror.
 
 The source code is hosted on Github at
-<https://github.com/tmtxt/conkeror-mac-modeline-buttons>. The information as
+[https://github.com/tmtxt/conkeror-mac-modeline-buttons](https://github.com/tmtxt/conkeror-mac-modeline-buttons). The information as
 well as the instruction on how to install and use is presented on the homepage
 at [Conkeror Mac Modeline Buttons](/conkeror-mac-modeline-buttons.html).
 
