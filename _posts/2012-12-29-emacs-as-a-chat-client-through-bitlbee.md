@@ -11,7 +11,7 @@ tags: [emacs, bitlbee, chat, erc]
 
 Emacs is a great text editor, the most wonderful one I've been used :D Also it
 has built-in support for ERC chat client. And now I used it as my chat client
-instead of Adium and the <span>f**king</span> Yahoo Messenger for Mac.
+instead of Adium and the Yahoo Messenger for Mac.
 
 There are
 two ways to run a chat client through Bitlbee. First is to connect to a public
