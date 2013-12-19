@@ -103,7 +103,7 @@ Start **aria2** using the following command
 
 {% highlight console %}
 $ touch session.txt
-$ aria2c --enable-rpc --rpc-listen-all --save-session=session.txt -isession.txt
+$ aria2c --enable-rpc --rpc-listen-all --save-session=session.txt -isession.txt -x16 -k1M
 {% endhighlight %}
 
 Now **aria2** should be running and listening on port 6800. You should see
@@ -134,7 +134,7 @@ If you are tired of typing the long command again and again, simply assign an
 alias for it in your shell rc file (.bashrc, .zshrc,...).
 
 {% highlight sh %}
-alias myaria2='aria2c --enable-rpc --rpc-listen-all --save-session=session.txt -isession.txt'
+alias myaria2='aria2c --enable-rpc --rpc-listen-all --save-session=session.txt -isession.txt -x16 -k1M'
 {% endhighlight %}
 
 This solution still requires you to cd to your download folder manually and
@@ -147,7 +147,7 @@ like this.
 {% highlight sh %}
 cd ~/down
 touch session.txt
-aria2c --enable-rpc --rpc-listen-all --save-session=session.txt -isession.txt
+aria2c --enable-rpc --rpc-listen-all --save-session=session.txt -isession.txt -x16 -k1M
 {% endhighlight %}
 
 Next, change the permission to make it executable by the command
