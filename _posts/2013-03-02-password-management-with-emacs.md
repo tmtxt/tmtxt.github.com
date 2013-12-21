@@ -22,7 +22,13 @@ executing the command **sudo port install gnupg**.
 # Usage
 
 First, make sure that you have GnuPG installed on your computer by typing
-**which gpg** in terminal. On MacOS, you can find it on Macports.
+**which gpg** in terminal. On MacOS, you can install it from Macports. After
+finishing installing gnupg, add this to your .emacs
+
+{% highlight cl %}
+(when (file-executable-p "/opt/local/bin/macports/bin/gpg")
+	(setq epg-gpg-program "/opt/local/bin/macports/bin/gpg"))
+{% endhighlight %}
 
 <!-- more -->
 
