@@ -29,3 +29,5 @@ Here are the steps on how to quickly find and replace text in multiple files.
   `D` to close them all.
 
 <!-- more -->
+
+**Reference**: [ergoemacs](http://ergoemacs.org/emacs/find_replace_inter.html)
