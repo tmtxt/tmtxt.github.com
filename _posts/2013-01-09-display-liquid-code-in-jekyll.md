@@ -52,7 +52,13 @@ And the result in your markdown should look similar to this
 {% capture text %}|.|. "|.|. BASE_PATH ",|,|,|,|{% endcapture %}
 {% include JB/liquid_raw %}
 
-# 2. Using Jekyll Bootstrap's liquid_raw
+# 2. Using raw tag
+
+For a huge block of liquid code, just put them between {{"{%raw"}}%}
+and {{"{%endraw"}}%}. However, remember to put 2 spaces in the end of
+each line for jekyll to break to a new line.
+
+# 3. Using Jekyll Bootstrap's liquid_raw
 
 This method is for people who use Jekyll Bootstrap. If you don't, go to this
 blog repo on Github
