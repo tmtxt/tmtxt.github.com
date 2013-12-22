@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Emacs - Search for text occurences with grep"
+title: "Emacs - Search for text occurences in multiple files with grep"
 description: ""
 category: emacs
 tags: [emacs, grep]
