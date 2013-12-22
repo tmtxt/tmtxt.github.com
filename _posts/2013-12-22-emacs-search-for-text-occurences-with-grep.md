@@ -18,7 +18,7 @@ using the `grep` command in combination with Emacs is a very efficient method.
 
 The command `find-grep` (also aliased as `grep-find`), which you can activate
 via **M-x**, helps you run **grep** via **find** and then display all the
-results in a **`*grep`*** buffer. To use it, simply open the directory you need
+results in a `*grep*` buffer. To use it, simply open the directory you need
 to find in dired mode and call `find-grep`. The command is already filled for
 you. All you need is to type the string pattern and press **RET** for grep to
 start working. All the result will be display in a new window, just select the
