@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Emacs Find and Replace String regex in multiple files"
+title: "Emacs - Find and Replace String regex in multiple files"
 description: ""
 category: emacs
 tags: [emacs]
