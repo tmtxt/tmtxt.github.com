@@ -67,6 +67,76 @@ You need to replace **gnome-open** with your open command in your OS.
 (define-key dired-mode-map (kbd "s-o") 'ublt/dired-open-native)
 {% endhighlight %}
 
+**MacOS/Windows/Linux**: Source:
+[http://ergoemacs.org/emacs/emacs_dired_open_file_in_ext_apps.html](http://ergoemacs.org/emacs/emacs_dired_open_file_in_ext_apps.html)  
+This method uses xdg-open for Linux, which is a more general one than
+**gnome-open**.
+
+{% highlight cl %}
+(defun ergoemacs-open-in-external-app ()
+  "Open the current file or dired marked files in external app."
+  (interactive)
+  (let ( doIt
+         (myFileList
+          (cond
+           ((string-equal major-mode "dired-mode") (dired-get-marked-files))
+           (t (list (buffer-file-name))) ) ) )
+
+    (setq doIt (if (<= (length myFileList) 5)
+                   t
+                 (y-or-n-p "Open more than 5 files?") ) )
+
+    (when doIt
+      (cond
+       ((string-equal system-type "windows-nt")
+        (mapc (lambda (fPath) (w32-shell-execute "open" (replace-regexp-in-string "/" "\\" fPath t t)) ) myFileList)
+        )
+       ((string-equal system-type "darwin")
+        (mapc (lambda (fPath) (shell-command (format "open \"%s\"" fPath)) )  myFileList) )
+       ((string-equal system-type "gnu/linux")
+        (mapc (lambda (fPath) (let ((process-connection-type nil)) (start-process "" nil "xdg-open" fPath)) ) myFileList) ) ) ) ) )
+{% endhighlight %}
+
+# Open current directory in default file manager
+
+**MacOS**
+
+{% highlight cl %}
+
+  (defun tmtxt/dired-open-current-directory-in-finder ()
+	"Open the current directory in Finder"
+	(interactive)
+	(save-window-excursion
+	  (dired-do-async-shell-command
+	   "open .")))
+(define-key dired-mode-map (kbd "s-O") 'tmtxt/dired-open-current-directory-in-finder)
+{% endhighlight %}
+
+It's bounded to s-O. Pressing s-O in a dired buffer will cause your default file
+manager to open the current directory. In other type of buffer, such as file
+buffer, you can call this function interactively by M-x and
+tmtxt/dired-open-current-directory-in-finder (MacOS) or
+tmtxt/dired-open-current-directory (Ubuntu). In that case, the default file
+manager application on your computer will open the directory that contains the
+current file.
+
+**MacOS/Windows/Linux**: Source:
+[http://ergoemacs.org/emacs/emacs_dired_open_file_in_ext_apps.html](http://ergoemacs.org/emacs/emacs_dired_open_file_in_ext_apps.html)
+
+{% highlight cl %}
+(defun ergoemacs-open-in-desktop ()
+  "Show current file in desktop (OS's file manager)."
+  (interactive)
+  (cond
+   ((string-equal system-type "windows-nt")
+    (w32-shell-execute "explore" (replace-regexp-in-string "/" "\\" default-directory t t)))
+   ((string-equal system-type "darwin") (shell-command "open ."))
+   ((string-equal system-type "gnu/linux")
+    (let ((process-connection-type nil)) (start-process "" nil "xdg-open" "."))
+    ;; (shell-command "xdg-open .") ;; 2013-02-10 this sometimes froze emacs till the folder is closed. ⁖ with nautilus
+    ) ))
+{% endhighlight %}
+
 # Unmount disk in Dired
 
 Source:
@@ -97,42 +167,7 @@ Both functions on MacOS and Ubuntu are bounded to s-u.
 (define-key dired-mode-map (kbd "s-u") 'dired-do-shell-unmount-device)
 {% endhighlight %}
 
-# Open current directory in default file manager
 
-**MacOS**
-
-{% highlight cl %}
-(tmtxt/in '(darwin)
-  (defun tmtxt/dired-open-current-directory-in-finder ()
-	"Open the current directory in Finder"
-	(interactive)
-	(save-window-excursion
-	  (dired-do-async-shell-command
-	   "open ."))))
-(define-key dired-mode-map (kbd "s-O") 'tmtxt/dired-open-current-directory-in-finder)
-{% endhighlight %}
-
-**Ubuntu** (hasn't been checked yet)
-You need to replace **gnome-open** with your open command in your OS.
-
-{% highlight cl %}
-(tmtxt/in '(darwin)
-  (defun tmtxt/dired-open-current-directory ()
-	"Open the current directory in Finder"
-	(interactive)
-	(save-window-excursion
-	  (dired-do-async-shell-command
-	   "gnome-open ."))))
-(define-key dired-mode-map (kbd "s-O") 'tmtxt/dired-open-current-directory)
-{% endhighlight %}
-
-It's bounded to s-O. Pressing s-O in a dired buffer will cause your default file
-manager to open the current directory. In other type of buffer, such as file
-buffer, you can call this function interactively by M-x and
-tmtxt/dired-open-current-directory-in-finder (MacOS) or
-tmtxt/dired-open-current-directory (Ubuntu). In that case, the default file
-manager application on your computer will open the directory that contains the
-current file.
 
 **Previous part**:
 [Dired as Default File Manager - Dired Details](/2013/04/24/dired-as-default-file-manager-3-dired-details/)  
