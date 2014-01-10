@@ -2,22 +2,23 @@
 layout: post
 title: "MacOS - Spotlight Search inside Emacs"
 description: ""
-category: 
-thumbnail: 
-showtn: no
-tags: [macos, spotlight, search, emacs]
+category: emacs
+tags: [macos, spotlight, locate, emacs, helm]
 ---
 {% include JB/setup %}
 
 MacOS comes with a powerful search tool, Spotlight, that helps us find any file
 in our computer at a glance. It's would be great if we can integrate it with
 Emacs and use it as a
-replacement for the default Emacs' find-file command so that we can jump to any
+replacement for the default Emacs' `find-file` command so that we can jump to any
 file we want to edit without remembering the location. Luckily, there is an
 useful program called `mdfind`, a command line interface for Spotlight. We will
-use it in combination with the `locate` command.
+use it in combination with the `locate` (or `helm-locate` if you're using **helm**) command.
 
-The step is really simple. You just need to set the variable `locate-command` to
+# 1. Emacs built-in "locate" command
+
+The step to use Spotlight with `locate` command is really simple. You just need
+to set the variable `locate-command` to
 **mdfind** to let Emacs use **mdfind** instead of **locate** for searching file.
 
 {% highlight cl %}
@@ -39,4 +40,13 @@ can be faster on a Mac running an SSD.
 
 Demo Image:
 
-![Alt Text](/files/2013-09-13-macos-spotlight-search-inside-emacs/demo.png)
+![Alt Text](/files/2013-09-13-macos-spotlight-search-inside-emacs/locate.png)
+
+# 2. Using "helm-locate" command
+
+`helm-locate` is a similar command to the Emacs' built-in `locate` command.
+However, `helm-locate` allow for live updating result as you type. To use it,
+you need to install `helm` first. Activate it using `M-x`, `helm-locate` and
+type in what you need to search for.
+
+![Alt Text](/files/2013-09-13-macos-spotlight-search-inside-emacs/helm.png)
