@@ -36,17 +36,22 @@ Change s-b to the key binding that you like.
 Both functions on MacOS and Ubuntu are bounded to s-o. You can mark multiple
 files and then s-o to open it using the default program on Mac OS.
 
-**Mac OS**: Source:
-[http://blog.nguyenvq.com/2009/12/01/file-management-emacs-dired-to-replace-finder-in-mac-os-x-and-other-os/](http://blog.nguyenvq.com/2009/12/01/file-management-emacs-dired-to-replace-finder-in-mac-os-x-and-other-os/)  
+**Mac OS**:
 
 {% highlight cl %}
-(defun dired-do-shell-mac-open-vqn ()
-(interactive)
-(save-window-excursion
- (dired-do-async-shell-command
- "open" current-prefix-arg
- (dired-get-marked-files t current-prefix-arg))))
-(define-key dired-mode-map (kbd "s-o") 'dired-do-shell-mac-open-vqn)
+(defun tmtxt/dired-do-shell-mac-open ()
+	(interactive)
+	(save-window-excursion
+	  (let ((files (dired-get-marked-files nil current-prefix-arg))
+			command)
+		;; the open command
+		(setq command "open ")
+		(dolist (file files)
+		  (setq command (concat command (shell-quote-argument file) " ")))
+		(message command)
+		;; execute the command
+		(async-shell-command command))))
+(define-key dired-mode-map (kbd "s-o") 'tmtxt/dired-do-shell-mac-open)
 {% endhighlight %}
 
 **Ubuntu**: Source:
