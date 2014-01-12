@@ -160,3 +160,7 @@ it to **curl**, **aria2c**,...
 {% highlight cl %}
 (setq tda/download-command "wget")
 {% endhighlight %}
+
+**Note**: On Mac OS, if your wget encounter the problem with ssl certificate,
+read the instruction in this
+[post]({%post_url 2014-01-12-macos-fix-wget-certificate-error%}).
