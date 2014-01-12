@@ -135,3 +135,20 @@ path to executable file and it arguments for these 2 variables
 (setq-default tda/get-file-size-command "/path/to/du/command")
 (setq-default tda/get-files-size-arguments "-hc")
 {% endhighlight %}
+
+## Download file to current dir
+
+This command read input link from minibuffer and then download it to the current
+directory.
+
+{% highlight cl %}
+(define-key dired-mode-map (kbd "C-c C-q") 'tda/download-to-current-dir)
+{% endhighlight %}
+
+You can also specify the download program you want to use by changing the
+variable `tda/download-command`. The default value is **wget**, you can change
+it to **curl**, **aria2c**,...
+
+{% highlight cl %}
+(setq tda/download-command "wget")
+{% endhighlight %}
