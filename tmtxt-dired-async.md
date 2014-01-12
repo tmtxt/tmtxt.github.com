@@ -145,6 +145,14 @@ directory.
 (define-key dired-mode-map (kbd "C-c C-q") 'tda/download-to-current-dir)
 {% endhighlight %}
 
+Another handy command is `tda/download-clipboard-to-current-dir`, which is
+similar to the above command. Instead of prompting user for the link, it reads
+from the clipboard.
+
+{% highlight cl %}
+(define-key dired-mode-map (kbd "C-c C-l") 'tda/download-clipboard-link-to-current-dir)
+{% endhighlight %}
+
 You can also specify the download program you want to use by changing the
 variable `tda/download-command`. The default value is **wget**, you can change
 it to **curl**, **aria2c**,...
