@@ -56,7 +56,7 @@ One example the rc file in rebinding keys for conkeror.
 **There are still many other awesome features in conkeror.**
 
 Conkeror Homepage: <http://conkeror.org/>  
-My conkeror on github: <https://github.com/tommytxtruong/conkerorrc>  
+My conkeror on github: <https://github.com/tmtxt/conkerorrc>  
 *Follow me and we can exchange the experience.*
 
 I also posted this article on the website of RMIT Vietnam IT Club  

@@ -25,32 +25,18 @@ opened. In this post, I'll show you how to make Conkeror display the tab bar.
 
 <!-- more -->
 
-**Note**: If you Conkeror rc file, which is the **.conkerorrc** file in you Home
-directory, is not a directory, make a directory call **.conkerorrc** in your
-Home directory. After that move the old **.conkerorrc** file into the newly
-created directory and rename that file to **init.js**. From now everything you
-want to put in the **.conkerorrc** file, just put it in that **init.js** file.
+Conkeror have the built-in tab feature but it's not enable by default. To
+activate it, simply put this into your .conkerorrc
 
-# Now we can start!
-
-In your **.conkerorrc** directory, create a folder named **themes**. Download
-this file
-[tommytxtruong.zip](/files/2012-12-27-conkeror-display-tab-bar/tommytxtruong.zip)
-and then extract it into the **themes** directory you've just created. After
-that, add this to your **.conkerorrc** file or any .js file (init.js) inside the
-**.conkerorrc** directory.
-
-{% highlight javascript %}
-theme_load_paths.unshift("~/.conkerorrc/themes/");
-theme_unload("default");
-theme_load("tommytxtruong");
+{% highlight js %}
+require("favicon.js");
+require("new-tabs.js");
+tab_bar_show_icon = true;
+tab_bar_show_index = true;
 {% endhighlight %}
-
-Now restart Conkeror to see the changes ;)
 
 -----
 
 **Conkeror Homepage**: <http://conkeror.org/>  
-**My conkeror on github**: <https://github.com/tommytxtruong/conkerorrc>  
+**My conkeror on github**: <https://github.com/tmtxt/conkerorrc>  
 *Follow me and we can exchange the experience.*  
-

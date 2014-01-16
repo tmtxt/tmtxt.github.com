@@ -56,5 +56,5 @@ Now you understand the modifier notation in conkeror. If a key binding is "C-n",
 [Conkeror Keyboard](http://conkeror.org/Keyboard)  
 
 Conkeror Homepage: <http://conkeror.org/>  
-My conkeror on github: <https://github.com/tommytxtruong/conkerorrc>  
+My conkeror on github: <https://github.com/tmtxt/conkerorrc>  
 Follow me and we can exchange the experience.

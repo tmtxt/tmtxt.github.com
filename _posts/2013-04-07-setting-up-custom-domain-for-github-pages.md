@@ -10,7 +10,7 @@ tags: [github, jekyll]
 {% include JB/setup %}
 
 Yesterday, I decided to buy my own domain to serve for my blog after months
-using github.com subdomain (<http://tommytxtruong.github.com>). It took me a
+using github.com subdomain (<http://tmtxt.github.com>). It took me a
 little difficult to figure out how to setup my custom domain (bought from
 namecheap.com) for my old github blog. This is the steps how to config my
 current domain <http://truongtx.me>.

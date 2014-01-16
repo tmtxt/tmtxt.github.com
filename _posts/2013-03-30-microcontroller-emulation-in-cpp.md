@@ -60,10 +60,10 @@ execute the contents of memory as if the contents were a program.
 # Download and Install
 
 Clone the repo on github
-[Microcontroller Emulation](https://github.com/tommytxtruong/microcontroller-emulation)
+[Microcontroller Emulation](https://github.com/tmtxt/microcontroller-emulation)
 
 {% highlight sh %}
-$ git clone https://github.com/tommytxtruong/microcontroller-emulation.git
+$ git clone https://github.com/tmtxt/microcontroller-emulation.git
 {% endhighlight %}
 
 To compile, simply run make
@@ -494,4 +494,4 @@ program, you can use the test files provided in **Test** files directory.
 
 # Link
 
-**Project Repo on Github**: <https://github.com/tommytxtruong/microcontroller-emulation>
+**Project Repo on Github**: <https://github.com/tmtxt/microcontroller-emulation>

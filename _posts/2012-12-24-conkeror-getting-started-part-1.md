@@ -105,7 +105,7 @@ tutorial that you see or you can close it now and wait for my next post :LOL:
 -----
 
 Conkeror Homepage: <http://conkeror.org/>  
-My conkeror on github: <https://github.com/tommytxtruong/conkerorrc>  
+My conkeror on github: <https://github.com/tmtxt/conkerorrc>  
 Follow me and we can exchange the experience.
 
 Next: **[Conkeror - Getting Started - Part 2](/2012/12/25/conkeror---getting-started---part-2/)**

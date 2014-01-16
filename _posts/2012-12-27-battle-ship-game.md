@@ -20,7 +20,7 @@ game will end when one of two players has no more ships on his grid.
 # Download
 
 Here is the source of the game on Github:
-[Battle Ship Game on Github](https://github.com/tommytxtruong/battleship)
+[Battle Ship Game on Github](https://github.com/tmtxt/battleship)
 
 <!-- more -->
 
