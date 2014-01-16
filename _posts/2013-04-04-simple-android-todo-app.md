@@ -81,14 +81,14 @@ Android phones/tablets/computers with Android OS 4.0 or above
 # Download and Installation
 
 To install the software, follow this link
-[https://github.com/tommytxtruong/iDo/blob/master/build/iDo.apk](https://github.com/tommytxtruong/iDo/blob/master/build/iDo.apk) and select
+[https://github.com/tmtxt/iDo/blob/master/build/iDo.apk](https://github.com/tmtxt/iDo/blob/master/build/iDo.apk) and select
 *View Raw* to download. After finishing the download, copy that file into phone
 memory and install it. You're ready to use the application.
 
 # Source code
 
 The source code this application is hosted on Github at this
-[link](https://github.com/tommytxtruong/iDo). It is an Eclipse project. To
+[link](https://github.com/tmtxt/iDo). It is an Eclipse project. To
 explore it, clone it into your local computer and import into Eclipse.
 
 # Screenshots
