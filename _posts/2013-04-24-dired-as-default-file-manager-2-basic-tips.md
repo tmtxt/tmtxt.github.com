@@ -60,4 +60,4 @@ package.el (see this post
 this series use Dired+.
 
 **Next part**:
-[Dired as Default File Manager - Dired Details](/2013/04/24/dired-as-default-file-manager-3-dired-details/)
+[Dired as Default File Manager - Show the interesting and Hide the unnecessary information](/2013/04/24/dired-as-default-file-manager-3-dired-details/)

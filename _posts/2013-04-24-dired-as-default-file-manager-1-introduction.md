@@ -54,7 +54,7 @@ lovers.
 * **Part 1**:
 [Dired as Default File Manager - Basic Tips](/2013/04/24/dired-as-default-file-manager-2-basic-tips/)  
 * **Part 2**:
-[Dired as Default File Manager - Dired Details](/2013/04/24/dired-as-default-file-manager-3-dired-details/)  
+[Dired as Default File Manager - Show the interesting and Hide the unnecessary information](/2013/04/24/dired-as-default-file-manager-3-dired-details/)  
 * **Part 3**:
 [Dired as Default File Manager - More Advanced Tips](/2013/04/24/dired-as-default-file-manager-4-more-advanced-tips/)  
 * **Part 4**:
