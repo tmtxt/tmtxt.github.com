@@ -31,11 +31,11 @@ how to create a custom theme with Emacs 24.
 Emacs 24 provides a new function named **deftheme** to define a new theme.
 However, there is no need to manually
 program you custom theme and deal with the crazy color codes. Just open
-your Emacs, hit **M-x**, run the command **customize-create-theme**. It will ask
+your Emacs, hit `M-x`, run the command `customize-create-theme`. It will ask
 you wether you want to include basic face customizations in the new theme. You
-can choose **y** for it create some basic facets for you. If you want to copy
+can choose `y` for it create some basic facets for you. If you want to copy
 from other theme, head over to the beginning of the buffer and select the
-**Visit Theme** button. A new window will appear for you to choose which theme
+`Visit Theme` button. A new window will appear for you to choose which theme
 you want to copy from.
 
 ![Emacs Theme Creation Interface](/files/2013-03-31-color-theming-in-emacs-24/theme.png)  
