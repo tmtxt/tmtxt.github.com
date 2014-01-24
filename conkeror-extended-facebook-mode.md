@@ -152,7 +152,7 @@ You can also config the scroll gap (the distance for each scroll) by setting the
 following variable
 
 {% highlight js %}
-cefm_mode_scroll_gap = 50;
+cefm_scroll_gap = 50;
 {% endhighlight %}
 
 # Expand content
