@@ -22,7 +22,7 @@ $ npm install -g jshint
 Next, clone the **jshint-mode** for Emacs to your local computer
 
 {% highlight console %}
-$ $ git clone git://github.com/daleharvey/jshint-mode.git
+$ git clone git://github.com/daleharvey/jshint-mode.git
 {% endhighlight %}
 
 <!-- more -->
