@@ -124,7 +124,7 @@ function my_undefine_keys(){
 Usage example
 
 {% highlight js %}
-tmtxt_undefine_keys(content_buffer_normal_keymap, "F", "C-f", "C-b", "C-p", "C-n", "M-v");
+my_undefine_keys(content_buffer_normal_keymap, "F", "C-f", "C-b", "C-p", "C-n", "M-v");
 {% endhighlight %}
 
 # Function for defining key aliases
@@ -132,7 +132,7 @@ tmtxt_undefine_keys(content_buffer_normal_keymap, "F", "C-f", "C-b", "C-p", "C-n
 This function behaves much in the same way with the defining keys function.
 
 {% highlight js %}
-function tmtxt_define_keys_aliases(){
+function my_define_keys_aliases(){
   var args = Array.prototype.slice.call(arguments);
   // check if the number of arguments is even
   var length;
@@ -153,7 +153,7 @@ In the following example, `C-o` is aliased to `escape`, `A-v` is aliased to
 `C-y` and so on.
 
 {% highlight js %}
-tmtxt_define_keys_aliases("C-o",			"escape",
+my_define_keys_aliases("C-o",			"escape",
 						  "A-v",			"C-y",
 						  "A-c",			"M-w",
 						  "C-m",			"return",
