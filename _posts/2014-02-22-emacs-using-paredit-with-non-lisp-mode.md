@@ -14,7 +14,7 @@ languages, we have to work with parentheses, too. For example the **{** and
 **}** for code block, **\[** and **\]** for array... To use paredit with non-lisp
 mode, add the following function into your .emacs file
 
-{% highlight javascript %}
+{% highlight cl %}
 (defun my-paredit-nonlisp ()
   "Turn on paredit mode for non-lisps."
   (interactive)
@@ -31,7 +31,7 @@ your .emacs
 
 <!-- more -->
 
-{% highlight javascript %}
+{% highlight cl %}
 (add-hook 'js-mode-hook 'my-paredit-nonlisp) ;use with the above function
 (add-hook 'js-mode-hook 'esk-paredit-nonlisp) ;for emacs starter kit
 {% endhighlight %}
