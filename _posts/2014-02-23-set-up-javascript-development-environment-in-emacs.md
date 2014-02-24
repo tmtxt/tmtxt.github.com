@@ -60,6 +60,18 @@ variable to the level that you want
 (setq js2-highlight-level 3)
 {% endhighlight %}
 
+# Auto completion
+
+**autocomplete** and **yasnippet** are two powerful tools for code suggestion and
+completion in Emacs. **autocomplete** will scan for all words in the current
+buffer as well as other opening buffers and in the history to complete the word
+as you're typing. **yasnippet** provides the ability to quickly insert
+repetitive snippets such as `for`, `while`, `if`,...
+
+Take a look at this link to know how to install, config autocomplete and
+yasnippet in Emacs
+[Config Yasnippet and Autocomplete on Emacs]({%post_url 2013-01-06-config-yasnippet-and-autocomplete-on-emacs%})
+
 # Using paredit with javascript
 
 **Paredit** is a minor mode for keeping parenthese balanced. It is extremely
@@ -68,7 +80,7 @@ automatically when you open any lisp-based languages file. Usually in other
 languages, we have to work with parentheses, too. For example the **{** and
 **}** for code block, **\[** and **\]** for array...
 
-This post describe how you can activate paredit for non-lisp mode
+This post describes how you can activate paredit for non-lisp mode
 [Emacs - Using paredit with non lisp mode]({%post_url 2014-02-22-emacs-using-paredit-with-non-lisp-mode%}).
 
 You may also want to set `{` and `}` to the corresponding paredit functions
