@@ -43,7 +43,7 @@ To use it, simply open an SQL buffer, `M-x` and then `sql-postgres` or
 information and password. A new SQLi buffer will be created and automatically
 associated with the current SQL buffer. You can type the SQL command directly
 into the SQLi buffer to execute or compose the command in the SQL buffer, select
-it and then call the command `sql-send-region` (bound to **C-c C-r** bu default)
+it and then call the command `sql-send-region` (bound to **C-c C-r** by default)
 to execute.
 
 ![Alt Text](/files/2014-02-26-emacs-as-a-database-client/pg.png)
