@@ -31,6 +31,11 @@ Make sure that the client you need to use can be located inside the Emacs's
 PATH. You can install **exec-path-from-shell** package using package.el for
 Emacs to auto import the PATH from your default shell.
 
+If you are using Mac OS, I have written a post about PostgreSQL installation and
+configuration steps on Mac here:
+[Install and Config PostgreSQL on Mac]({%post_url 2014-02-26-install-and-config-postgresql-on-mac%}).
+
+
 <!-- more -->
 
 To use it, simply open an SQL buffer, `M-x` and then `sql-postgres` or
