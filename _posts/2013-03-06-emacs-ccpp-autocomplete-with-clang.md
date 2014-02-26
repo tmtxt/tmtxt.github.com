@@ -31,7 +31,7 @@ get Autocomplete and Yasnippet to work together, see this article
 Before installing this package, you should also check whether your system has
 installed "clang" or not via this command `clang --version` in terminal. If you get
 nothing from terminal, which means you haven't installed "clang" yet. If you are
-on linux, you can try those 2 commands `sudo apt-get update`,
+on Ubuntu, you can try those 2 commands `sudo apt-get update`,
 `sudo apt-get install clang` and check it again. Until clang works fine, you can
 continue the
 following instructions.
