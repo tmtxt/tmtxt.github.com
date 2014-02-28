@@ -161,5 +161,5 @@ and you just want to query all descendant nodes within a specific depth level,
 uncomment `-- AND depth < 2` in the 17th line and change 2 to whatever depth
 level that you want.
 
-![Alt Text](/files/2014-02-28-tree-structure-query-with-postgresql/result1.png)
+![Alt Text](/files/2014-02-28-tree-structure-query-with-postgresql/result.png)
 
