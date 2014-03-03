@@ -1,0 +1,107 @@
+---
+layout: post
+title: "Dired as Default File Manager - Enhance Wdired"
+description: ""
+category: emacs
+tags: [dired, emacs, wdired]
+---
+{% include JB/setup %}
+
+<blockquote>
+  This post is the seventh part of the series
+  <a href="/2013/04/24/dired-as-default-file-manager-1-introduction/">Dired as
+    Default File Manager</a>
+  
+</blockquote>
+
+<p>
+  Wdired is a special mode that allows you to perform file operations by editing
+the Dired buffer directly (the “W” in “Wdired” stands for “writable”.). Imagine
+that you want to rename multiple files, you will have to call the rename command
+several times. Wdired help you to transform the current dired buffer to an
+editable one, then you can change multiple file names and apply the changes. To
+  activate it, simply run the command <b>dired-toggle-read-only</b> (bound to <b>C-x C-q</b>
+  by default). When you finish, just call <b>wdired-finish-edit</b> (<b>C-c C-c</b>) to commit the
+  changes or <b>wdired-abort-changes</b> (<b>C-c C-k</b>) to cancel.
+</p>
+
+<p>
+  This is much faster comparing to the other GUI file managers. However, it's
+still not very convenience since you still have to mark the text that you want
+to change. Also, in normal file manager, when you rename one file, it will auto
+select the file name exclude the extension for you to edit. This can be achieved
+easily using a little emacs lisp.
+</p>
+
+{% highlight cl %}
+  (defun my-mark-file-name-for-rename ()
+    "Mark file name on current line except its extension"
+    (interactive)
+
+    ;; get the file file name first
+    ;; full-name: full file name
+    ;; extension: extension of the file
+    ;; base-name: file name without extension
+    (let ((full-name (file-name-nondirectory (dired-get-filename)))
+          extension base-name)
+      
+      ;; check if it's a dir or a file
+      ;; TODO not use if, use switch case check for symlink
+      (if (file-directory-p full-name)
+          (progn
+            ;; if file name is directory, mark file name should mark the whole
+            ;; file name
+            (call-interactively 'end-of-line) ;move the end of line
+            (backward-char (length full-name)) ;back to the beginning
+            (set-mark (point))
+            (forward-char (length full-name)))
+        (progn
+          ;; if current file is a file, mark file name mark only the base name,
+          ;; exclude the extension
+          (setq extension (file-name-extension full-name))
+          (setq base-name (file-name-sans-extension full-name))
+          (call-interactively 'end-of-line)
+          (backward-char (length full-name))
+          (set-mark (point))
+          (forward-char (length base-name))))))
+
+  (defun my-mark-file-name-forward ()
+    "Mark file name on the next line"
+    (interactive)
+    (deactivate-mark)
+    (next-line)
+    (my-mark-file-name-for-rename))
+
+  (defun my-mark-file-name-backward ()
+    "Mark file name on the next line"
+    (interactive)
+    (deactivate-mark)
+    (previous-line)
+    (my-mark-file-name-for-rename))
+{% endhighlight %}
+
+<p>
+  Here I defined some functions for fast file name marking. The first one marks
+the file name on current line. The next one moves the point to next line and
+marks the file name while the last function does the opposite. Next, you need to
+bind key for those functions, for example
+</p>
+
+
+{% highlight cl %}
+(eval-after-load 'wdired
+  (define-key wdired-mode-map (kbd "TAB") 'my-mark-file-name-forward)
+  (define-key wdired-mode-map (kbd "S-<tab>") 'my-mark-file-name-backward)
+  (define-key wdired-mode-map (kbd "s-a") 'my-mark-file-name-for-rename))
+{% endhighlight %}
+
+  <p>
+    <b>Usuage</b>: when entering wdired mode, pressing TAB will mark the next file for
+renaming, type a new name and continue pressing TAB to move to next file. The
+file name is automatically selected for you to replace. Shift-tab will do the
+opposite while s-a mark the current file. After the mark is activate, if you
+    want to mark all file name (include the extension), just press <b>C-e</b>
+(move-end-of-line). See the video below for demonstration
+  </p>
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/XNbtOrylaEk" frameborder="0" allowfullscreen></iframe>

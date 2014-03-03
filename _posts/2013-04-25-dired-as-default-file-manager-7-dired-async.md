@@ -49,4 +49,5 @@ Here is some screenshots from my Emacs
 
 **Previous part**:
 [Dired as Default File Manager - Customize Faces](/2013/04/25/dired-as-default-file-manager-6-customize-faces/)  
-
+**Next part**:
+[Dired as Default File Manager - Enhance Wdired](/2014/03/02/dired-as-default-file-manager-8-enhance-wdired/)
