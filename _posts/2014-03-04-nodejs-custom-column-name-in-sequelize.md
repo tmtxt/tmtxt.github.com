@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "NodeJS - Custom field name in Sequelize"
+title: "NodeJS - Custom column name in Sequelize"
 description: ""
 category: misc
 tags: [nodejs, sequelize]
