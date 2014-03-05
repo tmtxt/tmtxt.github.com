@@ -15,7 +15,7 @@ getter and setter methods provided by Sequelize. When you creating the model,
 set the property names to the same with the corresponding column name in
 database first. After that, define the setter and getter functions to map those
 column to the desired properties name that you want. This example transforms
-model properties name from camel_case (SQL style) to snakeCase (JS style).
+model properties name from snake_case (SQL style) to camelCase (JS style).
 
 {% highlight js %}
 var model =
