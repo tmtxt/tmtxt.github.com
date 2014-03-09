@@ -7,6 +7,8 @@ tags: [emacs, jshint, javascript]
 ---
 {% include JB/setup %}
 
+# JSHint command line tool
+
 **JSHint** is a tool that helps to detect errors and potential problems in your
 JavaScript code. You can try the online demo version at JSHint home page at
 [http://www.jshint.com/](http://www.jshint.com/). This post demonstrates how to
@@ -19,13 +21,38 @@ Next, install jshint globally using npm with this command
 $ npm install -g jshint
 {% endhighlight %}
 
-Next, clone the **jshint-mode** for Emacs to your local computer
+You can try linting your js file with jshint
+
+{% highlight console %}
+$ jshint myfile.js
+{% endhighlight %}
+
+# JSHint with Flycheck
+
+Before that, I used `jshint` with `flymake`. However, now I found that
+`flycheck` (an improvement of `flymake`) has built-in support for jshint so you
+don't need to install **jshint-mode** anymore. Just install `flycheck` using
+package.el
+([Emacs Packages Manager]({%post_url 2013-01-07-emacs-package-manager%})). Add
+this to your .emacs to activate **flycheck** when you visit any .js file
+
+<!-- more -->
+
+{% highlight cl %}
+(require 'flycheck)
+(add-hook 'js-mode-hook
+          (lambda () (flycheck-mode t)))
+{% endhighlight %}
+
+# JSHint with Flymake
+
+This is not a recommended method since it uses the old flymake syntax checking.
+To install jshint with flymake, clone the **jshint-mode** for Emacs to your
+local computer
 
 {% highlight console %}
 $ git clone git://github.com/daleharvey/jshint-mode.git
 {% endhighlight %}
-
-<!-- more -->
 
 Add this to your .emacs to load jshint-mode into Emacs
 
@@ -40,5 +67,5 @@ In case your Emacs cannot find the node executable, you can install
 **exec-path-from-shell** using **package.el** for Emacs to load the PATH from your shell
 config.
 
-Now open a javascript file inside a nodejs project, `M-x` and then
-`flymake-mode` to activate jshint.
+Now everything you need to do is just to open a javascript file and
+flymake-jshint is automatically activated for you.
