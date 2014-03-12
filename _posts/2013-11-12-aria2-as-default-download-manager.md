@@ -96,14 +96,7 @@ You need to start **aria2** from Terminal. Open Terminal and cd to the directory
 that you want **aria2** to save the downloaded files in.
 
 {% highlight console %}
-$ cd ~/mydownload
-{% endhighlight %}
-
-Start **aria2** using the following command
-
-{% highlight console %}
-$ touch session.txt
-$ aria2c --enable-rpc --rpc-listen-all --save-session=session.txt -isession.txt -x16 -k1M
+$ touch /path/to/session.txt && aria2c --enable-rpc --rpc-listen-all --save-session=/path/to/session.txt --input-file=/path/to/session.txt -x16 -k1M --dir=/path/to/download/folder
 {% endhighlight %}
 
 Now **aria2** should be running and listening on port 6800. You should see
@@ -134,34 +127,5 @@ If you are tired of typing the long command again and again, simply assign an
 alias for it in your shell rc file (.bashrc, .zshrc,...).
 
 {% highlight sh %}
-alias myaria2='aria2c --enable-rpc --rpc-listen-all --save-session=session.txt -isession.txt -x16 -k1M'
+alias myaria2='touch /Volumes/tmtxt/Downloads/session.txt && aria2c --enable-rpc --rpc-listen-all --save-session=/Volumes/tmtxt/Downloads/session.txt --input-file=/Volumes/tmtxt/Downloads/session.txt -x16 -k1M --dir=/Volumes/tmtxt/Downloads'
 {% endhighlight %}
-
-This solution still requires you to cd to your download folder manually and
-execute the *touch* command for the first time but it gives you the flexibility
-to choose your download folder and organize multiple download locations. If you
-just want to have only one download folder, create a shell script to do all the
-job. Create a file name **start-aria2.sh** in your home directory with the content
-like this.
-
-{% highlight sh %}
-cd ~/down
-touch session.txt
-aria2c --enable-rpc --rpc-listen-all --save-session=session.txt -isession.txt -x16 -k1M
-{% endhighlight %}
-
-Next, change the permission to make it executable by the command
-
-{% highlight console %}
-$ chmod +x start-aria2.sh
-{% endhighlight %}
-
-Now, everytime you want to run **aria2**, just double click on that file or
-start it via the command line
-
-{% highlight console %}
-$ ~/start-aria2.sh
-{% endhighlight %}
-
-Finally, bookmark the webui-aria2 index.html file in your browser for quick
-access.
