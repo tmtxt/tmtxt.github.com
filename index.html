@@ -21,10 +21,13 @@ title: Trường TX Blog
 			{{post.date | date: "%d %B %Y"}}
 		  </span>
 		  &nbsp; &nbsp; &nbsp;
-		  <i class="fa fa-folder-o"></i> 
-		  <a href="/categories.html#{{ post.category }}-ref" style="color:darkgreen">
-			{{ post.category }}
+		  <i class="fa fa-folder-o"></i>
+      {% for category in post.categories %}
+		  <a href="/categories.html#{{ category }}-ref" style="color:darkgreen">
+			  {{ category }}
 		  </a>
+      &nbsp; &nbsp;
+      {% endfor %}
 		</p>
 	  </div>
 	  <div class="panel-body">

@@ -22,7 +22,7 @@ Usage:
 {% else %}
   {% if categories_list.first[0] == null %}
     {% for category in categories_list %} 
-    	<li><a href="{{ BASE_PATH }}{{ site.JB.categories_path }}#{{ category }}-ref">
+    	<li><i class="fa fa-folder-o"></i><a href="{{ BASE_PATH }}{{ site.JB.categories_path }}#{{ category }}-ref">
     		{{ category | join: "/" }}
 			<span class="badge badge-success">{{ site.categories[category].size }}</span>
     	</a></li>

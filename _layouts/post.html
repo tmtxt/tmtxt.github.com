@@ -32,19 +32,21 @@ layout: default
 		<i class="fa fa-calendar"></i>
 		<span>{{ page.date | date_to_long_string }}</span>
 	  </p>
-	  <p>
-		<i class="fa fa-folder-o"></i> Category: 
-		<a href="{{BASE_PATH}}/categories.html#{{ page.category }}-ref">
-		  {{ page.category }}
-		</a>
-	  </p>
-	  <p>
-		<i class="fa fa-tags"></i> Tags
+	  
+    <p>
+		<i class="fa fa-folder-open-o"></i> Categories
 		<ul class="fa-ul">
-		  {% assign tags_list = page.tags %}
-		  {% include JB/tags_list %}
+		  {% assign categories_list = page.categories %}
+		  {% include JB/categories_list %}
 		</ul>
 	  </p>
+	  <!-- <p>
+		<i class="fa fa-tags"></i> Tags
+		<ul class="fa-ul">
+		{% assign tags_list = page.tags %}
+		{% include JB/tags_list %}
+		</ul>
+	  </p> -->
 	  <hr/>
 	  <h4>
 		Share to your friend
