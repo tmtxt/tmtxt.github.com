@@ -175,7 +175,16 @@ populate your models. However, as I said before, **sequelize-auto** only reduces
 the work that you have to do, not a complete solution so you still have to edit
 the generated model files.
 
-# 4. The rest
+# 4. Custom column name
+
+By default, [Sequelize](http://sequelizejs.com/) only
+allows you to specify custom table name. Currently, there is no such feature in
+Sequelize to help you define custom column names and then map them to properties
+in model objects. I have written another post about this problem and the
+possible workaround here
+[NodeJS - Custom column name in Sequelize]({%post_url 2014-03-04-nodejs-custom-column-name-in-sequelize%}).
+
+# 5. The rest
 
 Again, this post just shows the basic installation, setting up steps that
 Sequelize Docs does not clearly state. For other features, I advise you to read
