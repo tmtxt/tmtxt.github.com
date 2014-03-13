@@ -129,3 +129,6 @@ alias for it in your shell rc file (.bashrc, .zshrc,...).
 {% highlight sh %}
 alias myaria2='touch /Volumes/tmtxt/Downloads/session.txt && aria2c --enable-rpc --rpc-listen-all --save-session=/Volumes/tmtxt/Downloads/session.txt --input-file=/Volumes/tmtxt/Downloads/session.txt -x16 -k1M --dir=/Volumes/tmtxt/Downloads'
 {% endhighlight %}
+
+You can also add `--daemon` to the end of the command to run it as a daemon
+process so that you don't need to take care of the terminal window that hold the process.
