@@ -2,7 +2,7 @@
 layout: post
 title: "NodeJS - Custom column name in Sequelize"
 description: ""
-category: misc
+category: javascript
 tags: [nodejs, sequelize]
 ---
 {% include JB/setup %}

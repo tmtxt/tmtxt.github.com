@@ -2,7 +2,7 @@
 layout: post
 title: "VirtualBox on Bootcamp partition guide"
 description: ""
-category: Misc
+category: mac os
 thumbnail: 
 showtn: no
 tags: [virtualbox, bootcamp]

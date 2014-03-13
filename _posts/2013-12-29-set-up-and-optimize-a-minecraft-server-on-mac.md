@@ -2,7 +2,7 @@
 layout: post
 title: "Set up and Optimize a Minecraft server on Mac"
 description: ""
-category: misc
+category: mac os
 tags: [minecraft, macos]
 ---
 {% include JB/setup %}

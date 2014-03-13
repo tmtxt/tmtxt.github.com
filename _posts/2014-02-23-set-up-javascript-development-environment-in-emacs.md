@@ -2,7 +2,7 @@
 layout: post
 title: "Set up Javascript development environment in Emacs"
 description: ""
-category: emacs
+categories: [emacs, javascript]
 tags: [emacs, javascript]
 ---
 {% include JB/setup %}

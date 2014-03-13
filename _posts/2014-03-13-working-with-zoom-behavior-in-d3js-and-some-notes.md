@@ -2,7 +2,7 @@
 layout: post
 title: "Working with Zoom behavior in D3.js and some notes"
 description: ""
-category: misc
+category: javascript
 tags: [d3js]
 ---
 {% include JB/setup %}

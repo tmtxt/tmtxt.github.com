@@ -2,7 +2,7 @@
 layout: post
 title: "MacOS - Using multiple Google Drive accounts at the same time"
 description: ""
-category: Misc
+category: mac os
 thumbnail: 
 showtn: no
 tags: [macos, google drive]

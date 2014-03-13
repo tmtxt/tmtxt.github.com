@@ -2,7 +2,7 @@
 layout: post
 title: "Mac OS Install python, pip, virtualenv using Macports"
 description: ""
-category: misc
+categories: [mac os]
 tags: [macos, python, pip, virtualenv, macports]
 ---
 {% include JB/setup %}

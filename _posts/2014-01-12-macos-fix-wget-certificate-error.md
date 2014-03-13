@@ -2,7 +2,7 @@
 layout: post
 title: "MacOS Fix wget certificate error"
 description: ""
-category: misc
+category: mac os
 tags: [macos, wget]
 ---
 {% include JB/setup %}

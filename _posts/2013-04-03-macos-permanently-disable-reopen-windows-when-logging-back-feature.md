@@ -3,7 +3,7 @@ layout: post
 showtn: 
 title: "MacOS - Permanently Disable Reopen Windows when Logging back"
 description: ""
-category: Misc
+category: mac os
 thumbnail: /files/thumbnails/macos.png
 tags: [macos]
 ---

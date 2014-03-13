@@ -2,7 +2,7 @@
 layout: post
 title: "Emacs - Setup JSHint for on-the-fly (potential) errors checking"
 description: ""
-category: emacs
+categories: [emacs, javascript]
 tags: [emacs, jshint, javascript]
 ---
 {% include JB/setup %}

@@ -3,7 +3,7 @@ layout: post
 showtn: yes
 title: "Install - Config Bitlbee on Mac Mountain Lion using MacPorts"
 description: ""
-category: Misc
+category: mac os
 thumbnail: /files/2012-12-29-install-and-config-bitlbee-on-mac-os-mountain-lion/bitlbee.png
 tags: [bitlbee, macos]
 ---

@@ -3,7 +3,7 @@ layout: post
 showtn: 
 title: "MacPorts - The MacOS package manager"
 description: ""
-category: Misc
+categories: [mac os]
 thumbnail: /files/2013-01-01-macports---the-macos-package-manager/macports.png
 tags: [macports, package manager, macos]
 ---

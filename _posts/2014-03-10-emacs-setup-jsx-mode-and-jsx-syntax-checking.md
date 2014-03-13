@@ -2,7 +2,7 @@
 layout: post
 title: "Emacs - Setup JSX mode and JSX Syntax checking"
 description: ""
-category: emacs
+categories: [emacs, javascript]
 tags: [emacs, jsx, jsxhint]
 ---
 {% include JB/setup %}

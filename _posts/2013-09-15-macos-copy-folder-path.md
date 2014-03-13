@@ -2,7 +2,7 @@
 layout: post
 title: "MacOS - Copy folder path using keyboard"
 description: ""
-category: misc
+category: mac os
 thumbnail: 
 showtn: no
 tags: [macos]

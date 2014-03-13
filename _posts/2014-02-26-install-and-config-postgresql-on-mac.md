@@ -2,7 +2,7 @@
 layout: post
 title: "Install and Config PostgreSQL on Mac"
 description: ""
-category: misc
+category: mac os
 tags: [postgres]
 ---
 {% include JB/setup %}

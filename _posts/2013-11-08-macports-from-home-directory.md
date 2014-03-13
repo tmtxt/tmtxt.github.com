@@ -2,7 +2,7 @@
 layout: post
 title: "Macports from home directory"
 description: ""
-category: misc
+category: mac os
 thumbnail: 
 showtn: no
 tags: [macports, macos]

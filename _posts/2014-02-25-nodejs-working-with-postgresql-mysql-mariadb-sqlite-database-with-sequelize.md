@@ -2,7 +2,7 @@
 layout: post
 title: "NodeJS - Working with PostgreSQL/MySQL/MariaDB/SQLite database using Sequelize"
 description: ""
-category: misc
+category: javascript
 tags: [nodejs, sequelize]
 ---
 {% include JB/setup %}

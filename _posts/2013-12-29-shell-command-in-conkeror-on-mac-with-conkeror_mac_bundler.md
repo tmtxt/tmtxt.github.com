@@ -2,7 +2,7 @@
 layout: post
 title: "Shell command in Conkeror on Mac with conkeror_mac_bundler"
 description: ""
-category: conkeror
+categories: [conkeror, mac os]
 tags: [conkeror, conkeror_mac_bundler, mac]
 ---
 {% include JB/setup %}

@@ -2,7 +2,7 @@
 layout: post
 title: "Emacs Spelling Checking on MacOS"
 description: ""
-category: Emacs
+categories: [emacs, mac os]
 thumbnail: 
 showtn: no
 tags: [emacs, macos]

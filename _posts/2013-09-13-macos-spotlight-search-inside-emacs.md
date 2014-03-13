@@ -2,7 +2,7 @@
 layout: post
 title: "MacOS - Spotlight Search inside Emacs"
 description: ""
-category: emacs
+categories: [emacs, mac os]
 tags: [macos, spotlight, locate, emacs, helm]
 ---
 {% include JB/setup %}

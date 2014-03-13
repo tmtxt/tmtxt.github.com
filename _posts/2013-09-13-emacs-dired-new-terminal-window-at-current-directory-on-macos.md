@@ -2,7 +2,7 @@
 layout: post
 title: "Emacs Dired - New Terminal window at current directory on MacOS"
 description: ""
-category: Emacs
+categories: [emacs, mac os]
 thumbnail: 
 showtn: no
 tags: [emacs, dired, terminal, macos]
