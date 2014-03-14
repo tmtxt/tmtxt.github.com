@@ -146,7 +146,7 @@ The default Gulp's watch method is really dumb. It makes Gulp quit unexpectedly
 whenever an error happens while watching. For example, when there is a syntax
 error in your code that causes the uglify module fail to parse the source file,
 the watch process will quit eventually and you have to restart it manually. To
-void this, use [gulp-plumber](https://www.npmjs.org/package/gulp-plumber/) (can
+avoid this, use [gulp-plumber](https://www.npmjs.org/package/gulp-plumber/) (can
 be install through npm) to keep the pipes working after error event. In order to
 include it in your code, pipe it before the other operations like this
 
