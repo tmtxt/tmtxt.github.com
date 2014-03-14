@@ -113,7 +113,6 @@ this picture, otherwise there maybe some problems with your aria2 client.
 
 ![Webui-Aria2]({{BASE_PATH}}/files/2013-11-12-aria2-as-default-download-manager/aria2.png)
 
-
 From there, you can start using **aria2**. Take some minutes to familiarize
 yourself to its UI.
 
@@ -131,4 +130,6 @@ alias myaria2='touch /Volumes/tmtxt/Downloads/session.txt && aria2c --enable-rpc
 {% endhighlight %}
 
 You can also add `--daemon` to the end of the command to run it as a daemon
-process so that you don't need to take care of the terminal window that hold the process.
+process so that you don't need to take care of the terminal window that hold the
+process. On Mac OS (and some other Unix/Linux systems), if you want to kill the
+daemon process, just use `killall aria2c`.
