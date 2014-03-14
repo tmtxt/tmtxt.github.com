@@ -94,7 +94,10 @@ The third task (**uglify**) is a bit different and more complicated. It uses 2
 modules **uglify** and **rename** at the same time. `pipe` is similar to
 operations chaining. The source files will be uglified first, append a
 suffix in file name and then saved in the destination folder (specified with
-`gulp.dest()`, in this case the **public** folder).
+`gulp.dest()`, in this case the **public** folder). Usually, the last `pipe`
+function in the pipe line indicates the output. In the previous task, the output
+is the default jshint reporter while the output of this command will be export
+to a directory using `gulp.dest()`.
 
 The last one you can guess from its name. It monitors all the changes to the
 source files, performs the **lint** and **uglify** tasks as the changes happens.
