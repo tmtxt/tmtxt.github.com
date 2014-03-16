@@ -62,7 +62,7 @@ gulp.task('lint', function(){
     .pipe(jshint.reporter('default'));
 });
 
-gulp.task('uglify', function(){
+gulp.task('uglify', ['lint'], function(){
   gulp.src(['client/*.js'])
     .pipe(uglify())
     .pipe(rename({suffix: '.min'}))
@@ -97,7 +97,9 @@ suffix in file name and then saved in the destination folder (specified with
 `gulp.dest()`, in this case the **public** folder). Usually, the last `pipe`
 function in the pipe line indicates the output. In the previous task, the output
 is the default jshint reporter while the output of this command will be export
-to a directory using `gulp.dest()`.
+to a directory using `gulp.dest()`. Also, I put `['lint']` in the task
+definition. It's an array indicating the tasks that need to be completed before
+this task can run.
 
 The last one you can guess from its name. It monitors all the changes to the
 source files, performs the **lint** and **uglify** tasks as the changes happens.
