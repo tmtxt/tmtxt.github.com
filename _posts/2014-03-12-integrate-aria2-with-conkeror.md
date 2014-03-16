@@ -113,7 +113,7 @@ This function send a JSON request to aria2 RPC listening on port 6800 (aria2's
 default port) so that you need to start aria2 RPC before. Please refer to my
 previous post
 ([Aria2 as Default Download Manager on Unix/Linux]({%post_url 2013-11-12-aria2-as-default-download-manager%}))
-for instruction on how to start aria2 RPC.
+for instruction on how to start aria2 RPC daemon.
 
 Now open any link that download a file, press `a` when it prompt for an option
 and then the download is sent to aria2 automatically.

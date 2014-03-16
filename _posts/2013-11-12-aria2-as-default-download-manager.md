@@ -96,7 +96,7 @@ You need to start **aria2** from Terminal. Open Terminal and cd to the directory
 that you want **aria2** to save the downloaded files in.
 
 {% highlight console %}
-$ touch /path/to/session.txt && aria2c --enable-rpc --rpc-listen-all --save-session=/path/to/session.txt --input-file=/path/to/session.txt -x16 -k1M --dir=/path/to/download/folder
+$ touch /path/to/download/folder/session.txt && aria2c --enable-rpc --rpc-listen-all --save-session=/path/to/download/folder/session.txt --input-file=/path/to/download/folder/session.txt -x16 -s16 -k1M --dir=/path/to/download/folder
 {% endhighlight %}
 
 Now **aria2** should be running and listening on port 6800. You should see
@@ -126,7 +126,7 @@ If you are tired of typing the long command again and again, simply assign an
 alias for it in your shell rc file (.bashrc, .zshrc,...).
 
 {% highlight sh %}
-alias myaria2='touch /Volumes/tmtxt/Downloads/session.txt && aria2c --enable-rpc --rpc-listen-all --save-session=/Volumes/tmtxt/Downloads/session.txt --input-file=/Volumes/tmtxt/Downloads/session.txt -x16 -k1M --dir=/Volumes/tmtxt/Downloads'
+alias myaria2='touch /path/to/download/folder/session.txt && aria2c --enable-rpc --rpc-listen-all --save-session=/path/to/download/folder/session.txt --input-file=/path/to/download/folder/session.txt -x16 -s16 -k1M --dir=/path/to/download/folder'
 {% endhighlight %}
 
 You can also add `--daemon` to the end of the command to run it as a daemon
