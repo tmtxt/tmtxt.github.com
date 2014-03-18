@@ -48,6 +48,8 @@ http {
 }
 {% endhighlight %}
 
+<!-- more -->
+
 # Config http proxy server using nginx
 
 Now you have nginx installed in your computer. First, we'll try to config nginx
