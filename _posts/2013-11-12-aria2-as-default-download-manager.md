@@ -132,4 +132,4 @@ alias myaria2='touch /path/to/download/folder/session.txt && aria2c --enable-rpc
 You can also add `--daemon` to the end of the command to run it as a daemon
 process so that you don't need to take care of the terminal window that holds the
 process. On Mac OS (and some other Unix/Linux systems), if you want to kill the
-daemon process, just use `killall aria2c`.
+daemon process, just use `pkill aria2c`.
