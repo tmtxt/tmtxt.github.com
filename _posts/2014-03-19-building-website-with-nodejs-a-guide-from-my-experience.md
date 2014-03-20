@@ -60,6 +60,7 @@ for developing the website.
 - [Nodejs with Express - More advanced stuff]({%post_url 2014-03-19-nodejs-with-express-more-advanced-stuff%})
 - [Automate Javascript development with Gulp]({%post_url 2014-03-14-automate-javascript-development-with-gulp%})
 - [NodeJS - Working with PostgreSQL/MySQL/MariaDB/SQLite database using Sequelize]({%post_url 2014-02-25-nodejs-working-with-postgresql-mysql-mariadb-sqlite-database-with-sequelize%})
+- [Browserify - Bring Nodejs modules to browser]({%post_url 2014-03-20-browserify-bring-nodejs-modules-to-browser%})
 - **Updating...**
 - For some technologies that I listed here (nginx, postgreSQL,...), you can find
   the posts about them [Archive](/archive.html) page. I don't listed them here
