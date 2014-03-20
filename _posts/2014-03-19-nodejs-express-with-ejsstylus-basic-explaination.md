@@ -67,11 +67,11 @@ app.post('/users', handlerFunc2);
 
 function handlerFunc1(req, res){
   res.render('index', { title: 'Express', check: true });
-};
+}
 
 function handlerFunc2(req, res){
   res.send("respond with a resource");
-};
+}
 {% endhighlight %}
 
 Usually, the handler function for each request has 2 input arguments (the third
