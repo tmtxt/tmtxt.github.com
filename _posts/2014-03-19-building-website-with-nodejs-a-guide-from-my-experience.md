@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Building website with Nodejs - A post from my understanding about Nodejs"
+title: "Building website with Nodejs - A post from my experience"
 description: ""
 categories: [javascript]
 tags: []
