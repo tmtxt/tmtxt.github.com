@@ -8,7 +8,7 @@ tags: []
 {% include JB/setup %}
 
 > **Full series**:
-> [Building website with Nodejs - A guide from my experience]({%post_url 2014-03-19-building-website-with-nodejs-a-guide-from-my-experience%})
+> [Building website with Nodejs - A post from my understanding about Nodejs]({%post_url 2014-03-19-building-website-with-nodejs-a-guide-from-my-experience%})
 
 # Install Nodejs, npm using nvm
 
