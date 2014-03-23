@@ -166,7 +166,8 @@ gulp.task('main', function(){
 
 Next, run the Gulp command to browserify. However, for the npm/nodejs modules, I
 haven't found any way to generate it using gulp-browserify. You need to manually
-type the command to generate them only once for the first time
+type the command to generate them. Luckily, you only have to do it once for the
+first time.
 
 {% highlight console %}
 $ browserify -r d3-browserify > build/d3.js
@@ -200,7 +201,7 @@ directory.
 
 # Note for using with front-end libraries
 
-Some front-end libraries such as jQuery, jQuery plugins (jQuery UI) and other
+For some front-end libraries such as jQuery, jQuery plugins (jQuery UI) and other
 libraries that uses jQuery (like Twitter Bootstrap), my advice is that you
 should not use it with browserify. For example, jQuery registers itself as the
 `$` symbol or `jQuery` with the global `window` object and the other libraries
