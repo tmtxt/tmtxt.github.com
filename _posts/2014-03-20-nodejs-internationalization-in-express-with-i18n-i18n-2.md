@@ -21,7 +21,7 @@ $ npm install --save i18n-2
 {% endhighlight %}
 
 After that, add these config line into your `app.js` file. Remember to add it
-after you loaded the `cookieParser`.
+after you have loaded the `cookieParser`.
 
 {% highlight js %}
 app.use(express.cookieParser('your secret here')); // put the config after this line
