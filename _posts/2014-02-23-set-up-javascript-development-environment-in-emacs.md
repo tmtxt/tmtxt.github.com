@@ -133,3 +133,19 @@ you can using it.
     (shell-command-on-region b e
      "python -mjson.tool" (current-buffer) t)))
 {% endhighlight %}
+
+# Refactoring with js2-refactor
+
+[js2-refactor](https://github.com/magnars/js2-refactor.el) is a collection of
+small refactoring functions to further the idea of a JavaScript IDE in Emacs
+that started with js2-mode. Some noteworthy features of this library are
+expand/contract functions, objects or arrays, lexical scope variable
+renaming,... You can easily install it using package.el
+
+{% highlight cl %}
+M-x package-install js2-refactor
+{% endhighlight %}
+
+AL the available functions of js2-refactor is available on github. Spend about 5
+minutes to familiarize yourself with it
+[https://github.com/magnars/js2-refactor.el](https://github.com/magnars/js2-refactor.el).
