@@ -7,18 +7,18 @@ tags: []
 ---
 {% include JB/setup %}
 
-One of the most important feature introduced in Javascript ES6 is
+One of the most important feature introduced in Javascript ES6 is the
 [Generator function](http://jlongster.com/2012/10/05/javascript-yield.html),
-which provides the ability to suspends the execution of a function. However, not
+which provides the ability to suspend the execution of a function. However, not
 all browsers and platforms support generator right now. Earlier versions of
 Firefox either had ES6 generators turned off, or supported only old style
 generators. On Chrome 28, you have to turn on an experimental flag named
 **Enable Experimental JavaScript**. Node.js haven't got generator support until
 version 0.11.2 and you have to run it with `--harmony` flag.
 
-You have another option that is to compile the javascript file using ES6 to ES5
-compiler [Regenerator](http://facebook.github.io/regenerator/) (Google also has
-their own compiler called
+You have another option that is to compile the javascript files using
+[Regenerator](http://facebook.github.io/regenerator/), an ES6 to ES5 Javascript
+compiler (Google also has their own compiler called
 [Traceur](https://github.com/google/traceur-compiler)). Regenerator is available
 on npm
 
