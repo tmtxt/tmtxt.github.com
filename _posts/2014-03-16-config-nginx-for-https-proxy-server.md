@@ -70,7 +70,7 @@ server {
 
 The setting above indicate that it will listen on port 8080 or host name
 mydomain.com. The port is for clients to connect through ip address, and the
-server_name is for clients to through DNS domain name or using `hosts` file. For
+server_name is for connecting to through DNS domain name or using `hosts` file. For
 every request to nginx server, it will redirect the connection to
 http://localhost:3000, which is another server running in the same machine with
 nginx. To test the connection, you need to start both nginx and the web server
