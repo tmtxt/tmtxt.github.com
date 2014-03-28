@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Macports from home directory"
+title: "Macports from home directory without root privilege"
 description: ""
 category: mac os
 thumbnail: 
