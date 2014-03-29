@@ -62,7 +62,8 @@ for developing the website.
 - [NodeJS - Working with PostgreSQL/MySQL/MariaDB/SQLite database using Sequelize]({%post_url 2014-02-25-nodejs-working-with-postgresql-mysql-mariadb-sqlite-database-with-sequelize%})
 - [Browserify - Bring Nodejs modules to browser]({%post_url 2014-03-20-browserify-bring-nodejs-modules-to-browser%})
 - [Nodejs - Internationalization in Express with i18n and i18n-2]({%post_url 2014-03-20-nodejs-internationalization-in-express-with-i18n-i18n-2%})
-- [Using ES6 Javascript Generator in ES5 supported platforms with Regenerator](2014-03-26-using-javascript-es6-in-es5-supported-platforms-with-regenerator)
+- [Using ES6 Javascript Generator in ES5 supported platforms with Regenerator]({%post_url 2014-03-26-using-javascript-es6-in-es5-supported-platforms-with-regenerator%})
+- [Authentication in NodeJS and ExpressJS with PassportJS]({%post_url 2014-03-29-authentication-in-nodejs-and-expressjs-with-passportjs-part-1%})
 - **Updating...**
 - For some technologies that I listed here (nginx, postgreSQL,...), you can find
   the posts about them [Archive](/archive.html) page. I don't listed them here
