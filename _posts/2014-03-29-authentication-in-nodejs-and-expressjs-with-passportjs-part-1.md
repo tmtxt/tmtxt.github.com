@@ -245,7 +245,13 @@ function requireAuth(req, res, next){
 If the request can reach `adminHandler`, that means the user is already
 authenticated. Otherwise, the user would be redirected to `/login`.
 
-# 3. More...
+# 3. Secure password transmission
+
+For the password to be securely transmitted, you can use [nginx](http://nginx.org/)
+for https proxy server. I have describe the steps in another post
+[Config nginx for https proxy server]({%post_url 2014-03-16-config-nginx-for-https-proxy-server%}).
+
+# 4. More...
 
 Want more? Wait for my next post.
 
