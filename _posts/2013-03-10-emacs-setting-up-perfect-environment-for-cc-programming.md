@@ -87,5 +87,8 @@ package.el and then add this to your init file
 (setq mf--source-file-extension "cpp")
 {% endhighlight %}
 
+The instruction on how to use Emacs package manager to install packages is
+presented here [Emacs Packages Manager using package.el]({%post_url 2013-01-07-emacs-package-manager%}).
+
 **Continue to Part 2 here**:
 [Emacs - Setting up Perfect C/C++ programming environment - Part 2](/2013/04/12/emacs-setting-up-perfect-cc-programming-environment/)
