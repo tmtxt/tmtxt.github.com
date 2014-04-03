@@ -216,7 +216,7 @@ app.get('/logout', logout);
 function logout(req, res){
   if(req.isAuthenticated()){
     req.logout();
-    req.session.messages = req.i18n.__("authen.log_out_success");
+    req.session.messages = req.i18n.__("Log out successfully");
   }
     res.redirect('/');
 }
