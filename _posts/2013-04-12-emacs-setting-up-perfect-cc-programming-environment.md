@@ -51,4 +51,23 @@ You may also want to config key bindings for
 **flymake-display-err-menu-for-current-line**, **flymake-goto-next-error**,
 **flymake-goto-previous-error** for quick navigation between errors.
 
-# To be continue...
+# Jump to Definition / Jump to Implementation
+
+Thank [To Hoang Do](https://www.facebook.com/tu.h.do.16) for providing me the
+solution (in the comments).
+
+For jumping between definitions and implementations, you can use gtags, ctags or
+cscope, [ggtags](https://github.com/leoliu/ggtags). Emacs has packages for
+theses source navigation tool.
+
+If you want to use for other languages, setup gtags with ctags backend follow
+these instructions:
+[https://github.com/leoliu/ggtags/wiki/Install-Global-with-support-for-exuberant-ctags](https://github.com/leoliu/ggtags/wiki/Install-Global-with-support-for-exuberant-ctags).
+
+Or use ctags itself with default `find-tags` in Emacs. However, I recommend you
+to use GNU Global with ggtags for C/C++/Assembly. Use ctags for everything else.
+
+Whatever packages you are using, make sure you use Helm. Here is an example of
+Helm, using CEDET and function-args packages
+
+![CEDET Helm](/files/2013-04-12-emacs-setting-up-perfect-cc-programming-environment/get.gif)
