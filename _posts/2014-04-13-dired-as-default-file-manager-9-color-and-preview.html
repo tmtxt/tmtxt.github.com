@@ -1,0 +1,90 @@
+---
+layout: post
+title: "Dired as Default file manager - Color and Preview"
+description: ""
+categories: [emacs]
+tags: []
+---
+{% include JB/setup %}
+
+<blockquote>
+  This post is the eighth part of the series
+  <a href="/2013/04/24/dired-as-default-file-manager-1-introduction/">Dired as
+    Default File Manager</a>
+</blockquote>
+
+<h1 id="color-files-by-extension">Color Files by extensions</h1>
+
+<p>
+  <strong>Dired rainbow</strong> is an extension for Dired that helps you to
+  colorize file names in Dired depends on the file types. You can install the
+  package using
+  <a href="{%post_url 2013-01-07-emacs-package-manager%}">
+    package.el
+  </a>.
+  The steps is really easy, just define the file extensions group and the color
+  you want that group. For example
+</p>
+
+{% highlight cl%}
+(require 'dired-rainbow)
+
+(defconst dired-audio-files-extensions
+  '("mp3" "MP3" "ogg" "OGG" "flac" "FLAC" "wav" "WAV")
+  "Dired Audio files extensions")
+(dired-rainbow-define audio "#329EE8" dired-audio-files-extensions)
+
+(defconst dired-video-files-extensions
+    '("vob" "VOB" "mkv" "MKV" "mpe" "mpg" "MPG" "mp4" "MP4" "ts" "TS" "m2ts"
+      "M2TS" "avi" "AVI" "mov" "MOV" "wmv" "asf" "m2v" "m4v" "mpeg" "MPEG" "tp")
+    "Dired Video files extensions")
+(dired-rainbow-define video "#B3CCFF" dired-video-files-extensions)
+{% endhighlight %}
+
+<p>
+  <img src="/files/2014-04-13-dired-as-default-file-manager-9-color-and-preview/color.png" alt=""></img>
+</p>
+
+<h1 id="image-preview-with-helm">
+  Image Preview with Helm
+</h1>
+
+<p>
+  <a href="https://github.com/emacs-helm/helm">Helm</a>
+  <strong>follow-mode</strong> makes it possible for browsing images in one
+  window with the preview in another window. Again, you can use
+  <a href="{%post_url 2013-01-07-emacs-package-manager%}">
+    package.el
+  </a> to install helm without any difficulty. Helm
+  <strong>follow-mode</strong> uses image-dired in the background, so if
+  image-dired doesn't work for some reason, this will not work too. Be sure to
+  have <strong>Imagemagick</strong> package installed.
+</p>
+
+<p>
+  However, what helm follow-mode do with the image preview is to open the image
+  inside Emacs so it is a bit slow. On modern computer with high speed CPU and
+  SSD, this should not be a big problem
+</p>
+
+<p>
+  Make sure you have helm installed and activated, add this to your .emacs to
+  turn on
+  <strong>image-dired-display-image-mode</strong>
+  by default.
+</p>
+
+{% highlight cl%}
+(image-dired-display-image-mode)
+{% endhighlight %}
+
+<p>
+  Now navigate your dired buffer to your image folder and call
+  <strong>helm-find-files</strong>.
+  After that, type
+  <strong>C-c C-f</strong> to turn on helm
+  <strong>follow-mode</strong>. The images will now be previewed in other window.
+</p>
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/xHhVRmz101Q"
+        frameborder="0" allowfullscreen></iframe>

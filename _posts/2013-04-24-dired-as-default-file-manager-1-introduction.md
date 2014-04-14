@@ -63,6 +63,10 @@ lovers.
 [Dired as Default File Manager - Customize Faces](/2013/04/25/dired-as-default-file-manager-6-customize-faces/)  
 * **Part 6**:
 [Dired as Default File Manager - Dired Async](/2013/04/25/dired-as-default-file-manager-7-dired-async/)  
+* **Part 7**:
+[Dired as Default File Manager - Enhance Wdired]({%post_url 2014-03-02-dired-as-default-file-manager-8-enhance-wdired%})
+* **Part 8**:
+[Dired as Default File Manager - Color and Preview]({%post_url 2014-04-13-dired-as-default-file-manager-9-color-and-preview%})
 
 **More**: You can follow me on Twitter, Facebook or Google+ and you will be
 notified when there's new part.  
