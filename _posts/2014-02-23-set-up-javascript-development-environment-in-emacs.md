@@ -151,6 +151,6 @@ renaming,... You can easily install it using package.el
 M-x package-install js2-refactor
 {% endhighlight %}
 
-AL the available functions of js2-refactor is available on github. Spend about 5
+All the available functions of js2-refactor is available on github. Spend about 5
 minutes to familiarize yourself with it
 [https://github.com/magnars/js2-refactor.el](https://github.com/magnars/js2-refactor.el).
