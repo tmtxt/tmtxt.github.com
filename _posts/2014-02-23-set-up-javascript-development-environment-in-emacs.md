@@ -119,20 +119,25 @@ set up Mozrepl in Conkeror and integrate with Emacs here
 For Firefox/Thunderbird, you only need to install that extension and follow the
 instruction in the **Emacs integration** section in that post.
 
-# Beautify json
+# Beautify code
 
-This little piece of code provide an interactive function for re-formatting the
-ugly json string. It depends on **python** so you need to install python before
-you can using it.
+[web-beautify](https://github.com/yasuyk/web-beautify) is an Emacs interface for
+[js-beautify](http://jsbeautifier.org/), an utility for formatting and indenting
+Javascript, CSS and HTML file. To use it, you need **js-beautify** installed in
+the background
 
-{% highlight cl %}
-(defun beautify-json ()
-  (interactive)
-  (let ((b (if mark-active (min (point) (mark)) (point-min)))
-        (e (if mark-active (max (point) (mark)) (point-max))))
-    (shell-command-on-region b e
-     "python -mjson.tool" (current-buffer) t)))
+{% highlight console %}
+$ npm install -g js-beatufiy
 {% endhighlight %}
+
+After that, you can use Emacs
+[package.el]({%post_url 2013-01-07-emacs-package-manager%}) to install
+**web-beautify**. Now, everything is config automatically already for you. Just
+open any js, json, css or html file and activate one of these commands
+`web-beautify-js`, `web-beautify-css` or `web-beautify-html`. For more complex
+beautify settings, visit the
+[web-beautify](https://github.com/yasuyk/web-beautify) homepage  for more
+information.
 
 # Refactoring with js2-refactor
 
