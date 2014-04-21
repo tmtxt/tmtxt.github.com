@@ -72,6 +72,10 @@ Take a look at this link to know how to install, config autocomplete and
 yasnippet in Emacs
 [Config Yasnippet and Autocomplete on Emacs]({%post_url 2013-01-06-config-yasnippet-and-autocomplete-on-emacs%})
 
+For more complex suggestion like completion from other files, completion using
+Nodejs modules, requirejs modules,... see the
+[Javascript Refactoring](#javascript-refactoring) section below.
+
 # Using paredit with javascript
 
 **Paredit** is a minor mode for keeping parenthese balanced. It is extremely
@@ -139,18 +143,8 @@ beautify settings, visit the
 [web-beautify](https://github.com/yasuyk/web-beautify) homepage  for more
 information.
 
-# Refactoring with js2-refactor
+# Javascript Refactoring
 
-[js2-refactor](https://github.com/magnars/js2-refactor.el) is a collection of
-small refactoring functions to further the idea of a JavaScript IDE in Emacs
-that started with js2-mode. Some noteworthy features of this library are
-expand/contract functions, objects or arrays, lexical scope variable
-renaming,... You can easily install it using package.el
-
-{% highlight cl %}
-M-x package-install js2-refactor
-{% endhighlight %}
-
-All the available functions of js2-refactor is available on github. Spend about 5
-minutes to familiarize yourself with it
-[https://github.com/magnars/js2-refactor.el](https://github.com/magnars/js2-refactor.el).
+The Refactoring part is now moved to a separate posts with more tools
+introduced. You can access that post at
+[Emacs - Javascript Completion and Refactoring]({%post_url 2014-04-20-emacs-javascript-completion-and-refactoring%})
