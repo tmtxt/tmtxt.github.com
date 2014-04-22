@@ -37,7 +37,7 @@ better solution.
 > from dynamic components such as templates, partials, liquid code, markdown,
 > etc. Jekyll is known as “a simple, blog aware, static site generator”.
   
-So what Jekyll do is just to parse your content, mainly written in markdown
+So what Jekyll does is just to parse your content, mainly written in markdown
 text, to a static website. It's also the engine used behind the Github pages.
 
 # Advantages of Jekyll
@@ -63,7 +63,7 @@ VPS,...
 
 ## Markdown
 
-Back to the problem I have discussed above, I hate WYSIWYG editors cause they
+Back to the problem I have discussed above, I hate WYSIWYG editors because they
 generate too much unused markup code and even sometimes can break my content
 display. To fix it, I have to manually edit the markup code, which is extremely
 painful when I have a long post. It makes me feel difficult to concentrate on my
@@ -102,7 +102,7 @@ up and restoring the site code, theme, posts, database,... if you have done
 anything wrong. Since they are all text files so you can use **git** to manage all
 the code, themes as well as posts and pages. It also help you publish websites
 from terminal by typing the **push** command. If you use Github as the website
-host, it's even more convinence because Github itself uses git.  
+hosting, it's even more convinence because Github itself uses git.
 
 If you use a powerful text editor, such as emacs, you can find many packages that
 help you in managing code version with git in a very convenience and elegant way
