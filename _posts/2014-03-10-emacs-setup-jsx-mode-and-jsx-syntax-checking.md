@@ -76,6 +76,15 @@ automatically).
 
 ![Alt Text](/files/2014-03-10-emacs-setup-jsx-mode-and-jsx-syntax-checking/flycheck.png)
 
+**Note**: from my experience, setting the default indent level in jsx mode to 2
+instead of the default 4 will satisfy indentation error of jsxhint checker.
+
+{% highlight cl %}
+(setq jsx-indent-level 2)
+{% endhighlight %}
+
+![Alt Text](/files/2014-03-10-emacs-setup-jsx-mode-and-jsx-syntax-checking/indent.png)
+
 # JSX Auto complete and Snippet
 
 To enable auto-complete by default for jsx-mode, add it to `jsx-mode-hook`.
