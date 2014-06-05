@@ -76,6 +76,10 @@ For more complex suggestion like completion from other files, completion using
 Nodejs modules, requirejs modules,... see the
 [Javascript Refactoring](#javascript-refactoring) section below.
 
+If you are working with Facebook React, you can install
+[react-snippets](https://github.com/johnmastro/react-snippets.el)
+from MELPA. It is a collection of common snippets for React.
+
 # Using paredit with javascript
 
 **Paredit** is a minor mode for keeping parenthese balanced. It is extremely
