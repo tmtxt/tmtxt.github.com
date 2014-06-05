@@ -72,3 +72,9 @@ automatically).
 
 ![Alt Text](/files/2014-03-10-emacs-setup-jsx-mode-and-jsx-syntax-checking/flycheck.png)
 
+To enable auto-complete by default for jsx-mode, add it to `jsx-mode-hook`.
+
+{% highlight cl %}
+(add-hook 'jsx-mode-hook
+          (lambda () (auto-complete-mode 1)))
+{% endhighlight %}
