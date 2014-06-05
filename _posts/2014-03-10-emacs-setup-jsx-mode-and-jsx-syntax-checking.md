@@ -7,6 +7,8 @@ tags: [emacs, jsx, jsxhint]
 ---
 {% include JB/setup %}
 
+# JSX Mode
+
 If you are working with Javascript, especially ReactJS, you definitely known
 about JSX, the XML syntax inside of Javascript. This post will demonstrate how
 to setup Emacs for working with JSX files. First, you need to install `jsx-mode`
@@ -28,6 +30,8 @@ In `jsx-mode`, the following keys are bound by default.
 * C-c C-r     jsx-run-buffer (Run the current buffer)
 
 <!-- more -->
+
+# JSX Syntax Checking
 
 Next, we need a tool for syntax checking. For Javascript, we have `jslint` (or
 `jshint`), which I have previously written another post about how to set it up
@@ -72,9 +76,24 @@ automatically).
 
 ![Alt Text](/files/2014-03-10-emacs-setup-jsx-mode-and-jsx-syntax-checking/flycheck.png)
 
+# JSX Auto complete and Snippet
+
 To enable auto-complete by default for jsx-mode, add it to `jsx-mode-hook`.
 
 {% highlight cl %}
 (add-hook 'jsx-mode-hook
           (lambda () (auto-complete-mode 1)))
 {% endhighlight %}
+
+For using yasnippet with jsx-mode, create your custom snippets directory if you
+have not created it yet and set
+it to the variable **yas/root-directory**
+(`(setq yas/root-directory "/path/to/custom/snippet/directory")`).
+
+Next, create a folder for jsx-mode inside that folder you've just created. From
+there you can define your own snippets for using with JSX mode.
+
+You can also
+re-use snippets from js-mode mode by specifying the parent mode for jsx-mode.
+Create a new file named `.yas-parents` with the content `js-mode` and restart
+your Emacs for the changes to take effect.
