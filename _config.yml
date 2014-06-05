@@ -3,7 +3,7 @@
 permalink: /:year/:month/:day/:title 
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-pygments: true
+highlighter: pygments
 paginate: 10 # the number of post per page
 safe: true
 markdown: kramdown
