@@ -82,7 +82,7 @@ application framework, providing a robust set of features for building single
 and multi-page, and hybrid web applications. You can install Express with npm
 
 {% highlight console %}
-$ npm install -g express
+$ npm install -g express-generator
 {% endhighlight %}
 
 Next, use the newly installed express to generate basic site structure. Replace
