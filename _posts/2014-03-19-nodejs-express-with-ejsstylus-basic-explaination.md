@@ -130,6 +130,13 @@ example
 This style is pretty much the same with other server side languages like php,
 asp,..
 
+If you use `<%= %>` for HTML output, the markup tag will be escaped. To output
+raw HTML, use `<%- %>`
+
+{% highlight css+php %}
+<%- myRawHTML %>
+{% endhighlight %}
+
 # Public resources
 
 The resources (images, css, client-side javascript) is located inside `public`
