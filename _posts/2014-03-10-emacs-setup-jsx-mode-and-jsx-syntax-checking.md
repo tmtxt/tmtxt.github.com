@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Emacs - Setup JSX mode and JSX Syntax checking"
+title: "Emacs - Setup JSX mode, JSX Syntax checking and Suggestion"
 description: ""
 categories: [emacs, javascript]
 tags: [emacs, jsx, jsxhint]
@@ -85,7 +85,7 @@ instead of the default 4 will satisfy indentation error of jsxhint checker.
 
 ![Alt Text](/files/2014-03-10-emacs-setup-jsx-mode-and-jsx-syntax-checking/indent.png)
 
-# JSX Auto complete and Snippet
+# JSX Auto complete, Snippets and Suggestion
 
 To enable auto-complete by default for jsx-mode, add it to `jsx-mode-hook`.
 
@@ -106,3 +106,8 @@ You can also
 re-use snippets from js-mode mode by specifying the parent mode for jsx-mode.
 Create a new file named `.yas-parents` with the content `js-mode` and restart
 your Emacs for the changes to take effect.
+
+Finally, the greatest thing when using Emacs for JS development is the
+Suggestion feature with [TernJS](http://ternjs.net/). The steps on how to set up
+TernJS for both JS and JSX mode is presented in this post
+[Emacs - Javascript Completion and Refactoring]({%post_url 2014-04-20-emacs-javascript-completion-and-refactoring%}).
