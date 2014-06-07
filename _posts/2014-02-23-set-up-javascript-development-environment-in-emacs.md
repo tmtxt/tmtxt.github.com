@@ -109,11 +109,11 @@ You can read more information at **js-hint** [homepage](http://www.jshint.com/).
 I have another post about setting up and integrating it into Emacs here
 [Emacs - Setup JSHint for on-the-fly (potential) errors checking]({%post_url 2014-02-21-emacs-setup-jshint-for-on-the-fly-petential-error-checking%}).
 
-# JSXHint - Syntax checking for JSX files
+# Emacs for JSX coding
 
-This tool is very similar to the above one except it checks for JSX mode. The
-instruction is posted in this post
-[Emacs - Setup JSX mode and JSX Syntax checking]({%post_url 2014-02-23-set-up-javascript-development-environment-in-emacs%})
+JSX is also a perfect development environment for JSX code. The instruction are
+presented all in this post
+[Emacs - Setup JSX mode, JSX Syntax checking and Suggestion]({%post_url 2014-02-23-set-up-javascript-development-environment-in-emacs%})
 
 # Mozrepl - Program Mozilla-based applications from the inside
 
