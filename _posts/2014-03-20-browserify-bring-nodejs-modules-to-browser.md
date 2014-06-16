@@ -195,6 +195,9 @@ When you run this task as `gulp browserify-modules`, it is equal to this command
 $ browserify -x react -r main.js > ./dist/main.js
 {% endhighlight %}
 
+Here is my sample
+[gulpfile.js](/files/2014-03-20-browserify-bring-nodejs-modules-to-browser/paste.html)
+
 ## 2.3 Auto browserify when there are changes
 
 You can also make a gulp task for watching changes in those files and then

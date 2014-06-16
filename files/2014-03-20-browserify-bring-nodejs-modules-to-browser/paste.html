@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.47 in css mode. -->
+<html>
+  <head>
+    <title>gulpfile.js</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #708183;
+        background-color: #042028;
+      }
+      .comment {
+        /* font-lock-comment-face */
+        color: #465a61;
+        font-style: italic;
+      }
+      .comment-delimiter {
+        /* font-lock-comment-delimiter-face */
+        color: #465a61;
+        font-style: italic;
+      }
+      .constant {
+        /* font-lock-constant-face */
+        color: #259185;
+      }
+      .js2-external-variable {
+        /* js2-external-variable */
+        color: #ffa500;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #728a05;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #259185;
+      }
+      .variable-name {
+        /* font-lock-variable-name-face */
+        color: #2075c7;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+<span class="keyword"> var</span> <span class="variable-name">gulp</span> = <span class="js2-external-variable">require</span>(<span class="string">'gulp'</span>);
+<span class="keyword"> var</span> <span class="variable-name">react</span> = <span class="js2-external-variable">require</span>(<span class="string">'gulp-react'</span>);
+<span class="keyword"> var</span> <span class="variable-name">plumber</span> = <span class="js2-external-variable">require</span>(<span class="string">'gulp-plumber'</span>);
+<span class="keyword"> var</span> <span class="variable-name">browserify</span> = <span class="js2-external-variable">require</span>(<span class="string">'browserify'</span>);
+<span class="keyword"> var</span> <span class="variable-name">source</span> = <span class="js2-external-variable">require</span>(<span class="string">"vinyl-source-stream"</span>);
+<span class="keyword"> var</span> <span class="variable-name">clean</span> = <span class="js2-external-variable">require</span>(<span class="string">'gulp-clean'</span>);
+ 
+<span class="comment-delimiter"> // </span><span class="comment">Transform jsx files to js files for Tern to show suggestion
+</span> gulp.task(<span class="string">'jsx'</span>, <span class="keyword">function</span>(){
+   gulp.src([<span class="string">'main.jsx'</span>, <span class="string">'test1.jsx'</span>, <span class="string">'test2.jsx'</span>])
+     .pipe(plumber())
+     .pipe(react())
+     .pipe(gulp.dest(<span class="string">'.'</span>));
+ });
+ 
+<span class="comment-delimiter"> // </span><span class="comment">Browserify npm packages
+</span> gulp.task(<span class="string">'browserify-lib'</span>, <span class="keyword">function</span>(){
+   <span class="keyword">var</span> <span class="variable-name">b</span> = browserify();
+   b.require(<span class="string">'react'</span>);
+   b.bundle()
+     .pipe(source(<span class="string">'react.js'</span>))
+     .pipe(gulp.dest(<span class="string">'./public/javascripts'</span>));
+ 
+   b = browserify();
+   b.require(<span class="string">'director'</span>);
+   b.bundle()
+     .pipe(source(<span class="string">'director.js'</span>))
+     .pipe(gulp.dest(<span class="string">'./public/javascripts'</span>));
+ });
+ 
+<span class="comment-delimiter"> // </span><span class="comment">Browserify modules
+</span> gulp.task(<span class="string">'browserify-modules'</span>, [<span class="string">'jsx'</span>], <span class="keyword">function</span>(){
+   <span class="keyword">var</span> <span class="variable-name">b</span> = browserify();
+   b.add(<span class="string">'./main.js'</span>);
+   b.external(<span class="js2-external-variable">require</span>.resolve(<span class="string">'react'</span>, {expose: <span class="string">'react'</span>}));
+   b.require(<span class="string">'./main.js'</span>);
+   b.bundle()
+     .pipe(source(<span class="string">'main.js'</span>))
+     .pipe(gulp.dest(<span class="string">'./public/javascripts/'</span>));
+ 
+   b = browserify();
+   b.add(<span class="string">'./test1.js'</span>);
+   b.external(<span class="js2-external-variable">require</span>.resolve(<span class="string">'react'</span>, {expose: <span class="string">'react'</span>}));
+   b.require(<span class="string">'./test1.js'</span>);
+   b.bundle()
+     .pipe(source(<span class="string">'test1.js'</span>))
+     .pipe(gulp.dest(<span class="string">'./public/javascripts/'</span>));
+ 
+   b = browserify();
+   b.add(<span class="string">'./test2.js'</span>);
+   b.external(<span class="js2-external-variable">require</span>.resolve(<span class="string">'react'</span>, {expose: <span class="string">'react'</span>}));
+   b.require(<span class="string">'./test2.js'</span>);
+   b.bundle()
+     .pipe(source(<span class="string">'test2.js'</span>))
+     .pipe(gulp.dest(<span class="string">'./public/javascripts/'</span>));
+ });
+ 
+<span class="comment-delimiter"> // </span><span class="comment">Clean
+</span> gulp.task(<span class="string">'clean'</span>, <span class="keyword">function</span>(){
+   <span class="keyword">return</span> gulp.src([<span class="string">'main.js'</span>, <span class="string">'test1.js'</span>, <span class="string">'test2.js'</span>], {read: <span class="constant">false</span>})
+   .pipe(clean());
+ });
+ 
+<span class="comment-delimiter"> // </span><span class="comment">Watching
+</span> gulp.task(<span class="string">'watch'</span>, <span class="keyword">function</span>(){
+   gulp.watch([<span class="string">'main.jsx'</span>, <span class="string">'test1.jsx'</span>, <span class="string">'test2.jsx'</span>], [<span class="string">'jsx'</span>]);
+   gulp.watch([<span class="string">'main.js'</span>, <span class="string">'test1.js'</span>, <span class="string">'test2.js'</span>], [<span class="string">'browserify-modules'</span>]);
+});
+</pre>
+  </body>
+</html>
