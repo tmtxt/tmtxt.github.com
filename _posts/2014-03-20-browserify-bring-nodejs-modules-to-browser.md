@@ -7,7 +7,7 @@ tags: []
 ---
 {% include JB/setup %}
 
-# Browserify in the command line
+# 1. Browserify in the command line
 
 [Browserify](http://browserify.org/) helps you to modularize your client side
 Javascript code using Nodejs `require` style. It also supports transforming
@@ -118,88 +118,109 @@ $ browserify -x ./foo.js > bar-out.js
 That's all the basic commands you need to know to work with browserify. The next
 part will talk about automate browserify using Gulp.
 
-# Using Browserify with Gulp
+# 2. Using Browserify with Gulp
 
 If you haven't used Gulp before, you should take a look at this post for some
 basic tasks
 [Automate Javascript development with Gulp]({%post_url 2014-03-14-automate-javascript-development-with-gulp%}).
-First, you need to install **gulp-browserify** plugin
 
-{% highlight console %}
-$ npm install --save-dev gulp-browserify
-{% endhighlight %}
+> **Update Jun 16 2014**: gulp-browserify lacks some of browserify features so I
+> have updated the post to use browserify stream directly
 
-The usage is straight forward, add a pipe which call to gulp-browserify
+Browserify can be used with Gulp since the object returned by Browserify is a
+stream compatible with Gulp. However, you need
+[vinyl-source-stream](https://www.npmjs.org/package/vinyl-source-stream) to
+achieve this.
 
-{% highlight js %}
-gulp.task('scripts', function() {
-  gulp.src(['main.js'])
-    .pipe(browserify())
-    .pipe(gulp.dest('./build'))
-});
-{% endhighlight %}
+## 2.1 Browserify Node and npm packages
 
-The simplest form of gulp-browserify bundles everything into one file. To make it
-use the external modules, add it to the on prebundle event. Back to the example
-in the last section, to use it in gulp
+To browserify Node and npm packages, for example
+[react](https://www.npmjs.org/package/react) on npm, use the browserify
+APIs and pipe it to vinyl source and gulp dest like this
 
 {% highlight js %}
-gulp.task('foo', function(){
-  gulp.src('foo.js')
-    .pipe(browserify())
-    .on('prebundle', function(bundle){
-      bundle.require('./foo.js');
-    })
-    .pipe(gulp.dest('build'));
-});
+var browserify = require('browserify');
+var source = require("vinyl-source-stream");
 
-gulp.task('main', function(){
-  return gulp.src(main.js)
-    .pipe(browserify())
-    .on('prebundle', function(bundle){
-      bundle.external('./foo.js');
-      bundle.external('d3-browserify');
-    })
-    .pipe(gulp.dest('build'));
+// Browserify npm packages
+gulp.task('browserify-lib', function(){
+  // create a browserify bundle
+  var b = browserify();
+
+  // make react available from outside
+  b.require('react');
+
+  // start bundling
+  b.bundle()
+    .pipe(source('react.js'))   // the output file is react.js
+    .pipe(gulp.dest('./dist')); // and is put into dist folder
 });
 {% endhighlight %}
 
-Next, run the Gulp command to browserify. However, for the npm/nodejs modules, I
-haven't found any way to generate it using gulp-browserify. You need to manually
-type the command to generate them. Luckily, you only have to do it once for the
-first time.
+When you run this task as `gulp browserify-lib`, it is equal to this command
 
 {% highlight console %}
-$ browserify -r d3-browserify > build/d3.js
-$ gulp foo
-$ gulp main
+$ browserify -r react > ./dist/react.js
 {% endhighlight %}
+
+## 2.2 Browserify custom modules
+
+It's similar when you want to browserify the module that you wrote
+
+{% highlight js %}
+// Browserify modules
+gulp.task('browserify-modules', function(){
+  // create a browserify bundle
+  var b = browserify();
+
+  // add the module file
+  b.add('./main.js');
+
+  // reference to the react module that we have browserified from previous step
+  b.external(require.resolve('react', {expose: 'react'}));
+
+  // make it available from outside with require('./main.js');
+  b.require('./main.js');
+
+  // start bundling
+  b.bundle()
+    .pipe(source('main.js'))    // the output file is main.js
+    .pipe(gulp.dest('./dist')); // and is put into dist folder
+});
+{% endhighlight %}
+
+When you run this task as `gulp browserify-modules`, it is equal to this command
+
+{% highlight console %}
+$ browserify -x react -r main.js > ./dist/main.js
+{% endhighlight %}
+
+## 2.3 Auto browserify when there are changes
 
 You can also make a gulp task for watching changes in those files and then
-browserify when changes happen.
-
-**Note**: if you are placing the your files under a sub folder of your app's
-root directory(of course usually you do), you need to set the basedir in
-gulp-browserify, for instance
+browserify when changes happen. For example
 
 {% highlight js %}
-gulp.task('main', function(){
-  return gulp.src(main.js)
-    .pipe(browserify({
-      basedir: './'
-    }))
-    .on('prebundle', function(bundle){
-      bundle.external('./foo.js');
-      bundle.external('d3-browserify');
-    })
-    .pipe(gulp.dest('build'));
+gulp.task('watch', function(){
+  gulp.watch(['main.js'], ['browserify-modules']);
 });
 {% endhighlight %}
 
-Now you can run all those previous commands normally from our Nodejs app root
-directory.
+## 2.4 Browserify when files is in sub folder
 
-# Note for using with front-end libraries
+**Note**: if you are placing the your files under a sub folder of your app’s
+root directory(of course usually you do), you need to set the basedir for
+browserify, for instance
+
+{% highlight js %}
+var b = browserify({
+  basedir: './'
+});
+{% endhighlight %}
+
+Now you can run all those previous commands normally from our Nodejs app root directory.
+
+# 3. Note for using with front-end libraries
 
 For some front-end libraries such as jQuery, jQuery plugins (jQuery UI) and other
 libraries that uses jQuery (like Twitter Bootstrap), my advice is that you
