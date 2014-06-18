@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.47 in css mode. -->
+<html>
+  <head>
+    <title>gulpfile.js</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #708183;
+        background-color: #042028;
+      }
+      .comment {
+        /* font-lock-comment-face */
+        color: #465a61;
+        font-style: italic;
+      }
+      .comment-delimiter {
+        /* font-lock-comment-delimiter-face */
+        color: #465a61;
+        font-style: italic;
+      }
+      .js2-external-variable {
+        /* js2-external-variable */
+        color: #ffa500;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #728a05;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #259185;
+      }
+      .variable-name {
+        /* font-lock-variable-name-face */
+        color: #2075c7;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+<span class="keyword"> var</span> <span class="variable-name">gulp</span> = <span class="js2-external-variable">require</span>(<span class="string">'gulp'</span>);
+<span class="keyword"> var</span> <span class="variable-name">browserify</span> = <span class="js2-external-variable">require</span>(<span class="string">'browserify'</span>);
+<span class="keyword"> var</span> <span class="variable-name">literalify</span> = <span class="js2-external-variable">require</span>(<span class="string">'literalify'</span>);
+<span class="keyword"> var</span> <span class="variable-name">source</span> = <span class="js2-external-variable">require</span>(<span class="string">"vinyl-source-stream"</span>);
+<span class="keyword"> var</span> <span class="variable-name">underscore</span> = <span class="js2-external-variable">require</span>(<span class="string">'underscore'</span>);
+<span class="keyword"> var</span> <span class="variable-name">react</span> = <span class="js2-external-variable">require</span>(<span class="string">'gulp-react'</span>);
+<span class="keyword"> var</span> <span class="variable-name">plumber</span> = <span class="js2-external-variable">require</span>(<span class="string">'gulp-plumber'</span>);
+<span class="keyword"> var</span> <span class="variable-name">less</span> = <span class="js2-external-variable">require</span>(<span class="string">'gulp-less'</span>);
+ 
+<span class="comment-delimiter"> // </span><span class="comment">define the libraries that live in the global context here
+</span><span class="comment-delimiter"> // </span><span class="comment">key: the module name to use in require('moduleName')
+</span><span class="comment-delimiter"> // </span><span class="comment">value: the object that lives in global context
+</span><span class="keyword"> var</span> <span class="variable-name">libMap</span> = {
+   <span class="string">'jquery'</span>: <span class="string">'window.$'</span>,
+   <span class="string">'underscore'</span>: <span class="string">'window._'</span>,
+   <span class="string">'react'</span>: <span class="string">'window.React'</span>,
+   <span class="string">'backbone'</span>: <span class="string">'window.Backbone'</span>,
+   <span class="string">'director'</span>: <span class="string">'window.Router'</span>
+ };
+ 
+<span class="comment-delimiter"> // </span><span class="comment">config
+</span><span class="keyword"> var</span> <span class="variable-name">literalifyConf</span> = literalify.configure(libMap);
+<span class="keyword"> var</span> <span class="variable-name">browserifyConf</span> = {
+   basedir: <span class="string">'.'</span>
+ };
+ 
+<span class="comment-delimiter"> // </span><span class="comment">add the list of module name you want to browserify and expose here
+</span><span class="comment-delimiter"> // </span><span class="comment">the module files stay under client/
+</span><span class="comment-delimiter"> // </span><span class="comment">for example, you want to browserify and expose module1.js, module2.js,
+</span><span class="comment-delimiter"> // </span><span class="comment">module3.js under client/, set
+</span><span class="comment-delimiter"> // </span><span class="comment">modulesList = ['module1', 'module2', 'module3']
+</span><span class="keyword"> var</span> <span class="variable-name">reactFiles</span> = [<span class="string">'view1'</span>, <span class="string">'todo'</span>, <span class="string">'view2'</span>, <span class="string">'view3'</span>, <span class="string">'index'</span>];
+<span class="keyword"> var</span> <span class="variable-name">backboneFiles</span> = [<span class="string">'todo'</span>, <span class="string">'todos'</span>];
+<span class="keyword"> var</span> <span class="variable-name">libFiles</span> = [<span class="string">'backbone'</span>, <span class="string">'director'</span>, <span class="string">'jquery'</span>, <span class="string">'react'</span>, <span class="string">'underscore'</span>];
+ 
+<span class="comment-delimiter"> // </span><span class="comment">real files
+</span><span class="keyword"> var</span> <span class="variable-name">reactJsFiles</span> = underscore.map(reactFiles, <span class="keyword">function</span>(<span class="variable-name">file</span>){<span class="keyword">return</span> <span class="string">'./client/views/'</span> + file + <span class="string">'.js'</span>;});
+<span class="keyword"> var</span> <span class="variable-name">reactJsxFiles</span> = underscore.map(reactFiles, <span class="keyword">function</span>(<span class="variable-name">file</span>){<span class="keyword">return</span> <span class="string">'./client/views/'</span> + file + <span class="string">'.jsx'</span>;});
+<span class="keyword"> var</span> <span class="variable-name">backboneJsFiles</span> = underscore.map(backboneFiles, <span class="keyword">function</span>(<span class="variable-name">file</span>){<span class="keyword">return</span> <span class="string">'./client/models/'</span> + file + <span class="string">'.js'</span>;});
+<span class="keyword"> var</span> <span class="variable-name">libJsFiles</span> = underscore.map(libFiles, <span class="keyword">function</span>(<span class="variable-name">file</span>){<span class="keyword">return</span> <span class="string">'./client/libs/'</span> + file + <span class="string">'.js'</span>;});
+ 
+<span class="comment-delimiter"> // </span><span class="comment">destination for js files
+</span><span class="keyword"> var</span> <span class="variable-name">jsDestPath</span> = <span class="string">'./public/javascript/'</span>;
+ 
+<span class="comment-delimiter"> // </span><span class="comment">Browserify and expose all modules in client/ to jsDestPath, used for development
+</span> gulp.task(<span class="string">'browserify-expose'</span>, <span class="keyword">function</span>(){
+   <span class="comment-delimiter">// </span><span class="comment">create browserify instance
+</span>   <span class="keyword">var</span> <span class="variable-name">b</span> = browserify(browserifyConf);
+   b.transform(literalifyConf);
+ 
+   <span class="comment-delimiter">// </span><span class="comment">add and expose react views
+</span>   underscore.each(reactFiles, <span class="keyword">function</span>(<span class="variable-name">file</span>){
+     <span class="keyword">var</span> <span class="variable-name">moduleName</span> = file + <span class="string">".js"</span>;
+     <span class="keyword">var</span> <span class="variable-name">modulePath</span> = <span class="string">'./client/views/'</span> + moduleName;
+     b.require(modulePath, {expose: <span class="string">'views/'</span> + file});
+     b.add(modulePath);
+   });
+ 
+   <span class="comment-delimiter">// </span><span class="comment">add and expose backbone models
+</span>   underscore.each(backboneFiles, <span class="keyword">function</span>(<span class="variable-name">file</span>){
+     <span class="keyword">var</span> <span class="variable-name">moduleName</span> = file + <span class="string">".js"</span>;
+     <span class="keyword">var</span> <span class="variable-name">modulePath</span> = <span class="string">'./client/models/'</span> + moduleName;
+     b.require(modulePath, {expose: <span class="string">'models/'</span> + file});
+     b.add(modulePath);
+  });
+
+  <span class="comment-delimiter">// </span><span class="comment">add and expose libs
+</span>  underscore.each(libFiles, <span class="keyword">function</span>(<span class="variable-name">file</span>){
+    <span class="keyword">var</span> <span class="variable-name">moduleName</span> = file + <span class="string">".js"</span>;
+    <span class="keyword">var</span> <span class="variable-name">modulePath</span> = <span class="string">'./client/libs/'</span> + moduleName;
+    b.require(modulePath, {expose: <span class="string">'libs/'</span> + file});
+    b.add(modulePath);
+  });
+
+  <span class="comment-delimiter">// </span><span class="comment">add main file
+</span>  b.add(<span class="string">'./client/main.js'</span>);
+
+  <span class="comment-delimiter">// </span><span class="comment">bundling
+</span>  b.bundle().pipe(source(<span class="string">'bundle.js'</span>)).pipe(gulp.dest(jsDestPath));
+});
+
+<span class="comment-delimiter">// </span><span class="comment">Move non-browserify client files to their right place
+</span>gulp.task(<span class="string">'move-client-files'</span>, <span class="keyword">function</span>(){
+  gulp.src(<span class="string">'./client/main.js'</span>).
+    pipe(gulp.dest(jsDestPath));
+});
+
+<span class="comment-delimiter">// </span><span class="comment">transform jsx react files in modulesList
+</span>gulp.task(<span class="string">'transform-jsx'</span>, <span class="keyword">function</span>(){
+  gulp.src(reactJsxFiles)
+    .pipe(plumber())
+    .pipe(react())
+    .pipe(gulp.dest(<span class="string">'./client/views/'</span>));
+});
+
+<span class="comment-delimiter">// </span><span class="comment">transform less files
+</span>gulp.task(<span class="string">'transform-less'</span>, <span class="keyword">function</span>(){
+  gulp.src(<span class="string">'./public/stylesheet/*.less'</span>)
+    .pipe(plumber())
+    .pipe(less())
+    .pipe(gulp.dest(<span class="string">'./public/stylesheet/'</span>));
+});
+
+gulp.task(<span class="string">'watch'</span>, <span class="keyword">function</span>(){
+  gulp.watch(reactJsxFiles, [<span class="string">'transform-jsx'</span>]);
+  gulp.watch(reactJsFiles, [<span class="string">'browserify-expose'</span>]);
+  gulp.watch(backboneJsFiles, [<span class="string">'browserify-expose'</span>]);
+  gulp.watch(<span class="string">'./client/main.js'</span>, [<span class="string">'browserify-expose'</span>]);
+  gulp.watch(<span class="string">'./public/stylesheet/*.less'</span>, [<span class="string">'transform-less'</span>]);
+});
+</pre>
+  </body>
+</html>

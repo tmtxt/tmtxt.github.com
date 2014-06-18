@@ -198,7 +198,73 @@ $ browserify -x react -r main.js > ./dist/main.js
 Here is my sample
 [gulpfile.js](/files/2014-03-20-browserify-bring-nodejs-modules-to-browser/paste.html)
 
-## 2.3 Auto browserify when there are changes
+## 2.3 Browserify client-side libraries
+
+> **Update Jun 18 2014**: before that, I said that we shouldn't use browserify
+> for client-side libraries. Now, I found the solution.
+
+If the libraries you want to browserify are designed for client-side environment
+(browsers), do not try to find them on npm and then browserify them to the
+client. Because for many libraries like jquery, jquery-ui, twitter bootstrap,
+they relies on global object to work properly. The solution is just load those
+libraries through the script tag like the traditional way that we used to do
+(can also be installed with a package manager like [bower](http://bower.io/)) and
+use browserify with [literalify](https://github.com/pluma/literalify) transform
+to pretend those libraries are actual CommonJS modules.
+
+This is an example with Jquery, Twitter Bootstrap and ReactJS installed through
+Bower
+
+- The HTML file, just load all those libraries via script as you usually do
+
+{% highlight html %}
+<!DOCTYPE html>
+<html>
+  <body>
+    <script src="/bower/jquery/dist/jquery.js"></script>
+    <script src="/bower/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/bower/react/react.js"></script>
+    <!-- your bundled browserify module here -->
+    <script src="/dist/bundle.js"></script>
+  </body>
+</html>
+{% endhighlight %}
+
+- main.js
+
+{% highlight js %}
+// this is not the jquery or react installed from npm, it is the global object
+// from script tag and we will use literalify to make them require-able
+var jquery = require('jquery');
+var react = require('react');
+
+// pretend they are CommonJS modules
+react.renderComponent(myComponent(), document.getElementById('content'));
+jquery('#content');
+// actually, they are just window.React or window.$
+{% endhighlight %}
+
+- gulpfile.js
+
+{% highlight js %}
+var browserify = require('browserify');
+var source = require("vinyl-source-stream");
+
+gulp.task('browserify', function(){
+  var b = browserify();
+  b.transform(literalify.configure({
+    // map module names with global objects
+    'jquery': 'window.$',
+    'react': 'window.React'
+  }));
+  b.add('./main.js');
+  b.bundle()
+    .pipe(source('bundle.js'))
+    .pipe(gulp.dest('dist'));
+});
+{% endhighlight %}
+
+## 2.4 Auto browserify when there are changes
 
 You can also make a gulp task for watching changes in those files and then
 browserify when changes happen. For example
@@ -209,7 +275,7 @@ gulp.task('watch', function(){
 });
 {% endhighlight %}
 
-## 2.4 Browserify when files is in sub folder
+## 2.5 Browserify when files is in sub folder
 
 **Note**: if you are placing the your files under a sub folder of your app’s
 root directory(of course usually you do), you need to set the basedir for
@@ -223,16 +289,7 @@ var b = browserify({
 
 Now you can run all those previous commands normally from our Nodejs app root directory.
 
-# 3. Note for using with front-end libraries
+## 2.6 Sample gulpfile.js
 
-For some front-end libraries such as jQuery, jQuery plugins (jQuery UI) and other
-libraries that uses jQuery (like Twitter Bootstrap), my advice is that you
-should not use it with browserify. For example, jQuery registers itself as the
-`$` symbol or `jQuery` with the global `window` object and the other libraries
-refer to this symbol by default. If you use browserify for those libraries, you
-have to manually assign jQuery to the global `window.$` (or use browserify-shim)
-in order for the other packages (bootstrap, jquery-ui) to recognize jQuery.
-
-A solution for this is to use [Bower](http://bower.io/), a package manager for
-the Web. Only use browserify for the libraries that only available on npm and
-your own modules.
+Here is my sample [gulpfile.js](/files/2014-03-20-browserify-bring-nodejs-modules-to-browser/gulp.html)
+which combine all of the above things
