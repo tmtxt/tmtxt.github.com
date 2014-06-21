@@ -7,11 +7,39 @@ tags: [emacs, jsx, jsxhint]
 ---
 {% include JB/setup %}
 
-# JSX Mode
+> **Update Jun 21 2014**: add another better solution that uses web-mode
 
-If you are working with Javascript, especially ReactJS, you definitely known
-about JSX, the XML syntax inside of Javascript. This post will demonstrate how
-to setup Emacs for working with JSX files. First, you need to install `jsx-mode`
+# 1. Syntax highlighting
+
+If you are working with Javascript, especially ReactJS, you definitely have known
+about JSX, the XML syntax inside of Javascript. This section will demonstrate how
+to setup Emacs for working with JSX files in 2 ways. You can choose one method
+that you prefer. The first method is recommended if you are developing
+application with ReactJS
+
+## 1.1 JSX Syntax Highlighting using web-mode (Recommended for ReactJS)
+
+The first option is to use [web-mode](http://web-mode.org/ ), an autonomous
+emacs major-mode for editing web templates. I recommend this since it has better
+syntax highlighting for JSX part compare to that from jsx-mode (in the second
+solution). For web-mode to work properly with JSX files, add this to your .emacs
+
+{% highlight cl %}
+(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+(defadvice web-mode-highlight-part (around tweak-jsx activate)
+  (if (equal web-mode-content-type "jsx")
+      (let ((web-mode-enable-part-face nil))
+        ad-do-it)
+    ad-do-it))
+{% endhighlight %}
+
+[This](/files/2014-03-10-emacs-setup-jsx-mode-and-jsx-syntax-checking/jsx.html)
+is how web-mode indents and highlights my jsx files
+(taken from my Emacs).
+
+## 1.2 JSX Syntax Highlighting using jsx-mode
+
+First, you need to install `jsx-mode`
 either by manually cloning and requiring the repo at
 [https://github.com/jsx/jsx-mode.el](https://github.com/jsx/jsx-mode.el) or by
 using [Emacs Packages Manager]({%post_url 2013-01-07-emacs-package-manager%}).
@@ -31,7 +59,9 @@ In `jsx-mode`, the following keys are bound by default.
 
 <!-- more -->
 
-# JSX Syntax Checking
+# 2. JSX Syntax Checking
+
+![Alt Text](/files/2014-03-10-emacs-setup-jsx-mode-and-jsx-syntax-checking/flycheck.png)
 
 Next, we need a tool for syntax checking. For Javascript, we have `jslint` (or
 `jshint`), which I have previously written another post about how to set it up
@@ -52,9 +82,33 @@ $ jsxhint example.jsx
 {% endhighlight %}
 
 Now, to integrate it into Emacs, you need to install `flycheck` (a modern
-version of `flymake`) through Emacs Packages Manager, too. The following piece
-of code helps you define a new jsxhint checker in `flycheck` and activate it
-automatically whenever you open a jsx file
+version of `flymake`) through Emacs Packages Manager. Now, I will show 2 ways of
+setting it corresponding to the 2 solutions that I mentioned in part 1 (web-mode
+and jsx-mode).
+
+**Note**: you need to make sure that `jsxhint` is located inside your Emacs'
+path (or install `exec-path-from-shell` to import your shell's PATH
+automatically).
+
+## 2.1 JSX Syntax Checking for web-mode
+
+{% highlight cl %}
+(flycheck-define-checker jsxhint-checker
+  "A JSX syntax and style checker based on JSXHint."
+
+  :command ("jsxhint" source)
+  :error-patterns
+  ((error line-start (1+ nonl) ": line " line ", col " column ", " (message) line-end))
+  :modes (web-mode))
+(add-hook 'web-mode-hook
+          (lambda ()
+            (when (equal web-mode-content-type "jsx")
+              ;; enable flycheck
+              (flycheck-select-checker 'jsxhint-checker)
+              (flycheck-mode))))
+{% endhighlight %}
+
+## 2.2 JSX Syntax Checking for jsx-mode
 
 {% highlight cl %}
 (require 'flycheck)
@@ -70,14 +124,9 @@ automatically whenever you open a jsx file
                           (flycheck-mode)))
 {% endhighlight %}
 
-**Note**: you need to make sure that `jsxhint` is located inside your Emacs'
-path (or install `exec-path-from-shell` to import your shell's PATH
-automatically).
-
-![Alt Text](/files/2014-03-10-emacs-setup-jsx-mode-and-jsx-syntax-checking/flycheck.png)
-
-**Note**: from my experience, setting the default indent level in jsx mode to 2
-instead of the default 4 will satisfy indentation error of jsxhint checker.
+**Note**: from my experience, if you are using jsx-mode, setting the default
+indent level to 2 instead of the default 4 will satisfy indentation error of
+jsxhint checker.
 
 {% highlight cl %}
 (setq jsx-indent-level 2)
