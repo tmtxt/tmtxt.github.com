@@ -7,7 +7,7 @@ tags: []
 ---
 {% include JB/setup %}
 
-# 1 .Bower
+# 1. Bower
 
 [Bower](http://bower.io/) is the most popular front-end package manager. You can
 install most of the front-end libraries from Bower. However, the biggest
