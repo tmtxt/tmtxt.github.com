@@ -135,7 +135,7 @@ Javascript, CSS and HTML file. To use it, you need **js-beautify** installed in
 the background
 
 {% highlight console %}
-$ npm install -g js-beatufiy
+$ npm install -g js-beautify
 {% endhighlight %}
 
 After that, you can use Emacs
