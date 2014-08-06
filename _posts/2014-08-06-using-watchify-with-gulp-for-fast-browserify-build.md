@@ -58,6 +58,8 @@ function bundleShare(b) {
 }
 {% endhighlight %}
 
+<!-- more -->
+
 # Watchify with other Gulp watch tasks
 
 You will not need to activate the watch function all the time. Sometimes, you
