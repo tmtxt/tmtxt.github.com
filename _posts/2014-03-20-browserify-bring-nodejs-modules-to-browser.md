@@ -9,7 +9,7 @@ tags: []
 
 # 1. Browserify in the command line
 
-[Browserify](http://browserify.org/) helps you to modularize your client side
+[Browserify](http://browserify.org/) helps you modularize your client side
 Javascript code using Nodejs `require` style. It also supports transforming
 Nodejs modules on npm to browser compatible ones. You can install browserify
 using npm
@@ -266,14 +266,9 @@ gulp.task('browserify', function(){
 
 ## 2.4 Auto browserify when there are changes
 
-You can also make a gulp task for watching changes in those files and then
-browserify when changes happen. For example
-
-{% highlight js %}
-gulp.task('watch', function(){
-  gulp.watch(['main.js'], ['browserify-modules']);
-});
-{% endhighlight %}
+> **Update Aug 06 2014**: for watching Browserify bundle files, do not use
+> `gulp.watch`, instead, use Watchify for that task. You can read about it here
+> [Using Watchify with Gulp for fast Browserify build]({%post_url 2014-08-06-using-watchify-with-gulp-for-fast-browserify-build%}).
 
 ## 2.5 Browserify when files is in sub folder
 
