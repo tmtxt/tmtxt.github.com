@@ -37,6 +37,8 @@ In the HTML page, I have 2 buttons for start and stop Recording
 Next, in the Javascript code, you need to add this to the beginning of your
 script file to fix the browser compatibility.
 
+<!-- more -->
+
 {% highlight js %}
 var navigator = window.navigator;
 navigator.getUserMedia = (
@@ -172,4 +174,3 @@ That will cause some extremely terrible sound that you don't want to hear.
 </iframe>
 
 - Full source code is available on Github [web-audio-example](https://github.com/tmtxt/web-audio-example).
-
