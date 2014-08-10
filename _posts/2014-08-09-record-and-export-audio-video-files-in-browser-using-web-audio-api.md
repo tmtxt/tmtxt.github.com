@@ -161,7 +161,7 @@ function stopVideo() {
 }
 {% endhighlight %}
 
-**Note**: for the example of recording, please turn off your speaker or plugin
+**Note**: for the example of recording and streaming video, please turn off your speaker or plugin
 your headphone, otherwise, the sound recorded to the computer will continues to
 go out through the speaker and the recording step is repeated again endlessly.
 That will cause some extremely terrible sound that you don't want to hear.
