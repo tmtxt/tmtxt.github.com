@@ -9,13 +9,6 @@ tags: [.net, c#, asp.net]
 ---
 {% include JB/setup %}
 
-> This is one of my assignment at RMIT University Vietnam
-
-I've just submitted my assignment in .Net course at RMIT. The assignment asks me
-to implement an Electronic Medical Record website using ASP.Net. I have put much
-effort on this website (although I don't like .Net and Windows). The source code
-is host on Github and you are free to use it at your own risk.
-
 # Overview of the website
 
 The website is about an Electronic Medical Record (EMR) system that support
