@@ -9,13 +9,6 @@ tags: [android]
 ---
 {% include JB/setup %}
 
-> This is one of my assignment in Android course at RMIT. I just want to share my
-> work even though this is just a very simple application because this is my first
-> Android application. The source code is opened for everyone who is interested
-> in. You have the right to freely use my code. However, I'm not responsible for
-> any problem about plagiarism that you can encounter if you use it for your
-> assignment.
-
 # Overview
 
 This is a simple Task Management Application (To-do list manager). It helps you
