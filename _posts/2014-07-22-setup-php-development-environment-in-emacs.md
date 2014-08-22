@@ -103,3 +103,24 @@ automatically for all .php files
 {% endhighlight %}
 
 ![Flycheck](/files/2014-07-22-setup-php-development-environment-in-emacs/error.png)
+
+# Auto completion and Snippets
+
+In newer version of web-mode, even if you explicitly activate
+[Auto Complete](http://cx4a.org/software/auto-complete/index.html), you still
+cannot get auto complete to work. The reason is the new version of web-mode has
+added context-aware auto-completion feature and you need to activate it
+manually. Put something like this into your `web-mode-hook` or to the
+`my-setup-php` function that we have written before
+
+{% highlight cl %}
+(setq web-mode-ac-sources-alist
+      '(("css" . (ac-source-words-in-buffer ac-source-css-property))
+        ("html" . (ac-source-words-in-buffer ac-source-abbrev))
+        ("php" . (ac-source-words-in-buffer
+                  ac-source-words-in-same-mode-buffers
+                  ac-source-dictionary))))
+{% endhighlight %}
+
+You can read more about **context-aware auto-complete** in web-mode on its
+[home page](http://web-mode.org/ ).
