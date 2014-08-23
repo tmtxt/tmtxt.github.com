@@ -89,7 +89,7 @@ with line truncate
 
 There are many helpful key bindings in SQL interactive mode. You can use the
 describe function feature in Emacs (C-h f) to view the documentation of
-`sql-interactive-mode`. Some important key to remember are
+`sql-interactive-mode`. Some important keys to remember are
 
 - `comint-previous-matching-input-from-input` and
   `comint-next-matching-input-from-input` to traverse through the input history
@@ -148,7 +148,7 @@ backup it to a remote server so
 you will not want to store the password there. This
 [post](http://emacs-fu.blogspot.com/2011/02/keeping-your-secrets-secret.html )
 from [emacs-fu](http://emacs-fu.blogspot.com/ ) gives me the idea of storing
-your password in another file encrypted by GnuPG.
+password in another file encrypted by GnuPG.
 
 First, make sure you have GnuPG installed. Many Linux distros already come with
 GnuPG pre-installed. On Mac OS, you can install it using **Macports**
@@ -207,7 +207,7 @@ password from file
 {% endhighlight %}
 
 When activated, the `my-sql-connect` function will prompt for the password to
-decrypt the `my-password.el.gpg` file. However, it will ask for it just once and
+decrypt the `my-password.el.gpg` file. However, it will ask for password just once and
 only when you active the `my-sql-connect` function so that you will have to
 enter the password just when you need to use it.
 
@@ -217,13 +217,13 @@ enter the password just when you need to use it.
 
 We have all the necessary functions required for connecting to the database.
 However, you still need to activate them through `M-x` or you can bind them to
-some special key stroke but it will cost one key stroke for each server and it
-results in too many key bindings that you need to remember. Even when you have
+some special key stroke but it will cost one key stroke for each server and will
+result in too many key bindings that you need to remember. Even when you have
 successfully connected to a server, switching between other buffers and sql
-buffers it still very slow when you have many buffers opening. The solution is
+buffers is still very slow when you have many buffers opening. The solution is
 using Emacs' `completing-read` function or using
 [helm](https://github.com/emacs-helm/helm )'s equivalent `helm-comp-read`
-function. I will use the helm's ones for demonstration in this post but you can
+one. I will use the helm version for demonstration in this post but you can
 easily convert it the normal Emacs' `completing-read` function if you don't use
 helm.
 
@@ -256,7 +256,7 @@ completing
 Now, bind that function `my-sql-connect-server` to a key binding that you want.
 The first time you activate this function, it will prompt for a server name and
 connect to that database server. Later when you activate this function again, it
-will jump to the SQL interactive buffer that it has created before.
+will jump directly to the SQL interactive buffer that it has created before.
 
 You can also activate this function when you are inside an sql buffer and that
 buffer will automatically be associated with the interactive session. Calling
@@ -290,7 +290,7 @@ condition before calling `sql-connect` function.
 
 After evaluating the above code, every time you call `my-sql-connect-server`, it
 will connect to a server or switch to an interactive session if exists. Pressing
-`C-u` prefix before activating that function, emacs will always create a new
+`C-u` prefix before activating that function will always create a new
 connection to the database server that you choose.
 
 ![helm](/files/2014-08-06-setup-emacs-as-an-sql-database-client/helm.gif)
