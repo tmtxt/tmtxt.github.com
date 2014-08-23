@@ -37,6 +37,8 @@ If you are using Mac OS, I have written a post about PostgreSQL installation and
 configuration steps on Mac here:
 [Install and Config PostgreSQL on Mac]({%post_url 2014-02-26-install-and-config-postgresql-on-mac%}).
 
+<!-- more -->
+
 # Basic Usage
 
 To use it, simply open an SQL buffer, `M-x` and then `sql-postgres` or
