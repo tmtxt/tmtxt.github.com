@@ -85,6 +85,16 @@ To fix this, call `toggle-truncate-lines` in `sql-interactive-mode-hook`.
 ![with line truncate](/files/2014-08-06-setup-emacs-as-an-sql-database-client/truncate.gif)  
 with line truncate
 
+# Helpful key bindings
+
+There are many helpful key bindings in SQL interactive mode. You can use the
+describe function feature in Emacs (C-h f) to view the documentation of
+`sql-interactive-mode`. Some important key to remember are
+
+- `comint-previous-matching-input-from-input` and
+  `comint-next-matching-input-from-input` to traverse through the input history
+- `sql-accumulate-and-indent` if you want to type a multi-line command.
+
 # Connect to multiple server
 
 If the default `sql-postgres-login-params`, `sql-mysql-login-params`,... do not
