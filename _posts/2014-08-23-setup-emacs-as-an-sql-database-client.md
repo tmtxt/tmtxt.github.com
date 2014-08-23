@@ -283,3 +283,8 @@ will connect to a server or switch to an interactive session if exists. Pressing
 connection to the database server that you choose.
 
 ![helm](/files/2014-08-06-setup-emacs-as-an-sql-database-client/helm.gif)
+
+# Sample Emacs config file
+
+You can find the full code in my emacs config file on
+[Github](https://github.com/tmtxt/.emacs.d/blob/master/config/tmtxt-sql.el)
