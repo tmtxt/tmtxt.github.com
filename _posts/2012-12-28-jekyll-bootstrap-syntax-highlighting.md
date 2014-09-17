@@ -137,7 +137,7 @@ It will generate a file named pygments.css in your website root directory.
 
 In the config.yaml file inside the root directory of your jekyll website, set pygments to true
 
-    pygments: true
+    highlighter: pygments
 
 ## 2.6 Include pygments.css
 
