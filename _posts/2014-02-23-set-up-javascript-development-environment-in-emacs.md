@@ -113,7 +113,7 @@ I have another post about setting up and integrating it into Emacs here
 
 JSX is also a perfect development environment for JSX code. The instruction are
 presented all in this post
-[Emacs - Setup JSX mode, JSX Syntax checking and Suggestion]({%post_url 2014-02-23-set-up-javascript-development-environment-in-emacs%})
+[Emacs - Setup JSX mode, JSX Syntax checking and Suggestion]({%post_url 2014-03-10-emacs-setup-jsx-mode-and-jsx-syntax-checking%})
 
 # Mozrepl - Program Mozilla-based applications from the inside
 
