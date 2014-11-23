@@ -91,7 +91,7 @@ var util = require('gulp-util');
 // Standard handler
 function standardHandler(err){
   // Notification
-  var notifier = new Notification();
+  var notifier = Notification();
   notifier.notify({ message: 'Error: ' + err.message });
   // Log to console
   util.log(util.colors.red('Error'), err.message);
