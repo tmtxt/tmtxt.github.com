@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Setup Emacs as an SQL Database client"
+title: "Setup Emacs as an SQL Database client - Part 1"
 description: ""
 categories: [emacs]
 tags: []
