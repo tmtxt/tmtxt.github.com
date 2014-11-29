@@ -2,7 +2,7 @@
 layout: post
 title: "MacOS - Fix trailing slash in $HOME variable"
 description: ""
-categories: [mac]
+categories: [mac os]
 tags: []
 ---
 {% include JB/setup %}
