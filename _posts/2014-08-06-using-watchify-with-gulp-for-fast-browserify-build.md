@@ -75,6 +75,7 @@ var browserify = require('browserify');
 var source = require("vinyl-source-stream");
 var watchify = require('watchify');
 var livereload = require('gulp-livereload');
+var gulpif = require('gulp-if');
 var watch;
 
 gulp.task('browserify-nowatch', function(){
@@ -110,7 +111,7 @@ function bundleShare(b) {
   b.bundle()
     .pipe(source('share.js'))
     .pipe(gulp.dest('./dist'))
-    .pipe(livereload());
+    .pipe(gulpif(watch, livereload()));
 }
 
 // define the browserify-watch as dependencies for this task
