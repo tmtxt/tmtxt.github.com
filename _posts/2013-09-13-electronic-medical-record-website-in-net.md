@@ -9,6 +9,8 @@ tags: [.net, c#, asp.net]
 ---
 {% include JB/setup %}
 
+> This is just the result of my assignment at university
+
 # Overview of the website
 
 The website is about an Electronic Medical Record (EMR) system that support
