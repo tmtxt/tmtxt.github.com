@@ -170,7 +170,7 @@ You can use Browser Object feature to define any kind of component in the web
 page that you want to interact without having to re-define the same command for
 every different data type.
 
-However, I don't link the XPath expression very much. It would be much better if
+However, I don't like the XPath expression very much. It would be much better if
 I can use CSS Selector (maybe it's already implemented somewhere in Conkeror
 source code but I have not read that part). When I discover it or implemented it
 successfully, I will come back to update this post.
