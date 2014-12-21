@@ -32,6 +32,8 @@ represent practically any type of data (e.g image, hyperlinks, frame,...).
 > follow-image, and follow-frame. With browser objects, you have just one
 > command, follow, which can operate on many types of data.
 
+<!-- more -->
+
 # Using Browser Objects Commands
 
 Browser Objects commands are prefix commands and they have the attributes just
