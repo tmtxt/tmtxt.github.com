@@ -7,6 +7,8 @@ tags: []
 ---
 {% include JB/setup %}
 
+<meta property="og:image" content="/files/2014-12-28-image-blending-with-html-canvas/meta.png">
+
 # Image Blend modes and HTML Canvas
 
 Image Blend modes are the methods used to determine how 2 image layers are
@@ -220,8 +222,8 @@ function exportImage(canvas) {
     document.body.appendChild(img);
   };
 
-  // if you don't want to submit the base64 string to the server and convert
-  // back it the image on the server, you can convert the data url to a file to
+  // if you don't want to submit the base64 string and convert it back
+  // to image on the server, you can convert the data url to a file and then
   // submit to server (if your browser supports File API)
   var binary = atob(dataUrl.split(',')[1]);
   var array = [];
