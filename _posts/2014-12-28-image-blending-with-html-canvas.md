@@ -31,6 +31,7 @@ of the corresponding channel of the upper layer, we got the function for
 calculating the new pixel **ƒ(a, b)**.
 
 The steps for generating the new blended image from the two images are
+
 - First, retrieve those two images
 - Create two separate canvases with the same size and draw those two images into
 the corresponding canvas.
