@@ -245,7 +245,11 @@ This is created using the above example. Here are the two original images.
 <img src="/files/2014-12-28-image-blending-with-html-canvas/bottom.png" />
 </div>
 
-After applying blending method for these 2 images, I got this image
+After applying blending method for these 2 images, I got this image. Note that I
+used multiply blend mode for this example, so any transparent pixel on either
+top or bottom will produce the corresponding transparent pixel on the final
+image (since all the RGB value is 0, and anything times 0 is 0). That's why you
+see the below image got transparent at the two sides
 
 <div class="text-center">
 <img src="/files/2014-12-28-image-blending-with-html-canvas/blend.png" />
