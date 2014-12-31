@@ -7,7 +7,7 @@ tags: []
 ---
 {% include JB/setup %}
 
-<meta property="og:image" content="/files/2014-12-28-image-blending-with-html-canvas/meta.png">
+<meta property="og:image" content="/files/2014-12-28-image-blending-with-html-canvas/meta.jpg">
 <meta property="og:title" content="Images Blending with HTML canvas">
 
 # Image Blend modes and HTML Canvas
