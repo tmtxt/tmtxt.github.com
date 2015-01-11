@@ -20,10 +20,10 @@ I had to Google for the suitable libraries but I cannot find any. I
 also asked a
 [question](http://stackoverflow.com/questions/24527186/html-canvas-svg-draw-image-on-cylinder-surface)
 on stackoverflow but the answer does not satisfy me. The reason is that it
-demonstrate how to stretch the image, not how to bend the image (which is what shown
+demonstrates how to stretch the image, not how to bend the image (which is what shown
 in the picture above). Because of that, I decided to implement it by myself and
 turn out that it's not as hard as I thought before. Everything is just a loop of
-basic mathematic formula that I had been taught in high school (in Vietnam).
+basic mathematic formula that I had been taught in (Vietnamese) high school.
 
 <!-- more -->
 
@@ -97,7 +97,7 @@ made before.
 
 # Prepare the Images and Information
 
-First, we need to original image. This image should be in the right width/height
+First, we need to prepare original image. This image should be in the same width/height
 ratio with the mug, which means the width of the image should be the same with
 the mug's diameter and its height should be the same with the height of the mug.
 
@@ -384,12 +384,17 @@ reflected image is generated to do the translation. We will modify the loop to
 translate it directly in each column.
 
 The AOB parabola can be described as
-**y = ax<sup>2</sup> + bx + c**. Since the coordination of A is (0,0), the
-equation can be reduced to **y = ax<sup>2</sup> + bx**.
+
+- **y = ax<sup>2</sup> + bx + c**
+
+Since the coordination of A is (0,0), the equation can be reduced to
+
+- **y = ax<sup>2</sup> + bx**.
 
 Let the coordination of O is (x<sub>1</sub>, y<sub>1</sub>) and
 B is (x<sub>2</sub>, y<sub>2</sub>), we can calculate the
-value of a and b like this
+value of a and b like this (don't ask me where I get this, you can do this by
+yourself :D )
 
 - b = (y<sub>2</sub>x<sub>1</sub><sup>2</sup> -
   y<sub>1</sub>x<sub>2</sub><sup>2</sup>) /
