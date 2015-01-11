@@ -25,6 +25,8 @@ in the picture above). Because of that, I decided to implement it by myself and
 turn out that it's not as hard as I thought before. Everything is just a loop of
 basic mathematic formula that I had been taught in high school (in Vietnam).
 
+<!-- more -->
+
 # The idea
 
 It's best to demonstrate these geometrical idea using an image. Below is the
