@@ -4,6 +4,7 @@ title: "Draw 2D image on cylinder surface with HTML Canvas"
 description: ""
 categories: [javascript]
 tags: []
+thumbnail: "/files/2015-01-10-draw-2d-image-on-cylinder-surface-with-html-canvas/overview.png"
 ---
 {% include JB/setup %}
 
