@@ -4,11 +4,9 @@ title: "Images Blending with HTML canvas"
 description: ""
 categories: [javascript]
 tags: []
+thumbnail: "/files/2014-12-28-image-blending-with-html-canvas/meta.jpg"
 ---
 {% include JB/setup %}
-
-<meta property="og:image" content="{{site.url}}/files/2014-12-28-image-blending-with-html-canvas/meta.jpg">
-<meta property="og:title" content="Images Blending with HTML canvas">
 
 # Image Blend modes and HTML Canvas
 
