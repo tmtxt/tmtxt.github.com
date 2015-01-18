@@ -315,9 +315,13 @@ What you get is something similar to this
 <img src="/files/2015-01-10-draw-2d-image-on-cylinder-surface-with-html-canvas/left1.png" />
 </div>
 
+<br/>
+
 <div class="text-center">
 <img src="/files/2015-01-10-draw-2d-image-on-cylinder-surface-with-html-canvas/middle1.png" />
 </div>
+
+<br/>
 
 <div class="text-center">
 <img src="/files/2015-01-10-draw-2d-image-on-cylinder-surface-with-html-canvas/right1.png" />
