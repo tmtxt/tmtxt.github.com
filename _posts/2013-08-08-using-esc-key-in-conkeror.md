@@ -35,6 +35,7 @@ To solve this problem, we need two Esc keys in Conkeror. Simply define an alias
 to the Esc key in the .conkerorrc file, for example
 
 {% highlight js %}
+require("global-overlay-keymap");
 define_key_alias("C-o", "escape");
 {% endhighlight %}
 
