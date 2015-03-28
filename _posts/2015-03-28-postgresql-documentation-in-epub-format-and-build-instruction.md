@@ -30,7 +30,7 @@ Currently, I built only the 9.4.1 documentation since it's the currently stable
 version. When the later version release, hopefully the epub file will be
 published on Postgres home page. Otherwise I will update it here.
 
-[9.4.1 Documentation Epub](941link)
+[9.4.1 Documentation Epub](/files/2015-03-28-postgresql-documentation-in-epub-format-and-build-instruction/postgres.epub)
 
 # Building instruction
 
