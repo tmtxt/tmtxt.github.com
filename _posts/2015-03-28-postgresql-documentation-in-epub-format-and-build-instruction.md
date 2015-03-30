@@ -4,6 +4,7 @@ title: "PostgreSQL Documentation in Epub format"
 description: ""
 categories: [misc]
 tags: []
+thumbnail: "/files/2015-03-28-postgresql-documentation-in-epub-format-and-build-instruction/cover.png"
 ---
 {% include JB/setup %}
 
