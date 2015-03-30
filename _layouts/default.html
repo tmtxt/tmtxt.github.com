@@ -4,13 +4,13 @@
   <head>
     <meta property="og:title" content="{{ page.title }}">
     <meta property="og:image" content="{{ site.url }}{{ page.thumbnail }}">
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}/">
 	<title>{{ page.title }}</title>
-	
+
 	{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
 	{% if site.author.name %}<meta name="author" content="{{ site.author.name }}">{% endif %}
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  
+
 	<!-- bootstrap -->
 	<script src="{{ASSET_PATH}}/js/jquery.js"></script>			 <!-- jquery -->
 	<meta name="viewport"
@@ -22,7 +22,7 @@
 	<link rel="stylesheet" href="/assets/css/pygments.css"> <!-- pygments -->
 	<meta charset="UTF-8">										 <!-- unicode -->
 	<link rel="stylesheet" href="{{ASSET_PATH}}/css/font-awesome.min.css"> <!-- font awesome -->
-	
+
 	<!-- custom -->
 	{% include normalize_address %}
 	{% include google_search %}
@@ -30,7 +30,7 @@
   </head>
 
   <body style="background-color:#fff;">
-			   
+
 
 	<!-- navigation bar -->
 	<nav class="navbar navbar-default bs-docs-nav" role="navigation">
@@ -101,7 +101,7 @@
 	<div class="container">
 	  <!-- content of the page -->
         {{ content }}
-      
+
 	  <!-- footer -->
       <footer style="text-align: center">
         <p>&copy; {{ site.author.name }} 2013
