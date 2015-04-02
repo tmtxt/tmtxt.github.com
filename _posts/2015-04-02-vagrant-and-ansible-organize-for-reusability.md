@@ -46,38 +46,19 @@ A project with Vagrant and Ansible will look like this
 │   │   └── all
 │   ├── main.yml
 │   ├── roles
-│   │   ├── ansible
 │   │   ├── apt
-│   │   ├── clojure
 │   │   ├── emacs
 │   │   ├── git
 │   │   ├── nvm
-│   │   ├── openjdk
 │   │   ├── oraclejdk
 │   │   ├── postgres
-│   │   ├── user
 │   │   ├── virtualenv
-│   │   ├── wget
 │   │   └── zsh
 │   └── templates
 │       ├── db_config.clj
 │       └── system_config.clj
-├── cljs
-│   ├── externs.js
-│   └── site.cljs
-├── docs
-│   ├── controllers.md
-│   ├── database.md
-│   └── views.md
 ├── project.clj
 ├── src
-│   ├── app
-│   │   ├── controllers
-│   │   └── views
-│   ├── core
-│   │   ├── installer.clj
-│   │   └── test.clj
-│   └── log4j.xml
 └── static
 {% endhighlight %}
 
@@ -135,7 +116,6 @@ playbook will look similar to this
     - user
     - git
     - postgres
-    - virtualenv
     - oraclejdk
     - clojure
 
@@ -143,15 +123,10 @@ playbook will look similar to this
   tasks:
     # create necessary directory
     - name: create out dirs
-      sudo: yes
-      sudo_user: "{{project_user}}"
-      file: path={{item}} state=directory
-      with_items: out_dirs
+      file: path=/log/path state=directory
 
     - name: generate db.clj config
-      sudo: yes
-      sudo_user: "{{project_user}}"
-      template: src=templates/db_config.clj dest={{project_dir}}/src/config/db.clj
+      template: src=templates/db_config.clj dest={{"{{project_dir"}}}}/src/config/db.clj
 {% endhighlight %}
 
 You can override the role variable directly inside this file or in `group_vars`
