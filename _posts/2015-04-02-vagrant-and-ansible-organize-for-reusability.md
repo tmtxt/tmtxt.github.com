@@ -8,6 +8,8 @@ thumbnail: "/files/2015-04-02-vagrant-and-ansible-organize-for-reusability/thumb
 ---
 {% include JB/setup %}
 
+![Alt Text](/files/2015-04-02-vagrant-and-ansible-organize-for-reusability/thumbnail.png)
+
 # Vagrant and Ansible
 
 Recently, I have started a personal project built with Clojure, a website for
@@ -185,3 +187,38 @@ end
 
 That's it, now just run `vagrant up --provision` and the automation process will
 happen automatically.
+
+# Deployment
+
+Ansible opearate through SSH connection so you don't really need to install
+anything on server. However, you can also install Ansible on your server and
+execute a local provision to deploy your website. In my case, I use the second
+option since it looks familiar with the one run in my local Vagrant.
+
+First, you need to install Ansible on your server
+
+{% highlight cl %}
+$ sudo apt-get install software-properties-common
+$ sudo apt-add-repository ppa:ansible/ansible
+$ sudo apt-get update
+$ sudo apt-get install ansible
+{% endhighlight %}
+
+Clone your project into your server, place it somewhere. After that, you need a
+file to define some extra variables for the server environment, for example
+
+- extra_vars.yml
+
+{% highlight yaml %}
+---
+project_user: skeleton
+project_dir: /home/skeleton/clojure-web-skeleton
+db_password: qeimdjspleks
+service_prefix: skeleton
+{% endhighlight %}
+
+Finally, run the local provision with this command
+
+{% highlight cl %}
+ansible-playbook -i localhost, -c local -e "@/path/to/extra_vars.yml" -K /path/to/ansible/main.yml
+{% endhighlight %}
