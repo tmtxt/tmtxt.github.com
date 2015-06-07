@@ -31,7 +31,7 @@ return b.bundle()
 {% endhighlight %}
 
 We have to manually add the `main.js` file into Browserify so it will become
-ugly and complex when you have multiple bundle to build, not just one
+ugly and complex when you have multiple bundles to build, not just one
 **main.js** file. It would be much better if we can do something like this,
 passing the source files as a glob as we usually do with Gulp
 
@@ -137,7 +137,7 @@ function bundle(source, bundler, mode) {
     .pipe(plumber({errorHandler: browserifyError}))
     .pipe(bundler)
     .pipe(gulpif(mode === "prod", uglify({mangle: false})))
-    .pipe(gulp.dest('./resources/public/js'));
+    .pipe(gulp.dest('./dist'));
 }
 {% endhighlight %}
 
