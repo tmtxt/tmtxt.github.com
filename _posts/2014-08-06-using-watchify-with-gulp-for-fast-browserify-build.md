@@ -7,6 +7,9 @@ tags: []
 ---
 {% include JB/setup %}
 
+> Update: I made a new better solution for this. You can read it here
+> [Using Gulp with Browserify and Watchify - Updated]({% post_url 2015-06-07-gulp-with-browserify-and-watchify-updated %})
+
 # Using Watchify instead of gulp.watch
 
 If you are using Browserify with Gulp, perhaps `gulp.watch` is not the best
@@ -133,3 +136,6 @@ Error handling in Watchify is similar to that in Browserify and there are
 another blog post that I have written to describe to steps how to handle it
 properly. You can read it here
 [Error Handling while using gulp.watch]({%post_url 2014-07-15-handle-errors-while-using-gulp-watch%}).
+
+> Update: I made a new better solution for this. You can read it here
+> [Using Gulp with Browserify and Watchify - Updated]({% post_url 2015-06-07-gulp-with-browserify-and-watchify-updated %})
