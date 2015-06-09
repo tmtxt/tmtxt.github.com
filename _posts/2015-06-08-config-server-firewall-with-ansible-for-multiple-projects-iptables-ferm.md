@@ -4,7 +4,7 @@ title: "Automating firewall configuration for multiple projects with Ansible"
 description: ""
 categories: [misc]
 tags: []
-thumbnail:
+thumbnail: /files/2015-06-08-config-server-firewall-with-ansible-for-multiple-projects-iptables-ferm/firefox.png
 ---
 {% include JB/setup %}
 
