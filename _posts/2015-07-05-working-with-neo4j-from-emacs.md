@@ -80,7 +80,7 @@ splitted across multiple line
 
 ![n4js](/files/2015-07-04-working-with-neo4j-from-emacs/n4js.gif)
 
-# Connect to a remote Neo4j
+# Connect to a remote Neo4j instance
 
 Usually, passing the argument `-port` and `-host` is not enough if you want to
 connect to a neo4j shell that is not running on your computer because neo4j
