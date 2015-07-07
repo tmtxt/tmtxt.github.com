@@ -4,7 +4,7 @@ title: "Working with Neo4j from Emacs"
 description: ""
 categories: [emacs]
 tags: []
-thumbnail: 
+thumbnail: /files/2015-07-04-working-with-neo4j-from-emacs/cypher.png
 ---
 {% include JB/setup %}
 
