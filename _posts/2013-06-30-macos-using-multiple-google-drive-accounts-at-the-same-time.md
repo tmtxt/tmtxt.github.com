@@ -9,6 +9,10 @@ tags: [macos, google drive]
 ---
 {% include JB/setup %}
 
+> **Warning**: this solution is no longer available on newer version of OSX. I
+> tested it on Mac OS 10.6 long time ago. Please don't ask me about any problem
+> about it because I use only one Google Drive account now :)
+
 <img src="/files/2013-06-30-macos-using-multiple-google-drive-accounts-at-the-same-time/gd-icon.png" style=" display: block; margin-left: auto; margin-right: auto;" />
 
 # Introduction
