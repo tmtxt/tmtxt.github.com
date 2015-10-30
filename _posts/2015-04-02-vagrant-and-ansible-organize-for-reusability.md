@@ -8,8 +8,6 @@ thumbnail: "/files/2015-04-02-vagrant-and-ansible-organize-for-reusability/thumb
 ---
 {% include JB/setup %}
 
-![Alt Text](/files/2015-04-02-vagrant-and-ansible-organize-for-reusability/thumbnail.png)
-
 # Vagrant and Ansible
 
 Recently, I have started a personal project built with Clojure, a website for
@@ -34,8 +32,6 @@ of project. The sample project can be found at
 [https://github.com/tmtxt/clojure-web-skeleton](https://github.com/tmtxt/clojure-web-skeleton).
 Before you come to the next part, take a look at the basic usage of Vagrant and
 Ansible.
-
-<!-- more -->
 
 # Basic Structure
 
@@ -64,6 +60,8 @@ A project with Vagrant and Ansible will look like this
 └── static
 {% endhighlight %}
 
+<!-- more -->
+
 Just focus on the `Vagrantfile` and the `ansible` folder, they are the main
 stuff. The other files and folders are just example of a Clojure project.
 
@@ -77,10 +75,11 @@ override when running inside Vagrant.
 
 # Reusable Ansible Roles
 
-As described in the above section, there is `roles` folder which is a git
-submodule for defining reusable Ansible components. You can look at my Ansible
-Roles collection here on [Github](https://github.com/tmtxt/ansible-roles). Each
-folder is an [Ansible role](https://docs.ansible.com/playbooks_roles.html),
+As described in the above section, there is `roles` folder which contains several git
+submodules for defining reusable Ansible components. You can take a look at my
+sample `roles` folder
+[here](https://github.com/tmtxt/clojure-pedigree/tree/master/ansible/roles).
+Each submodule is an [Ansible role](https://docs.ansible.com/playbooks_roles.html),
 which can be created using the `ansible-galaxy` command
 
 {% highlight cl %}
@@ -92,15 +91,11 @@ service. You can look into the roles I defined on Github for more detail. Inside
 every role, we will define some default variables and then in each project,
 depending on the purpose, we can override it later.
 
-Putting all your roles into a git sub module allows you to re-use it for other
+Putting all your roles into git sub module allows you to re-use it for other
 kinds of project easily. For example, for a Clojure project and a Nodejs
 project, you both need to use a database server (maybe PostgreSQL), just include
 the role PostgreSQL you have defined before and the database server is set up
 and ready to use.
-
-Finally, for maximum reusability, you can set up each role folder to be another
-git sub module. You can find plenty of roles that other people share on
-[Ansible Galaxy](https://galaxy.ansible.com/).
 
 # Custom playbook for each project
 
@@ -191,34 +186,16 @@ happen automatically.
 # Deployment
 
 Ansible opearate through SSH connection so you don't really need to install
-anything on server. However, you can also install Ansible on your server and
-execute a local provision to deploy your website. In my case, I use the second
-option since it looks familiar with the one run in my local Vagrant.
+anything on server. First, define a `hosts`, which contains the address to your
+remote server, inside your `ansible` folder. Next, create a new file in with the
+same name with your remote server inside `ansible/hosts_vars` and put all the
+necessary variables you need to override for that remote server there.
 
-First, you need to install Ansible on your server
+An example of host file and host_vars can be found
+[here](https://github.com/tmtxt/clojure-pedigree/tree/master/ansible).
 
-{% highlight cl %}
-$ sudo apt-get install software-properties-common
-$ sudo apt-add-repository ppa:ansible/ansible
-$ sudo apt-get update
-$ sudo apt-get install ansible
-{% endhighlight %}
+Finally, start Ansible for the remote server with the command
 
-Clone your project into your server, place it somewhere. After that, you need a
-file to define some extra variables for the server environment, for example
-
-- extra_vars.yml
-
-{% highlight yaml %}
----
-project_user: skeleton
-project_dir: /home/skeleton/clojure-web-skeleton
-db_password: qeimdjspleks
-service_prefix: skeleton
-{% endhighlight %}
-
-Finally, run the local provision with this command
-
-{% highlight cl %}
-ansible-playbook -i localhost, -c local -e "@/path/to/extra_vars.yml" -K /path/to/ansible/main.yml
+{% highlight console %}
+$ ansible-playbook -K -i hosts main.yml
 {% endhighlight %}
