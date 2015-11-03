@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Using Gulp with Browserify and Watchify - Updated"
+title: "Using Gulp with Browserify and Watchify - Update Nov 2015"
 description: ""
 categories: [javascript]
 tags: []
@@ -8,46 +8,14 @@ thumbnail: /files/2015-06-07-gulp-with-browserify-and-watchify-updated/thumb.png
 ---
 {% include JB/setup %}
 
-> **Update**: this method is outdated again. The new solution is presented here
-> [Using Gulp with Browserify and Watchify - Update Nov 2015]({% post_url 2015-11-03-using-gulp-with-browserify-and-watchify-update-nov-2015 %})
-
-# Old method
-
-In my previous
-[2014-08-06-using-watchify-with-gulp-for-fast-browserify-build.md]({% post_url 2014-08-06-using-watchify-with-gulp-for-fast-browserify-build %}),
-I have demonstrated how to use Browserify and Watchify in
-Gulp to automate the build process. The steps are to
-create a browserify bundle and return that bundle with a bunch of pipe inside a
-gulp task like this
-
-{% highlight js %}
-var b = browserify({
-  cache: {},
-  packageCache: {},
-  fullPaths: true
-});
-b = watchify(b);
-b.add('./main.js');
-return b.bundle()
-    .pipe(uglify())
-    .pipe(gulp.dest(dest));
-{% endhighlight %}
-
-We have to manually add the `main.js` file into Browserify so it will become
-ugly and complex when you have multiple bundles to build, not just one
-**main.js** file. It would be much better if we can do something like this,
-passing the source files as a glob as we usually do with Gulp
-
-{% highlight js %}
-return gulp.src(source)
-    .pipe(buildBrowserify)
-    .pipe(uglify())
-    .pipe(gulp.dest(dest));
-{% endhighlight %}
-
-In this post, I will illustrate how to create that `buildBrowserify` function.
-
-<!-- more -->
+In my previous post
+[Using Gulp with Browserify and Watchify - Updated]({% post_url 2015-06-07-gulp-with-browserify-and-watchify-updated %}),
+I presented a solution for setting [Gulp](http://gulpjs.com/) with
+[Browserify](http://browserify.org/) and
+[Watchify](https://github.com/substack/watchify) using `vinyl-source-stream`.
+However, that method is no longer working as Browserify updated to version
+`8.0.2`. This post will demonstrate a new updated solution that has been tested
+on `Browserify 12.0.1` and `Watchify 3.6.0`.
 
 # Structure
 
@@ -68,6 +36,8 @@ built.
     │ └── page2.js
     ├── dist
     └── gulpfile.js
+
+<!-- more -->
 
 The build function will bundle all the \*.js file inside `js` folder (`page1.js`
 and `page2.js` in this case). Other files in the sub-folders will not be built
@@ -105,13 +75,13 @@ var _ = require('lodash');
 var gulp = require('gulp');
 var browserify = require('browserify');
 var watchify = require('watchify');
-var transform = require('vinyl-transform');
 var shimify = require('browserify-shim');
 var plumber = require('gulp-plumber');
 var uglify = require('gulp-uglify');
 var notifier = require('node-notifier');
 var util = require('gulp-util');
 var gulpif = require('gulp-if');
+var through2 = require('through2');
 {% endhighlight %}
 
 # Browserify Config
@@ -159,8 +129,14 @@ var cached = {};
 
 // create browserify transform
 function createBundler(mode) {
-  var bundler = transform(function(filename){
-    // create browserify instance
+  var bundler = through2.obj(function(file, env, next){
+    // bundle function
+    var bundleFunc = function(err, res){
+      file.contents = res;
+      next(null, file);
+    };
+    var filename = file.path;
+
     var b;
     if(mode === "dev") {
       // debug: true for creating source map
@@ -170,10 +146,14 @@ function createBundler(mode) {
     } else if(mode === 'watch') {
       // for the next build of watchify, get the watchify instance out from
       // cached and build
-      if(cached[filename]) return cached[filename].bundle();
+      if(cached[file.path]) {
+        cached[file.path].bundle(bundleFunc);
+        return;
+      }
       // create new watchify instance for the first build only
-      b = watchify(browserify(filename, _.extend(browserifyConfig, watchify.args, {debug: true})));
-      cached[filename] = b; // store it in cached
+      b = browserify(filename, _.extend(browserifyConfig, {cache: {}, packageCache: {}, debug: true}));
+      b.plugin(watchify);
+      cached[file.path] = b; // store it in cached
     }
 
     // event
@@ -189,7 +169,7 @@ function createBundler(mode) {
     // transform (add more if you want)
     b.transform(shimify);
 
-    return b.bundle();
+    b.bundle(bundleFunc);
   });
 
   return bundler;
@@ -231,9 +211,6 @@ gulp.task('js-watch', function(){
 
 # Sample gulpfile
 
-I made a sample gulpfile for this example at
-[https://gist.github.com/tmtxt/7e48ec7a93d591216424](https://gist.github.com/tmtxt/7e48ec7a93d591216424),
+I made a sample gulpfile for this example
+[here](https://github.com/tmtxt/clojure-pedigree/blob/8ad8ce8a4c1f862a3919af1a7d44305cfbd61c8e/gulpfile.js#L35),
 feel free to take if you like
-
-Thank [Hung Phan](https://github.com/hung-phan) and
-[Nghia Hoang](https://github.com/limdauto) for providing me the idea for this.
