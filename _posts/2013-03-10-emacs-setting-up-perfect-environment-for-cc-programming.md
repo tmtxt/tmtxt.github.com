@@ -77,13 +77,13 @@ to check whether it is in the load-path).
 ;; replace C-S-<return> with a key binding that you want
 {% endhighlight %}
 
-The last package that I'd like to recomend you is the **member-function**
+The last package that I'd like to recomend you is the **member-functions**
 package. It is extemely useful for those who program C++. This package helps you
 expand the function headers defined in .h file to a .cpp file. Install it using
 package.el and then add this to your init file
 
 {% highlight cl %}
-(require 'member-function)
+(require 'member-functions)
 (setq mf--source-file-extension "cpp")
 {% endhighlight %}
 
