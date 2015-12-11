@@ -123,53 +123,6 @@ When you encounter that problem, just activate the command `delete-tern-process`
 via `M-x` and then continue using as normal. Tern server will be launched
 automatically.
 
-## 2.3 Using Tern with JSX mode
-
-One great thing about Tern.js is that you can force it to work with
-jsx-mode.
-After you have followed this post
-[Emacs - Setup JSX mode, JSX Syntax checking and Suggestion]({%post_url 2014-03-10-emacs-setup-jsx-mode-and-jsx-syntax-checking%}),
-add this to your .emacs to enable tern-mode by
-default for all jsx files.
-
-{% highlight cl %}
-(add-hook 'jsx-mode-hook (lambda () (tern-mode t)))
-{% endhighlight %}
-
-![jsx](/files/2014-04-20-emacs-javascript-completion-and-refactoring/jsx.gif)
-
-For working with
-[NodeJS](http://nodejs.org/) or
-[Browserify](http://browserify.org/)
-projects, things get a bit trickier
-for `require()` because the file to load is in .js extension. To solve this,
-just use an automation tool like
-[Gulp](http://gulpjs.com/) or
-[Grunt](http://gruntjs.com/)
-for watching and compiling jsx
-file whenever you make changes. A sample gulpfile.js will look like this
-
-{% highlight js %}
-var gulp = require('gulp');
-var react = require('gulp-react');
-var plumber = require('gulp-plumber');
-
-gulp.task('jsx', function(){
-  gulp.src('./*.jsx')  
-    .pipe(plumber())
-    .pipe(react())
-    .pipe(gulp.dest('.'));
-});
-
-gulp.task('watch', function(){
-  gulp.watch('./*.jsx', ['jsx']);
-});
-{% endhighlight %}
-
-And then Tern.js just works fine. See the picture below
-
-![jsx](/files/2014-04-20-emacs-javascript-completion-and-refactoring/jsx2.gif)
-
 # 3. Emacs Tags with Exuberant Ctags
 
 If you are happy with **Tern.js**, stick with it, you probably don't need

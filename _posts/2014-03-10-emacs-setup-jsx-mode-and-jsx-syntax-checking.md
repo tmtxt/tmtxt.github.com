@@ -13,16 +13,10 @@ tags: [emacs, jsx, jsxhint]
 
 If you are working with Javascript, especially ReactJS, you definitely have known
 about JSX, the XML syntax inside of Javascript. This section will demonstrate how
-to setup Emacs for working with JSX files in 2 ways. You can choose one method
-that you prefer. The first method is recommended if you are developing
-application with ReactJS
-
-## 1.1 JSX Syntax Highlighting using web-mode (Recommended for ReactJS)
-
-The first option is to use [web-mode](http://web-mode.org/ ), an autonomous
-emacs major-mode for editing web templates. I recommend this since it has better
-syntax highlighting for JSX part compare to that from jsx-mode (in the second
-solution). For web-mode to work properly with JSX files, add this to your .emacs
+to setup Emacs for working with JSX files using [web-mode](http://web-mode.org/
+), an autonomous
+emacs major-mode for editing web templates. For web-mode to work properly with
+JSX files, add this to your .emacs
 
 {% highlight cl %}
 (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
@@ -37,28 +31,6 @@ solution). For web-mode to work properly with JSX files, add this to your .emacs
 is how web-mode indents and highlights my jsx files
 (taken from my Emacs).
 
-## 1.2 JSX Syntax Highlighting using jsx-mode
-
-First, you need to install `jsx-mode`
-either by manually cloning and requiring the repo at
-[https://github.com/jsx/jsx-mode.el](https://github.com/jsx/jsx-mode.el) or by
-using [Emacs Packages Manager]({%post_url 2013-01-07-emacs-package-manager%}).
-Add this to your .emacs to enable jsx-mode when you visit any .jsx file
-
-{% highlight cl %}
-(require 'jsx-mode)
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
-{% endhighlight %}
-
-In `jsx-mode`, the following keys are bound by default.
-
-* C-c C-c     comment-region (Comment or uncomment each line in the region)
-* C-c c       jsx-compile-file (Compile the current buffer)
-* C-c C       jsx-compile-file-async (Compile the current buffer asynchronously)
-* C-c C-r     jsx-run-buffer (Run the current buffer)
-
-<!-- more -->
-
 # 2. JSX Syntax Checking
 
 ![Alt Text](/files/2014-03-10-emacs-setup-jsx-mode-and-jsx-syntax-checking/flycheck.png)
@@ -69,6 +41,8 @@ in Emacs here
 [Emacs - Setup JSHint for on-the-fly (potential) errors checking]({%post_url 2014-02-21-emacs-setup-jshint-for-on-the-fly-petential-error-checking%}).
 For JSX, there is a similar tool called `jsxhint`. Of course, you need to
 install it before you can use
+
+<!-- more -->
 
 {% highlight console %}
 $ npm install -g jsxhint
@@ -90,7 +64,7 @@ and jsx-mode).
 path (or install `exec-path-from-shell` to import your shell's PATH
 automatically).
 
-## 2.1 JSX Syntax Checking for web-mode
+Add this to your .emacs to activate the checker for .jsx files
 
 {% highlight cl %}
 (flycheck-define-checker jsxhint-checker
@@ -108,53 +82,7 @@ automatically).
               (flycheck-mode))))
 {% endhighlight %}
 
-## 2.2 JSX Syntax Checking for jsx-mode
-
-{% highlight cl %}
-(require 'flycheck)
-(flycheck-define-checker jsxhint-checker
-  "A JSX syntax and style checker based on JSXHint."
-
-  :command ("jsxhint" source)
-  :error-patterns
-  ((error line-start (1+ nonl) ": line " line ", col " column ", " (message) line-end))
-  :modes (jsx-mode))
-(add-hook 'jsx-mode-hook (lambda ()
-                          (flycheck-select-checker 'jsxhint-checker)
-                          (flycheck-mode)))
-{% endhighlight %}
-
-**Note**: from my experience, if you are using jsx-mode, setting the default
-indent level to 2 instead of the default 4 will satisfy indentation error of
-jsxhint checker.
-
-{% highlight cl %}
-(setq jsx-indent-level 2)
-{% endhighlight %}
-
-![Alt Text](/files/2014-03-10-emacs-setup-jsx-mode-and-jsx-syntax-checking/indent.png)
-
 # JSX Auto complete, Snippets and Suggestion
-
-To enable auto-complete by default for jsx-mode, add it to `jsx-mode-hook`.
-
-{% highlight cl %}
-(add-hook 'jsx-mode-hook
-          (lambda () (auto-complete-mode 1)))
-{% endhighlight %}
-
-For using yasnippet with jsx-mode, create your custom snippets directory if you
-have not created it yet and set
-it to the variable **yas/root-directory**
-(`(setq yas/root-directory "/path/to/custom/snippet/directory")`).
-
-Next, create a folder for jsx-mode inside that folder you've just created. From
-there you can define your own snippets for using with JSX mode.
-
-You can also
-re-use snippets from js-mode mode by specifying the parent mode for jsx-mode.
-Create a new file named `.yas-parents` with the content `js-mode` and restart
-your Emacs for the changes to take effect.
 
 Finally, the greatest thing when using Emacs for JS development is the
 Suggestion feature with [TernJS](http://ternjs.net/). The steps on how to set up
