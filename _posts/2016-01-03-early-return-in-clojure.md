@@ -97,7 +97,7 @@ can be transformed into this
 
 Phew! We still have one nested level at the `let` block but it's much better
 compared to the original one. I think that's how **Clojure** do block scoping
-and we have no other way to re-assign the variable to we cannot avoid that
+and we have no other way to re-assign the variable so we cannot avoid that
 nested level, but it's still better than writing the nested `if` blocks.
 
 That's how I do early return in **Clojure**. Once again, thanks `slingshot` for
