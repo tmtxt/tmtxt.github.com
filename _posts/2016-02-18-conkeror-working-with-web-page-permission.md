@@ -92,4 +92,6 @@ enable/disable that permission for the current web page. Now, you can try it on
 sites like `messenger.com` or `slack.com`, which require `desktop-notification`
 to be enabled for it to work properly.
 
+You can check for the full file here [https://github.com/tmtxt/conkerorrc/blob/master/config/tmtxt-permission.js](https://github.com/tmtxt/conkerorrc/blob/master/config/tmtxt-permission.js )
+
 ![Permission](/files/2016-02-18-conkeror-working-with-web-page-permission/perm.png)
