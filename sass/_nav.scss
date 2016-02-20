@@ -1,0 +1,21 @@
+@mixin navbar-text {
+  color: $black;
+  font-weight: bold;
+  font-size: small;
+}
+
+nav.navbar {
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  border-top: 4px solid $grey;
+  border-bottom: 2px solid $grey;
+
+  a.navbar-brand {
+    @include navbar-text;
+  }
+
+  ul.navbar-nav li a {
+    @include navbar-text;
+  }
+}
