@@ -3,11 +3,12 @@
 permalink: /:year/:month/:day/:title 
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-highlighter: pygments
+highlighter: rouge
 paginate: 10 # the number of post per page
 safe: true
 markdown: kramdown
 url: http://truongtx.me
+gems: [jekyll-paginate]
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
