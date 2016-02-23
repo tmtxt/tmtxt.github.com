@@ -1,11 +1,25 @@
-  <script language="Javascript" type="text/javascript">
-  // the standard URL should be used
-  var normalized_location;
-normalized_location = "http://" + window.location.host + window.location.pathname;
+<script language="Javascript" type="text/javascript">
+ function normalizeAddress() {
+   var origin = window.location.origin;
+   var pathname = window.location.pathname;
+   var search = window.location.search;
+   var address;
 
-// if the current URL is not the standard URL, redirect it to standard URL
-if(window.location.toString() != normalized_location){
-  if(window.location.search.toString().charAt(0) == '?')
-    window.location = normalized_location;
-}
+   if (pathname !== "/") {   /* not on index page */
+     if (pathname.endsWith("/")) {
+       pathname = pathname.substring(0, pathname.length - 1);
+     }
+     address = origin + pathname;
+
+     /* facebook redirect or stuff like that */
+     if (search.toString().charAt(0) === "?") {
+       window.location = address;
+     }
+
+     if (window.location.toString() !== address) {
+       window.location = address;
+     }
+   }
+ }
+ normalizeAddress();
 </script>
