@@ -4,7 +4,7 @@ title: Trường TX Blog
 ---
 
 <!-- post preview -->
-{% for post in paginator.posts %}
+{% for post in site.posts limit:20 %}
 
 <div class="row">
   <div class="col-md-12">
@@ -47,60 +47,4 @@ title: Trường TX Blog
 	</div>
   </div>
 </div>
-
 {% endfor %}
-
-<!-- pagination section -->
-<div style="text-align:center;">
-  <ul class="pagination pagination-lg">
-	<!-- first page link -->
-	{% if paginator.previous_page %}
-	<li>
-	  <a href="/index.html">&laquo;&laquo;</a>
-	</li>
-	{% else %}
-	<li class="disabled">
-	  <a href="#">&laquo;&laquo;</a>
-	</li>
-	{% endif %}
-
-	<!-- previous page link -->
-	{% if paginator.previous_page %}
-	<li>
-	  <a href="/page{{paginator.previous_page}}">&laquo;</a>
-	</li>
-	{% else %}
-	<li class="disabled">
-	  <a href="#">&laquo;</a>
-	</li>
-	{% endif %}
-
-	<!-- current page -->
-	<li class="active">
-	  <span class="page_number ">Page: {{paginator.page}} of
-		{{paginator.total_pages}}</span>
-	</li>
-
-	<!-- next page link -->
-	{% if paginator.next_page %}
-	<li>
-	  <a href="/page{{paginator.next_page}}">&raquo;</a>
-	</li>
-	{% else %}
-	<li class="disabled">
-	  <a href="#">&raquo;</a>
-	</li>
-	{% endif %}
-
-	<!-- last page link -->
-	{% if paginator.next_page %}
-	<li>
-	  <a href="/page{{ paginator.total_pages }}">&raquo;&raquo;</a>
-	</li>
-	{% else %}
-	<li class="disabled">
-	  <a href="#">&raquo;&raquo;</a>
-	</li>
-	{% endif %}
-  </ul>
-</div>
