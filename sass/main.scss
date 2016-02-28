@@ -5,5 +5,10 @@
 @import "./fontawesome/font-awesome.scss";
 @import "./lato/lato-font.scss";
 
+/* common */
+@import "./mixin.scss";
 @import "./_common.scss";
 @import "./_nav.scss";
+
+/* pages */
+@import "./page-index.scss";

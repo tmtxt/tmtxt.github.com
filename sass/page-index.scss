@@ -1,0 +1,40 @@
+.page-index {
+  .post-header {
+    padding-bottom: 15px;
+
+    a {
+      color: $red;
+      font-weight: 900;
+      font-size: 34px;
+    }
+  }
+
+  .post-desc {
+    @include flex(row nowrap);
+    padding-bottom: 20px;
+
+    .post-date {
+      padding-right: 20px;
+      border-bottom: 4px solid $red;
+      padding-bottom: 7px;
+      font-size: smaller;
+    }
+
+    .post-cate {
+      border-bottom: 4px solid $red;
+      padding-bottom: 7px;
+      font-size: smaller;
+    }
+  }
+
+  .post-content {
+    padding-bottom: 10px;
+  }
+
+  .post-more {
+    a {
+      background-color: $red;
+      color: $white;
+    }
+  }
+}

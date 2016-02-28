@@ -14,13 +14,21 @@ function error(err) {
 }
 
 function sassDev() {
-  return gulp.src('./sass/main.scss')
+  gulp.src('./sass/main.scss')
     .pipe(plumber({errorHandler: error}))
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(prefixer())
     .pipe(sourcemaps.write('./maps'))
     .pipe(gulp.dest('./assets/css'));
+
+  return gulp.src('./sass/main.scss')
+    .pipe(plumber({errorHandler: error}))
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+    .pipe(prefixer())
+    .pipe(sourcemaps.write('./maps'))
+    .pipe(gulp.dest('./_site/assets/css'));
 }
 
 function sassProd() {
