@@ -5,7 +5,7 @@ permalink: /:year/:month/:day/:title
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "sass/*"]
 highlighter: rouge
 paginate: 10 # the number of post per page
-safe: true
+# safe: true
 markdown: kramdown
 url: http://truongtx.me
 gems: [jekyll-paginate]

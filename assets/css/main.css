@@ -7992,6 +7992,7 @@ button.close {
   font-weight: 900;
   font-style: italic; }
 
+/* common */
 body {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -8005,11 +8006,51 @@ nav.navbar {
   border-bottom: 2px solid #BCBEC0; }
   nav.navbar a.navbar-brand {
     color: #333333;
-    font-weight: bold;
-    font-size: small; }
+    font-weight: 900; }
   nav.navbar ul.navbar-nav li a {
     color: #333333;
-    font-weight: bold;
-    font-size: small; }
+    font-weight: 900; }
+  nav.navbar form {
+    border: 0; }
+    nav.navbar form input.form-control {
+      padding-left: 6px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      font-size: 12px;
+      border-radius: 0; }
+
+/* pages */
+.page-index .post-header {
+  padding-bottom: 15px; }
+  .page-index .post-header a {
+    color: #F76663;
+    font-weight: 900;
+    font-size: 34px; }
+
+.page-index .post-desc {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  padding-bottom: 20px; }
+  .page-index .post-desc .post-date {
+    padding-right: 20px;
+    border-bottom: 4px solid #F76663;
+    padding-bottom: 7px;
+    font-size: smaller; }
+  .page-index .post-desc .post-cate {
+    border-bottom: 4px solid #F76663;
+    padding-bottom: 7px;
+    font-size: smaller; }
+
+.page-index .post-content {
+  padding-bottom: 10px; }
+
+.page-index .post-more a {
+  background-color: #F76663;
+  color: #fff; }
 
 /*# sourceMappingURL=maps/main.css.map */
