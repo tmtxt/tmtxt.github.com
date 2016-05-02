@@ -17,14 +17,14 @@ There are many logging libraries for Clojure and Ring out there which support ba
 * an :error level message when a response's HTTP status is >= 500;
 * an :error level message with a stack trace when an exception is thrown during response generation
 
-If there are multiple requests that process at the same time, the log file could be something like this
+If there are multiple requests that process at the same time, the log entries in the log file could be something like this
 
 * Starting request 1
 * Starting request 2
 * End request 2
 * End request 1
 
-That's hard for me unite the logs into one place and search the all the related log information whenever debugging one specific request. There is also no way for me to track the flow of execution steps inside the handler function of that request. Although I can simply do `(timbre/info "Start some database queries")`, the problem than come back to the previous one
+That's hard for me unite all the logs into one place and search the all the related log information whenever debugging one specific request. There is also no way for me to track the flow of execution steps inside the handler function of that request. Although I can simply do `(timbre/info "Start some database queries")`, the problem than come back to the previous one
 
 * Starting request 1
 * Starting request 2
@@ -38,6 +38,16 @@ That's hard for me unite the logs into one place and search the all the related 
 Hmmm. Something like this would be much better
 
 * [1] Starting request {id}  
-[2] 
-* [1] ss  
-  sdf
+[2] Start query to database  
+[3] Found one record  
+[4] Processing data  
+[5] Finished request {id} in 20ms
+* [1] Starting request {id}  
+[2] Start query to database  
+[3] Exception: database down  
+[4] Finish request {id} in 10ms
+
+What I want is one single log entry per request with the trace of its steps so I can easily find out how the code works as well as where it can break, where it doesn't function normally.
+
+# The problem with immutable data
+
