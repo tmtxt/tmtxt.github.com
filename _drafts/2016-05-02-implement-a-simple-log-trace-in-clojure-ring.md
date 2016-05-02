@@ -28,5 +28,16 @@ That's hard for me unite the logs into one place and search the all the related 
 
 * Starting request 1
 * Starting request 2
+* Start a query for request 1
+* Start a query for request 2
+* Write file for request 2
+* Write file for request 1
 * End request 2
 * End request 1
+
+Hmmm. Something like this would be much better
+
+* [1] Starting request {id}  
+[2] 
+* [1] ss  
+  sdf
