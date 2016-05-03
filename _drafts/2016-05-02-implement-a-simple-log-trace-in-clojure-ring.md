@@ -51,3 +51,18 @@ What I want is one single log entry per request with the trace of its steps so I
 
 # The problem with immutable data
 
+So the initial idea is to add a middleware to wrap around the request handler for processing the log. For example
+
+```
+(defn wrap-log-trace [handler]
+  (fn [request]
+    (let [response (handler request)]
+      (write-log [request response])
+      response)))
+```
+
+The problem is that Clojure ultilizes immutable data by default, so if you want to capture all the log trace steps, at least you need to do something like this
+
+```
+
+```
