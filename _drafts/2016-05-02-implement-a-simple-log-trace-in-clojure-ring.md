@@ -61,8 +61,36 @@ So the initial idea is to add a middleware to wrap around the request handler fo
       response)))
 ```
 
-The problem is that Clojure ultilizes immutable data by default, so if you want to capture all the log trace steps, at least you need to do something like this
+The problem is that Clojure ultilizes immutable data by default, so if you want to capture all the log trace steps, at least you need to do something like this in your handler function
 
 ```
+(defn handler [request]
+  (let [log-data []
+        log-data (conj log-data "Start query")
+        _        (db/query user)
+        log-data (conj log-data "Start write file")
+        _        (file/write "test.txt")
+        response {:status 200
+                  :body "ok"
+                  :log-data log-data}]
+        ; return response
+        response))
+```
+
+Awwwww, probably not a good solution. I would prefer this approach
 
 ```
+(defn handler [request]
+  (log-trace/add "Start querying database")
+  (db/query user)
+  (log-trace/add "Start writing file")
+  (file/write "test.txt")
+  ;return response
+  {:status 200
+   :body "ok"})
+```
+
+And then the `wrap-log-trace` middleware should process all the related log information inside that request and write to log file when the request ends.
+
+# Time for some Mutability
+
