@@ -94,3 +94,4 @@ And then the `wrap-log-trace` middleware should process all the related log info
 
 # Time for some Mutability
 
+So... it's time to use mutable thread local var in Clojure (defined with `^:dynamic`). Now back to the `
