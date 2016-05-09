@@ -9,6 +9,8 @@ thumbnail:
 {% include JB/setup %}
 
 [wc]: /files/2016-05-08-jekyll-ios-be-geek-on-the-go/wc.jpg
+[bw1]: /files/2016-05-08-jekyll-ios-be-geek-on-the-go/bw1.jpg
+[bw2]: /files/2016-05-08-jekyll-ios-be-geek-on-the-go/bw2.jpg
 
 > This post is composed on iOS only, on my iPhone and iPad, from many places, at several times, in different situations.
 
@@ -32,3 +34,11 @@ Coming from the terminal and Emacs world, I have never imagined how I would deal
 For me, this's quite adequate. All the steps to clone and push from Github are set up automatically, just input your credential and done. It just took me few minutes to get used to the UI. There are Git2Go with the same price, but I'm satisfy with this so will leave Git2Go for next chance.
 
 ![working copy][wc]
+
+# Markdown editor
+
+[Byword](https://appsto.re/vn/bq7UC.i) seem to be the only option out there. Almost all the articles that I found on the internet refer this as the best option. With all the basic markdown features included, good looking font for editing and nice preview mode, it's worth to spend $3.99 on (money again, and not the last one). I love the two left and right arrow it provides, help me a lot in navigating while composing.
+
+![byword][bw1]
+
+![byword][bw2]
