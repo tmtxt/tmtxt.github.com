@@ -8,8 +8,8 @@ thumbnail:
 ---
 {% include JB/setup %}
 
-[wc1]: /files/2016-05-08-jekyll-ios-be-geek-on-the-go/wc1.png
-[wc2]: /files/2016-05-08-jekyll-ios-be-geek-on-the-go/wc1.png
+[wc1]: /files/2016-05-08-jekyll-ios-be-geek-on-the-go/wc1.jpg
+[wc2]: /files/2016-05-08-jekyll-ios-be-geek-on-the-go/wc1.jpg
 
 > This post is composed on iOS only, on my iPhone and iPad, from many places, at several times, in different situations.
 
