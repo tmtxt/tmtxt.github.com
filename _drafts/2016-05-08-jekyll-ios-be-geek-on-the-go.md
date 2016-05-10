@@ -37,8 +37,18 @@ For me, this's quite adequate. All the steps to clone and push from Github are s
 
 # Markdown editor
 
-[Byword](https://appsto.re/vn/bq7UC.i) seem to be the only option out there. Almost all the articles that I found on the internet refer this as the best option. With all the basic markdown features included, good looking font for editing and nice preview mode, it's worth to spend $3.99 on (money again, and not the last one). I love the two left and right arrow it provides, help me a lot in navigating while composing.
+[Byword](https://appsto.re/vn/bq7UC.i) seem to be the only option out there. Almost all the articles that I found on the internet refer this as the best option. With all the basic markdown features included, good looking font for editing and nice preview mode, it's worth to spend $3.99 on (money again, and not the last one).
 
 ![byword][bw1]
 
 ![byword][bw2]
+
+# Text Snippets and Navigation
+
+Back to the old day when I was still using iPhone 3g with ios 4.2.1, the text navigation and snippet experience was awful compare to Android with its 3rd party keyboard. But for now, after years coming back from Android, I'm really impressed by what iOS can do now. You can install
+
+# Code editor
+
+# Real site preview
+
+ 
