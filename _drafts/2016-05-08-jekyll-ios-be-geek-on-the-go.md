@@ -11,8 +11,9 @@ thumbnail:
 [wc]: /files/2016-05-08-jekyll-ios-be-geek-on-the-go/wc.jpg
 [bw1]: /files/2016-05-08-jekyll-ios-be-geek-on-the-go/bw1.jpg
 [bw2]: /files/2016-05-08-jekyll-ios-be-geek-on-the-go/bw2.jpg
+[cd]: /files/2016-05-08-jekyll-ios-be-geek-on-the-go/cd.jpg
 
-> This post is composed on iOS only, on my iPhone and iPad, from many places, at several times, in different situations.
+> This post is written entirely on iOS on my iPhone and iPad, from many places, at several times, in different situations.
 
 - So... You don't blog very regularly recently.
 - Hmm, I don't have enough time!
@@ -45,9 +46,17 @@ For me, this's quite adequate. All the steps to clone and push from Github are s
 
 # Text Snippets and Navigation
 
-Back to the old day when I was still using iPhone 3g with ios 4.2.1, the text navigation and snippet experience was awful compare to Android with its 3rd party keyboard. But for now, after years coming back from Android, I'm really impressed by what iOS can do now. You can install
+Back to the old days when I was still using iPhone 3g with ios 4.2.1, the text navigation and snippet experience was awful compare to Android with its 3rd party keyboards. But for now, after years coming back from Android, I'm really impressed by what iOS can do now. Yes you can install erd party keyboards now like [Go keyboard](https://appsto.re/vn/SfiN2.i) and [Text Expander](https://appsto.re/vn/QLQR2.i). The great thing is that **Byword** integrate Text Expander directly into the application, thus allows you to use Text Expander with another custom keyboard. And yes, I spent another $4.99 for Text Expander.
+
+One annoying thing that I have not found the good solution is text selection. I wish there are some ways that I can do sticky shift selection using arrow keys or swipe instead of using the default iOS selection feature.
 
 # Code editor
+
+Don't laugh at me and scream WTF :D My blog is a tech blog and code snippet is one essential part. At least, having something to write short code snippet with correct indentation and highlighting is still better than doing that in a plain text editor or in **Byword**. Don't tell me to run Emacs on my iPhone, I'm not that hard core :LOL:
+
+I have tried [Textastic](https://appsto.re/vn/1LLI-.i) and [Coda](https://appsto.re/vn/5KZ2D.i), both costs $9.99 (yes I purchased both of them 🙁). However, I would say that I will go with **Coda** for now. Although it lacks Clojure schema, it has auto pair feature for parenthenses and quote. I can use Scheme syntax instead 😂. Who can code without autopair these days? 😅
+
+![Coda][cd]
 
 # Real site preview
 
