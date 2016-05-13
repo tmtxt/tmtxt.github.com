@@ -23,7 +23,7 @@ thumbnail: /files/2016-05-08-jekyll-ios-be-geek-on-the-go/bw1.jpg
 
 But...
 
-During that, I waste a lot of time without actually doing any useful thing, mostly in waiting time, e.g waiting to my gf to be ready, waiting for my friends to come for a coffee or any other kind of waiting. I started to think about blogging on the go. However, the only thing that I have in thoses cases is my smart phone, an iOS powered one. And dealing with all those jekyll and git stuffs on a smartphone is really a big challenge.
+During that, I waste a lot of time without actually doing any useful thing, mostly in waiting time, e.g waiting to my gf to be ready (oh the girl! 😅), waiting for my friends to come for a coffee or any other kind of waiting. I started to think about blogging on the go. However, the only thing that I have in thoses cases is my smart phone, an iOS powered one. And dealing with all those jekyll and git stuffs on a smartphone is really a big challenge.
 
 Let's make the impossible become real.
 
