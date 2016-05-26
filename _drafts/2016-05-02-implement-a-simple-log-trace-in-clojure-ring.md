@@ -8,7 +8,7 @@ thumbnail:
 ---
 {% include JB/setup %}
 
-# Why normal logging is not enough for me
+# Why I need a Log trace
 
 There are many logging libraries for Clojure and Ring out there which support basic logging per each request that Ring server handles. However, all of them produce multiple log entries per request, one when the request starts and one when the request ends. Also, they cannot log the steps happen inside the handler function's execution. For example, with [Ring-logger](https://github.com/nberger/ring-logger), the default setup logs:
 
