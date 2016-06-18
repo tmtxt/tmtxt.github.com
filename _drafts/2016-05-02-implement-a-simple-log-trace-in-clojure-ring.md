@@ -95,3 +95,25 @@ And then the `wrap-log-trace` middleware should process all the related log info
 # Time for some Mutability
 
 So... it's time to use mutable thread local var in Clojure (defined with `^:dynamic`). Now back to the `
+
+# The wrap-log-trace middleware
+
+Since almost everything in Compojure Ring are triggered through the request handler, so I can simply define a thread-safe global log data variable and wrap each request inside my custom log trace middleware to mutate that global log data. For example
+
+```clojure
+(ns app.logger.log-trace
+  (:require [slingshot.slingshot :refer [try+ throw+]]))
+
+;;; The var that contains all the logging information for this request
+(def ^:dynamic *log-data*)
+
+...
+
+(defn wrap-log-trace [handler]
+  (fn [request]
+    (binding [*log-data* (make-pre-request-data request)]
+      (try+
+       (let [response (handler request)]
+         (handle-no-exception response))
+       (catch Object ex (handle-exception ex))))))
+```
