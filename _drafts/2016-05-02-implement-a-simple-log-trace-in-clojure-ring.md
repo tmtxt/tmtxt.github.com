@@ -49,53 +49,6 @@ Hmmm. Something like this would be much better
 
 What I want is one single log entry per request with the trace of its steps so I can easily find out how the code works as well as where it can break, where it doesn't function normally.
 
-# The problem with immutable data
-
-So the initial idea is to add a middleware to wrap around the request handler for processing the log. For example
-
-```
-(defn wrap-log-trace [handler]
-  (fn [request]
-    (let [response (handler request)]
-      (write-log [request response])
-      response)))
-```
-
-The problem is that Clojure ultilizes immutable data by default, so if you want to capture all the log trace steps, at least you need to do something like this in your handler function
-
-```
-(defn handler [request]
-  (let [log-data []
-        log-data (conj log-data "Start query")
-        _        (db/query user)
-        log-data (conj log-data "Start write file")
-        _        (file/write "test.txt")
-        response {:status 200
-                  :body "ok"
-                  :log-data log-data}]
-        ; return response
-        response))
-```
-
-Awwwww, probably not a good solution. I would prefer this approach
-
-```
-(defn handler [request]
-  (log-trace/add "Start querying database")
-  (db/query user)
-  (log-trace/add "Start writing file")
-  (file/write "test.txt")
-  ;return response
-  {:status 200
-   :body "ok"})
-```
-
-And then the `wrap-log-trace` middleware should process all the related log information inside that request and write to log file when the request ends.
-
-# Time for some Mutability
-
-So... it's time to use mutable thread local var in Clojure (defined with `^:dynamic`). Now back to the `
-
 # The wrap-log-trace middleware
 
 Since almost everything in Compojure Ring are triggered through the request handler, so I can simply define a thread-safe global log data variable and wrap each request inside my custom log trace middleware to mutate that global log data. For example
@@ -105,7 +58,16 @@ Since almost everything in Compojure Ring are triggered through the request hand
   (:require [slingshot.slingshot :refer [try+ throw+]]))
 
 ;;; The var that contains all the logging information for this request
-(def ^:dynamic *log-data*)
+;;; message: a vector containing the steps executed inside the request
+;;; request & response: the request and response data, will be populated later
+;;; correlationId: the id that exist along way with the request through multiple services in the system
+(def ^:dynamic *log-data*
+  {:message        []
+   :serviceName    "svc.web"
+   :processTime    nil
+   :request        nil
+   :response       nil
+   :correlationId  nil})
 
 ...
 
@@ -116,4 +78,40 @@ Since almost everything in Compojure Ring are triggered through the request hand
        (let [response (handler request)]
          (handle-no-exception response))
        (catch Object ex (handle-exception ex))))))
+```
+
+That's basic idea. Before each request, the `make-pre-request` function will extract and store all the necessary request information into the global `*log-data*`. The handler will then try catch the request processing and log the response data as well as the error stack trace if it happened using `handle-no-exception` and `handle-exception` functions. I will talk about the detailed implementation of each function and the log-trace namespace later.
+
+Now, to use this, we need to include it in our routes handlers. If you use **Compojure** (I hope you use that 😄), it offers a `wrap-routes` function to wrap your middleware only after the request has matched the route. By that way, I can easily ignore logging for unnecessary routes like assets or images routes.
+
+```clojure
+(def app
+  (-> (routes (-> home-routes
+                  (wrap-routes log-trace/wrap-log-trace))
+              (-> auth-api-routes
+                  (wrap-routes log-trace/wrap-log-trace))
+              app-routes)
+      (wrap-params)
+      (wrap-multipart-params)
+      (wrap-session)
+      (wrap-json-response)))
+```
+
+# Process with Request and Response data
+
+So, all the setup is done. Now it's time to add some implementation to process the data that is sent to and back from our application. `request` and `response` are merely Clojure maps so you can easily extract whatever you want using basic Clojure `get` and `get-in` syntax. For example
+
+* `make-pre-request-data` function
+
+```clojure
+(defn- make-pre-request-data
+  "Create the default log data from the request, used when start processing the request"
+  [request]
+  {:message        [{:level "info"
+                     :title "Start processing request"
+                     :data ""}]
+   :serviceName    "svc.web"
+   :startedAt      (c/to-long (t/now))
+   :request        (process-request-data request)
+   :correlationId  (get-correlation-id request)})
 ```
