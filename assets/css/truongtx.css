@@ -7105,6 +7105,8 @@ a {
     border-top: 3px solid #ddd; }
   .article-panel .body-panel {
     padding: 15px 0; }
+    .article-panel .body-panel blockquote:first-child {
+      border-left: 0; }
     .article-panel .body-panel p {
       margin-bottom: 16px;
       line-height: 1.86667; }

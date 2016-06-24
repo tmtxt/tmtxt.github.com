@@ -83,6 +83,9 @@
 		}
 	}
 	.body-panel{
+    blockquote:first-child {
+      border-left: 0;
+    }
 		padding: $padding-large-vertical*1.5 0;
 		p{
 			margin-bottom: $padding-large-horizontal;
