@@ -1,0 +1,84 @@
+---
+layout: default
+---
+{% include JB/setup %}
+
+<div class="panel panel-default">
+  <div class="panel-body" style="margin-top:0px;padding-top:0px;">
+  <!-- hero -->
+  <div class="row">
+	<div class="col-md-12 hidden-xs hidden-sm"
+		 style="background-image:url('{{ASSET_PATH}}/images/banner.png');
+				height:200px;background-position:right top">
+	  <h1 style="padding-left:100px;color:inherit;font-size:60px">Trường TX blog</h1>
+	  <p style="padding-left:100px">I program my life</p>
+	</div>
+  </div>
+
+  <!-- page header -->
+  <div class="page-header">
+	<h1 style="font-size:40px;">{{ page.title }}<br />
+	  <small><!-- Supporting tagline --></small></h1>
+  </div>
+
+  <!-- post content -->
+  <div class="row">
+	<div class="col-md-9">
+	  {{ content }}
+	</div>
+	
+	<div class="col-md-3">
+	  <p>
+		<i class="fa fa-calendar"></i>
+		<span>{{ page.date | date_to_long_string }}</span>
+	  </p>
+	  
+    <p>
+		<i class="fa fa-folder-open-o"></i> Categories
+		<ul class="fa-ul">
+		  {% assign categories_list = page.categories %}
+		  {% include JB/categories_list %}
+		</ul>
+	  </p>
+	  <!-- <p>
+		<i class="fa fa-tags"></i> Tags
+		<ul class="fa-ul">
+		{% assign tags_list = page.tags %}
+		{% include JB/tags_list %}
+		</ul>
+	  </p> -->
+	  <hr/>
+	  <h4>
+		Share to your friend
+	  </h4>
+	  <p>
+		{% include social_share_buttons %}
+	  </p>
+	</div>
+  </div>
+
+  <div class="row">
+	<div class="col-md-12">
+	  <hr>
+	  <ul class="pager">
+		{% if page.previous %}
+        <li class="previous"><a href="{{ BASE_PATH }}{{ page.previous.url }}"
+								title="{{ page.previous.title }}">&larr; Previous</a></li>
+		{% else %}
+        <li class="previous disabled"><a>&larr; Previous</a></li>
+		{% endif %}
+        <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a></li>
+		{% if page.next %}
+        <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}"
+							title="{{ page.next.title }}">Next &rarr;</a></li>
+		{% else %}
+        <li class="next disabled"><a>Next &rarr;</a>
+		  {% endif %}
+	  </ul>
+      <hr>
+	  {% include JB/comments %}
+	</div>
+	
+  </div>
+  </div>
+</div>

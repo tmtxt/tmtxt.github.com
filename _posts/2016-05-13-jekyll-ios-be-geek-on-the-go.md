@@ -8,6 +8,8 @@ thumbnail: /files/2016-05-08-jekyll-ios-be-geek-on-the-go/bw1.jpg
 ---
 {% include JB/setup %}
 
+> This post is written entirely on iOS on my iPhone and iPad, from many places, at several times, in different situations.
+
 [wc]: /files/2016-05-08-jekyll-ios-be-geek-on-the-go/wc.jpg
 [bw1]: /files/2016-05-08-jekyll-ios-be-geek-on-the-go/bw1.jpg
 [bw2]: /files/2016-05-08-jekyll-ios-be-geek-on-the-go/bw2.jpg
@@ -18,8 +20,6 @@ thumbnail: /files/2016-05-08-jekyll-ios-be-geek-on-the-go/bw1.jpg
 - Hmm, I don't have enough time!
 - Too busy on work?
 - Nope, just enjoying the fun of the youth that I have missed for years :D
-
-> This post is written entirely on iOS on my iPhone and iPad, from many places, at several times, in different situations.
 
 But...
 
