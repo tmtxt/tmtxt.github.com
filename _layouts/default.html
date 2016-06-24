@@ -1,108 +1,138 @@
-{% include JB/setup %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta property="og:title" content="{{ page.title }}">
-    <meta property="og:image" content="{{ site.url }}{{ page.thumbnail }}">
-    <!--     <meta property="og:url" content="{{ site.url }}{{ page.url }}"> -->
-	<title>{{ page.title }}</title>
-
-	{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
-	{% if site.author.name %}<meta name="author" content="{{ site.author.name }}">{% endif %}
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-
-	<!-- bootstrap -->
-	<script src="{{ASSET_PATH}}/js/jquery.js"></script>			 <!-- jquery -->
-	<meta name="viewport"
-		  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<link href="{{ASSET_PATH}}/css/bootstrap.min.css" rel="stylesheet">
-	<script src="{{ASSET_PATH}}/js/bootstrap.min.js"></script>
-
-	<!-- others -->
-	<link rel="stylesheet" href="/assets/css/pygments.css"> <!-- pygments -->
-	<meta charset="UTF-8">										 <!-- unicode -->
-	<link rel="stylesheet" href="{{ASSET_PATH}}/css/font-awesome.min.css"> <!-- font awesome -->
-
-	<!-- custom -->
-	{% include normalize_address %}
-	{% include google_search %}
-	<link rel="stylesheet" href="/assets/css/custom.css"> <!-- pygments -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <title>TruongTX blog</title>
+    <!-- Custom styles for this template -->
+    <link href="/assets/css/truongtx.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+         <![endif]-->
   </head>
-
-  <body style="background-color:#fff;">
-
-
-	<!-- navigation bar -->
-	<nav class="navbar navbar-default bs-docs-nav" role="navigation">
-	  <div class="container">
-	  <!-- Brand and toggle get grouped for better mobile display -->
-	  <div class="navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-		  <span class="sr-only">Toggle navigation</span>
-		  <span class="icon-bar"></span>
-		  <span class="icon-bar"></span>
-		  <span class="icon-bar"></span>
-		</button>
-		<a class="navbar-brand" href="{{HOME_PATH}}">{{site.title}}</a>
-	  </div>
-
-	  <!-- Collect the nav links, forms, and other content for toggling -->
-	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		<ul class="nav navbar-nav">
-		  <li><a href="{{BASE_PATH}}/categories.html">Categories</a></li>
-		  <li><a href="{{BASE_PATH}}/archive.html">Archive</a></li>
-      <li><a href="{{BASE_PATH}}/about.html">About me</a></li>
-      <li><a href="{{BASE_PATH}}/atom.xml">RSS</a></li>
-		  <li class="dropdown">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact <b class="caret"></b></a>
-			<ul class="dropdown-menu">
-        <li><a href="/files/resume.pdf">
-				  <i class="fa fa-file fa-lg fa-fw"></i> Resume</a></li>
-			  <li><a href="mailto:{{site.author.email}}">
-				  <i class="fa fa-envelope fa-lg fa-fw"></i> Email</a></li>
-			  <li><a target="blank" href="https://twitter.com/{{site.author.twitter}}">
-				  <i class="fa fa-twitter-square fa-lg fa-fw"></i> Twitter</a></li>
-			  <li><a target="blank" href="http://facebook.com/{{site.author.facebook}}">
-				  <i class="fa fa-facebook-square fa-lg fa-fw"></i> Facebook</a></li>
-			  <li><a target="blank" href="http://vn.linkedin.com/in/{{site.author.linkedin}}">
-				  <i class="fa fa-linkedin-square fa-lg fa-fw"></i> Linkedin</a></li>
-			  <li><a target="blank" href="https://plus.google.com/+{{site.author.google_plus}}">
-				  <i class="fa fa-google-plus-square fa-lg fa-fw"></i> Google+</a></li>
-			  <li><a target="blank" href="https://github.com/{{site.author.github}}">
-				  <i class="fa fa-github-square fa-lg fa-fw"></i> Github</a></li>
-			  <li><a target="blank" href="http://stackexchange.com/users/{{site.author.stack_exchange}}">
-				  <i class="fa fa-stack-exchange fa-lg fa-fw"></i> Stack Exchange</a></li>
-			</ul>
-		  </li>
-		</ul>
-		<form class="navbar-form navbar-left" role="search" onsubmit="tmtxt_search_google()">
-		  <div class="form-group">
-			<input type="text" class="form-control" placeholder="Search" id="tmtxt-google-search">
-		  </div>
-		</form>
-	  </div><!-- /.navbar-collapse -->
-	  </div>
-	</nav>
-	<!-- end nav bar -->
-
-	<div class="container">
-	  <!-- content of the page -->
-        {{ content }}
-
-	  <!-- footer -->
-      <footer style="text-align: center">
-        <p>&copy; {{ site.author.name }} 2013
-          with help from
-		  <a href="http://jekyllrb.com/" target="_blank"
-			 title="The Definitive Jekyll Blogging Framework">Jekyll</a>
-          and
-		  <a href="http://twitter.github.com/bootstrap/"
-			 target="_blank">Twitter Bootstrap</a>
-        </p>
-      </footer>
-	</div>
-
-	<!-- analytic -->
-    {% include JB/analytics %}
+  <body>
+    <main class="body-container">
+      <div class="container">
+        <header class="header-container">
+          <section class="header-logo">
+            <a href="index.html"><img src="/assets/img/logo.svg" alt="truongtx logo"></a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#truongtx-navbar" aria-expanded="false">
+              <i class="fa fa-bars"></i>
+            </button>
+          </section> <!-- header-logo end -->
+          <section class="collapse navbar-collapse header-navigation" id="truongtx-navbar">
+            <ul class="nav-bar" >
+              <li><a href="archive.html">Archieves</a></li>
+              <li><a href="categories.html">Categories</a></li>
+              <li><a href="#">RSS</a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+            <!-- <div class="search-bar">
+                 <div class="form-group"><input class="form-control" type="text" placeholder="Search..."></div>
+                 </div>  --><!-- search end -->
+          </section>
+        </header><!-- header container end -->
+        <div class="blog-wrapper">
+          <section class="blog-section">
+            <article class="article-panel">
+              <div class="header-panel">
+                <a class="title" href="#">The quick brown fox jumps over the lazy dog the quick brown fox jumps over the lazy dog</a>
+                <ul class="categories">
+                  <li>
+                    <i class="fa fa-calendar"></i>&nbsp;<span>10 June 2016</span>
+                  </li> <!-- date end -->
+                  <li>
+                    <i class="fa fa-tags"></i>&nbsp;<a href="#">childporn</a>
+                  </li> <!-- catergory type -->
+                </ul> <!-- categories end -->
+                <hr>
+              </div> <!-- panel-header end -->
+              <div class="body-panel">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis quibusdam assumenda, nobis eligendi laborum similique tenetur provident, voluptate molestiae voluptatum, pariatur sint voluptates porro. Delectus, nam doloribus. Quidem, at, cumque.<br>
+                  <a href="#">Duis autem</a> vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.
+                </p>
+                <img src="/assets/img/test-img.jpg" alt="test image">
+                <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</p>
+                <a href="#" class="btn btn-primary">Read more</a>
+              </div> <!-- panel-body end -->
+            </article> <!-- article end -->
+            <article class="article-panel">
+              <div class="header-panel">
+                <a class="title" href="#">The quick brown fox jumps over the lazy dog the quick brown fox jumps over the lazy dog</a>
+                <ul class="categories">
+                  <li>
+                    <i class="fa fa-calendar"></i>&nbsp;<span>10 June 2016</span>
+                  </li> <!-- date end -->
+                  <li>
+                    <i class="fa fa-tags"></i>&nbsp;<a href="#">childporn</a>
+                  </li> <!-- catergory type -->
+                </ul> <!-- categories end -->
+                <hr>
+              </div> <!-- panel-header end -->
+              <div class="body-panel">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis quibusdam assumenda, nobis eligendi laborum similique tenetur provident, voluptate molestiae voluptatum, pariatur sint voluptates porro. Delectus, nam doloribus. Quidem, at, cumque.
+                </p>
+                <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'.btn.danger'</span><span class="p">).</span><span class="nx">button</span><span class="p">(</span><span class="s1">'toggle'</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">'fat'</span><span class="p">)</span></code></pre></figure>
+                <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</p>
+                <a href="#" class="btn btn-primary">Read more</a>
+              </div> <!-- panel-body end -->
+            </article> <!-- article end -->
+            <article class="article-panel">
+              <div class="pagination-panel">
+                <ul class="pagination-list">
+                  <li><a class="btn btn-primary" href="#">Newer Posts</a></li>
+                  <li><span>1 of 24</span></li>
+                  <li><a class="btn btn-primary" href="#">Older Posts</a></li>
+                </ul> <!-- categories end -->
+              </div> <!-- pagination-panel end -->
+            </article> <!-- article end -->
+          </section> <!-- blog-section end -->
+          <aside class="blog-aside">
+            <div class="connection">
+              <h4 class="title">Connection</h4>
+              <ul>
+                <li><a href="https://www.nhentai.net"><i class="fa fa-facebook-square"></i></a></li>
+                <li><a href="https://www.g.e-hentai.org"><i class="fa fa-twitter-square"></i></a></li>
+                <li><a href="https://www.xvideos.com"><i class="fa fa-linkedin-square"></i></a></li>
+                <li><a href="https://www.xnxx.com"><i class="fa fa-google-plus-square"></i></a></li>
+                <li><a href="https://www.fakku.net"><i class="fa fa-github-square"></i></a></li>
+              </ul>
+            </div> <!-- connection -->
+            <div class="advertisement">
+              <h4 class="title">Advertisement</h4>
+              <img src="/assets/img/test-img-2.jpg" alt="test image">
+            </div> <!-- Advertisement -->
+          </aside> <!-- blog-aside -->
+        </div>
+      </div>
+    </main><!-- main container end -->
+    <footer class="footer-container">
+      <div class="container">
+        <div class="footer-wrapper">
+          <ul class="footer-navigation">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Archieves</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">RSS</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+          <p class="copyright">&copy; Trường TX 2013 with help from <a href="https://www.behance.net/thefierylantern">Phan Minh Dang</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a></p>
+        </div>
+      </div>
+    </footer><!-- footer container end -->
+    <!-- Bootstrap core JavaScript
+         ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/assets/js/vendor/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
   </body>
 </html>
