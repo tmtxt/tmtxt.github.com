@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+    <meta name="author" content="Trường TX">
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:image" content="{{ site.url }}{{ page.thumbnail }}">
     <link rel="icon" href="favicon.ico">
-    <title>TruongTX blog</title>
+    <title>TrườngTX Blog</title>
     <!-- Custom styles for this template -->
     <link href="/assets/css/truongtx.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -22,17 +24,17 @@
       <div class="container">
         <header class="header-container">
           <section class="header-logo">
-            <a href="index.html"><img src="/assets/img/logo.svg" alt="truongtx logo"></a>
+            <a href="/"><img src="/assets/img/logo.svg" alt="truongtx logo"></a>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#truongtx-navbar" aria-expanded="false">
               <i class="fa fa-bars"></i>
             </button>
           </section> <!-- header-logo end -->
           <section class="collapse navbar-collapse header-navigation" id="truongtx-navbar">
             <ul class="nav-bar" >
-              <li><a href="archive.html">Archieves</a></li>
-              <li><a href="categories.html">Categories</a></li>
-              <li><a href="#">RSS</a></li>
-              <li><a href="about.html">About</a></li>
+              <li><a href="/archive.html">Archieves</a></li>
+              <li><a href="/categories.html">Categories</a></li>
+              <li><a href="/atom.xml">RSS</a></li>
+              <li><a href="/about.html">About</a></li>
             </ul>
             <!-- <div class="search-bar">
                  <div class="form-group"><input class="form-control" type="text" placeholder="Search..."></div>
@@ -41,70 +43,16 @@
         </header><!-- header container end -->
         <div class="blog-wrapper">
           <section class="blog-section">
-            <article class="article-panel">
-              <div class="header-panel">
-                <a class="title" href="#">The quick brown fox jumps over the lazy dog the quick brown fox jumps over the lazy dog</a>
-                <ul class="categories">
-                  <li>
-                    <i class="fa fa-calendar"></i>&nbsp;<span>10 June 2016</span>
-                  </li> <!-- date end -->
-                  <li>
-                    <i class="fa fa-tags"></i>&nbsp;<a href="#">childporn</a>
-                  </li> <!-- catergory type -->
-                </ul> <!-- categories end -->
-                <hr>
-              </div> <!-- panel-header end -->
-              <div class="body-panel">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis quibusdam assumenda, nobis eligendi laborum similique tenetur provident, voluptate molestiae voluptatum, pariatur sint voluptates porro. Delectus, nam doloribus. Quidem, at, cumque.<br>
-                  <a href="#">Duis autem</a> vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.
-                </p>
-                <img src="/assets/img/test-img.jpg" alt="test image">
-                <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</p>
-                <a href="#" class="btn btn-primary">Read more</a>
-              </div> <!-- panel-body end -->
-            </article> <!-- article end -->
-            <article class="article-panel">
-              <div class="header-panel">
-                <a class="title" href="#">The quick brown fox jumps over the lazy dog the quick brown fox jumps over the lazy dog</a>
-                <ul class="categories">
-                  <li>
-                    <i class="fa fa-calendar"></i>&nbsp;<span>10 June 2016</span>
-                  </li> <!-- date end -->
-                  <li>
-                    <i class="fa fa-tags"></i>&nbsp;<a href="#">childporn</a>
-                  </li> <!-- catergory type -->
-                </ul> <!-- categories end -->
-                <hr>
-              </div> <!-- panel-header end -->
-              <div class="body-panel">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis quibusdam assumenda, nobis eligendi laborum similique tenetur provident, voluptate molestiae voluptatum, pariatur sint voluptates porro. Delectus, nam doloribus. Quidem, at, cumque.
-                </p>
-                <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'.btn.danger'</span><span class="p">).</span><span class="nx">button</span><span class="p">(</span><span class="s1">'toggle'</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">'fat'</span><span class="p">)</span></code></pre></figure>
-                <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</p>
-                <a href="#" class="btn btn-primary">Read more</a>
-              </div> <!-- panel-body end -->
-            </article> <!-- article end -->
-            <article class="article-panel">
-              <div class="pagination-panel">
-                <ul class="pagination-list">
-                  <li><a class="btn btn-primary" href="#">Newer Posts</a></li>
-                  <li><span>1 of 24</span></li>
-                  <li><a class="btn btn-primary" href="#">Older Posts</a></li>
-                </ul> <!-- categories end -->
-              </div> <!-- pagination-panel end -->
-            </article> <!-- article end -->
+            {{ content }}
           </section> <!-- blog-section end -->
           <aside class="blog-aside">
             <div class="connection">
               <h4 class="title">Connection</h4>
               <ul>
-                <li><a href="https://www.nhentai.net"><i class="fa fa-facebook-square"></i></a></li>
-                <li><a href="https://www.g.e-hentai.org"><i class="fa fa-twitter-square"></i></a></li>
-                <li><a href="https://www.xvideos.com"><i class="fa fa-linkedin-square"></i></a></li>
-                <li><a href="https://www.xnxx.com"><i class="fa fa-google-plus-square"></i></a></li>
-                <li><a href="https://www.fakku.net"><i class="fa fa-github-square"></i></a></li>
+                <li><a href="https://www.facebook.com/mr.truong.tx"><i class="fa fa-facebook-square"></i></a></li>
+                <li><a href="https://twitter.com/mr_truong_tx"><i class="fa fa-twitter-square"></i></a></li>
+                <li><a href="http://vn.linkedin.com/in/tmtxt"><i class="fa fa-linkedin-square"></i></a></li>
+                <li><a href="https://github.com/tmtxt/"><i class="fa fa-github-square"></i></a></li>
               </ul>
             </div> <!-- connection -->
             <div class="advertisement">
