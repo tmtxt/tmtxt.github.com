@@ -1,0 +1,22 @@
+/* DECORATION
+   ========================================================================== */
+// This is the collection of misterious ritals to make the UI looks pretty
+
+// no bullshit for link
+a{
+	color: $brand-primary;
+  &:hover, &:focus, &:active{
+      color: darken($brand-primary, 25.5%);
+      // text-decoration: none;
+  }
+}
+
+.pdt-0{
+  padding-top: 0 !important;
+}
+// timeline toggle
+// .toggle-timeline{
+// 	.onoffswitch{
+// 		vertical-align: middle;
+// 	}
+// }

@@ -1,0 +1,45 @@
+/* FOOTER
+   ========================================================================== */
+
+.footer-container{
+	padding-top: $padding-large-horizontal*2;
+	padding-bottom: $padding-large-horizontal*2;
+	background: $text-color;
+}
+.footer-wrapper{
+	@include clearfix;
+	font-size: $font-size-small;
+	.copyright{
+		display: block;
+		width: 100%;
+		float: left;
+		margin: 0 0 $padding-base-horizontal;
+		color: $gray-light;
+		a{
+			// font-weight: 700;
+		}
+	}
+	.footer-navigation{
+		display: block;
+		float: left;
+		padding: 0;
+		margin: 0 0 $padding-base-horizontal*1.5;
+		list-style: none;
+		>li{
+			display: inline-block;
+			padding: 0 $padding-base-horizontal 0 0;
+			>a{
+				display: block;
+				font-weight: 700;
+				&:hover,
+				&:focus{
+					text-decoration: none;
+				}
+			}
+			&:last-of-type{
+				padding: 0;
+			}
+		}
+	}
+}
+
