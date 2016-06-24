@@ -4,7 +4,6 @@ title: "Conkeror Extended Facebook Mode - CEFM"
 description: "A Conkeror extension for ease of Facebook browsing"
 group: project
 ---
-{% include JB/setup %}
 
 # Table of Contents
 

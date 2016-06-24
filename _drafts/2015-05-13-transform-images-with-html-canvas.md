@@ -6,7 +6,7 @@ categories: []
 tags: [javascript]
 thumbnail: 
 ---
-{% include JB/setup %}
+
 
 # HTML5 Canvas and Image Manipulation
 

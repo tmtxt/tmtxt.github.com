@@ -7,7 +7,7 @@ category: Emacs
 thumbnail: /files/thumbnails/emacs.png
 tags: [emacs, dired, file manager]
 ---
-{% include JB/setup %}
+
 
 > Dired is a visual directory editor, a computer program for editing file system
 > directories. Dired is shipped with Emacs. It can be really strange and

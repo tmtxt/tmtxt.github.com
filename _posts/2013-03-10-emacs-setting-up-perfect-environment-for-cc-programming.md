@@ -7,7 +7,7 @@ category: Emacs
 thumbnail: /files/thumbnails/emacs.png
 tags: [emacs, programming environment]
 ---
-{% include JB/setup %}
+
 
 Emacs is an ideal text editor for programmers, especially C/C++ programmers. I
 have been using Emacs since I began learning C while my classmates used vim,

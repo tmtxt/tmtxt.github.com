@@ -6,7 +6,7 @@ categories: [misc]
 tags: []
 thumbnail: 
 ---
-{% include JB/setup %}
+
 
 Recently, I have been working with projects using docker on Mac OS using docker
 machine. However, docker machine currently does not support fixed ip address for

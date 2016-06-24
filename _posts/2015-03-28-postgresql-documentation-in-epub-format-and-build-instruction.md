@@ -6,7 +6,7 @@ categories: [misc]
 tags: []
 thumbnail: "/files/2015-03-28-postgresql-documentation-in-epub-format-and-build-instruction/cover.png"
 ---
-{% include JB/setup %}
+
 
 [cover]: /files/2015-03-28-postgresql-documentation-in-epub-format-and-build-instruction/cover.png
 [941link]: /files/2015-03-28-postgresql-documentation-in-epub-format-and-build-instruction/postgres.epub

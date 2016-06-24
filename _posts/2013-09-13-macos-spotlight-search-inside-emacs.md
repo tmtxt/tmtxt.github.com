@@ -5,7 +5,7 @@ description: ""
 categories: [emacs, mac os]
 tags: [macos, spotlight, locate, emacs, helm]
 ---
-{% include JB/setup %}
+
 
 MacOS comes with a powerful search tool, Spotlight, that helps us find any file
 in our computer at a glance. It's would be great if we can integrate it with

@@ -5,7 +5,7 @@ description: ""
 category: conkeror
 tags: [conkeror, web-browser]
 ---
-{% include JB/setup %}
+
 
 # The problem
 

@@ -5,7 +5,7 @@ description: ""
 category: mac os
 tags: [minecraft, macos]
 ---
-{% include JB/setup %}
+
 
 ![minecraft](/files/2013-12-29-set-up-and-optimize-a-minecraft-server-on-mac/minecraft.jpg)
 

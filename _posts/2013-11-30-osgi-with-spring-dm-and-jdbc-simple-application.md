@@ -7,7 +7,7 @@ thumbnail:
 showtn: no
 tags: [osgi, spring, java]
 ---
-{% include JB/setup %}
+
 
 Recently, I was working on one assignment about OSGI framework in Java. At first
 sight, I was excited about its idea of dynamically changing the .jar module

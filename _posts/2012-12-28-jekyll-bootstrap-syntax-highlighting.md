@@ -7,7 +7,7 @@ category: Jekyll
 thumbnail: /files/2012-12-28-jekyll-bootstrap-syntax-highlighting/thumbnail.png
 tags: [jekyll, syntax highlighting]
 ---
-{% include JB/setup %}
+
 
 Jekyll is a blog for hacker so of course it must have syntax highlighting. There
 are several ways to activate syntax highlighting in Jekyll. I'll show you 2

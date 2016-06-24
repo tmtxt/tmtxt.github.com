@@ -7,7 +7,7 @@ category: Jekyll
 thumbnail: 
 tags: [jekyll, disqus]
 ---
-{% include JB/setup %}
+
 
 Since Disqus is made for static site comment system, each Disqus thread is
 identified by the current page URL. This leads to a problem that Disqus does not

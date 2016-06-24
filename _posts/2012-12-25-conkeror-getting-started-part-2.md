@@ -6,7 +6,7 @@ description: ""
 category: conkeror
 tags: [conkeror, emacs, web browser]
 ---
-{% include JB/setup %}
+
 
 > Learn Conkeror by using Conkeror ;)
 

@@ -5,7 +5,7 @@ description: ""
 categories: [emacs, javascript]
 tags: [emacs, javascript]
 ---
-{% include JB/setup %}
+
 
 The built-in js-mode in Emacs does not provide many
 features for working with js framework beside js editing and syntax

@@ -7,7 +7,7 @@ category: Jekyll
 thumbnail: 
 tags: [jekyll]
 ---
-{% include JB/setup %}
+
 
 Jekyll does not offer Preview post feature by default. There are plenty of
 plugins that can help us achieve that task. However, since many Jekyll sites are

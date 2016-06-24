@@ -5,7 +5,7 @@ description: ""
 categories: [javascript]
 tags: []
 ---
-{% include JB/setup %}
+
 
 # HTML5 Web Storage
 

@@ -7,7 +7,7 @@ category: Misc
 thumbnail: /files/2013-04-11-simple-gesture-detection-for-libgdx/thumbnail.png
 tags: [libgdx, gesture]
 ---
-{% include JB/setup %}
+
 
 LibGdx has the built in support for Gesture detection. However, the Swipe
 Gesture is not well-supported and a bit simple. I have found a solution from

@@ -7,7 +7,7 @@ thumbnail:
 showtn: no
 tags: [conkeror, cefm]
 ---
-{% include JB/setup %}
+
 
 Today, I have added my extension for Conkeror some new features. They are small
 but really useful for interacting with Facebook effectively through the

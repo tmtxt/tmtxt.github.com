@@ -7,7 +7,7 @@ category: Jekyll
 thumbnail: /files/thumbnails/google.png
 tags: [google, analytics, jekyll]
 ---
-{% include JB/setup %}
+
 
 > This blog post demonstrates how to config Google Analytics for Jekyll
 > Bootstrap to monitor website view, user, traffic, etc. The manual on Jekyll

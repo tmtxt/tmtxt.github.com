@@ -5,7 +5,7 @@ description: ""
 categories: [emacs]
 tags: []
 ---
-{% include JB/setup %}
+
 
 Most of us split Emacs horizontally by 2 windows so that we can easily edit and
 compare multi documents at the same time. However, the problem is that the two

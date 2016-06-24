@@ -5,7 +5,7 @@ description: ""
 categories: [javascript]
 tags: []
 ---
-{% include JB/setup %}
+
 
 > **Full series**:
 > [Building website with Nodejs - A post from my experience]({%post_url 2014-03-19-building-website-with-nodejs-a-guide-from-my-experience%})

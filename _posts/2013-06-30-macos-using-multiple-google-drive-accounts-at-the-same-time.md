@@ -7,7 +7,7 @@ thumbnail:
 showtn: no
 tags: [macos, google drive]
 ---
-{% include JB/setup %}
+
 
 > **Warning**: this solution is no longer available on newer version of OSX. I
 > tested it on Mac OS 10.6 long time ago. Please don't ask me about any problem

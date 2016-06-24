@@ -4,7 +4,6 @@ title: "Agent 069 Game"
 description: "A 2D hit and run game for Android"
 group: project
 ---
-{% include JB/setup %}
 
 # Game Story
 

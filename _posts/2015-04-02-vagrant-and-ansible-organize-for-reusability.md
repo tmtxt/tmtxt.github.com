@@ -6,7 +6,7 @@ categories: [misc]
 tags: []
 thumbnail: "/files/2015-04-02-vagrant-and-ansible-organize-for-reusability/thumbnail.png"
 ---
-{% include JB/setup %}
+
 
 # Vagrant and Ansible
 

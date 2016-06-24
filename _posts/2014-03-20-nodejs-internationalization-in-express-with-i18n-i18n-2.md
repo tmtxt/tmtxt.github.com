@@ -5,7 +5,7 @@ description: ""
 categories: [javascript]
 tags: []
 ---
-{% include JB/setup %}
+
 
 Internationalization (i18n) is one essential part of any application. This can
 be achieved easily in Nodejs with the the module

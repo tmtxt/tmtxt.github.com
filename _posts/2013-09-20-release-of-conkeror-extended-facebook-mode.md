@@ -7,7 +7,7 @@ thumbnail:
 showtn: no
 tags: [conkeror, facebook, cefm]
 ---
-{% include JB/setup %}
+
 
 Another extension for Conkeror for browsing Facebook has been released today.
 This is just the very first version so it has only two features but they are

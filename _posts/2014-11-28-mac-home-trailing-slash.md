@@ -5,7 +5,7 @@ description: ""
 categories: [mac os]
 tags: []
 ---
-{% include JB/setup %}
+
 
 On my Mac, I always have 2 different partitions, one for installing the system
 and the other one for my home directory. Today, I've just re-installed the whole

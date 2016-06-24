@@ -5,7 +5,7 @@ description: ""
 categories: [misc]
 tags: []
 ---
-{% include JB/setup %}
+
 
 Setting up ssl connection can be different for different kinds of server.
 To make the configuration process easier, we can use

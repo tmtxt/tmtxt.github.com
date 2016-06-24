@@ -7,7 +7,7 @@ category: Jekyll
 thumbnail: /files/2013-01-09-jekyll-bootstrap-recents-related-posts-column/thumbnail.png
 tags: [jekyll]
 ---
-{% include JB/setup %}
+
 
 Those little pieces of code are used to insert a Related Posts and Recent Posts
 column to Jekyll Bootstrap site. Just put them any where you want it to display

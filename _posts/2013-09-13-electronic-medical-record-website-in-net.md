@@ -7,7 +7,7 @@ thumbnail:
 showtn: no
 tags: [.net, c#, asp.net]
 ---
-{% include JB/setup %}
+
 
 > This is just the result of my assignment at university
 

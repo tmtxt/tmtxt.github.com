@@ -5,7 +5,7 @@ description: ""
 category: misc
 tags: [postgres]
 ---
-{% include JB/setup %}
+
 
 # Introduction
 

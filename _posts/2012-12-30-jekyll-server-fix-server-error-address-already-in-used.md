@@ -7,7 +7,7 @@ category: Jekyll
 thumbnail: /files/2012-12-27-jekyll-create-a-list-of-lastest-posts/thumbnail.png
 tags: [jekyll]
 ---
-{% include JB/setup %}
+
 
 Sometimes when you run Jekyll server locally to test the preview of your site,
 you will encounter an error that tells you **Address is already in used**. The

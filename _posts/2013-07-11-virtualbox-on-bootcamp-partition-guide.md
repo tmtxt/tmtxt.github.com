@@ -7,7 +7,7 @@ thumbnail:
 showtn: no
 tags: [virtualbox, bootcamp]
 ---
-{% include JB/setup %}
+
 
 It's a bit complicated when I first setup VirtualBox to boot a virtual machine
 from my Bootcamp partition on my Mac. Unlike Parallel where everything is

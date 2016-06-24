@@ -7,7 +7,7 @@ thumbnail:
 showtn: no
 tags: [conkeror, mac, modeline, cmmb]
 ---
-{% include JB/setup %}
+
 
 Today, I have finished my first package for Conkeror: Conkeror Mac Modeline
 Buttons. This is a really useful package for people who are new to Conkeror.

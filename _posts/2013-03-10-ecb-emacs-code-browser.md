@@ -7,7 +7,7 @@ category: Emacs
 thumbnail: /files/thumbnails/emacs.png
 tags: [ecb, emacs]
 ---
-{% include JB/setup %}
+
 
 # Introduction
 

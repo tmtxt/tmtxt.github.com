@@ -5,7 +5,7 @@ description: ""
 category: conkeror
 tags: [aria2, conkeror]
 ---
-{% include JB/setup %}
+
 
 In my previous post, I have demonstrated how to use aria2 as the main downloader
 on Unix/Linux

@@ -5,7 +5,7 @@ description: ""
 category: conkeror
 tags: [conkeror, git]
 ---
-{% include JB/setup %}
+
 
 Usually, there are many opening tabs in my Conkeror (more than 50). However,
 sometimes Conkeror on MacOS got trouble when quitting which prevents it from

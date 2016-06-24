@@ -7,7 +7,7 @@ category: mac os
 thumbnail: /files/thumbnails/macos.png
 tags: [macos]
 ---
-{% include JB/setup %}
+
 
 I really hate the "Reopen Windows when Logging back"" feautre in MacOS Lion and
 above. That feature exists because Apple wanted to integrate iOS into MacOS.

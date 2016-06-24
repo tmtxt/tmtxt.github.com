@@ -7,7 +7,7 @@ category: Misc
 thumbnail: 
 tags: [android]
 ---
-{% include JB/setup %}
+
 
 # Overview
 

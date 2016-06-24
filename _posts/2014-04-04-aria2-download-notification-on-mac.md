@@ -5,7 +5,7 @@ description: ""
 categories: [misc]
 tags: []
 ---
-{% include JB/setup %}
+
 
 # Download events in aria2
 

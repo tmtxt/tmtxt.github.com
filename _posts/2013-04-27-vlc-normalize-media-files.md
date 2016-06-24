@@ -7,7 +7,7 @@ category: Misc
 thumbnail: 
 tags: [vlc]
 ---
-{% include JB/setup %}
+
 
 Often, when I have a large number of media files playing in VLC, the most
 annoying problem for me is that for each file, I have to manually adjust the

@@ -5,7 +5,7 @@ description: ""
 categories: [conkeror]
 tags: []
 ---
-{% include JB/setup %}
+
 
 > If you have not known what Conkeror is, you probably miss one of the greatest
 > web browser in your life. Read this post for an introduction of how impressive

@@ -6,7 +6,7 @@ categories: [emacs]
 tags: []
 thumbnail: /files/2015-07-04-working-with-neo4j-from-emacs/cypher.png
 ---
-{% include JB/setup %}
+
 
 # Neo4j and Emacs
 

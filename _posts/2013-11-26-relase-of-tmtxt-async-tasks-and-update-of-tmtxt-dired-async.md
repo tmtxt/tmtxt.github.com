@@ -7,7 +7,7 @@ thumbnail:
 showtn: no
 tags: [emacs]
 ---
-{% include JB/setup %}
+
 
 # tmtxt-async-tasks
 

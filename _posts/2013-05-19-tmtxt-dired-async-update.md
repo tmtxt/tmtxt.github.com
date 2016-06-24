@@ -7,7 +7,7 @@ thumbnail:
 showtn: yes
 tags: [emacs, dired async, dired, file manager]
 ---
-{% include JB/setup %}
+
 
 > Today, I have released some minor update for **tmtxt dired async** library (an
 > asynchronous execution library for emacs dired).

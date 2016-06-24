@@ -7,7 +7,7 @@ category: Jekyll
 thumbnail: /files/thumbnails/github.png
 tags: [github, jekyll]
 ---
-{% include JB/setup %}
+
 
 Yesterday, I decided to buy my own domain to serve for my blog after months
 using github.com subdomain (<http://tmtxt.github.com>). It took me a

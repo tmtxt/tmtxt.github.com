@@ -7,7 +7,7 @@ category: Misc
 thumbnail: /files/2012-12-25-my-daily-workspace/thumbnail.png
 tags: [workspace]
 ---
-{% include JB/setup %}
+
 
 ## A gallery about my daily used app on my computer
 

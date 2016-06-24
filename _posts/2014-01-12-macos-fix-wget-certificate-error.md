@@ -5,7 +5,7 @@ description: ""
 category: mac os
 tags: [macos, wget]
 ---
-{% include JB/setup %}
+
 
 On OSX, when I use **wget** for downloading file from https source, I got the
 Certificate issue error.

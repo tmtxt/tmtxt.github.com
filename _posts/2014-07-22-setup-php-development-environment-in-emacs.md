@@ -5,7 +5,7 @@ description: ""
 categories: [emacs]
 tags: []
 ---
-{% include JB/setup %}
+
 
 # web-mode for PHP coding
 

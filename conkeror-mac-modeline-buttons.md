@@ -4,7 +4,6 @@ title: "Conkeror Mac Modeline Buttons - CMMB"
 description: "An extension to show buttons in Modeline for Conkeror"
 group: project
 ---
-{% include JB/setup %}
 
 # Modeline buttons in Conkeror
 

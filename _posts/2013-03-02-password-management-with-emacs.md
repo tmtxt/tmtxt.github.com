@@ -7,7 +7,7 @@ category: Emacs
 thumbnail: /files/thumbnails/emacs.png
 tags: [emacs, password management]
 ---
-{% include JB/setup %}
+
 
 # Intro
 

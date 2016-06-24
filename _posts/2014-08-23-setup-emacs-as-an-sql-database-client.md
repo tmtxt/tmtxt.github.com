@@ -6,7 +6,7 @@ categories: [emacs]
 tags: []
 thumbnail: /files/2014-08-06-setup-emacs-as-an-sql-database-client/no-truncate.png
 ---
-{% include JB/setup %}
+
 
 # Introduction
 

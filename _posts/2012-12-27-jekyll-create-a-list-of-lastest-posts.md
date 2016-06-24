@@ -7,7 +7,7 @@ category: Jekyll
 thumbnail: /files/2012-12-27-jekyll-create-a-list-of-lastest-posts/thumbnail.png
 tags: [jekyll]
 ---
-{% include JB/setup %}
+
 
 After a while googling for making a list of lastest posts in Jekyll, I finally
 found the solution. Simply add this code to any page you want the list to

@@ -7,7 +7,7 @@ thumbnail:
 showtn: no
 tags: [aria2]
 ---
-{% include JB/setup %}
+
 
 > aria2 is a lightweight multi-protocol & multi-source command-line download
 > utility. It supports HTTP/HTTPS, FTP, BitTorrent and Metalink. aria2 can be
@@ -111,7 +111,7 @@ Next, use your web browser to open the file **index.html** inside the
 webui-aria2 folder that you have just downloaded. The web page will look like
 this picture, otherwise there maybe some problems with your aria2 client.
 
-![Webui-Aria2]({{BASE_PATH}}/files/2013-11-12-aria2-as-default-download-manager/aria2.png)
+![Webui-Aria2](/files/2013-11-12-aria2-as-default-download-manager/aria2.png)
 
 From there, you can start using **aria2**. Take some minutes to familiarize
 yourself to its UI.

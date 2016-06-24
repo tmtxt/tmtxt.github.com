@@ -5,7 +5,7 @@ description: ""
 category: javascript
 tags: [nodejs, sequelize]
 ---
-{% include JB/setup %}
+
 
 Sequelize is an Object-Relational-Mapper, which is written entirely
 in Javascript and can be used in the Node.JS environment. However, setting it up

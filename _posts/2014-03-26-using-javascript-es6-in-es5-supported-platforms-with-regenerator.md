@@ -5,7 +5,7 @@ description: ""
 categories: [javascript]
 tags: []
 ---
-{% include JB/setup %}
+
 
 One of the most important feature introduced in Javascript ES6 is the
 [Generator function](http://jlongster.com/2012/10/05/javascript-yield.html),

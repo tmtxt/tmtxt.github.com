@@ -7,7 +7,7 @@ category: misc
 showtn: no
 tags: [macos, finder]
 ---
-{% include JB/setup %}
+
 
 edit /Volumes/tmtxt/Library/Preferences/com.apple.finder.plist
 

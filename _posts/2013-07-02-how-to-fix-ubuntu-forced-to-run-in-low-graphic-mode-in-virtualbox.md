@@ -7,7 +7,7 @@ thumbnail:
 showtn: yes
 tags: [ubuntu, virtualbox]
 ---
-{% include JB/setup %}
+
 
 ![Error](/files/2013-07-02-how-to-fix-ubuntu-forced-to-run-in-low-graphic-mode-in-virtualbox/QaP9d.png)
 

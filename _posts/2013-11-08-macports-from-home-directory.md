@@ -7,7 +7,7 @@ thumbnail:
 showtn: no
 tags: [macports, macos]
 ---
-{% include JB/setup %}
+
 
 Macports is one of the most popular package manager system for MacOS. Usually,
 when you want to install Macports, you will download the automatic installer

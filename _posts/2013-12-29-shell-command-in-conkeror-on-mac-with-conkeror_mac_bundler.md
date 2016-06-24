@@ -5,7 +5,7 @@ description: ""
 categories: [conkeror, mac os]
 tags: [conkeror, conkeror_mac_bundler, mac]
 ---
-{% include JB/setup %}
+
 
 There are several ways of installing Conkeror on Mac OS X but I prefer using the
 **conkeror_mac_bundle** script for quickly building the Conkeror application and

@@ -7,7 +7,7 @@ category: Emacs
 thumbnail: /files/2012-12-29-emacs-as-a-chat-client-through-bitlbee/thumbnail.png
 tags: [emacs, bitlbee, chat, erc]
 ---
-{% include JB/setup %}
+
 
 Emacs is a great text editor, the most wonderful one I've been used :D Also it
 has built-in support for ERC chat client. And now I used it as my chat client

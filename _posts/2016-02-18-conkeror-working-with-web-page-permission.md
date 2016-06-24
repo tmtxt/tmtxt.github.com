@@ -6,7 +6,7 @@ categories: [conkeror]
 tags: []
 thumbnail:
 ---
-{% include JB/setup %}
+
 
 Conkeror is not a browser for everyone. It lacks many features that are waiting
 for the users to implement :D One of the issue you may find annoying when

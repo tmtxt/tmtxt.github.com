@@ -7,7 +7,7 @@ category: Emacs
 thumbnail: /files/thumbnails/emacs.png
 tags: [clang, emacs, autocomplete]
 ---
-{% include JB/setup %}
+
 
 # Introduction
 

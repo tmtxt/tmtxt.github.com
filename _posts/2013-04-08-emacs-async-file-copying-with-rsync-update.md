@@ -7,7 +7,7 @@ category: Emacs
 thumbnail: /files/thumbnails/emacs.png
 tags: [emacs, rsync, dired]
 ---
-{% include JB/setup %}
+
 
 In this previous
 [Emacs - Async File Copying in Dired using Rsync](/2013/04/02/emacs-async-file-copying-in-dired-using-rsync/),

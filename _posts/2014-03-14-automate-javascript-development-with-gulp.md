@@ -5,7 +5,7 @@ description: ""
 categories: [javascript]
 tags: [gulp, javascript]
 ---
-{% include JB/setup %}
+
 
 # Gulp Task runner
 

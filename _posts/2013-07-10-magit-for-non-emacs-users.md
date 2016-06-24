@@ -7,7 +7,7 @@ thumbnail:
 showtn: no
 tags: [magit, emacs]
 ---
-{% include JB/setup %}
+
 
 [Magit](https://github.com/magit/magit)
 is one of the best tool for working with git. However, it's a package ship

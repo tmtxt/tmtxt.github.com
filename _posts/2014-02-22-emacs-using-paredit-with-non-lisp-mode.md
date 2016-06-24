@@ -5,7 +5,7 @@ description: ""
 category: emacs
 tags: [emacs, paredit]
 ---
-{% include JB/setup %}
+
 
 **Paredit** is a minor mode for keeping parenthese balanced. It is extremely
 useful for working with lisp-based programming languages. Also, it is activated

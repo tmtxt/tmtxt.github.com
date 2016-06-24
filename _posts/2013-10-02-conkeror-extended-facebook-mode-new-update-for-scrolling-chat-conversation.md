@@ -7,7 +7,7 @@ thumbnail:
 showtn: no
 tags: [cefm, conkeror]
 ---
-{% include JB/setup %}
+
 
 I've just implemented new feature for CEFM - Scrolling chat conversation.
 

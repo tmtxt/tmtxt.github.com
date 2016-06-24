@@ -6,7 +6,7 @@ categories: [javascript]
 tags: []
 thumbnail: /files/2015-06-07-gulp-with-browserify-and-watchify-updated/thumb.png
 ---
-{% include JB/setup %}
+
 
 > **Update**: this method is outdated again. The new solution is presented here
 > [Using Gulp with Browserify and Watchify - Update Nov 2015]({% post_url 2015-11-03-using-gulp-with-browserify-and-watchify-update-nov-2015 %})

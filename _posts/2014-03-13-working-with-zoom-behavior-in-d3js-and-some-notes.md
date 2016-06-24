@@ -5,7 +5,7 @@ description: ""
 category: javascript
 tags: [d3js]
 ---
-{% include JB/setup %}
+
 
 # Zoom behavior in d3js
 

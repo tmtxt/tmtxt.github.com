@@ -5,7 +5,7 @@ description: ""
 category: emacs
 tags: [emacs, grep]
 ---
-{% include JB/setup %}
+
 
 # Finding text in Emacs
 

@@ -5,7 +5,7 @@ description: ""
 category: mac os
 tags: [postgres]
 ---
-{% include JB/setup %}
+
 
 # Installation & Configuration
 

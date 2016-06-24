@@ -7,7 +7,7 @@ thumbnail:
 showtn: no
 tags: [conkeror, web browser]
 ---
-{% include JB/setup %}
+
 
 In most browsers, the Esc key is used to stop the browser from loading a web
 page. In some web pages, for example Facebook, the Esc key has other

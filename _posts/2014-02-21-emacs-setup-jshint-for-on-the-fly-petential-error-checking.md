@@ -5,7 +5,7 @@ description: ""
 categories: [emacs, javascript]
 tags: [emacs, jshint, javascript]
 ---
-{% include JB/setup %}
+
 
 # JSHint command line tool
 

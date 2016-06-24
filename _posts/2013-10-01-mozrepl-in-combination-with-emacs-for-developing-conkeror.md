@@ -7,7 +7,7 @@ thumbnail:
 showtn: no
 tags: [mozrepl, emacs, mozilla]
 ---
-{% include JB/setup %}
+
 
 Conkeror and Emacs are my two most used applications, one for web browsing and
 one for text editing, developing. It would be very great if I could use Emacs

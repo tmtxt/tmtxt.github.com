@@ -7,7 +7,7 @@ category: Emacs
 thumbnail: /files/thumbnails/emacs.png
 tags: [emacs, dired, dired-details, file manager]
 ---
-{% include JB/setup %}
+
 
 > This post is the second part of the series
 > [Dired as Default File Manager](/2013/04/24/dired-as-default-file-manager-1-introduction/).

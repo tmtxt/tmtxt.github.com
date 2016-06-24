@@ -7,7 +7,7 @@ thumbnail:
 showtn: no
 tags: [emacs, macos]
 ---
-{% include JB/setup %}
+
 
 Emacs is my favorite text editor and I use it as the main one for composing my
 blog. However, sometimes when I'm typing too fast and I'm lazy to proofread my

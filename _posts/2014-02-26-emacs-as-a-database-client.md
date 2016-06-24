@@ -5,7 +5,7 @@ description: ""
 category: emacs
 tags: [emacs]
 ---
-{% include JB/setup %}
+
 
 This post is now moved to this
 [link]({%post_url 2014-08-23-setup-emacs-as-an-sql-database-client%}) with a

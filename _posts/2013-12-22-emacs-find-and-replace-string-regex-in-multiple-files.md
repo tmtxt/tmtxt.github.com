@@ -5,7 +5,7 @@ description: ""
 category: emacs
 tags: [emacs]
 ---
-{% include JB/setup %}
+
 
 When working with multiple files, especially for a set of files that
 contain the same header, we occasionally want to edit the header. This leads to

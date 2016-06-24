@@ -7,7 +7,7 @@ category: Emacs
 thumbnail: /files/2013-01-06-config-yasnippet-and-autocomplete-on-emacs/thumbnail.png
 tags: [emacs, package manager]
 ---
-{% include JB/setup %}
+
 
 Emacs is not just a simple text editor. It comes with powerful supporting
 packages to extend its capabilities. Emacs has the built-in package manager but

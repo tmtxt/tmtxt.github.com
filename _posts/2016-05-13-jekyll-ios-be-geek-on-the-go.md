@@ -6,7 +6,7 @@ categories: [misc]
 tags: []
 thumbnail: /files/2016-05-08-jekyll-ios-be-geek-on-the-go/bw1.jpg
 ---
-{% include JB/setup %}
+
 
 > This post is written entirely on iOS on my iPhone and iPad, from many places, at several times, in different situations.
 

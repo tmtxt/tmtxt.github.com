@@ -4,7 +4,6 @@ title: "tmtxt-dired-async"
 description: "An extension for Emacs Dired to execute tasks asynchronously"
 group: project
 ---
-{% include JB/setup %}
 
 # Asynchoronous execution library for Emacs Dired
 

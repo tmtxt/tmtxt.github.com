@@ -7,7 +7,7 @@ thumbnail:
 showtn: no
 tags: [macos]
 ---
-{% include JB/setup %}
+
 
 Copying folder path is a regular task that I use almost every day. It would be
 very useful if I can quickly copy the path that I'm currently working in Finder

@@ -7,7 +7,7 @@ thumbnail:
 showtn: no
 tags: [sqlite, conkeror]
 ---
-{% include JB/setup %}
+
 
 **SQLite Manager** is a powerful extension for Firefox, which provides the ability to
 manage SQLite database from within Firefox. Also, Conkeror/Firefox store their data

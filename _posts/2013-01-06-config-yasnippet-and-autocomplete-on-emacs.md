@@ -7,7 +7,7 @@ category: Emacs
 thumbnail: /files/2013-01-06-config-yasnippet-and-autocomplete-on-emacs/thumbnail.png
 tags: [yasnippet, autocomplete, emacs]
 ---
-{% include JB/setup %}
+
 
 This is a simple way to make yasnippet and autocomplete work together on emacs.
 Both of them use the **Tab** key to activate. Everytime you press **Tab**,

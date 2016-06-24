@@ -5,7 +5,7 @@ description: ""
 categories: [emacs, javascript]
 tags: [emacs, jsx, jsxhint]
 ---
-{% include JB/setup %}
+
 
 > **Update Jun 21 2014**: add another better solution that uses web-mode
 

@@ -5,13 +5,13 @@ description: ""
 category: emacs
 tags: [dired, emacs, wdired]
 ---
-{% include JB/setup %}
+
 
 <blockquote>
   This post is the seventh part of the series
   <a href="/2013/04/24/dired-as-default-file-manager-1-introduction/">Dired as
     Default File Manager</a>
-  
+
 </blockquote>
 
 <p>
@@ -46,7 +46,7 @@ easily using a little emacs lisp.
     ;; base-name: file name without extension
     (let ((full-name (file-name-nondirectory (dired-get-filename)))
           extension base-name)
-      
+
       ;; check if it's a dir or a file
       ;; TODO not use if, use switch case check for symlink
       (if (file-directory-p full-name)

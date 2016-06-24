@@ -7,7 +7,7 @@ category: conkeror
 thumbnail: /files/2012-12-27-conkeror-display-tab-bar/tab.png
 tags: [conkeror, emacs, browser]
 ---
-{% include JB/setup %}
+
 
 > **Note**: for those of you who don't know what Conkeror is, please read this
 > post

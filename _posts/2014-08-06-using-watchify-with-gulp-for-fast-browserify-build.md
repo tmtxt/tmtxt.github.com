@@ -5,7 +5,7 @@ description: ""
 categories: [javascript]
 tags: []
 ---
-{% include JB/setup %}
+
 
 > Update: I made a new better solution for this. You can read it here
 > [Using Gulp with Browserify and Watchify - Updated]({% post_url 2015-06-07-gulp-with-browserify-and-watchify-updated %})

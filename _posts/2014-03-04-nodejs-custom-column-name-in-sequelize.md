@@ -5,7 +5,7 @@ description: ""
 category: javascript
 tags: [nodejs, sequelize]
 ---
-{% include JB/setup %}
+
 
 By default, [Sequelize](http://sequelizejs.com/) (an ORM system for NodeJS) only
 allows you to specify custom table name. Currently, there is no such feature in

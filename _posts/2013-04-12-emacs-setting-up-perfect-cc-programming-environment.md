@@ -7,7 +7,7 @@ category: Emacs
 thumbnail: /files/thumbnails/emacs.png
 tags: [emacs, programming environment]
 ---
-{% include JB/setup %}
+
 
 This is a continue to the first part in this post
 [Emacs - Setting up perfect environment for C/C++ Programming - Part 1](/2013/03/10/emacs-setting-up-perfect-environment-for-cc-programming/).

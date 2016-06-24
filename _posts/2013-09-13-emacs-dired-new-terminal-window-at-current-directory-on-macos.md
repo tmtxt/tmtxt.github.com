@@ -7,7 +7,7 @@ thumbnail:
 showtn: no
 tags: [emacs, dired, terminal, macos]
 ---
-{% include JB/setup %}
+
 
 Although I'm using emacs dired as my default file manager, I don't like any
 of the terminal emulators in Emacs at all. I usually use a separate application

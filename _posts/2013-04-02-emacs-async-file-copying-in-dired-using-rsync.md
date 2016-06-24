@@ -7,7 +7,7 @@ category: Emacs
 thumbnail: /files/thumbnails/emacs.png
 tags: [emacs, dired, rsync]
 ---
-{% include JB/setup %}
+
 
 > **Update**: I have implemented a better version of this code. The new version is
 > able to display progress separately and auto hide the rsync window after

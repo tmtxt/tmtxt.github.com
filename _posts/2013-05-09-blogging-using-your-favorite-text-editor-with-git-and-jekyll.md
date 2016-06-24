@@ -7,7 +7,7 @@ thumbnail:
 showtn: yes
 tags: [git, jekyll, blog]
 ---
-{% include JB/setup %}
+
 
 > Continue from my previous post [Blogging using your favorite Text editor with Git and Jekyll - Part 1]({% post_url 2013-05-08-blogging-using-your-favorite-text-editor-with-git-and-jekyll %}),
 > this time, I'll demonstrate some more advanced tips to help you get used to
@@ -103,4 +103,3 @@ have done with Jekyll
 * [Google Analytics for Jekyll Bootstrap]({% post_url 2013-04-05-google-analytics-for-jekyll-bootstrap %})
 * [Setting up Custom domain for Github Pages]({% post_url 2013-04-07-setting-up-custom-domain-for-github-pages %})
 * [Wordpress Read More style for Jekyll without plugin]({% post_url 2013-05-01-jekyll-read-more-feature-without-any-plugin %})
-* [Jekyll Bootstrap - Tag Cloud with TagCanvas]({% post_url 2013-05-01-jekyll-tag-cloud-with-tagcanvas %})

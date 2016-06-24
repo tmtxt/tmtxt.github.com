@@ -6,7 +6,7 @@ categories: [misc]
 tags: []
 thumbnail:
 ---
-{% include JB/setup %}
+
 
 [nvm](https://github.com/creationix/nvm) is my favorite tool for installing and
 working with Nodejs. I can install several Nodejs versions on one machine for

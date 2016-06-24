@@ -7,7 +7,7 @@ thumbnail:
 showtn: yes
 tags: [git, jekyll, blog]
 ---
-{% include JB/setup %}
+
 
 In my previous post
 [Jekyll - Blogging platform for geeks]({% post_url 2013-01-16-jekyll-bootstrap-blogging-platform-for-geeks %}),

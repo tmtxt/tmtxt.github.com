@@ -5,7 +5,7 @@ description: ""
 categories: [emacs, javascript]
 tags: []
 ---
-{% include JB/setup %}
+
 
 # 1. js2-refactor
 

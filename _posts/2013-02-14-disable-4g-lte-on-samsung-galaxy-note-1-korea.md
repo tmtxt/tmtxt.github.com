@@ -7,7 +7,7 @@ category: Misc
 thumbnail: 
 tags: [lte, galaxy note, android]
 ---
-{% include JB/setup %}
+
 
 I was given a Samsung Galaxy Note 1 - LTE Korea version. Sadly, in my country,
 4G has not appeared yet. So I can only use 3G to access internet on the go.

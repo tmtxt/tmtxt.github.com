@@ -7,7 +7,7 @@ category: Jekyll
 thumbnail: /files/2013-01-05-thumbnail-post-list-for-jekyll-bootstrap/thumbnail.png
 tags: [jekyll]
 ---
-{% include JB/setup %}
+
 
 The default Jekyll Bootstrap index file contains a simple post list. However, it is
 really boring. It just gives you very basic information like Pulished date, Post
@@ -53,7 +53,7 @@ open(filename, 'w') do |post|
   post.puts "thumbnail: "
   post.puts "tags: []"
   post.puts "---"
-  post.puts "{% include JB/setup %}"
+  post.puts ""
 {% endhighlight %}
 
 Now everytime you execute the command **rake post** to create a new post, it

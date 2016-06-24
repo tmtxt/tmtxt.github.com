@@ -6,7 +6,7 @@ categories: [misc]
 tags: []
 thumbnail:
 ---
-{% include JB/setup %}
+
 
 # Why I need a Log trace
 

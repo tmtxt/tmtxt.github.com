@@ -7,7 +7,7 @@ thumbnail:
 showtn: no
 tags: [conkeror, cefm]
 ---
-{% include JB/setup %}
+
 
 A few days ago, Facebook made some minor changes to its News feed that make my
 CEFM mode sometimes cannot find the selected story link to open. Today, I have

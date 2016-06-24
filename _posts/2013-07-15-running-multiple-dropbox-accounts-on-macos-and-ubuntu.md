@@ -7,7 +7,7 @@ thumbnail:
 showtn: no
 tags: [dropbox, macos, ubuntu]
 ---
-{% include JB/setup %}
+
 
 # Introduction
 

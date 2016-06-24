@@ -5,7 +5,7 @@ description: ""
 categories: [mac os]
 tags: [macos, python, pip, virtualenv, macports]
 ---
-{% include JB/setup %}
+
 
 Installing python and all its stuff maybe a bit confusing if you're installing
 it using Macports

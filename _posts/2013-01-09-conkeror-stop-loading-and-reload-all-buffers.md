@@ -7,7 +7,7 @@ category: conkeror
 thumbnail: /files/2012-12-24-conkeror-getting-started-part-1/conkeror-main.png
 tags: [conkeror, emacs, web browser]
 ---
-{% include JB/setup %}
+
 
 I usually open many buffers in conkeror (50-100 buffers). Also, I have auto save
 mode enable so everytime I start Conkeror, it automatically loads all of those

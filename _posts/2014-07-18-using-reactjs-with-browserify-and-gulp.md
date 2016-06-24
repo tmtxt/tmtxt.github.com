@@ -5,7 +5,7 @@ description: ""
 categories: [javascript]
 tags: []
 ---
-{% include JB/setup %}
+
 
 ReactJS uses a special syntax called JSX, not the normal JS one. Usually, when
 you want to work with ReactJS JSX files, you need to transform it to a normal JS

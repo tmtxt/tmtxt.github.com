@@ -7,7 +7,7 @@ category: Jekyll
 thumbnail: /files/2012-12-28-jekyll-create-simple-search-box/thumbnail.jpg
 tags: [jekyll, search]
 ---
-{% include JB/setup %}
+
 
 Jekyll is great! However, it lacks one important thing compare to the other blogging
 systems. It's the search function. I've implemented a simple Google

@@ -7,7 +7,7 @@ category: Misc
 thumbnail: 
 tags: [synchronization]
 ---
-{% include JB/setup %}
+
 
 I'm a technology fanboy, or in other word, a geek. I'm really interested in
 computers, smartphones, high tech devices,... I have used Windows, MacOS,

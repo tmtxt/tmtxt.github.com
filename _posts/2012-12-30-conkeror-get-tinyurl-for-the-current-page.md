@@ -7,7 +7,7 @@ category: conkeror
 thumbnail: /files/2012-12-30-conkeror---get-tinyurl-for-the-current-page/tinyurl.png
 tags: [conkeror, tinyurl]
 ---
-{% include JB/setup %}
+
 
 The little code below helps us to quickly get tinyurl link for the currently viewed
 page instead of having to open tinyurl webpage, copy paste the link and get the

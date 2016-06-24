@@ -6,7 +6,7 @@ categories: [misc]
 tags: []
 thumbnail: /files/2015-06-08-config-server-firewall-with-ansible-for-multiple-projects-iptables-ferm/firefox.png
 ---
-{% include JB/setup %}
+
 
 # Firewall on Linux server
 
