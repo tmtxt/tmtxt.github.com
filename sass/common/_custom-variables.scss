@@ -1,0 +1,61 @@
+/* CUSTOM VARIABLES
+   ========================================================================== */
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+$brand-primary: 	#5CB7E6;
+$brand-danger:		#F76663;
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+//** Background color for `<body>`.
+$body-bg:			#f9f9f9;
+
+// message
+$text-color: #263238;
+$white: #F9F9F9;
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+//** Modular Scale
+
+$ms-base:			1em,1.25em;
+
+//** Typographic Standard Elements
+
+
+$font-size-base:	14px;
+
+// $paragraph-width-max: ms(15);
+
+// $font-size-h1:		ms(4);
+// $font-size-h2:		ms(3);
+// $font-size-h3:		ms(2);
+// $font-size-h4:		ms(1);
+// $font-size-h5:		ms(0);
+// $font-size-h6:		ms(-1);
+
+$font-family-sans-serif: 'Open Sans', Arial, sans-serif;
+
+//** Icon Font
+
+$fa-font-path:	"/assets/fonts/fa";
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//** Number of columns in the grid.
+
+$grid-gutter-width:         20px;
+
+$border-default: 1px solid;
+
+$avatar-figure: 60px;
+$avatar-figure-special: 80px;

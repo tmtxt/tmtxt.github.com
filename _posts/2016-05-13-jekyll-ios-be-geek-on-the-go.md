@@ -8,13 +8,13 @@ thumbnail: /files/2016-05-08-jekyll-ios-be-geek-on-the-go/bw1.jpg
 ---
 {% include JB/setup %}
 
+> This post is written entirely on iOS on my iPhone and iPad, from many places, at several times, in different situations.
+
 [wc]: /files/2016-05-08-jekyll-ios-be-geek-on-the-go/wc.jpg
 [bw1]: /files/2016-05-08-jekyll-ios-be-geek-on-the-go/bw1.jpg
 [bw2]: /files/2016-05-08-jekyll-ios-be-geek-on-the-go/bw2.jpg
 [cd]: /files/2016-05-08-jekyll-ios-be-geek-on-the-go/cd.jpg
 [sa]: /files/2016-05-08-jekyll-ios-be-geek-on-the-go/sa.jpg
-
-> This post is written entirely on iOS on my iPhone and iPad, from many places, at several times, in different situations.
 
 - So... You don't blog very regularly recently.
 - Hmm, I don't have enough time!

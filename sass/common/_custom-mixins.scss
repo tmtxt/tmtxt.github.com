@@ -1,0 +1,88 @@
+/* CUSTOME MIXIN
+   ========================================================================== */
+// magically bullshit that makes yo life esiaer
+// use mixin to bring them inside media query
+
+// FLEX MIXIN
+// it is magic
+@mixin flex($value) {
+    -webkit-flex: $value;
+    flex: $value;
+}
+
+@mixin flex-flow($value) {
+    -webkit-flex-flow: $value;
+    flex-flow: $value;
+}
+
+@mixin flex-display{
+    display:        -webkit-box;
+    display:        -moz-box;
+    display:        -ms-flexbox;
+    display:        -webkit-flex;
+    display:        flex;
+}
+
+// ANIMATION
+// why do we need animation? because fuck UX that is why!!!
+@mixin animation($value){
+    -ms-transition: $value; /* IE 9 */
+    -webkit-transition: $value; /* Chrome, Safari, Opera */
+    transition: $value;
+}
+// ROTATION
+@mixin rotation($value){
+    -ms-transform: rotate($value); /* IE 9 */
+    -webkit-transform: rotate($value); /* Chrome, Safari, Opera */
+    transform: rotate($value);
+}
+
+// UL clean
+@mixin ul-clean{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+// hover-color
+@mixin hover-color{
+    color: $gray;
+    &:hover,
+    &:focus{
+        color: darken($link-color, 15%);
+    }
+}
+
+//FLEX LIST
+@mixin list-column-ul{
+    @include flex-display;
+    @include flex-flow-mixin(column nowrap);
+    // justify-content: space-around;
+    align-items: flex-start;
+    @include ul-clean;
+    >li{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+@mixin list-rowwrap-ul{
+    @include flex-display;
+    @include flex-flow-mixin(row wrap);
+    // justify-content: space-around;
+    align-items: flex-start;
+    @include ul-clean;
+    >li{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+@mixin list-rowwrap-div{
+    @include flex-display;
+    @include flex-flow-mixin(row wrap);
+    // justify-content: space-around;
+    align-items: flex-start;
+    @include ul-clean;
+    >li{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}

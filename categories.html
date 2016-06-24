@@ -1,22 +1,32 @@
 ---
 layout: page
 title: Categories
-header: Posts By Category
-group: navigation
 ---
-{% include JB/setup %}
 
-<ul class="tag_box inline">
-  {% assign categories_list = site.categories %}
-  {% include JB/categories_list %}
-</ul>
+<article class="article-panel">
+  <div class="header-panel">
+    <h4 class="grand-title">Categories</h4>
+    <hr>
+  </div>
+  <div class="categories-panel pdt-0">
+    <ul class="catgories-list">
+      {% for category in site.categories %}
+      <li><a href="/categories.html#{{ category[0] }}-ref"><i class="fa fa-tags"></i>&nbsp;{{ category[0] | join: "/" }}&nbsp;<span class="badge">{{ category[1].size }}</span></a></li>
+      {% endfor %}
+    </ul>
+  </div> <!-- categories panel end -->
+  {% for category in site.categories %}
+  <div class="categories-panel">
+    <h4 class="categories-title" id="{{ category[0] }}-ref"><i class="fa fa-tags"></i>&nbsp;{{ category[0] | join: "/" }}</h4>
+    <ul class="article-list">
+      {% for node in category[1] %}
+      <li>
+        <a href="{{ node.url }}">{{ node.title }}</a>
+        <p>{{ node.date | date: "%B %e, %Y" }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div> <!-- categories panel end -->
+  {% endfor %}
 
-
-{% for category in site.categories %} 
-  <h2 id="{{ category[0] }}-ref">{{ category[0] | join: "/" }}</h2>
-  <ul>
-    {% assign pages_list = category[1] %}  
-    {% include JB/pages_list %}
-  </ul>
-{% endfor %}
-
+</article>

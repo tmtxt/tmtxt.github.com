@@ -19,14 +19,14 @@ this example, I have a function for validating whether a string is a valid date
 time string. If it's nil or blank, just skip it, otherwise, try parsing it to
 see if it's okay.
 
-{% highlight cl %}
+```clojure
 (defn validate-date-time [date-time]
   (if (nil? date-time) true
       (if (blank? date-time) true
           (try (f/parse formatter date-time)
                true
                (catch Exception e false)))))
-{% endhighlight %}
+```
 
 Nested, nested and nested. If this is still simple and easy to see
 for you, try this one, need to check if the date time is between 1970 and 2030

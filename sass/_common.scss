@@ -1,0 +1,24 @@
+/* COMMON ELEMENTS
+   ========================================================================== */
+
+// Import Custom Variables
+@import "common/custom-variables";
+
+// Import Bootstrap Core Components
+@import "bootstrap/bootstrap";
+
+// Import Font Awesome
+@import "libs/fa/font-awesome";
+
+// Import OrbHealth Custom Modules
+// core mixin
+@import "common/custom-mixins";
+
+// core layout content
+@import "common/button";
+@import "common/core";
+@import "common/decoration";
+@import "common/footer";
+@import "common/header";
+@import "common/layout";
+@import "common/typography";
