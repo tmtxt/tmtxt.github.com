@@ -2,7 +2,7 @@
 layout: post
 title: "tmtxt dired async - Update"
 description: ""
-category: Emacs
+category: emacs
 thumbnail: 
 showtn: yes
 tags: [emacs, dired async, dired, file manager]

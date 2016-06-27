@@ -3,7 +3,7 @@ layout: post
 showtn: yes
 title: "Dired as Default File Manager - Show the interesting and Hide the unnecessary information"
 description: ""
-category: Emacs
+category: emacs
 thumbnail: /files/thumbnails/emacs.png
 tags: [emacs, dired, dired-details, file manager]
 ---

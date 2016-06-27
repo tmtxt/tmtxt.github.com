@@ -3,7 +3,7 @@ layout: post
 title: "Google Music and musiXmatch - Perfect combination for Managing and
 Enjoying music on Computer and Android"
 description: ""
-category: Misc
+category: misc
 thumbnail: 
 showtn: no
 tags: [google music, musixmatch, android, music]

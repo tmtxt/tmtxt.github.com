@@ -2,7 +2,7 @@
 layout: post
 title: "Blogging using your favorite Text editor with Git and Jekyll - Part 2"
 description: ""
-category: Jekyll
+category: jekyll
 thumbnail: 
 showtn: yes
 tags: [git, jekyll, blog]

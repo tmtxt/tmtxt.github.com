@@ -3,7 +3,7 @@ layout: post
 showtn: yes
 title: "Cross Platforms Synchronization Solution"
 description: ""
-category: Misc
+category: misc
 thumbnail: 
 tags: [synchronization]
 ---

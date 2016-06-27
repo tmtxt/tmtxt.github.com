@@ -2,7 +2,7 @@
 layout: post
 title: "Conkeror Extended Facebook Mode - Update new features"
 description: ""
-category: Conkeror
+category: conkeror
 thumbnail: 
 showtn: no
 tags: [conkeror, cefm]

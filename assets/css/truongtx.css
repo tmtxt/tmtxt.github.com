@@ -6882,7 +6882,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1000px; }
+  max-width: 750px; }
 
 .body-container,
 .footer-container {
@@ -7031,8 +7031,8 @@ a {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -webkit-flex-flow: column nowrap;
-  flex-flow: column nowrap; }
+  -webkit-flex-flow: row nowrap;
+  flex-flow: row nowrap; }
 
 @media (min-width: 768px) {
   .blog-wrapper {

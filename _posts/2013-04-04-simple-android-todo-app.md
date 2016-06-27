@@ -3,7 +3,7 @@ layout: post
 showtn: yes
 title: "Simple Android TODO App"
 description: ""
-category: Misc
+category: misc
 thumbnail: 
 tags: [android]
 ---

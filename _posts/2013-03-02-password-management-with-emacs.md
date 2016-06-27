@@ -3,7 +3,7 @@ layout: post
 showtn: yes
 title: "Password Management with Emacs"
 description: ""
-category: Emacs
+category: emacs
 thumbnail: /files/thumbnails/emacs.png
 tags: [emacs, password management]
 ---

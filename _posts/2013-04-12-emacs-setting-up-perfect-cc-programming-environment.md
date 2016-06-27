@@ -3,7 +3,7 @@ layout: post
 showtn: yes
 title: "Emacs - Setting up Perfect C/C++ programming environment - Part 2"
 description: ""
-category: Emacs
+category: emacs
 thumbnail: /files/thumbnails/emacs.png
 tags: [emacs, programming environment]
 ---

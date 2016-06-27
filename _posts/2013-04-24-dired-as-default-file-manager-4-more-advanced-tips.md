@@ -3,7 +3,7 @@ layout: post
 showtn: yes
 title: "Dired as Default File Manager - More Advanced Tips"
 description: ""
-category: Emacs
+category: emacs
 thumbnail: /files/thumbnails/emacs.png
 tags: [emacs, dired, file manager]
 ---

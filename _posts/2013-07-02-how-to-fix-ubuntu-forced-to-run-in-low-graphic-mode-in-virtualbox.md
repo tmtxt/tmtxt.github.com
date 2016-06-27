@@ -2,7 +2,7 @@
 layout: post
 title: "Fix error: Ubuntu forced to run in low graphic mode in VirtualBox 4.2.12"
 description: ""
-category: Misc
+category: misc
 thumbnail: 
 showtn: yes
 tags: [ubuntu, virtualbox]

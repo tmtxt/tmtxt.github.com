@@ -3,7 +3,7 @@ layout: post
 showtn: yes
 title: "Emacs as a Chat client through Bitlbee"
 description: ""
-category: Emacs
+category: emacs
 thumbnail: /files/2012-12-29-emacs-as-a-chat-client-through-bitlbee/thumbnail.png
 tags: [emacs, bitlbee, chat, erc]
 ---

@@ -3,7 +3,7 @@ layout: post
 showtn: yes
 title: "Color Theming in Emacs 24"
 description: ""
-category: Emacs
+category: emacs
 thumbnail: /files/thumbnails/emacs.png
 tags: [emacs, theme]
 ---

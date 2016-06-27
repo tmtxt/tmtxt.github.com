@@ -3,7 +3,7 @@ layout: post
 showtn: yes
 title: "Emacs - C/C++ Autocomplete with Clang"
 description: ""
-category: Emacs
+category: emacs
 thumbnail: /files/thumbnails/emacs.png
 tags: [clang, emacs, autocomplete]
 ---

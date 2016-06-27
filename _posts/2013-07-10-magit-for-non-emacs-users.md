@@ -2,7 +2,7 @@
 layout: post
 title: "Magit for non emacs-users"
 description: ""
-category: Emacs
+category: emacs
 thumbnail: 
 showtn: no
 tags: [magit, emacs]

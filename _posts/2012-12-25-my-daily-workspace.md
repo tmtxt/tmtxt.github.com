@@ -3,7 +3,7 @@ layout: post
 showtn: 
 title: "My daily workspace"
 description: ""
-category: Misc
+category: misc
 thumbnail: /files/2012-12-25-my-daily-workspace/thumbnail.png
 tags: [workspace]
 ---

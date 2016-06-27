@@ -3,7 +3,7 @@ layout: post
 showtn: yes
 title: "Simple Swipe Gesture Detection for LibGdx"
 description: ""
-category: Misc
+category: misc
 thumbnail: /files/2013-04-11-simple-gesture-detection-for-libgdx/thumbnail.png
 tags: [libgdx, gesture]
 ---

@@ -3,7 +3,7 @@ layout: post
 showtn: yes
 title: "Jekyll - Syntax highlighting"
 description: ""
-category: Jekyll
+category: jekyll
 thumbnail: /files/2012-12-28-jekyll-bootstrap-syntax-highlighting/thumbnail.png
 tags: [jekyll, syntax highlighting]
 ---

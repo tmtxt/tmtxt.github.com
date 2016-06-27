@@ -3,7 +3,7 @@ layout: post
 showtn: 
 title: "Jekyll - Blogging platform for geeks"
 description: ""
-category: Jekyll
+category: jekyll
 thumbnail: /files/2012-12-27-jekyll-create-a-list-of-lastest-posts/thumbnail.png
 tags: [jekyll]
 ---

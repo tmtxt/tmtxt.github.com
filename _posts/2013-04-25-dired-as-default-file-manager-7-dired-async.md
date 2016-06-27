@@ -3,7 +3,7 @@ layout: post
 showtn: yes
 title: "Dired as Default File Manager - Dired Async"
 description: ""
-category: Emacs
+category: emacs
 thumbnail: /files/thumbnails/emacs.png
 tags: [emacs, file manager, dired, dired async]
 ---

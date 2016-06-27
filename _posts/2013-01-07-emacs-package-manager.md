@@ -3,7 +3,7 @@ layout: post
 showtn: yes
 title: "Emacs Packages Manager using package.el"
 description: ""
-category: Emacs
+category: emacs
 thumbnail: /files/2013-01-06-config-yasnippet-and-autocomplete-on-emacs/thumbnail.png
 tags: [emacs, package manager]
 ---

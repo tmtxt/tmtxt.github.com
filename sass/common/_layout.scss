@@ -3,7 +3,7 @@
 
 .blog-wrapper{
 	@include flex-display;
-	@include flex-flow(column nowrap);
+	@include flex-flow(row nowrap);
 }
 @media (min-width: $screen-sm-min) {
     .blog-wrapper{

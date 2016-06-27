@@ -3,7 +3,7 @@ layout: post
 showtn: yes
 title: "Install and Config ECB on Emacs"
 description: ""
-category: Emacs
+category: emacs
 thumbnail: /files/thumbnails/emacs.png
 tags: [ecb, emacs]
 ---

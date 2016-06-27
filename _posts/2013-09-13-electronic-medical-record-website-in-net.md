@@ -2,7 +2,7 @@
 layout: post
 title: "Electronic Medical Record website in .Net"
 description: ""
-category: Misc
+category: misc
 thumbnail: 
 showtn: no
 tags: [.net, c#, asp.net]

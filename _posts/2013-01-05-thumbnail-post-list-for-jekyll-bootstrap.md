@@ -3,7 +3,7 @@ layout: post
 showtn: yes
 title: "Thumbnail Post List for Jekyll"
 description: ""
-category: Jekyll
+category: jekyll
 thumbnail: /files/2013-01-05-thumbnail-post-list-for-jekyll-bootstrap/thumbnail.png
 tags: [jekyll]
 ---

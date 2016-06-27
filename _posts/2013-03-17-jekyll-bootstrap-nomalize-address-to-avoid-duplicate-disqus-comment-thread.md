@@ -3,7 +3,7 @@ layout: post
 showtn: yes
 title: "Jekyll - Normalize address to avoid duplicate Disqus comment thread"
 description: ""
-category: Jekyll
+category: jekyll
 thumbnail: 
 tags: [jekyll, disqus]
 ---

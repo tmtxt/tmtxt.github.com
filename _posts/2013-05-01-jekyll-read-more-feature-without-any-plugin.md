@@ -3,7 +3,7 @@ layout: post
 showtn: yes
 title: "Jekyll - Read More without plugin"
 description: ""
-category: Jekyll
+category: jekyll
 thumbnail: 
 tags: [jekyll]
 ---

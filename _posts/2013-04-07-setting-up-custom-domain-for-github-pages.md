@@ -3,7 +3,7 @@ layout: post
 showtn: yes
 title: "Setting up Custom domain for Github Pages"
 description: ""
-category: Jekyll
+category: jekyll
 thumbnail: /files/thumbnails/github.png
 tags: [github, jekyll]
 ---
