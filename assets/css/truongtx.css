@@ -7046,7 +7046,7 @@ a {
     .blog-wrapper .blog-section {
       -webkit-flex: 3;
       flex: 3;
-      padding-right: 16px; }
+      padding-right: 0; }
     .blog-wrapper .blog-aside {
       -webkit-flex: 1;
       flex: 1;

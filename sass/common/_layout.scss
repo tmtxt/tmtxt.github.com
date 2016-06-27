@@ -11,7 +11,7 @@
 		@include flex-flow(row nowrap);
 		.blog-section{
 			@include flex(3);
-			padding-right: $padding-large-horizontal;
+			padding-right: 0;
 		}
 		.blog-aside{
 			@include flex(1);
