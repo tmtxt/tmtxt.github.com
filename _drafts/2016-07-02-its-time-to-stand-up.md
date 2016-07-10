@@ -13,4 +13,8 @@ My developer life has been a long series of sitting days sticking with my comput
 
 # First thing, a standing desk
 
+Yeah you know that, this helps you decrease the sitting time while letting you continue your work at the same time. This is also quite popular in many IT companies (and in my university, too). It's quite difficult to find the standing desk in Vietnam. There are not many models. The people here seems not very interested in working with a standing desk. The only solution that I found was this one, with the price around 2,3m VND, about $100, quit acceptable!
+
 ![desk][desk1]
+
+Yeah, why not turn up the music speaker volume and shake your body while standing? 😆
