@@ -35,6 +35,8 @@ The requirement is to draw a family tree like this.
 In contrast to my imagination, rendering the tree diagram using **React** is an amazingly
 effortless task.
 
+<!-- more -->
+
 ![tree diagram](/files/2016-07-12-moving-away-from-d3js-im-using-reactjs-for-dom-manipulation-now/tree.png)
 
 ### D3 Code
