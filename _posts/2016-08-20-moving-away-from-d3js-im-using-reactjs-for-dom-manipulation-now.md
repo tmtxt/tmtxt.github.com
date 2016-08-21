@@ -172,7 +172,7 @@ const Dimensions = require('react-dimensions');
 module.exports = Dimensions()(TreeView);
 ```
 
-Code: [https://github.com/tmtxt/clojure-pedigree/blob/8e5360bc3f7707cf77d78c322f6d6db3d9cd58a9/dev.frontend/js/pages/tree_view/tree_view.jsx#L45](https://github.com/tmtxt/clojure-pedigree/blob/8e5360bc3f7707cf77d78c322f6d6db3d9cd58a9/dev.frontend/js/pages/tree_view/tree_view.jsx#L45)
+Code: [Github repo](https://github.com/tmtxt/clojure-pedigree/blob/8e5360bc3f7707cf77d78c322f6d6db3d9cd58a9/dev.frontend/js/pages/tree_view/tree_view.jsx#L45)
 
 # Graph Animation
 
