@@ -58,11 +58,11 @@ Since almost everything in Compojure Ring are triggered through the request hand
   (:require [slingshot.slingshot :refer [try+ throw+]]))
 
 ;;; The var that contains all the logging information for this request
-;;; message: a vector containing the steps executed inside the request
+;;; messages: a vector containing the steps executed inside the request
 ;;; request & response: the request and response data, will be populated later
 ;;; correlationId: the id that exist along way with the request through multiple services in the system
 (def ^:dynamic *log-data*
-  {:message        []
+  {:messages        []
    :serviceName    "svc.web"
    :processTime    nil
    :request        nil
@@ -107,7 +107,7 @@ So, all the setup is done. Now it's time to add some implementation to process t
 (defn- make-pre-request-data
   "Create the default log data from the request, used when start processing the request"
   [request]
-  {:message        [{:level "info"
+  {:messages        [{:level "info"
                      :title "Start processing request"
                      :data ""}]
    :serviceName    "svc.web"
@@ -115,3 +115,60 @@ So, all the setup is done. Now it's time to add some implementation to process t
    :request        (process-request-data request)
    :correlationId  (get-correlation-id request)})
 ```
+
+# Add data to your log trace
+
+You also need a way to add data into your log object to track the request. Let's implement the most
+important function right now. This function simply adds a new entry into the `:messages` vector in
+`*log-data*` so that later when the request finishes, you can extract all the steps inside the
+request handler.
+
+```clojure
+(defn add "Add new entry to the log trace" [level title & data]
+  (let [messages (get *log-data* :messages)
+        messages (conj messages {:level level
+                                 :title title
+                                 :data data})
+        log-data (assoc *log-data* :messages messages)]
+    (set! *log-data* log-data)))
+```
+
+You can use it in code like this. There is no need to wrap it inside `binding` since you already did
+that with the `wrap-log-trace` middleware.
+
+```clojure
+(defn- detect-parent-role
+  "Detect parent role."
+  [request]
+  (let [gender (-> request util/params :gender)
+        _ (log-trace/add :info "(detect-parent-role)" "Gender " gender)
+
+        role   (svc-pr/detect-parent-role-single {:gender gender})
+        _ (log-trace/add :info "(detect-parent-role)" "Role " role)]
+    (util/response-success {:role role})))
+```
+
+# Write the log and get the result
+
+I will not talk about how to write the log here. There are plenty of libraries out there that you
+can use. Writing the log is simply processing the `*log-data*` that you already have. Using
+[Timbre](https://github.com/ptaoussanis/timbre),
+I can get the output like this for each request
+
+
+
+# Extra: Logging with ElasticSearch, Fluentd and Kibana
+
+This is an easy setup but can bring huge effect. With the help of ElasticSearch and Kibana, you can
+easily search for the desired log entries and filter them using time or value.
+All you need to do is to adjust *Timbre* to output the log to the right json format, config
+**fluentd** to follow the log to push to **ElasticSearch** and **Kibana** will take care the rest for you.
+Here is a sample
+[Dockerfile](https://github.com/tmtxt/clojure-pedigree/tree/b16e12e72bc4f01a6ab523e28a0e59249c62fe18/images/fluentd)
+for fluentd and
+[docker-compose](https://github.com/tmtxt/clojure-pedigree/blob/b16e12e72bc4f01a6ab523e28a0e59249c62fe18/docker-compose.yml#L215)
+file setup for that combination.
+
+![Kibana](/files/2016-08-24-implement-a-simple-log-trace-in-clojure-ring/kibana1.png)
+
+![Kibana](/files/2016-08-24-implement-a-simple-log-trace-in-clojure-ring/kibana2.png)
