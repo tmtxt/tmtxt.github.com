@@ -47,7 +47,10 @@ Hmmm. Something like this would be much better
 [3] Exception: database down  
 [4] Finish request {id} in 10ms
 
-What I want is one single log entry per request with the trace of its steps so I can easily find out how the code works as well as where it can break, where it doesn't function normally.
+What I want is one single log entry per request with the trace of its steps so I can easily find out
+how the code works as well as where it can break, where it doesn't function normally.
+
+<!-- more -->
 
 # The wrap-log-trace middleware
 
@@ -155,7 +158,7 @@ can use. Writing the log is simply processing the `*log-data*` that you already 
 [Timbre](https://github.com/ptaoussanis/timbre),
 I can get the output like this for each request
 
-
+![Terminal](/files/2016-08-24-implement-a-simple-log-trace-in-clojure-ring/terminal.png)
 
 # Extra: Logging with ElasticSearch, Fluentd and Kibana
 
@@ -172,3 +175,8 @@ file setup for that combination.
 ![Kibana](/files/2016-08-24-implement-a-simple-log-trace-in-clojure-ring/kibana1.png)
 
 ![Kibana](/files/2016-08-24-implement-a-simple-log-trace-in-clojure-ring/kibana2.png)
+
+# Sample code
+
+- [Log Trace in Clojure](https://github.com/tmtxt/clojure-pedigree/blob/b16e12e72bc4f01a6ab523e28a0e59249c62fe18/svc.web/src/app/logger/log_trace.clj)
+- [Output to Console and JSON](https://github.com/tmtxt/clojure-pedigree/blob/b16e12e72bc4f01a6ab523e28a0e59249c62fe18/svc.web/src/app/logger/logger.clj)
