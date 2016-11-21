@@ -22,7 +22,7 @@ title: Trường TX Blog
   </div> <!-- panel-header end -->
   <div class="body-panel">
     {% if post.content contains "<!-- more -->" %}
-      {{ post.content | split:"<!-- more -->" | first % }}
+      {{ post.content | split:"<!-- more -->" | first }}
 		{% else %}
       {{ post.content | strip_html | truncatewords:100 }}
 		{% endif %}

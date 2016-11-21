@@ -3,7 +3,7 @@ layout: post
 title: "Blogging using your favorite Text editor with Git and Jekyll - Part 2"
 description: ""
 category: jekyll
-thumbnail: 
+thumbnail:
 showtn: yes
 tags: [git, jekyll, blog]
 ---
@@ -31,13 +31,13 @@ system to your blog. Here is the example (you can see in the config file)
 comments :
   provider : disqus
   disqus :
-    short_name : 
+    short_name :
   livefyre :
-    site_id : 
+    site_id :
   intensedebate :
-    account : 
+    account :
   facebook :
-    appid : 
+    appid :
     num_posts: 5
     width: 580
     colorscheme: lightp
@@ -97,7 +97,6 @@ have done with Jekyll
 * [Jekyll - Syntax highlighting]({% post_url 2012-12-28-jekyll-bootstrap-syntax-highlighting %})
 * [Jekyll Bootstrap - Create Simple Search box]({% post_url 2012-12-28-jekyll-create-simple-search-box %})
 * [Thumbnail Post List for Jekyll]({% post_url 2013-01-05-thumbnail-post-list-for-jekyll-bootstrap %})
-* [Display Liquid code in Jekyll]({% post_url 2013-01-09-display-liquid-code-in-jekyll %})
 * [Jekyll - Recents and Related Posts section]({% post_url 2013-01-09-jekyll-bootstrap-recents-related-posts-column %})
 * [Jekyll - Normalize address to avoid duplicate Disqus comment thread]({% post_url 2013-03-17-jekyll-bootstrap-nomalize-address-to-avoid-duplicate-disqus-comment-thread %})
 * [Google Analytics for Jekyll Bootstrap]({% post_url 2013-04-05-google-analytics-for-jekyll-bootstrap %})
