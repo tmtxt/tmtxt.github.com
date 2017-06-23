@@ -23,7 +23,7 @@ And hey, Emacs is equipped with a simple Vim mode by default. The community also
 
 # A programming environment behind the shape of a text editor
 
-Emacs is not really a text editor,. In fact, it's an interative programming environment comes with a built-in repl. Every config, every customization that you made to Emacs is written using Emacs Lisp (a dialect of Lisp). You have direct access to all Emacs functionalities, you can customize every aspect of Emacs without worrying whether it is exposed to any API or not, simply just by start writing some code.
+Emacs is not really a text editor. In fact, it's an interative programming environment comes with a built-in repl. Every config, every customization that you made to Emacs is written using Emacs Lisp (a dialect of Lisp). You have direct access to all Emacs functionalities, you can customize every aspect of Emacs without worrying whether it is exposed to any API or not, simply just by start writing some code.
 
 Emacs also offers you a repl, where you can try your new feature or modify the existing features directly to see how it works without any worrying about breaking any of your current config. Just restart your editor and everything will be back to your previous state.
 
@@ -33,4 +33,4 @@ Thanks to Emacs, I got the chance to learn a new programming language, get start
 
 Many people joke about Emacs as an operating system. That is, of course, impossible 😅. However, with its powerful extensiblity, we can tam Emacs to do many of our daily tasks that we have never thought of, and yes, faster.
 
-We can use Emacs as a git client. 
+We can use Emacs as a git client.
