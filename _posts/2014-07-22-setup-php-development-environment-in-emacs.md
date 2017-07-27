@@ -98,7 +98,7 @@ these two lines to the end of the function body to activate the new checker
 automatically for all .php files
 
 {% highlight cl %}
-(flycheck-select-checker my-php)
+(flycheck-select-checker 'my-php)
 (flycheck-mode t))
 {% endhighlight %}
 
