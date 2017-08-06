@@ -117,9 +117,9 @@ class TreeView extends Component {
       return (
         <g key={node.id} className="node"
            transform={`translate(${node.x}, ${node.y})`}>
-          <circle r="10" style={{'fill': node._children ? 'lightsteelblue' : '#fff'}} />
+          <circle r="10" style={'fill': node._children ? 'lightsteelblue' : '#fff'} />
           <text y="-19" dy=".35em" textAnchor="middle"
-                style={{'fillOpacity': 1}}>{node.fullName}</text>
+                style={'fillOpacity': 1}>{node.fullName}</text>
           <image href={node.picture} x="-20" y="-68"
                  width="40px" height="40px"></image>
         </g>
