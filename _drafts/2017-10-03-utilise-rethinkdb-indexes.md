@@ -30,4 +30,59 @@ performance. Therefore, the basic rules for RethinkDB Indexes are similar to oth
 
 # RethinkDB Primary Index
 
-Yes, it's the simplest index solution that you have by default for all table.
+Yes, it's the simplest index solution that you have for free for all tables. There are no overhead
+for using primary index because it's the default for all tables. If your record can be identified by a
+combination of some of its props, don't let RethinkDB generate the primary key.
+Build the primary id yourself and use that to query when needed.
+
+For example, in our system, we have a gateway for sending out all emails, we call it
+**email microservice**.
+Our email microservice needs to keep track of all the sent emails to avoid re-sending the same email
+multiple times. Each email request sent to this gateway needs to be logged into
+the database so that if the request is retried or in case of code bug, that same
+email won't get sent twice. The email object can be identified using this
+combination
+
+- `emailTemplateId`: the id of the template to render that email
+- `accountId`: the id of the receiving account
+- `emailAddress`: the email address of that account (in case that account has many emails)
+
+The simplest solution would be to create a compound index on that table, which
+includes the value of those 3 fields.
+However, that can cause a huge performance issue if
+this microservice has to process a large number of requests in peak time.
+For each request, the microservice has to perform a query to the sent emails
+table to check whether the email is already exists or not. After that, it has to
+write back the sent email information to that table. The database has to
+maintain 2 separate indexes and we actually don't take advantage of the existing
+primary key index.
+
+To eliminate the need for a second index, we simply just build the sent email id
+ourselves, using a combination of those 3 fields. For example
+
+{% highlight js %}
+function buildEmailId(email) {
+  const emailTemplateId = email.emailTemplateId;
+  const accountId = email.accountId;
+  const emailAddress = email.toEmail;
+  return `${emailTemplateId}-${accountId}-${emailAddress}`;
+}
+
+// check whether the email exist
+function* emailExist(email) {
+  const emailId = buildEmailId(email);
+  return yield r.branch(
+    // query by primary key index
+    r.table('sentEmails').get(emailId),
+    true,
+    false
+  );
+}
+
+// insert the sent email
+function* storeSentEmail(email) {
+  const emailId = buildEmailId(email);
+  email.id = emailId;
+  yield r.table('sentEmails').insert(email);
+}
+{% endhighlight %}
