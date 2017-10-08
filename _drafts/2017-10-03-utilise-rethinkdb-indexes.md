@@ -196,3 +196,153 @@ function* getCampaignsWithRealmName(realmId) {
     });
 }
 {% endhighlight %}
+
+# RethinkDB Compound Index
+
+Of course, the above indexes cannot satisfy all your needs. You will probably run into the case
+where you want to query records based on multiple props and sort the records after querying.
+Compound indexes are the rescuer in those cases. If you design it carefully, you can even use one
+compound index to serve for different kind of queries.
+
+Back to the above example, if the requirements is not just querying all the campaigns belong to one
+realm, but also filtering all the campaigns created this month. In that case, we need to create a
+compound index like this
+
+{% highlight js %}
+function* createIndex() {
+  yield r.table('campaigns').indexCreate(
+    'realmId_createdAt',
+    [r.row('realmId'), r.row('createdAt')]
+  );
+}
+{% endhighlight %}
+
+and to query all the campaigns belong to one realm and were created this month
+
+{% highlight js %}
+function* getCampaignsByRealmIdByTimeRange(realmId, fromTimestamp, toTimestamp) {
+  return yield r.table('campaigns')
+    .between(
+      [realmId, fromTimestamp],
+      [realmId, toTimestamp],
+      {index: 'realmId_createdAt'}
+    );
+}
+{% endhighlight %}
+
+And hey, you can take advantage of the new index to eliminate the previous one `realmId`. If you
+want to query all the campaigns belong to one realm, simply use `between` with all the possible
+`createdAt` values
+
+{% highlight js %}
+function* getCampaignsByRealmId(realmId) {
+  return yield r.table('campaigns')
+    .between(
+      [realmId, r.minval],
+      [realmId, r.maxval],
+      {index: 'realmId_createdAt'}
+    );
+}
+{% endhighlight %}
+
+This would be a big win when you only to one compound index to server multiple querying scenario.
+
+# Extending the Compound Index
+
+To extend this, if your requirement is to query all the campaigns belong to one realm, but care
+about the type and the status of those campaigns, the index will look like this
+
+{% highlight js %}
+function* createIndex() {
+  yield r.table('campaigns').indexCreate(
+    'realmId_type_status',
+    [r.row('realmId'), r.row('type'), r.row('status')]
+  );
+}
+{% endhighlight %}
+
+The above index can serve several cases, from querying exact value to range querying.
+
+{% highlight js %}
+// get all campaigns belong to one realm
+function* getCampaignsByRealmId(realmId) {
+  return yield r
+    .table('campaigns')
+    .between([realmId, r.minval, r.minval], [realmId, r.maxval, r.maxval], {
+      index: 'realmId_type_status'
+    });
+}
+
+// get all campaigns of one type that belong to one realm
+function* getCampaignsByType(realmId, type) {
+  return yield r.table('campaigns').between([realmId, type, r.minval], [realmId, type, r.maxval], {
+    index: 'realmId_type_status'
+  });
+}
+
+// get all campaigns of one type with one specific status that belong to one realm
+function* getCampaignsByTypeAndStatus(realmId, type, status) {
+  return yield r.table().getAll([realmId, type, status], {
+    index: 'realmId_type_status'
+  });
+}
+{% endhighlight %}
+
+You can even order the results retrieved from that index
+
+{% highlight js %}
+// get all campaigns belong to one realm
+// order by type first and then status
+function* getCampaignsByRealmId(realmId) {
+  return yield r
+    .table('campaigns')
+    .between([realmId, r.minval, r.minval], [realmId, r.maxval, r.maxval], {
+      index: 'realmId_type_status'
+    })
+    .orderBy({
+      index: 'realmId_type_status'
+    });
+}
+
+// get all campaigns of one type that belong to one realm
+// order by the status
+function* getCampaignsByType(realmId, type) {
+  return yield r
+    .table('campaigns')
+    .between([realmId, type, r.minval], [realmId, type, r.maxval], {
+      index: 'realmId_type_status'
+    })
+    .orderBy({
+      index: 'realmId_type_status'
+    });
+}
+{% endhighlight %}
+
+# A Note on Compound Index
+
+## Use one index at a time
+
+Yeah, you can only use one index in your query. Look at the above example, you can only use one
+index `realmId_type_status` for filtering and sorting. Attempting to use different indexes in the
+chaining query will result in failure. As far as I understand, the `getAll`/`between` commands will
+narrow down the search to one sub-tree on the binary tree index and then sort on that sub-tree only.
+That's why you cannot use different indexes in one chaining query.
+
+## The order of the fields is important
+
+If your need is just to query by the exact value of the compound index, the order of the fields is
+not important. For example, you can change the above index to whatever order (`type_realmId_status`,
+`status_type_realmId`). The query will always produce the same result with the same speed
+
+{% highlight js %}
+// get all campaigns of one type with one specific status that belong to one realm
+function* getCampaignsByTypeAndStatus(realmId, type, status) {
+  return yield r.table().getAll([status, type, realmId], {
+    index: 'status_type_realmId'
+  });
+}
+{% endhighlight %}
+
+However, when it comes to range querying, it's another story. If you take a closer look the above
+queries, you will notice that the left-most values are always the values that are fixed and the
+right-most values can be the variable ones.
