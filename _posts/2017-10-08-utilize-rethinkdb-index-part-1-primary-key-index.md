@@ -36,7 +36,7 @@ annoying for initial development but can save you a lot of time when the product
 should be the secondary data storage, acting as a caching/supporting layer for the important data
 stored in SQL. I wrote this post not to encourage the heavy use of RethinkDB, but rather to show how
 we deal with the scaling problem that we got.
-- In the future, after working at Agency Revolution, more likely that I will never touch
+- In the future, after working at Agency Revolution, it's more likely that I will never touch
 RethinkDB again. However, the knowledge about the underlying RethinkDB index will undoubtedly be
 helpful when working with other database system.
 
