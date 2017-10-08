@@ -4,12 +4,14 @@ title: "Utilize RethinkDB Index - Part 1 - Primary key Index"
 description: ""
 categories: [rethinkdb]
 tags: [rethinkdb]
-thumbnail: files/2017-10-08-utilize-rethinkdb-index-part-1-primary-key-index/thumbnail.png
+thumbnail: /files/2017-10-08-utilize-rethinkdb-index-part-1-primary-key-index/thumbnail.png
 ---
 
 It has been more than one year since my last post. But yeah, I'm still here, not going anywhere.
 This time, I write about the database that I have been working over the last one year
 at [Agency Revolution](https://www.agencyrevolution.com/), **RethinkDB**.
+
+![Index](/files/2017-10-08-utilize-rethinkdb-index-part-1-primary-key-index/thumbnail.png)
 
 At **Agency Revolution**, we make heavy use of **RethinkDB**. Nearly everything is stored in
 RethinkDB. Probably at the time you are reading this blog post, that will not be true anymore and we
@@ -17,6 +19,8 @@ have been utilizing other databases as well. However, as it's still one of our m
 used to have a lot of performance issues related to storing and retrieving data (and we still have
 until now). This blog post is to summarize how we use RethinkDB indexes to solve those problems as
 well as some use cases for different kind of indexes in RethinkDB.
+
+<!-- more -->
 
 Before you continue reading this post, there are something that I have say
 
