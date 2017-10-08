@@ -28,7 +28,7 @@ performance. Therefore, the basic rules for RethinkDB Indexes are similar to oth
 - Indexes require memory to process, be careful with tables that have a lot of indexes.
 - Indexes can slow down write operations significantly.
 
-# RethinkDB Primary Index
+# RethinkDB Primary Key Index
 
 Yes, it's the simplest index solution that you have for free for all tables. There are no overhead
 for using primary index because it's the default for all tables. If your record can be identified by a
@@ -343,6 +343,36 @@ function* getCampaignsByTypeAndStatus(realmId, type, status) {
 }
 {% endhighlight %}
 
-However, when it comes to range querying, it's another story. If you take a closer look the above
+However, when it comes to range querying, it's another story. If you take a closer look at the above
 queries, you will notice that the left-most values are always the values that are fixed and the
-right-most values can be the variable ones.
+right-most values can be the vary ones. If you want to do a range query with the vary left-most
+values, it will similar to a sequence scan.
+
+For example, to get all the campaigns belong to one
+realm, this will work efficiently
+
+{% highlight js %}
+function* getCampaignsByRealmId(realmId) {
+  return yield r
+    .table('campaigns')
+    .between(
+      [realmId, r.minval],
+      [realmId, r.maxval],
+      {index: 'realmId_type'}
+    );
+}
+{% endhighlight %}
+
+This one works, too but similar to a sequence scan and not efficiently
+
+{% highlight js %}
+function* getCampaignsByRealmId(realmId) {
+  return yield r
+    .table('campaigns')
+    .between(
+      [r.minval, realmId],
+      [r.maxval, realmId],
+      {index: 'type_realmId'}
+    );
+}
+{% endhighlight %}
