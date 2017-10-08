@@ -86,3 +86,113 @@ function* storeSentEmail(email) {
   yield r.table('sentEmails').insert(email);
 }
 {% endhighlight %}
+
+# RethinkDB Primary Index in Table joining
+
+Another case where this type of index would be helpful is when you want to separate less frequently
+used data into another table. For example, at Agency Revolution, we tried to integrate with many other
+AMS systems. Each account in our system reflects one account in the original AMS system. To store
+that, we need include some meta data to each account. The meta data also contains the original data
+from that AMS system, which is usually quite large but rarely used. Storing everything in one
+account record is probably not a good idea since every query need to operate on the whole big
+account object, but we rarely need to access the meta data. The solution is to separate the meta
+data into another table and only join that data when necessary. For instance
+
+To insert the account with meta data
+
+{% highlight js %}
+function buildMetaDataKey(account) {
+  // build something unique here, for example
+  return `${account.realmId}-${account.thirdPartyId}`;
+}
+
+function* insertAccount(account) {
+  const metaData = account.metaData;
+  account = _.omit(account, 'metaData');
+
+  // if your account has some props to identify it, building the primary key
+  // for meta data here will let you run 2 insert commands in parallel.
+  // otherwise, you would need to insert the meta data first, get back the
+  // generated id and set to the account object
+  const metaDataKey = buildMetaDataKey(account);
+  account.metaDataKey = metaDataKey;
+  metaData.id = metaDataKey;
+
+  yield [
+    r.table('accounts').insert(account),
+    r.table('accountMetaData').insert(metaData)
+  ];
+}
+{% endhighlight %}
+
+To query the account
+
+{% highlight js %}
+function* getAccountById(accountId, includeMetaData) {
+  let query = r.table('accounts').get(accountId);
+
+  // join using the metaDataKey prop in the account
+  if (includeMetaData) {
+    query = query.eqJoin('metaDataKey', r.table('accountMetaData')).zip();
+  }
+
+  return yield query
+}
+{% endhighlight %}
+
+Querying multiple accounts is similar
+
+{% highlight js %}
+function* filterAccounts(filterProps) {
+  let query = r.table('accounts').filter(filterProps);
+
+  // join using the metaDataKey prop in the account
+  if (includeMetaData) {
+    query = query.eqJoin('metaDataKey', r.table('accountMetaData')).zip();
+  }
+
+  return yield query;
+}
+{% endhighlight %}
+
+# RethinkDB Simple Secondary Index
+
+Sometimes, what you need is not simply querying by primary key. Because RethinkDB is a NoSQL database,
+you would need to create a secondary index for joining tables or querying records belong to
+one category. For example, our system support client to create many marketing campaigns for targeting
+different kinds of customers. Each client is stored as one `realm` in the realm table and each
+campaign is stored as one record in the `campaign` table. More often, we will need to get all the
+campaigns belong to one realm. The simplest solution is to create a simple secondary index on the
+field `realmId` of the campaign table.
+
+{% highlight js %}
+function* createIndex() {
+  yield r.table('campaigns').indexCreate('realmId');
+}
+{% endhighlight %}
+
+To query the campaigns by realm, simply use RethinkDB `getAll` command
+
+{% highlight js %}
+function* getCampaignsByRealmId(realmId) {
+  const campaigns = yield r.table('campaigns').getAll(realmId, { index: 'realmId' });
+  return campaigns;
+}
+{% endhighlight %}
+
+Joining 2 tables with the help of secondary indexes is also very fast. In case you
+want to get all the campaigns belong to one realm with the realm data, simply do
+
+{% highlight js %}
+function* getCampaignsWithRealmName(realmId) {
+  return yield r
+    .table('campaigns')
+    .getAll(realmId, { index: 'realmId' })
+    .eqJoin('realmId', r.table('realms'))
+    .map(function(row) {
+      return row('left').merge({ // left is the campaign data
+        realmName: row('right')('name')
+      });
+    });
+}
+{% endhighlight %}
