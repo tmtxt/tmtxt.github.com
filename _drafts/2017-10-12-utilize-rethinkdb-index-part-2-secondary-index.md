@@ -23,167 +23,216 @@ performance. Therefore, the basic rules for RethinkDB Indexes are similar to oth
 # RethinkDB Simple Secondary Index
 
 Continue from last post, sometimes, what you need is not simply querying by primary key. More often,
-you may want to get all the records belong to one category.
+you may want to get all the records belong to one specific category.
 In case the number of records is too big for one simple `filter` command, you will need to create
 one secondary index for faster querying.
 
-For example, our automation marketing system at **Agency Revolution** supports our clients to create
-many campaigns for targeting different kinds of customers. Each client is stored as one `realm` in
-the realm table and each campaign is stored as one record in the `campaign` table with one field
-`realmId` to reference back to the realm table. Usually, we
-will need to get all the campaigns belong to one realm to display to user or to perform other
-complex operations. The simplest solution is to create a simple secondary index on the
-field `realmId` of the campaign table.
+For example, you are organizing all the products in your warehouse into several categories. Each
+category is stored as one record in the `categories` table as below
 
-{% highlight js %}
-function* createIndex() {
-  yield r.table('campaigns').indexCreate('realmId');
+{% highlight json %}
+{
+  "id":             "category id",
+  "categoryName":   "category name"
 }
 {% endhighlight %}
 
-To query the campaigns by realm, simply use RethinkDB `getAll` command
+Each product is stored as one record in the `products` table with one prop `categoryId` for
+referencing back to the `category` table.
+
+{% highlight json %}
+{
+  "id":             "product id",
+  "productName":    "product name",
+  "categoryId":     "category id",
+  "categoryId":     "0-10",
+  "categoryId":     "product status"
+}
+{% endhighlight %}
+
+If you want to query all products belong to one category, the simplest solution is to create a
+simple secondary index on the field `categoryId` of the product table
 
 {% highlight js %}
-function* getCampaignsByRealmId(realmId) {
-  const campaigns = yield r.table('campaigns').getAll(realmId, { index: 'realmId' });
-  return campaigns;
+function* createIndex() {
+  yield r.table('products').indexCreate('categoryId');
+}
+{% endhighlight %}
+
+To query all the products by category, simply use RethinkDB `getAll` command
+
+{% highlight js %}
+function* getProductsByCategoryId(categoryId) {
+  return yield r.table('products').getAll(categoryId, { index: 'categoryId' });
 }
 {% endhighlight %}
 
 Joining 2 tables with the help of secondary indexes is also very fast. In case you
-want to get all the campaigns belong to one realm with the realm data, simply do
+want to get all the products belong to one category with the category name, simply do
 
 {% highlight js %}
-function* getCampaignsWithRealmName(realmId) {
+function* getProductsWithCategoryName(categoryId) {
   return yield r
-    .table('campaigns')
-    .getAll(realmId, { index: 'realmId' })
-    .eqJoin('realmId', r.table('realms'))
-    .map(function(row) {
-      return row('left').merge({ // left is the campaign data
-        realmName: row('right')('name')
-      });
+    .table('products')
+    .getAll(categoryId, { index: 'categoryId' })
+    .eqJoin('categoryId', r.table('categories'))
+    .zip();
+}
+{% endhighlight %}
+
+Or if you want to do the reverse way, find the category by id and all its related products
+
+{% highlight js %}
+function* getCategoryByIdAndProducts(categoryId) {
+  return yield r.table('categories')
+    .get(categoryId)
+    .merge({
+      products: r.table('products')
+        .getAll(categoryId, {index: 'categoryId'})
+        .coerceTo('array')
     });
 }
 {% endhighlight %}
 
 # RethinkDB Compound Index
 
-Of course, the above indexes cannot satisfy all your needs. You will probably run into the case
-where you want to query records based on multiple props and sort the records after querying.
-Compound indexes are the rescuer in those cases. If you design it carefully, you can even use one
-compound index to serve different kind of queries.
+As your application grows bigger, your requirements may be extended to filtering products based on
+more properties, not just `categoryId`. That is where a compound
+index would be useful. If you design it carefully, you can even use one compound index to serve many
+different kinds of queries.
 
-Back to the above example, if the requirements is not just querying all the campaigns belong to one
-realm, but also filtering all the campaigns created this month. In that case, we need to create a
-compound index like this
+Back to the above example, if we change the requirements to find all the products belong to one
+category and has the rating is 5, the index would look like this
 
 {% highlight js %}
 function* createIndex() {
-  yield r.table('campaigns').indexCreate(
-    'realmId_createdAt',
-    [r.row('realmId'), r.row('createdAt')]
+  yield r.table('products').indexCreate(
+    'categoryId_rating',
+    [r.row('categoryId'), r.row('rating')]
   );
 }
 {% endhighlight %}
 
-and to query all the campaigns belong to one realm and were created this month
+and the `getAll` query will receive an array param like this
 
 {% highlight js %}
-function* getCampaignsByRealmIdByTimeRange(realmId, fromTimestamp, toTimestamp) {
-  return yield r.table('campaigns')
+function* getProductByCategoryIdAndRating(categoryId, rating) {
+  return yield r.table('products').getAll([categoryId, rating], { index: 'categoryId_rating' });
+}
+{% endhighlight %}
+
+A compound index is also helpful when you want to do a range query, too. If you want to find all the
+products belong to one category with rating from 1 to 5, use `between` in combination with that
+index
+
+{% highlight js %}
+function* getProductsByCategoryInRatingRange(categoryId, fromRating, toRating) {
+  return yield r.table('products')
     .between(
-      [realmId, fromTimestamp],
-      [realmId, toTimestamp],
-      {index: 'realmId_createdAt'}
+      [categoryId, fromRating],
+      [categoryId, toRating],
+      { index: 'categoryId_rating' }
+    );
+}
+
+getProductsByCategoryInRatingRange('sample-cat-id', 1, 5);
+{% endhighlight %}
+
+And hey, you can also take advantage of the new index to eliminate the previous one `categoryId`. If
+you want to search for all the products belong to one category, simply use `between` with all the
+possible `rating` values
+
+{% highlight js %}
+function* getProductsByCategoryId(categoryId) {
+  return yield r.table('products')
+    .between(
+      [categoryId, r.minval],
+      [categoryId, r.maxval],
+      { index: 'categoryId_rating' }
     );
 }
 {% endhighlight %}
 
-And hey, you can take advantage of the new index to eliminate the previous one `realmId`. If you
-want to query all the campaigns belong to one realm, simply use `between` with all the possible
-`createdAt` values
-
-{% highlight js %}
-function* getCampaignsByRealmId(realmId) {
-  return yield r.table('campaigns')
-    .between(
-      [realmId, r.minval],
-      [realmId, r.maxval],
-      {index: 'realmId_createdAt'}
-    );
-}
-{% endhighlight %}
-
-This would be a big win when you only to one compound index to server multiple querying scenario.
+This would be a big win when you only to one compound index to serve multiple purposes.
 
 # Extending the Compound Index
 
-To extend the above example, if your application requires querying all the campaigns belong to one
-realm, but care about the type and the status of those campaigns, the index will look like this
+To extend the above example, if your application requires querying all the products belong to one
+category, but also care about the rating and status of those products, the index will look like this
 
 {% highlight js %}
 function* createIndex() {
-  yield r.table('campaigns').indexCreate(
-    'realmId_type_status',
-    [r.row('realmId'), r.row('type'), r.row('status')]
+  yield r.table('products').indexCreate(
+    'categoryId_rating_status',
+    [r.row('categoryId'), r.row('rating'), r.row('status')]
   );
 }
 {% endhighlight %}
 
-The above index can serve several cases, from querying exact value to range querying.
+The above index be used for several use cases, from exact value to range querying.
+
+- Get all products belong to one category
 
 {% highlight js %}
-// get all campaigns belong to one realm
-function* getCampaignsByRealmId(realmId) {
+function* getProductsByCategoryId(categoryId) {
   return yield r
-    .table('campaigns')
+    .table('products')
     .between([realmId, r.minval, r.minval], [realmId, r.maxval, r.maxval], {
-      index: 'realmId_type_status'
+      index: 'categoryId_rating_status'
     });
 }
+{% endhighlight %}
 
-// get all campaigns of one type that belong to one realm
-function* getCampaignsByType(realmId, type) {
-  return yield r.table('campaigns').between([realmId, type, r.minval], [realmId, type, r.maxval], {
-    index: 'realmId_type_status'
-  });
+- Get all products belong to one category, which have specific rating score
+
+{% highlight js %}
+function* getProductsByCategoryAndRating(categoryId, rating) {
+  return yield r
+    .table('products')
+    .between([categoryId, rating, r.minval], [categoryId, rating, r.maxval], {
+      index: 'categoryId_rating_status'
+    });
 }
+{% endhighlight %}
 
-// get all campaigns of one type with one specific status that belong to one realm
-function* getCampaignsByTypeAndStatus(realmId, type, status) {
-  return yield r.table().getAll([realmId, type, status], {
-    index: 'realmId_type_status'
+- Get all products by 3 props
+
+{% highlight js %}
+function* getProducts(categoryId, rating, status) {
+  return yield r.table().getAll([categoryId, rating, status], {
+    index: 'categoryId_rating_status'
   });
 }
 {% endhighlight %}
 
 You can even order the results retrieved from that index
 
+- Get all products belong to one category, order by rating first and then status
+
 {% highlight js %}
-// get all campaigns belong to one realm
-// order by type first and then status
-function* getCampaignsByRealmId(realmId) {
+function* getProductsByCategoryId(categoryId) {
   return yield r
-    .table('campaigns')
+    .table('products')
     .between([realmId, r.minval, r.minval], [realmId, r.maxval, r.maxval], {
-      index: 'realmId_type_status'
+      index: 'categoryId_rating_status'
     })
     .orderBy({
-      index: 'realmId_type_status'
+      index: 'categoryId_rating_status'
     });
 }
+{% endhighlight %}
 
-// get all campaigns of one type that belong to one realm
-// order by the status
-function* getCampaignsByType(realmId, type) {
+- Get all products belong to one category, with a specific rating score, order by the status
+
+{% highlight js %}
+function* getProductsByCategoryAndRating(categoryId, rating) {
   return yield r
-    .table('campaigns')
-    .between([realmId, type, r.minval], [realmId, type, r.maxval], {
-      index: 'realmId_type_status'
+    .table('products')
+    .between([categoryId, rating, r.minval], [categoryId, rating, r.maxval], {
+      index: 'categoryId_rating_status'
     })
     .orderBy({
-      index: 'realmId_type_status'
+      index: 'categoryId_rating_status'
     });
 }
 {% endhighlight %}
