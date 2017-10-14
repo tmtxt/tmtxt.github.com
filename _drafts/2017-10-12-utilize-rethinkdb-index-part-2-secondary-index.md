@@ -7,8 +7,11 @@ tags: [rethinkdb]
 thumbnail: /files/2017-10-08-utilize-rethinkdb-index-part-1-primary-key-index/thumbnail.png
 ---
 
-This post is the second part of the first post here.
+This post is the second part of the first post
+[here]({%post_url 2017-10-08-utilize-rethinkdb-index-part-1-primary-key-index%}). This post focuses
+on how to utilize RethinkDB Secondary Index in different cases.
 
+![Index](/files/2017-10-08-utilize-rethinkdb-index-part-1-primary-key-index/thumbnail.png)
 
 # Some rules when using RethinkDB Indexes
 
@@ -19,6 +22,8 @@ performance. Therefore, the basic rules for RethinkDB Indexes are similar to oth
 - Don't create index if the data set is small enough so that you can use the `filter` query.
 - Indexes require memory to process, be careful with tables that have a lot of indexes.
 - Indexes can slow down write operations significantly.
+
+<!-- more -->
 
 # RethinkDB Simple Secondary Index
 
@@ -239,25 +244,25 @@ function* getProductsByCategoryAndRating(categoryId, rating) {
 
 # A Note on Compound Index
 
-## Use one index at a time
+One important thing to notice for RethinkDB Compound Index is the order of the fields.
 
-Yeah, you can only use one index in your query. Look at the above example, you can only use one
-index `realmId_type_status` for filtering and sorting. Attempting to use different indexes in the
-chaining query will result in failure. As far as I understand, the `getAll`/`between` commands will
-narrow down the search to one sub-tree on the binary tree index and then sort on that sub-tree only.
-That's why you cannot use different indexes in one chaining query.
-
-## The order of the fields is important
-
-If your need is just to query by the exact value of the compound index, the order of the fields is
-not important. For example, you can change the above index to whatever order (`type_realmId_status`,
-`status_type_realmId`) and this query will always produce the same result with the same speed
+You may not need to care about the order when you just need to query by the exact values of the
+compound index.
+For example, you can change the above index to whatever order you want (`rating_status_categoryId`,
+`status_categoryId_rating`) and these queries will always produce the same result with the same
+speed
 
 {% highlight js %}
-// get all campaigns of one type with one specific status that belong to one realm
-function* getCampaignsByTypeAndStatus(realmId, type, status) {
-  return yield r.table().getAll([status, type, realmId], {
-    index: 'status_type_realmId'
+// filter all products by 3 props
+function* getProducts1(categoryId, rating, status) {
+  return yield r.table().getAll([rating, status, categoryId], {
+    index: 'rating_status_categoryId'
+  });
+}
+
+function* getProducts2(categoryId, rating, status) {
+  return yield r.table().getAll([status, categoryId, rating], {
+    index: 'status_categoryId_rating'
   });
 }
 {% endhighlight %}
@@ -265,19 +270,19 @@ function* getCampaignsByTypeAndStatus(realmId, type, status) {
 However, when it comes to range querying, it's another story. If you take a closer look at the above
 queries, you will notice that the left-most values are always fixed/determined values while the
 right-most values can be vary. If you want to do a range query with the vary left-most
-values, it will similar to a whole table sequence scan.
+values, it is similar to a whole table sequence scan.
 
-For example, to get all the campaigns belong to one
-realm, this will work efficiently
+For example, to get all the products belong to one
+category, this will work efficiently
 
 {% highlight js %}
-function* getCampaignsByRealmId(realmId) {
+function* getProductsByCategoryId(categoryId) {
   return yield r
-    .table('campaigns')
+    .table('products')
     .between(
-      [realmId, r.minval],
-      [realmId, r.maxval],
-      {index: 'realmId_type'}
+      [categoryId, r.minval],
+      [categoryId, r.maxval],
+      { index: 'categoryId_rating' }
     );
 }
 {% endhighlight %}
@@ -285,13 +290,13 @@ function* getCampaignsByRealmId(realmId) {
 This one also works but it's similar to a sequence scan and is not efficient
 
 {% highlight js %}
-function* getCampaignsByRealmId(realmId) {
+function* getProductsByCategoryId(categoryId) {
   return yield r
-    .table('campaigns')
+    .table('products')
     .between(
-      [r.minval, realmId],
-      [r.maxval, realmId],
-      {index: 'type_realmId'}
+      [r.minval, categoryId],
+      [r.maxval, categoryId],
+      { index: 'rating_categoryId' }
     );
 }
 {% endhighlight %}
