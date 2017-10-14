@@ -122,7 +122,8 @@ and the `getAll` query will receive an array param like this
 
 {% highlight js %}
 function* getProductByCategoryIdAndRating(categoryId, rating) {
-  return yield r.table('products').getAll([categoryId, rating], { index: 'categoryId_rating' });
+  return yield r.table('products')
+    .getAll([categoryId, rating], { index: 'categoryId_rating' });
 }
 {% endhighlight %}
 
