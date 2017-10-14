@@ -9,7 +9,7 @@ thumbnail: /files/2017-10-08-utilize-rethinkdb-index-part-1-primary-key-index/th
 
 This post is the second part of the first post
 [here]({%post_url 2017-10-08-utilize-rethinkdb-index-part-1-primary-key-index%}). This post focuses
-on how to utilize RethinkDB Secondary Index in different cases.
+on how to utilize RethinkDB Secondary Index in different use cases efficiently.
 
 ![Index](/files/2017-10-08-utilize-rethinkdb-index-part-1-primary-key-index/thumbnail.png)
 
