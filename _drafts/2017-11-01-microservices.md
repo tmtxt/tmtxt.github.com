@@ -16,11 +16,13 @@ Well, there are a lot of posts out there on the internet that describe what exac
 # 
 # The good
 
-## Fast releases of small services
+## Easy to adapt with changes
 
-One of the biggest advantage of small services is that when you make 
+One of the biggest advantage of Microservices is that it’s very easy to adapt with changes. You can make changes in one small service without affecting other services as long as you keep the same API specs. In case you are going to make breaking changes, just add a new v2, v3,... api and switch the corresponding services consuming that api to use the new version. Small services also allow you to release new features or bug fixes faster. You don’t 
 
-## 
+## Scale just what you need
+
+## New team member can start working on some small services first
 
 #  ...and the pain
 
@@ -47,6 +49,8 @@ Backing your application by many timer workers is not easy and not a good workar
 A distributed system with a lot of small services followed by difference data storages means that there are no constraint between those data storages. In a traditional SQL database, this can be solved easily by adding foreign key between tables and perform a cascading update/delete whenever you want to modify the data. ensuring that constraint in a microservice design is really challenging.
 
 Let’s say you are building a blogging system using Microservices design. Everytime a user is deleted, all posts published by that user are expected to be removed, too. What happens if the request finished removing the user from user storage but fail to clear the related posts due to network failure? The other users can still see the posts belong to a deleted user? You can workaround this by sending a message to Kafka, Google Pub/Sub when the api request fails to process and schedule an async worker to continue the work. Those messaging systems will ensure the message is retried until success. You can also perform an extra check when getting the blog posts but yeah, this will increase the response time of the api.
+
+## The problem of logging and tracing/debugging
 
 # 
 
