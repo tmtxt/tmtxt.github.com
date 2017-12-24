@@ -5,41 +5,34 @@ title: “Microservices - A look back after 2 years”
 description: “”
 category: misc
 thumbnail:
-tags: []
+ktags: []
 ---
 
 It has been nearly 2 years since I started working at Agency Revolution, a team working on a
-software product that utilizes Microservices architecture to build a highly scalable system for
-Automation Marketing. There are both pros and cons when building a Microservices system from scratch
-and I’m not for nor against Microservices. This post is just a summary of my experience after 2
-years working with it, what Microservices design helped our team in developing application as well
-as the pain that we have to face when choosing that approach.
+software platform that utilizes Microservices architecture to build a highly scalable system for
+Automation Marketing. It comes with both pros and cons when building a Microservices system from
+scratch and I’m not for nor against Microservices. There are many articles and books on the Internet
+talking about the advantages of Microservices so I'm not going to write another post about the
+benefit of using Microservices. This post is just a summary of my experience and the difficulties after 2
+years working with it as well as how we deal with those issues to get the most value of
+Microservices.
 
-# What is Microservices?
+First, let me introduce a bit about the tech stack that we are using. We have been running our
+application on our private server for about 2 years before migrating to Google Cloud Platform. There
+are 3 types of Microservices in your system. They are
 
-Well, there are a lot of posts out there on the internet that describe what exactly Microservices design is.
-#
-# The good
+- **HTTP services**: the services for handling synchronous requests, the requests that need the response
+immediately (e.g. requests from frontend to display for users)
+- **Google PubSub workers**: the services for handling asynchronous requests. They are queued for later
+processing in the background and ensured by Google PubSub
+- **Timer workers**: The services that run at intervals.
 
-## Easy to adapt with changes
+**HTTP services** are used for handling simple requests, which can be completed within
+milliseconds/seconds. For the long-running tasks, we published a message to Google PubSub and
+schedule it to be processed later by the **Google PubSub workers**. Each of them is deployed and
+scaled as a pod in Kubernetes.
 
-One of the biggest advantage of Microservices is that it’s very easy to adapt with changes. You can
-make changes in one small service without affecting other services as long as you keep the same API
-specs. In case you are going to make breaking changes, just add a new v2, v3,... api and switch the
-corresponding services consuming that api to use the new version. Small services also allow you to
-release new features or bug fixes faster. You don’t
-
-## Scale just what you need
-
-## New team member can start working on some small services first
-
-#  ...and the pain
-
-> The “pain” here doesn't really mean the disadvantages of Microservices. It is the difficulties
-> that we faced during the process of developing our application using Microservices design as well
-> as some techniques that we used to overcome the problem.
-
-## Overhead before you can get the scalability to work
+# Overhead before you can get the scalability to work
 
 Microservices add quite a lot of unnecessary overhead in the beginning, both human and computing
 resources.
@@ -58,11 +51,20 @@ services, one for each domain. Each of them may be implemented using a simple HT
 Instead of calling the exposed methods each module provides like in the monolith design, you will
 have to initiate an http request calling to the corresponding service, get the response data and
 continue processing. The problem arises when there are many modules/services that are rarely used,
-just serve few requests per day. You still have to keep those http web servers alive to listen and
+just serve a few requests per day. You still have to keep those http web servers alive to listen and
 process api requests. What happen when you system grows to 100 services (or more)? How many of them
 will actually be used/stressed all the time? Think about the isolated backing services used for each
 service. All of them still consumes your CPU/RAM even if they serve no requests. A monolith
 application can easily share the computing resources among all the modules.
+
+We ran into this situation when our application grew to about 100 small services. We had to keep
+all the HTTP services and Google PubSub workers alive to handle HTTP requests and process messages
+from Google PubSub. Some workers are extremely rarely used, for example, the worker to delete one
+customer (runs just once or twice every month). We wasted a lot of resources keeping those small
+services running just to wait for incoming messages/requests. We solved this issue partially for the
+Google PubSub workers by implementing a Workers Scheduler service. It's **Timer worker** that keeps
+track of messages published to Google and send requests to Kubernetes master to create new pods and
+destroy running pods based on some predefined rules.
 
 Another overhead is the cost of transferring data through network. In a monolith design, each
 function call is simply passing the reference to the real object through parameters. There is no
@@ -88,9 +90,9 @@ there are breaking changes in that service. You can choose another approach to s
 dependent services along with the one you need to test, but it's also increase the overhead of
 setting up and making sure everything works together properly and automatically.
 
-## You have to deal with the problem of distributed systems very early
+# You have to deal with the problem of distributed systems very early
 
-### Data Consistency Matter
+## Data Inconsistency
 
 A distributed system with a lot of small services followed by difference data storages means that
 there are no constraints between those data storages. In a traditional SQL database, this can be
@@ -107,7 +109,7 @@ and schedule an async worker to continue the work. Those messaging systems will 
 is retried until success. You can also perform an extra check when getting the blog posts but yeah,
 this will increase the response time of the api.
 
-### Everything can fail
+## Everything can fail
 
 Communication between services can happen within the same server or more usual through the network
 across multiple servers and the network can always fail. You need to handle error in case of network
@@ -121,7 +123,11 @@ the cost for development and maintenance since you have to take care not only th
 itself but also the fixer workers. Sometimes the fixer workers cause data inconsistency more serious
 because they don’t follow the updated schema.
 
-## The problem of logging and tracing/debugging
+# The problem of Error Handling, Logging, Tracing and Debugging
+
+## Cross-services Error handling
+
+
 
 Tracing and debugging errors in Microservices are really a nightmare if you don’t spend time
 building and setting up the tools around it. The most significant problem is to find the root cause
