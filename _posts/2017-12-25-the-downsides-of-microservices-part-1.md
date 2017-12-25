@@ -16,9 +16,13 @@ benefits of using Microservices. This post is just a summary of my experience an
 after 2 years working with it as well as how we deal with those issues to get the most value of
 Microservices.
 
+![thumb](/files/2017-12-25-the-downsides-of-microservices-part-1/thumb.png)
+
 First, let me introduce a bit about the tech stack that we are using. We have been running our
 application on our private server for about 2 years before migrating to Google Cloud Platform. There
 are 3 types of service in the system. They are
+
+<!-- more -->
 
 - **HTTP services**: the services for handling synchronous requests, the requests that need the response
 immediately (e.g. requests from frontend to display for users)
@@ -43,8 +47,6 @@ processes. If your resources are limited, this can slow down the whole system. Y
 carefully when you start with a full Microservices system from scratch whether you really need to
 break down the whole system into smaller parts, whether you have enough computing power or how large
 you will scale your application.
-
-<!-- more -->
 
 Imagine that there are about 10 modules in your system for 10 different domain business. If you are
 building a Microservices system, you will probably split your application into many smaller
