@@ -10,15 +10,21 @@ thumbnail: /files/2017-12-25-the-downsides-of-microservices-part-1/thumb.png
 In the first [post]({%post_url 2017-12-25-the-downsides-of-microservices-part-1%}), I discussed
 about the overhead that you have to pay for when working with Microservices. This time, I'm going to
 talk about another problem with Microservices. It is the problem of the distributed systems that you
-have to deal with from the very beginning.
+have to face with from the very beginning.
 
-# Handling Data Inconsistency
+![thumb](/files/2017-12-25-the-downsides-of-microservices-part-1/thumb.png)
+
+# You have to deal with the problem of Distributed systems very early
+
+## Handling Data Inconsistency
 
 A distributed system with a lot of small services followed by difference data storages means that
 there are no constraints between those data storages. In a traditional SQL database, this can be
 solved easily by adding foreign keys between tables and perform a cascading update/delete whenever
 you want to modify the data. Ensuring that constraint in a Microservices design is really
 challenging.
+
+<!-- more -->
 
 Let’s say you are building a blogging system using Microservices design. Every time a user is
 deleted, all posts published by that user are expected to be removed, too. What happens if the
@@ -29,7 +35,7 @@ and schedule an async worker to continue the work. Those messaging systems will 
 is retried until success. You can also perform an extra check when getting the blog posts but yeah,
 this will increase the response time of the api.
 
-# Everything can fail, especially the Network
+## Everything can fail, especially the Network
 
 Communication between services can happen within the same server or more usual through the network
 across multiple servers and the network can always fail. You need to handle error in case of network
@@ -43,7 +49,7 @@ the cost for development and maintenance since you have to take care not only th
 itself but also the fixer workers. Sometimes the fixer workers cause data inconsistency more serious
 because they don’t follow the updated schema.
 
-# The problem of Error Handling, Logging, Tracing and Debugging
+## The problem of Error Handling, Logging, Tracing and Debugging
 
 Tracing and debugging errors in Microservices are really a nightmare if you don’t spend time
 building and setting up the tools around it. The most significant problem is to find the root cause
