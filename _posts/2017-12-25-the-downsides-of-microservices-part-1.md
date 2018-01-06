@@ -16,7 +16,7 @@ benefits of using Microservices. This post is just a summary of my experience an
 after 2 years working with it as well as how we deal with those issues to get the most value of
 Microservices.
 
-![thumb](/files/2017-12-25-the-downsides-of-microservices-part-1/thumb.png)
+![thumb](/files/2017-12-25-the-downsides-of-microservices-part-1/microservices.png)
 
 First, let me introduce a bit about the tech stack that we are using. We have been running our
 application on our private server for about 2 years before migrating to Google Cloud Platform. There
