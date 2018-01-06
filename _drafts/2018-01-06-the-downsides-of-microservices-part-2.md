@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The downsides of Microservices - Part 2 - The problem of distributed systems"
+title: "The downsides of Microservices - Part 2 - Distributed system problems"
 description: ""
 categories: [misc]
 tags: []
