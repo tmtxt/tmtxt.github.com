@@ -4,7 +4,7 @@ title: "The downsides of Microservices - Part 1 - Overhead"
 description: ""
 categories: [misc]
 tags: []
-thumbnail: /files/2017-12-25-the-downsides-of-microservices-part-1/thumb.png
+thumbnail: /files/2017-12-25-the-downsides-of-microservices-part-1/microservices.png
 ---
 
 It has been nearly 2 years since I started working at Agency Revolution, a team working on a

@@ -4,7 +4,7 @@ title: "The downsides of Microservices - Part 2 - Distributed system problems"
 description: ""
 categories: [misc]
 tags: []
-thumbnail: /files/2017-12-25-the-downsides-of-microservices-part-1/thumb.png
+thumbnail: /files/2017-12-25-the-downsides-of-microservices-part-1/microservices.png
 ---
 
 In the first [post]({%post_url 2017-12-25-the-downsides-of-microservices-part-1%}), I discussed
