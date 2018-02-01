@@ -17,11 +17,13 @@ thumbnail:
 
 For me, this is a nightmare when working with NoSQL.
 
-# The performance cost of large objects
+# The performance cost
 
 Some people debate that NoSQL databases are better used for heavy-read applications. The
 arguments are that reading the whole document object is much faster than reading through many fields
 of one row (including the null fields). I cannot
+
+# NoSQL and Dynamic languages will blow your mind
 
 # Where NoSQL would fit?
 
