@@ -68,3 +68,16 @@ Here are the summarised characteristics that your logging module should provide
 > In my opinion, the above logging principals are applied not only for Microservices system but also
 > other Monolith and Distributed systems. The only differences in Microservices is how to link the
 > related log entries in different services, which will be discussed later.
+
+TODO: extra, track time
+
+# Implement your Logging library
+
+Implementing the above Logging module turns out to be a simple task. All the logging libraries out
+there on the Internet already support most of the requirements above. Basically, you will need to
+implement a class with an array variable to keep track of all the related log entries and write them
+all at once. There will be 2 exposed functions, one for pushing more data to the log array and the
+other one for writing all the logs at the same time. Here is a simple example in NodeJS implemented
+using `winston` but you can use any logging library that you want.
+
+[MyLogger implementation](/files/2018-02-22-basic-logging-monitoring-in-microservices-1/my-logger.js)
