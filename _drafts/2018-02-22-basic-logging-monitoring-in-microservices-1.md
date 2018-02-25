@@ -8,7 +8,7 @@ thumbnail:
 ---
 
 One of the biggest difficulties when working with Microservices (or with other Distributed systems)
-is to debug if any problems occur. It is because the business is divided into several small places.
+is to debug if any problems occur. It is because the business logic is divided into several small places.
 The code bug in one service can result in a cascading series of issues in many related services.
 Tracing which service is the root cause of the issue is always a challenging mission. By
 implementing a good Logging solution, you can reduce the time it takes to discover the bug. It also
@@ -18,9 +18,9 @@ to reason about.
 # Let's get your feet wet!
 
 So you decided it's time to build a logging solution for your Microservices system, here are some
-steps that you probably need to do in order to build a logging system for your Microservices system.
+steps that you probably need to do in order to build that.
 
-- First, design and implement your logging module so that it works properly in one microservice.
+- First, design and implement your logging module so that it works well in one microservice.
 - Apply it to all the services in the system.
 - Implement a method to link all the correlated logs in different services.
 - Set up centralised logging server for processing and querying the log data.
