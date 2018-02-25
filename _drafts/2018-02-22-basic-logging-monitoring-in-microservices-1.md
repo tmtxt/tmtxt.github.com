@@ -65,13 +65,15 @@ Here are the summarised characteristics that your logging module should provide
 - Support different logging methods depending on the environment (local development,
   staging, production,...)
 
+Of course, you are not limited to only the above criteria. In your implementation, you can also add
+some extra feature like processing time tracking (which you will see in the example code), auto
+format the messages,...
+
 > In my opinion, the above logging principals are applied not only for Microservices system but also
-> other Monolith and Distributed systems. The only differences in Microservices is how to link the
+> other Monolith and Distributed systems. The only difference in Microservices is how to link the
 > related log entries in different services, which will be discussed later.
 
-TODO: extra, track time
-
-# Implement your Logging library
+# Implement your Logging library and Apply it
 
 Implementing the above Logging module turns out to be a simple task. All the logging libraries out
 there on the Internet already support most of the requirements above. Basically, you will need to
@@ -81,3 +83,90 @@ other one for writing all the logs at the same time. Here is a simple example in
 using `winston` but you can use any logging library that you want.
 
 [MyLogger implementation](/files/2018-02-22-basic-logging-monitoring-in-microservices-1/my-logger.js)
+
+The idea is that you will keep one single Logger instance for each HTTP request, push all the
+related log entries into that instance and write everything at the end of the request. For example
+
+```js
+// POST /api/login
+function* handleLogin() {
+  const logger = new MyLogger({
+    url: this.request.url,
+    apiName: 'handleLogin',
+    contentType: this.request.contentType
+  });
+
+  this.body = 'Incorrect username or password';
+  this.status = 401;
+
+  // parse request body data;
+  const body = this.requestBody;
+  const username = body.username;
+  const password = body.password;
+
+  // check if the user exist in the database
+  const user = yield User.getByUsername(username);
+  if (!user) {
+    logger.push('warn', 'handleLogin', 'User does not exist');
+    return logger.write();
+  }
+  logger.push('info', 'handleLogin', 'User exists');
+
+  // validate whether the user is still active
+  if (!user.isActive) {
+    logger.push('warn', 'handleLogin', 'User not active');
+    return logger.write();
+  }
+  logger.push('info', 'handleLogin', 'User is still active');
+
+  // validate password
+  if (hashPassword(password) !== user.password) {
+    logger.push('warn', 'handleLogin', 'Password not match');
+    return logger.write();
+  }
+  logger.push('info', 'handleLogin', 'Password matched');
+
+  // create auth token
+  const authToken = generateAuthToken(user);
+  logger.push('info', 'handleLogin', 'Auth Token generated');
+
+  // response to user
+  this.body = { authToken };
+  this.status = 200;
+
+  // write everything at once
+  logger.write();
+}
+```
+
+# Compare with the default Logger
+
+The output you get will be something look like this
+
+- Fail login
+
+![Fail Log](/files/2018-02-22-basic-logging-monitoring-in-microservices-1/fail-log.png)
+
+- Success login
+
+![Success Log](/files/2018-02-22-basic-logging-monitoring-in-microservices-1/success-log.png)
+
+Pretty nice, huh! This is especially useful when there are multiple requests processed at the same
+time. Compare these 2 logging solutions and you will see
+
+- Default `Logger`
+
+![Default Log](/files/2018-02-22-basic-logging-monitoring-in-microservices-1/traditional.png)
+
+- Custom `MyLogger`
+
+![Custom MyLogger](/files/2018-02-22-basic-logging-monitoring-in-microservices-1/custom.png)
+
+The custom `MyLogger` provides a better view for tracing and debugging what happened in each API
+call. It also groups all the related logging entries into one single log entry.
+
+# Summary
+
+
+
+> TO BE CONTINUED
