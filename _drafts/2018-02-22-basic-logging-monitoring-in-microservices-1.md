@@ -17,8 +17,8 @@ to reason about.
 
 # So let's get your feet wet!
 
-TODO
-...
+So you decided it's time to build a logging solution for your Microservices system, here are some
+steps that you probably need to do in order to build a logging system for your Microservices system.
 
 - First, design and implement your logging module so that it works properly in one microservice.
 - Apply it to all the services in the system.
@@ -46,7 +46,7 @@ Your logging solution should support different logging level, from `verbose` (or
 `warning` and `error`. It also needs to be dynamically configurable through environment variable so
 that you can easily increase the detailed level for important services or reduce the logging size of
 less critical services to save storage. This can be achieved quickly with all the common logging
-libraries in all prograimming languages. These logging libraries can also include extra metadata into
+libraries in all programming languages. These logging libraries can also include extra metadata into
 the log entries so that you can use other database to persist and index those information to quickly
 retrieve the correct log entry.
 
@@ -65,7 +65,6 @@ Here are the summarised characteristics that your logging module should provide
 - Support different logging methods depending on the environment (local development,
   staging, production,...)
 
----
-
-> The above not only applied for Microservices but also other Monolith and Distributed systems. You
-> will need...
+> In my opinion, the above logging principals are applied not only for Microservices system but also
+> other Monolith and Distributed systems. The only differences in Microservices is how to link the
+> related log entries in different services, which will be discussed later.
