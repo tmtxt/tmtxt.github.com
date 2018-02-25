@@ -16,13 +16,9 @@ benefits of using Microservices. This post is just a summary of my experience an
 after 2 years working with it as well as how we deal with those issues to get the most value of
 Microservices.
 
-![thumb](/files/2017-12-25-the-downsides-of-microservices-part-1/microservices.png)
-
 First, let me introduce a bit about the tech stack that we are using. We have been running our
 application on our private server for about 2 years before migrating to Google Cloud Platform. There
 are 3 types of service in the system. They are
-
-<!-- more -->
 
 - **HTTP services**: the services for handling synchronous requests, the requests that need the response
 immediately (e.g. requests from frontend to display for users)
@@ -34,6 +30,8 @@ processing in the background and ensured by Google PubSub
 milliseconds/seconds. For the long-running tasks, we published a message to Google PubSub and
 schedule it to be processed later by the **Google PubSub workers**. Each of them is deployed and
 scaled as a pod in Kubernetes.
+
+<!-- more -->
 
 # First problem - Overhead before you can get the scalability to work
 

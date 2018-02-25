@@ -12,9 +12,10 @@ about the overhead that you have to pay for when working with Microservices. Thi
 talk about another problem with Microservices. It is the problem of the distributed systems that you
 have to face with from the very beginning.
 
-![thumb](/files/2017-12-25-the-downsides-of-microservices-part-1/microservices.png)
-
 # You have to deal with the problem of Distributed systems very early
+
+Working with a Distributed system has never been an easy job. For Microservices, you have to face it
+from very early.
 
 ## Handling Data Inconsistency
 
