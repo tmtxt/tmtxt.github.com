@@ -15,7 +15,7 @@ implementing a good Logging solution, you can reduce the time it takes to discov
 helps you feel more confident about what happened in your code as well as makes the problem easier
 to reason about.
 
-# So let's get your feet wet!
+# Let's get your feet wet!
 
 So you decided it's time to build a logging solution for your Microservices system, here are some
 steps that you probably need to do in order to build a logging system for your Microservices system.
@@ -151,8 +151,8 @@ The output you get will be something look like this
 
 ![Success Log](/files/2018-02-22-basic-logging-monitoring-in-microservices-1/success-log.png)
 
-Pretty nice, huh! This is especially useful when there are multiple requests processed at the same
-time. Compare these 2 logging solutions and you will see
+Pretty nice, huh! This is especially useful when there are multiple requests being processed at the
+same time. Compare these 2 logging solutions and you will see
 
 - Default `Logger`
 
@@ -167,6 +167,12 @@ call. It also groups all the related logging entries into one single log entry.
 
 # Summary
 
+That is the very first part in building a full Logging & Tracing system in Microservices. You don't
+need to follow the exact steps or implementation above. The basic idea is to implement some
+mechanism to better group the related log entries in a the concurrent world and provide a better
+view for tracing and debugging. It will help you build a stable ground to grow your system to bigger
+size. In the parts, I will talk about how we should integrate it into the application, how we should
+link the log data between services as well as how we should improve that logging system to respond
+to the bugs/incidents as quick as possible.
 
-
-> TO BE CONTINUED
+# To Be Continued...
