@@ -48,7 +48,9 @@ module.exports = class MyLogger {
     this.messages.push({ logLevel, logTitle, message });
   }
 
-  //
+  /**
+   * Write all the log data at once in an single log entry
+   */
   write() {
     // log processing time if required
     this.logProcessingTime();
@@ -106,53 +108,3 @@ module.exports = class MyLogger {
     this.push('info', 'processingTime', `${processingTime} ms`);
   }
 };
-
-// POST /api/login
-function* handleLogin() {
-  const logger = new MyLogger({
-    url: this.request.url,
-    apiName: 'handleLogin',
-    contentType: this.request.contentType
-  });
-
-  this.body = 'Incorrect username or password';
-  this.status = 401;
-
-  // parse request body data;
-  const body = this.requestBody;
-  const username = body.username;
-  const password = body.password;
-
-  // check if the user exist in the database
-  const user = yield User.getByUsername(username);
-  if (!user) {
-    logger.push('warn', 'handleLogin', 'User does not exist');
-    return logger.write();
-  }
-  logger.push('info', 'handleLogin', 'User exists');
-
-  // validate whether the user is still active
-  if (!user.isActive) {
-    logger.push('warn', 'handleLogin', 'User not active');
-    return logger.write();
-  }
-  logger.push('info', 'handleLogin', 'User is still active');
-
-  // validate password
-  if (hashPassword(password) !== user.password) {
-    logger.push('warn', 'handleLogin', 'Password not match');
-    return logger.write();
-  }
-  logger.push('info', 'handleLogin', 'Password matched');
-
-  // create auth token
-  const authToken = generateAuthToken(user);
-  logger.push('info', 'handleLogin', 'Auth Token generated');
-
-  // response to user
-  this.body = { authToken };
-  this.status = 200;
-
-  // write everything at once
-  logger.write();
-}
