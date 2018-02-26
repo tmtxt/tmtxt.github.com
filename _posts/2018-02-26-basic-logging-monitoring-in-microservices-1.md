@@ -42,6 +42,8 @@ ones have the correlation with the others. This is quite common in the concurren
 where the system can handle different tasks at once. You need to design a logging backend that can
 associate all the related log entries into one.
 
+<!-- more -->
+
 Your logging solution should support different logging level, from `verbose` (or `debug`), `info` to
 `warning` and `error`. It also needs to be dynamically configurable through environment variable so
 that you can easily increase the detailed level for important services or reduce the logging size of
