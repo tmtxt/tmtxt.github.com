@@ -4,7 +4,7 @@ title: "Basic Logging & Debugging in Microservices 1"
 description: ""
 categories: []
 tags: []
-thumbnail:
+thumbnail: /files/2017-12-25-the-downsides-of-microservices-part-1/microservices.png
 ---
 
 One of the biggest difficulties when working with Microservices (or with other Distributed systems)
