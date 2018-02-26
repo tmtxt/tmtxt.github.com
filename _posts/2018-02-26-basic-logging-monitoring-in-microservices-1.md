@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Basic Logging & Debugging in Microservices 1"
+title: "Basic Logging & Debugging in Microservices - Part 1"
 description: ""
 categories: []
 tags: []
