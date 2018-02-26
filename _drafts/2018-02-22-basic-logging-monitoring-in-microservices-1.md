@@ -52,9 +52,9 @@ retrieve the correct log entry.
 
 Another thing you need to consider is to output the log data in different formats depending on the
 environment that the app is running on. For example, you may want to print the log messages in a
-human-readable format when working in local development. However, on production, the log messages
-should be output as JSON format to for smaller log size and easier to transfer to another storage
-for indexing and displaying.
+human-readable format when working in local development environment. However, on production, the log
+messages should be output as JSON format to for smaller log size and easier to transfer to another
+storage for indexing and displaying.
 
 Here are the summarised characteristics that your logging module should provide
 
@@ -66,23 +66,108 @@ Here are the summarised characteristics that your logging module should provide
   staging, production,...)
 
 Of course, you are not limited to only the above criteria. In your implementation, you can also add
-some extra feature like processing time tracking (which you will see in the example code), auto
-format the messages,...
+some extra feature like processing time tracking (which you will see in the example code below),
+auto formatting the messages,...
 
 > In my opinion, the above logging principals are applied not only for Microservices system but also
 > other Monolith and Distributed systems. The only difference in Microservices is how to link the
 > related log entries in different services, which will be discussed later.
 
-# Implement your Logging library and Apply it
+# Implement your Logging library
 
 Implementing the above Logging module turns out to be a simple task. All the logging libraries out
 there on the Internet already support most of the requirements above. Basically, you will need to
-implement a class with an array variable to keep track of all the related log entries and write them
-all at once. There will be 2 exposed functions, one for pushing more data to the log array and the
-other one for writing all the logs at the same time. Here is a simple example in NodeJS implemented
-using `winston` but you can use any logging library that you want.
+implement a wrapper class with an array variable to keep track of all the related log entries and
+write them all at once. There will be 2 exposed functions, one for pushing more data to the log
+array and the other one for writing all the logs at the same time. Here is a simple example in
+NodeJS implemented using `winston` but you can use any logging library that you want.
 
-[MyLogger implementation](/files/2018-02-22-basic-logging-monitoring-in-microservices-1/my-logger.js)
+- The wrapper class structure will look like this
+
+```js
+class MyLogger {
+  // an array prop to keep track of all related logging data
+  messages = [];
+  // meta data
+  metaData = {};
+  constructor(metaData) {
+    this.metaData = metaData || {};
+  }
+
+  /**
+   * Append one new log entry into the mesage array
+   * @param {string} logLevel  error|warning|info|verbose
+   * @param {string} logTitle
+   * @param {any}    message
+   */
+  push(logLevel, logTitle, message) {
+    // implementation goes here
+    ...
+  }
+
+  /**
+   * Write all the log data at once in an single log entry
+   */
+  write() {
+    // implementation goes here
+    ...
+  }
+};
+```
+
+- The `push` method only stores the log data into the `messages` array. For example
+
+```js
+class MyLogger {
+  // other props
+  ...
+
+  push(logLevel, logTitle, message) {
+    if (!message) {
+      message = '';
+    }
+
+    if (_.isObject(message)) {
+      message = JSON.stringify(message, null, 2);
+    }
+
+    this.messages.push({ logLevel, logTitle, message });
+  }
+
+  // other messages
+  ...
+};
+```
+
+- The `write` method is responsible for combining and writing out the all the log data into one
+  single log entry
+
+```js
+class MyLogger {
+  // other props
+  ...
+
+  write() {
+    // combine and format the messages
+    const messageStr = this.formatMessages();
+    // detect the log level for combined log entry
+    const logLevel = this.detectLogLevel();
+    // metaData
+    const metaData = this.metaData;
+
+    // actually write the log entry
+    logger[logLevel](messageStr, metaData);
+  }
+
+  // other messages
+  ...
+};
+```
+
+Here is the full implementation of the `MyLogger` class above:
+[MyLogger full implementation](https://github.com/tmtxt/tmtxt.github.com/blob/master/files/2018-02-22-basic-logging-monitoring-in-microservices-1/my-logger.js)
+
+# Apply it into your application
 
 The idea is that you will keep one single Logger instance for each HTTP request, push all the
 related log entries into that instance and write everything at the end of the request. For example
@@ -138,6 +223,9 @@ function* handleLogin() {
   logger.write();
 }
 ```
+
+Of course, the above example is a bit verbose and repetitive. In the next post, I will come back to
+that.
 
 # Compare with the default Logger
 
