@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Some optimizations in RethinkDB"
-description: "t
+description: ""
 categories: [rethinkdb]
 tags: []
 thumbnail: 
