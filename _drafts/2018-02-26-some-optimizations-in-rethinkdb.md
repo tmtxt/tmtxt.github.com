@@ -11,6 +11,8 @@ thumbnail:
 
 So, you may already know that, at the time of writing this post, I am working at Agency Revolution. We have been running the system which relies on RethinkDB for more than 3 years. We have built a great and highly scalable system with it. Beside that, we also have faced a lot of difficulties when the system grew too quickly, when the number requests peek during real life events (the agency needed to send a lot of emails before holiday or after the disaster) or when large amount of data came in and out of the system. We have applied a lot of solutions in order to cope with the increase of work load so that our RethinkDB clusters can still serve the user within an acceptable time range. Some of those optimisations will be mentioned in this post.
 
+<!-- more -->
+
 # Check existence
 
 There are several ways to check whether an item with a specified primary key exists in a table in RethinkDB. One possible way is to pull the record out using the `get` command
