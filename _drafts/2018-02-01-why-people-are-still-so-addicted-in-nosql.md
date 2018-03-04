@@ -7,6 +7,12 @@ tags: []
 thumbnail:
 ---
 
+# The problem of large objects
+
+
+
+
+
 # Schemaless doesn't Reduce the complexity or Save your development time
 
 # The problem of Relationship
