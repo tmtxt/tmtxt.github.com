@@ -15,6 +15,8 @@ In previous post, I have talked about the advantages of building a custom Logger
 
 Integrating the custom MyLogger module into the application is a quite straightforward task. Instead of manually initialising and flushing the logs, you will need to implement a wrapper or higher order function to do that automatically. For example, if you are using Koa.js to for your http service, simply wrap the requests inside a logger middleware like this
 
+<!-- more -->
+
 ```js
 const MyLogger = require('./my-logger.js')
 
