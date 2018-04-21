@@ -2,19 +2,21 @@
 layout: post
 title: "Basic Logging & Debugging in Microservices - Part 2"
 description: ""
-categories: []
+categories: [misc]
 tags: [misc]
 thumbnail: 
 ---
 
-In previous post, I talked about the advantages of building a custom Logger service that can all the related log data into one single log entry. In this post, I will continue discussing about some basic ideas to integrate it into the Microservices architecture and organise all the log data for better investigation.
+> First part here [Basic Logging & Debugging in Microservices - Part 1]({% post_url 2018-02-26-basic-logging-monitoring-in-microservices-1 %})
+
+In previous post, I have talked about the advantages of building a custom Logger module that can group all the related log data into one single log entry. In this post, I will continue discussing about some basic ideas to integrate it into the Microservices architecture and organise all the log data for better investigation.
 
 # Integrate custom MyLogger into your application
 
-Integrating the custom MyLogger module into the application is quite a straightforward task. Instead of manually initialising and flushing the logs, you will need to implement a wrapper or higher order function to do that automatically. For example, if you are using Koa.js to implement your http service, simply wrap the requests inside a logger middleware like this
+Integrating the custom MyLogger module into the application is a quite straightforward task. Instead of manually initialising and flushing the logs, you will need to implement a wrapper or higher order function to do that automatically. For example, if you are using Koa.js to for your http service, simply wrap the requests inside a logger middleware like this
 
 ```js
-const MyLogger = require(‘./my-logger.js’)
+const MyLogger = require('./my-logger.js')
 
 // initialise koa app
 // ...
@@ -30,15 +32,15 @@ function* myLoggerMdw(next) {
   
   // wrap logger around your request
   try {
-    logger.push(‘info’, ‘Start request’, this.request.headers);
+    logger.push('info', 'Start request', this.request.headers);
     yield next;
-    logger.push(‘info’, ‘Request success’, this.status);
+    logger.push('info', 'Request success', this.status);
     logger.write();
   } catch(e) {
     if (e.status < 500) {
-      logger.push(‘warn’, ‘Handled error’, e.message);
+      logger.push('warn', 'Handled error', e.message);
     } else {
-      logger.push(‘error’, ‘Unhandled error’, e.message);
+      logger.push('error', 'Unhandled error', e.message);
     }
     logger.write();
 
@@ -50,12 +52,12 @@ function* myLoggerMdw(next) {
 app.use(myLoggerMdw)
 ```
 
-In your request handler function, just get the `logger` instance directly from the request context and use normally.
+In your request handler function, just get the `logger` instance directly from the request context and use it normally.
 
 ```js
 // POST /api/login
 function* handleLogin() {
-  this.body = ‘Incorrect username or password’;
+  this.body = 'Incorrect username or password';
   this.status = 401;
 
   // parse request body data;
@@ -66,21 +68,18 @@ function* handleLogin() {
   // check if the user exist in the database
   const user = yield User.getByUsername(username);
   if (!user) {
-    return this.logger.push(‘warn’, ‘handleLogin’, ‘User does not exist’);
+    return this.logger.push('warn', 'handleLogin', 'User does not exist');
   }
-  this.logger.push(‘info’, ‘handleLogin’, ‘User exists’);
 
   // validate whether the user is still active
   if (!user.isActive) {
-    return this.logger.push(‘warn’, ‘handleLogin’, ‘User not active’);
+    return this.logger.push('warn', 'handleLogin', ‘User not active');
   }
-  this.logger.push(‘info’, ‘handleLogin’, ‘User is still active’);
 
   // validate password
   if (hashPassword(password) !== user.password) {
-    return this.logger.push(‘warn’, ‘handleLogin’, ‘Password not match’);
+    return this.logger.push('warn', 'handleLogin', 'Password not match');
   }
-  this.logger.push(‘info’, ‘handleLogin’, ‘Password matched’);
 
   // create auth token
   const authToken = generateAuthToken(user);
@@ -92,7 +91,7 @@ function* handleLogin() {
 }
 ```
 
-This implementation is much better than the implementation in the first part. You don’t need to care about whether calling the `write` function everytime the request finishes processing.
+This implementation is much better than the implementation in the first part. You don’t need to care about whether to call the `write` function everytime the request finishes processing.
 
 # Track the request life-cycle in Microservices
 
@@ -124,4 +123,6 @@ app.use(myLoggerMdw)
 
 ![with correlationId](/files/2018-02-22-basic-logging-monitoring-in-microservices-1/success-log.png)
 
-# 
+# Next
+
+With this post, I have demonstrated some basic ideas about correlating all log data of one request in Microservices architecture. In the next post, I will talk about how to organise all those log entries into one single log server for better querying and visualizing.
