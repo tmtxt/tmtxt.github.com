@@ -22,7 +22,8 @@ const MyLogger = require(‘./my-logger.js’)
 function* myLoggerMdw(next) {
 // init logger and assign to the context
   const metadata = {
-    appName: ‘your-service-name’,
+    appName: 'your-service-name',
+    routeName: this.request.routeName
   };
   const logger = new MyLogger(metadata);
   this.logger = logger;
@@ -48,3 +49,79 @@ function* myLoggerMdw(next) {
 // custom middleware for MyLogger
 app.use(myLoggerMdw)
 ```
+
+In your request handler function, just get the `logger` instance directly from the request context and use normally.
+
+```js
+// POST /api/login
+function* handleLogin() {
+  this.body = ‘Incorrect username or password’;
+  this.status = 401;
+
+  // parse request body data;
+  const body = this.requestBody;
+  const username = body.username;
+  const password = body.password;
+
+  // check if the user exist in the database
+  const user = yield User.getByUsername(username);
+  if (!user) {
+    return this.logger.push(‘warn’, ‘handleLogin’, ‘User does not exist’);
+  }
+  this.logger.push(‘info’, ‘handleLogin’, ‘User exists’);
+
+  // validate whether the user is still active
+  if (!user.isActive) {
+    return this.logger.push(‘warn’, ‘handleLogin’, ‘User not active’);
+  }
+  this.logger.push(‘info’, ‘handleLogin’, ‘User is still active’);
+
+  // validate password
+  if (hashPassword(password) !== user.password) {
+    return this.logger.push(‘warn’, ‘handleLogin’, ‘Password not match’);
+  }
+  this.logger.push(‘info’, ‘handleLogin’, ‘Password matched’);
+
+  // create auth token
+  const authToken = generateAuthToken(user);
+  this.logger.push('info', 'handleLogin', 'Auth Token generated');
+
+  // response to user
+  this.body = { authToken };
+  this.status = 200;
+}
+```
+
+This implementation is much better than the implementation in the first part. You don’t need to care about whether calling the `write` function everytime the request finishes processing.
+
+# Track the request life-cycle in Microservices
+
+The above implementation just helps you to group all the log data of 1 request in 1 microservice into 1 single log entry. However, because of the nature of Microservices, each request can go through several services. The request life-cycle is spread across multiple places. You need another mechanism to correlate all those log entries produced by several services so that you can trace what happened inside that one request.
+
+The simplest idea is to assign each request a unique id when first processing that. Your application need to maintain that unique id through out the request life cycle. For http services, you can keep that information the request headers. For services that operate based on a message queue (like Google PubSub, Kafka), you can maintain that id inside the message metadata.
+
+Back to the above `myLoggerMdw` above, here is the modified code for tracking that unique id. The basic idea is that the http server will try to compute the `correlationId` from the request headers if exist, otherwise, it will generate a new one and pass it to all other services through the subsequent request headers.
+
+```js
+function* myLoggerMdw(next) {
+  // init logger and assign to the context
+  const correlationId = this.request.headers['my-correlation-id'] || uuid.v4();
+  
+  const metadata = {
+    appName: 'your-service-name',
+    correlationId
+  };
+  const logger = new MyLogger(metadata);
+  this.logger = logger;
+  
+  // wrap logger around your request
+  ...
+}
+
+// custom middleware for MyLogger
+app.use(myLoggerMdw)
+```
+
+![with correlationId](/files/2018-02-22-basic-logging-monitoring-in-microservices-1/success-log.png)
+
+# 

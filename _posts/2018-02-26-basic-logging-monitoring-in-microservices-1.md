@@ -2,8 +2,8 @@
 layout: post
 title: "Basic Logging & Debugging in Microservices - Part 1"
 description: ""
-categories: []
-tags: []
+categories: [misc]
+tags: [misc]
 thumbnail: /files/2017-12-25-the-downsides-of-microservices-part-1/microservices.png
 ---
 
