@@ -19,6 +19,8 @@ we update the id of those 2 items to one of them
 
 ![](/files/2018-04-30-union-find-summary/img4.png)
 
+<!-- more -->
+
 To check whether the 2 items are connected, simply check whether they have the same id or not. For
 example
 
@@ -29,8 +31,12 @@ example
 
 |Method|Complexity||
 |----|----|----|
-|`connected(p, q)`|O(1)|Only 1 call to check the id of the item|
-|`union(p, 1)`|O(n^2)|have to update id of both items all other items having the same id|
+|`isConnected(p, q)`|O(1)|Only 1 call to check the id of the item|
+|`union(p, q)`|O(n^2)|Have to update id of both items all other items having the same id|
 {: .table }
 
 => `union` is too slow for `Quick Find`.
+
+# Implementation
+
+So easy, no need for sample implementation here. Or did I explain to badly?...

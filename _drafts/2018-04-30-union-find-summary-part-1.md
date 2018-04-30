@@ -7,6 +7,8 @@ tags: []
 thumbnail:
 ---
 
+> Nothing special here. It's just a blog post for summarising my algorithm learning course.
+
 # 1. Dynamic Connectivity
 
 ## The problem
