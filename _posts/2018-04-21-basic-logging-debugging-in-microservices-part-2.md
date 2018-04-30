@@ -4,7 +4,7 @@ title: "Basic Logging & Debugging in Microservices - Part 2"
 description: ""
 categories: [misc]
 tags: [misc]
-thumbnail: 
+thumbnail:
 ---
 
 > First part here [Basic Logging & Debugging in Microservices - Part 1]({% post_url 2018-02-26-basic-logging-monitoring-in-microservices-1 %})
@@ -29,7 +29,7 @@ function* myLoggerMdw(next) {
   };
   const logger = new MyLogger(metadata);
   this.logger = logger;
-  
+
   // wrap logger around your request
   try {
     logger.push('info', 'Start request', this.request.headers);
@@ -75,7 +75,7 @@ function* handleLogin() {
 
   // validate whether the user is still active
   if (!user.isActive) {
-    return this.logger.push('warn', 'handleLogin', ‘User not active');
+    return this.logger.push('warn', 'handleLogin', 'User not active');
   }
 
   // validate password
@@ -107,14 +107,14 @@ Back to the above `myLoggerMdw` above, here is the modified code for tracking th
 function* myLoggerMdw(next) {
   // init logger and assign to the context
   const correlationId = this.request.headers['my-correlation-id'] || uuid.v4();
-  
+
   const metadata = {
     appName: 'your-service-name',
     correlationId
   };
   const logger = new MyLogger(metadata);
   this.logger = logger;
-  
+
   // wrap logger around your request
   ...
 }

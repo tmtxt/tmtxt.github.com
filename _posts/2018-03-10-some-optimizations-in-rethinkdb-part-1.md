@@ -20,7 +20,7 @@ There are several ways to check whether an item with a specified primary key exi
 ```js
 // returns true if exists, otherwise returns false
 function* checkExistence(userId) {
-	const user = yield r.table(‘users’).get(userId);
+	const user = yield r.table('users').get(userId);
 	return !!user;
 }
 ```
@@ -30,7 +30,7 @@ This works ok. But since you only need to check whether the user exists in the s
 ```js
 // returns true if exists, otherwise returns false
 function* checkExistence(userId) {
-	return yield r.table(‘users’).get(userId).eq(null);
+	return yield r.table('users').get(userId).eq(null);
 }
 ```
 
@@ -42,7 +42,7 @@ As you can see, RethinkDB performs read on disk (in case the document has not be
 
 ```js
 function* checkExistence(userId) {
-	return yield r.table(‘users’).getAll(userId).count().eq(1);
+	return yield r.table('users').getAll(userId).count().eq(1);
 }
 ```
 
@@ -68,10 +68,10 @@ r.table('customers').get(customerId);
 
 In the beginning, each customer contains only 1-2 policies. As time goes by, the customer continues to buy more policies. You application also support more features that need to store a lot more data into the customer record. However, most of the time you don't really need all the customer data. If you want to check whether a customer is valid for sending marketing email, you may only need some fields like `email` to check for valid email address and`status` to check for active customer. Although most of the NoSQL databases offer a query to pluck only the necessary fields to return to the client, for example
 
-```
-r.table(‘customer’)
+```js
+r.table('customers')
   .get(customerId)
-  .pluck([‘email’, ‘status’]);
+  .pluck(['email', 'status']);
 ```
 
 This simple solution can help you reduce the network data transfering. However, there are no mechanisms for it to know which exact blocks of data on disk it need to read. What it does is to read the whole document into memory, pick the necessary fields and return to the application. This puts the stress on disk IO if you constantly read from a table containing a lot of large documents just for 1-2 fields. SQL databases force you to define the data type and the size for most columns (int, float, varchar(20) for instance) and can specify exactly where it needs to read on the disk.
