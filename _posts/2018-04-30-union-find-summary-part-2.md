@@ -2,9 +2,9 @@
 layout: post
 title: "Union Find Summary - Part 2 - Quick Find"
 description: ""
-categories: []
-tags: []
-thumbnail:
+categories: [algorithm]
+tags: [algorithm]
+thumbnail: /files/2018-04-30-union-find-summary/img1.png
 ---
 
 # Approach

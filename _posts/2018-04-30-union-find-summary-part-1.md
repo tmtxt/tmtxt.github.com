@@ -2,14 +2,14 @@
 layout: post
 title: "Union Find Summary - Part 1 - Dynamic Connectivity - Union Find"
 description: ""
-categories: []
-tags: []
-thumbnail:
+categories: [algorithm]
+tags: [algorithm]
+thumbnail: /files/2018-04-30-union-find-summary/img1.png
 ---
 
 > Nothing special here. It's just a blog post for summarising my algorithm learning course.
 
-# 1. Dynamic Connectivity
+# Dynamic Connectivity
 
 ## The problem
 
@@ -64,7 +64,7 @@ Maximal set of objects that are mutually connected
 - { 1 4 5 }
 - { 2 3 6 7 }
 
-# 2. Union Find
+# Union Find
 
 The Union Find data type contains these 2 main methods
 
