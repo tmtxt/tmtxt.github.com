@@ -1,0 +1,36 @@
+---
+layout: post
+title: "Union Find Summary - Part 2 - Quick Find"
+description: ""
+categories: []
+tags: []
+thumbnail:
+---
+
+# Approach
+
+The `Quick Find` idea is to assign all the items in 1 connected component with 1 same id. `p` and
+`q` are connected if they have the same id. Every time we do the `union` command, we update those 2
+items with the same id (and also all other items in the connected component).
+
+The set is organised as an array, where the values are the id of that connected component. At first,
+all the items have the id the same with its index (connected to itself). After each call to `union`,
+we update the id of those 2 items to one of them
+
+![](/files/2018-04-30-union-find-summary/img4.png)
+
+To check whether the 2 items are connected, simply check whether they have the same id or not. For
+example
+
+- `connected(6, 7)` => `true` because 6 and 7 both have id `1`
+- `connected(0, 9)` => `false` because 0 has the id `1` and 9 has the id `8`
+
+# Complexity
+
+|Method|Complexity||
+|----|----|----|
+|`connected(p, q)`|O(1)|Only 1 call to check the id of the item|
+|`union(p, 1)`|O(n^2)|have to update id of both items all other items having the same id|
+{: .table }
+
+=> `union` is too slow for `Quick Find`.

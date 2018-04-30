@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Union Find Summary - Dynamic Connectivity - Union Find"
+title: "Union Find Summary - Part 1 - Dynamic Connectivity - Union Find"
 description: ""
 categories: []
 tags: []
