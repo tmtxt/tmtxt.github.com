@@ -7,6 +7,8 @@ tags: [algorithm]
 thumbnail: /files/2018-04-30-union-find-summary/img1.png
 ---
 
+> Nothing special here. It's just a blog post for summarising my algorithm learning course.
+
 # Approach
 
 The `Quick Find` idea is to assign all the items in 1 connected component with 1 same id. `p` and

@@ -7,6 +7,8 @@ tags: [algorithm]
 thumbnail: /files/2018-04-30-union-find-summary/img1.png
 ---
 
+> Nothing special here. It's just a blog post for summarising my algorithm learning course.
+
 # Approach
 
 The underlying data structure for `Quick Union` is similar to `Quick Find`. We need an array for all
