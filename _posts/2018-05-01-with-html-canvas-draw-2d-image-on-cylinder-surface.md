@@ -16,13 +16,13 @@ canvas and then draw that image on a cylinder surface (the mug in this case).
 <img src="/files/2015-01-10-draw-2d-image-on-cylinder-surface-with-html-canvas/overview.png" />
 </div>
 
-I had to Google for the suitable libraries but I cannot find any. I
+I had to Google for the suitable libraries but I couldn't find any. I
 also asked a
 [question](http://stackoverflow.com/questions/24527186/html-canvas-svg-draw-image-on-cylinder-surface)
-on stackoverflow but the answer does not satisfy me. The reason is that it
+on stackoverflow but the answer did not satisfy me. The reason is that it
 demonstrates how to stretch the image, not how to bend the image (which is what shown
 in the picture above). Because of that, I decided to implement it by myself and
-turn out that it's not as hard as I thought before. Everything is just a loop of
+turned out that it was not as hard as I thought before. Everything is just a loop of
 basic mathematic formula that I had been taught in (Vietnamese) high school.
 
 <!-- more -->
