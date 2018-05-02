@@ -9,7 +9,7 @@ thumbnail: /files/2015-01-10-draw-2d-image-on-cylinder-surface-with-html-canvas/
 
 # Overview
 
-Long time ago, I worked one a project which required allowed users to select images on a 2D
+Long time ago, I worked one a project which allowed users to select images on a 2D
 canvas and then draw that image on a cylinder surface (the mug in this case).
 
 <div class="text-center">
