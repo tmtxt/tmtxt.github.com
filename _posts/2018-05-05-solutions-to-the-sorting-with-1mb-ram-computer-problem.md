@@ -42,9 +42,9 @@ into smaller one, process each of them and then try to merge the result.
   - Repeat the above steps until we reach the end one 1 of the 2 files
   - Write back all the remaining values of the other files to the output file
 
-<!-- more -->
-
 # Pseudo code
+
+<!-- more -->
 
 I just give the pseudo code for merge sort here. That is enough to solve both problems including
 sorting in memory and combining the 2 sorted files. You can also read more about merge sort on
