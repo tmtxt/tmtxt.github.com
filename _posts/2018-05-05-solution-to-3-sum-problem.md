@@ -20,6 +20,8 @@ The 3-sum problem is described as below
 
 > Given N distinct integers, how many triples sum to exactly zero?
 
+<!-- more -->
+
 # 2. Brute-force - N<sup>3</sup> solution
 
 ```java
