@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Solutions to 3-sum problem"
+title: "Solutions to the 3-sum problem"
 description: ""
 categories: [algorithm]
 tags: [algorithm]
