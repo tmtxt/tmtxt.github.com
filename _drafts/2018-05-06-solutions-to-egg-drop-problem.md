@@ -49,30 +49,42 @@ Use Binary search strategy.
 
 # Solution 4
 
-> 2 eggs, 2<math><msqrt>n</msqrt></math> tosses
+> 2 eggs, 2<math xmlns="http://www.w3.org/1998/Math/MathML"><msqrt><mi>n</mi></msqrt></math> tosses
 
-To make it easy to imagine, let's take **n = 100**, so **<math><msqrt>n</msqrt></math> = 10**
+To make it easy to imagine, let's take **n = 100**,
+so **<math xmlns="http://www.w3.org/1998/Math/MathML"><msqrt><mi>n</mi></msqrt></math> = 10**
 
-- Drop the egg at **<math><msqrt>n</msqrt></math>** floor (level 10 in this case)
-- If it doesn't break, increase the floor by **<math><msqrt>n</msqrt></math>** and repeat until the
-  egg breaks
-  - Until that, you have used maximum **<math><msqrt>n</msqrt></math> = 10** tosses and **1** egg
+- Drop the egg at
+  **<math xmlns="http://www.w3.org/1998/Math/MathML"><msqrt><mi>n</mi></msqrt></math>**
+  floor (level 10 in this case)
+- If it doesn't break, increase the floor by
+  **<math xmlns="http://www.w3.org/1998/Math/MathML"><msqrt><mi>n</mi></msqrt></math>**
+  and repeat until the egg breaks
+  - Until that, you have used maximum
+    **<math xmlns="http://www.w3.org/1998/Math/MathML"><msqrt><mi>n</mi></msqrt></math> = 10**
+    tosses and **1** egg
 - Now you know the range that can make egg break. That range size is
-  **<math><msqrt>n</msqrt></math>**
-  - For example, the egg breaks at the floor `60`, that mean `T` must be between `50` and `60`
+  **<math xmlns="http://www.w3.org/1998/Math/MathML"><msqrt><mi>n</mi></msqrt></math>**
+  - For example, the egg breaks at the floor **60**, that mean **T** must be between **50** and
+    **60**
 - Do a sequential search in that range, use the other remaining egg. Because the length of that
-  range is **<math><msqrt>n</msqrt></math>**, it takes you maximum another
-  **<math><msqrt>n</msqrt></math> = 10** tosses
-- The total running time is **2<math><msqrt>n</msqrt></math>** and takes **2** eggs
+  range is **<math xmlns="http://www.w3.org/1998/Math/MathML"><msqrt><mi>n</mi></msqrt></math>**,
+  it takes you maximum another
+  **<math xmlns="http://www.w3.org/1998/Math/MathML"><msqrt><mi>n</mi></msqrt></math> = 10** tosses
+- The total running time is
+  **2<math xmlns="http://www.w3.org/1998/Math/MathML"><msqrt><mi>n</mi></msqrt></math>**
+  and takes **2** eggs
 
 # Solution 5
 
-> 2 eggs, ≤c<math><msqrt>T</msqrt></math> tosses
+> 2 eggs, <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>&le;c</mi><msqrt><mi>T</mi></msqrt></math> tosses
 
-I solved this based on the hint, too hard...
+I still haven't thought of the solution for this. Here is the hint that Coursera gave me
 
-<math>
-  1 + 2 + 3 + ... + t ~
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>
+    1 + 2 + 3 + ... + t ~
+  </mi>
   <mspace />
   <mfrac>
     <mi>1</mi>
@@ -83,4 +95,4 @@ I solved this based on the hint, too hard...
     <mn>2</mn>
   </msup>
 </math>
-Aim for <math>c = 2<msqrt>2</msqrt></math>
+Aim for <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>c = 2</mi><msqrt><mi>2</mi></msqrt></math>
