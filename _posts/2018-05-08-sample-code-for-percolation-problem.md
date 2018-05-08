@@ -8,7 +8,7 @@ thumbnail: /files/2018-04-30-union-find-summary/img1.png
 
 > Nothing special here. It's just a blog post for summarising my algorithm learning course.
 
-Source here:
+**Source here**:
 [https://introcs.cs.princeton.edu/java/24percolation/](https://introcs.cs.princeton.edu/java/24percolation/),
 put the whole description here so that later I can easily search and review myself.
 
