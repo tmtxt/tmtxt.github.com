@@ -1,11 +1,11 @@
 ---
-layout: nil
+layout: empty
 title : RSS
 group: navigation
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
- 
+
  <title>{{ site.title }}</title>
  <link href="{{ site.production_url }}/atom.xml" rel="self"/>
  <link href="{{ site.production_url }}"/>
@@ -25,5 +25,5 @@ group: navigation
    <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
  {% endfor %}
- 
+
 </feed>
