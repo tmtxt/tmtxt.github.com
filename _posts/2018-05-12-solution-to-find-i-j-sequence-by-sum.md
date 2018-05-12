@@ -20,3 +20,5 @@ Surely there should be a better solution. And here is the `O(n)` solution.
 - Now, perform another loop through A, for each item `i`, if there exist an `j` that `sum(A[i->j])=6`, which means `sum(A[0->i]) + 6 = sum(A[0->j])`. You job is to look up a value computed before. To do that, use a map to store the result from previous step for `O(1)` access.
 
 The above solution uses 2 loops but can be considered as `O(n)`. You can optimise it more to use a single loop but the basic idea is still the same.
+
+One thing to notice about this is the **sum**. The suggestion from another friend of mine is that, the continuous sequences of numbers have some special attributes that can help us unlock the key to the problem. One of them is the **sum**, probably some days it will help me with other problems.
