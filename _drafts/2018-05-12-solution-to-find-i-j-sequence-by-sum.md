@@ -3,7 +3,6 @@ layout: post
 title: "Solition to Find (i->j) sequence by sum problem"
 description: ""
 categories: [algorithm]
-thumbnail:
 ---
 
 So, my friend gave me this exercise and asked me to solve it. Sometimes it's fun to solve algorithm problem... sometimes...
