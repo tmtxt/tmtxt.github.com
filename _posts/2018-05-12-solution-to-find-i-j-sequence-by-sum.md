@@ -7,7 +7,7 @@ categories: [algorithm]
 
 So, my friend gave me this exercise and asked me to solve it. Sometimes it's fun to solve algorithm problem... sometimes...
 
-> Given an array A of n integer numbers, find all the (i,j) pairs such that A[i] + A[i+1] + A[i+2] + ... + A[j] = 6. For example, A = [1, 5, 4, -2, 4, 8, 7, 9, 0], these pairs are valid i,j (0,1) and (2,4) because sum(A[0->1])=6 and sum(A[0->4])=6
+> Given an array A of n integer numbers, find all the (i,j) pairs such that A[i] + A[i+1] + A[i+2] + ... + A[j] = 6. For example, A = [1, 5, 4, -2, 4, 8, 7, 9, 0], these pairs are valid i,j (0,1) and (2,4) because sum(A[0->1])=6 and sum(A[2->4])=6
 
 Of course, the worst solution is to perform n<sup>2</sup> operations. For each number in A, do another loop inside that to find the sub-sequence having the sum = 6.
 
