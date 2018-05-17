@@ -146,3 +146,42 @@ To `enqueue`, we still add new item at `q[tail]`. The only difference is the `de
 `dequeue`, we will pick a random item in the array, move the last item into that position and return
 that random item. The sample working implementation can be found
 [here](https://github.com/tmtxt/deque-randomized-queue-solution/blob/master/src/RandomizedQueue.java).
+
+# 5. Stack with Max
+
+Stack with Max is another data structure that efficiently supports the stack operations (push and
+pop) and also a return-the-maximum operation. To implement that, simply use 2 stacks, one to store
+all the items just like the Stack implementation above, the other one to store the maximum values.
+
+```java
+class MaxStack {
+    ... // similar to stack implementation
+
+    // use 2 stacks
+    private Node first; // this is the normal stack
+    private Node max;   // this is to store the max values
+
+    public double getMax() {
+        return max.item;
+    }
+
+    public void push(double item) {
+        ... // similar to stack implementation
+
+        // store max value
+        if (item >= getMax()) {
+            Node oldmax = max;
+            max = new Node();
+            max.next = oldmax;
+        }
+    }
+
+    public double pop() {
+        ... // similar to stack implementation
+        if (tmp == getMax()) {
+            max = max.next;
+        }
+        return tmp;
+    }
+}
+```
