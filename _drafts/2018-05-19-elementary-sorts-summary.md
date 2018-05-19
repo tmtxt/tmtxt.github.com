@@ -31,4 +31,40 @@ class Selection {
 }
 ```
 
-=> `O(n^2)`
+![Animation](/files/2018-05-19-elementary-sorts-summary/selection-sort_c041bf.gif)
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <ms>Complexity:</ms>
+  <mspace />
+  <mi>O(</mi>
+  <msup>
+    <mi>N</mi>
+    <mn>2</mn>
+  </msup>
+  <mi>/2)</mi>
+  <mi>~</mi>
+  <mi>O(</mi>
+  <msup>
+    <mi>N</mi>
+    <mn>2</mn>
+  </msup>
+  <mi>)</mi>
+</math>
+
+# 2. Insertion Sort
+
+* Like the reversed way of Selection Sort
+* In iteration i, swap a[i] with each larger entry to its left.
+
+```java
+class Insertion {
+    public static void sort(Comparable[] a) {
+        int N = a.length;
+        for (int i = 0; i < N; i++)
+            for (int j = i; j > 0; j--)
+                if (less(a[j], a[j - 1]))
+                    swap(a, j, j - 1);
+                else break;
+    }
+}
+```
