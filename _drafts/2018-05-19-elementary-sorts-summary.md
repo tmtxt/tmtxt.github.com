@@ -68,3 +68,16 @@ class Insertion {
     }
 }
 ```
+
+![Animation](/files/2018-05-19-elementary-sorts-summary/insertion-sort_e8e408.gif)
+
+- **Best case**: If the array is in ascending order, insertion sort makes `N - 1` compares and `0`
+exchanges.
+  - Eg: A E E L M O P R S T X
+- **Worst case**: If the array is in descending order (and no duplicates), insertion
+  sort makes ~ **1/2 N<sup>2</sup>** compares and ~ **1/2 N<sup>2</sup>** exchanges.
+  - Eg: X T S R P O M L E E A
+- Still a bit better than **Selection Sort**
+
+# 3. Shell Sort
+
