@@ -7,7 +7,7 @@ thumbnail:
 ---
 
 > Nothing special here. It's just a blog post for summarising my algorithm learning course. Although
-> this was already taught in the University, it's still good to summarise here
+> some of them were already taught in the University, it's still good to summarise here
 
 # 1. Selection Sort
 
