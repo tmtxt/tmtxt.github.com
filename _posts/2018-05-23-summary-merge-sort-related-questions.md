@@ -12,9 +12,9 @@ categories: [algorithm]
 
 **Question**
 
-Suppose that the subarray `a[0]` to `a[n−1]` is sorted and the subarray
-`a[n]` to `a[2∗n−1]` is sorted. How can you merge the two subarrays so
-that `a[0]` to `a[2∗n−1]` is sorted using an auxiliary array of length `n`
+Suppose that the subarray `a[0]` to `a[n-1]` is sorted and the subarray
+`a[n]` to `a[2*n-1]` is sorted. How can you merge the two subarrays so
+that `a[0]` to `a[2*n-1]` is sorted using an auxiliary array of length `n`
 (instead of `2n`)?
 
 **Answer**
@@ -28,8 +28,8 @@ first position. You will always have enough space in the original array to do th
 
 **Question**
 
-An inversion in an array `a[]` is a pair of entries `a[i]` and `a[j]` such that `i < j` but
-`a[i] > a[j]`. Given an array, design a linearithmic algorithm to count the number of inversions.
+An inversion in an array `a[]` is a pair of entries `a[i]` and `a[j]` such that `i<j` but
+`a[i]>a[j]`. Given an array, design a linearithmic algorithm to count the number of inversions.
 
 <!-- more -->
 
