@@ -54,8 +54,8 @@ public class Merge {
 Running time estimates:
 - Assume that Laptop executes 10<sup>8</sup> compares/second.
 - Assume that Supercomputer executes 10<sup>12</sup> compares/second.
-- Insertion sort: N<sup>2</sup>
-- Merge sort N logN
+- Insertion sort: **N<sup>2</sup>**
+- Merge sort **N logN**
 
 ||insertionsort|insertionsort|insertionsort|mergesort|mergesort|mergesort|
 |---|---|

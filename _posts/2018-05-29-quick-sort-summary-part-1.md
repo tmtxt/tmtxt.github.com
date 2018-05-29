@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Quick Sort summary"
+title: "Quick Sort summary - Part 1"
 description: ""
 categories: [algorithm]
 ---
@@ -22,6 +22,8 @@ The Idea
 - **Sort** each piece recursively.
 
 ![Alt Text](/files/2018-05-27-quick-sort-summary/qs1.png)
+
+<!-- more -->
 
 How to partition the array using the pivot item?
 
@@ -83,3 +85,31 @@ public class Quick {
     }
 }
 ```
+
+# Performance Characteristics
+
+- Assume that Laptop executes 10<sup>8</sup> compares/second.
+- Assume that Supercomputer executes 10<sup>12</sup> compares/second.
+- Insertion sort: **N<sup>2</sup>**
+- Merge sort **N logN**
+- Quick sort **N logN**
+
+||insertion|insertion|insertion|merge|merge|merge|quick|quick|quick|
+|---|---|
+||thousand|million|billion|thousand|million|billion|thousand|million|billion|
+|**laptop**|instant|2.8h|317y|instant|1s|18m|instant|0.6s|12m|
+|**super**|instant|1s|1w|instant|instant|instant|instant|instant|instant|
+{: .table }
+
+**Worst case**
+- Number of compares is quadratic
+- When the array is sorted.
+
+**Average case**:
+- Number of compares is ~ **1.39 N lgN**
+- 39% more compares than Merge sort
+- But faster than Merge sort in practice because of less data movement.
+
+**Random shuffle**
+- Required to prevent the worst case.
+- Probabilistic guarantee against worst case.
