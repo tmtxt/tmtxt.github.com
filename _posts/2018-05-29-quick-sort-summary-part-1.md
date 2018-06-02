@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Quick Sort summary - Part 1"
+title: "Quick Sort summary - Part 1 - Basic Implementation"
 description: ""
 categories: [algorithm]
 ---
