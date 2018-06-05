@@ -21,6 +21,16 @@ apply it in the correct way in order to gain the benefit, otherwise, you will ha
 that you couldn't imagine before. I wrote another post about some of the disadvantages in
 Microservices here, feel free to take a look at
 [The downsides of Microservices]({% post_url 2017-12-25-the-downsides-of-microservices-part-1 %}).
+Although there are still many arguments about the benefits of using Microservices (and sometimes we
+have to pay unnecessary cost for it), it has helped us scale the system in various ways, especially
+when combining with Docker and Kubernetes.
+
+Microservices helps us dividing the system into smaller components and we can scale the components
+that require the most resources very easily, simply by setting the replicas configuration in
+Kubernetes and it will take care of the rest. Kubernetes allows us to label all the servers and
+schedule the corresponding services to their specific nodes. At the beginning stage when we still
+had limited computing resources, we had to decide whether we need to prioritize these services more
+than other services. We need to define a list of services 
 
 # RethinkDB
 
