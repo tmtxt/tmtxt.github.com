@@ -20,6 +20,8 @@ categories: [algorithm]
 
 ![Array Representation](/files/2018-06-05-binary-heap-heapsort-summary-part-1/binary-heap-2.png)
 
+<!-- more -->
+
 - Indices start at 1.
 - Take nodes in level order.
 - No explicit links needed!
