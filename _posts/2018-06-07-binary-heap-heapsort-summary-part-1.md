@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Binary Heap & Heapsort Summary - Part 1"
+title: "Binary Heap & Heapsort Summary - Part 1 - Binary Heap"
 description: ""
 categories: [algorithm]
 ---
