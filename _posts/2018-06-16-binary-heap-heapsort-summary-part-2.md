@@ -19,6 +19,8 @@ categories: [algorithm]
 - Repeatedly remove the maximum key (in place) to create a sorted array.
 ![heap sort](/files/2018-06-05-binary-heap-heapsort-summary-part-2/heapsort3.png)
 
+<!-- more -->
+
 # First step: Heap construction
 
 Build heap using bottom-up method. Start with the lowest nodes and go up each level, use `sink`
