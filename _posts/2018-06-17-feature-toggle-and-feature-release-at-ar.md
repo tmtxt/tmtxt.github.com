@@ -5,12 +5,13 @@ description: ""
 categories: [misc]
 ---
 
-Feature Toggle is a very popular technique that enables you to test the feature on real production
+**Feature Toggle** is a very popular technique that enables you to test the new feature on real
+production
 environment before releasing it to your clients. It's also helpful when you want to enable the
 feature for just some beta clients or just some clients who pay for the specific features. The
 technique requires both backend and frontend work involved. In this post, I'm going to talk about
-some solutions that I and the team at AR have applied as well as some other useful ways that we are
-still discussing and may apply one day in the future.
+some simple solutions that I and the team at AR have applied as well as some other useful ways that
+we are still discussing and may apply one day in the future.
 
 # 1. Backend Data Organization
 
@@ -28,11 +29,15 @@ in the database. The table may looks like this
 }
 ```
 
-The above mentioned organisation may be suitable for the case your system has a lot of users. You can simply add some admin user to the `enabledList` and test the new feature on production before releasing it to your users.
+The above mentioned data structure may be suitable for the case your system has a lot of users. You
+can simply add some admin user to the `enabledList` and test the new feature on production before
+releasing it to your users.
 
 ## Inline User feature data
 
-If your product is to serve business clients, you can also store the enabled feature directly to the client object itself. This can save you extra queries to the database to get the feature information. If that's the case, your Client object might look like this
+If your product is to serve business clients, you can also store the enabled feature directly to the
+client object itself. This can save you extra queries to the database to get the feature
+information. If that's the case, your Client object might look like this
 
 ```javascript
 {
@@ -43,12 +48,14 @@ If your product is to serve business clients, you can also store the enabled fea
 
 ## Unix Permission style
 
+<!-- more -->
+
 So far the above solutions all return a format with a string indicating the feature name and
-probably a boolean for the feature status. After when your application grows to a bigger size, this
+probably a boolean for the feature status. When your application grows to a bigger size, this
 may create a huge problem if you have a lot of feature. The size to store, query and transfer all
 those features configurations through network may be a big performance issue. Luckily, there is
 another solution for that. In case you store the configuration option per each client, you can
-describe it as a series of bits similar to the Unix file permission style `1` for enabled features
+describe it as a series of bits similar to the Unix file permission style, `1` for enabled features
 and `0` for disabled ones. For example
 
 |Client|Feature1|Feature2|Feature3|Feature4|Result|
@@ -57,7 +64,7 @@ and `0` for disabled ones. For example
 |Client2|1|0|0|0|8|
 {: .table }
 
-The final result stored in database is just one simple int number. It much better than storing and
+The final result stored in database is just one simple int number. It's much better than storing and
 array of enabled features. With this solution, one single 8-bit integer can represent up to 8
 different feature configurations.
 
@@ -78,6 +85,7 @@ specific feature on our web application. The Higher Order Component looks like t
 
 ```javascript
 const injectFeature = featureName => WrappedComponent => {
+
   class InjectFeatureWrapperComponent extends Component {
     // load the feature configuration if not loaded yet
     componentDidMount() {
@@ -97,7 +105,9 @@ const injectFeature = featureName => WrappedComponent => {
 
   // select the feature configuration from the store
   const mapStateToProps = state => {
-    const { featuresLoaded, featureEnabled } = selectFeatureFromStore(store, featureName);
+    const { featuresLoaded, featureEnabled } = selectFeatureFromStore(
+      store, featureName
+    );
     return { featuresLoaded, featureEnabled };
   };
 
