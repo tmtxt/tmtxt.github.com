@@ -37,3 +37,5 @@ than other services. We need to define a list of services
 # Google PubSub
 
 # Pre-Compute
+
+We used to face slowness problem.
