@@ -10,13 +10,13 @@ thumbnail: /files/2017-10-08-utilize-rethinkdb-index-part-1-primary-key-index/th
 **Part 1 here**.
 
 > Yes, it's RethinkDB, a discontinued product. Again, read my introduction in the previous post.
-> It's not only about RethinkDB but it also the basic idea for many other database systems.
+> It's not only about RethinkDB but it also the basic idea for many other database systems. This post introduces other techniques that I and the have applied at AR to maximize the workload that RethinkDB can handle but most of them can be applied for other database systems as well.
 
-# Increase the Memory
+# Increase the Memory with NVME SSD
 
-Hmm, sound like a very obvious solution?
+This is applicable for the ones that are running on cloud services that support this kind of SSD interface only. 
 
-# Quick flush vs Late flush 
+# Quick flush vs Late flush
 
 # Temporary data, scale with K8S
 
