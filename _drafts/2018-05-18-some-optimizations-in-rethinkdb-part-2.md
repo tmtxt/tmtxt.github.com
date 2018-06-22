@@ -16,7 +16,7 @@ thumbnail: /files/2017-10-08-utilize-rethinkdb-index-part-1-primary-key-index/th
 
 This is applicable for the ones that are running on cloud services that support this kind of SSD interface only. 
 
-# Quick flush vs Late flush
+
 
 # Temporary data, scale with K8S
 
