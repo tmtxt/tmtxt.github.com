@@ -41,8 +41,10 @@ slower than the VM memory with a much lower cost than upgrading the VM memory. T
 acceptable for us to run many of our RethinkDB instances without any bottleneck. Here are the steps
 that you need to do
 
-* Choose a cloud provider that supports this kind of SSD interface and offers an optimized OS image
-  for it. Luckily, Google Cloud already
+- Choose a cloud provider that supports this kind of SSD interface and offers an optimized OS image for it. Luckily, Google Cloud already have this option for us. For other cloud services, I think there will be similar alternative solutions.
+- Optionally, you can configure RAID if you have multiple **Local-SSDs** attached to your server. Google has a brief tutorial [Adding Local SSDs](https://cloud.google.com/compute/docs/disks/local-ssd), the **Format and mount multiple local SSD devices into a single logical volume** section.
+  - Configuring RAID 0 can help increase the read and write speed but decrease the durability. One fail disk can lead to the whole system failure.
+  - Due to the fact that **Local-SSDs** are attached directly to the VM, without any replication layer, running any RAID configurations other than RAID 0 (like RAID 1 or RAID 10) doesn't provide any significant benefits
 
 This is applicable for the ones that are running on cloud services that support this kind of SSD interface only. 
 
