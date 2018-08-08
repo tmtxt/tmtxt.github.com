@@ -6,7 +6,7 @@ categories: [misc]
 thumbnail: /files/ar-logo-1.png
 ---
 
-As the time of this writing, I have been working at Agency Revolution (AR) for more than 2 years, on
+At the time of this writing, I have been working at Agency Revolution (AR) for more than 2 years, on
 a product focusing mostly on automation email marketing for the Insurance Agencies. I have been
 working on this product since it was in beta, when it could only serve only a few clients, send
 thousands of emails each month and handle very little amount of integration data without downtime
