@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Scaling the System at AR - Part 1"
+title: "Scaling the System at AR - Part 1 - Data Pre-Computation"
 description: ""
 categories: [misc]
 thumbnail: /files/ar-logo-1.png
@@ -19,6 +19,8 @@ increasing number of customers that the sale team brought to us. Here the summar
 > By **On-demand**, I mean the action of computing the required data only when it is needed.
 
 One of the core value of our system is to deliver the right messages to the right people at the right time. Our product allows users to set up automated emails, which will be sent at a suitable time in the future. The emails are customised to each specific recipient based on their newest data at the time they receive the email, for example the current customer status, whether that customer is an active or lost customer at that time, how many policies he/she has or the total value that customer has spent until that time.
+
+<!-- more -->
 
 Our system operates based on a queue of all activities that will happen in the future. The system needs to calculate the execution time of all those events to trigger the specific actions targeting the specific set of customers. The emails are also considered as one kind of events in that queue and will be taken out to execute when the time expires.
 
