@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "Symbol Tables and Binary Search Trees summary - Part 1"
+title: "Symbol Tables and Binary Search Trees summary"
 description: ""
 categories: [algorithm]
+thumbnail: /files/2018-09-10-symbol-tables-and-binary-search-trees-summary/bst1.png
 ---
 
 > Nothing special here. It's just a blog post for summarising my algorithm learning course. Although
