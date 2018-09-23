@@ -42,6 +42,8 @@ public class ST<Key, Value> {
 }
 {% endhighlight %}
 
+<!-- more -->
+
 # 2. Ordered Symbol Tables
 
 If we order the keys in Symbol table, we can support a much wider number of operations, for example
