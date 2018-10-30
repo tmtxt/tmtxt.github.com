@@ -131,7 +131,7 @@ direct path. You can also source **nvm** script to run the command directly
 
 # Final...
 
-These solution are a bit ugly. I prefer the set environment variables because
-it's the general solution for other tool, not just nvm. However, the problem
+These solution are a bit ugly. I prefer configuring through environment variables because
+it's the common solution for other tools, not just `nvm`. However, the problem
 with it is that I cannot set the relative path in `PATH`, which makes it not
-flexible when when detecting the nvm executable files.
+flexible when detecting the `nvm` executable files.
