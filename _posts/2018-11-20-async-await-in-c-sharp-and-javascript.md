@@ -17,6 +17,7 @@ thumbnail: /files/2018-11-15-async-await-in-c-and-javascript/async-await.png
 [dotnetcore]: https://www.microsoft.com/net/download
 [rider]: https://www.jetbrains.com/rider/
 [visualstudio]: https://visualstudio.microsoft.com/vs/mac/
+[workerthread]: https://nodejs.org/api/worker_threads.html
 
 I recently changed from the **NodeJS** team to work on the **.Net** team (in the same company). Coming back
 to C# after a long time, there are a lot of new stuffs. Actually, I used to hate **.Net** (simply
@@ -75,3 +76,5 @@ There are still some other C# features that I haven't taken a deeper look at and
 explore. It's quite an interesting environment, from the platform, the language to the support and
 the tools (although I'm a bit allergic to its Capitalized style). There will be more posts like this
 if I have enough time :D
+
+**Update**: as the time of writing this post, NodeJS has started to experiment [Worker Thread][workerthread], a module that provides a way to create multiple environments running on independent threads. Many browsers also come with Service Worker APIs, which have the similar abilities as **Worker Thread**.
