@@ -19,10 +19,10 @@ thumbnail: /files/2018-11-15-async-await-in-c-and-javascript/async-await.png
 [visualstudio]: https://visualstudio.microsoft.com/vs/mac/
 [workerthread]: https://nodejs.org/api/worker_threads.html
 
-I recently changed from the **NodeJS** team to work on the **.Net** team (in the same company). Coming back
+I recently changed from the **NodeJS** team to work in the **.Net** team (in the same company). Coming back
 to C# after a long time, there are a lot of new stuffs. Actually, I used to hate **.Net** (simply
-because I hate using Windows :LOL:). But thing has changed now. [.Net Core][dotnetcore] can now run
-on non-Windows systems without any differences. Everything has become easier to develop **.Net**
+because I hate using Windows :LOL:). But thing has changed. [.Net Core][dotnetcore] can now run
+on non-Windows systems without any differences. It is becoming easier to develop **.Net**
 applications on Mac/Linux (using [Jetbrains Rider][rider] like me or
 [Visual Studio Community][visualstudio] for Mac, which is a bad idea).
 
