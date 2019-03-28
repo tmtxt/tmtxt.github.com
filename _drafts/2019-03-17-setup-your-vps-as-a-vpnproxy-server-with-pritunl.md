@@ -129,3 +129,6 @@ Click on the `Add Server` button.
 Click on `Attach Organization` to attach your organization to the new server.
 
 Everything is ready! Now click `Start Server` to make the server go live.
+
+# Set up Pritunl client
+
