@@ -152,3 +152,7 @@ information.
 The Refactoring part is now moved to a separate posts with more tools
 introduced. You can access that post at
 [Emacs - Javascript Completion and Refactoring]({%post_url 2014-04-20-emacs-javascript-completion-and-refactoring%})
+
+# Further reading
+
+* [The best Javascript IDE and source code editors you should check out](https://wpamelia.com/javascript-ide/)
