@@ -40,6 +40,8 @@ before the birth of **Async/Await**. Many teams and products are still using it 
 developed many years ago. Today, **Async/Await** is the preferred way for handling
 asynchronous tasks in JS, leaving **Generator** back to its original purpose.
 
+<!-- more -->
+
 |                        | C#                                                                       | JS (yield)                                                             | JS (Async/Await)                                                         |
 |------------------------|--------------------------------------------------------------------------|------------------------------------------------------------------------|--------------------------------------------------------------------------|
 | **Traditional Method** | [TPL][tpl] - Callbacks                                                   | Callbacks                                                              | Callbacks                                                                |
@@ -54,8 +56,6 @@ asynchronous tasks in JS, leaving **Generator** back to its original purpose.
 |                        |                                                                          | Requires 3rd-party libraries for async programming                     | Use polyfill libraries in old JS environment                             |
 |                        |                                                                          | [co.js][cojs], [js-csp][jscsp]                                         |                                                                          |
 {: .table }
-
-<!-- more -->
 
 Both the languages use **Async/Await** to solve a traditional problem with asynchronous programming,
 that is how to express the async tasks in a expressive synchronous style. The traditional methods
