@@ -50,11 +50,10 @@ the three devices will connect to each other automagically
 
 # Let's pick up the guns!
 
-All my devices can connect to the Wifi without any problems at all! I was very disappointed when
-using the Totolink EX200 Wifi repeater. None of my Apple devices can connect to it and use the
-internet, only Windows devices only.
+I felt very disappointed when I bought the Totolink EX200 Wifi repeater 2 years ago. None of my Apple devices could connect to it and use the
+internet normally but Windows devices worked fine. I had no idea what I had done incorrectly, just some simple setup steps. I couldn’t find any support on the internet at all so basically I just threw away that bullshit device. Luckily, this time, all of my devices can connect to the Wifi network without any problems, even just a single one! 👏
 
-OK, I'm going to try with one CS:GO Arm Race match now! :LOL:
+OK, I'm going to try one CS:GO Arm Race match now! :LOL:
 ![CS1](/files/2019-10-13-i-just-set-up-my-new-home-network-with-tenda-nova-mesh/cs1.png)
 ![CS1](/files/2019-10-13-i-just-set-up-my-new-home-network-with-tenda-nova-mesh/cs2.png)
 Ping is stable at 43-46ms! Yay, no more getting killed by LAG :YOLO:
@@ -64,7 +63,7 @@ Ping is stable at 43-46ms! Yay, no more getting killed by LAG :YOLO:
 **Good**
 * Cheap!
 * Easy setup
-* Strong signal for small apartment
+* Strong signal for small apartment, 5ghz band support.
 
 **Bad**
 * Few LAN ports, but yeah, I don't need
