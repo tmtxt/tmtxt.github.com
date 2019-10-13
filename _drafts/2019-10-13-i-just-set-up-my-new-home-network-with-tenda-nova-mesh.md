@@ -15,7 +15,8 @@ router and my PC is also not far, they are separated by some wall layers.
 The Wifi router that I'm using is an old Apple Airport from 2011, which seems not enough to break
 through these wall layers. I usually have problem with low Wifi signal on my PC, which makes playing
 CS:GO much frustrating. I usually get killed by the delay because I cannot see clearly the movement of
-the enemies, they move like teleporting :LOL:
+the enemies, they move like teleporting :LOL: I also don't want to set up any wire from the living
+room to my bedroom, which would makes my apartment become ugly! I want a tidy place.
 
 ![Apartment](/files/2019-10-13-i-just-set-up-my-new-home-network-with-tenda-nova-mesh/airport.jpg)
 
@@ -39,3 +40,31 @@ Another one on my Bookshelf (with a lot of Doraemon comic books)
 
 A closer look. Behind are the PowerCube power extension and an Anker 4-port Charger
 ![Book2](/files/2019-10-13-i-just-set-up-my-new-home-network-with-tenda-nova-mesh/book2.jpg)
+
+The setup is also deadly simple! Just install the App on my phone and follow the instructions. All
+the three devices will connect to each other automagically
+
+# Test it a bit
+
+All my devices can connect to the Wifi without any problems at all! I was very disappointed when
+using the Totolink EX200 Wifi repeater. None of my Apple devices can connect to it and use the
+internet, only Windows devices only.
+
+OK, I'm going to try with one CS:GO Arm Race match now! :LOL:
+![CS1](/files/2019-10-13-i-just-set-up-my-new-home-network-with-tenda-nova-mesh/cs1.jpg)
+![CS1](/files/2019-10-13-i-just-set-up-my-new-home-network-with-tenda-nova-mesh/cs2.jpg)
+Ping is stable at 43-46ms! Yay, no more getting killed by LAG :YOLO:
+
+# My thought
+
+**Good**
+* Cheap!
+* Easy setup
+* Strong signal for small apartment
+
+**Bad**
+* Few LAN ports, but yeah, I don't need
+* The LAN speed is not very high, but I also don't have the need to transfer files using LAN network
+  much
+
+In Vietnam, you can order this via Tiki https://tiki.vn/bo-3-cai-phat-wifi-dang-luoi-mesh-tenda-nova-mw3-ac1200-hang-chinh-hang-p2784543.html?spid=4700125
