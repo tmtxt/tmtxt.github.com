@@ -4,8 +4,10 @@ title: "I've just set up my new home network with Tenda Nova Mesh"
 description: ""
 categories: []
 tags: []
-thumbnail: 
+thumbnail: /files/2019-10-13-i-just-set-up-my-new-home-network-with-tenda-nova-mesh/box.jpg
 ---
+
+> and it is deadly simple
 
 So, here is the problem. Although my apartment is just a small one, the distance between the Wifi
 router and my PC is also not far, they are separated by some wall layers.
@@ -51,8 +53,8 @@ using the Totolink EX200 Wifi repeater. None of my Apple devices can connect to 
 internet, only Windows devices only.
 
 OK, I'm going to try with one CS:GO Arm Race match now! :LOL:
-![CS1](/files/2019-10-13-i-just-set-up-my-new-home-network-with-tenda-nova-mesh/cs1.jpg)
-![CS1](/files/2019-10-13-i-just-set-up-my-new-home-network-with-tenda-nova-mesh/cs2.jpg)
+![CS1](/files/2019-10-13-i-just-set-up-my-new-home-network-with-tenda-nova-mesh/cs1.png)
+![CS1](/files/2019-10-13-i-just-set-up-my-new-home-network-with-tenda-nova-mesh/cs2.png)
 Ping is stable at 43-46ms! Yay, no more getting killed by LAG :YOLO:
 
 # My thought
@@ -68,3 +70,4 @@ Ping is stable at 43-46ms! Yay, no more getting killed by LAG :YOLO:
   much
 
 In Vietnam, you can order this via Tiki https://tiki.vn/bo-3-cai-phat-wifi-dang-luoi-mesh-tenda-nova-mw3-ac1200-hang-chinh-hang-p2784543.html?spid=4700125
+
