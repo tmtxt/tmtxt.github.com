@@ -9,8 +9,7 @@ thumbnail: /files/2019-10-13-i-just-set-up-my-new-home-network-with-tenda-nova-m
 
 > and it is deadly simple
 
-So, here is the problem. Although my apartment is just a small one, the distance between the Wifi
-router and my PC is also not far, they are separated by some wall layers.
+So, here is the problem. Although my apartment is just a small one, the distance between the Wifi router and my PC is also not far, they are separated by some wall layers.
 
 ![Apartment](/files/2019-10-13-i-just-set-up-my-new-home-network-with-tenda-nova-mesh/room.png)
 
