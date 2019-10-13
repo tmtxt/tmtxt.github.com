@@ -28,3 +28,14 @@ Three cute small boxes!
 
 Next to a Kindle Paper White
 ![Apartment](/files/2019-10-13-i-just-set-up-my-new-home-network-with-tenda-nova-mesh/box.jpg)
+
+Place it next to my 49" Samsung Smart TV
+![TV1](/files/2019-10-13-i-just-set-up-my-new-home-network-with-tenda-nova-mesh/tv1.jpg)
+![TV2](/files/2019-10-13-i-just-set-up-my-new-home-network-with-tenda-nova-mesh/tv2.jpg)
+Quite nice and suitable to place as a decoration in the living room!
+
+Another one on my Bookshelf (with a lot of Doraemon comic books)
+![Book1](/files/2019-10-13-i-just-set-up-my-new-home-network-with-tenda-nova-mesh/book1.jpg)
+
+A closer look. Behind are the PowerCube power extension and an Anker 4-port Charger
+![Book2](/files/2019-10-13-i-just-set-up-my-new-home-network-with-tenda-nova-mesh/book2.jpg)
