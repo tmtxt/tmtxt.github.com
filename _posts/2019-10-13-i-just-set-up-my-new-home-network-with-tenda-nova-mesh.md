@@ -23,7 +23,7 @@ room to my bedroom, which would makes my apartment become ugly! I want a tidy pl
 
 ![Apartment](/files/2019-10-13-i-just-set-up-my-new-home-network-with-tenda-nova-mesh/airport.jpg)
 
-# Say hello Tenda Nova Mesh
+# Say Hello to Tenda Nova Mesh
 
 Here are some images when unboxing and setting up the system
 
