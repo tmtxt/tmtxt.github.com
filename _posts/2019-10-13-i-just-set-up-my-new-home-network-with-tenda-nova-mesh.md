@@ -26,7 +26,7 @@ room to my bedroom, which would makes my apartment become ugly! I want a tidy pl
 
 # Say hello Tenda Nova Mesh
 
-Here are some images in unboxing and setting up the system
+Here are some images when unboxing and setting up the system
 
 Three cute small boxes!
 ![Three](/files/2019-10-13-i-just-set-up-my-new-home-network-with-tenda-nova-mesh/three.jpg)
