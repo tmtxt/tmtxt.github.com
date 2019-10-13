@@ -48,7 +48,7 @@ A closer look. Behind are the PowerCube power extension and an Anker 4-port Char
 The setup is also deadly simple! Just install the App on my phone and follow the instructions. All
 the three devices will connect to each other automagically
 
-# Test it a bit
+# Let's get its first shot
 
 All my devices can connect to the Wifi without any problems at all! I was very disappointed when
 using the Totolink EX200 Wifi repeater. None of my Apple devices can connect to it and use the
