@@ -21,4 +21,10 @@ the enemies, they move like teleporting :LOL:
 
 # Say hello Tenda Nova Mesh
 
+Here are some images in unboxing and setting up the system
+
+Three cute small boxes!
+![Three](/files/2019-10-13-i-just-set-up-my-new-home-network-with-tenda-nova-mesh/three.jpg)
+
+Next to a Kindle Paper White
 ![Apartment](/files/2019-10-13-i-just-set-up-my-new-home-network-with-tenda-nova-mesh/box.jpg)
