@@ -7,8 +7,7 @@ tags: []
 thumbnail: /files/2017-12-25-the-downsides-of-microservices-part-1/microservices.png
 ---
 
-In the first [post]({%post_url 2017-12-25-the-downsides-of-microservices-part-1%}), I discussed
-about the overhead that you have to pay for when working with Microservices. This time, I'm going to
+In the first [post]({%post_url 2017-12-25-the-downsides-of-microservices-part-1%}), I discussed the overhead that you have to pay for when working with Microservices. This time, I'm going to
 talk about another problem with Microservices. It is the problem of the distributed systems that you
 have to face with from the very beginning.
 
