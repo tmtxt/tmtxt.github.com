@@ -63,7 +63,7 @@ it's `jenkins.truongtx.me`
  
 Use this command to install Nginx
 ```console
-sudo apt-get install nginx
+$ sudo apt-get install nginx
 ```
 
 For SSL certificate, you can choose one of these solutions
@@ -73,7 +73,7 @@ For SSL certificate, you can choose one of these solutions
 
 In my case, I generated a self-signed certificate using this command
 ```console
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/server.key -out /etc/nginx/ssl/server.crt
+$ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/server.key -out /etc/nginx/ssl/server.crt
 ```
 
 Next, create a file named `jenkins.truongtx.me` (or other name that you like) in `/etc/nginx/sites-availables` with
@@ -118,10 +118,10 @@ server is running on <https://wiki.jenkins.io/display/JENKINS/Jenkins+behind+an+
 
 Symlink the above file to `/etc/nginx/sites-enabled` to enable it
 ```console
-ln -s /etc/nginx/sites-enabled/jenkins.truongtx.me /etc/nginx/sites-available/jenkins.truongtx.me
+$ ln -s /etc/nginx/sites-enabled/jenkins.truongtx.me /etc/nginx/sites-available/jenkins.truongtx.me
 ```
 
-You also need to add this one more param to Jenkins startup args list.
+You also need to add one more param to Jenkins startup args list.
 - Edit the file `/etc/default/jenkins`
 - Find this line `JENKINS_ARGS="--webroot=/var/cache/$NAME/war --httpPort=$HTTP_PORT"`
 - Add this to the list of args `--httpListenAddress=127.0.0.1`
@@ -131,8 +131,8 @@ JENKINS_ARGS="--webroot=/var/cache/$NAME/war --httpPort=$HTTP_PORT --httpListenA
  
 Restart both Jenkins and Nginx using these commands
  ```console
-sudo systemctl restart nginx
-sudo systemctl restart jenkins 
+$ sudo systemctl restart nginx
+$ sudo systemctl restart jenkins 
 ```
 
 Navigate to `http://jenkins.your-domain.com`, you should be redirected to `https://jenkins.your-domain.com` and prompted with
