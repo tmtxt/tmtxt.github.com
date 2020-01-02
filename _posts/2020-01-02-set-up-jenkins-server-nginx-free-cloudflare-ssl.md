@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Set up a personal Jenkins server with Nginx and Free Cloudflare SSL"
-description: ""
+description: "Just a simple setup, just put here in case I need it in the future"
 categories: [misc]
 tags: []
 thumbnail: /files/2020-01-01-jenkins-nginx-cloudflare-ssl/logo.png
