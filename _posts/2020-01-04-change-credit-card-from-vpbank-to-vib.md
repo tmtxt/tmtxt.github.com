@@ -11,6 +11,8 @@ thumbnail:
 
 Trước khi viết bài này, tôi vẫn đang dùng thẻ tín dụng của VPBank được 2.5 năm rồi, cũng vay tiền từ VPBank mua nhà, trả đầy đủ đúng hạn không thiếu đồng nào. Mọi thứ tưởng chừng như rất ok, sẽ là khách hàng trung thành của VPBank cho đến 1 ngày...
 
+<!-- more -->
+
 Ngày mà tôi nhận được cuộc gọi của 1 cậu nhân viên VPBank, bảo là số chi tiêu qua thẻ cũng lớn, dùng thẻ Cashback thì không có lợi, ngân hàng hỗ trợ đổi qua thẻ Travel Miles với tỉ lệ % tích luỹ cao hơn. Oh rồi nghe cũng bùi bùi xuôi tai thế là ok, đồng ý đổi, định bụng có thẻ mới rồi khoá cái thẻ cũ lại.
 
 Và rồi chuỗi ngày rước bực vào thân của tôi bắt đầu từ đây
