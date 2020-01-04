@@ -67,7 +67,7 @@ $ sudo apt-get install nginx
 ```
 
 For SSL certificate, you can choose one of these solutions
-- Obtain a tristed CA certificate
+- Obtain a certificate from a trusted CA
 - Use Letsencrypt cert-bot for free certificate
 - Generate a self-signed certificate
 
