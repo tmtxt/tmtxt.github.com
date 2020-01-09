@@ -7,7 +7,7 @@ tags: []
 thumbnail:
 ---
 
-> TL;DR VPBank suggest tôi đổi thẻ tín dụng đang dùng lên 1 thẻ hạng khác. Sau khi đổi xong thì tôi gặp lỗi thanh toán online với gần như mọi service mình dùng nhưng chỉ cần đổi qua thẻ cũ thì mọi thứ đều trơn tru hết. Mọi lời giải thích từ phía VPBank đều không làm tôi hài lòng. Giải pháp của VPBank đưa ra là đẩy trách nhiệm về phía khách hàng tự đi contact với tất cả các service đó hoặc bỏ tiền ra cấp lại thẻ. How about đéo?
+> TL;DR VPBank suggest tôi đổi thẻ tín dụng đang dùng lên 1 thẻ hạng khác. Sau khi đổi xong thì tôi gặp lỗi thanh toán online với gần như mọi service mình dùng nhưng chỉ cần đổi qua thẻ cũ thì mọi thứ đều trơn tru hết. Mọi lời giải thích từ phía VPBank đều không làm tôi hài lòng. Giải pháp của VPBank đưa ra là đẩy trách nhiệm về phía khách hàng tự đi contact với tất cả các service đó hoặc bỏ tiền ra cấp lại thẻ.
 
 Trước khi viết bài này, tôi vẫn đang dùng thẻ tín dụng của VPBank được 2.5 năm rồi, cũng vay tiền từ VPBank mua nhà, trả đầy đủ đúng hạn không thiếu đồng nào. Mọi thứ tưởng chừng như rất ok, sẽ là khách hàng trung thành của VPBank cho đến 1 ngày...
 
@@ -19,7 +19,7 @@ Và rồi chuỗi ngày rước bực vào thân của tôi bắt đầu từ đ
 
 ---
 
-**Ngày 14/11**: nhận được thẻ từ ngân hàng, háo hức mở ra, nhìn thẻ khá đẹp :D  
+**Ngày 14/11**: nhận được thẻ từ ngân hàng, háo hức mở ra, nhìn thẻ khá đẹp :D
 Nhắn tin theo cú pháp được hướng dẫn trong thư đính kèm để kích hoạt, success, ok ngon!
 
 Tối hôm đó về bắt đầu nghĩ đến chuyện thay cái thông tin thẻ trong mấy dịch vụ mình hay thanh toán online với cái thông tin thẻ mới này.
@@ -138,7 +138,7 @@ Khoảng 6 ngày sau nhận được điện thoại của ngân hàng. Ôi gi�
 
 > Bọn em đã check lại rồi, cổng thanh toán online bên bọn em không bị gì hết. Chắc chỉ có 1 vài đơn vị thanh toán bị sao đó mà không chấp nhận thẻ thôi anh ạh.
 
-Suốt cuộc điện thoại tranh cãi dài nửa tiếng đó, đấy là tất cả những gì em nhân viên đó lặp đi lặp lại, không phải lỗi của bọn em, do mấy đơn vị đó không chấp nhận thẻ, anh vui lòng liên hệ mấy đơn vị đó giúp em. Mình cũng akay rồi, mà vẫn kiên trì giải thích theo đúng những cái biểu hiện trên. Không thể nào có chuyện tất cả những đơn vị như Napas, Tiki, Shopee, Grab, Bamboo Airways, Be,... cùng như vậy được, có chăng chỉ là do bên ngân hàng, do bên Visa, hoặc do cái integration giữa 2 bên. Vẫn cái thẻ cũ của mình bên VPBank ok hết mà... Rồi sau đó hỏi em đó là bên em có đọc hết email không? Còn những vấn đề khác với cái thẻ này nữa mà, ví dụ thanh toán online không cần enable vẫn chạy được, sao không trả lời? Những cái issue khác sao không nói, chỉ lặp đi lặp lại bên em không có lỗi. 
+Suốt cuộc điện thoại tranh cãi dài nửa tiếng đó, đấy là tất cả những gì em nhân viên đó lặp đi lặp lại, không phải lỗi của bọn em, do mấy đơn vị đó không chấp nhận thẻ, anh vui lòng liên hệ mấy đơn vị đó giúp em. Mình cũng akay rồi, mà vẫn kiên trì giải thích theo đúng những cái biểu hiện trên. Không thể nào có chuyện tất cả những đơn vị như Napas, Tiki, Shopee, Grab, Bamboo Airways, Be,... cùng như vậy được, có chăng chỉ là do bên ngân hàng, do bên Visa, hoặc do cái integration giữa 2 bên. Vẫn cái thẻ cũ của mình bên VPBank ok hết mà... Rồi sau đó hỏi em đó là bên em có đọc hết email không? Còn những vấn đề khác với cái thẻ này nữa mà, ví dụ thanh toán online không cần enable vẫn chạy được, sao không trả lời? Những cái issue khác sao không nói, chỉ lặp đi lặp lại bên em không có lỗi.
 
 Cái khôi hài là em đó đề nghị mình làm thủ tục cấp lại thẻ, đóng phí cấp lại, chắc sẽ hết thôi. ĐM! Mất mấy tuần của bố xong phải đóng tiền để sửa lỗi. Vài trăm bạc đéo đáng bao nhiêu, mà nó tức vì vô lý! Lỗi ở ngân hàng hay Visa thì vẫn là trách nhiệm của ngân hàng, sao tôi lại phải đóng tiền để xử lý cái vấn đề của ngân hàng?
 
