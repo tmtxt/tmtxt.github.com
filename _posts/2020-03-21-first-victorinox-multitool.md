@@ -28,10 +28,10 @@ shop rồi mới tận mắt thấy, mấy mẫu 58mm rất đẹp và nhỏ g�
 cả kìm kéo và size to luôn nhưng mục đích chính của mình là tìm một mẫu đeo móc chìa khóa trước, sau này thấy ổn
 sẽ mua thêm những mẫu khác sau. 
 
+<!-- more -->
+
 Hộp đóng gói khá nhỏ gọn
 [![img][1]][1]
-
-<!-- more -->
 
 Chỉ dài hơn ngón tay trỏ của mình một tí
 [![img][2]][2]
