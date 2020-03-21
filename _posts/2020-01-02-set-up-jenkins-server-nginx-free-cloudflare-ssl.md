@@ -13,6 +13,8 @@ Yeah, I'm familiar with Jenkins and it has a bunch of useful utilities to automa
 for example, an automated task runner with familiar UI. This instruction is for Ubuntu 18.04 and AWS Lightsail but the same instructions
 are applied for all other VPS/Cloud services.
 
+<!-- more -->
+
 # Bootstrap the server and install Jenkins
 
 - Create a new VPS on AWS Lightsail, choose an Ubuntu 18.04 server with any specs that you want.
@@ -23,8 +25,6 @@ are applied for all other VPS/Cloud services.
  ![port](/files/2020-01-01-jenkins-nginx-cloudflare-ssl/1.png)
  - Also add port 443 to the allowed list to set up SSL later
  - SSH into the server and run these commands to install Jenkins
-
-<!-- more -->
  
  ```console
 $ sudo apt-get update
