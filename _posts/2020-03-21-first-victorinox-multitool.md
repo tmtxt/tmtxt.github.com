@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Con dao đa năng Victorinox đầu tiên của tôi"
-description: "Vậy là sau mộ thời gian đắn đo, cuối cùng tôi cũng đã quyết định xuống tiền mua chiếc dao đa năng Victorinox đầu tiên."
+description: "Vậy là sau một thời gian đắn đo, cuối cùng tôi cũng đã quyết định xuống tiền mua chiếc dao đa năng Victorinox đầu tiên."
 categories: [misc]
 tags: []
 thumbnail: /files/2020-03-21-first-victorinox-multitool/img9.jpg
@@ -19,7 +19,7 @@ thumbnail: /files/2020-03-21-first-victorinox-multitool/img9.jpg
 [10]: /files/2020-03-21-first-victorinox-multitool/img10.JPG
 [11]: /files/2020-03-21-first-victorinox-multitool/img11.jpg
 
-> Vậy là sau mộ thời gian đắn đo, cuối cùng tôi cũng đã quyết định xuống tiền mua chiếc dao đa năng Victorinox đầu tiên.
+> Vậy là sau một thời gian đắn đo, cuối cùng tôi cũng đã quyết định xuống tiền mua chiếc dao đa năng Victorinox đầu tiên.
 > Bài blog này chỉ đơn giản là để khoe về chiếc dao đa năng Victorinox mới mua mà thôi 😤
 
 Cảm nhận đầu tiên là nó nhỏ, rất nhỏ gọn luôn. Lúc xem specs trên mạng cũng đo ướm thử xem sao nhưng mà khi ra tới
@@ -57,7 +57,7 @@ Các chức năng còn lại đây
 Tèn ten, móc vào chìa khoá đây, khá là gọn, chỉ như thêm 1 cái chìa khoá nữa 😃
 [![img][10]][10]
 
-Cuối cùng quan trọng nhất là giá cả và mua ở đâu. Mua thì tôi chọn shop Bisu, link sản phẩm đây [Victorinox Minichamp Alox](https://bisu.vn/dung-cu-da-nang-victorinox-58mm-minichamp-alox-p1881657.html). Thực ra lần đầu mua nên chả có kinh nghiệm không biết là nên mua ở shop nào nhưng mà search trên mạng thì mọi link đều dẫn về Bisu. Vào xem thì có vẻ là phân phối chính hãng và đi kèm phụ kiện dịch vụ hậu mãi đầy đủ và có thêm mấy bài viết review hướng dẫn các chọn nên tin tưởng và ra mua 😃. Giá của hãng đề là `2,190,000`, lúc xem cũng hơi hốt, mà nhân viên bên đó bảo đó là giá hãng thôi, giá shop phân phối là `1,480,000` nên cũng ok xúc 😂
+Cuối cùng quan trọng nhất là giá cả và mua ở đâu. Mua thì tôi chọn shop Bisu, link sản phẩm đây [Victorinox Minichamp Alox](https://bisu.vn/dung-cu-da-nang-victorinox-58mm-minichamp-alox-p1881657.html). Thực ra lần đầu mua nên chả có kinh nghiệm không biết là nên mua ở shop nào nhưng mà search trên mạng thì mọi link đều dẫn về Bisu. Vào xem thì có vẻ là phân phối chính hãng và đi kèm phụ kiện dịch vụ hậu mãi đầy đủ và có thêm mấy bài viết review hướng dẫn các chọn nên tin tưởng và ra mua 😃. Giá của hãng đề là `2,190,000`, lúc xem cũng hơi hốt, mà nhân viên bên đó bảo đó là giá hãng thôi, giá shop phân phối là `1,480,000` thôi nên cũng ok xúc 😂
 [![img][11]][11]
 
 > Sáng nay khi đến shop xem thì thấy quá trời tool, nhiều cái thiết kế đẹp mê mẩn và tiện lợi (con người lần đầu tiên bước vào con đường chơi multi tool 😂) nên quyết định lần sau sẽ ghé lại. Có lẽ trong tương lai sẽ trang bị thêm 1 tool to đầy đủ nữa để tiện đi du lịch và để dùng ở nhà 😃
