@@ -31,6 +31,8 @@ sẽ mua thêm những mẫu khác sau.
 Hộp đóng gói khá nhỏ gọn
 [![img][1]][1]
 
+<!-- more -->
+
 Chỉ dài hơn ngón tay trỏ của mình một tí
 [![img][2]][2]
 
