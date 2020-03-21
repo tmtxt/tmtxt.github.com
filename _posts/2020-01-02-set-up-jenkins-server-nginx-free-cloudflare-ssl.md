@@ -18,13 +18,14 @@ are applied for all other VPS/Cloud services.
 # Bootstrap the server and install Jenkins
 
 - Create a new VPS on AWS Lightsail, choose an Ubuntu 18.04 server with any specs that you want.
-- Optionally: set up swap on the server if you have limited amount of RAM, following this guide
-<https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-16-04> but this can be done later.
+- Optionally: set up swap on the server if you have limited amount of RAM, following [this guide](https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-16-04) but this can be done later.
 - Some Cloud providers (like AWS Lightsail) offer an extra layer of network security by blocking all the incoming traffic on all ports
-(except SSH and HTTP) by default. Since Jenkins will run on port 8080, you need to add that port to the allowed list  
- ![port](/files/2020-01-01-jenkins-nginx-cloudflare-ssl/1.png)
- - Also add port 443 to the allowed list to set up SSL later
- - SSH into the server and run these commands to install Jenkins
+(except SSH and HTTP) by default. Since Jenkins will run on port 8080, you need to add that port to the allowed list
+
+![port](/files/2020-01-01-jenkins-nginx-cloudflare-ssl/1.png)
+
+- Also add port 443 to the allowed list to set up SSL later
+- SSH into the server and run these commands to install Jenkins
  
  ```console
 $ sudo apt-get update
