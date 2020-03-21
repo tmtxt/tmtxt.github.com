@@ -4,7 +4,7 @@ title: "Con dao đa năng Victorinox đầu tiên của tôi"
 description: "Vậy là sau mộ thời gian đắn đo, cuối cùng tôi cũng đã quyết định xuống tiền mua chiếc dao đa năng Victorinox đầu tiên."
 categories: [misc]
 tags: []
-thumbnail:
+thumbnail: /files/2020-03-21-first-victorinox-multitool/img9.jpg
 ---
 
 [1]: /files/2020-03-21-first-victorinox-multitool/img1.jpg
@@ -16,7 +16,7 @@ thumbnail:
 [7]: /files/2020-03-21-first-victorinox-multitool/img7.jpg
 [8]: /files/2020-03-21-first-victorinox-multitool/img8.JPG
 [9]: /files/2020-03-21-first-victorinox-multitool/img9.jpg
-[10]: /files/2020-03-21-first-victorinox-multitool/img10.jpg
+[10]: /files/2020-03-21-first-victorinox-multitool/img10.JPG
 [11]: /files/2020-03-21-first-victorinox-multitool/img11.jpg
 
 > Vậy là sau mộ thời gian đắn đo, cuối cùng tôi cũng đã quyết định xuống tiền mua chiếc dao đa năng Victorinox đầu tiên.
