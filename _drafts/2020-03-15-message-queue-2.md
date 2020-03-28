@@ -16,7 +16,7 @@ this time I'm going to talk about one of the most important component of the sys
 
 A message queue is an asynchronous inter-service communication pattern. It is a temporary place to
 store the data, the operation, waiting for the message receiver to process. It encourages decoupling
-of logic and components in the system, provides a lightweight and unified protocol for communication
+logic and components in the system, provides a lightweight and unified protocol for communication
 between different services (written in different languages) and is perfectly suitable for
 Microservice design. A good message queue must satisfy these criteria
 
@@ -35,10 +35,6 @@ investing in.
 
 > Currently, we are running 2 different systems on 2 different Cloud providers. That's why we are
 > using both solutions.
-
-Read more about Message queue
-[here](https://aws.amazon.com/message-queue/) and the Benefits of using Message queue
-[here](https://aws.amazon.com/message-queue/benefits/).
 
 # A Webhook API backed by a Message Queue
 
