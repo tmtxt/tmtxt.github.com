@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Scaling the System at AR - Part 2 - Message Queues for Integrations"
+title: "Scaling the System at AR - Part 3 - Message Queues cont."
 description: ""
 categories: [misc]
 tags: []
