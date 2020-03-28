@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Scaling the System at AR - Part 2 - Message Queues for Integrations"
-description: ""
+description: "Continue from my previous post, this time I'm going to talk about one of the most important component of the AR system: The Message Queues"
 categories: [misc]
 tags: []
 thumbnail: /files/ar-logo-1.png
