@@ -14,11 +14,12 @@ Continue from my previous post
 this time I'm going to talk about one of the most important component of the system at AR:
 **The Message Queues**.
 
-A message queue
+A message queue is an asynchronous inter-process communication pattern. It can be the communication
+between processes in the same applications or across different applications.
 
 # A Webhook API backed by a Message Queue
 
-> This method doesn't apply for other types of public API, mostly just webhook
+> This method doesn't apply for other types of public API, mostly just webhook API
 
 In our system, there are several public API endpoints we use to receive the updated data
 from the other systems, including webhook API to receive updated email events from Mailgun,
@@ -73,7 +74,7 @@ user fill in a web form. The requirements are also quite similar
 
 Here is a sample design of a Form submitting flow
 
-![API](/files/2020-03-15-message-queue/api.png)
+![API](/files/2020-03-15-message-queue/form.png)
 
 Similarly, the user-facing API on the web app doesn't do any complex logic. It just tries to
 validate and capture the user-input data as fast as possible and then defers the task to another
@@ -85,3 +86,11 @@ the web API
 - You will never lose the customer data. In case the 3rd-party system is down or any other network
   issue, the messages are still kept in the queue, retries multiple times until success or moved to
   another Error queue waiting to be re-queued at one point in the future.
+
+# Isolate and Allocate resources with Message queues
+
+One of the difference of the system at AR is that most of the tasks are background tasks and backed
+by several message queues. There are several reasons for us to choose this design
+
+- We want to keep the user-facing API and databases simple fast. This way, the all the API respond
+  very fast and the app performs more smoothly. That brings a good impression to our users.
