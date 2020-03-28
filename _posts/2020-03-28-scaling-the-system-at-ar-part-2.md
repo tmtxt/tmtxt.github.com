@@ -28,8 +28,6 @@ Microservice design. A good message queue should satisfy these criteria
 - The message queue should be independent from any languages and allow various applications
   written in different languages to send and receive messages without any problem.
 
-<!-- more -->
-
 Because the Message queue is so important to us and there is a limit in number of developers, we
 decided to switch to third-party services after several months doing both dev and ops work with Kafka.
 Both **Google Pub/Sub** and **AWS SQS** offer the service in a relatively cheap price and you can
@@ -40,6 +38,8 @@ more on our business core value.
 
 > Currently, we are running 2 different systems on 2 different Cloud providers and we are using both
 > solutions.
+
+<!-- more -->
 
 Read more about Message queue
 [here](https://aws.amazon.com/message-queue/) and the Benefits of using Message queue
