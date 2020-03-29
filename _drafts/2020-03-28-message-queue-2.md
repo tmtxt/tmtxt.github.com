@@ -7,6 +7,9 @@ tags: []
 thumbnail: /files/ar-logo-1.png
 ---
 
+> Part 2:
+> [Scaling the System at AR - Part 2 - Message Queues for Integrations]({%post_url 2020-03-28-scaling-the-system-at-ar-part-2%})
+
 # Isolate and Allocate resources with Message queues
 
 One of the difference of the system at AR is that most of the tasks are background tasks and backed
