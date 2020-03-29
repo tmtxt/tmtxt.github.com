@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Scaling the System at AR - Part 3 - Message Queue in general"
-description: "In previous post, I mentioned Messages Queue in some specific use cases for Integration components. In this post, I'm going to talk about Message Queue in general and how the workflow looks like at AR."
+title: "Scaling the System at AR - Part 3 - Message Queue cont."
+description: ""
 categories: [misc]
 tags: []
 thumbnail: /files/ar-logo-1.png
@@ -44,8 +44,6 @@ backed by several Message Queues. There are several reasons for us to choose thi
   of our workers are written in **Nodejs**. However, there are some of the written in **Golang**. We
   also have a team with many **C#** experts working on Integration projects. There are no problems
   for us to integrate everything into one same workflow.
-
-<!-- more -->
 
 # A Blast Email sending flow
 
@@ -119,3 +117,13 @@ for each different clients or temporarily disable one specific feature of the sy
 will leave it for you to examine...
 
 # To be continued...
+
+# The Message Queue in AR system
+
+Currently, we have over 100 different types of workers/queues. We have also built a UI tool for managing them efficiently
+
+![MessageBus](/files/2020-03-15-message-queue/message-bus-1.png)
+
+# Need to care
+
+# Wrong

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Scaling the System at AR - Part 2 - Message Queues for Integrations"
-description: "Continue from my previous post, this time I'm going to talk about one of the most important component of the AR system: The Message Queues"
+title: "Scaling the System at AR - Part 2 - Message Queue for Integration"
+description: "Continue from my previous post, this time I'm going to talk about one of the most important component of the AR system: The Message Queue"
 categories: [misc]
 tags: []
 thumbnail: /files/ar-logo-1.png
@@ -12,7 +12,7 @@ thumbnail: /files/ar-logo-1.png
 Continue from my previous post
 [Scaling the System at AR - Part 1 - Data Pre-Computation]({%post_url 2018-08-08-scaling-the-system-at-ar-part-1%}),
 this time I'm going to talk about one of the most important component of the AR system:
-**The Message Queues**.
+**The Message Queue**.
 
 Message Queue is an asynchronous inter-service communication pattern. It is a temporary place to
 store the data, waiting for the message receiver to process. It encourages decoupling
@@ -28,7 +28,7 @@ Microservice design. A good message queue should satisfy these criteria
 - The message queue should be independent from any languages and allow various applications
   written in different languages to send and receive messages without any problem.
 
-Because the Message queue is so important to us and there is a limit in number of developers, we
+Because the Message Queue is so important to us and there is a limit in number of developers, we
 decided to switch to third-party services after several months doing both dev and ops work with Kafka.
 Both **Google Pub/Sub** and **AWS SQS** offer the service in a relatively cheap price and you can
 choose either of them, depending on the Cloud platform that you are using. **AWS SQS** seems to be
@@ -41,8 +41,8 @@ more on our business core value.
 
 <!-- more -->
 
-Read more about Message queue
-[here](https://aws.amazon.com/message-queue/) and the Benefits of using Message queue
+Read more about Message Queue
+[here](https://aws.amazon.com/message-queue/) and the Benefits of using Message Queue
 [here](https://aws.amazon.com/message-queue/benefits/).
 
 # A Webhook API backed by a Message Queue
@@ -62,8 +62,8 @@ There are 2 factors that we consider the most important for a public webhook API
   processed. No matter the code has bug or not, **eventually**, it should always process the data
   thoroughly and display to the user.
 
-Those criteria match exactly with what a Message queue can offer. Most of our public API endpoints
-are backed by a Message queue, which defers and ensures the success of data processing.
+Those criteria match exactly with what a Message Queue can offer. Most of our public API endpoints
+are backed by a Message Queue, which defers and ensures the success of data processing.
 
 ![API](/files/2020-03-15-message-queue/api.png)
 
@@ -80,7 +80,7 @@ There are some benefits of moving all the complex logic from the API server to t
 worker.
 - Your public API is simpler. That means you can serve more requests and reduce the risk of
   downtime.
-- The message queue ensures that all the data will eventually be processed successfully. Even if
+- The Message Queue ensures that all the data will eventually be processed successfully. Even if
   there is a bug in the code, we won't lose the data. The failed messages will go back to the queue
   (depending on the retry policy) or go to another Error queue, waiting for us to fix the bug and
   then retry the messages
