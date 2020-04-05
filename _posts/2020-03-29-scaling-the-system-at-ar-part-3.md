@@ -114,7 +114,7 @@ There are other interesting things need to mention here
     `BlastCustomerListSender` worker at the configured time.
 
 Of course, there are many other aspects that a Message Queue can help to improve your system, for
-example, act as an event-sourcing system (with some improvement), partition and allocate resources
+example, act as an event-sourcing system, partition and allocate resources
 for each different clients or temporarily disable one specific feature of the system. However, I
 will leave it for you to examine...
 
