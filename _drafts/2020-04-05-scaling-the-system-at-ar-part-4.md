@@ -10,23 +10,28 @@ thumbnail: /files/ar-logo-1.png
 > Part 3:
 > [Scaling the System at AR - Part 3 - Message Queue in general]({%post_url 2020-03-29-scaling-the-system-at-ar-part-3%})
 
-Continue from my previous post, I'm going to demonstrate some of the tools that we use at AR to work
-with **Message Queue**. I will also summarize some of our experience when designing a system that
-uses **Message Queue**.
+Continue from my previous post, I'm going to demonstrate the internal tool that we use at AR to work
+with **Message Queue**. I will also summarize some of our experience when designing a system with
+**Message Queue**.
 
 # The Message Queue in AR system
 
-Currently, we have over 100 different types of workers/queues. We have also built a UI tool to
+Currently, we have over 100 different types of workers/queues. We have built a tool to
 manage them efficiently.
 
-The tool allows us to quickly filter for a specific Subscriptions (Queues/Workers)
+The tool allows us to quickly filter for any Subscriptions (Queues/Workers)
 ![MessageBus](/files/2020-03-15-message-queue/message-bus-1.png)
+
+<!-- more -->
 
 We also built a mechanism to partition some of the workers by each client (realm)
 ![MessageBus](/files/2020-03-15-message-queue/message-bus-2.png)
 
 That way, we can quickly identify which client or which worker is consuming the most resources of
 the system and control them easily
+![MessageBus](/files/2020-03-15-message-queue/message-bus-3.png)
+
+The error messages are in Error queues, waiting for us to Re-queue
 ![MessageBus](/files/2020-03-15-message-queue/message-bus-3.png)
 
 # What you need to care when designing a System that relies on Message Queue?
@@ -44,23 +49,24 @@ care about. They are from my experience and mistakes that we made over the last 
   - Again, this is similar to the mistake that many people make when they start applying
     Microservice design.
 - You should design it with **Failure** in mind. One of the main advantage Message Queue is that it
-  helps to ensure the success of the message processing even in case of failure. In a high-scalable
+  helps ensure the success of the message even in case of failure. In a high-scalable
   system, everything can fail, from the database, network to the third party services, or even the
   hardware itself. **Designing for failure** means that your message must be retry-able and produce
   correct result no matter how many times you run it and when you run it.
-- Eventual consistency is a concern. **Retry-able** also means that you data may be inconsistent at
-  some of point of time (in case of error) but if you design it correctly, the data will be
-  eventually consistent. You need to be prepared for this. The simplest technique is just to track
+- Eventual consistency is also a concern. **Retry-able** also means that your data may be inconsistent at
+  some of point of time (in case of error) but if you design it correctly, the data will
+  eventually be consistent. You need to be prepared for this. The simplest technique is just to track
   the progress somewhere and display the progress for the user so they know that the data is still
   being processed.
-- Because of Eventual consistency, try to use a good database to reduce the difficulty, try to use a
+- Because of Eventual consistency, you should use a good database to reduce the difficulty.
+  Try to apply a
   database system that satisfies [ACID](https://en.wikipedia.org/wiki/ACID) and stay away from the
   ones that don't (i.e those NoSQL databases). We used to have this pain.
-- You will soon ended up with creating several different workers. Before starting the second one,
+- You will soon end up with creating several different workers. Before starting the second one,
   you need to step back and define your standard for the Core library to create a new worker and for
   logging and debugging. Otherwise, you will soon get lost in all those async flows. For us, we had
-  to apply a standard logging for all the workers written in all different languages by organize all
-  the log entries in **ElasticSearch** and use **Kibana** to search for the logs that we want
+  to apply a standard logging for all the workers written in all different languages by organizing all
+  the log entries in **ElasticSearch** and use **Kibana** to search for the log entries that we want
 
 ![Logs](/files/2020-03-15-message-queue/logs.png)
 
