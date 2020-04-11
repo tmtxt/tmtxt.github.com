@@ -12,10 +12,10 @@ thumbnail:
 **Configuration** is an essential part of any application (The term **Configuration** here does not
 include internal application config, such as the route path definition). **Configuration** varies
 across deploys and environments, which provides confidential information to the application (such as
-data connection string) and defines the way the application should behave (for example, enable or
+database connection string) and defines the way the application should behave (for example, enable or
 disable specific features).
 
-So, why this blog post?
+Why this blog post?
 
 # Take a look at this
 
