@@ -173,4 +173,132 @@ However...
 
 # Let's fix it
 
+So, what are the requirements?
+
+- Configuration should be separated from code logic. The code should just focus on business
+logic and should not contain any of the logic to check for specific environment (like all the
+switch/case we saw above).
+- We should be able to override any specific value seamlessly. It should allow us to enable or
+  disable any feature easily by turning on an off some environment variables rather than scanning
+  through all places in the code to change manually.
+- It should be easy to switch to another environment.
+- Of course, environment types and credentials should not be hard-coded in code.
+
 ![Flow](/files/2020-04-07-stop-doing-this-you-have-a-better-way-to-write-config-in-net-core/flow.png)
+
+1. All the setting values are loaded from different locations, through a set override order that we
+   defined. This is the normal way that you would do with
+   [ASP.Net Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.1).
+   The final result would be an instance of `IConfiguration`, which is a key-value dictionary of all
+   the raw setting values. This allows us to switch the settings very easily by changing the input
+   files or just some specific environment variables.
+2. For simplicity in usage, the `IConfiguration` instance will be injected into another layer of
+   custom Config object, where you can build, validate and transform all the raw string values to
+   the correct format that you want.
+3. The App components then consume the configuration simply by resolving the `AppConfig` instance
+   from DI Container.
+
+## 1. Load Configuration values
+
+Microsoft has already documented and explained all the steps here build and register
+`IConfiguration` with DI Container here
+[Configuration in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.1).
+Basically, what you need to do is just specify the load order when creating `IHostBuilder` instance.
+
+{% highlight csharp %}
+Host.CreateDefaultBuilder(args)
+    .ConfigureAppConfiguration((hostingContext, config) =>
+    {
+        var environmentName = hostingContext.HostingEnvironment.EnvironmentName;
+        // Use this for hard-coded values that are not confidential
+        config.AddJsonFile($"appsettings.{environmentName}.json", optional: true);
+        config.AddJsonFile($"appsettings.json", optional: true);
+        // Use this for credentials running on Prod
+        config.AddEnvironmentVariables();
+    })
+{% endhighlight %}
+
+If you are writing your own Console application (or other types of application which are not ASP.Net
+Core), simply install these extensions from Microsoft on Nuget
+
+* Microsoft.Extensions.Configuration
+* Microsoft.Extensions.Configuration.Json
+* Microsoft.Extensions.Configuration.FileExtensions
+* Microsoft.Extensions.Configuration.EnvironmentVariables
+
+Here is a simple example showing how to register it with **Autofac Module**
+
+{% highlight csharp %}
+protected override void Load(ContainerBuilder builder)
+{
+    builder.Register(f =>
+    {
+        var environmentName =
+            Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+
+        var config = new ConfigurationBuilder();
+        config
+            .AddJsonFile($"appsettings.{environmentName}.json", optional: true)
+            .AddJsonFile($"appsettings.json", optional: true)
+            .AddEnvironmentVariables();
+
+        return config.Build();
+    }).As<IConfiguration>();
+}
+{% endhighlight %}
+
+## 2. Transform
+
+{% highlight csharp %}
+public class AppConfig
+{
+    public string LogLevel { get; set; }
+    public string MailgunApiKey { get; set; }
+    public bool SendRealEmail { get; set; }
+    public string DefaultToEmail { get; set; }
+
+    public AppConfig(IConfiguration config)
+    {
+        LogLevel = config.GetString("LOG_LEVEL", defaultValue: "Info");
+        MailgunApiKey = config.GetRequiredString("MAILGUN_API_KEY");
+        SendRealEmail = config.GetBool("SEND_REAL_EMAIL", defaultValue: false);
+        DefaultToEmail = config.GetString(
+            "DEFAULT_TO_EMAIL", defaultValue: "test@test.test"
+        );
+    }
+}
+{% endhighlight %}
+
+{% highlight csharp %}
+protected override void Load(ContainerBuilder builder)
+{
+    // register directly
+    builder.RegisterType<AppConfig>();
+
+    // or if you want an interface
+    builder.RegisterType<AppConfig>().As<IAppConfig>();
+}
+{% endhighlight %}
+
+## 3. Consume
+
+{% highlight csharp %}
+public class SendEmail
+{
+    private readonly AppConfig _config;
+    public SendEmail(AppConfig config)
+    {
+        _config = config;
+    }
+
+    public async Task Execute(string email)
+    {
+        // whether to send real email?
+        var sendRealEmail = _config.SendRealEmail;
+        if (!sendRealEmail) email = _config.DefaultToEmail;
+
+        //
+        await mailgunClient.Send(email);
+    }
+}
+{% endhighlight %}
