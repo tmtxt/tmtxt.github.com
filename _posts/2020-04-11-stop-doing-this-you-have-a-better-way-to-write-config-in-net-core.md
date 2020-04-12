@@ -13,9 +13,7 @@ thumbnail:
 include internal application config, such as the route path definition). **Configuration** varies
 across deploys and environments, which provides confidential information to the application (such as
 database connection string) and defines the way the application should behave (for example, enable or
-disable specific features).
-
-Why this blog post?
+disable specific features). It sounds quite simple but I found that many people did it the wrong way. That’s why we have this blog post.
 
 # Take a look at this
 
