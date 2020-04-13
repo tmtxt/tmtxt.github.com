@@ -7,6 +7,8 @@ tags: []
 thumbnail:
 ---
 
+> Part 2 here [Basic Logging & Debugging in Microservices - Part 2]({% post_url 2018-04-21-basic-logging-debugging-in-microservices-part-2 %})
+
 # ElasticSearch for storing the log data
 
 At this time, you may have a good logging library that you built on your own. Your application
@@ -87,5 +89,14 @@ You can easily and quickly filter your log data using the properties you added a
 
 Logging is a simple task, but to do it the right way, you need to consider these things
 
-- If you log too little, you won’t have enough data to troubleshoot. However, if you log too much, it takes more resources for your server to serialize a log entry. Choose only the necessary data to log, don’t log everything.
-- Consider 
+- If you log too little, you won’t have enough data to troubleshoot. However, if you log too much,
+  it takes more resources for your server to serialize a log entry. Choose only the necessary data
+  to log, don’t log everything.
+- Logging should not affects the main application logic. Always wrap `try`/`catch` around your
+  logging code so it doesn't throw error to the users if there are any problems with it.
+- Logging should be asynchronous. The request should not wait until the logging serialization is
+  done to return the data to the users.
+- Log the important data as the log properties so we can query easily in Elasticsearch, for example,
+  the `customerId`, the `userId` who initiates the request or the `correlationId` to link different
+  requests.
+- Make logging a compulsory part of your development process
