@@ -42,6 +42,8 @@ to a file on disk. You can find a sample **fluentd** setup here
 The most important thing that you need to notice is its configuration file, the `td-agent.conf`
 file. You will need to modify it to fit your requirements
 
+<!-- more -->
+
 ```conf
 <source>
   type tail
