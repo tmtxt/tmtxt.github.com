@@ -85,4 +85,7 @@ You can easily and quickly filter your log data using the properties you added a
 
 # Some Notes for Logging
 
-Writing and organising the log, of course, take computer resources to perform.
+Logging is a simple task, but to do it the right way, you need to consider these things
+
+- If you log too little, you won’t have enough data to troubleshoot. However, if you log too much, it takes more resources for your server to serialize a log entry. Choose only the necessary data to log, don’t log everything.
+- Consider 
