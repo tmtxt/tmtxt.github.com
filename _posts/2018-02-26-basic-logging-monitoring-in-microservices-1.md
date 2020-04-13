@@ -63,7 +63,7 @@ Here are the summarised characteristics that your logging module should provide
 - Follow one defined standard
 - Can associate related log entries into one entry and flush them all at once
 - Need to support different logging level and be configurable through environment variables
-- Be able to keep additional information for easier querying
+- Be able to keep additional information to query later
 - Support different logging methods depending on the environment (local development,
   staging, production,...)
 
