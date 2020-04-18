@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Solition to Find (i->j) sequence by sum problem"
+title: "Solution to Find (i->j) sequence by sum problem"
 description: ""
 categories: [algorithm]
 ---
