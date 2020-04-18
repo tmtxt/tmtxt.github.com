@@ -10,6 +10,12 @@ thumbnail: /files/2018-04-30-union-find-summary/img1.png
 > Nothing special here. It's just a blog post for summarising my algorithm learning course. Here are
 > some `Quick Union` related interview questions and my answers
 
+- [Part 1]({% post_url 2018-04-30-union-find-summary-part-1 %})
+- [Part 2]({% post_url 2018-04-30-union-find-summary-part-2 %})
+- [Part 3]({% post_url 2018-04-30-union-find-summary-part-3 %})
+- [Part 4]({% post_url 2018-05-01-union-find-summary-part-4 %})
+- Part 5 - This post
+
 # 1. Social network connectivity
 
 ### Question

@@ -9,6 +9,12 @@ thumbnail: /files/2018-04-30-union-find-summary/img1.png
 
 > Nothing special here. It's just a blog post for summarising my algorithm learning course.
 
+- [Part 1]({% post_url 2018-04-30-union-find-summary-part-1 %})
+- [Part 2]({% post_url 2018-04-30-union-find-summary-part-2 %})
+- Part 3 - This post
+- [Part 4]({% post_url 2018-05-01-union-find-summary-part-4 %})
+- [Part 5]({% post_url 2018-05-01-union-find-summary-part-5 %})
+
 # Approach
 
 The underlying data structure for `Quick Union` is similar to `Quick Find`. We need an array for all
