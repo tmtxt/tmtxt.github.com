@@ -8,8 +8,8 @@ thumbnail:
 ---
 
 > An interviewer once asked me this question. At first, I was a bit nervous and thought that this is
-> a very tricky question. It took me a while to figure out the solution and turned out this can be
-> converted to a simpler algorithm we already learned in University.
+> a very tricky question. It took me a while to figure out the solution and turned out this could be
+> converted to a simpler algorithm we had already learned in University.
 
 # Question
 
