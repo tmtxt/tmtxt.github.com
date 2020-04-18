@@ -9,11 +9,11 @@ thumbnail: /files/2018-04-30-union-find-summary/img1.png
 
 > Nothing special here. It's just a blog post for summarising my algorithm learning course.
 
-- [Part 1]({% post_url 2018-04-30-union-find-summary-part-1 %})
-- Part 2 - This post
-- [Part 3]({% post_url 2018-04-30-union-find-summary-part-3 %})
-- [Part 4]({% post_url 2018-05-01-union-find-summary-part-4 %})
-- [Part 5]({% post_url 2018-05-01-union-find-summary-part-5 %})
+- [Part 1 - Union Find]({% post_url 2018-04-30-union-find-summary-part-1 %})
+- Part 2 - Quick Find
+- [Part 3 - Quick Union]({% post_url 2018-04-30-union-find-summary-part-3 %})
+- [Part 4 - Improved Quick Union]({% post_url 2018-05-01-union-find-summary-part-4 %})
+- [Part 5 - Related Interview Questions]({% post_url 2018-05-01-union-find-summary-part-5 %})
 
 # Approach
 

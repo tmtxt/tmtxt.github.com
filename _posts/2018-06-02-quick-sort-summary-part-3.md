@@ -9,6 +9,10 @@ categories: [algorithm]
 > this was already taught in the University, I remember nothing about it because I haven't touched
 > it for the long time.
 
+- [Part 1 - Basic Implementation]({% post_url 2018-05-29-quick-sort-summary-part-1 %})
+- [Part 2 - Selection Problems]({% post_url 2018-06-02-quick-sort-summary-part-2 %})
+- Part 3 - 3-way Partitioning
+
 # Quick Sort - Duplicate Keys Problem
 
 -  Quick Sort goes quadratic unless partitioning stops on equal keys!

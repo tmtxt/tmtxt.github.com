@@ -95,3 +95,7 @@ public class MergeBU
 - If you come across some language that doesn't support recursion and provides you with only limited
   memory for a stack (perhaps an embedded system?), the bottom-up version will be your only choice.
 - [https://stackoverflow.com/a/17902960/3071084](https://stackoverflow.com/a/17902960/3071084)
+
+# More
+
+[Related Merge sort questions]({% post_url 2018-05-23-summary-merge-sort-related-questions %})

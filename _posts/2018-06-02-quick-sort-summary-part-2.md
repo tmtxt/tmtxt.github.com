@@ -9,6 +9,10 @@ categories: [algorithm]
 > this was already taught in the University, I didn't even know that it can be used for Selection
 > Problem
 
+- [Part 1 - Basic Implementation]({% post_url 2018-05-29-quick-sort-summary-part-1 %})
+- Part 2 - Selection Problems
+- [Part 3 - 3-way Partitioning]({% post_url 2018-06-02-quick-sort-summary-part-3 %})
+
 # Selection Problem
 
 Given an array of N items, find a k<sup>th</sup> smallest item. For example, an array A =
