@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Stop doing this! You have a better way to write Config in .Net Core"
+title: "Configuration in .Net Core"
 description: ""
 categories: [misc]
 tags: []
