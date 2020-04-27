@@ -23,7 +23,8 @@ the way the **Configuration** is implemented and passed around the application a
 is consumed.
 
 Here is the `Setting` interface and its implementations.
-{% highlight csharp %}
+
+```csharp
 public interface ISetting
 {
     Env Environment { get; }
@@ -51,10 +52,11 @@ public class ProdSetting : ISetting
     public string MailgunApiKey => "key-zzzz";
     public string AppName => "Prod Name";
 }
-{% endhighlight %}
+```
 
 Here is an app component which uses the **Setting** object
-{% highlight csharp %}
+
+```csharp
 public async Task Execute()
 {
     var setting = Resolve<ISetting>();
@@ -77,7 +79,7 @@ public async Task Execute()
 
     await SendEmail(emailToUse, setting.MailgunApiKey);
 }
-{% endhighlight %}
+```
 
 <!-- more -->
 
@@ -91,7 +93,8 @@ You can spot a lot of problems with the above code. Some are quite obvious (like
 values), some aren't. Let's take a look at each of them again and analyze
 
 First, start with the code to define the `ISetting` interface
-{% highlight csharp %}
+
+```csharp
 public interface ISetting
 {
     Env Environment { get; }
@@ -119,7 +122,7 @@ public class ProdSetting : ISetting
     public string MailgunApiKey => "key-zzzz";
     public string AppName => "Prod Name";
 }
-{% endhighlight %}
+```
 
 What are the problems here?
 
@@ -140,7 +143,7 @@ What are the problems here?
 
 OK, coming to the next part
 
-{% highlight csharp %}
+```csharp
 public async Task Execute()
 {
     var config = Resolve<IConfiguration>();
@@ -163,7 +166,7 @@ public async Task Execute()
 
     await SendEmail(emailToUse, config.MailgunApiKey);
 }
-{% endhighlight %}
+```
 
 The above code piece tries to protect the developers from accidentally sending a test email to a real
 customer in Local or Staging environment by replacing the input email with an internal one.
@@ -222,7 +225,7 @@ Microsoft has already documented and explained all the steps to build and regist
 [Configuration in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.1).
 Basically, what you need to do is just specify the load order when creating `IHostBuilder` instance.
 
-{% highlight csharp %}
+```csharp
 Host.CreateDefaultBuilder(args)
     .ConfigureAppConfiguration((hostingContext, config) =>
     {
@@ -233,19 +236,19 @@ Host.CreateDefaultBuilder(args)
         // Use this for credentials running on Prod
         config.AddEnvironmentVariables();
     })
-{% endhighlight %}
+```
 
 If you are writing your own Console application (or other types of application which are not
 **ASP.Net Core**), simply install these extensions on **Nuget**
 
-* Microsoft.Extensions.Configuration
-* Microsoft.Extensions.Configuration.Json
-* Microsoft.Extensions.Configuration.FileExtensions
-* Microsoft.Extensions.Configuration.EnvironmentVariables
+- Microsoft.Extensions.Configuration
+- Microsoft.Extensions.Configuration.Json
+- Microsoft.Extensions.Configuration.FileExtensions
+- Microsoft.Extensions.Configuration.EnvironmentVariables
 
 Here is a simple example showing how to register it with **Autofac Module**
 
-{% highlight csharp %}
+```csharp
 protected override void Load(ContainerBuilder builder)
 {
     builder.Register(f =>
@@ -262,7 +265,7 @@ protected override void Load(ContainerBuilder builder)
         return config.Build();
     }).As<IConfiguration>();
 }
-{% endhighlight %}
+```
 
 ## 2. Transform raw string values
 
