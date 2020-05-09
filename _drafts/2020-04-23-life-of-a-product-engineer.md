@@ -6,3 +6,6 @@ categories: []
 tags: []
 thumbnail: 
 ---
+
+# Abstraction is not always good...
+
