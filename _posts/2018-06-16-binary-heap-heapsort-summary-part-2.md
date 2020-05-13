@@ -12,11 +12,11 @@ categories: [algorithm]
 
 # The Idea
 
-- Start with array of keys in arbitrary order
+- Start with array of keys in arbitrary order  
 ![arbitrary order](/files/2018-06-05-binary-heap-heapsort-summary-part-2/heapsort1.png)
-- Create max-heap with all N keys.
+- Create max-heap with all N keys.  
 ![create heap](/files/2018-06-05-binary-heap-heapsort-summary-part-2/heapsort2.png)
-- Repeatedly remove the maximum key (in place) to create a sorted array.
+- Repeatedly remove the maximum key (in place) to create a sorted array.  
 ![heap sort](/files/2018-06-05-binary-heap-heapsort-summary-part-2/heapsort3.png)
 
 <!-- more -->
@@ -26,26 +26,26 @@ categories: [algorithm]
 Build heap using bottom-up method. Start with the lowest nodes and go up each level, use `sink`
 operation to correct the heap.
 
-- Starting point (arbitrary order)
+- Starting point (arbitrary order)  
 ![sort1](/files/2018-06-05-binary-heap-heapsort-summary-part-2/sort1.png)
 - All the nodes in the lowest level are 1-node binary heap. In this case `E`, `E`, `P` and `M` are
 already in sorted order (1-node binary heaps).
 - Start with the nodes in the upper level, `X`, `A`, `L` and `T` in this case
   - `X` and `A` are already 1-node binary heaps
   - Apply `sink(5, 11)` operation on `L`, nothing to do here because it's already a sorted binary
-  heap
+  heap  
   ![sort2](/files/2018-06-05-binary-heap-heapsort-summary-part-2/sort2.png)
   - Apply `sink(4, 11)` operation on `T`, nothing to do here because it's already a sorted binary
-  heap
+  heap  
   ![sort3](/files/2018-06-05-binary-heap-heapsort-summary-part-2/sort3.png)
 - Continue with the nodes in higher level, `X` and `O` in this case
   - Apply `sink(3, 11)` operation on `X`, nothing to do here because it's already a sorted binary
-  heap
+  heap  
   ![sort4](/files/2018-06-05-binary-heap-heapsort-summary-part-2/sort4.png)
-  - Apply `sink(2, 11)` operation on `O` to make it a sorted binary heap
+  - Apply `sink(2, 11)` operation on `O` to make it a sorted binary heap  
   ![sort5](/files/2018-06-05-binary-heap-heapsort-summary-part-2/sort5.png)
 - Continue with the node in the highest level, `S` in this case
-  - Apply `sink(1, 11)` operation on `S` to make it a sorted binary heap
+  - Apply `sink(1, 11)` operation on `S` to make it a sorted binary heap  
   ![sort6](/files/2018-06-05-binary-heap-heapsort-summary-part-2/sort6.png)
 - We finally transform an arbitrary array into a heap-ordered array
 
@@ -61,9 +61,9 @@ largest item in the heap, one at a time. Refer to part 1 for the idea on how to 
 item in a heap. The only difference is that after exchanging the max with the last item, we will
 keep it in the array instead of completely removing it out.
 
-- Starting point (a heap-ordered array)
+- Starting point (a heap-ordered array)  
 ![sort8](/files/2018-06-05-binary-heap-heapsort-summary-part-2/sort8.png)
-- Repeatedly remove the largest item, once at a time, keep it at the end of the array
+- Repeatedly remove the largest item, once at a time, keep it at the end of the array  
 ![sort7](/files/2018-06-05-binary-heap-heapsort-summary-part-2/sort7.png)
 
 ```java

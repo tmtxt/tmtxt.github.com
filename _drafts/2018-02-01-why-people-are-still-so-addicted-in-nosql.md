@@ -28,7 +28,7 @@ Why don't we just use SQL?
 
 # The problem of Relations
 
-
+When you app grows, can you avoid the relation of your entities?
 
 # The performance cost
 
