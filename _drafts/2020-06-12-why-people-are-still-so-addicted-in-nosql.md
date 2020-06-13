@@ -49,9 +49,14 @@ record until we realized it was a big problem. All the solutions lead to a SQL d
 
 Why don't we just use SQL?
 
+> RethinkDB stores the documents that are smaller than 250 bytes inline in the primary key index
+> tree
+> [Understanding RethinkDB memory requirements - Internal metadata](https://rethinkdb.com/docs/memory-usage#internal-metadata).
+
 # A world without Relations?
 
-
+> **Relations** still exist in these NoSQL databases. However,...
+> you are encouraged not to do that...
 
 # The performance cost
 
