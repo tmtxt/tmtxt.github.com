@@ -9,15 +9,18 @@ thumbnail:
 
 I have been working on a system which uses RethinkDB (a NoSQL) database system as its backing
 service for almost 4 years. There are a lot of cool optimizations we have applied
-(read ...) that reach the state of the art of RethinkDB and help us scale the system to serve our
+(read [Some optimizations in RethinkDB]({% post_url 2018-03-10-some-optimizations-in-rethinkdb-part-1 %}))
+that reach the state of the art of RethinkDB and help us scale the system to serve our
 users better. I personally didn't imagine we could scale that big with a schemaless database but we
 did! The system now delivers millions of email every month, automates many repetitive boring
 marketing tasks, provides a detailed insight to the customer activities and help our users grow
 their business through a better automation marketing platform. However, my overall experience with
 NoSQL has been very bad, especially when we combine with a dynamic programming language like Nodejs.
-We have reached its limit and it started exposing problems
+We have reached its limit and it started exposing problems...
 
-# The problem of large objects
+> By NoSQL, I'm refering to the Document Database Systems like RethinkDB and MongoDB.
+
+# The problem of Document Storage
 
 Usually for NoSQL, you are encouraged to store the object and its relationship in one single
 document instead of following the 3 forms of database normalization. For example, for an Insurance
@@ -42,9 +45,13 @@ and then write the whole document back to disk.
   object? All related documents will be loaded into memory just to get some specific fields.
 
 We had this problem in the past. We simply store the objects without worrying about the size of each
-record until we realized it was a big problem. All the solutions would lead to a SQL design!
+record until we realized it was a big problem. All the solutions lead to a SQL design!
 
 Why don't we just use SQL?
+
+# A world without Relations?
+
+
 
 # The performance cost
 
@@ -53,10 +60,6 @@ argument is that reading the whole document object is much faster than reading t
 of one row (including the null fields).
 
 # Hey, where is my ACID?
-
-# The problem of Relations
-
-When you app grows, can you avoid the relation of your entities?
 
 
 # Schemaless doesn't Reduce the complexity or Save your development time
