@@ -74,6 +74,7 @@ For SSL certificate, you can choose one of these solutions
 
 In my case, I generated a self-signed certificate using this command
 ```console
+$ sudo mkdir -p /etc/nginx/ssl
 $ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/server.key -out /etc/nginx/ssl/server.crt
 ```
 
