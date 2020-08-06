@@ -261,7 +261,7 @@ That is the very first part in building a full Logging & Tracing system in Micro
 need to follow the exact steps or implementation above. The basic idea is to implement some
 mechanism to better group the related log entries in a the concurrent world and provide a better
 view for tracing and debugging. It will help you build a stable ground to grow your system to bigger
-size. In the parts, I will talk about how we should integrate it into the application, how we should
+size. In next post, I will talk about how we should integrate it into the application, how we should
 link the log data between services as well as how we should improve that logging system to respond
 to the bugs/incidents as quick as possible.
 
