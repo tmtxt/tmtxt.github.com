@@ -53,10 +53,14 @@ Why don't we just use SQL?
 > tree
 > [Understanding RethinkDB memory requirements - Internal metadata](https://rethinkdb.com/docs/memory-usage#internal-metadata).
 
-# A world without Relations?
+# A Non-Relational world?
 
 > **Relations** still exist in these NoSQL databases. However,...
 > you are encouraged not to do that...
+
+Yes, you can still organize your entities into different tables (or collections in Mongodb), but
+that's not the design philosophy of those Document database systems. They encourage you to combine
+the related entities into just one large object. This seems ok at first
 
 # The performance cost
 
