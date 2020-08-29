@@ -7,7 +7,7 @@ tags: []
 thumbnail:
 ---
 
-> NO, Lambda is not the key solution to all the problems. Lambda does not always reduce development
+> Lambda is not the key solution to all the problems. Lambda does not always reduce development
 > time. Lambda does not always save your head from all the infrastructure problems. Lambda does not
 > always scale well. It is not always true that you don't have to manage anything, just focus on the
 > business logic. It is not always cheaper than traditional "server-full" architecture.
@@ -26,7 +26,7 @@ before entering the world of Lambda. They are based on my experience after 1.5 y
 with Lambda. We have built several systems based on AWS Lambda architecture, including
 [an industry-first email reconciliation system](https://aws.amazon.com/blogs/startups/how-fmg-suite-reduces-risk-for-financial-institutions/),
 a high-scalable **Contacts Integration** system for FMGSuite marketing platform, etc. **Lambda**, of
-course, helps us a lot in managing infrastructure but it also added a lot of headache to our
+course, helps us a lot in managing infrastructure but it also adds a lot of headache to our
 development workflow.
 
 # Is your function Synchronous or Asynchronous?
@@ -54,7 +54,7 @@ is a high chance that it will be shut down very often. Whenever there is a new i
 has to perform all the provision steps again to bring that Lambda live and serve the request. This
 is even worse if you use the languages that requires an extra compilation step (like `.Net`).
 Everything behaves extremely slow for the first time. Hopefully this will be improved in the next
-version of `.Net`.
+version of `.Net Core`.
 
 ## One request at a time
 
