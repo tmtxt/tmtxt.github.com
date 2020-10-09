@@ -34,6 +34,12 @@ just for loading the code base, the necessary libraries and pay for all those ov
 cannot take advantages of the multi-core CPUs to do heavy computation work or to serve more
 requests. There is a limit in what Nodejs can do.
 
+This blog post is just a place to summarize some of my experience from changing 
+
 # Strict Typing matters
+
+> Why not Typescript?
+
+It's a controversial topic. For me, the advantage (and also disadvantage) of Nodejs is dynamic typing. It's fast for initla development, it's fast for building POC, it's easy for startup
 
 # IOC and DI
