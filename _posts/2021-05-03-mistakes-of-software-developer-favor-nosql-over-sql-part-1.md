@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Mistakes of a Software Engineer - Favor NoSQL over SQL? - Part 1"
+title: "Mistakes of a Software Engineer - Favor NoSQL over SQL - Part 1"
 description: ""
 categories: [misc]
 tags: []
