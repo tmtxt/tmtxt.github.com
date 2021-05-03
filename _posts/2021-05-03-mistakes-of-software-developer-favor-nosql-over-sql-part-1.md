@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Mistakes of a Software Engineer - Favor NoSQL over SQL - Part 1"
-description: ""
+description: "It doesn't mean I hate NoSQL. I just want to use the right tool for the right job..."
 categories: [misc]
 tags: []
 thumbnail: /files/2021-05-03-mistakes-of-software-developer-favor-nosql-over-sql-part-1/sql-nosql.png
@@ -40,6 +40,8 @@ data (which is more similar to objects in programming language), the 1970s' prob
 developers still have to handle them manually in an awkward way.
 
 > [Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems](https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)
+
+<!-- more -->
 
 # The problem of Document Storage model
 
