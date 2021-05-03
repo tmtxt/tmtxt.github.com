@@ -39,6 +39,8 @@ Despite the advantages of a more flexible data schema or a better representation
 data (which is more similar to objects in programming language), the 1970s' problems still exist and
 developers still have to handle them manually in an awkward way.
 
+> [Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems](https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)
+
 # The problem of Document Storage model
 
 Usually in NoSQL, you are encouraged to store the object and its relations in one single
