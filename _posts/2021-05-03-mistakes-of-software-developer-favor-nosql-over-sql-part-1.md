@@ -4,7 +4,7 @@ title: "Mistakes of a Software Engineer - Favor NoSQL over SQL? - Part 1"
 description: ""
 categories: [misc]
 tags: []
-thumbnail:
+thumbnail: /files/2021-05-03-mistakes-of-software-developer-favor-nosql-over-sql-part-1/sql-nosql.png
 ---
 
 What is this? This is just something to summarize the mistakes that I found from my experience
