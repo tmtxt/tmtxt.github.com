@@ -52,7 +52,7 @@ children), the list of all the policies this customer has purchased and a collec
 claims this customer has made. This leads to a table consisting of multiple large documents. So what
 is the problem here?
 
-- What happens if you just want to read some fields of the Customer object (`firstName`, `lastName
+- What happens if you just want to read some fields of the Customer object (`firstName`, `lastName`
   or `emailAddress`)?
 - What happens if you only want to update some fields of the Customer object?
 - What happens if you only want to work with the Customer object itself, not the Policy, Claim or
