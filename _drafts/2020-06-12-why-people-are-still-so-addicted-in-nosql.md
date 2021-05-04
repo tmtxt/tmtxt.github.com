@@ -33,7 +33,9 @@ is the problem here?
   `emailAddress`)?
 - What if you only want to update some fields of the customer object?
 
-Unless the field you want to work with stays on the index tree, I cannot imagine there is any
+Unless the field you want to work with stays on the
+[index tree](https://rethinkdb.com/docs/memory-usage#internal-metadata),
+I cannot imagine there is any
 solution to interact with individual field in an optimal way. The database system has to load the
 whole document to memory to process, to read only some specific props, to update only some fields
 and then write the whole document back to disk.
