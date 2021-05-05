@@ -12,3 +12,4 @@ Thumbs.db
 *.sass-cache/*
 *.tern-port
 .jekyll-cache/*
+.idea/*
