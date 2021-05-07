@@ -30,7 +30,7 @@ Back in the 1970s, the most popular database used a simple data model called the
 which is similar to JSON model used in document databases today. That model worked well for
 one-to-many relationships. However, when it comes to
 many-to-many relationships, this design exposes a whole lot of problems, from joining issue to
-duplicate data management. Two alternative solutions were proposed. They were Relational model
+duplicate data management. Two alternative solutions were proposed, Relational model
 and Network model. The fact is obvious, Relational model wins the long run.
 
 It seems that NoSQL
