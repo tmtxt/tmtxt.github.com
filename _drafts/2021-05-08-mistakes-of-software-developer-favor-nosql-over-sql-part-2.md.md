@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Mistakes of a Software Engineer - Favor NoSQL over SQL? - Part 2"
-description: ""
+title: "Mistakes of a Software Engineer - Favor NoSQL over SQL - Part 2"
+description: "It doesn't mean I hate NoSQL. I just want to use the right tool for the right job..."
 categories: [misc]
 tags: []
-thumbnail:
+thumbnail: /files/2021-05-03-mistakes-of-software-developer-favor-nosql-over-sql-part-1/sql-nosql.png
 ---
 
 > Part 1 [Mistakes of a Software Engineer - Favor NoSQL over SQL - Part 1]({%post_url 2021-05-03-mistakes-of-software-developer-favor-nosql-over-sql-part-1%})
@@ -39,6 +39,8 @@ have to add many `if` statements just to check for what should have been provide
 how careful you design your application, how strict your coding conventions are, there will always be the
 case your code works with outdated data schema. For critical business workflows, I want
 everything to be expressed clearly, not implicitly.
+
+<!-- more -->
 
 # You are encouraged with bad patterns
 
