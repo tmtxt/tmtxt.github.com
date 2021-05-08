@@ -133,8 +133,8 @@ SQL to get all those benefits for free?
 
 # Is that all?
 
-No, part 2 is coming...
+Part 2 is [here]({%post_url 2021-05-08-mistakes-of-software-developer-favor-nosql-over-sql-part-2%})
 
 # Does that mean you should not use NoSQL?
 
-No. It has its own use cases. Wait for part 2...
+No. It has its own use cases. Check in Part 2
