@@ -30,7 +30,7 @@ Back in the 1970s, the most popular database used a simple data model called the
 which is similar to JSON model used in document databases today. That model worked well for
 one-to-many relationships. However, when it comes to
 many-to-many relationships, this design exposes a whole lot of problems, from joining issue to
-duplicate data management. The two alternative solutions were proposed. They were Relational model
+duplicate data management. Two alternative solutions were proposed, Relational model
 and Network model. The fact is obvious, Relational model wins the long run.
 
 It seems that NoSQL
@@ -133,8 +133,8 @@ SQL to get all those benefits for free?
 
 # Is that all?
 
-No, part 2 is coming...
+Part 2 is [here]({%post_url 2021-05-08-mistakes-of-software-developer-favor-nosql-over-sql-part-2%})
 
 # Does that mean you should not use NoSQL?
 
-No. It has its own use cases. Wait for part 2...
+No. It has its own use cases. Check in Part 2
