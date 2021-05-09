@@ -22,9 +22,9 @@ There is nothing called Schemaless. The schema just moves from Database level to
 For Document databases, you are actually using implicit data schema model (compare to explicit data
 schema in SQL). Instead of letting the database handle the schema and datatype itself, you have to
 do it yourself in your application code.
-- Some databases support simple schema validation. However, none of them are as optimal as what 
-  SQL provides. You are limited to just some basic data types (string, number, boolean,...) while 
-  SQL offers a wide range of different data types for different use cases (for example: varchar, nvarchar 
+- Some databases support simple schema validation. However, none of them are as optimal as what
+  SQL provides. You are limited to just some basic data types (string, number, boolean,...) while
+  SQL offers a wide range of different data types for different use cases (for example: varchar, nvarchar
   text,... just for string data). Working with strict data type is always easier and more performant.
 - In case you handle the schema yourself, it **may** be ok if you use a static-typed programming language
   (like C#). However, if you are developing your application using Nodejs, Ruby, PHP,... (which is quite
@@ -107,4 +107,4 @@ you to make those mistakes easier.
 
 # To be continued
 
-Part 3 is coming...
+[Part 3]({%post_url 2021-05-09-mistakes-of-software-developer-favor-nosql-over-sql-part-3%})
