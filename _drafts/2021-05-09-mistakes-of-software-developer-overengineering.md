@@ -64,8 +64,11 @@ PATCH /api/customers/:customerId
 }
 ```
 
+How do you design a UI to fit this API? It could be like this
+
 ![Design](/files/2021-05-09-mistakes-of-software-developer-overengineering/multi-purpose-api-1.png)
 
+What will happen if 
 
 If you design an API for 10 goals, very
 likely that it won't work the way you expect. If you design just 1-2 APIs, each one is for one
