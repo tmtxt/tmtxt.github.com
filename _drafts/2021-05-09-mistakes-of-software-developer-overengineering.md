@@ -9,7 +9,7 @@ thumbnail:
 
 Right, Overengineering! This is a very broad topic. I don't want to talk about what it is, how to
 avoid it. I just try to document some examples that I found in real life as a sign of
-Overengineering so every time I work on something, I know if I'm going in an Overengineering
+Overengineering so every time I work on something, I will know if I'm going in an Overengineering
 direction.
 
 # A multi-purpose API
