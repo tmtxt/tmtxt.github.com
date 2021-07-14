@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Clean architecture in C#/.Net Core"
+title: "Clean architecture with C#/.Net Core and MediatR - Part 1"
 description: ""
 categories: []
 tags: []
@@ -9,33 +9,34 @@ thumbnail:
 
 Nodejs has been a pain point in our code base for year. We started with Nodejs several years ago. It
 is one of the best choice for starting a product because of the ease in development.
+... continue here
 
-# Revisit Clean Architecture
+# Clean Architecture revisit
 
 Let's take a look at this very famous Clean Architecture demonstration image
 
 ![Clean Architecture](/files/2021-07-13-clean-architecture/clean-architecture.jpg)
 
 Actually, for me, it was a bit hard to understand when I first read about this. I'd like to re-draw
-it like this
+it a bit
 
-![Clean Architecture](/files/2021-07-13-clean-architecture/clean-architecture.png)
+If we draw it to see the data flows
 
-- **Business layer** is where your application logic resides. It's pure C#, independent from the
-  framework, database or any external dependencies.
-- **Controller layer** is where we map out the underlying implementations of all the contracts (interfaces) we
-  defined in **Business layer**.
-- **Infrastructure** is actually related to the deployment and the operations of the other external
-  cross-cutting concerns
+![Data Flow](/files/2021-07-13-clean-architecture/data-flow.png)
 
-Data flow: ....
+The arrows that I drew are also a bit different from the original Clean architecture flow but it's
+actually the same. The Data flow is
 
-Fact: naming is hard
+- The core Business logic resides in **Business Layer**. They are pure C#, independent from the
+framework, database or any other external services. It doesn't care if one request comes from an
+Http API, from a Timer Worker or a Script.
+- The framework outside needs to wrap the request, transform it into the same input format that the
+**Business Layer** expects.
+- The **Business Layer** also contains a list of interfaces to interact with all the external
+dependencies (anything outside of the C# applications, from the storage layer to external services).
+The implementations will be delegated to the outer circle to make the **Business Layer** become
+loose-coupling with all those external dependencies.
 
-# MediatR FTW
-
-# Business Layer
-
-# Controller Layer
-
-# Infrastructure Layer
+Fact: **Naming** is hard. I don't know if the above names are correct. They are not even the ones
+that I used in my code :joy:. Well, names are just names, as long as we understand what they do,
+that's enough.
