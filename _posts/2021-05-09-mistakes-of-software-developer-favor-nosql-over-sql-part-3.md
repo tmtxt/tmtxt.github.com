@@ -45,14 +45,14 @@ my answer will be SQL.
 - SQL can solve 80% problems that you face. For the other 20%, there is always workaround for them.
   Or you can apply NoSQL in those cases and gain the benefits of both worlds.
 - With decades of development, there are enough tools, documents and solutions around the internet
-  to support you. The technology that you use will hardly be abondoned and your product has a higher
+  to support you. The technology that you use will hardly be abandoned and your product has a higher
   chance to survive (and save cost).
 
 How about scaling factor? Somebody debate that NoSQL is designed with horizontal scaling from the beginning
 and SQL, the reverse way, for vertical scaling only. However,
 
 - Like I said before, there are some use cases in which one database can perform better than
-  the other one. Let's them correctly and don't assume that there is a
+  the other one. Let's use them correctly and don't assume that there is a
   Swiss-Army-Knife database that can always operate well at high scale.
 - I have seen many systems running SQL at very high scale, and they still work fine!
 The problem sometimes is just the developers haven't reached the its limit yet.
