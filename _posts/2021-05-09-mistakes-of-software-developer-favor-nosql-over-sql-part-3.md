@@ -38,7 +38,7 @@ use cases that you can think about
 <!-- more -->
 
 SQL, on the other hand, is built for complex data structure with efficient join ability. I would say
-it is suitable for almost all the other cases 😂. If I am building a product, very likely,
+it is suitable for almost other cases 😂. If I am building a product, very likely,
 my answer will be SQL.
 
 - Most business will become more and more complicated, no doubt. You can never live without
