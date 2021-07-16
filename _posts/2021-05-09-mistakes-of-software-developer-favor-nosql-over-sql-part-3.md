@@ -25,7 +25,8 @@ NoSQL is designed for simple operations with very high read/write throughput. It
 usually read/write the whole unstructured object using very simple queries. There are some specific
 use cases that you can think about
 - Receive data from another system (an integration API for example): You can use a NoSQL database as
-  a temporary storage to increase API response time and safety by deferring processing data.
+  a temporary storage to increase API response time and safety by deferring data processing to a
+  later time.
   Read more
   [Scaling the System at AR - Part 2 - Message Queue for Integration]({%post_url 2020-03-28-scaling-the-system-at-ar-part-2%})
 - A backing service to store Message Values for a Message Queue application
