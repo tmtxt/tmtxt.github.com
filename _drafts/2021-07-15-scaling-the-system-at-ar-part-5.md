@@ -45,7 +45,11 @@ company. An API Server can help
   to read/write certain entities.
 - Prevent the other teams to cause unwanted effect on the internal data structure of the current
   team.
-- Abstract away the complex underlying business logic of the team
+- Abstract away the complex underlying business logic of the team.
+- Each team can choose its own technology, no matter if they follow a Monolith or Microservice
+  design, no matter if they use Nodejs or C#, as long as the API is a standard one (usually HTTP API).
+
+![Api Server](/files/2021-07-15-scaling-the-system-at-ar-part-5/api-server.png)
 
 However, this design also comes with a lot problems, more than the benefits that it as
 
@@ -71,16 +75,65 @@ autonomous teams.
 
 Here is a brief description of this Asynchronous design
 - Each team should has its own database, independent from other teams.
-- Each team should store its own data, duplicate the data from the other teams if necessary.
-  - In the below picture, with **Customer** entity, each team may need to store the Customer data
-    separately to operate on its own. The CRM team needs to store the Customers with all the
-    properties so the users can use the CRM system to manage their customer list while the Marketing
-    team only to persist the Customers with specific properties to do the automation marketing (only
-    `email` and `name` for example).
+- Each team should store its own data, duplicate the data from the other teams if necessary, no
+  matter which team owns that data domain. Each team only needs to store the properties required for
+  that team, not everything related to that entity.
 - The data will eventually be consistent across the system via the global Event system. This is
   built on top of Message Queue design, but it's actually more than that. Behind the scene, our
   system uses Google Cloud Pub/Sub as the backing Message Queue. Luckily, it is more than just a
-  simple Message Queue, supports this Pub/Sub model that we need.
-  - Each event is represented by a Topic 
+  simple Message Queue and supports this Pub/Sub model that we need.
+  - Each event is represented by a Topic in Google Pub/Sub
+  - If a team is interested in an event, that team will subscribe to that event. Each Subscription
+    is actually a Message Queue.
+  - An event published to a Topic will be distributed to all the Subscriptions it has.
+- Even though we use Google Pub/Sub, the same thing can be achieved on AWS using **SQS** and **SNS** or
+  **Event Bridge**
 
 ![publish-subscribe](/files/2021-07-15-scaling-the-system-at-ar-part-5/publish-subscribe.png)
+
+Let's take a look at a simple flow for syncing Customer and Campaign data across teams in the above
+picture. Imagine that your organization has 3 different teams, **CRM**, **Marketing** and
+**Data Analysis** team. The **CRM** team provides the tool for our users to manage their Customer
+list. The **Marketing** team helps the users to configure and launch automated marketing Campaigns.
+The **Data Analysis** team collects data and give detailed reports to our users.
+
+The Customer objects originated from the CRM team database. If there are any changes to the Customer
+data, the CRM team will publish a corresponding event (CUSTOMER_CREATED, CUSTOMER_UPDATED, CUSTOMER_DELETE,...)
+
+```json
+{
+  "topic": "CUSTOMER_CREATED",
+  "data": {
+    "customer": {
+      ...
+    }
+  }
+}
+```
+
+The Customer data is required to do Marketing Campaign. The Marketing team will subscribe to those
+events via Subscription. As mentioned before, a Subscription s actually a Message Queue. A Message
+handling worker is responsible for consuming those messages and update the team's database based on
+the message value.
+
+Every time an Email is sent out from an Automated Marketing Campaign, the Marketing team will
+send an event to the topic `EMAIL_SENT`. The message will be duplicated into 2 queues
+(Subscriptions) for **CRM** team and **Data Analysis** to do their job.
+
+Here are some benefits of this solution
+
+- Each team has its own data storage and can operate independently from other teams. The team is
+free to choose any technology, database and programming language that is best suited for that team.
+- The system design will move toward the Microservice architecture. A failure in one team will only
+cause the system to be partially down. Your application can continue to function and deliver
+customer value.
+- The team that generates an event doesn't need to care about who will consume the event, reduce the
+external dependencies of the team, reduce the cross-cutting concerns that one team need to handle.
+- When you add another team, no changes need to be made to all the existing teams. Simply create a
+new Subscription for the related events.
+
+Of course, there is no such thing as a free lunch. It also comes with all the drawbacks of a common
+Message Queue system. You will have to deal with eventual consistency, retry and the complexity
+increase problem. [Read more...]({%post_url 2020-04-05-scaling-the-system-at-ar-part-4%}#what-you-need-to-care-when-designing-a-system-that-relies-on-message-queue)
+
+# Data Migration

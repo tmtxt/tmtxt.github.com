@@ -56,7 +56,7 @@ and SQL, the reverse way, for vertical scaling only. However,
   the other one. Let's use them correctly and don't assume that there is a
   Swiss-Army-Knife database that can always operate well at high scale.
 - I have seen many systems running SQL at very high scale, and they still work fine!
-The problem sometimes is just the developers haven't reached the its limit yet.
+The problem, sometimes, is just the developers haven't reached its limit yet.
 - Even if NoSQL is better for scaling, it is not smart to choose a horizontal scaling solution at first.
 Building a product, especially from the scratch, means you have reach out to the market and deliver
   values to the customers quickly. They don't care what kind of technology you use behind. They
