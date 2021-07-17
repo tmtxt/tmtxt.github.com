@@ -28,7 +28,7 @@ use cases that you can think about
   a temporary storage to increase API response time and safety by deferring data processing to a
   later time.
   Read more
-  [Scaling the System at AR - Part 2 - Message Queue for Integration]({%post_url 2020-03-28-scaling-the-system-at-ar-part-2%})
+  [Scaling the System at AR - Part 2 - Message Queue for Integration]({%post_url 2018-08-08-scaling-the-system-at-ar-part-1-data-pre-computation%})
 - A backing service to store Message Values for a Message Queue application
 - A caching database where you know exactly what you need and you can query easily by key value
   (but even in this case, think of other solution in SQL first, like materialized views,

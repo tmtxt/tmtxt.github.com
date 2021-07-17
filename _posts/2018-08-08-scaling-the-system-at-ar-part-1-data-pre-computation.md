@@ -42,6 +42,6 @@ r.table('cachedEmails')
 
 Since those entities usually don’t change very frequently and we have fallback mechanism, the data changes only cause a small performance penalty and it’s quite acceptable. We decided not to update the pre-computed data for simplicity, just delete it and fallback to complex method when required.
 
-If you want, you can read more about RethinkDB index optimisations [here]({%post_url 2018-03-10-some-optimizations-in-rethinkdb-part-1%}).
+If you want, you can read more about RethinkDB index optimisations [here]({%post_url 2020-03-28-scaling-the-system-at-ar-part-2-message-queue-for-integration%}).
 
 # To be continued...

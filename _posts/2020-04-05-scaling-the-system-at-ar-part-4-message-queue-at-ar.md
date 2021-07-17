@@ -8,7 +8,7 @@ thumbnail: /files/ar-logo-1.png
 ---
 
 > Part 3:
-> [Scaling the System at AR - Part 3 - Message Queue in general]({%post_url 2020-03-29-scaling-the-system-at-ar-part-3%})
+> [Scaling the System at AR - Part 3 - Message Queue in general]({%post_url 2020-03-29-scaling-the-system-at-ar-part-3-message-queue-in-general%})
 
 Continue from my previous post, I'm going to demonstrate the internal tool that we use at AR to work
 with **Message Queue**. I will also summarize some of our experience when designing a system with

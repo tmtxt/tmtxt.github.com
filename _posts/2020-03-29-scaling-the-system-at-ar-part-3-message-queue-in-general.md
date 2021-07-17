@@ -8,7 +8,7 @@ thumbnail: /files/ar-logo-1.png
 ---
 
 > Part 2:
-> [Scaling the System at AR - Part 2 - Message Queue for Integration]({%post_url 2020-03-28-scaling-the-system-at-ar-part-2%})
+> [Scaling the System at AR - Part 2 - Message Queue for Integration]({%post_url 2020-03-28-scaling-the-system-at-ar-part-2-message-queue-for-integration%})
 
 In previous post, I mentioned Messages Queue in some specific use cases for Integration
 components. In this post, I'm going to talk about Message Queue in general and how the workflow

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Scaling the System at AR - Part 5 - Message Queue as Publisher/Subscriber pattern"
+title: "Scaling the System at AR - Part 5 - Message Queue for Scaling team"
 description: ""
 categories: [misc]
 tags: []
@@ -134,6 +134,5 @@ new Subscription for the related events.
 
 Of course, there is no such thing as a free lunch. It also comes with all the drawbacks of a common
 Message Queue system. You will have to deal with eventual consistency, retry and the complexity
-increase problem. [Read more...]({%post_url 2020-04-05-scaling-the-system-at-ar-part-4%}#what-you-need-to-care-when-designing-a-system-that-relies-on-message-queue)
+increase problem. [Read more...]({%post_url 2020-04-05-scaling-the-system-at-ar-part-4-message-queue-at-ar%}#what-you-need-to-care-when-designing-a-system-that-relies-on-message-queue)
 
-# Data Migration

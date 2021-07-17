@@ -10,7 +10,7 @@ thumbnail: /files/ar-logo-1.png
 > It has been one and a half year since my first post about this topic :(
 
 Continue from my previous post
-[Scaling the System at AR - Part 1 - Data Pre-Computation]({%post_url 2018-08-08-scaling-the-system-at-ar-part-1%}),
+[Scaling the System at AR - Part 1 - Data Pre-Computation]({%post_url 2018-08-08-scaling-the-system-at-ar-part-1-data-pre-computation%}),
 this time I'm going to talk about one of the most important component of the AR system:
 **The Message Queue**.
 
