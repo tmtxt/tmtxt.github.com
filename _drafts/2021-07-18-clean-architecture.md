@@ -17,12 +17,15 @@ Let's take a look at this very famous Clean Architecture demonstration image
 
 ![Clean Architecture](/files/2021-07-13-clean-architecture/clean-architecture.jpg)
 
-Actually, for me, it was a bit hard to understand when I first read about this. I'd like to re-draw
-it a bit
+To make it simpler, I will re-draw it a bit.
 
-If we draw it to see the data flows
+Here is how the data flow through the application
 
 ![Data Flow](/files/2021-07-13-clean-architecture/data-flow.png)
+
+Here is how the Projects in C# look like. The outer project references the inner one
+
+![Reference](/files/2021-07-13-clean-architecture/reference.png)
 
 The arrows that I drew are also a bit different from the original Clean architecture flow but it's
 actually the same. The Data flow is
@@ -40,3 +43,7 @@ loose-coupling with all those external dependencies.
 Fact: **Naming** is hard. I don't know if the above names are correct. They are not even the ones
 that I used in my code :joy:. Well, names are just names, as long as we understand what they do,
 that's enough.
+
+Fact: You may have more than 3 layers. They are just for demonstration purpose
+
+# Business Layer
