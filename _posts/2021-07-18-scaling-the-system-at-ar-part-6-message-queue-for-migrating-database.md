@@ -4,7 +4,7 @@ title: "Scaling the System at AR - Part 6 - Message Queue for Migrating Database
 description: ""
 categories: [misc]
 tags: []
-thumbnail: /files/ar-logo-1.png
+thumbnail: /files/2021-07-18-scaling-the-system-at-ar-part-6/flow.png
 ---
 
 > Part 5

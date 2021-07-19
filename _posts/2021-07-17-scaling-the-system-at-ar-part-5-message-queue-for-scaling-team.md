@@ -4,7 +4,7 @@ title: "Scaling the System at AR - Part 5 - Message Queue for Scaling team"
 description: ""
 categories: [misc]
 tags: []
-thumbnail: /files/ar-logo-1.png
+thumbnail: /files/2021-07-15-scaling-the-system-at-ar-part-5/publish-subscribe.png
 ---
 
 > Part 4
