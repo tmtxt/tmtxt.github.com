@@ -1,0 +1,142 @@
+---
+layout: post
+title: "Clean architecture with C#/.Net Core and MediatR - Part 1"
+description: ""
+categories: []
+tags: []
+thumbnail:
+---
+
+# Clean Architecture revisit
+
+You may have already seen the famous Clean Architecture circle diagram many times before. I will
+make it simple by just drawing only 3 circles like this
+
+![Reference](/files/2021-07-13-clean-architecture/reference.png)
+
+Each circle is represented by Project in C#. The outer one references to the inner one, not the
+reverse one. The inner one should have no realization of the outer framework that it runs on top.
+
+Fact: **Naming** is hard. I don't know if the above names are correct. They are not even the ones
+that I used in my code :joy:. Well, names are just names, as long as we understand what they do,
+that's enough.
+
+Fact: You may have more than 3 layers. They are just for demonstration purpose
+
+Let's go into the details of each one
+
+# Business Layer
+
+## The Design
+
+This layer contains all the Core Business Logic of the applications and all the interfaces to
+interact with the infrastructure running below. They are pure C#, independent from the framework,
+database or any other external services. It doesn't care if the caller comes from an Http API, a
+Timer Worker or a Script. It also doesn't know if it should read the data from Redis, SQL Server or
+even from another external services. All of those external dependencies are expressed via a set of
+interfaces (with no implementation).
+
+There are several benefits of this layer offers
+- You can easily write unit tests for your core Business application without having to start all the
+underlying infrastructure. Everything is in pure C# so it's very fast to run. It is expected that
+most of your test suites reside here  
+  ![Test Pyramid](/files/2021-07-13-clean-architecture/test-pyramid.png)
+- It is not tight coupling to the underlying infrastructure. You can easily swap the implementation
+for different environments as long as it satisfies the interface. For example, for accessing
+persistent data, you can choose an implementation with cache support to run on Production and
+another one to run for local development. It is also straight forward in case you want to change the
+data storage (migrate to a new database). For instance, the first version of the application sends
+requests to an external services to get the required data. Later one, you have all the data stored
+in your SQL server, simply switch to another implementation to read directly from your local
+database.
+- Different teams/developers can work at the same time. One guy can take care of the business logic
+without having to wait for the data storage to be ready.
+There will be another guy responsible for implementing all the SQL-related feature and then
+integrate them together later.
+
+## The Code base
+
+Here is how the code looks like. It's just a Class Library with nearly no Nuget package installed.
+
+![Business Code](/files/2021-07-13-clean-architecture/business-1.png)
+
+- **Business**: The core Business logic resides at the hear of the project.
+- **Models**: Some necessary models for your application. They are POCO classes, no json annotation
+  or SQL data attributes.
+- **Adapters**: They are just interfaces to interact with the underlying infrastructure, for
+example, to download data from an external source, to query data from a SQL database,...
+- And an **AutofacModule** file (because I use **Autofac**) to register the implementations for the
+Business interfaces.
+
+(Of course, they are just for demonstration purpose. The real one looks much more complicated).
+
+The application logic will assumes that the runtime has already supplied the necessary services
+
+```csharp
+public interface ISendMarketingEmails
+{
+    /// <summary>
+    /// Start sending Marketing Emails for the input Marketing Campaign
+    /// </summary>
+    /// <param name="marketingCampaignId"></param>
+    /// <returns></returns>
+    Task Execute(int marketingCampaignId);
+}
+
+public class SendMarketingEmails : ISendMarketingEmails
+{
+    private readonly IGetContactsByMarketingCampaignId _getContacts;
+    private readonly ISendEmailMessage _sendEmail;
+
+    public SendMarketingEmails(IGetContactsByMarketingCampaignId getContacts, ISendEmailMessage sendEmail)
+    {
+        _getContacts = getContacts;
+        _sendEmail = sendEmail;
+    }
+
+    public async Task Execute(int marketingCampaignId)
+    {
+        // get list of contacts to send
+        var contacts = await _getContacts.Execute(marketingCampaignId);
+
+        // validate contacts
+        contacts = contacts.Where(
+            // some validation logic here
+            c => true
+        ).ToList();
+
+        // get email template
+        var template = new EmailTemplate(); // replace your logic here
+        var emailContent = "my-content";
+
+        // send email
+        await Task.WhenAll(contacts.Select(contact => _sendEmail.Execute(template, contact.Email, emailContent)));
+    }
+}
+```
+
+Test
+
+```csharp
+public class SendMarketingEmailTest
+{
+    public async Task MainFlowTest()
+    {
+        // prepare
+        var mock = AutoMock.GetLoose();
+        var getContacts = mock.Mock<IGetContactsByMarketingCampaignId>();
+        getContacts.Setup(...);
+        var sendEmail = mock.Mock<ISendEmailMessage>();
+        sendEmail.Setup...();
+
+        // act
+        var campaignId = 1;
+        var sendMarketingEmails = new SendMarketingEmails(getContacts.Object, sendEmail.Object);
+        await sendMarketingEmails.Execute(campaignId);
+
+        // assert
+        getContacts.Verify(...);
+    }
+}
+```
+
