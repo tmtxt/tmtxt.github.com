@@ -2,30 +2,45 @@
 layout: post
 title: "Clean architecture with C#/.Net Core and MediatR - Part 1"
 description: ""
-categories: []
+categories: [misc]
 tags: []
-thumbnail:
+thumbnail: /files/2021-07-13-clean-architecture/reference.png
 ---
+
+Nodejs has been a pain point in our code base for years. It used to be the best choice when we
+started building our product but I have never considered it as a good choice for scaling. We
+have been trying to find a better language and a better architecture which can help us scale more in
+the future. I finally decided to go with **C#** and **Clean Architecture**. They are not the best
+one, but they fit with the existing tech stack of the organization.
+
+I will have another series talking about the mistakes in designing application from my experience
+(which is also related the Nodejs code base). In this post, I'm going to summarize how I
+built the new architecture using **Clean Architecture** with C# and some optimizations I applied to
+make it really Clean.
 
 # Clean Architecture revisit
 
-You may have already seen the famous Clean Architecture circle diagram many times before. I will
-make it simple by just drawing only 3 circles like this
+You may have already seen the famous Clean Architecture circle diagram many times before. It's a
+complicated for me so I will
+make it simple by just drawing these 3 circles.
 
 ![Reference](/files/2021-07-13-clean-architecture/reference.png)
 
-Each circle is represented by Project in C#. The outer one references to the inner one, not the
-reverse one. The inner one should have no realization of the outer framework that it runs on top.
+<!-- more -->
 
-Fact: **Naming** is hard. I don't know if the above names are correct. They are not even the ones
-that I used in my code :joy:. Well, names are just names, as long as we understand what they do,
+Each circle is represented by Project in C#. The outer one references to the inner one, not the
+reverse way. The inner one should have no realization of the outer framework that it runs on top.
+
+**Fact**: Naming is hard. I don't really know if the above names are correct. They are not even the
+ones that I used in my code 😂. Well, names are just names, as long as we understand what they do,
 that's enough.
 
-Fact: You may have more than 3 layers. They are just for demonstration purpose
+**Fact**: You may have more than 3 layers (any number of layers that you want). I will keep it
+simple here.
 
 Let's go into the details of each one
 
-# Business Layer
+# 1. Business Layer
 
 ## The Design
 
