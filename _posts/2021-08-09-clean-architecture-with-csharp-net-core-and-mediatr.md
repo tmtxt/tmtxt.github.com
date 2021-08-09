@@ -26,10 +26,10 @@ make it simple by just drawing these 3 circles.
 
 ![Reference](/files/2021-07-13-clean-architecture/reference.png)
 
-<!-- more -->
-
 Each circle is represented by a Project in C#. The outer one references to the inner one, not the
 reverse way. The inner one should have no realization of the outer framework that it runs on top.
+
+<!-- more -->
 
 **Fact**: Naming is hard. I don't really know if the above names are correct. They are not even the
 ones that I used in my code 😂. Well, names are just names, as long as we understand what they do,
