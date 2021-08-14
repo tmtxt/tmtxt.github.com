@@ -48,6 +48,8 @@ steps
 - The final result is a base64-encoded string containing the `Salted__` string at the beginning
   followed by the 8byte **salt** and the actual ciphertext.
 
+<!-- more -->
+
 > Simply base64-decode the above string to verify, we get this result `Salted__8(�%n�d��>���廱�/X�h��`
 
 However, I couldn't find the equivalent function of `EVP_BytesToKey` in C#. And yeah,
