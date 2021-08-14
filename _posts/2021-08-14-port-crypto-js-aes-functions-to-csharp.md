@@ -2,7 +2,7 @@
 layout: post
 title: "Port crypto-js AES functions to C#"
 description: ""
-categories: []
+categories: [misc]
 tags: []
 thumbnail:
 ---
