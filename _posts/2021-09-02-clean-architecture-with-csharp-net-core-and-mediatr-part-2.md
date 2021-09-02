@@ -53,6 +53,8 @@ public class GetContactsByMarketingCampaignId : IGetContactsByMarketingCampaignI
 }
 ```
 
+<!-- more -->
+
 Here are something to notice about this layer
 - It abstracts all the complex logic to connect to external dependencies. The main business logic
   doesn't have to care whether it is reading from a cache server or a persistent storage. This makes
@@ -104,3 +106,5 @@ public class GetContactsByMarketingCampaignIdTest : IDisposable
     }
 }
 ```
+
+# To be continued...
