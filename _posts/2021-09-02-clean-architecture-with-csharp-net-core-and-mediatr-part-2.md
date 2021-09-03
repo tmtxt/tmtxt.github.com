@@ -7,7 +7,7 @@ tags: []
 thumbnail:
 ---
 
-> [Clean architecture with C#/.Net Core and MediatR - Part 1]({post_url 2021-08-09-clean-architecture-with-csharp-net-core-and-mediatr%})
+> [Clean architecture with C#/.Net Core and MediatR - Part 1]({%post_url 2021-08-09-clean-architecture-with-csharp-net-core-and-mediatr%})
 
 # 2. Adapter Layer
 
