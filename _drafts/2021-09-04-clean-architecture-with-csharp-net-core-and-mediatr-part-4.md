@@ -65,6 +65,7 @@ public class InsertUser
 
 In this simplest form, it doesn't look so different from the way we usually do with a normal
 Interface. However, let's imagine what will happen when you want to add these requirements
+
 - Log the related information to debug later.
 - Track the process metrics to monitor and analyze performance.
 - Lock the process to avoid race-condition.
@@ -73,6 +74,8 @@ Interface. However, let's imagine what will happen when you want to add these re
 - Other cross-cutting concerns?...
 - A more important question: How to group related requests and re-use these cross-cutting
   concern handlers?
+
+<!-- more -->
 
 # MediatR Request Pipeline - A comprehensible solution
 
