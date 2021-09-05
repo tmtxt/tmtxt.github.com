@@ -9,7 +9,7 @@ thumbnail:
 
 > [Clean architecture with C#/.Net Core and MediatR - Part 3]({%post_url 2021-09-03-clean-architecture-with-csharp-net-core-and-mediatr-part-3%})
 
-# MediatR FTW
+# The MediatR Library
 
 Clean Architecture is an Interface design. Everything is connected via Interfaces and their hidden
 Implementations. A request comes from the Framework layer to the Business handler via a Business
