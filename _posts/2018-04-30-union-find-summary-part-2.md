@@ -40,7 +40,7 @@ example
 |Method|Complexity||
 |----|----|----|
 |`isConnected(p, q)`|O(1)|Only 1 call to check the id of the item|
-|`union(p, q)`|O(n^2)|Have to update id of both items all other items having the same id|
+|`union(p, q)`|O(n^2)|Have to update id of both items and all other items having the same id|
 {: .table }
 
 => `union` is too slow for `Quick Find`.
