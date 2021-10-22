@@ -38,6 +38,8 @@ class Median {
 }
 ```
 
+<!-- more -->
+
 **Find median**
 - Depending on which heap containing more item, it will be the max or the mean, always the first
   item in the array.
