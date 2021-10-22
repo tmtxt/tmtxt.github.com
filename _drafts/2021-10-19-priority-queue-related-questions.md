@@ -110,10 +110,10 @@ and space proportional to <math xmlns="http://www.w3.org/1998/Math/MathML"><msup
 and space proportional to <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math>.
 
 Actually, I couldn't think of the solution for this. I checked the answers on Stackoverflow and on
-the internet, took me to long to understand...
+the internet, took me too long to understand...
 
 Start with the above matrix. However, since half of the matrix is duplicated, we only need to care
-about the other half. Of course, the matrix will not be created to save memory
+about the other half. Of course, the matrix will never be created to save memory
 
 ```
   | 0    1    2    3    4    5
