@@ -111,3 +111,7 @@ public Key delMax() {
     return max;
 }
 ```
+
+# To be continued
+
+> Part 2 [Binary Heap and Heapsort Summary - Part 2 - Heapsort]({% post_url 2018-06-16-binary-heap-heapsort-summary-part-2 %})
