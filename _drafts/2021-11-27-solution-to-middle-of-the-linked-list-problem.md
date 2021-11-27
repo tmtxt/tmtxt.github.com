@@ -39,7 +39,10 @@ The number of nodes in the list is in the range [1, 100].
 
 <!-- more -->
 
-Code (C#)
+Solution (C#)
+
+Maintain 2 pointers, the `fast` and `slow` pointers. The fast one traverse twice as fast as the slow
+one.
 
 ```csharp
 /**
