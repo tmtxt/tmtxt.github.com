@@ -4,8 +4,10 @@ title: "Solution to Two Sum with Sorted array problem"
 description: ""
 categories: [algorithm]
 tags: []
-thumbnail: 
+thumbnail:
 ---
+
+> Leetcode: [Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
 
 Given a **1-indexed** array of integers `numbers` that is already **sorted in non-decreasing
 order**, find two numbers such that they add up to a specific `target` number. Let these two numbers
@@ -53,6 +55,8 @@ Solution: Maintain 2 pointers, one from the beginning of the array and the other
 For each loop, compute the sum of `nums[i]` and `nums[j]`. If the sum is smaller than the target,
 that means you need a bigger number. Since the array is already sort, move `i` up one position.
 Otherwise, decrease `j` by 1. Repeat until you find the correct pair.
+
+Working code in C#
 
 ```csharp
 public class Solution

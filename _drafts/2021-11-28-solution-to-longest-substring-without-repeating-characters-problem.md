@@ -7,6 +7,8 @@ tags: []
 thumbnail:
 ---
 
+> Leetcode: [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+
 Given a string `s`, find the length of the **longest substring** without repeating characters.
 
 Example 1
@@ -69,6 +71,8 @@ This can be illustrated like this
 ![Alt Text](/files/2021-11-28-solution-to-longest-substring-without-repeating-characters-problem/7.png)
 
 ![Alt Text](/files/2021-11-28-solution-to-longest-substring-without-repeating-characters-problem/8.png)
+
+Working code in C#
 
 ```csharp
 public class Solution {

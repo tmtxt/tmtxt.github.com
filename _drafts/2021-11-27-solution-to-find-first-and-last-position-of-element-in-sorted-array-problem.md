@@ -1,11 +1,13 @@
 ---
 layout: post
-title: "Solution to Find First and Last Position of Element in Sorted Array"
+title: "Solution to Find First and Last Position of Element in Sorted Array problem"
 description: ""
 categories: [algorithm]
 tags: []
 thumbnail:
 ---
+
+> Leetcode:
 
 Given an array of integers `nums` sorted in non-decreasing order, find the starting and ending position of a given `target` value.
 

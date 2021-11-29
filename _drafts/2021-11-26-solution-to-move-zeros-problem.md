@@ -1,23 +1,26 @@
 ---
 layout: post
-title: "Solution to Move Zeros"
+title: "Solution to Move Zeros problem"
 description: ""
 categories: [algorithm]
 tags: []
-thumbnail: 
+thumbnail:
 ---
+
+> Leetcode: [Move Zeros](https://leetcode.com/problems/move-zeroes/ )
 
 Given an integer array `nums`, move all `0`'s to the end of it while maintaining the relative order of the non-zero elements.
 
-Note: that you must do this in-place without making a copy of the array.
+**Note**: that you must do this in-place without making a copy of the array.
 
-Examples
-```
 Example 1
+```
 Input: nums = [0,1,0,3,12]
 Output: [1,3,12,0,0]
+```
 
 Example 2
+```
 Input: nums = [0]
 Output: [0]
 ```
@@ -28,12 +31,14 @@ Constraints
 -231 <= nums[i] <= 231 - 1
 ```
 
+<!-- more -->
+
 Solution: Maintain 2 pointers, both starting from the beginning of the array. The first pointer
 (`i`) traverses the array. If `nums[i]` is `0`, skip to the next one. Otherwise, move `nums[i]` to
 `nums[j]` and increase `j`. At the end, all the non-zero numbers will be shifted to the beginning
 of the array.
 
-<!-- more -->
+Working code in C#
 
 ```csharp
 public class Solution {

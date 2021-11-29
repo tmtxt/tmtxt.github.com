@@ -1,25 +1,28 @@
 ---
 layout: post
-title: "Solution to Rotate Array"
+title: "Solution to Rotate Array problem"
 description: ""
 categories: [algorithm]
 tags: []
 thumbnail:
 ---
 
-> Given an array, rotate the array to the right by k steps, where k is non-negative.
+> Leetcode [Rotate Array](https://leetcode.com/problems/rotate-array/)
 
-Examples
+Given an array, rotate the array to the right by `k` steps, where `k` is non-negative.
+
+Example 1
 ```
-Example 1:
 Input: nums = [1,2,3,4,5,6,7], k = 3
 Output: [5,6,7,1,2,3,4]
 Explanation:
 rotate 1 steps to the right: [7,1,2,3,4,5,6]
 rotate 2 steps to the right: [6,7,1,2,3,4,5]
 rotate 3 steps to the right: [5,6,7,1,2,3,4]
+```
 
-Example 2:
+Example 2
+```
 Input: nums = [-1,-100,3,99], k = 2
 Output: [3,99,-1,-100]
 Explanation:
@@ -35,6 +38,8 @@ Constraints
 ```
 
 <!-- more -->
+
+Here are the working code in C#
 
 Solution 1: Time `O(n)`, Space `O(n)`
 ```csharp
