@@ -2,7 +2,7 @@
 layout: post
 title: "Async/Await in C# and Javascript"
 description: ""
-categories: [misc]
+categories: [.net,javascript]
 tags: []
 thumbnail: /files/2018-11-15-async-await-in-c-and-javascript/async-await.png
 ---

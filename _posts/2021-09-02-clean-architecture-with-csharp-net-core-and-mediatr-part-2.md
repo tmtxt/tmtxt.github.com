@@ -2,7 +2,7 @@
 layout: post
 title: "Clean architecture with C#/.Net Core and MediatR - Part 2"
 description: ""
-categories: [misc]
+categories: [.net]
 tags: []
 thumbnail:
 ---

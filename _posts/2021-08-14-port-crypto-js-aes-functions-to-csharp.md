@@ -2,7 +2,7 @@
 layout: post
 title: "Port crypto-js AES functions to C#"
 description: "Okay, I'm porting some modules from Nodejs to C# and I couldn't find any built-in modules or libraries to do this so I had to implement it manually, luckily, with the help from Stackoverflow."
-categories: [misc]
+categories: [.net]
 tags: []
 thumbnail:
 ---

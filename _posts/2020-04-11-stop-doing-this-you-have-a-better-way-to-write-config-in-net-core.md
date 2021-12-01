@@ -2,7 +2,7 @@
 layout: post
 title: "Configuration in .Net Core"
 description: ""
-categories: [misc]
+categories: [.net]
 tags: []
 thumbnail:
 ---
