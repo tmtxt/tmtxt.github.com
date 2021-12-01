@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Relase of tmtxt-async-tasks and Update of tmtxt-dired-async"
+title: "Release of tmtxt-async-tasks and Update of tmtxt-dired-async"
 description: ""
 category: emacs
-thumbnail: 
+thumbnail:
 showtn: no
 tags: [emacs]
 ---
