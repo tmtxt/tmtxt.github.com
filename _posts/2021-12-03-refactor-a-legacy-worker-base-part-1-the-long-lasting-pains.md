@@ -217,7 +217,7 @@ As you can see, there are various issues here.
   just one line of code, we will have to run through all the above stuff.
 - It is hard to enable/disable one specific feature. In order to do that, we have to update our code
   with a new `if`/`else` clause (which also makes the `start` function become longer).
-- Scope management is really. We actually don't have anything for scope handling beside the function
+- Scope management is awful. We actually don't have anything for this job beside the function
   scope. A worker instance is actually just a collection of functions, not a scope container. As a
   result, we have to pass all the context data to all the subsequent functions.
 
