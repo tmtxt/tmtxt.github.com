@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Refactor a legacy Worker Base - Part 1 - The long lasting pain"
-description: ""
+description: "How I identified the problems with the current WorkerBase class and improved it with a better version in C#"
 categories: [misc]
 tags: []
 thumbnail:
