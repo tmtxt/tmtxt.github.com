@@ -1,7 +1,7 @@
 ---
 layout: post
 showtn: yes
-title: "Emacs - Setting up Perfect C/C++ programming environment - Part 2"
+title: "Emacs - Setting up C/C++ programming environment - Part 2"
 description: ""
 category: emacs
 thumbnail: /files/thumbnails/emacs.png
@@ -10,7 +10,7 @@ tags: [emacs, programming environment]
 
 
 This is a continue to the first part in this post
-[Emacs - Setting up perfect environment for C/C++ Programming - Part 1](/2013/03/10/emacs-setting-up-perfect-environment-for-cc-programming/).
+[Emacs - Setting up environment for C/C++ Programming - Part 1](/2013/03/10/emacs-setting-up-perfect-environment-for-cc-programming/).
 This time, I'll demonstrate some more tips to help make your Emacs a powerful
 IDE for C/C++ programming
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 showtn: yes
-title: "Emacs - Setting up perfect environment for C/C++ Programming - Part 1"
+title: "Emacs - Setting up environment for C/C++ Programming - Part 1"
 description: ""
 category: emacs
 thumbnail: /files/thumbnails/emacs.png
