@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Refactor a legacy Worker Base - Part 1 - All the pains"
+title: "Refactor a legacy Worker Base - Part 1 - The long lasting pains"
 description: ""
 categories: [misc]
 tags: []
@@ -78,6 +78,8 @@ class Worker2 extends WorkerBase {
 const worker = new Worker1();
 await worker.start();
 ```
+
+<!-- more -->
 
 This is simple and does the job well.
 
