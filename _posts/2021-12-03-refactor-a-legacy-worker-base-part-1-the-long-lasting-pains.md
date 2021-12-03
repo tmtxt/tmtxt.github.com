@@ -223,8 +223,8 @@ As you can see, there are various issues here.
 
 The most trivial solution is, of course, to separate them into smaller functions to make it shorter.
 
-> IMO, it's the solution for the kids!
+> IMO, it's the solution of a fresher.
 
-Let's see how I built them as **composable components** in C#
+A better way would be to build them as **composable components**.
 
 # To be continued...
