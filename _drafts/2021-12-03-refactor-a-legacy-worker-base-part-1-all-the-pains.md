@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Refactor a legacy Worker Base - Part 1 - The Problems"
+title: "Refactor a legacy Worker Base - Part 1 - All the pains"
 description: ""
 categories: [misc]
 tags: []
