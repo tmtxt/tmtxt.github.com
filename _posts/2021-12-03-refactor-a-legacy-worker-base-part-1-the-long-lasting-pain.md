@@ -222,8 +222,8 @@ As you can see, there are various issues here.
   result, we have to pass all the context data to all the subsequent functions.
 
 The most trivial solution is, of course, to separate them into smaller functions to make it shorter.
-
-> IMO, it's the solution of a fresher.
+However, it doesn't actually solve the problem, just moves the complexity from one place to
+another place.
 
 A better way would be to build them as **composable components**.
 
