@@ -162,3 +162,5 @@ builder.RegisterType<MessageHandlerContext>().AsSelf().InstancePerLifetimeScope(
   different runtime (Http Server, Timer worker, One-of script, Lambda function,...)
 
 # To be continued...
+
+Part 3: [Refactor a legacy Worker Base - Part 3 - A Better Design]({% post_url 2021-12-06-refactor-a-legacy-worker-base-part-3-a-better-design %})

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Refactor part 3"
-description: ""
+title: "Refactor a legacy Worker Base - Part 3 - A Better Design"
+description: "Now, it's time to rewrite the WorkerBase class better"
 categories: [.net,javascript]
 tags: []
 thumbnail:
@@ -27,6 +27,8 @@ middlewares
 - ...
 
 ![Worker middlewares](/files/2021-12-04-refactor-a-legacy-worker-base-part-2/worker-middlewares.png)
+
+<!-- more -->
 
 # MediatR came to the rescue again!
 
@@ -215,3 +217,11 @@ This whole new architecture brings a lot of benefits for the team
 - Depending on the environment, you can attach/detach any behaviors that you want, simply configure
   it in the IOC registration code. For example, you may want to disable the Monitoring behavior in
   Test environment or enable a Caching logic for Production only. Everything is so straightforward.
+
+# To be continued...
+
+Maybe next
+
+- Refactor a Microservice system
+- Migrate a feature from NoSQL (Rethinkdb) to SQL (MSSQL)
+- ...
