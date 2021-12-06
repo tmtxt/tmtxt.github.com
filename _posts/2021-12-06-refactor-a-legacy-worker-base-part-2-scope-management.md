@@ -16,6 +16,8 @@ We are familiar with these tools and they are already available as standard patt
 # First thing first: An IOC Container
 
 > We learnt this at university. Why the heck did we forget this?
+> Is it because the program language allows us to make this mistake so easily or is it because of
+> the community that encourages the bad behaviors everywhere?
 
 As I mentioned earlier, scope management of the legacy codebase is awful. We actually used a
 function to surround the scope of a message and the derived class is actually just a collection of
