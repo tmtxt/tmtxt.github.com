@@ -229,3 +229,5 @@ another place.
 A better way would be to build them as **composable components**.
 
 # To be continued...
+
+Part 2: [Refactor a legacy Worker Base - Part 2 - Scope Management]({% post_url 2021-12-06-refactor-a-legacy-worker-base-part-2-scope-management %})
