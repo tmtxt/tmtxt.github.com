@@ -215,7 +215,7 @@ As you can see, there are various issues here.
 - It is hard to test since all the logic are centralized into one place. The above class contains
   not only the primary logic but also the other cross-cutting concerns. Every time we want to test
   just one line of code, we will have to run through all the above stuff.
-- It is hard to enable/disable one specific feature. All the logic are tight-coupling together. In
+- It is hard to enable/disable one specific feature. All the logic are tightly coupling together. In
   order to disable one, we have to update our code
   with a new `if`/`else` clause (which also makes the `start` function become longer).
 - Scope management is awful. We actually don't have anything for this job beside the function

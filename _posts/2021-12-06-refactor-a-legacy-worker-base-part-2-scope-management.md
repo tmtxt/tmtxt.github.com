@@ -152,4 +152,13 @@ example
 builder.RegisterType<MessageHandlerContext>().AsSelf().InstancePerLifetimeScope();
 ```
 
+# The benefits?
+
+- Scope management becomes dead easy, even for nested scopes.
+- The components are loosely coupling, that means you can easily switch the implementation in
+  different environments (Prod, Staging, Test)
+- Since the components are managed by the IOC Container, which is independent from the business
+  logic, we can easily even switch the IOC Container logic to embed the Handler class logic into a
+  different runtime (Http Server, Timer worker, One-of script, Lambda function,...)
+
 # To be continued...

@@ -1,157 +1,22 @@
 ---
 layout: post
-title: "Refactor part 2"
+title: "Refactor part 3"
 description: ""
-categories: [algorithm]
+categories: [.net,javascript]
 tags: []
 thumbnail:
 ---
 
-> Part 1:
+> Part 2:
 
-The refactoring solution I presented in this post is the solution that I wrote in C#. It doesn't
-mean you cannot do this in Nodejs. It is just because the team is migrating away from Nodejs to C#.
-We are familiar with these tools and they are already available as standard pattern in C#.
+# Rewrite the WorkerBase class in a better way
 
-# First thing first: An IOC Container
+After fixing the Scope management problem, it's time to rewrite the `WorkerBase` class in a way that
+the components are loosely coupling, composable and detachable. The solution turned out to be a very
+simple approach. It's the middleware design that is very common in popular Web server frameworks
+(ASP.Net Core, Express.js, Koa.js,...).
 
-> We learnt this at university. Why the heck did we forget this?
-
-As I mentioned earlier, scope management of the legacy codebase is awful. We actually used a
-function to surround the scope of a message and the derived class is actually just a collection of
-function, not a scope container. Every time we want to activate a new method, we have to pass all
-the parameters downstream.
-
-```javascript
-class WorkerBase {
-  async start() {
-    let message;
-    do {
-      message = await pullMessages(1);
-      const context = this.buildContext(message);
-
-      // this processMessage function wrap the scope of a message
-      await this.processMessage(message, context);
-    } while (message != null);
-  }
-}
-
-// Worker service 1
-class Worker1 extends WorkerBase {
-  myProp = 1;
-
-  async processMessage(message, context) {
-    logic1(message, context);
-    logic2(message, context);
-
-    myProp++; // this will mutate myProp and affect other message
-  }
-
-  logic1(message, context) {}
-
-  logic2(message, context) {}
-}
-```
-
-> We wrote JS in an OOP way but didn't apply the OOP best practices!
-
-The solution is so simple and is a standard pattern, supported everywhere in C# world. Simply use
-any IOC container to create, resolve components and manage the scope. Here is a simple example with
-**MediatR** and **Autofac**
-
-The `WorkerBase` class
-
-```csharp
-public class WorkerBase<TMessage>
-{
-    private readonly ILifetimeScope _scope;
-
-    public WorkerBase(ILifetimeScope scope)
-    {
-        _scope = scope;
-    }
-
-    public async Task Start()
-    {
-        TMessage message;
-        do
-        {
-            var message = await PullMessages<TMessage>();
-            await ProcessMessage(message);
-        } while (message != null);
-    }
-
-    private async Task ProcessMessage(TMessage message)
-    {
-        await using var innerScope = _scope.BeginLifetimeScope();
-
-        // build context metadata
-        var workerContext = innerScope.Resolve<MessageHandlerContext>();
-        workerContext.MessageId = message.MessageId;
-
-        // send to handler
-        var mediator = innerScope.Resolve<IMediator>();
-        await mediator.Send(message.Value);
-    }
-}
-```
-
-and then in the MediatR Handler class, simply resolve the context object from the constructor
-
-```csharp
-// The instance of this class is actually a container just for this Message scope
-public class Worker1
-{
-    // The Request is also the model for the Message body
-    public class Request : IRequest
-    {
-        public Guid ClientId { get; set; }
-    }
-
-    public class Handler : IRequestHandler<Request>
-    {
-        private readonly MessageHandlerContext _context;
-
-        // resolve scope item from here
-        public Handler(MessageHandlerContext context)
-        {
-            _context = context;
-        }
-
-        public async Task<Unit> Handle(Request request, CancellationToken cancellationToken)
-        {
-            Logic1(); // no need to pass all data downstream
-            Logic2();
-        }
-
-        private void Logic1()
-        {
-            var messageId = _context.MessageId;
-            // other logic...
-        }
-
-        private void Logic2()
-        {
-            var messageId = _context.MessageId;
-            // other logic...
-        }
-    }
-}
-```
-
-Of course, you need to register these items as scoped components instead of singleton ones, for
-example
-
-```csharp
-// register with Autofac
-builder.RegisterType<MessageHandlerContext>().AsSelf().InstancePerLifetimeScope();
-```
-
-# Rewrite the WorkerBase class
-
-The solution turned out to be a very simple approach. It's the middleware design that you have seen
-in standard web servers.
-
+In case you don't know what middleware is
 (I borrowed the middleware pipeline image from [ASP.Net Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-6.0))
 
 ![Asp.Net Core Middlewares](/files/2021-12-04-refactor-a-legacy-worker-base-part-2/asp.net-middlewares.png)
