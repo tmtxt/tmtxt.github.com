@@ -149,3 +149,5 @@ example
 // register with Autofac
 builder.RegisterType<MessageHandlerContext>().AsSelf().InstancePerLifetimeScope();
 ```
+
+# To be continued...
