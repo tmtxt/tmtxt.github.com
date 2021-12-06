@@ -4,7 +4,7 @@ title: "Refactor a legacy Worker Base - Part 3 - A Better Design"
 description: "Now, it's time to rewrite the WorkerBase class better"
 categories: [.net,javascript]
 tags: []
-thumbnail:
+thumbnail: /files/2021-12-04-refactor-a-legacy-worker-base-part-2/worker-middlewares.png
 ---
 
 > Part 2: [Refactor a legacy Worker Base - Part 2 - Scope Management]({% post_url 2021-12-06-refactor-a-legacy-worker-base-part-2-scope-management %})
