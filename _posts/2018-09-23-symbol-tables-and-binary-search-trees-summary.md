@@ -103,7 +103,7 @@ public class ST<Key extends Comparable<Key>, Value> {
 
 Binary Search Tree is a binary tree in symmetric order. Each node has a key, and every node's key is
 - Larger than all keys in its left subtree.
-- Sgmaller than all keys in its right subtree
+- Smaller than all keys in its right subtree
 
 ![BST](/files/2018-09-10-symbol-tables-and-binary-search-trees-summary/bst1.png)
 
