@@ -10,7 +10,7 @@ thumbnail:
 Just an interview question 🙃
 
 > The interview question: Re-implement Javascript Promise from scratch. The implementation should
-> support **chaining** (of course, asynchronously).
+> support **chaining** (asynchronously, of course).
 
 # Promise API
 
@@ -40,6 +40,8 @@ myPromise
   .then(handleResolvedC)
   .catch(handleRejectedAny);
 ```
+
+<!-- more -->
 
 # A very basic implementation
 
@@ -212,11 +214,11 @@ new MyPromise((resolve, reject) => {
 
 Other test cases, see below.
 
-# Promise of Promise
+# Promise of Promise of Promise
 
 The `handleResolved` and `handleRejected` functions can also return a Promise, sghhhhh. 🥲
 
-Ok, simply add a check if `handleResolved` returns a Promise and let it resolve/reject itself.
+Ok, simply add a check if `handleResolved` returns a Promise and let that Promise resolve/reject itself.
 
 ```typescript
 this.handleResolved = (outerRes) => {
