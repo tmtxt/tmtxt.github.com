@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Implement Promise"
-description: ""
-categories: []
+title: "Implement Javascript Promise from scratch"
+description: "Just an interview question... 🙃"
+categories: [javascript]
 tags: []
 thumbnail:
 ---
