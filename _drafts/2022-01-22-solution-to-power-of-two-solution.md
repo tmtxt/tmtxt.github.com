@@ -74,7 +74,7 @@ If we minus each number by 1, we get a new number with all bits are `true` (all 
 If we use `&` bitwise operator between `n` and `n-1`, the result will be `0`.
 
 |Decimal|Binary|Result|
-|---|---|
+|---|---|---|
 |2 & 1|10 & 01|00|
 |4 & 3|100 & 011|000|
 |8 & 7|1000 & 0111|0000|
