@@ -42,6 +42,8 @@ Output: false
 
 <!-- more -->
 
+**Solution**
+
 Loops/Recursion seems quite straight forward. Let's talk about bitwise operators.
 
 > This is the first time I have ever used this...
