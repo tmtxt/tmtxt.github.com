@@ -91,3 +91,5 @@ public class Solution
     }
 }
 ```
+
+> And how the hell can anybody think of this solution? 😳
