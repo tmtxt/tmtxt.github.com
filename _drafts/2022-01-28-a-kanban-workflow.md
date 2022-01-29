@@ -20,3 +20,5 @@ swarming - pull from right
 definition of done
 
 ci/cd system
+
+delegate
