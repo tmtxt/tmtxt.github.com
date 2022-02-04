@@ -2,7 +2,7 @@
 layout: post
 title: "A Kanban workflow"
 description: ""
-categories: []
+categories: [misc]
 tags: []
 thumbnail:
 ---
