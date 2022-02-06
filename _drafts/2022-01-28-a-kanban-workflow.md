@@ -1,19 +1,26 @@
 ---
 layout: post
-title: "A Kanban workflow"
+title: "Some Kanban tips"
 description: ""
 categories: [misc]
 tags: []
 thumbnail:
 ---
 
-agile and scrum
+Google
 
-changing to kanban
+In this post, I will just show some tips/techniques that I used when I worked for AR to make our
+Kanban workflow become more efficient.
+
+# Small Tasks
+
+
 
 small iteration
 
 multiple trips to the mountain
+
+# Swarming
 
 swarming - pull from right
 
