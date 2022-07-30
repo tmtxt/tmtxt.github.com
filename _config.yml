@@ -10,27 +10,7 @@ markdown: kramdown
 url: https://truongtx.me
 plugins: [jekyll-paginate]
 
-# Themes are encouraged to use these universal variables
-# so be sure to set them if your theme uses them.
-#
-title : Trường TX Blog
-tagline:
+title : TruongTX Blog
 author :
-  name : Trường TX
+  name : TruongTX
   email : me@truongtx.me
-  github : tmtxt
-  twitter : mr_truong_tx
-  facebook : mr.truong.tx
-  linkedin : tmtxt
-  google_plus : TrầnXuânTrường
-  stack_exchange: 3687663
-
-# The production_url is only used when full-domain names are needed
-# such as sitemap.txt
-# Most places will/should use BASE_PATH to make the urls
-#
-# If you have set a CNAME (pages.github.com) set your custom domain here.
-# Else if you are pushing to username.github.com, replace with your username.
-# Finally if you are pushing to a GitHub project page, include the project name at the end.
-#
-production_url : http://truongtx.me
