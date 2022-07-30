@@ -32,7 +32,7 @@ declaration section. Just add one more property called thumbnail for it.
 layout: post
 title: "Thumbnail Post List for Jekyll Bootstrap"
 description: ""
-category: 
+category:
 thumbnail: /files/2013-01-05-thumbnail-post-list-for-jekyll-bootstrap/thumbnail.png
 tags: [tutorial, thumbnail, post, jekyll, bootstrap]
 {% endhighlight %}
@@ -80,7 +80,7 @@ before.
 First select 3 latest posts to display in the 3 column using the Bootstrap
 layout. Add these code to where you want them to appear.
 
-{% highlight html %}
+```html
 <div class="row">
   {{ "{% for post in site.posts limit:3 "}}%}
   <div class="span4">
@@ -102,7 +102,7 @@ layout. Add these code to where you want them to appear.
   </div>
   {{ "{% endfor "}}%}
 </div>
-{% endhighlight %}
+```
 
 In the code above, replace **/images/nothumbnail.jpg** with the link to your no
 thumbnail image. The <b>{{ "{{ post.content | strip_html | truncatewords:20 "}}}}</b> is the preview of post, which is html stripped and truncated to 20
@@ -122,7 +122,7 @@ liquid for loop: **limit:15** and **offset:3**
 
 Add this code to where you want it to display
 
-{% highlight html %}
+```html
 {{ "{% for post in site.posts limit:15 offset:3 "}}%}
 <hr />
 <div class="row">
@@ -140,7 +140,7 @@ Add this code to where you want it to display
   </div>
 </div>
 {{ "{% endfor "}}%}
-{% endhighlight %}
+```
 
 Here is the demo image
 

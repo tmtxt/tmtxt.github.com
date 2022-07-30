@@ -13,17 +13,17 @@ After a while googling for making a list of lastest posts in Jekyll, I finally
 found the solution. Simply add this code to any page you want the list to
 appear.
 
-{% highlight html %}
-<ul class="posts">  
-	{{ "{% for post in site.posts limit:20 "}}%}  
-	   <li>  
-		   <span>{{ "{{ post.date | date_to_string "}}}}</span> &raquo;  
-		   <a href="{{ "{{ BASE_PATH "}}}}{{ "{{ post.url "}}}}">  
-		   {{ "{{ post.title "}}}}</a>  
-	   </li>  
-	{{ "{% endfor "}}%}  
+```html
+<ul class="posts">
+	{{ "{% for post in site.posts limit:20 "}}%}
+	   <li>
+		   <span>{{ "{{ post.date | date_to_string "}}}}</span> &raquo;
+		   <a href="{{ "{{ BASE_PATH "}}}}{{ "{{ post.url "}}}}">
+		   {{ "{{ post.title "}}}}</a>
+	   </li>
+	{{ "{% endfor "}}%}
 </ul>
-{% endhighlight %}
+```
 
 <!-- more -->
 

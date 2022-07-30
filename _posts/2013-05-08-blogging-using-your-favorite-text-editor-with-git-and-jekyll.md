@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Blogging using your favorite Text editor with Git and Jekyll - Part 1"
+title: "Blogging using your favorite Text editor with Git and Jekyll Bootstrap - Part 1"
 description: ""
 category: jekyll
-thumbnail: 
+thumbnail:
 showtn: yes
 tags: [git, jekyll, blog]
 ---
