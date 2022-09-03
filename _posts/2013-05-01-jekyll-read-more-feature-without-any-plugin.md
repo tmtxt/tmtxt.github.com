@@ -4,10 +4,11 @@ showtn: yes
 title: "Jekyll - Read More without plugin"
 description: ""
 category: jekyll
-thumbnail: 
+thumbnail:
 tags: [jekyll]
 ---
 
+> Update: Now you can simply use <https://jekyllrb.com/docs/posts/#post-excerpts>
 
 Jekyll does not offer Preview post feature by default. There are plenty of
 plugins that can help us achieve that task. However, since many Jekyll sites are
@@ -24,9 +25,11 @@ First, open a post and add this line where you want to split it. The text before
 it will be converted to html (if in markdown) and then show in the preview
 section.
 
-{% highlight html %}
 <!-- more -->
-{% endhighlight %}
+
+```html
+<!-- more -->
+```
 
 # Display the Preview
 

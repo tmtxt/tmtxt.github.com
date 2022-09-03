@@ -16,3 +16,5 @@ title : TruongTX Blog
 author :
   name : TruongTX
   email : me@truongtx.me
+
+excerpt_separator: "<!-- more -->"
