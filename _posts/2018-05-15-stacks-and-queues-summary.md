@@ -19,27 +19,30 @@ Last In First Out
 Maintain a pointer to the first item of the linked-list. Add or remove are simply to update that
 pointer.
 
-```java
-public class LinkedStackOfStrings {
-    private Node first = null;
+```typescript
+class Node {
+  item: string;
+  next: Node;
 
-    private class Node {
-        String item;
-        Node next;
-    }
+  constructor(item: string, next: Node) {
+    this.item = item;
+    this.next = next;
+  }
+}
 
-    public void push(String item) {
-        Node oldfirst = first;
-        first = new Node();
-        first.item = item;
-        first.next = oldfirst;
-    }
+class Stack {
+  first: Node;
 
-    public String pop() {
-        String item = first.item;
-        first = first.next;
-        return item;
-    }
+  push = (item: string): void => {
+    const oldFirst = this.first;
+    this.first = new Node(item, oldFirst);
+  }
+
+  pop = (): string => {
+    const item = this.first.item;
+    this.first = this.first.next;
+    return item;
+  }
 }
 ```
 
@@ -89,29 +92,31 @@ First In First Out
 Maintain 2 pointers to the first and last items of the linked-list. Enqueue or dequeue are simply to
 update those pointers
 
-```java
-public class LinkedQueueOfStrings {
-    private Node first, last;
+```typescript
+class Node {
+  item: string;
+  next: Node;
+}
 
-    private class Node {
-        /* same as in Stack */
-    }
+class Queue {
+  first: Node;
+  last: Node;
 
-    public void enqueue(String item) {
-        Node oldlast = last;
-        last = new Node();
-        last.item = item;
-        last.next = null;
-        if (isEmpty()) first = last;
-        else oldlast.next = last;
-    }
+  enqueue = (item: string): void => {
+    const oldLast = this.last;
+    this.last = new Node();
+    this.last.item = item;
+    this.last.next = null;
+    if (isEmpty()) this.first = this.last;
+    else oldLast.next = this.last;
+  }
 
-    public String dequeue() {
-        String item = first.item;
-        first = first.next;
-        if (isEmpty()) last = null;
-        return item;
-    }
+  dequeue = (): string => {
+    const item = this.first.item;
+    this.first = this.first.next;
+    if (isEmpty()) last = null;
+    return item;
+  }
 }
 ```
 
@@ -153,35 +158,38 @@ Stack with Max is another data structure that efficiently supports the stack ope
 pop) and also a return-the-maximum operation. To implement that, simply use 2 stacks, one to store
 all the items just like the Stack implementation above, the other one to store the maximum values.
 
-```java
+```typescript
+class Node {
+  item: number;
+  next: Node;
+}
+
 class MaxStack {
-    ... // similar to stack implementation
+  // ...similar to stack implementation
 
-    // use 2 stacks
-    private Node first; // this is the normal stack
-    private Node max;   // this is to store the max values
+  // for maxStack
+  max: Node;
 
-    public double getMax() {
-        return max.item;
+  getMax = (): number => this.max.item;
+
+  push = (item: number): void => {
+    // ...similar to stack implementation
+
+    // store max value
+    if (item > this.getMax()) {
+      const oldMax = this.max;
+      this.max = new Node();
+      this.max.next = oldMax;
     }
+  }
 
-    public void push(double item) {
-        ... // similar to stack implementation
+  pop = (): number => {
+    // ...similar to stack implementation
 
-        // store max value
-        if (item >= getMax()) {
-            Node oldmax = max;
-            max = new Node();
-            max.next = oldmax;
-        }
+    if (tmp === this.getMax()) {
+      this.max = this.max.next;
     }
-
-    public double pop() {
-        ... // similar to stack implementation
-        if (tmp == getMax()) {
-            max = max.next;
-        }
-        return tmp;
-    }
+    return tmp;
+  }
 }
 ```
