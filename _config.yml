@@ -8,7 +8,9 @@ paginate: 10 # the number of post per page
 safe: false
 markdown: kramdown
 url: https://truongtx.me
-plugins: [jekyll-paginate]
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
 
 title : TruongTX Blog
 author :
