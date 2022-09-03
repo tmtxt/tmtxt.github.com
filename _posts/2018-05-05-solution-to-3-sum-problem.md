@@ -11,8 +11,6 @@ thumbnail: /files/2018-05-05-solution-to-3-sum-problem/img1.png
 
 # 1. The 3-sum problem
 
-![3-sum not 3-some](/files/2018-05-05-solution-to-3-sum-problem/img1.png)
-
 The 3-sum problem is described as below
 
 > Given N distinct integers, how many triples sum to exactly zero?
