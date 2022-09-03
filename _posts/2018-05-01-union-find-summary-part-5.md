@@ -10,7 +10,7 @@ thumbnail: /files/2022-09-03-dynamic-connectivity-union-find/summary.png
 > Nothing special here. It's just a blog post for summarising my algorithm learning course. Here are
 > some `Quick Union` related interview questions and my answers
 
-- [Link Text]({% post_url 2022-09-03-dynamic-connectivity-union-find-summary %})
+- [Dynamic Connectivity & Union Find - Summary]({% post_url 2022-09-03-dynamic-connectivity-union-find-summary %})
 
 # 1. Social network connectivity
 

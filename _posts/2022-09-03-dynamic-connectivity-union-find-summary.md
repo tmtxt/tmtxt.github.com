@@ -178,3 +178,7 @@ we can simply link it directly to the root of `6` (which is `0`)
 
 For path compression, if the `root` is called many times enough, the complexity will become `O(1)`
 when the tree become flatten.
+
+# Related Questions
+
+- [Dynamic Connectivity & Union Find - Related Interview Questions]({% post_url 2018-05-01-union-find-summary-part-5 %})
