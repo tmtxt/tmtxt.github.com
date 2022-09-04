@@ -41,8 +41,10 @@ transfer the event to the corresponding `<input>` element without any Javascript
 }
 ```
 
-Try the live example in the below iframe
-<iframe width="100%" style="border: 1px solid;" src="/files/2022-05-10-css-trick-building-custom-checkbox/structure.html"></iframe>
+Try the live example in the below iframe (or [direct link](/files/2022-05-10-css-trick-building-custom-checkbox/structure.html))
+<iframe height="100px" width="100%" style="border: 1px solid; border-radius: 8px" src="/files/2022-05-10-css-trick-building-custom-checkbox/structure.html"></iframe>
+
+<!-- more -->
 
 ## Styling the Checkbox
 
@@ -78,8 +80,8 @@ It's just a normal element so you are not limited to just checkbox style.
 }
 ```
 
-Live example
-<iframe style="border: 1px solid;" src="/files/2022-05-10-css-trick-building-custom-checkbox/basic-styling.html"></iframe>
+Live example (or [direct link](/files/2022-05-10-css-trick-building-custom-checkbox/basic-styling.html))
+<iframe height="100px" width="100%" style="border: 1px solid; border-radius: 8px" src="/files/2022-05-10-css-trick-building-custom-checkbox/basic-styling.html"></iframe>
 
 ## Styling different states
 
@@ -98,8 +100,8 @@ style the display element like this
 }
 ```
 
-Live example
-<iframe style="border: 1px solid;" src="/files/2022-05-10-css-trick-building-custom-checkbox/different-state.html"></iframe>
+Live example (or [direct link](/files/2022-05-10-css-trick-building-custom-checkbox/different-state.html))
+<iframe height="100px" width="100%" style="border: 1px solid; border-radius: 8px" src="/files/2022-05-10-css-trick-building-custom-checkbox/different-state.html"></iframe>
 
 # 2. The Reactjs component
 
