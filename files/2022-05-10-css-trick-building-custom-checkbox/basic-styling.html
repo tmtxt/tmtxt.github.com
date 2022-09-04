@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <style>
+     .mylabel {
+       display: flex;
+       gap: 5px;
+       align-items: center;
+       margin: 2px;
+     }
+
+     .myinput {
+       display: none;
+     }
+
+     .myinput + .mydisplay {
+       width: 20px;
+       height: 20px;
+       border: 3px solid darkgray;
+       border-radius: 6px;
+       box-sizing: border-box;
+     }
+    </style>
+  </head>
+  <body>
+    <label class="mylabel">
+      <input class="myinput" type="checkbox" name="checkbox" />
+      <div class="mydisplay"></div>
+      <div class="mylabel">Checkbox label</div>
+    </label>
+    <label class="mylabel">
+      <input class="myinput" type="checkbox" name="checkbox" />
+      <div class="mydisplay"></div>
+      <div class="mylabel">Checkbox label</div>
+    </label>
+    <label class="mylabel">
+      <input class="myinput" type="checkbox" name="checkbox" />
+      <div class="mydisplay"></div>
+      <div class="mylabel">Checkbox label</div>
+    </label>
+  </body>
+</html>

@@ -1,13 +1,28 @@
 ---
 layout: post
-title: "CSS Trick - Building Custom Checkbox"
+title: "Building a Custom Checkbox Component with Reactjs"
 description: ""
-categories: []
+categories: [javascript]
 tags: []
-thumbnail: 
+thumbnail: /files/2022-05-10-css-trick-building-custom-checkbox/firefox.png
 ---
 
-# The structure
+- [1. The CSS and HTML]({{ page.url }}#1-the-css-and-html)
+  - [Prepare the structure]({{ page.url }}#prepare-the-structure)
+  - [Styling the Checkbox]({{ page.url }}#styling-the-checkbox)
+  - [Styling different states]({{ page.url }}#styling-different-states)
+
+> Ok, the story is that, I'm really bad at css. I have never worked on building any frontend
+> component and I was given a task to build the Custom Checkbox component with Reactjs from scratch.
+> Here is how...
+
+# 1. The CSS and HTML
+
+## Prepare the structure
+
+Here is how you usually create a checkbox with pure html and css. To avoid any complicated event
+handler, I will simply wrap the `<label>` tag around, which allows clicking on any element inside to
+transfer the event to the corresponding `<input>` element without any Javascript needed.
 
 ```html
 <label class="mylabel">
@@ -20,103 +35,34 @@ thumbnail:
     display: flex;
     gap: 5px;
     align-items: center;
+    margin: 2px;
 }
 ```
 
-Wrapping `<label>` around allows clicking on any element inside to transfer the
-event to the corresponding `<input>` element without any Javascript (implicit association).
+Try the live example in the below iframe
+<iframe style="border: 1px solid;" src="/files/2022-05-10-css-trick-building-custom-checkbox/structure.html"></iframe>
 
-- [The Input Label element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label)
+## Styling the Checkbox
 
-Here are how it looks like on different browsers
+The fact is, you cannot style the checkbox element. Each browser decides its own appearance of the
+checkbox. The approach is to hide the checkbox completely and replace with another element just for
+the display.
 
-![Firefox](/files/2022-05-10-css-trick-building-custom-checkbox/firefox.png)
-
-![Chrome](/files/2022-05-10-css-trick-building-custom-checkbox/chrome.png)
-
-# Styling the Checkbox
-
-```css
-.myinput {
-    display: none;
-}
-```
-
-Add custom display
-
-- add an empty `<div>` (`<span>`) after the `<input>` element as the placeholder for the display
+Coming back to the above html structure, I'm going to add an empty `<div>` (`<span>`) after the
+`<input>` element as the placeholder for the display
 
 ```html
 <label class="mylabel">
     <input class="myinput" type="checkbox" name="checkbox" />
-    <div class="mydisplay"></div>
+    <div class="mydisplay"></div> <!-- this is the new element -->
     <div class="mylabel">Checkbox label</div>
 </label>
 ```
 
-```css
-.myinput + .mydisplay {
-    width: 20px;
-    height: 20px;
-    border: 3px solid darkgray;
-    border-radius: 6px;
-    box-sizing: border-box;
-}
-```
-
-![Custom Display](/files/2022-05-10-css-trick-building-custom-checkbox/custom-display-1.png)
-
-# Styling different states
-
-hover + checked
+And then I need to hide the real checkbox and add any style that I like to the newly added element.
+It's just a normal element so you are not limited to just checkbox style.
 
 ```css
-.myinput:hover + .mydisplay {
-    border-color: #00b3ee;
-}
-
-.myinput:checked + .mydisplay {
-    background-color: #00b3ee;
-    border: none;
-}
-```
-
-indeterminate
-
----
-
-temp
-
-```html
-<label class="mylabel">
-  <input class="myinput" type="checkbox" name="checkbox" />
-  <div class="mydisplay">
-    <svg width="20" height="21" viewBox="0 0 20 21" fill="#000000" xmlns="http://www.w3.org/2000/svg">
-<path d="M8.33333 14.1833L5 10.85L6.175 9.67501L8.33333 11.825L13.825 6.33334L15 7.51668L8.33333 14.1833Z" fill="inherit"/>
-</svg>
-  </div>
-  <div class="mylabel">Checkbox label</div>
-</label>
-<label class="mylabel">
-  <input class="myinput" type="checkbox" name="checkbox" />
-  <div class="mydisplay"></div>
-  <div class="mylabel">Checkbox label</div>
-</label>
-<label class="mylabel">
-  <input class="myinput" type="checkbox" name="checkbox" />
-  <div class="mydisplay"></div>
-  <div class="mylabel">Checkbox label</div>
-</label>
-```
-
-```css
-.mylabel {
-    display: flex;
-    gap: 5px;
-    align-items: center;
-    padding-bottom: 3px;
-}
-
 .myinput {
     display: none;
 }
@@ -128,17 +74,18 @@ temp
     border-radius: 6px;
     box-sizing: border-box;
 }
+```
 
-.myinput + .mydisplay > svg {
-  display: none;
-  width: 100%;
-    height: 100%;
-}
+Live example
+<iframe style="border: 1px solid;" src="/files/2022-05-10-css-trick-building-custom-checkbox/basic-styling.html"></iframe>
 
-.myinput:checked + .mydisplay > svg {
-  display: inline;
-}
+## Styling different states
 
+Since we have wrapped the `<label>` tag outside, clicking on any element inside will transfer the
+event to the corresponding checkbox, which will then change its state. We can use that state to
+style the display element like this
+
+```css
 .myinput:hover + .mydisplay {
     border-color: #00b3ee;
 }
@@ -148,3 +95,6 @@ temp
     border: none;
 }
 ```
+
+Live example
+<iframe style="border: 1px solid;" src="/files/2022-05-10-css-trick-building-custom-checkbox/different-state.html"></iframe>
