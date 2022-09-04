@@ -1,20 +1,16 @@
 ---
 layout: post
-title: "Union Find Summary - Part 5 - Related Interview Questions"
+title: "Dynamic Connectivity & Union Find - Related Interview Questions"
 description: ""
 categories: [algorithm]
 tags: [algorithm]
-thumbnail: /files/2018-04-30-union-find-summary/img1.png
+thumbnail: /files/2022-09-03-dynamic-connectivity-union-find/summary.png
 ---
 
 > Nothing special here. It's just a blog post for summarising my algorithm learning course. Here are
 > some `Quick Union` related interview questions and my answers
 
-- [Part 1 - Union Find]({% post_url 2018-04-30-union-find-summary-part-1 %})
-- [Part 2 - Quick Find]({% post_url 2018-04-30-union-find-summary-part-2 %})
-- [Part 3 - Quick Union]({% post_url 2018-04-30-union-find-summary-part-3 %})
-- [Part 4 - Improved Quick Union]({% post_url 2018-05-01-union-find-summary-part-4 %})
-- Part 5 - Related Interview Questions
+- [Dynamic Connectivity & Union Find - Summary]({% post_url 2022-09-03-dynamic-connectivity-union-find-summary %})
 
 # 1. Social network connectivity
 
@@ -30,7 +26,7 @@ space proportional to n.
 ### Answer
 
 The earliest time at which all members are connected is when we union all into 1 connected
-component (1 tree). That means all the nodes in the tree have the same root.  
+component (1 tree). That means all the nodes in the tree have the same root.
 This is an improvement of weighted quick union algorithm. Every time we call the union, we will
 check the weight of the tree to see whether it is equal to the size of n.
 

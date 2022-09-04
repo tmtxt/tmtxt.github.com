@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Trường TX Blog
+title: TruongTX Blog
 ---
 
 {% for post in paginator.posts %}
@@ -21,11 +21,7 @@ title: Trường TX Blog
     <hr>
   </div> <!-- panel-header end -->
   <div class="body-panel">
-    {% if post.content contains "<!-- more -->" %}
-      {{ post.content | split:"<!-- more -->" | first }}
-		{% else %}
-      {{ post.content | strip_html | truncatewords:100 }}
-		{% endif %}
+    {{ post.excerpt }}
     <a href="{{ post.url }}" class="btn btn-primary">Read more</a>
   </div> <!-- panel-body end -->
 </article> <!-- article end -->

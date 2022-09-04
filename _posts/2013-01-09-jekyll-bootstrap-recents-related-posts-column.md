@@ -1,6 +1,6 @@
 ---
 layout: post
-showtn: 
+showtn:
 title: "Jekyll Bootstrap - Recents and Related Posts section"
 description: ""
 category: jekyll
@@ -15,27 +15,27 @@ in the post template (usually **/_includes/themes/theme-name/post.html**).
 
 ## Related Posts
 
-{% highlight html %}
+```html
 <h4>Related Posts</h4>
 <ul>
   {{ "{% for post in site.related_posts limit:5 "}}%}
   <li><a href="{{ "{{ BASE_PATH "}}}}{{"{{ post.url "}}}}">{{ "{{ post.title "}}}}</a></li>
   {{ "{% endfor "}}%}
 </ul>
-{% endhighlight %}
+```
 
 <!-- more -->
 
 ## Recent Posts
 
-{% highlight html %}
+```html
 <h4>Recent Posts</h4>
 <ul>
   {{ "{% for post in site.posts limit:5 "}}%}
   <li><a href="{{ "{{ BASE_PATH "}}}}{{ "{{ post.url "}}}}">{{ "{{ post.title "}}}}</a></li>
   {{ "{% endfor "}}%}
-</ul>	
-{% endhighlight %}
+</ul>
+```
 
 **Note**: Replace **limit:5** with the number of posts you want to display.
 

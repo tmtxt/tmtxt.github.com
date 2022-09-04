@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Blogging using your favorite Text editor with Git and Jekyll - Part 2"
+title: "Blogging using your favorite Text editor with Git and Jekyll Bootstrap - Part 2"
 description: ""
 category: jekyll
 thumbnail:
