@@ -48,7 +48,7 @@ Try the live example in the below iframe (or [direct link](/files/2022-05-10-css
 
 ## Styling the Checkbox
 
-The fact is, you cannot style the checkbox element. Each browser decides its own appearance of the
+The fact is that you cannot style the checkbox element. Each browser decides its own appearance of the
 checkbox. The approach is to hide the checkbox completely and replace with another element just for
 the display.
 
@@ -114,6 +114,7 @@ Here is the props type for our custom Checkbox component
 type MyCheckboxProps = {
   checked?: boolean;
   text: string;
+  onChange?: (e: React.FormEvent<HTMLInputElement>) => void;
 };
 ```
 
@@ -162,10 +163,14 @@ const CheckboxInput = styled.input.attrs((props: MyCheckboxProps) => ({
 Putting them altogether in the main component
 
 ```tsx
-function MyCheckbox({ checked = false, text }: MyCheckboxProps): JSX.Element {
+function MyCheckbox({
+  checked = false,
+  text,
+  onChange
+}: MyCheckboxProps): JSX.Element {
   return (
     <Label>
-      <CheckboxInput {...{checked}} />
+      <CheckboxInput {...{checked, onChange}} />
       <CheckboxDisplay />
       <CheckboxText>{text}</CheckboxText>
     </Label>
