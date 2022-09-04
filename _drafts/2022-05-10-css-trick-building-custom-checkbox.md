@@ -7,17 +7,18 @@ tags: []
 thumbnail: /files/2022-05-10-css-trick-building-custom-checkbox/firefox.png
 ---
 
-- [1. The CSS and HTML]({{ page.url }}#1-the-css-and-html)
+- [1. The basic HTML and CSS]({{ page.url }}#1-the-basic-html-and-css)
   - [Prepare the structure]({{ page.url }}#prepare-the-structure)
   - [Styling the Checkbox]({{ page.url }}#styling-the-checkbox)
   - [Styling different states]({{ page.url }}#styling-different-states)
 - [2. The Reactjs component]({{ page.url }}#2-the-reactjs-component)
+- [3. Handle other Checkbox states]({{ page.url }}#3-handle-other-checkbox-states)
 
 > Ok, the story is that, I'm really bad at css. I have never worked on building any frontend
 > component and I was given a task to build the Custom Checkbox component with Reactjs from scratch.
 > Here is how...
 
-# 1. The CSS and HTML
+# 1. The basic HTML and CSS
 
 ## Prepare the structure
 
@@ -109,7 +110,7 @@ Here is the props type for our custom Checkbox component
 
 ```tsx
 type MyCheckboxProps = {
-  checked: boolean;
+  checked?: boolean;
   text: string;
 };
 ```
@@ -129,6 +130,7 @@ const Label = styled.label`
 `;
 
 const CheckboxDisplay = styled.div``;
+const CheckboxText = styled.div``;
 
 const CheckboxInput = styled.input.attrs((props: MyCheckboxProps) => ({
   type: 'checkbox',
@@ -153,8 +155,6 @@ const CheckboxInput = styled.input.attrs((props: MyCheckboxProps) => ({
     background-image: url('${checkIcon}');
   }
 `;
-
-const CheckboxText = styled.div``;
 ```
 
 Putting them altogether in the main component
@@ -170,3 +170,71 @@ function MyCheckbox({ checked = false, text }: MyCheckboxProps): JSX.Element {
   );
 }
 ```
+
+# 3. Handle other Checkbox states
+
+In reality, there are more states that you may want to have for the Checkbox beside `checked` and
+`unchecked`. The HTML checkbox provides 2 more different states to use with css `indeterminate` and
+`invalid`. They require some small tweaks in Javascript to enable. In order to activate those
+states, we need to access to the DOM node directly via
+[React Refs](https://reactjs.org/docs/refs-and-the-dom.html).
+
+In the above `MyCheckbox` component, add custom handler to update the ref properties
+
+```tsx
+// add more props for the Checkbox component
+type MyCheckboxProps = {
+  checked?: boolean;
+  indeterminate?: boolean;
+  invalid?: boolean;
+  text: string;
+};
+
+function MyCheckbox({
+  checked = false,
+  indeterminate = false,
+  invalid = false,
+  text
+}: MyCheckboxProps): JSX.Element {
+  return (
+    <Label>
+      <CheckboxInput
+        {...{checked}}
+        ref={(instance: HTMLInputElement | null) => {
+          if (!instance) return;
+          // set indeterminate state
+          instance.indeterminate = indeterminate;
+          // set invalid state
+          instance.setCustomValidity(invalid ? 'error' : '');
+        }}
+      />
+      <CheckboxDisplay/>
+      <CheckboxText>{text}</CheckboxText>
+    </Label>
+  );
+}
+```
+
+And then styling in css is straight forward
+
+```tsx
+const CheckboxInput = styled.input.attrs((props: MyCheckboxProps) => ({
+  type: 'checkbox',
+  ...props,
+}))`
+  /* ... same as previous CheckboxInput component */
+
+  /* ... style the new state */
+  &:indeterminate + ${CheckboxDisplay} {
+    background-color: #00b3ee;
+  }
+
+  &:invalid + ${CheckboxText} {
+    color: #ff0e29;
+  }
+`;
+```
+
+# Phew
+
+That's all. Improve it yourself!
