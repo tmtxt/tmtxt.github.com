@@ -7,16 +7,16 @@ tags: []
 thumbnail: /files/2022-05-10-css-trick-building-custom-checkbox/firefox.png
 ---
 
-- [The basic HTML and CSS]({{ page.url }}#1-the-basic-html-and-css)
+> Ok, the story is that, I’m really bad at css. I have never worked on building any frontend
+> component and I was given a task to build the Custom Checkbox component with Reactjs from scratch.
+> Here is how...
+
+- [1. The basic HTML and CSS]({{ page.url }}#1-the-basic-html-and-css)
   - [Prepare the structure]({{ page.url }}#prepare-the-structure)
   - [Styling the Checkbox]({{ page.url }}#styling-the-checkbox)
   - [Styling different states]({{ page.url }}#styling-different-states)
-- [The Reactjs component]({{ page.url }}#2-the-reactjs-component)
-- [Handle other Checkbox states]({{ page.url }}#3-handle-other-checkbox-states)
-
-> Ok, the story is that, I'm really bad at css. I have never worked on building any frontend
-> component and I was given a task to build the Custom Checkbox component with Reactjs from scratch.
-> Here is how...
+- [2. The Reactjs component]({{ page.url }}#2-the-reactjs-component)
+- [3. Handle other Checkbox states]({{ page.url }}#3-handle-other-checkbox-states)
 
 # 1. The basic HTML and CSS
 
