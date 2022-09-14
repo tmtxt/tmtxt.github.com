@@ -8,7 +8,7 @@ thumbnail: /files/2021-07-15-scaling-the-system-at-ar-part-5/publish-subscribe.p
 ---
 
 > Part 4
-> [Scaling the System at AR - Part 4 - Message Queue at AR]({%post_url 2020-04-05-scaling-the-system-at-ar-part-4-message-queue-at-ar%}) 
+> [Scaling the System at AR - Part 4 - Message Queue at AR]({%post_url 2020-04-05-scaling-the-system-at-ar-part-4-message-queue-at-ar%})
 
 # The problem of scaling team
 
@@ -104,18 +104,18 @@ The Customer objects originated from the CRM team database. If there are any cha
 data, the CRM team will publish a corresponding event (`CUSTOMER_CREATED`, `CUSTOMER_UPDATED`,
 `CUSTOMER_DELETE`,...)
 
-```json
+```javascript
 {
   "topic": "CUSTOMER_CREATED",
   "data": {
     "customer": {
-      ...
+      // ...
     }
   }
 }
 ```
 
-```json
+```javascript
 {
   "topic": "CUSTOMER_DELETED",
   "data": {
@@ -149,4 +149,3 @@ Subscription to any Topic to get the updates about the entity.
 
 Of course, there is no such thing as a free lunch. It also comes with all the drawbacks of a common
 Message Queue system [Read more...]({%post_url 2020-04-05-scaling-the-system-at-ar-part-4-message-queue-at-ar%}#what-you-need-to-care-when-designing-a-system-that-relies-on-message-queue)
-
