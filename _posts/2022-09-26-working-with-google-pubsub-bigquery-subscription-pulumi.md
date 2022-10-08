@@ -1,10 +1,12 @@
 ---
 layout: post
 title: "Working with Google PubSub BigQuery Subscription & Pulumi"
-description: "Example for configuring PubSub BigQuery Subscription with Pulumi"
+description: "An example about configuring PubSub BigQuery Subscription with Pulumi"
 categories: [misc]
 thumbnail: /files/2022-09-14-pubsub-big-query-subscription-pulumi/big-query-subscription.png
 ---
+
+> An example about configuring PubSub BigQuery Subscription with Pulumi
 
 - [BigQuery Subscription]({{ page.url }}#bigquery-subscription)
 - [Configure BigQuery Dataset and Table]({{ page.url }}#configure-bigquery-dataset-and-table)
