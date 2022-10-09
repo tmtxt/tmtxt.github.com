@@ -43,11 +43,8 @@ Output: false
 
 **Solution**
 
-Loops/Recursion seems quite straight forward. Let's talk about bitwise operators.
-
-> This is the first time I have ever used this...
-
-Let's take a look at the some numbers that are the power of two and their binary representation
+Loops/Recursion seems quite straight forward. We use a bitwise approach here. Let's take a look at
+the some numbers that are the power of two and their binary representation.
 
 | Decimal | Binary |
 |---------|--------|
