@@ -1,10 +1,9 @@
 ---
 layout: post
-title: "Solution to Power of Two solution"
-description: ""
+title: "Solution to Power of Two problem"
+description: "Who the hell could think of this bitwise solution?"
 categories: [algorithm]
-tags: []
-thumbnail: 
+thumbnail:
 ---
 
 > Leetcode: [Power of Two](https://leetcode.com/problems/power-of-two/)
@@ -50,13 +49,13 @@ Loops/Recursion seems quite straight forward. Let's talk about bitwise operators
 
 Let's take a look at the some numbers that are the power of two and their binary representation
 
-|Decimal|Binary|
-|---|---|
-|2|10|
-|4|100|
-|8|1000|
-|16|10000|
-|32|100000|
+| Decimal | Binary |
+|---------|--------|
+| 2       | 10     |
+| 4       | 100    |
+| 8       | 1000   |
+| 16      | 10000  |
+| 32      | 100000 |
 {: .table }
 
 For all numbers, the first bit are `true` and all the remaining bits are `false`. You can check the
@@ -64,24 +63,24 @@ binary representation based on that condition, but it's still a loop on the bina
 
 If we minus each number by 1, we get a new number with all bits are `true` (all bits are inverted).
 
-|Decimal|Binary|
-|---|---|
-|2-1|1|
-|4-1|11|
-|8-1|111|
-|16-1|1111|
-|32-1|11111|
+| Decimal | Binary |
+|---------|--------|
+| 2-1     | 1      |
+| 4-1     | 11     |
+| 8-1     | 111    |
+| 16-1    | 1111   |
+| 32-1    | 11111  |
 {: .table }
 
 If we use `&` bitwise operator between `n` and `n-1`, the result will be `0`.
 
-|Decimal|Binary|Result|
-|---|---|---|
-|2 & 1|10 & 01|00|
-|4 & 3|100 & 011|000|
-|8 & 7|1000 & 0111|0000|
-|16 & 15|10000 & 01111|00000|
-|32 & 31|100000 & 011111|000000|
+| Decimal | Binary          | Result |
+|---------|-----------------|--------|
+| 2 & 1   | 10 & 01         | 00     |
+| 4 & 3   | 100 & 011       | 000    |
+| 8 & 7   | 1000 & 0111     | 0000   |
+| 16 & 15 | 10000 & 01111   | 00000  |
+| 32 & 31 | 100000 & 011111 | 000000 |
 {: .table }
 
 Working code in C#
@@ -95,4 +94,4 @@ public class Solution {
 }
 ```
 
-> Who the hell could think of this solution?
+> Who the hell could think of this bitwise solution?
