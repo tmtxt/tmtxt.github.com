@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Tips when working with Postgres - Part 1"
+title: "Tips for working with Postgres - Part 1"
 description: "Just a collection of tips to make working with Postgres (and other SQL-like databases) easier"
 categories: [misc]
 thumbnail:
