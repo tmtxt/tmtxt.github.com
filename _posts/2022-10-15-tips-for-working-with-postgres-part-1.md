@@ -25,8 +25,6 @@ length) are measured in **cm** and the weight is measured in **kg**. Usually, we
 logic in application layer to make sure we convert everything to **cm** and **kg** before inserting
 into the database. However, it could lead to even more problems
 
-<!-- more -->
-
 - What will happen if a new dev join the team? How can you make sure that person will know when to
   convert and when not?
 - What will happen if a dev using **pound** join the team?
@@ -37,6 +35,8 @@ into the database. However, it could lead to even more problems
 - Which data type to choose? Integer, of course, is not a good choice. However, working with real, double,
   decimal or numeric is always harder compare to int. They could cause some problems with parsing
   and datatype for languages/libraries like Nodejs.
+
+<!-- more -->
 
 Solving this issue is actually quite straight forward, you will need to
 - Make it explicit: Append the measurement unit suffix to the prop name, for example `widthMm`,
