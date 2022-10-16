@@ -47,9 +47,19 @@ Solving this issue is actually quite straight forward, you will need to
 
 # Down Migration
 
-Normally, Database migration tools offer 2 modes of migration: **Up** and **Down**. The **Up** migrations are usually the normal and happy path. The **Down** ones are usually used to undo the changes of the **Up** migrations if there are anything wrong. However, over time, your **Down** migrations will become rediculously unpredictable
+Normally, Database migration tools offer 2 modes of migration: **Up** and **Down**. The **Up**
+migrations are usually the normal and happy path. The **Down** ones are usually used to undo the
+changes of the **Up** migrations if there are anything wrong. However, over time, your **Down**
+migrations will become rediculously unpredictable
 
-* How often do you test the **Down** migrations? Usually the answer is *Never*. How confident are you with the **Down** migrations? You may fix a problem with an error **Up** migration by introducing a worse problem.
-* How about the data? What happen if an **Up** migration removes some data? How can the **Down** migration recover the data? You can never recover the previous state correctly. Your database will end up in an inconsistent state, which is even more terrible. Trust me, Inconsistency is one of the most annoying problem when dealing with database.
+* How often do you test the **Down** migrations? Usually the answer is *Never*. How confident are
+  you with the **Down** migrations? You may fix a problem with an error **Up** migration by
+  introducing a worse problem.
+* How about the data? What happen if an **Up** migration removes some data? How can the **Down**
+  migration recover the data? You can never recover the previous state correctly. Your database will
+  end up in an inconsistent state, which is even more terrible. Trust me, Inconsistency is one of
+  the most annoying problem when dealing with database.
 
-So the solution is simply to delete all the down migrations from your source control. When you want to fix a problem, create another **Up** migration to correct your mistake and go through your normal SDLC testing workflow.
+So the solution is simply to delete all the down migrations from your source control. When you want
+to fix a problem, create another **Up** migration to correct your mistake and go through your normal
+SDLC testing workflow.
