@@ -2,10 +2,12 @@
 layout: post
 title: "Review các dịch vụ ngân hàng ở Việt Nam - Phần 1"
 description: ""
-categories: []
+categories: [misc]
 tags: []
-thumbnail: 
+thumbnail:
 ---
+
+> Series bài viết review tóm tắt về chất lượng các dịch vụ Ngân hàng ở Việt Nam mà mình đã từng dùng.
 
 # Standard Chartered Vietnam
 
