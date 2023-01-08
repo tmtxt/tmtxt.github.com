@@ -2,7 +2,7 @@
 layout: post
 showtn: yes
 title: "Conkeror and How it changed the way I surf the web"
-description: ""
+description: "The first time I heard about conkeror was in 2010. And now it becomes my daily used application."
 category: conkeror
 tags: [conkeror, emacs, web browser]
 ---
@@ -55,9 +55,9 @@ One example the rc file in rebinding keys for conkeror.
 
 **There are still many other awesome features in conkeror.**
 
-Conkeror Homepage: <http://conkeror.org/>  
-My conkeror on github: <https://github.com/tmtxt/conkerorrc>  
+Conkeror Homepage: <http://conkeror.org/>
+My conkeror on github: <https://github.com/tmtxt/conkerorrc>
 *Follow me and we can exchange the experience.*
 
-I also posted this article on the website of RMIT Vietnam IT Club  
+I also posted this article on the website of RMIT Vietnam IT Club
 Link: <http://rmitc.org/2012/12/conkeror-and-how-it-changed-the-way-i-surf-the-web/>
