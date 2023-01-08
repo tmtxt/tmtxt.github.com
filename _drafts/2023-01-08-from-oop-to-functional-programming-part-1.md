@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "From OOP to Functional programming"
+title: "From Object-oriented to Functional programming - Part 1"
 description: ""
 categories: [misc]
 tags: []
@@ -14,17 +14,16 @@ from the OOP world.
 
 # Private properties
 
-In object-oriented programming (OOP), a private property is a member variable that is only
+In object-oriented programming, a private property is a member variable that is only
 accessible within the class in which it is defined. Private properties are often used to store
-internal data for an object that should not be directly modified by external code. They are
-typically accessed using getter and setter methods, which provide a way for the object to control
-how its private data is accessed and modified. Private properties do not exist in the same way in
-functional programming as they do in object-oriented programming (OOP).
+internal data for an object that should not be directly modified by external code. Private
+properties do not exist in the same way in functional programming as they do in object-oriented
+programming. To archive this, simply use a closure to wrap the private properties.
 
-The solution to this is simply to use a closure to wrap the private properties
+Here is a simple example about private properties in C#
 
 ```csharp
-public class MyClass
+public class Controller
 {
     private int _totalCount = 0;
 
@@ -46,15 +45,20 @@ public class Runner
 {
     public void Run()
     {
-        var handler = new MyClass();
-        handler.Increase("truongtx", 100);
-        handler.Increase("otherUser", 200);
-        Console.Out.WriteLine(handler.GetTotal());
+        var controller = new Controller();
+        controller.Increase("truongtx", 100);
+        controller.Increase("otherUser", 200);
+        Console.Out.WriteLine(controller.GetTotal());
     }
 }
 ```
 
+And here is how you would do it the functional way...
+
+<!-- more -->
+
 ```typescript
+// Example in Typescript
 interface Controller {
   increase(user: string, amount: number): void;
   getTotal(): number;
@@ -76,10 +80,14 @@ const createController = (): Controller => {
   };
 };
 
+// To initialize and run
 const controller = createController();
 controller.increase('truongtx', 100);
 controller.increase('otherUser', 200);
 console.log(controller.getTotal());
 ```
 
-# Dependencies Injection
+# To be continued
+
+> This is also an experimental post, which I used [ChatpGPT](https://openai.com/blog/chatgpt/) to
+> generate most of the text 😂
