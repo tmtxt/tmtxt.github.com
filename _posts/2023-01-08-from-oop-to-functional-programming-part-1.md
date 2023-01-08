@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "From Object-oriented to Functional programming - Part 1"
-description: ""
+description: "Object-oriented programming (OOP) and functional programming (FP) are two popular programming paradigms. In recent years, there has been a trend towards FP due to its benefits such as increased reliability and easier testing. In this article, I'll show some helpful patterns for people coming from the OOP world."
 categories: [misc]
 tags: []
 thumbnail:
