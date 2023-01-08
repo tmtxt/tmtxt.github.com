@@ -65,6 +65,7 @@ interface Controller {
 }
 
 const createController = (): Controller => {
+  // wrap the private props in the function closure
   let total = 0;
 
   return {
