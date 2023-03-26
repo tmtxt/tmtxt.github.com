@@ -11,29 +11,27 @@ thumbnail:
 
 # 1. Selection Sort
 
-* In iteration `i`, find index min of smallest remaining entry.
-* Swap `a[i]` and `a[min]`
+- In iteration `i`, find index min of smallest remaining entry.
+- Swap `a[i]` and `a[min]`
 
-![Selection Sort Gif](/files/2018-05-19-elementary-sorts-summary/selection-sort.gif)
+```typescript
+function selectionSort(a: number[]): void {
+  const n = a.length;
+  for (let i = 0; i < n; i++) {
 
-```java
-class Selection {
-    public static void sort(Comparable[] a) {
-        int N = a.length;
-        for (int i = 0; i < N; i++) {
-            int min = i;
-            for (int j = i + 1; j < N; j++)
-                if (less(a[j], a[min]))
-                    min = j;
-            swap(a, i, min); // swap the 2 items
-        }
+    let min: number = i;
+    for (let j = i + 1; j < n; j++) {
+      if (a[j] < a[min]) {
+        min = j;
+      }
     }
+
+    swap(a, i, min); // swap the 2 items
+  }
 }
 ```
 
 <!-- more -->
-
-![Animation](/files/2018-05-19-elementary-sorts-summary/selection-sort_c041bf.gif)
 
 <math xmlns="http://www.w3.org/1998/Math/MathML">
   <ms>Complexity:</ms>
@@ -55,23 +53,23 @@ class Selection {
 
 # 2. Insertion Sort
 
-* Like the reversed way of Selection Sort
-* In iteration i, swap a[i] with each larger entry to its left.
+- Like the reversed way of Selection Sort
+- In iteration `i`, swap `a[i]` with each larger entry to its left.
 
-```java
-class Insertion {
-    public static void sort(Comparable[] a) {
-        int N = a.length;
-        for (int i = 0; i < N; i++)
-            for (int j = i; j > 0; j--)
-                if (less(a[j], a[j - 1]))
-                    swap(a, j, j - 1);
-                else break;
+```typescript
+function insertionSort(a: number[]): void {
+  const n = a.length;
+  for (let i = 0; i < n; i++) {
+    for (let j = i; j > 0; j--) {
+      if (a[j] < a[j-1]) {
+        swap(a, j, j-1);
+      } else {
+        break;
+      }
     }
+  }
 }
 ```
-
-![Animation](/files/2018-05-19-elementary-sorts-summary/insertion-sort_e8e408.gif)
 
 - **Best case**: If the array is in ascending order, insertion sort makes `N - 1` compares and `0`
 exchanges.

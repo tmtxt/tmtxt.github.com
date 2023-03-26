@@ -11,6 +11,12 @@ Dynamic Connectivity & Union Find
 - [Dynamic Connectivity & Union Find - Summary]({% post_url 2022-09-03-dynamic-connectivity-union-find-summary %})
 - [Dynamic Connectivity & Union Find - Related Questions]({% post_url 2018-05-01-union-find-summary-part-5 %})
 
+Stacks & Queues
+- [Stacks and Queues summary]({% post_url 2018-05-15-stacks-and-queues-summary %})
+
+Elementary Sorts
+- [Elementary Sorts Summary]({% post_url 2018-05-19-elementary-sorts-summary %})
+
 # Algorithm exercises
 
 - [3-sum problem]({% post_url 2018-05-05-solution-to-3-sum-problem %})
