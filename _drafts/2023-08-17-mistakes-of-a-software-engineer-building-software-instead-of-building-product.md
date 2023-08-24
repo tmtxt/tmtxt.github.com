@@ -4,7 +4,7 @@ title: "Mistakes of a Software engineer - Building software instead of Building 
 description: ""
 categories: [misc]
 tags: []
-thumbnail:
+thumbnail: /files/2023-08-17-mistakes-of-a-software-engineer-building-software-instead-of-building-product/img1.png
 ---
 
 > This might not always be a mistake. It really depends on the type of company that I will go
@@ -19,6 +19,10 @@ that I've met made this mistake, especially the talented ones.
 Let me walk you through the 2 approaches, compare the differences between them and analyze some
 real examples. In the next section, you can also find some techniques that I've applied in order to
 help build a better Product Engineer work environment.
+
+![img1](/files/2023-08-17-mistakes-of-a-software-engineer-building-software-instead-of-building-product/img1.png)
+
+> This is converted from a presentation that I made at work
 
 # What is Building Product?
 
@@ -38,3 +42,38 @@ Building Product is also not about Building a Perfect solution. Nothing is perfe
 changes every day. Spending time making one thing perfect means getting nothing done.
 
 > Perfect is the enemy of good
+
+# Why Building Product instead of Software?
+
+Let's ask these questions
+- Do the users care if you are using latest technology or not?
+- Do they care if you have spent a lot of effort to develop a feature on your own or do they care
+if you use a third party solution?
+- Do they care if you have some tech debt to resolve?
+- Do they care if you use PHP to develop? 🤣
+
+Sadly, the answer to all those questions is NO. They don't really care. All they care is their
+problems. Building Product is to deliver User Values, and that's what matters to your customers.
+
+Also, a good technology doesn't always mean a good product if it doesn't solve user problems.
+Even a shitty technology sometimes is a suitable choice because it does the job. And then, it simply
+becomes a high quality one.
+
+A better product, of course, helps generating better revenue. By providing what the customers need,
+you can attract new clients, retain the existing ones longer and reduce the churn rate.
+
+> “Start with the customer experience and work backwards to the technology. You can’t start with the technology and try to figure out where you’re gonna try to sell it” - Steve Jobs
+
+# When to apply?
+
+However, you don't always need to apply that mindset. If you are working in an outsourcing
+company or in a large organization, where all the requirements are clearly defined, sometimes it's
+better to just build the software.
+
+Building Product mindset is more suitable for startup or small/medium product company, where you
+have to move fast, where nothing is clear and the requirements change everyday.
+
+# To be continued
+
+In the next post, I'll show some real examples and examine the problems as well as come up with
+the solution that we can use.
