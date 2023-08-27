@@ -1,14 +1,16 @@
 ---
 layout: post
-title: "Mistakes of a Software engineer - Building software instead of Building product - Part 1"
+title: "Let's build Product instead of Software - Part 1"
 description: ""
 categories: [misc]
 tags: []
-thumbnail: /files/2023-08-17-mistakes-of-a-software-engineer-building-software-instead-of-building-product/img1.png
+thumbnail: /files/2023-08-17-lets-build-product-instead-of-software/img1.png
 ---
 
-> This might not always be a mistake. It really depends on the type of company that I will go
-> through in this post
+> This may not always be true. It really depends on the type of company that I will go
+> through in this post. This also sometimes sounds strange from a Software Engineering
+> perspective, but as we get used to, it really did help FMG (my old company) grow to the leader in
+> that niche market
 
 Software engineers love technology, for sure. We love building
 things, love applying the latest technology into our product. However, we usually forget
@@ -20,7 +22,7 @@ Let me walk you through the 2 approaches, compare the differences between them a
 real examples. In the next section, you can also find some techniques that I've applied in order to
 help build a better Product Engineer work environment.
 
-![img1](/files/2023-08-17-mistakes-of-a-software-engineer-building-software-instead-of-building-product/img1.png)
+![img1](/files/2023-08-17-lets-build-product-instead-of-software/img1.png)
 
 > This is converted from a presentation that I made at work
 
