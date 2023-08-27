@@ -26,6 +26,8 @@ help build a better Product Engineer work environment.
 
 > This is converted from a presentation that I made at work
 
+<!-- more -->
+
 # What is Building Product?
 
 In short, Building Product could be described as
