@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Let's build Product instead of Software - Part 1"
+title: "Let's build Product, not Software - Part 1"
 description: ""
 categories: [misc]
 tags: []
