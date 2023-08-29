@@ -9,7 +9,8 @@ thumbnail: /files/2023-08-17-lets-build-product-instead-of-software/img1.png
 
 > This may not always be true. It really depends on the type of company that I will go
 > through in this post. This also sometimes sounds strange from a Software Engineering
-> perspective, but as we get used to, it really did help FMG (my old company) grow to the leader in
+> perspective, but as we get used to, it really did help FMG (my old company) grow to the
+> leading player
 > that niche market
 
 Software engineers love technology, for sure. We love building
@@ -19,8 +20,8 @@ business, is a useless one. That sounds obvious, right? Surprisingly, a lot of S
 that I've met made this mistake, especially the talented ones.
 
 Let me walk you through the 2 approaches, compare the differences between them and analyze some
-real examples. In the next section, you can also find some techniques that I've applied in order to
-help build a better Product Engineer work environment.
+real examples. In latter posts, you can also find some techniques that I've applied in order to
+help build a better Product Engineer mindset.
 
 ![img1](/files/2023-08-17-lets-build-product-instead-of-software/img1.png)
 
@@ -43,7 +44,8 @@ you are losing already. A good product you build today could be a crap tomorrow.
 In Building Product, you should NOT prioritize the technology. Yes, tech still plays an important
 role but it is not the most important factor. You should always be focusing on the User Values.
 Building Product is also not about Building a Perfect solution. Nothing is perfect. The business
-changes every day. Spending time making one thing perfect means getting nothing done.
+changes every day. Spending time making one thing perfect means getting nothing done. A perfect
+feature that you write today could be a shitty one tomorrow.
 
 > Perfect is the enemy of good
 
@@ -56,7 +58,7 @@ if you use a third party solution?
 - Do they care if you have some tech debt to resolve?
 - Do they care if you use PHP to develop? 🤣
 
-Sadly, the answer to all those questions is NO. They don't really care. All they care is their
+Sadly, the answer to all those questions is NO. They don't (fucking) care. All they care are their
 problems. Building Product is to deliver User Values, and that's what matters to your customers.
 
 Also, a good technology doesn't always mean a good product if it doesn't solve user problems.
@@ -64,7 +66,9 @@ Even a shitty technology sometimes is a suitable choice because it does the job.
 becomes a high quality one.
 
 A better product, of course, helps generating better revenue. By providing what the customers need,
-you can attract new clients, retain the existing ones longer and reduce the churn rate.
+you can attract new clients, retain the existing ones longer and reduce the churn rate. Once you
+got the money, you can even throw away some crappy modules that you made and buy another solution.
+That is really important to keep in mind and is cruelly how the business works.
 
 > “Start with the customer experience and work backwards to the technology. You can’t start with the technology and try to figure out where you’re gonna try to sell it” - Steve Jobs
 
