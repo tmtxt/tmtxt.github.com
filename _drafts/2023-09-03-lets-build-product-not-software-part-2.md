@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Mistakes of a Software engineer - Building software instead of product - Part 1"
+title: "Let's build Product, not Software - Part 2"
 description: ""
 categories: [misc]
 tags: []
-thumbnail:
+thumbnail: /files/2023-08-17-lets-build-product-instead-of-software/img1.png
 ---
 
 > This might not always be a mistake. It really depends on the type of company that I will go
