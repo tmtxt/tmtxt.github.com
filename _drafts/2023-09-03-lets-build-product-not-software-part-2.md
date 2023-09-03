@@ -34,8 +34,9 @@ Bug fixes  | Handle issues reported from customers                            | 
 Go live    | Release to everybody                                             | 0.5 month
 {: .table }
 
-Sounds good? Yes, this is a perfect plan from a Software Engineer perspective.
-...
+Sounds good? Yes, this is a perfect plan from a Software Engineer perspective, but...
+
+<!-- more -->
 
 Assume that it's 01/10/2023 and you have finished the first Backend phase. Everything works as
 expected, you bring this to the weekly project update meeting and present to all the stakeholders.
@@ -70,8 +71,25 @@ Handle Sales order requests | Handle all webhook requests related to Sales order
 Handle Product requests     | Handle all webhook requests related to Products                     | 1 week
 Handle Fulfillment requests | Handle all webhook requests related to Fulfilments                  | 1 week
 Handle Customer requests    | Handle all webhook requests related to Customer data                | 1 week
-Handle Address requests     | Handle all webhook requests related to Billing and Shipping address | 2 weeks
+Handle Address requests     | Handle all webhook requests related to Billing and Shipping address | 1 week
+Frontend                    | Display the data                                                    | 1 week
 Others                      | Implement other small requirements                                  | 1 week
 Bug fixes                   | Handle issues reported from customers                               | 2 weeks
 Go live                     | Release to everybody                                                | 2 weeks
 {: .table }
+
+Sounds better, huh? Yeah this is closer to the target. Smaller milestones make it easier to change.
+However, there are still some questions you need to ask here
+
+- Do we look into this from the User perspective? What are the problems that you are trying to solve
+for your customers?
+- What does it mean when you say `I have finished "Handle Sales order requests" phase`? Does it
+mean that you finished setting up the API to handle that type of webhook requests? Or do you
+mean that you have completed the function to map from Shopify schema to your system schema? Does
+it include the frontend? Can the user start using it?
+- Or more precisely, the question is `What is your definition of Done?`. Do you mean it's done when
+you say it's done? Do you need to go back and change it if the frontend doesn't fit the data?
+- When the project goes off-track and you are going to miss the deadline, what features can you
+drop but not affecting the workflow?
+
+> Are you building a Software or a Product?
