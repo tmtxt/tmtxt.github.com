@@ -85,3 +85,5 @@ have to move fast, where nothing is clear and the requirements change everyday.
 
 In the next post, I'll show some real examples and examine the problems as well as come up with
 the solution that we can use.
+
+Read it here [Let's build Product, not Software - Part 2]({% post_url 2023-09-03-lets-build-product-not-software-part-2 %})

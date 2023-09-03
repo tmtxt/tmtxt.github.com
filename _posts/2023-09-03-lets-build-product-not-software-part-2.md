@@ -93,3 +93,7 @@ you say it's done? Do you need to go back and change it if the frontend doesn't 
 drop but not affecting the workflow?
 
 > Are you building a Software or a Product?
+
+# To be continued
+
+A Product-oriented solution will be in part 3
