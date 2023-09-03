@@ -96,4 +96,4 @@ drop but not affecting the workflow?
 
 # To be continued
 
-A Product-oriented solution will be in part 3
+A Product-oriented solution will be presented in part 3
