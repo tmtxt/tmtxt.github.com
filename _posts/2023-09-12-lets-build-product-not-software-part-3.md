@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "Let's build Product, not Software - Part 3"
-description: ""
+description: "In the previous post, I have shown you a real example about how to solve the problem as a Software Engineer. This time, we gonna do it by the Product Engineer approach."
 categories: [misc]
 tags: []
-thumbnail: /files/2023-08-17-lets-build-product-instead-of-software/img1.png
+thumbnail: /files/2023-08-17-lets-build-product-instead-of-software/delivery-1.png
 ---
 
 [Let's build Product, not Software - Part 2]({% post_url 2023-09-03-lets-build-product-not-software-part-2 %})
@@ -15,13 +15,13 @@ Software Engineer. This time, we gonna do it by the Product Engineer approach.
 > Make Agile great again!
 
 If you refer to the first post that I wrote, Building Product is about delivering user values,
-collect feedbacks and constantly adapt to the change of business. Does it sound like Agile?
-Yes, in my opinion, Agile seems to be the best fit our there for Product company at a small
+collecting feedbacks and constantly adapting to the change of business. Does it sound like Agile?
+Yes, in my opinion, Agile seems to be the best fit out there for Product company at a small
 and medium size.
 
 # Don't do this
 
-Let's start with the non-Agile way by this picture story
+Let's start with the non-Agile way by this picture-by-picture story
 
 ![delivery-1](/files/2023-08-17-lets-build-product-instead-of-software/delivery-1.png)
 
@@ -42,19 +42,19 @@ feature, from backend to frontend before delivering to the customer. Again, do N
 
 ![delivery-5](/files/2023-08-17-lets-build-product-instead-of-software/delivery-5.png)
 
-How about taking 1 parcel at a time? Begin with the most valuable ones and repeat until you're done?
+How about taking 1 parcel at a time? Begin with the most valuable one and repeat until you're done?
 
 Does it feel repetitive? Yes, but it's less risky because it's much simpler for you to implement.
-You can ship the values continuously, collecting the feedbacks from your customer. When there are
+You can ship the values continuously, collecting the feedbacks from your customers. When there are
 any problems, you can quickly change the route (the approach). Sometimes, you can even throw away
 the unnecessary features based on the feedbacks. By starting with the most valuable ones, you also
-focus on resolving 80% percent of the problem using 20% of the effort, gain the most revenue for
-the product.
+focus on resolving 80% of the problem using 20% of the effort, gain the most revenue for
+the company.
 
 The Agile way                       | The old way
 ------------------------------------|---------------------------------------
 Deliver values continuously         | Wait until the end to see the result
-Customer in a feedback loop         | Cannot give feedbacks until very late
+Keep Customers in a feedback loop   | Cannot give feedbacks until very late
 Less multi-tasking                  | Many features at once
 Less big work, easier to refactor   | Hard to make it smaller
 Can throw away unnecessary features | Don't know what to throw until the end
@@ -63,14 +63,16 @@ Can throw away unnecessary features | Don't know what to throw until the end
 # Start from User Values
 
 Ok. If all the above sound so theoretical, how about taking the Integration project that I
-mentioned in Part 2 of this series and do it the Agile way?
+mentioned in
+[part 2]({% post_url 2023-09-03-lets-build-product-not-software-part-2 %})
+of this series and do it the Agile way?
 
 Instead of defining the tickets/milestones based on the code implementation, try re-writing the
 Acceptance Criteria following this format
 
 ```
 - As a user (a staff, a system admin,...), I want...
-- (Optional) so that I can solve (don't have to, be able to,...) do something
+- (Optional) so that I can solve (don't have to, be able to,...) ...
 ```
 
 - As a user of XXX, I want to be able to log in to Shopify from XXX so I can verify
@@ -110,10 +112,10 @@ Here are some rules for you to follow to ensure that the project will be on the 
   - That means the Users can use it
 - Be clear about the target users and decide whether this feature is necessary for that target users.
 - A clear definition of **Done**
-  - Done is when the feature is all the way to Production and shipped to the user. You don't have to
-  come back anymore
-- Do NOT include future work.
-- Prioritization: be `80-20`, highest value with smallest effort first.
+  - Done is when the feature flows all the way to Production and is shipped to the user. You don't
+  have to come back anymore
+- Do **NOT** include future work.
+- Prioritization: be **80-20**, highest value with smallest effort first.
 
 ![prioritization](/files/2023-08-17-lets-build-product-instead-of-software/prioritization.png)
 
