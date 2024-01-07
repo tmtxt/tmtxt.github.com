@@ -40,7 +40,7 @@ Sounds good? Yes, this is a perfect plan from a Software Engineer perspective, b
 
 Assume that it's 01/10/2023 and you have finished the first Backend phase. Everything works as
 expected, you bring this to the weekly project update meeting and present to all the stakeholders.
-However, ooposite to what is expected, they feel so disappointed. What has happened?
+However, oposite to what you expected, they feel so disappointed. What has happened?
 - They have been waiting for 1 month and they still have nothing.
 - They have to be patient for another month, for 4 other project update meeting to start using
 the feature.
