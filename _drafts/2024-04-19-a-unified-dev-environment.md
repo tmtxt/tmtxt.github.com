@@ -13,3 +13,5 @@ necessary tools for the developer as well as enforce everyone in the team to fol
 convention.
 
 # How I did it in 2014
+
+![2014](/files/2024-04-19-a-unified-dev-environment/2014.png)
