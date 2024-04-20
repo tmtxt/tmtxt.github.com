@@ -9,7 +9,29 @@
     "vscode": {
       // Add the IDs of extensions you want installed when the container is created.
       "extensions": [],
-      "settings": {}
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+          },
+          "zsh": {
+            "path": "zsh"
+          },
+          "fish": {
+            "path": "fish"
+          },
+          "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+          },
+          "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+          }
+        }
+      }
     }
   },
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
@@ -21,5 +43,6 @@
     "4000": {
       "label": "jekyll-server"
     }
-  }
+  },
+  "shutdownAction": "none"
 }
