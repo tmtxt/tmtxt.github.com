@@ -8,11 +8,10 @@ tags: []
 
 # Initial problem
 
-It's the classic logging issue again. In the Warehouse Management system that I'm working on, we
-usually need to add this logging pattern
+It's the classic logging issue again! In the Warehouse Management system that I'm working on, the
+team usually needs to add this logging pattern
 
 ```typescript
-type Result = { outcome: 'SUCCESS'|'NO_AVAILABLE_STATION' };
 const sendToteToPackingStation = (warehouseId: string, toteId: string): Promise<Result> => {
   logger.info('Sending tote to packing station', { warehouseId, toteId });
 
@@ -23,13 +22,14 @@ const sendToteToPackingStation = (warehouseId: string, toteId: string): Promise<
 };
 ```
 
-The purpose is simple. It's what you have to do for production debugging. You will need to log out
-some unique ids so you have a place to query. From that point, you will start tracing the related
-entries using a correlation id that your system provides.
+The purpose is simple. It's what you have to do for production debugging in every system. You should
+write out some unique ids so you have a place to start querying your logging system.
+From that point, you will then trace the related entries using a correlation id that your system
+provides.
 
-From time to time, when the system scales up, there will be areas that slow down the system.
-We then added more logic to the system, for example, execution time logging to help build some
-visualization dashboards to identify the slowness.
+From time to time, when the system scaled up, there were new areas that could slow down the system.
+We then added more logging logic to the system, for example, execution time logging to help build
+some visualization dashboards to identify the root cause.
 
 ```typescript
 const sendToteToPackingStation = (warehouseId: string, toteId: string): Promise<Result> => {
@@ -44,12 +44,12 @@ const sendToteToPackingStation = (warehouseId: string, toteId: string): Promise<
 };
 ```
 
-Of course, when we have to repeat this a lot, we started thinking about making a higher order
-function for it to reuse everywhere is the system
+Of course, when this was repeated multiple times, we started thinking about making a higher order
+function (HOF) to reuse everywhere is the system
 
 # First implementation...
 
-Let's begin with some type definition. Here are the generic types how a HOF looks like. It's a
+Let's begin with the type definition. Here are the generic types how a HOF looks like. It's a
 function that receives a function and return another function with the same signature with the
 input function
 
@@ -95,31 +95,32 @@ export const sendToteToPackingStation = withLogging(sendToteToPackingStationFn);
 # ...but it introduced other problems
 
 - There are some cases that we want to log only the input and the execution time because the output
-object is too large and can slow down the system. We then introduced another HOF
-`withParamsLogging`. There are many overlapping HOFs like that.
+object is too large and can slow down the system. We had to introduced another HOF
+`withParamsLogging` just for that purpose. Finally, we ended up with a lot of overlapping HOFs like
+that in our system.
 - For function output logging, depending on the case, we have different ways of returning data.
-Sometimes, it's a normal object with a `status`/`outcome` prop. There are places that we have to
-return an object from [neverthrow](https://www.npmjs.com/package/neverthrow). It's hard to make
-an HOF for multiple purposes. The HOF finally ended up being too complex and contains a lot of 
+Sometimes, it's a normal object with a `status`/`outcome` prop. In some other cases, we have to
+return an object from [neverthrow](https://www.npmjs.com/package/neverthrow) library. It's hard to
+maintain an HOF for multiple purposes. It usually becomes too complex and contains a lot of 
 `if/else` to make sure we log the right way.
 - We cannot use just part of the logic of the HOF, for example, only log execution time of the input
 function.
 
-# Composable Smaller HOFs
+# Composable Small HOFs
 
-Inspired by [Redux compose](https://redux.js.org/api/compose) function, it didn't take much time
-to resolve all the above problem with a composable approach. Instead of making big and generic HOFs,
-I decided to split them into smaller HOFs, each HOF is responsible for 1 and only 1 purpose, for
-example
+Inspired by [Redux compose](https://redux.js.org/api/compose) function, it doesn't take much time
+to resolve all the above problems with a composable approach. Instead of making big and generic
+HOFs, I decided to split them into smaller HOFs, each HOF is responsible for 1 and only 1 single
+purpose, for example
 
 - `withInputLogging` and `withOutputLogging` to log the input and output of a function
 - `withNeverthrowOutputLogging` for logic specific to logging **neverthrow** output object
 - `withExecutionTimeLogging`
-- `withPubsubLogging` - automatically send the data to pubsub
-- `withUnhandledErrorLogging` - beautify the unhandled error and rethrow it
+- `withPubsubLogging` automatically sends the data to pubsub
+- `withUnhandledErrorLogging` beautifies the unhandled error and rethrows it
 - ...
 
-Implement a simple compose function like this
+To combine them, implement a `compose` function like this
 
 ```typescript
 export const compose =
@@ -140,7 +141,7 @@ export const compose =
   };
 ```
 
-And then you can decide which HOFs you want to use in each individual case
+and then you can decide which HOFs you want to use in each individual case
 
 ```typescript
 export const sendToteToPackingStation = compose(
@@ -152,10 +153,11 @@ export const sendToteToPackingStation = compose(
 
 # Make it work with Promise
 
-You may notice that `withExecutionTimeLogging` or `withOutputLogging` don't really play nicely with
-Promise. To fix it, add a `finally` block if the return data is a Promise.
+You may notice that the above logging utils don't really play nicely with Promise. To fix it, just
+add a `finally` block if the return data is a Promise.
 
 ```typescript
+//...
 const result = wrappedFunction(...args);
 
 if (isPromise(result)) {
@@ -163,13 +165,15 @@ if (isPromise(result)) {
 } else {
   logFinishTime();
 }
+//...
 ```
 
 # Include extra information
 
 You may find yourself need to include some extra information to the HOFs, for example, to log a key
-that you can use to correlation the business logic. In that case, simply turn those that HOF to a
-function that return the HOF (yes, it's a function returning a function returning a function 😅).
+that you can use to correlation the business logic. In that case, simply turn that HOF to a
+function that return the actual HOF (yes, it's a function returning a function returning a
+function 😅).
 
 ```typescript
 export const withInputLogging =
