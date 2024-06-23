@@ -47,8 +47,6 @@ const sendToteToPackingStation = (warehouseId: string, toteId: string): Promise<
 Of course, when we have to repeat this a lot, we started thinking about making a higher order
 function for it to reuse everywhere is the system
 
-<!-- more -->
-
 # First implementation...
 
 Let's begin with some type definition. Here are the generic types how a HOF looks like. It's a
@@ -68,6 +66,8 @@ export type HigherOrderFunction = <
   func: WrappedFunction<FunctionArgs, FunctionReturn>
 ) => WrappedFunction<FunctionArgs, FunctionReturn>;
 ```
+
+<!-- more -->
 
 And here is the first basic implementation
 
@@ -140,23 +140,52 @@ export const compose =
   };
 ```
 
-# Make it work with Promise
+And then you can decide which HOFs you want to use in each individual case
 
 ```typescript
-// WIP
-export const withExecutionTimeLogging: HigherOrderFunction =
+export const sendToteToPackingStation = compose(
+  withInputLogging,
+  withOutputLogging,
+  withExecutionTimeLogging,
+)(sendToteToPackingStationFn);
+```
+
+# Make it work with Promise
+
+You may notice that `withExecutionTimeLogging` or `withOutputLogging` don't really play nicely with
+Promise. To fix it, add a `finally` block if the return data is a Promise.
+
+```typescript
+const result = wrappedFunction(...args);
+
+if (isPromise(result)) {
+  result.finally(() => logFinishTime());
+} else {
+  logFinishTime();
+}
+```
+
+# Include extra information
+
+You may find yourself need to include some extra information to the HOFs, for example, to log a key
+that you can use to correlation the business logic. In that case, simply turn those that HOF to a
+function that return the HOF (yes, it's a function returning a function returning a function 😅).
+
+```typescript
+export const withInputLogging =
+  (opts: { action?: string } = {}): HigherOrderFunction =>
   (wrappedFunction) =>
   (...args) => {
-    const startTime = performance.now();
-    const result = wrappedFunction(...args);
-
-    if (isPromise(result)) {
-      result.finally(() => logFinishTime());
-    } else {
-      logFinishTime();
-    }
-
-    return result;
+    logger.info('Start hof', { action, args })
+    //...
   };
 
+// or to specify the pubsub topic to publish to?
+export const withPubsubLogging =
+  (opts: { topic: string }): HigherOrderFunction =>
+  (wrappedFunction) =>
+  (...args) => {
+    client.publish(topic, { args });
+    //...
+  };
 ```
