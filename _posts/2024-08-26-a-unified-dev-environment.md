@@ -126,6 +126,8 @@ Let’s go into more details about Codespaces
 
 To get the best of both worlds, fix all the existing problems with Codespaces while still maintaining the benefit of a unified development environment, we should run Devcontainer directly on our machine, not via Codespaces.
 
+> My blog is also configured with Devcontainer now! 😆
+
 # Aren’t we going back to our initial solution?
 No. Here is the comparison table
 
