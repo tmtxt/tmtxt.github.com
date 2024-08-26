@@ -38,5 +38,5 @@ Turns out a lot of them also use ChatGPT to get the answer
 
 ![ChatGPT](/files/2024-08-26-who-will-win/chatgpt.png)
 
-> Use these AIs to speed up and improve your workflow, but don't completely trust them. Always
-> verify the answers yourself.
+> In conclusion, use these AIs to speed up and improve your workflow, but don't completely trust
+> them. Always verify the answers yourself.
