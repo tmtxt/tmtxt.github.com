@@ -145,3 +145,6 @@ No. Here is the comparison table
 
 - Problems/Solutions when setting up Codespaces/Devcontainer
 - Sample Dev workflow with Codespaces/Devcontainer
+
+> My last words: Why is Jetbrains (my favorite IDE and I paid for it) losing to VSCode in this race?
+> I have been waiting for so long but its support still far behind compare to VSCode 🫠
