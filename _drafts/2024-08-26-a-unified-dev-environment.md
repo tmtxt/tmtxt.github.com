@@ -27,7 +27,7 @@ this is the worst (but was the best with my knowledge at that time 😆).
   that machine. The script can mess up the other people's computer easily.
 - Even if it's just for me, that also won't work. I install and set up new applications all the
   time. After a while, when I touch that project again, all the scripts were broken and I don't even
-  remember how to configure everything again.
+  remember how to run my app again.
 
 # A better way
 
@@ -36,12 +36,14 @@ The environment is configured using a Virtualbox VM (provisioned by Vagrant),
 which reflects the real setup on the production server. The server/VM runs everything, from the
 database server to the main application.
 
+[//]: # (The image contains embedded scene for Excalidraw)
 ![2014](/files/2024-04-19-a-unified-dev-environment/before-codespaces.png)
 
 <!-- more -->
 
 Later on, with the increase in Docker adoption, the setup had changed to this
 
+[//]: # (The image contains embedded scene for Excalidraw)
 ![Docker](/files/2024-04-19-a-unified-dev-environment/docker-workflow.png)
 
 This time, of course, it was a much better setup
@@ -54,7 +56,7 @@ their own computer with different applications, different setup. We then need to
 install all the necessary tools (Nodejs, Homebrew, tmux,…), load the repo into our text editor,
 configure the plugins (ex eslint, prettier,…) to work.
 - The only things that we can make sure that always behave the same is the VM or the containers
-  running inside Docker. Everything else, no. It really depends on what is installed on that
+  running inside Docker. Everything else, **No**. It really depends on what is installed on that
   computer. An engineer could have multiple Nodejs versions (installed via nvm) and forget to switch
   to the correct version for the project. An engineer could install a different application on that
   computer, for example, the command like ls behave slighly different on Macos and Linux,…
@@ -72,23 +74,24 @@ configure the plugins (ex eslint, prettier,…) to work.
 
 # Adopting Github Codespaces
 
-At Skutopia, we then adopted Codespaces as a solution to the above problems. The idea behind is to
+At Skutopia, we then adopted **Codespaces** as a solution to the above problems. The idea behind is to
 transform **Your Computer** into **Somebody else Computer**. Codespaces is a Cloud technology, where
 you can quickly spin up a new VM running your whole dev environment. Your computer acts as a UI
 only.
 
+[//]: # (The image contains embedded scene for Excalidraw)
 ![Codespaces](/files/2024-04-19-a-unified-dev-environment/codespaces.png)
 
 Here are the benefits of running Codespaces
-- A single unified development environment for the whole team, where you define a configuration file
+- **A single unified development environment** for the whole team, where you define a configuration file
   describing what you want to set up for that machine, even the VSCode plugins.
-- You can configure the exact software and the version that should be used for the whole team
-- You can configure the exact plugins to make sure everybody in the company follow the same
+- You can configure **the exact software** and the version that should be used for the whole team
+- You can configure **the exact plugins** to make sure everybody in the company follow the same
   convention
-- Once created, the application will just work. You can start working immediately, from using the
-  debugger to running a test. Everything will be configured already.
+- Once created, the application will **just work**. You can start working immediately, using the
+  debugger or running a test case. Everything will be configured already.
 - No more **It works on my machine!**
-- You can still customize it! Simply set a dotfiles repository to install your favorite software.
+- You can still **customize it**! Simply set a dotfiles repository to install your favorite software.
   It won’t mess up your local computer. You can also override specific VSCode settings if needed,
   for example your favorite key bindings, favorite editor theme, favorite shell setup, etc.
 - And of course, fix all the problems mentioned above with previous methods
@@ -100,13 +103,14 @@ However, I have never been satisfied enough with Codespaces
   to increase just the disk space. We have to pay for the higher machine specs. Some of our
   applications consume quite a lot of disk space.
 - Its performance is terrible. An M1 macbook with 16gb ram really outperforms a Codespaces instance
-  with 4 cores and 16gb ram. We all have M1+ plus cannot utilize that power.
+  with 4 cores and 16gb ram. We all have M1+ Macbook but cannot utilize that power.
 - It’s pricey!
 
 # To Devcontainer
 
 Let’s go into more details about Codespaces
 
+[//]: # (The image contains embedded scene for Excalidraw)
 ![Codespaces](/files/2024-04-19-a-unified-dev-environment/codespaces-details.png)
 
 - Codespaces is a Linux VM
@@ -116,6 +120,9 @@ Let’s go into more details about Codespaces
 - Your VSCode UI doesn't connect to that Codespaces VM. It actually interacts with that Devcontainer. The gh command abstracts everything for you, from starting the VM+container to connect to the correct one.
 - Devcontainer is a separate technology. Codespaces just build the wrapper around it to provide the infrastructure. VSCode actually supports us running Devcontainer separately, directly on our computer using Docker.
   - You have already installed this VSCode extension when working with Codespaces. If not, simply install it from VSCode marketplace
+
+[//]: # (The image contains embedded scene for Excalidraw)
+![Devcontainer](/files/2024-04-19-a-unified-dev-environment/devcontainer.png)
 
 To get the best of both worlds, fix all the existing problems with Codespaces while still maintaining the benefit of a unified development environment, we should run Devcontainer directly on our machine, not via Codespaces.
 
@@ -131,3 +138,8 @@ No. Here is the comparison table
 | Enough disk space                                 | ✅             | ❌          | ✅            |
 | Save money                                        | ✅             | ❌          | ✅            |
 {: .table }
+
+# Next
+
+- Problems/Solutions when setting up Codespaces/Devcontainer
+- Sample Dev workflow with Codespaces/Devcontainer
