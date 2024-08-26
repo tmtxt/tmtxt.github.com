@@ -34,7 +34,7 @@ sequentially, in the order of declaration.
 It will behave differently only when you add some non-blocking (async) operation inside the
 Promise, for example `setInterval`.
 
-Turns out a lot of them also use ChatGPT to get the answer
+Turns out a lot of them also use ChatGPT to get the answer 🥸
 
 ![ChatGPT](/files/2024-08-26-who-will-win/chatgpt.png)
 

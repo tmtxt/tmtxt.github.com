@@ -7,15 +7,16 @@ tags: []
 ---
 
 I have been dreaming about a unified dev environment for everybody in the team, where there's no
-more "It works on my machine" issue. The dev environment should be portable, automatically
-configured and can be destroyed/recreated as quick as possible. It should also provide all the
+more **It works on my machine** issue. The dev environment should be portable, automatically
+configured and can be destroyed/recreated as quickly as possible. It should also provide all the
 necessary tools for the developer as well as enforce everyone in the team to follow the correct
 convention consistently.
 
 # My first attempt in university
 
-Here is my first experiment when I was still a student, a classic solution.
+Here is my first effort when I was a student, a classic solution.
 
+[//]: # (The image contains embedded scene for Excalidraw)
 ![First attempt](/files/2024-04-19-a-unified-dev-environment/first-attempt.png)
 
 In this method, you would run everything normally in your computer and use a Bash/Ansible script
