@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A Unified Development Environment Journey - Part 1"
-description: "My dream about a unified devlopment environment for everybody in the team for the last 10 years..."
+description: "My dream about a unified development environment for everybody in the team for the last 10 years..."
 categories: [misc]
 tags: []
 ---
