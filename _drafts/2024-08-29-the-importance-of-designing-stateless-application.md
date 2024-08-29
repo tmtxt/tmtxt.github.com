@@ -1,12 +1,11 @@
 ---
 layout: post
-title: "A Unified Development Environment Journey - Part 2"
-description: "My dream about a unified development environment for everybody in the team for the last 10 years..."
+title: "The importance of Designing a stateless application"
+description: ""
 categories: [misc]
 tags: []
 ---
 
-> Previous post: [A Unified Development Environment Journey - Part 1]({% post_url 2024-08-26-a-unified-development-environment-journey-part-1 %})
 
-# Dev credentials
 
+> First, let's review [Rule 6 of The Twelve-Factor App: Processes](https://12factor.net/processes)
