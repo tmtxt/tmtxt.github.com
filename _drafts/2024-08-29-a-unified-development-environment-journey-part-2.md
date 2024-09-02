@@ -86,3 +86,7 @@ if [[ -n "$gitUserEmailCheck" && -n "$GIT_USER_EMAIL" ]]; then
   git config --global user.email "$GIT_USER_EMAIL"
 fi
 ```
+
+# Issues when running Docker inside Codespaces/Devcontainer
+
+# E2E
