@@ -58,3 +58,31 @@ add this to your bootstrap file
 touch /home/node/.zshenv
 cat /workspaces/devcontainer-mount/workflow.env >> /home/node/.zshenv
 ```
+
+# Git config not shared properly with Devcontainer
+
+It's suggested that you install [git-credential-manager](https://github.com/git-ecosystem/git-credential-manager)
+when working with Devcontainer. However, it only transfers the credential, not the configurations (git username and user email).
+Codespaces set these values automatically based your Github account. For Devcontainer, you need
+to do it manually.
+
+Continue with the `workflow.env` file that I mentioned above, add your Git details
+```bash
+GIT_USER_NAME="Tony Tran"
+GIT_USER_EMAIL="my.email@my-company.com"
+```
+
+and then in your bootstrap file (after sourcing the env file)
+```bash
+git config user.name > /dev/null || gitUserNameCheck=$?
+if [[ -n "$gitUserNameCheck" && -n "$GIT_USER_NAME" ]]; then
+  echo "Setting Git user.name"
+  git config --global user.name "$GIT_USER_NAME"
+fi
+
+git config user.email > /dev/null || gitUserEmailCheck=$?
+if [[ -n "$gitUserEmailCheck" && -n "$GIT_USER_EMAIL" ]]; then
+  echo "Setting Git user.email"
+  git config --global user.email "$GIT_USER_EMAIL"
+fi
+```
