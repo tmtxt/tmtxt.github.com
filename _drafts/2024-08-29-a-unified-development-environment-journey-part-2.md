@@ -87,6 +87,56 @@ if [[ -n "$gitUserEmailCheck" && -n "$GIT_USER_EMAIL" ]]; then
 fi
 ```
 
-# Issues when running Docker inside Codespaces/Devcontainer
+# docker-in-docker and its bugs
 
-# E2E
+Your Devcontainer/Codespaces instance is actually a Docker container (or can be treated as another
+computer). You can install any database engine into it and connect directly. However, for
+simplicity, we usually just pull a docker image with the database engine already bundled. You can
+also easily find other docker images for different backing services, for example Pubsub emulator.
+
+Devcontainer supports running
+[docker inside docker](https://github.com/devcontainers/features/tree/main/src/docker-in-docker).
+Once you have enabled and recreated your Devcontainer, just use all the Docker commands normally
+inside your Devcontainer
+
+This is an example of Docker running inside Docker Devcontainer
+![docker-in-docker](/files/2024-04-19-a-unified-dev-environment/docker-in-docker.jpg)
+
+However, I usually get these below issues when using this feature, sometimes on first rebuild of
+the container or sometimes when the container is started
+
+![docker issue 1](/files/2024-04-19-a-unified-dev-environment/docker-issue-1.jpg)
+![docker issue 2](/files/2024-04-19-a-unified-dev-environment/docker-issue-2.jpg)
+
+I figured out the issue is that Docker service inside Devcontainer sometimes fail to start. You can
+simply run this command inside Devcontainer/Codespaces to fix
+
+```
+/usr/local/share/docker-init.sh
+```
+
+> Similar, if you use its
+> [sshd feature](https://github.com/devcontainers/features/tree/main/src/sshd), sometimes it also
+> fails to start. Run `/usr/local/share/ssh-init.sh` to manually start ssh service.
+
+It may still fail after you run the above init command in case you run it inside your iTerm via an
+SSH session. In that case, simply run any Docker commands (`docker compose up` for example) inside
+**VSCode Terminal** and then come back to your SSH window. 99% it will work in both VSCode and SSH
+after that. I guess it's because VSCode terminal has some environment variable set by default
+related to Docker RPC. 🫠
+
+# E2E and UI Tests
+
+Devcontainer acts like another computer and we connect to it via our VSCode/Jetbrains terminal
+or SSH session. For UI testing with browser, you can only run in headless mode. Luckily,
+Devcontainer comes with a builtin feature, providing us a minimal VNC desktop UI. It can be
+connected using any VNC client or directly via WebUI. You can enable it following the instructions
+[here](https://github.com/devcontainers/features/tree/main/src/desktop-lite).
+
+After you have rebuilt your Devcontainer/Codespaces, simply install any browser or UI test
+framework that you want and start them in headful mode. You can easily access that VNC desktop
+via browser
+
+![lite-desktop](/files/2024-04-19-a-unified-dev-environment/desktop.jpg)
+
+# Anything else?
