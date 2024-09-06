@@ -31,6 +31,8 @@ see the problem in the above code. Even though the code is inside a Promise, whi
 called blocking code in js. Since Nodejs is single-threaded, the above functions will be executed
 sequentially, in the order of declaration.
 
+<!-- more -->
+
 It will behave differently only when you add some non-blocking (async) operation inside the
 Promise, for example `setInterval`.
 

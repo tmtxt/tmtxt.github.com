@@ -42,6 +42,8 @@ Read more here [Add another local file mount](https://code.visualstudio.com/remo
 }
 ```
 
+<!-- more -->
+
 In your Devcontainer bootstrap file (usually defined under `updateContentCommand` section in your
 **devcontainer.json** file), load those variables before executing any script
 ```bash
