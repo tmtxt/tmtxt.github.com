@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The importance of Designing a stateless application"
-description: "or How does 12-factor app help you build better application"
+description: "or How 12-factor app helps you build better software"
 categories: [misc]
 tags: []
 ---
