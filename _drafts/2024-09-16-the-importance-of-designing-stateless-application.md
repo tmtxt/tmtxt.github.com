@@ -8,7 +8,7 @@ tags: []
 
 > First thing first: What is **12-factor App**?
 
-It's a set of techniques to build Web and Saas app. It's not the "Swiss Army Knife" solution for
+It's a set of techniques to build Web and Saas app. It's not the **Swiss Army Knife** solution for
 every scenario but it’s becoming more relevant in today's Cloud and Container world.
 The website [The Twelve-Factor App](https://12factor.net/) 
 
