@@ -112,7 +112,7 @@ const sumTrampoline = (arr) => {
 sumTrampoline(arr);
 ```
 
----
+# 2. Dynamic Programming
 
 Now, let's come to a little bit more complicated problem
 
@@ -120,9 +120,7 @@ Now, let's come to a little bit more complicated problem
 > Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
 
 
-
-- convert to a loop
 - with memoization
-- tail-call optimization
-- trampoline
+- with tabulation
+
 - to bfs
