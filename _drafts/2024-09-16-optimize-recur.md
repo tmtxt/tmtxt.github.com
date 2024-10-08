@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Optimize A Recursive function"
+title: "Optimize A Recursive problem"
 description: ""
 categories: [algorithm]
 tags: []
@@ -11,10 +11,12 @@ Ok, you will probably find this problem during your coding interview 😩 Many c
 giving the candidates the tricky problem. Instead, they will simply ask you to write a recursion
 function to prove that you're a real engineer, not some random guys applying for the job because
 it's well paid 😆 Often after writing that recursion function, the next question they will ask is
-how do you optimize that with a very large dataset and avoid the error Maximum call stack size
+how to optimize that with a very large dataset and avoid the error Maximum call stack size
 exceeded.
 
 Here is how you can prepare yourself for that type of interview question
+
+# 1. Basic Recursion
 
 Let's start with this very basic recursion question
 
@@ -42,7 +44,7 @@ const sum = (arr) => {
 };
 ```
 
-# An iterative solution
+## An iterative solution
 
 Of course, the easiest way is to convert the above one to a simple `for` (or `while`) loop to
 avoid adding to the call stack.
@@ -56,6 +58,61 @@ const sum = (arr) => {
   return sum;
 };
 ```
+
+Simple? Yeah that's what they taught in university, but that's what will probably help you during
+the interview.
+
+## Tail-call optimization and Trampoline
+
+Another way you can answer the interviewer is to use Tail-call optimization. Some programming
+languages, if you return the the recursive expression, they can optimize this automatically by
+avoiding creating a new call stack. From that, we can rewrite the above `sum` function in that style
+
+```javascript
+const sum = (arr, acc) => {
+  if (arr.length === 0) {
+    return acc;
+  }
+  const [head, ...tail] = arr;
+  return sum(tail, head + acc);
+};
+
+sum(arr, 0);
+```
+
+However, a new problem arises here. The above piece of code is written in Javascript, which doesn't
+support tail-call optimization
+
+> Actually, it's partially supported now. However, let's assume we are working on a non-supported
+> language.
+
+There is another way you can rewrite the above one in a tail-call way without the support from the
+language. Instead of returning the recursive call, you can return a function calling the recursive
+function and use a another wrapper function (trampoline) to execute and manage the stack.
+
+```javascript
+const sum = (arr, acc) => {
+  // base case, still the same
+  if (arr.length === 0) {
+    return acc;
+  }
+
+  const [head, ...tail] = arr;
+  return () => sum(tail, head + acc);
+};
+
+const sumTrampoline = (arr) => {
+  let result = sum(arr, 0);
+  while (typeof result === 'function') {
+    result = result();
+  }
+  return result;
+};
+
+sumTrampoline(arr);
+```
+
+---
 
 Now, let's come to a little bit more complicated problem
 
