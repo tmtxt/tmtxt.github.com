@@ -242,8 +242,23 @@ Given a starting directory, build a JSON model representing the structure of the
 
 > I was quite surprised that many engineers couldn’t solve this problem using the simplest recursion way 🫠
 
+At a very basic level of a software engineer, should be able to write a simple recursion function like this to traverse the directory tree starting from its root node
+
 ## Breadth First Search
+
+After you finish writing that, the interviewer will definitely ask a follow up question about your optimization when the input folder is a very big one with a lot of nested level. There are many ways to solve this, but the most common way is to convert this to a Breadth First Search solution. As long as you can mention that keyword, you are 50% to the end 😆 Here is how to traverse it with Breadth First Search
+
+
+
+> You can also use this for 2D maze and Unweighted graph problems
 
 # Time to practice
 
-What I presented in this post so far are just the suggestions to the most common recursion problems. They are not everything but can cover most of the interview questions related to recursion, even for Senior level. I’ve been through several similar interviews and the advanced problem given to Senior role is also 
+What I presented in this post so far are just the suggestions to the most common recursion problems. They are not everything but can cover most of the interview questions related to recursion, even for Senior level. I’ve been through several similar interviews and even the advanced problems given to Senior role also fall into those categories, just more edge cases to handle. FAANG interview would probably be different.
+
+You should also practice to get yourself familiar with those types of question before any interview. Here are some Leetcode questions that you should do (some of them you may find the solution on my blog)
+
+- Rat in maze
+- Fibonacci
+- House robber
+- Coin change
