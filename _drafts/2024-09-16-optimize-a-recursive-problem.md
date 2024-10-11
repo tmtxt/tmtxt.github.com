@@ -119,8 +119,94 @@ Now, let's come to a little bit more complicated problem
 > You are climbing a staircase. It takes n steps to reach the top.
 > Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
 
+This is the most common DP problem that you will see every time enter a coding interview (beside the
+Fibonacci and House Robber question). The most straight forward solution is to write a recursive
+function to count the ways to step through 1 or 2 steps.
 
-- with memoization
-- with tabulation
+![Climb 1](/files/2024-09-16-optimize-a-recursive-problem/climb1.png)
 
-- to bfs
+For the above example, the solution can be explained like this
+- Start with `count(4)`
+- We can climb 1 or 2 steps each time, that means we need the total ways is the sum of climb 1 or 2
+steps, or `count(4) = count(4-2) + count(4-1) = count(2) + count(3)`
+- Repeat the same problem with a smaller number until there is no more step to climb
+
+![Climb 1](/files/2024-09-16-optimize-a-recursive-problem/climb2.png)
+
+From the above explanation, we can come up with the simplest recursive implementation
+
+```javascript
+const count = (n) => {
+  // base case: only 1 way to climb if 0 or 1 step
+  if (n === 0 || n === 1)
+    return 1;
+
+  return count(n - 1) + count(n - 2);
+};
+
+const n = 4;
+console.log(count(n)); // print 5
+```
+
+## Memoization
+
+Let's take a look at the above solution again, you may notice that both these recursive calls
+`count(2)` and `count(3)` contain an overlapping problem (the blue one in the below picture) because
+`count(3)` can be interpreted as `count(1) + count(2)`.
+
+![Climb 3](/files/2024-09-16-optimize-a-recursive-problem/climb3.png)
+
+With that in mind, we can store the overlapping calculation into an array and pass that array into
+each recursive call.
+
+```javascript
+const count = (n, res) => {
+  // same base case
+  if (n === 0 || n === 1)
+    return 1;
+
+  // check if this problem has already been calculated
+  if (res[n] !== undefined)
+    return res[n];
+
+  res[n] = count(n - 1, res) + count(n - 2, res);
+  return res[n];
+};
+
+const n = 4;
+const res = Array(n + 1);
+console.log(count(n, res));
+```
+
+## Tabulation
+
+In the above memoization solution, after finish running the `count` function, the `res` array will
+be built like this
+
+![Climb 4](/files/2024-09-16-optimize-a-recursive-problem/climb4.png)
+
+The pattern here is similar to Fibonacci problem, where the value of each item in the array is the
+value of the previous 2 items. We can then build a solution to traverse and build the array from the
+beginning
+
+```javascript
+const count = (n) => {
+  const res = Array(n + 1);
+
+  // base case
+  res[0] = 1;
+  res[1] = 1;
+
+  for (let i=2; i<=n; i++) {
+    res[i] = res[i-1] + res[i-2];
+  }
+  return res[n];
+}
+
+const n = 4;
+console.log(count(n));
+```
+
+You can also optimize it even more using only 2 variables to store `i-1` and `i-2` values only.
+
+# 3. Depth First Search and Breadth First Search
