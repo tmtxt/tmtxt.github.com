@@ -210,3 +210,40 @@ console.log(count(n));
 You can also optimize it even more using only 2 variables to store `i-1` and `i-2` values only.
 
 # 3. Depth First Search and Breadth First Search
+ 
+Another type of recursion question that the interviewer usually ask is the question related to tree data structure, for example this one
+
+Given a starting directory, build a JSON model representing the structure of the directory and all its nested items. Your function should output a json structure like this
+
+```json
+{
+  “name”: “root”,
+  “contents”: [
+    “file.txt”,
+    {
+      “name”: “root/folder1”,
+      “contents”: [
+        “weavels.pdf”
+      ]
+    },
+    {
+      “name”: “root/an_empty_folder”,
+      “contents”: []
+    },
+    “test.txt”
+  ]
+}
+```
+
+- Each file is represented as a string
+- Each folder is represented as an object with a contents array for all its child `{ “name”: “xxx”, “contents”: []}`
+
+## Depth First Search
+
+> I was quite surprised that many engineers couldn’t solve this problem using the simplest recursion way 🫠
+
+## Breadth First Search
+
+# Time to practice
+
+What I presented in this post so far are just the suggestions to the most common recursion problems. They are not everything but can cover most of the interview questions related to recursion, even for Senior level. I’ve been through several similar interviews and the advanced problem given to Senior role is also 
