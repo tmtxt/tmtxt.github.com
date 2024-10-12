@@ -21,12 +21,12 @@ Let's start with this very basic recursion question
 > Given an array `arr` with `N` items, write a recursive function to calculate the sum of all items in the array
 
 If you think about recursion in its simplest form, it's like a divide and conquer strategy,
-where you break down the problem into smaller ones, solve one of them first and then repeat with
+where you break the problem into smaller ones, solve one of them first and then repeat with
 the other remaining ones (recursive case) until there is no item left (base case). Now, let's take
 a look at the above problem, the solution can be described like this: The sum of an array is the sum
 of the first element (the head of the list) and all the remaining items (the tail of the array).
 
-> If you have worked in any lisp-like language before (Emacs Lisp for example 😂), you will
+> If you have worked in any lisp-like language (Emacs Lisp for example 😂), you will
 > immediately see the pattern. They are the `car` and `cdr` function in Elisp.
 
 From that, you can easily write a basic recursive function like this (in Javascript)
@@ -58,14 +58,14 @@ const sum = (arr) => {
 };
 ```
 
-Simple? Yeah that's what you learnt in university, but that's what will probably help you during
+Simple? Yeah that's just what you learnt in university, but that will probably help you during
 the interview.
 
 ## Tail-call optimization and Trampoline
 
 Another way you can answer the interviewer is to use Tail-call optimization. In some programming
-languages, if you return the recursive expression as the last expression in the function, they can optimize automatically by
-avoiding creating a new call stack. From that, we can rewrite the above `sum` function in that style
+languages, if you return the recursive call as the last expression in the function, they can optimize automatically by
+avoiding creating a new call stack. Using that concept, you can rewrite the above `sum` function like this
 
 ```javascript
 const sum = (arr, acc) => {
@@ -123,13 +123,13 @@ function to count the ways to step through 1 or 2 steps.
 
 For the above example, the solution can be explained like this
 - Start with `count(4)`
-- We can climb `1` or `2` steps each time, that means the total ways is the sum of climb `1` or `2`
+- We can climb `1` or `2` steps each time, that means the total ways is the sum of climbing `1` or `2`
 steps, or `count(4) = count(4-2) + count(4-1) = count(2) + count(3)`
 - Repeat the same problem with the smaller numbers until there is no more step to climb
 
 ![Climb 1](/files/2024-09-16-optimize-a-recursive-problem/climb2.png)
 
-From the above explanation, we can come up with the simplest recursive implementation
+From the above explanation, it's not hard to come up with the simplest recursive implementation
 
 ```javascript
 const count = (n) => {
@@ -176,7 +176,7 @@ console.log(count(n, res));
 
 ## Tabulation
 
-In the above memoization solution, after finish running the `count` function, the `res` array will
+In the above memoization solution, after executing the `count` function, the `res` array will
 be built like this
 
 ![Climb 4](/files/2024-09-16-optimize-a-recursive-problem/climb4.png)
@@ -213,26 +213,26 @@ Given a starting directory, build a JSON model representing the structure of the
 
 ```json
 {
-  “name”: “root”,
-  “contents”: [
-    “file.txt”,
+  "name": "root",
+  "contents": [
+    "file.txt",
     {
-      “name”: “root/folder1”,
-      “contents”: [
-        “weavels.pdf”
+      "name": "root/folder1",
+      "contents": [
+        "weavels.pdf"
       ]
     },
     {
-      “name”: “root/an_empty_folder”,
-      “contents”: []
+      "name": "root/an_empty_folder",
+      "contents": []
     },
-    “test.txt”
+    "test.txt"
   ]
 }
 ```
 
 - Each file is represented as a string
-- Each folder is represented as an object with a contents array for all its child `{ “name”: “xxx”, “contents”: []}`
+- Each folder is represented as an object with a contents array for all its child `{ "name": "xxx", "contents": []}`
 
 ## Depth First Search
 
@@ -240,10 +240,10 @@ Given a starting directory, build a JSON model representing the structure of the
 
 At the very basic level, a software engineer should be able to write a simple recursive function like this to traverse the directory tree starting from the root node
 
-```
+```javascript
 const getContents = (path) => {
   // implement this
-  return ['child1.js', ‘child2.txt’, ‘childFolder1’];
+  return ['child1.js', 'child2.txt', 'childFolder1'];
 }
 
 const isFolder = (path) => {
@@ -273,11 +273,11 @@ After you have finished writing that, the interviewer will definitely ask a foll
 
 > As long as you can mention that keyword, you are 50% to the success 😆
 
-The idea behind BFS is to visit all nodes in the current level first (closest nodes first) before visiting the next level (further ones later), in constrast to DFS, that is to traverse all the nested child of the current node before visiting the next one. BFS can help you avoid the “Maximum call stack exceeded” error in DFS for very large trees. The implementation relies on a Queue and sometimes an extra array to store the visited items.
+The idea behind BFS is to visit all nodes in the current level first (closest nodes first) before visiting the next level (further ones later), in constrast to DFS, that is to traverse all the nested child of the current node before visiting the next one. BFS can help you avoid the “Maximum call stack exceeded” error in DFS for very large trees. The implementation relies on a queue and sometimes an extra array to store the visited items.
 
 Here is the quick and dirty BFS solution
 
-```
+```javascript
 const buildTree = (entryPoint) => {
   const root = {name: entryPoint, contents: []};
   const q = [root]; // use array for bfs queue
@@ -304,9 +304,9 @@ const buildTree = (entryPoint) => {
 
 # Time to practice
 
-What I presented in this post so far are just the suggestions to the most common recursive problems. They are not everything but can cover most of the interview questions related to recursion, even for Senior level at so,e companies. I’ve gone through several similar interviews and even the advanced problems given to Senior role also fall into these 3 categories, just more edge cases to handle (FAANG and Big Tech interview could be different and harder).
+What I presented in this post so far are just the suggestions to the common recursive problems. They are not everything but can cover most of the interview questions related to recursion. I’ve been through several similar interviews and even the advanced problems given to Senior role are based on those 3 categories with a lot more edge cases to handle (FAANG and Big Tech interview could be different and harder).
 
-You should also practice to get yourself familiar with those types of question before any interview. Here are some challenges that you should take
+You should also practice to get yourself familiar with those types of question before any interview. Here are some challenges that you could take
 
 - Factorial
 - [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/description/)
