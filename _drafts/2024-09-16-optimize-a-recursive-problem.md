@@ -242,15 +242,63 @@ Given a starting directory, build a JSON model representing the structure of the
 
 > I was quite surprised that many engineers couldn’t solve this problem using the simplest recursion way 🫠
 
-At a very basic level of a software engineer, should be able to write a simple recursion function like this to traverse the directory tree starting from its root node
+At the very basic level of a software engineer, you should be able to write a simple recursion function like this to traverse the directory tree starting from its root node
+
+```
+const getContents = (path) => {
+  // implement this
+  return [‘child1.js’, ‘child2.txt’, ‘childFolder1’];
+}
+
+const isFolder = (path) => {
+  // implement this
+  return true;
+}
+
+const buildNode = (parent) => {
+  const children = getContents(parent.name);
+  
+  for (let i = 0; i < children.length; i++) {
+    const name = children[i];
+    const childNode = isFolder(name) ?
+      buildNode({name, contents: []}) : name;
+    parent.contents.push(childNode);
+  }
+  
+  return parent;
+}
+
+const res = buildNode({name: entryPoint, contents: []});
+```
 
 ## Breadth First Search
 
-After you finish writing that, the interviewer will definitely ask a follow up question about your optimization when the input folder is a very big one with a lot of nested level. There are many ways to solve this, but the most common way is to convert this to a Breadth First Search solution. As long as you can mention that keyword, you are 50% to the end 😆 Here is how to traverse it with Breadth First Search
+After you finish writing that, the interviewer will definitely ask a follow up question about your optimization when the input folder is a very big one with a lot of nested level. There are many ways to solve this, but the most common way is to convert this to a Breadth First Search solution. As long as you can mention that keyword, you are 50% to the success 😆 Here is how to traverse it with Breadth First Search
 
+```
+const buildTree = (entryPoint) => {
+  const root = {name: entryPoint, contents: []};
+  const q = [root]; // use array for bfs queue
+  
+  while (q.length) {
+    const current = q.pop();
+    const children = getContents(current.name);
+    children.forEach(child => {
+      if (isFolder(child)) {
+        const childNode = {name: child, contents: []};
+        q.push(childNode);
+        current.contents.push(childNode);
+      } else {
+        current.contents.push(child);
+      }
+    });
+  }
+  
+  return root;
+}
+```
 
-
-> You can also use this for 2D maze and Unweighted graph problems
+> You can also use BFS for 2D maze and Unweighted graph problems
 
 # Time to practice
 
@@ -258,7 +306,9 @@ What I presented in this post so far are just the suggestions to the most common
 
 You should also practice to get yourself familiar with those types of question before any interview. Here are some Leetcode questions that you should do (some of them you may find the solution on my blog)
 
+- [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/description/)
+- [House Robber](https://leetcode.com/problems/house-robber/description/)
+- [Coin Change](https://www.geeksforgeeks.org/coin-change-dp-7/)
+- [Fibonacci](https://leetcode.com/problems/fibonacci-number/description/)
+- [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/description/)
 - Rat in maze
-- Fibonacci
-- House robber
-- Coin change
