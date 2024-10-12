@@ -18,3 +18,4 @@ author :
   email : me@truongtx.me
 
 excerpt_separator: "<!-- more -->"
+future: true
