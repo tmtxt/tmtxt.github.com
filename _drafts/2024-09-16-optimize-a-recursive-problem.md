@@ -1,18 +1,17 @@
 ---
 layout: post
-title: "Optimize A Recursive problem"
-description: ""
+title: "Optimize a Recursive problem"
+description: "Prepare yourself for a coding interview…"
 categories: [algorithm]
 tags: []
 thumbnail:
 ---
 
 Ok, you will probably find this problem during your coding interview 😩 Many companies don't like
-giving the candidates the tricky problem. Instead, they will simply ask you to write a recursion
+giving the candidates tricky problems. Instead, they often ask you to write a recursive
 function to prove that you're a real engineer, not some random guys applying for the job because
-it's well paid 😆 Often after writing that recursion function, the next question they will ask is
-how to optimize that with a very large dataset and avoid the error Maximum call stack size
-exceeded.
+it's well paid 😆 After that, the next question is usually about
+how to optimize that function with very large datasets and avoid the “Maximum call stack size exceeded” error
 
 Here is how you can prepare yourself for that type of interview question
 
@@ -20,8 +19,7 @@ Here is how you can prepare yourself for that type of interview question
 
 Let's start with this very basic recursion question
 
-> Given an array arr with N items, write a recursive function to calculate the sum of all items in
-> the array
+> Given an array `arr` with `N` items, write a recursive function to calculate the sum of all items in the array
 
 If you think about recursion in its simplest form, it's like a divide and conquer strategy,
 where you break down the problem into smaller ones, solve one of them first and then repeat with
@@ -32,7 +30,7 @@ of the first element (the head of the list) and all the remaining items (the tai
 > If you have worked in any lisp-like language before (Emacs Lisp for example 😂), you will
 > immediately see the pattern. They are the `car` and `cdr` function in Elisp.
 
-From that, you can easily write the basic recursive function like this (in Javascript)
+From that, you can easily write a basic recursive function like this (in Javascript)
 
 ```javascript
 const sum = (arr) => {
@@ -43,6 +41,8 @@ const sum = (arr) => {
   return head + sum(tail);
 };
 ```
+
+<!— more —>
 
 ## An iterative solution
 
@@ -59,13 +59,13 @@ const sum = (arr) => {
 };
 ```
 
-Simple? Yeah that's what they taught in university, but that's what will probably help you during
+Simple? Yeah that's what you learnt in university, but that's what will probably help you during
 the interview.
 
 ## Tail-call optimization and Trampoline
 
-Another way you can answer the interviewer is to use Tail-call optimization. Some programming
-languages, if you return the the recursive expression, they can optimize this automatically by
+Another way you can answer the interviewer is to use Tail-call optimization. In some programming
+languages, if you return the recursive expression as the last expression in the function, they can optimize automatically by
 avoiding creating a new call stack. From that, we can rewrite the above `sum` function in that style
 
 ```javascript
@@ -76,29 +76,26 @@ const sum = (arr, acc) => {
   const [head, ...tail] = arr;
   return sum(tail, head + acc);
 };
-
 sum(arr, 0);
 ```
 
-However, a new problem arises here. The above piece of code is written in Javascript, which doesn't
-support tail-call optimization
+> Does it look like [Array.prototype.reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) in Javascript?
 
-> Actually, it's partially supported now. However, let's assume we are working on a non-supported
-> language.
+However, a new problem arises here. The above piece of code is written in Javascript, which doesn't support tail-call optimization
 
-There is another way you can rewrite the above one in a tail-call way without the support from the
+> Actually, it's partially supported now. However, let's assume we are working on a non-supported language.
+
+There is another way you can rewrite the above one in a tail-call style without the support from the
 language. Instead of returning the recursive call, you can return a function calling the recursive
-function and use a another wrapper function (trampoline) to execute and manage the stack.
+function and use a wrapper function (trampoline) to execute and manage the stack.
 
 ```javascript
 const sum = (arr, acc) => {
-  // base case, still the same
   if (arr.length === 0) {
     return acc;
   }
-
   const [head, ...tail] = arr;
-  return () => sum(tail, head + acc);
+  return () => sum(tail, head + acc); // the difference is here
 };
 
 const sumTrampoline = (arr) => {
@@ -114,12 +111,12 @@ sumTrampoline(arr);
 
 # 2. Dynamic Programming
 
-Now, let's come to a little bit more complicated problem
+Now, let's come to a more complicated problem
 
-> You are climbing a staircase. It takes n steps to reach the top.
-> Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+> You are climbing a staircase. It takes `n` steps to reach the top.
+> Each time you can either climb `1` or `2` steps. In how many distinct ways can you climb to the top?
 
-This is the most common DP problem that you will see every time enter a coding interview (beside the
+This is the most common DP problem that you will see every time you enter a coding interview (beside the
 Fibonacci and House Robber question). The most straight forward solution is to write a recursive
 function to count the ways to step through 1 or 2 steps.
 
@@ -127,9 +124,9 @@ function to count the ways to step through 1 or 2 steps.
 
 For the above example, the solution can be explained like this
 - Start with `count(4)`
-- We can climb 1 or 2 steps each time, that means we need the total ways is the sum of climb 1 or 2
+- We can climb `1` or `2` steps each time, that means the total ways is the sum of climb `1` or `2`
 steps, or `count(4) = count(4-2) + count(4-1) = count(2) + count(3)`
-- Repeat the same problem with a smaller number until there is no more step to climb
+- Repeat the same problem with the smaller numbers until there is no more step to climb
 
 ![Climb 1](/files/2024-09-16-optimize-a-recursive-problem/climb2.png)
 
@@ -207,7 +204,7 @@ const n = 4;
 console.log(count(n));
 ```
 
-You can also optimize it even more using only 2 variables to store `i-1` and `i-2` values only.
+You can also optimize it even more using only 2 variables to store `i-1` and `i-2` values.
 
 # 3. Depth First Search and Breadth First Search
  
@@ -240,14 +237,14 @@ Given a starting directory, build a JSON model representing the structure of the
 
 ## Depth First Search
 
-> I was quite surprised that many engineers couldn’t solve this problem using the simplest recursion way 🫠
+> I was quite surprised that many engineers couldn’t solve this problem using the simplest recursive implementation 🫠
 
-At the very basic level of a software engineer, you should be able to write a simple recursion function like this to traverse the directory tree starting from its root node
+At the very basic level, a software engineer should be able to write a simple recursive function like this to traverse the directory tree starting from the root node
 
 ```
 const getContents = (path) => {
   // implement this
-  return [‘child1.js’, ‘child2.txt’, ‘childFolder1’];
+  return ['child1.js', ‘child2.txt’, ‘childFolder1’];
 }
 
 const isFolder = (path) => {
@@ -273,7 +270,13 @@ const res = buildNode({name: entryPoint, contents: []});
 
 ## Breadth First Search
 
-After you finish writing that, the interviewer will definitely ask a follow up question about your optimization when the input folder is a very big one with a lot of nested level. There are many ways to solve this, but the most common way is to convert this to a Breadth First Search solution. As long as you can mention that keyword, you are 50% to the success 😆 Here is how to traverse it with Breadth First Search
+After you have finished writing that, the interviewer will definitely ask a follow up question about your optimization when the input folder is a very big one with a lot of nested levels. There are many ways to solve this, but the most common way is to convert this to a Breadth First Search solution.
+
+> As long as you can mention that keyword, you are 50% to the success 😆
+
+The idea behind BFS is to visit all nodes in the current level first (closest nodes first) before visiting the next level (further ones later), in constrast to DFS, that is to traverse all the nested child of the current node before visiting the next one. BFS can help you avoid the “Maximum call stack exceeded” error in DFS for very large trees. The implementation relies on a Queue and sometimes an extra array to store the visited items.
+
+Here is the quick and dirty BFS solution
 
 ```
 const buildTree = (entryPoint) => {
@@ -298,17 +301,26 @@ const buildTree = (entryPoint) => {
 }
 ```
 
-> You can also use BFS for 2D maze and Unweighted graph problems
+> You can also use BFS for Binary tree, 2D maze and Unweighted graph problems
 
 # Time to practice
 
-What I presented in this post so far are just the suggestions to the most common recursion problems. They are not everything but can cover most of the interview questions related to recursion, even for Senior level. I’ve been through several similar interviews and even the advanced problems given to Senior role also fall into those categories, just more edge cases to handle. FAANG interview would probably be different.
+What I presented in this post so far are just the suggestions to the most common recursive problems. They are not everything but can cover most of the interview questions related to recursion, even for Senior level at so,e companies. I’ve gone through several similar interviews and even the advanced problems given to Senior role also fall into these 3 categories, just more edge cases to handle (FAANG and Big Tech interview could be different and harder).
 
-You should also practice to get yourself familiar with those types of question before any interview. Here are some Leetcode questions that you should do (some of them you may find the solution on my blog)
+You should also practice to get yourself familiar with those types of question before any interview. Here are some challenges that you should take
 
+- Factorial
 - [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/description/)
 - [House Robber](https://leetcode.com/problems/house-robber/description/)
 - [Coin Change](https://www.geeksforgeeks.org/coin-change-dp-7/)
 - [Fibonacci](https://leetcode.com/problems/fibonacci-number/description/)
 - [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/description/)
-- Rat in maze
+- [Flood Fill](https://leetcode.com/problems/flood-fill/)
+- [Max Area of Island](https://leetcode.com/problems/max-area-of-island/)
+- [01 Matrix](https://leetcode.com/problems/01-matrix/)
+- [Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/)
+- [Rotting Oranges](https://leetcode.com/problems/rotting-oranges/)
+- [Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/)
+- [Populating Next Right Pointers in Each Node II](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/)
+- [Symmetric Tree](https://leetcode.com/problems/symmetric-tree/)
+- [Find if Path Exists in Graph](https://leetcode.com/problems/find-if-path-exists-in-graph/description/)
