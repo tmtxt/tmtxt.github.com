@@ -4,7 +4,6 @@ title: "Optimize a Recursive problem"
 description: "Prepare yourself for a coding interview…"
 categories: [algorithm]
 tags: []
-thumbnail:
 ---
 
 Ok, you will probably find this problem during your coding interview 😩 Many companies don't like
