@@ -41,7 +41,7 @@ const sum = (arr) => {
 };
 ```
 
-<!— more —>
+<!-- more -->
 
 ## An iterative solution
 
