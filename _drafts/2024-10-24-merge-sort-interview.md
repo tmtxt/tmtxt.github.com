@@ -79,7 +79,8 @@ next part.
 # 2. The Merge Function
 
 We will continue by examining the above `merge` function in detail. Here is another way to
-visualize it
+visualize it. Think about it as
+**Pick the first item from either array based on some criteria, and then repeat until no items left**
 
 ![Merge Function](/files/2024-10-24-merge-sort-interview/merge-function.png)
 
