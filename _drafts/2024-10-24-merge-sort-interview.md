@@ -188,3 +188,11 @@ Here are some similar questions to practice
 - [Longest Common Prefix](https://leetcode.com/explore/featured/card/top-interview-questions-easy/127/strings/887/)
 
 ## Concurrency Control
+
+The application of Union is not limited to a mathematical problem, but also in another form of
+concurrency control. Here are some examples and keywords that 
+
+You can use it to combine data from two sources or coordinate 2 different
+processes.
+
+Picture here
