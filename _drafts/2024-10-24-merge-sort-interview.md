@@ -33,7 +33,7 @@ const mergeSort = (arr) => {
   // base case
   if (arr.length === 1)
     return arr;
-  
+
   const mid = Math.floor(arr.length / 2);
   const firstHalf = mergeSort(arr.slice(0, mid));
   const secondHalf = mergeSort(arr.slice(mid, arr.length));
@@ -139,10 +139,52 @@ Read more [Solution to the Sorting with 1MB RAM computer problem]({% post_url 20
 
 ## Intersection and Union
 
-Another problem that people are usually asked to do during an interview is to find the Intersection
-or Union of 2 sorted arrays (and also unsorted arrays as long as you can convert them to sorted).
+Another interview problem is to find the intersection
+or union of two arrays. **Union** is an array containing elements present in either or both of the
+arrays, while **intersection** is an array containing only items present in both arrays. In both
+cases, all duplicates are removed and the order of the elements in the result may vary depending on
+the implementation.
 
-https://www.geeksforgeeks.org/longest-common-prefix-using-sorting/
-https://leetcode.com/explore/featured/card/top-interview-questions-easy/127/strings/887/
+For problems like these, sorting the input arrays beforehand can simplify it a lot. Once sorted,
+apply a modified version of the **merge function** to your 2 sorted arrays. For the union, maintain
+two pointers starting at the beginning of both arrays, append the smaller one to the result and
+advance the pointer for that array. If the two items are equal, append one of them and advance both
+pointers.
+
+To help you imagine it better, here's the visualization of each iteration inside the merge function
+
+![Union](/files/2024-10-24-merge-sort-interview/union.png)
+
+```javascript
+// pseudo code only
+const res = [];
+while (arr1.length || arr2.length) {
+  // edge where only arr1 or arr2 has items
+  if (!arr1.length) {...}
+  if (!arr2.length) {...}
+
+  // decide which array to pick item from and then move the point up
+  if (arr1[0] < arr2[0]) {
+    // pick from arr1
+    res.push(arr1.shift());
+  } else if (arr1[0] > arr2[0]) {
+    // pick from arr2
+    res.push(arr2.shift());
+  } else {
+    // pick from both
+    res.push(arr1.shift());
+    arr2.shift();
+  }
+}
+```
+
+A similar process can be adapted to compute the intersection, but only equal elements are added to
+the result
+
+![Intersection](/files/2024-10-24-merge-sort-interview/intersection.png)
+
+Here are some similar questions to practice
+- What happens if the two input arrays contain duplicate elements?
+- [Longest Common Prefix](https://leetcode.com/explore/featured/card/top-interview-questions-easy/127/strings/887/)
 
 ## Concurrency Control
