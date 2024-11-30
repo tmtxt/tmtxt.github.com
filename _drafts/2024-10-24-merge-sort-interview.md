@@ -195,7 +195,7 @@ concurrency control. Here are some examples and keywords that
 You can use it to combine data from two sources or coordinate 2 different
 processes.
 
-Picture here
+![Concurrency Control](/files/2024-10-24-merge-sort-interview/concurrency.png)
 
 Two-Lane Bridge Problem
 Question: A bridge has two lanes, one for vehicles coming in and one for vehicles going out. The bridge can only support one vehicle per lane at a time. Vehicles arrive at different times, and each vehicle wants to either enter or exit the bridge.
