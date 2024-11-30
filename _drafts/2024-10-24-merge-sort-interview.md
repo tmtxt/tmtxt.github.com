@@ -256,3 +256,8 @@ person is either entering or leaving.
 - If two people arrive at the same time and their directions are different, the decision of who goes
 first depends on the previous usage of the turnstile.
 - Determine the time when each person passes through the turnstile.
+
+Did you spot the pattern? The keyword of this type of challenge is to
+**coordinate two different queues**. The above questions are just the simplified version. In
+reality, they may require you to do some data transformation to form the two queues but the
+idea remain unchanged. Now, it's your turn to solve the above problems yourself. 😉
