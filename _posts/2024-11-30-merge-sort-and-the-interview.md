@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Merge Sort and the Interview"
-description: ""
+description: "It's not just about Sorting!"
 categories: [algorithm]
 tags: []
 thumbnail: /files/2024-10-24-merge-sort-interview/merge-sort.png
