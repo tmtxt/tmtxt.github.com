@@ -189,71 +189,70 @@ Here are some similar questions to practice
 
 ## Concurrency Control
 
-The application of Union is not limited to a mathematical problem, but also in another form of
-concurrency control. Here are some examples and keywords that 
-
-You can use it to combine data from two sources or coordinate 2 different
-processes.
+The merge function is not limited to solving mathematical problems, but also applied in concurrency
+control. It is widely used to combine and coordinate different data sources like processes, queues
+or linked lists.
 
 ![Concurrency Control](/files/2024-10-24-merge-sort-interview/concurrency.png)
 
-Two-Lane Bridge Problem
-Question: A bridge has two lanes, one for vehicles coming in and one for vehicles going out. The bridge can only support one vehicle per lane at a time. Vehicles arrive at different times, and each vehicle wants to either enter or exit the bridge.
-- If a vehicle wants to enter and another wants to exit at the same time, prioritize the vehicle that arrived first.
-- How would you determine the exact time each vehicle can cross the bridge, respecting the order of arrival and the last usage of the bridge?
+Consider the following interview exercises
 
-Train Station Platform
-Question:
-A train station has a single platform and two queues: one for passengers wanting to **board** the train and one for passengers wanting to **disembark**.
-- The train can either be used for boarding or disembarking at any given time. Passengers arrive at different times and are either boarding or leaving.
-- The platform can be used for boarding or disembarking, but the direction depends on who arrived first when simultaneous arrivals happen.
+1. **Two-Lane Bridge Problem**: A bridge has two lanes, one for vehicles **coming in** and one for
+vehicles **going out**. The bridge can only support one vehicle per lane at a time. Vehicles arrive
+at different times, and each vehicle wants to either enter or exit the bridge.
+- If a vehicle wants to enter and another wants to exit at the same time, prioritize the vehicle
+that arrived first.
+- How would you determine the exact time each vehicle can cross the bridge, respecting the order of
+arrival and the last usage of the bridge?
+2. **Train Station Platform**: A train station has a single platform and two queues: one for passengers
+wanting to **board** the train and one for passengers wanting to **disembark**.
+- The train can either be used for boarding or disembarking at any given time. Passengers arrive at
+different times and are either boarding or leaving.
+- The platform can be used for boarding or disembarking, but the direction depends on who arrived
+first when simultaneous arrivals happen.
 - How would you calculate the exact time each passenger can board or disembark the train?
-
-Single Gate Airport Security
-Question:
-At an airport, there is a single security gate that allows people to either enter or exit. People arrive at the gate at different times and want to either board a flight or leave the airport.
-- If two people arrive at the same time with opposite directions (one entering, one exiting), the direction in which the gate was last used will determine who goes first.
+3. **Single Gate Airport Security**: At an airport, there is a single security gate that allows people
+to either **enter** or **exit**. People arrive at the gate at different times and want to either
+board a flight or leave the airport.
+- If two people arrive at the same time with opposite directions (one entering, one exiting), the
+direction in which the gate was last used will determine who goes first.
 - How would you determine when each person passes through the gate?
-
-Library Entry/Exit System
-Question:
-A library has a single turnstile and two queues: one for people who want to **enter** the library and another for those who want to **exit**.
+4. **Library Entry/Exit System**: A library has a single turnstile and two queues: one for people
+who want to **enter** the library and another for those who want to **exit**.
 - Each person arrives at a specific time, and their direction (enter or exit) is known.
-- If two people arrive at the same time with different directions, the decision of who goes first depends on the turnstile's last usage.
+- If two people arrive at the same time with different directions, the decision of who goes first
+depends on the turnstile's last usage.
 - Calculate the time each person will be allowed to pass through the turnstile.
-
-Parking Garage Gate
-Question:
-A parking garage has a single gate that vehicles can use either to **enter** or to **exit**. Each vehicle has a specific arrival time, and its desired direction (enter or exit) is also given.
+5. **Parking Garage Gate**: A parking garage has a single gate that vehicles can use either to
+**enter** or to **exit**. Each vehicle has a specific arrival time, and its desired direction
+(enter or exit) is also given.
 - If vehicles with opposite directions arrive at the same time, the gate gives priority based on its last usage.
 - Determine when each vehicle will pass through the gate, considering these rules.
-
-Single Lane Toll Booth
-Question:
-A toll booth has a single lane, and vehicles either want to **pay tolls** or **leave**. Vehicles arrive at the booth at different times, and their direction (whether they want to pay or leave) is given.
-If two vehicles arrive at the same time, one wishing to pay and the other wishing to leave, the decision of who goes first depends on the toll booth's last usage.
-Calculate the time each vehicle will cross the toll booth.
-
-Hospital Entry System
-Question:
-A hospital has a single entrance, and people arrive either to **enter** the hospital or **leave**. Each person arrives at a given time with a desired direction (enter or exit).
-If people arrive at the same time, the direction the entrance was last used will determine who gets to go first.
-How would you compute when each person can pass through the entrance?
-
-Amusement Park Entrance
-Question:
-An amusement park has a single gate, and guests either want to **enter** or **exit**. The entrance operates like a turnstile and can only process one guest at a time.
-- If two guests with different directions arrive at the same time, the direction the gate was last used (enter or exit) determines who goes first.
+6. **Single Lane Toll Booth**: A toll booth has a single lane, and vehicles either want to
+**pay tolls** or **leave**. Vehicles arrive at the booth at different times, and their direction
+(whether they want to pay or leave) is given.
+- If two vehicles arrive at the same time, one wishing to pay and the other wishing to leave, the
+decision of who goes first depends on the toll booth's last usage.
+- Calculate the time each vehicle will cross the toll booth.
+7. **Hospital Entry System**: A hospital has a single entrance, and people arrive either to
+**enter** the hospital or **leave**. Each person arrives at a given time with a desired direction
+(enter or exit).
+- If people arrive at the same time, the direction the entrance was last used will determine who gets to go first.
+- How would you compute when each person can pass through the entrance?
+8. **Amusement Park Entrance**: An amusement park has a single gate, and guests either want to
+**enter** or **exit**. The entrance operates like a turnstile and can only process one guest at a
+time.
+- If two guests with different directions arrive at the same time, the direction the gate was last
+used (enter or exit) determines who goes first.
 - How would you determine the exact time each guest will pass through the gate?
-
-Stadium Gate Entry/Exit
-Question:
-A stadium has a single turnstile and two queues: one for people wanting to **enter** the stadium and another for those wanting to **exit**.
-- If two people arrive at the same time, the one with the direction corresponding to the last operation of the turnstile will go first.
+9. **Stadium Gate Entry/Exit**: A stadium has a single turnstile and two queues: one for people
+wanting to **enter** the stadium and another for those wanting to **exit**.
+- If two people arrive at the same time, the one with the direction corresponding to the last
+operation of the turnstile will go first.
 - How would you calculate when each person passes through the gate?
-
-Convention Center Turnstile
-Question:
-A convention center has a single turnstile that can be used for people to either **enter** or **exit**. People arrive at the turnstile at different times, and each person is either entering or leaving.
-If two people arrive at the same time and their directions are different, the decision of who goes first depends on the previous usage of the turnstile.
-Determine the time when each person passes through the turnstile.
+10. **Convention Center Turnstile**: A convention center has a single turnstile that can be used for
+people to either **enter** or **exit**. People arrive at the turnstile at different times, and each
+person is either entering or leaving.
+- If two people arrive at the same time and their directions are different, the decision of who goes
+first depends on the previous usage of the turnstile.
+- Determine the time when each person passes through the turnstile.
