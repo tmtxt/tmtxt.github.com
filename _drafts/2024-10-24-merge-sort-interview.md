@@ -68,6 +68,8 @@ const merge  = (arr1, arr2) => {
 }
 ```
 
+<!-- more -->
+
 It's time for you to practice some easy Leetcode questions related to Merge Sort before reading the
 next part.
 - [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/description/)
