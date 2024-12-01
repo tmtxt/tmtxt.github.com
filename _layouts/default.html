@@ -1,91 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
-    <meta name="author" content="Trường TX">
-    <meta property="og:title" content="{{ page.title }}">
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-    <meta property="og:description" content="{{ page.description }}">
-    <meta property="og:image" content="{{ site.url }}{{ page.thumbnail }}">
-    <meta property="fb:app_id" content="503403523182768" />
-    <link rel="icon" href="/favicon.ico">
-    <title>{{ page.title }} - TruongTX Blog</title>
-    <!-- Custom styles for this template -->
-    <link href="/assets/css/truongtx.css" rel="stylesheet">
-    <link href="/assets/css/highlight.css" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  {% if page.description %}
+  <meta name="description" content="{{ page.description }}">{% endif %}
+  <meta name="author" content="TruongTX aka Tony Tran">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:description" content="{{ page.description }}">
+  <meta property="og:image" content="{{ site.url }}{{ page.thumbnail }}">
+  <meta property="fb:app_id" content="503403523182768" />
+  <link rel="icon" href="/favicon.ico">
+  <title>{{ page.title }} - TruongTX aka Tony Tran</title>
+  <!-- Custom styles for this template -->
+  <link href="/assets/css/truongtx.css" rel="stylesheet">
+  <link href="/assets/css/highlight.css" rel="stylesheet">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script type="text/javascript" async
-            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
-  </head>
-  <body>
-    <main class="body-container">
-      <div class="container">
-        <header class="header-container">
-          <section class="header-logo">
-            <a href="/"><img src="/assets/img/logo.svg" alt="truongtx logo"></a>
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#truongtx-navbar" aria-expanded="false">
-              <i class="fa fa-bars"></i>
-            </button>
-          </section> <!-- header-logo end -->
-          <section class="collapse navbar-collapse header-navigation" id="truongtx-navbar">
-            <ul class="nav-bar" >
-              <li><a href="/archive.html">Archives</a></li>
-              <li><a href="/categories.html">Categories</a></li>
-              <li><a href="/feed.xml">Feed</a></li>
-              <li><a href="/about.html">About</a></li>
-            </ul>
-            <!-- <div class="search-bar">
-                 <div class="form-group"><input class="form-control" type="text" placeholder="Search..."></div>
-                 </div>  --><!-- search end -->
-          </section>
-        </header><!-- header container end -->
-        <div class="blog-wrapper">
-          <section class="blog-section">
-            {{ content }}
-          </section> <!-- blog-section end -->
-          <!-- blog-aside -->
-        </div>
-      </div>
-    </main><!-- main container end -->
-    <footer class="footer-container">
-      <div class="container">
-        <div class="footer-wrapper">
-          <ul class="footer-navigation">
-            <li><a href="/">Home</a></li>
+</head>
+
+<body>
+  <main class="body-container">
+    <div class="container">
+      <header class="header-container">
+        <section class="header-logo">
+          <a href="/"><img src="/assets/img/logo.svg" alt="truongtx logo"></a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#truongtx-navbar"
+            aria-expanded="false">
+            <i class="fa fa-bars"></i>
+          </button>
+        </section> <!-- header-logo end -->
+        <section class="collapse navbar-collapse header-navigation" id="truongtx-navbar">
+          <ul class="nav-bar">
             <li><a href="/archive.html">Archives</a></li>
             <li><a href="/categories.html">Categories</a></li>
             <li><a href="/feed.xml">Feed</a></li>
             <li><a href="/about.html">About</a></li>
           </ul>
-          <p class="copyright">&copy; Trường TX 2016 with help from <a href="https://www.behance.net/thefierylantern">Phan Minh Dang</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a></p>
-        </div>
+          <!-- <div class="search-bar">
+                 <div class="form-group"><input class="form-control" type="text" placeholder="Search..."></div>
+                 </div>  --><!-- search end -->
+        </section>
+      </header><!-- header container end -->
+      <div class="blog-wrapper">
+        <section class="blog-section">
+          {{ content }}
+        </section> <!-- blog-section end -->
+        <!-- blog-aside -->
       </div>
-    </footer><!-- footer container end -->
-    <!-- Bootstrap core JavaScript
+    </div>
+  </main><!-- main container end -->
+  <footer class="footer-container">
+    <div class="container">
+      <div class="footer-wrapper">
+        <ul class="footer-navigation">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archive.html">Archives</a></li>
+          <li><a href="/categories.html">Categories</a></li>
+          <li><a href="/feed.xml">Feed</a></li>
+          <li><a href="/about.html">About</a></li>
+        </ul>
+        <p class="copyright">&copy; TruongTX 2016 with help from <a href="https://www.behance.net/thefierylantern">Phan
+            Minh Dang</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a></p>
+      </div>
+    </div>
+  </footer><!-- footer container end -->
+  <!-- Bootstrap core JavaScript
          ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/assets/js/vendor/jquery.min.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-     var _gaq = _gaq || [];
-     _gaq.push(['_setAccount', 'UA-46261463-1']);
-     _gaq.push(['_trackPageview']);
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/assets/js/vendor/jquery.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-46261463-1']);
+    _gaq.push(['_trackPageview']);
 
-     (function() {
-       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-     })();
-    </script>
-  </body>
+    (function () {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+
 </html>
