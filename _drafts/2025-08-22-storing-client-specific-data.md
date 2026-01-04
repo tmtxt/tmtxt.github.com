@@ -20,32 +20,38 @@ Storing client-specific data is common when requirements vary by market, country
 - Maintainability: predictable code paths, testable contracts.
 - Auditability: track changes per country-specific field.
 
-## Option 1: Store as formatted text
+## Option 1: Store as a delimited string
 
-Use Markdown/HTML to capture free-form, human-readable, country-specific notes.
+Keep client- or country-specific data in a single delimited string column (e.g., comma- or pipe-separated).
 
 Pros:
 
-- Fast to ship; minimal schema.
-- Good for unstructured annotations.
+- Very simple schema; works with legacy systems.
+- Easy to append new values without migrations.
 
 Cons:
 
-- Hard to validate and query.
-- Risk of mixing data and presentation.
+- Hard to validate and enforce structure.
+- Parsing logic is error-prone (escaping, ordering, missing values).
+- Poor queryability; usually requires full scans or application-side parsing.
 
-Example:
+Example (simple comma-separated list):
 
-```markdown
-### VN Customs Notes
-- Certificate of Origin: CO-12345
-- Special handling: perishable; expedite clearance
+```text
+CO-12345,perishable,expedite_clearance
+```
+
+Example (key–value pairs in a single string):
+
+```text
+country=VN,certificate_of_origin=CO-12345,special_handling=perishable|expedite_clearance
 ```
 
 Use when:
 
-- Data is narrative or rarely queried.
-- Transitional phase before formalizing structure.
+- Data is low-volume and rarely queried individually.
+- You are integrating with a legacy schema and plan to evolve to JSON or columns later.
+- You primarily display the data back to users rather than compute on it.
 
 ## Option 2: Store in a JSON column
 
