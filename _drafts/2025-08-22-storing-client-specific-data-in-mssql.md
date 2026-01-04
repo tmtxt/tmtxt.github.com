@@ -22,58 +22,10 @@ Storing client-specific data is common when requirements vary by market, country
 
 ## Option 1: Store as formatted text
 
-Keep country-specific data in a single delimited string column (e.g., comma-separated string). A simple example is a key-value pairs string separated by comma
+This is the simplest solution that you can start with, to keep country-specific data in a single delimited string column (e.g., comma-separated string). A simple example is a key-value pairs string like this
 
 ```text
-country=VN,certificate_of_origin=CO-12345,special_handling=perishable
-```
-
-and then you can query using
-
-```sql
--- Example: extract certificate_of_origin from a delimited column in MSSQL
--- Assume the column name is country_specific_data on table dbo.declarations
-SELECT
-    d.id,
-    d.country,
-    d.status,
-    certificate_of_origin =
-        SUBSTRING(kv, CHARINDEX('=', kv) + 1, LEN(kv))
-FROM dbo.declarations AS d
-CROSS APPLY STRING_SPLIT(d.country_specific_data, ',') AS s(kv)
-WHERE LEFT(kv, CHARINDEX('=', kv) - 1) = 'certificate_of_origin';
-```
-
-MSSQL demo setup:
-
-```sql
--- Drop and recreate a simple test table
-IF OBJECT_ID('dbo.declarations', 'U') IS NOT NULL
-    DROP TABLE dbo.declarations;
-
-CREATE TABLE dbo.declarations (
-    id INT IDENTITY(1,1) PRIMARY KEY,
-    country VARCHAR(2) NOT NULL,
-    status VARCHAR(32) NOT NULL,
-    country_specific_data VARCHAR(400) NOT NULL
-);
-
--- Insert sample data
-INSERT INTO dbo.declarations (country, status, country_specific_data) VALUES
-    ('VN', 'Pending',  'country=VN,certificate_of_origin=CO-12345,special_handling=perishable'),
-    ('US', 'Cleared',  'country=US,certificate_of_origin=US-99999,special_handling=none'),
-    ('VN', 'Pending',  'country=VN,special_handling=perishable'); -- no certificate_of_origin
-
--- Run the query to see extracted certificate_of_origin values
-SELECT
-    d.id,
-    d.country,
-    d.status,
-    certificate_of_origin =
-        SUBSTRING(kv, CHARINDEX('=', kv) + 1, LEN(kv))
-FROM dbo.declarations AS d
-CROSS APPLY STRING_SPLIT(d.country_specific_data, ',') AS s(kv)
-WHERE LEFT(kv, CHARINDEX('=', kv) - 1) = 'certificate_of_origin';
+certificate_of_origin=CO-12345,special_handling=perishable
 ```
 
 Pros:
@@ -86,13 +38,15 @@ Cons:
 
 - Hard to validate and enforce structure.
 - Parsing logic is error-prone (escaping, ordering, missing values).
-- Poor queryability; usually requires full scans or application-side parsing.
+- Poor queryability; usually requires full scans or complex parsing logic (see the example). You probably needs to write your own tool to generate the parsing logic if you have more data
 
 Use when:
 
 - Data is low-volume and rarely queried individually.
 - You are integrating with a legacy schema and plan to evolve to JSON or columns later.
 - You primarily display the data back to users rather than compute on it.
+
+Example: Take a look at this file for a simple example about designing a Customs Declaration table that can store data for specific country [option-1-store-as-formatted-text.sql](/files/2025-08-22-storing-client-specific-data-in-mssql/option-1-store-as-formatted-text.sql)
 
 ## Option 2: Store in a JSON column
 
