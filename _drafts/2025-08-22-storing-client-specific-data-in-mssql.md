@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Storing Client specific data"
+title: "Storing Client specific data in MSSQL"
 description: ""
 categories: [misc]
 tags: []
@@ -20,32 +20,73 @@ Storing client-specific data is common when requirements vary by market, country
 - Maintainability: predictable code paths, testable contracts.
 - Auditability: track changes per country-specific field.
 
-## Option 1: Store as a delimited string
+## Option 1: Store as formatted text
 
-Keep client- or country-specific data in a single delimited string column (e.g., comma- or pipe-separated).
+Keep country-specific data in a single delimited string column (e.g., comma-separated string). A simple example is a key-value pairs string separated by comma
+
+```text
+country=VN,certificate_of_origin=CO-12345,special_handling=perishable
+```
+
+and then you can query using
+
+```sql
+-- Example: extract certificate_of_origin from a delimited column in MSSQL
+-- Assume the column name is country_specific_data on table dbo.declarations
+SELECT
+    d.id,
+    d.country,
+    d.status,
+    certificate_of_origin =
+        SUBSTRING(kv, CHARINDEX('=', kv) + 1, LEN(kv))
+FROM dbo.declarations AS d
+CROSS APPLY STRING_SPLIT(d.country_specific_data, ',') AS s(kv)
+WHERE LEFT(kv, CHARINDEX('=', kv) - 1) = 'certificate_of_origin';
+```
+
+MSSQL demo setup:
+
+```sql
+-- Drop and recreate a simple test table
+IF OBJECT_ID('dbo.declarations', 'U') IS NOT NULL
+    DROP TABLE dbo.declarations;
+
+CREATE TABLE dbo.declarations (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    country VARCHAR(2) NOT NULL,
+    status VARCHAR(32) NOT NULL,
+    country_specific_data VARCHAR(400) NOT NULL
+);
+
+-- Insert sample data
+INSERT INTO dbo.declarations (country, status, country_specific_data) VALUES
+    ('VN', 'Pending',  'country=VN,certificate_of_origin=CO-12345,special_handling=perishable'),
+    ('US', 'Cleared',  'country=US,certificate_of_origin=US-99999,special_handling=none'),
+    ('VN', 'Pending',  'country=VN,special_handling=perishable'); -- no certificate_of_origin
+
+-- Run the query to see extracted certificate_of_origin values
+SELECT
+    d.id,
+    d.country,
+    d.status,
+    certificate_of_origin =
+        SUBSTRING(kv, CHARINDEX('=', kv) + 1, LEN(kv))
+FROM dbo.declarations AS d
+CROSS APPLY STRING_SPLIT(d.country_specific_data, ',') AS s(kv)
+WHERE LEFT(kv, CHARINDEX('=', kv) - 1) = 'certificate_of_origin';
+```
 
 Pros:
 
 - Very simple schema; works with legacy systems.
 - Easy to append new values without migrations.
+- Zero storage cost for fields with null values.
 
 Cons:
 
 - Hard to validate and enforce structure.
 - Parsing logic is error-prone (escaping, ordering, missing values).
 - Poor queryability; usually requires full scans or application-side parsing.
-
-Example (simple comma-separated list):
-
-```text
-CO-12345,perishable,expedite_clearance
-```
-
-Example (key–value pairs in a single string):
-
-```text
-country=VN,certificate_of_origin=CO-12345,special_handling=perishable|expedite_clearance
-```
 
 Use when:
 
