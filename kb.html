@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Keyboard layout</title>
+    <style>
+        body {
+            width: 1500px;
+        }
+
+        .key-row {
+            display: flex;
+        }
+
+        .key {
+            display: inline-block;
+            padding: 5px 5px;
+            margin: 5px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            background-color: #e0e0e0;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            cursor: pointer;
+            width: 90px;
+            height: 90px;
+        }
+
+        .key:active {
+            background-color: #e0e0e0;
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .number-row {
+            /*margin-left: 50px;*/
+        }
+
+        .number-row .key {
+            /*width: 70px;*/
+            height: 50px;
+        }
+
+        .modifier-row .key {
+            /*height: 60px;*/
+        }
+
+        .char {
+            font-weight: bold;
+        }
+
+        .actions {
+            font-size: 12px;
+        }
+
+        .action-row {
+            display: flex;
+            align-items: center;
+        }
+
+        .action-icon {
+            min-width: 15px;
+        }
+
+        .action-text {}
+
+        .action-row::after {
+            padding: 2px;
+            display: none;
+            position: relative;
+            right: -10px;
+            text-align: center;
+            background-color: #fef4c5;
+            border: 1px solid #d4b943;
+            font-weight: normal;
+        }
+
+        .action-row:hover::after {
+            display: block;
+        }
+
+        .action-row:hover {
+            font-weight: bold;
+        }
+
+        .legends {
+            margin-top: 20px;
+        }
+
+        .legends li {
+            padding: 3px;
+        }
+
+        .legends li>div {
+            display: flex;
+        }
+
+        .legends .stroke {
+            width: 50px;
+        }
+
+        .legend1 {
+            color: #0000FF;
+        }
+
+        .action-row.legend1::after {
+            content: "Alt"
+        }
+
+        .legend2 {
+            color: #FF0000;
+        }
+
+        .action-row.legend2::after {
+            content: "Alt+Shift"
+        }
+
+        .legend3 {
+            color: #008000;
+        }
+
+        .action-row.legend3::after {
+            content: "Control"
+        }
+
+        .legend4 {
+            color: darkcyan;
+        }
+
+        .action-row.legend4::after {
+            content: "Control+Shift"
+        }
+
+        .legend5 {
+            color: #FFA500;
+        }
+
+        .action-row.legend5::after {
+            content: "Command"
+        }
+
+        .legend6 {
+            color: #800080;
+        }
+
+        .action-row.legend6::after {
+            content: "Command+Shift"
+        }
+
+        .legend7 {
+            color: #FFC0CB;
+        }
+
+        .action-row.legend7::after {
+            content: "Control+Alt"
+        }
+
+        .legend8 {
+            color: saddlebrown;
+        }
+
+        .action-row.legend8::after {
+            content: "Control+Alt+Shift"
+        }
+
+        .legend9 {
+            color: #000000;
+        }
+
+        .action-row.legend9::after {
+            content: "Control+q"
+        }
+
+        #tab-key {
+            width: 120px;
+        }
+
+        #capslock-key {
+            width: 140px;
+        }
+
+        #left-shift-key {
+            width: 200px;
+        }
+
+        #right-shift-key {
+            width: 208px;
+        }
+
+        #enter-key {
+            width: 164px;
+        }
+
+        #backspace-key {
+            width: 120px;
+        }
+
+        #left-control-key {
+            width: 140px;
+        }
+
+        #right-control-key {
+            width: 140px;
+        }
+
+        #left-command-key {
+            width: 120px;
+        }
+
+        #right-command-key {
+            width: 120px;
+        }
+
+        #left-alt-key {
+            width: 120px;
+        }
+
+        #right-alt-key {
+            width: 120px;
+        }
+
+        #space-key {
+            width: 573px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="key-row number-row">
+        <div class="key">
+            <div class="char">~</div>
+            <div class="actions">
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">1</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon">&#8862;</div>
+                    <div class="action-text">Explorer</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">2</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon">&#8862;</div>
+                    <div class="action-text">Tests</div>
+                </div>
+                <div class="action-row legend9">
+                    <div class="action-icon">&#127075;</div>
+                    <div class="action-text">@Split</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">3</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon">&#8862;</div>
+                    <div class="action-text">Find</div>
+                </div>
+                <div class="action-row legend9">
+                    <div class="action-icon">&#127025;</div>
+                    <div class="action-text">@Split</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">4</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon">&#8862;</div>
+                    <div class="action-text">Run</div>
+                </div>
+                <div class="action-row legend2">
+                    <div class="action-icon">&#8862;</div>
+                    <div class="action-text">Debug</div>
+                </div>
+                <div class="action-row legend1">
+                    <div class="action-icon"></div>
+                    <div class="action-text"></div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">5</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon">&#8862;</div>
+                    <div class="action-text">Terminal</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">6</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon"></div>
+                    <div class="action-text"></div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">7</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon">&#8862;</div>
+                    <div class="action-text">Database</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">8</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon"></div>
+                    <div class="action-text"></div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">9</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon">&#8862;</div>
+                    <div class="action-text">SCM</div>
+                </div>
+                <div class="action-row legend2">
+                    <div class="action-icon">&#8862;</div>
+                    <div class="action-text">SCM+</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">0</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon"></div>
+                    <div class="action-text"></div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">-</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon"></div>
+                    <div class="action-text"></div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">=</div>
+            <div class="actions">
+            </div>
+        </div>
+        <div class="key" id="backspace-key">
+            <div class="char">Backspace</div>
+            <div class="actions">
+            </div>
+        </div>
+    </div>
+    <div class="key-row">
+        <div class="key" id="tab-key">
+            <div class="char">Tab</div>
+            <div class="actions">
+
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">Q</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon">&#x2716;</div>
+                    <div class="action-text">App</div>
+                </div>
+                <div class="action-row legend3">
+                    <div class="action-icon"></div>
+                    <div class="action-text">Modifier</div>
+                </div>
+                <div class="action-row legend4">
+                    <div class="action-icon">&#x1F50E;&#xFE0E;</div>
+                    <div class="action-text">Projects</div>
+                </div>
+                <div class="action-row legend3">
+                    <div class="action-icon">&#128281;</div>
+                    <div class="action-text">@Back</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">W</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon">&#x2716;</div>
+                    <div class="action-text">Buffer</div>
+                </div>
+                <div class="action-row legend3">
+                    <div class="action-icon">&#x2716;</div>
+                    <div class="action-text">Buffer</div>
+                </div>
+                <div class="action-row legend5">
+                    <div class="action-icon">&#x2716;</div>
+                    <div class="action-text">Buffer</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">E</div>
+            <div class="actions">
+                <div class="action-row legend3">
+                    <div class="action-icon"></div>
+                    <div class="action-text">@Context</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">R</div>
+            <div class="actions">
+                <div class="action-row legend3">
+                    <div class="action-icon">&#x21bb;</div>
+                    <div class="action-text">Buffer</div>
+                </div>
+                <div class="action-row legend5">
+                    <div class="action-icon">&#x21bb;</div>
+                    <div class="action-text">Buffer</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">T</div>
+            <div class="actions">
+                <div class="icon"></div>
+                <div class="text"></div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">Y</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon">&#x1F50E;&#xFE0E;</div>
+                    <div class="action-text">Text</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">U</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon">&LeftArrow;</div>
+                    <div class="action-text">Subword</div>
+                </div>
+                <div class="action-row legend2">
+                    <div class="action-icon">&LeftArrow;</div>
+                    <div class="action-text">Word</div>
+                </div>
+                <div class="action-row legend4">
+                    <div class="action-icon">&LeftArrow;</div>
+                    <div class="action-text">Buffer</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">I</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon">&UpArrow;</div>
+                    <div class="action-text">Line</div>
+                </div>
+                <div class="action-row legend2">
+                    <div class="action-icon">&UpArrow;</div>
+                    <div class="action-text">Page</div>
+                </div>
+                <div class="action-row legend4">
+                    <div class="action-icon">&UpArrow;</div>
+                    <div class="action-text">Frame</div>
+                </div>
+                <div class="action-row legend7">
+                    <div class="action-icon">&#8657;</div>
+                    <div class="action-text">Line</div>
+                </div>
+                <div class="action-row legend8">
+                    <div class="action-icon">&#8657;</div>
+                    <div class="action-text">Page</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">O</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon">&RightArrow;</div>
+                    <div class="action-text">Subword</div>
+                </div>
+                <div class="action-row legend2">
+                    <div class="action-icon">&RightArrow;</div>
+                    <div class="action-text">Word</div>
+                </div>
+                <div class="action-row legend4">
+                    <div class="action-icon">&RightArrow;</div>
+                    <div class="action-text">Buffer</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">P</div>
+            <div class="actions">
+                <div class="action-row legend2">
+                    <div class="action-icon">&#x1F50E;&#xFE0E;</div>
+                    <div class="action-text">Line</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">[</div>
+            <div class="actions">
+                <div class="icon"></div>
+                <div class="text"></div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">]</div>
+            <div class="actions">
+                <div class="icon"></div>
+                <div class="text"></div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">\</div>
+            <div class="actions">
+                <div class="icon"></div>
+                <div class="text"></div>
+            </div>
+        </div>
+    </div>
+    <div class="key-row">
+        <div class="key" id="capslock-key">
+            <div class="char">Control</div>
+            <div class="actions">
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">A</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon">&#x1F50E;&#xFE0E;</div>
+                    <div class="action-text">Commands</div>
+                </div>
+                <div class="action-row legend3">
+                    <div class="action-icon">&#x1F50E;&#xFE0E;</div>
+                    <div class="action-text">*Everywhere</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">S</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon">&#128427;</div>
+                    <div class="action-text">Save</div>
+                </div>
+                <div class="action-row legend3">
+                    <div class="action-icon">&#128427;</div>
+                    <div class="action-text">Save</div>
+                </div>
+                <div class="action-row legend5">
+                    <div class="action-icon">&#128427;</div>
+                    <div class="action-text">Save</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">D</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon">&#8998;</div>
+                    <div class="action-text">Char</div>
+                </div>
+                <div class="action-row legend2">
+                    <div class="action-icon">&#8998;</div>
+                    <div class="action-text">Word</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">F</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon">&#9003;</div>
+                    <div class="action-text">Char</div>
+                </div>
+                <div class="action-row legend2">
+                    <div class="action-icon">&#9003;</div>
+                    <div class="action-text">Word</div>
+                </div>
+                <div class="action-row legend4">
+                    <div class="action-icon">&#x1F50E;&#xFE0E;</div>
+                    <div class="action-text">*Files</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">G</div>
+            <div class="actions">
+                <div class="action-row legend3">
+                    <div class="action-icon">&#9209;</div>
+                    <div class="action-text">Cancel</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">H</div>
+            <div class="actions">
+                <div class="icon"></div>
+                <div class="text"></div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">J</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon">&LeftArrow;</div>
+                    <div class="action-text">Char</div>
+                </div>
+                <div class="action-row legend2">
+                    <div class="action-icon">&LeftArrow;</div>
+                    <div class="action-text">Line</div>
+                </div>
+                <div class="action-row legend4">
+                    <div class="action-icon">&LeftArrow;</div>
+                    <div class="action-text">Frame</div>
+                </div>
+                <div class="action-row legend7">
+                    <div class="action-icon">&#8656;</div>
+                    <div class="action-text">Char</div>
+                </div>
+                <div class="action-row legend8">
+                    <div class="action-icon">&#8656;</div>
+                    <div class="action-text">Line</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">K</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon">&DownArrow;</div>
+                    <div class="action-text">Line</div>
+                </div>
+                <div class="action-row legend2">
+                    <div class="action-icon">&DownArrow;</div>
+                    <div class="action-text">Page</div>
+                </div>
+                <div class="action-row legend4">
+                    <div class="action-icon">&DownArrow;</div>
+                    <div class="action-text">Frame</div>
+                </div>
+                <div class="action-row legend7">
+                    <div class="action-icon">&#8659;</div>
+                    <div class="action-text">Line</div>
+                </div>
+                <div class="action-row legend8">
+                    <div class="action-icon">&#8659;</div>
+                    <div class="action-text">Page</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">L</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon">&RightArrow;</div>
+                    <div class="action-text">Char</div>
+                </div>
+                <div class="action-row legend2">
+                    <div class="action-icon">&RightArrow;</div>
+                    <div class="action-text">Line</div>
+                </div>
+                <div class="action-row legend4">
+                    <div class="action-icon">&RightArrow;</div>
+                    <div class="action-text">Frame</div>
+                </div>
+                <div class="action-row legend7">
+                    <div class="action-icon">&#8658;</div>
+                    <div class="action-text">Char</div>
+                </div>
+                <div class="action-row legend8">
+                    <div class="action-icon">&#8658;</div>
+                    <div class="action-text">Line</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">;</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon">//</div>
+                    <div class="action-text">Line</div>
+                </div>
+                <div class="action-row legend2">
+                    <div class="action-icon">//</div>
+                    <div class="action-text">Block</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">'</div>
+            <div class="actions">
+                <div class="icon"></div>
+                <div class="text"></div>
+            </div>
+        </div>
+        <div class="key" id="enter-key">
+            <div class="char">Enter</div>
+            <div class="actions">
+            </div>
+        </div>
+    </div>
+    <div class="key-row">
+        <div class="key" id="left-shift-key">
+            <div class="char">Shift</div>
+            <div class="actions">
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">Z</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon">&#x21B6;</div>
+                    <div class="action-text">Undo</div>
+                </div>
+                <div class="action-row legend2">
+                    <div class="action-icon">&#x21B7;</div>
+                    <div class="action-text">Redo</div>
+                </div>
+                <div class="action-row legend3">
+                    <div class="action-icon">&#x21B6;</div>
+                    <div class="action-text">Undo</div>
+                </div>
+                <div class="action-row legend4">
+                    <div class="action-icon">&#x21B7;</div>
+                    <div class="action-text">Redo</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">X</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon">&#9986;</div>
+                    <div class="action-text">Cut</div>
+                </div>
+                <div class="action-row legend3">
+                    <div class="action-icon">&#9986;</div>
+                    <div class="action-text">Cut</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">C</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon">&#128464;</div>
+                    <div class="action-text">Copy</div>
+                </div>
+                <div class="action-row legend3">
+                    <div class="action-icon">&#128464;</div>
+                    <div class="action-text">Copy</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">V</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon">&#128203;</div>
+                    <div class="action-text">Paste</div>
+                </div>
+                <div class="action-row legend3">
+                    <div class="action-icon">&#128203;</div>
+                    <div class="action-text">Paste</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">B</div>
+            <div class="actions">
+                <div class="icon"></div>
+                <div class="text"></div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">N</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon">&UpArrow;</div>
+                    <div class="action-text">Top</div>
+                </div>
+                <div class="action-row legend2">
+                    <div class="action-icon">&DownArrow;</div>
+                    <div class="action-text">Bottom</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">M</div>
+            <div class="actions">
+                <div class="action-row legend1">
+                    <div class="action-icon">&#x21B5;</div>
+                    <div class="action-text">Enter</div>
+                </div>
+                <div class="action-row legend3">
+                    <div class="action-icon">&#x1F50E;&#xFE0E;</div>
+                    <div class="action-text">@Members</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">&lt;</div>
+            <div class="actions">
+                <div class="action-row legend2">
+                    <div class="action-icon">&LeftArrow;</div>
+                    <div class="action-text">Bracket</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">&gt;</div>
+            <div class="actions">
+                <div class="action-row legend2">
+                    <div class="action-icon">&RightArrow;</div>
+                    <div class="action-text">Bracket</div>
+                </div>
+            </div>
+        </div>
+        <div class="key">
+            <div class="char">/</div>
+            <div class="actions">
+                <div class="action-row legend1 test">
+                    <div class="action-icon"></div>
+                    <div class="action-text"></div>
+                </div>
+            </div>
+        </div>
+        <div class="key" id="right-shift-key">
+            <div class="char">Shift</div>
+            <div class="actions">
+            </div>
+        </div>
+    </div>
+    <div class="key-row modifier-row">
+        <div class="key" id="left-control-key">
+            <div class="char">Control</div>
+            <div class="actions">
+            </div>
+        </div>
+        <div class="key" id="left-command-key">
+            <div class="char">Command</div>
+            <div class="actions">
+            </div>
+        </div>
+        <div class="key" id="left-alt-key">
+            <div class="char">Alt</div>
+            <div class="actions">
+            </div>
+        </div>
+        <div class="key" id="space-key">
+            <div class="char">Space</div>
+            <div class="actions">
+            </div>
+        </div>
+        <div class="key" id="right-alt-key">
+            <div class="char">Alt</div>
+            <div class="actions">
+            </div>
+        </div>
+        <div class="key" id="right-command-key">
+            <div class="char">Command</div>
+            <div class="actions">
+            </div>
+        </div>
+        <div class="key" id="right-control-key">
+            <div class="char">Control</div>
+            <div class="actions">
+            </div>
+        </div>
+    </div>
+    <div class="legends">
+        <ol>
+            <li class="legend1">
+                <div>
+                    <div class="stroke">M</div>
+                    <div class="desc">Alt</div>
+                </div>
+            </li>
+            <li class="legend2">
+                <div>
+                    <div class="stroke">M-S</div>
+                    <div class="desc">Alt+Shift</div>
+                </div>
+            </li>
+            <li class="legend3">
+                <div>
+                    <div class="stroke">C</div>
+                    <div class="desc">Control</div>
+                </div>
+            </li>
+            <li class="legend4">
+                <div>
+                    <div class="stroke">C-S</div>
+                    <div class="desc">Control+Shift</div>
+                </div>
+            </li>
+            <li class="legend5">
+                <div>
+                    <div class="stroke">s</div>
+                    <div class="desc">Command</div>
+                </div>
+            </li>
+            <li class="legend6">
+                <div>
+                    <div class="stroke">s-S</div>
+                    <div class="desc">Command+Shift</div>
+                </div>
+            </li>
+            <li class="legend7">
+                <div>
+                    <div class="stroke">C-M</div>
+                    <div class="desc">Control+Alt</div>
+                </div>
+            </li>
+            <li class="legend8">
+                <div>
+                    <div class="stroke">C-M-S</div>
+                    <div class="desc">Control+Alt+Shift</div>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <div class="stroke">@</div>
+                    <div class="desc">Control+q prefix (Editor specific)</div>
+                </div>
+            </li>
+        </ol>
+    </div>
+</body>
+
+</html>
