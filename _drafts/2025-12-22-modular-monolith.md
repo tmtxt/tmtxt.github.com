@@ -11,7 +11,7 @@ thumbnail:
 
 # Let's talk about Microservices again
 
-Quite often, when we want to scale an application, people think about microservices first because of the benefits they offer. Microservices architecture has become increasingly popular due to several compelling advantages:
+Quite often, when we want to scale an application, people think about microservices first because of the benefits they offer. Microservices architecture has become increasingly popular due to several :
 
 - decouple business logic into independent services
 - each team owns and maintains their own services without affecting others
