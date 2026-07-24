@@ -15,7 +15,7 @@ graph TD
     Sorting --> ElementarySort[Elementary Sort]
     Sorting --> MergeSort[Merge Sort]
     Sorting --> QuickSort[Quick Sort]
-    Sorting --> HeapSort[Heap Sort]
+    Sorting --> HeapSort[Heap Sort - Priority Queue]
     ElementarySort --> SelectionSort[Selection Sort]
     ElementarySort --> InsertionSort[Insertion Sort]
     ElementarySort --> ShellSort[Shell Sort]
@@ -42,6 +42,11 @@ Quick Sort
 - [Quick Sort summary - Part 2 - Selection Problem]({% post_url 2018-06-02-quick-sort-summary-part-2 %})
 - [Quick Sort summary - Part 3 - 3-way Partitioning]({% post_url 2018-06-02-quick-sort-summary-part-3 %})
 - Quick Sort summary - Part 4 - Related Questions - Still in my draft folder
+
+Heap Sort
+- [Binary Heap and Heapsort Summary - Part 1 - Binary Heap]({% post_url 2018-06-07-binary-heap-heapsort-summary-part-1 %})
+- [Binary Heap and Heapsort Summary - Part 2 - Heapsort]({% post_url 2018-06-16-binary-heap-heapsort-summary-part-2 %})
+- [Priority Queues - Related Questions]({% post_url 2021-10-22-priority-queue-related-questions %})
 
 # Algorithm summary
 
