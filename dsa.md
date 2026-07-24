@@ -52,7 +52,12 @@ Heap Sort
 
 # 2. Data Structure
 
-Stacks & Queues
+## Symbol Table
+
+
+
+## Others
+
 - [Stacks and Queues summary]({% post_url 2018-05-15-stacks-and-queues-summary %})
 
 # 3. Other DSA topics

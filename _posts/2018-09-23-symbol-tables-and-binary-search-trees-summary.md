@@ -4,6 +4,7 @@ title: "Symbol Tables and Binary Search Trees summary"
 description: ""
 categories: [algorithm]
 thumbnail: /files/2018-09-10-symbol-tables-and-binary-search-trees-summary/bst1.png
+mermaid: true
 ---
 
 > Nothing special here. It's just a blog post for summarising my algorithm learning course. Although
@@ -75,6 +76,43 @@ min, max operations and especially range operations.
 ```
 
 ### Ordered Symbol Table APIs
+
+<div class="mermaid">
+graph TD
+    OrderedSymbolTable[Order Symbol Table]
+    OrderedSymbolTable --> Basic
+    OrderedSymbolTable --> MinMax
+    OrderedSymbolTable --> Ordered
+    OrderedSymbolTable --> Range
+
+    subgraph Basic
+        put
+        get
+        delete
+        contains
+        size
+    end
+
+    subgraph MinMax [Min / Max]
+        min
+        max
+        deleteMin
+        deleteMax
+    end
+
+    subgraph Ordered
+        floor
+        ceiling
+        rank
+        select
+    end
+
+    subgraph Range
+        sizeRange
+        keys
+        keysRange
+    end
+</div>
 
 {% highlight java %}
 public class ST<Key extends Comparable<Key>, Value> {
