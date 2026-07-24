@@ -5,6 +5,7 @@ description: ""
 categories: [algorithm]
 tags: []
 thumbnail: /files/2022-09-03-dynamic-connectivity-union-find/summary.png
+mermaid: true
 ---
 
 > just a blog post for summarising my algorithm course
@@ -20,7 +21,24 @@ thumbnail: /files/2022-09-03-dynamic-connectivity-union-find/summary.png
 
 Given a data structure organised as a set of N objects, is there a path connecting 2 objects?
 
-![](/files/2022-09-03-dynamic-connectivity-union-find/summary.png)
+<div class="mermaid">
+graph TB
+  subgraph A[ ]
+    direction LR
+    0((0)) --- 1((1)) --- 2((2))
+    5((5)) --- 6((6)) --- 7((7))
+    0 --- 5
+    1 --- 6
+  end
+  subgraph B[ ]
+    direction LR
+    3((3)) --- 4((4))
+    3 --- 8((8))
+    4 --- 9((9))
+  end
+  style A fill:none,stroke:none
+  style B fill:none,stroke:none
+</div>
 
 ```typescript
 // union: connect 2 objects
