@@ -10,7 +10,7 @@ mermaid: true
 
 *still in progress...*
 
-# Sorting
+# 1. Sorting
 
 <div class="mermaid">
 graph TD
@@ -50,18 +50,25 @@ Heap Sort
 - [Binary Heap and Heapsort Summary - Part 2 - Heapsort]({% post_url 2018-06-16-binary-heap-heapsort-summary-part-2 %})
 - [Priority Queues - Related Questions]({% post_url 2021-10-22-priority-queue-related-questions %})
 
-# Algorithm summary
+# 2. Data Structure
+
+Stacks & Queues
+- [Stacks and Queues summary]({% post_url 2018-05-15-stacks-and-queues-summary %})
+
+# 3. Other DSA topics
 
 Dynamic Connectivity & Union Find
 - [Dynamic Connectivity & Union Find - Summary]({% post_url 2022-09-03-dynamic-connectivity-union-find-summary %})
 - [Dynamic Connectivity & Union Find - Related Questions]({% post_url 2018-05-01-union-find-summary-part-5 %})
 
-Stacks & Queues
-- [Stacks and Queues summary]({% post_url 2018-05-15-stacks-and-queues-summary %})
+# 4. Exercises by topics
 
-# Algorithm exercises
+## General
 
-- [3-sum problem]({% post_url 2018-05-05-solution-to-3-sum-problem %})
 - [Sorting with 1MB RAM computer]({% post_url 2018-05-05-solutions-to-the-sorting-with-1mb-ram-computer-problem %}})
 - [Egg Drop problem]({% post_url 2018-05-06-solutions-to-egg-drop-problem %})
 - [Find (i->j) sequence by sum]({% post_url 2018-05-12-solution-to-find-i-j-sequence-by-sum %})
+
+## 2 pointers
+
+- [3-sum problem]({% post_url 2018-05-05-solution-to-3-sum-problem %})
