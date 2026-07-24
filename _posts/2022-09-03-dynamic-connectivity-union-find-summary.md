@@ -124,7 +124,7 @@ the items. The values are still the id, but it's the id of the parent item. The 
 is organised using a tree structure like this
 
 <div class="mermaid">
-graph TD
+graph BT
   0((0))
   1((1))
   7((7))
@@ -147,7 +147,7 @@ graph TD
 After doing the union
 
 <div class="mermaid">
-graph TD
+graph BT
   0((0))
   1((1))
   7((7))
@@ -237,7 +237,7 @@ for large data set.
 For example, instead of linking `9` to `6`
 
 <div class="mermaid">
-graph TD
+graph BT
   0((0))
   1((1)) --> 0
   2((2)) --> 0
@@ -257,7 +257,7 @@ graph TD
 we can simply link it directly to the root of `6` (which is `0`)
 
 <div class="mermaid">
-graph TD
+graph BT
   0((0))
   1((1)) --> 0
   2((2)) --> 0
