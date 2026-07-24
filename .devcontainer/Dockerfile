@@ -1,1 +1,1 @@
-FROM mcr.microsoft.com/vscode/devcontainers/jekyll:3.2-bullseye
+FROM mcr.microsoft.com/devcontainers/jekyll:bullseye
