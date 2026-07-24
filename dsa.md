@@ -29,6 +29,8 @@ Elementary Sort
   - Selection Sort
   - Insertion Sort
   - Shell Sort
+- Shuffling - TBA
+- Convex Hull - TBA
 
 Merge Sort
 - [Merge Sort Summary]({% post_url 2018-05-23-merge-sort-summary %}), including
@@ -54,7 +56,17 @@ Heap Sort
 
 ## Symbol Table
 
+<div class="mermaid">
+graph TD
+    SymbolTable[Symbol Table]
+    SymbolTable --> BST[Binary Search Tree - BST]
+    SymbolTable --> TwoThree[2-3 Search Trees]
+    TwoThree --> RedBlack[Red-Black BST]
+    BST --> RedBlack
+    TwoThree --> BTrees[B-Trees]
+</div>
 
+- [Symbol Tables and Binary Search Trees summary]({% post_url 2018-09-23-symbol-tables-and-binary-search-trees-summary %})
 
 ## Others
 
@@ -74,6 +86,11 @@ Dynamic Connectivity & Union Find
 - [Egg Drop problem]({% post_url 2018-05-06-solutions-to-egg-drop-problem %})
 - [Find (i->j) sequence by sum]({% post_url 2018-05-12-solution-to-find-i-j-sequence-by-sum %})
 
+## Stack
+
+- Longest Valid Parentheses solution - Still in draft folder, the solution there is outdated
+
 ## 2 pointers
 
+- Two Sum with Sorted array problem - in draft folder
 - [3-sum problem]({% post_url 2018-05-05-solution-to-3-sum-problem %})
