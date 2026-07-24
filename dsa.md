@@ -6,7 +6,9 @@ group: project
 mermaid: true
 ---
 
-My DSA learning, organized by topics and charts with link to corresponding posts
+> My DSA learning, organized by topics and charts with link to corresponding posts
+
+*still in progress...*
 
 # Sorting
 
@@ -15,7 +17,7 @@ graph TD
     Sorting --> ElementarySort[Elementary Sort]
     Sorting --> MergeSort[Merge Sort]
     Sorting --> QuickSort[Quick Sort]
-    Sorting --> HeapSort[Heap Sort - Priority Queue]
+    Sorting --> HeapSort["Heap Sort<br/>Priority Queue"]
     ElementarySort --> SelectionSort[Selection Sort]
     ElementarySort --> InsertionSort[Insertion Sort]
     ElementarySort --> ShellSort[Shell Sort]
@@ -23,16 +25,16 @@ graph TD
 </div>
 
 Elementary Sort
-- [Elementary Sorts Summary]({% post_url 2018-05-19-elementary-sorts-summary %})
+- [Elementary Sorts Summary]({% post_url 2018-05-19-elementary-sorts-summary %}), including
   - Selection Sort
-	- Insertion Sort
-	- Shell Sort
+  - Insertion Sort
+  - Shell Sort
 
 Merge Sort
-- [Merge Sort Summary]({% post_url 2018-05-23-merge-sort-summary %})
+- [Merge Sort Summary]({% post_url 2018-05-23-merge-sort-summary %}), including
   - Merge Sort basic
   - Bottom up Merge Sort
-- [Merge Sort Related Questions]({% post_url 2018-05-23-summary-merge-sort-related-questions %})
+- [Merge Sort Related Questions]({% post_url 2018-05-23-summary-merge-sort-related-questions %}), including
   - Merging with smaller auxiliary array
   - Counting inversions
 - [Merge Sort and the Interview]({% post_url 2024-11-30-merge-sort-and-the-interview %})
