@@ -24,20 +24,15 @@ Given a data structure organised as a set of N objects, is there a path connecti
 <div class="mermaid">
 graph TB
   subgraph A[ ]
-    direction LR
     0((0)) --- 1((1)) --- 2((2))
     5((5)) --- 6((6)) --- 7((7))
     0 --- 5
     1 --- 6
-  end
-  subgraph B[ ]
-    direction LR
     3((3)) --- 4((4))
     3 --- 8((8))
     4 --- 9((9))
   end
   style A fill:none,stroke:none
-  style B fill:none,stroke:none
 </div>
 
 ```typescript
@@ -87,7 +82,22 @@ The set is organised as an array, where the values are the id of that connected 
 all the items have the id the same with its index (connected to itself). After each call to `union`,
 we update the id of those 2 items to one of them
 
-![](/files/2022-09-03-dynamic-connectivity-union-find/quick-find.png)
+<div class="mermaid">
+graph TB
+  subgraph A[ ]
+    0((0)) --- 5((5)) --- 6((6)) --- 1((1)) --- 2((2))
+    6 --- 7((7))
+    3((3)) --- 4((4))
+    3 --- 8((8))
+    4 --- 9((9))
+  end
+  style A fill:none,stroke:none
+</div>
+
+| i | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| id[i] | 1 | 1 | 1 | 8 | 8 | 1 | 1 | 1 | 8 | 8 |
+{: .table }
 
 To check whether the 2 items are connected, simply check whether they have the same id or not. For
 example
@@ -113,11 +123,49 @@ The underlying data structure for `Quick Union` is similar to `Quick Find`. We n
 the items. The values are still the id, but it's the id of the parent item. The connected component
 is organised using a tree structure like this
 
-![](/files/2022-09-03-dynamic-connectivity-union-find/quick-union-1.png)
+<div class="mermaid">
+graph TD
+  0((0))
+  1((1))
+  7((7))
+  8((8))
+  2((2)) --> 9((9))
+  4((4)) --> 9
+  3((3)) --> 4
+  5((5)) --> 6((6))
+  linkStyle 1 stroke:red,stroke-width:2px
+  linkStyle 2 stroke:red,stroke-width:2px
+</div>
+
+| i | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| id[i] | 1 | 1 | 9 | 4 | 9 | 6 | 6 | 7 | 8 | 9 |
+{: .table }
+
+*root of 3 is 9*
 
 After doing the union
 
-![](/files/2022-09-03-dynamic-connectivity-union-find/quick-union-2.png)
+<div class="mermaid">
+graph TD
+  0((0))
+  1((1))
+  7((7))
+  8((8))
+  2((2)) --> 9((9))
+  4((4)) --> 9
+  3((3)) --> 4
+  5((5)) --> 6((6))
+  9 --> 6
+  linkStyle 4 stroke:red,stroke-width:2px
+</div>
+
+| i | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| id[i] | 1 | 1 | 9 | 4 | 9 | 6 | 6 | 7 | 8 | **6** |
+{: .table }
+
+*only one value changes*
 
 In short
 - `isConnected(p, q)` check whether the 2 items have the same root
@@ -188,11 +236,43 @@ for large data set.
 
 For example, instead of linking `9` to `6`
 
-![](/files/2022-09-03-dynamic-connectivity-union-find/path-compression-1.png)
+<div class="mermaid">
+graph TD
+  0((0))
+  1((1)) --> 0
+  2((2)) --> 0
+  3((3)) --> 1
+  4((4)) --> 1
+  5((5)) --> 1
+  6((6)) --> 3
+  7((7)) --> 3
+  8((8)) --> 6
+  9("9 (p)") --> 6
+  10((10)) --> 8
+  11((11)) --> 9
+  12((12)) --> 9
+  linkStyle 8 stroke:red,stroke-width:2px
+</div>
 
 we can simply link it directly to the root of `6` (which is `0`)
 
-![](/files/2022-09-03-dynamic-connectivity-union-find/path-compression-2.png)
+<div class="mermaid">
+graph TD
+  0((0))
+  1((1)) --> 0
+  2((2)) --> 0
+  9("9 (p)") --> 0
+  3((3)) --> 1
+  4((4)) --> 1
+  5((5)) --> 1
+  6((6)) --> 3
+  7((7)) --> 3
+  8((8)) --> 6
+  10((10)) --> 8
+  11((11)) --> 9
+  12((12)) --> 9
+  linkStyle 2 stroke:red,stroke-width:2px
+</div>
 
 For path compression, if the `root` is called many times enough, the complexity will become `O(1)`
 when the tree become flatten.
