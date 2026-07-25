@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Collections"
+title: "Data Structures & Algorithms"
 description: ""
 group: project
 mermaid: true
