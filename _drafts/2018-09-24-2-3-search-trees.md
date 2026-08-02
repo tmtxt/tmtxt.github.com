@@ -144,35 +144,33 @@ this:
 ### Splitting a 4-node
 
 Splitting a temporary 4-node is a **local** transformation - a constant number of nodes/links
-change, regardless of the size of the tree:
+change, regardless of the size of the tree. Before splitting, `p,t` has a temporary 4-node child
+`q,r,s`:
 
 <div class="mermaid">
 graph TD
-  subgraph Before["Before: temporary 4-node q,r,s"]
-    direction TB
-    PT(("p, t")) --> QRS(("q, r, s"))
-    PT --> L1("&lt; p")
-    PT --> L6("&gt; t")
-    QRS --> L2("p..q")
-    QRS --> L3("q..r")
-    QRS --> L4("r..s")
-    QRS --> L5("s..t")
-  end
+  PT(("p, t")) --> QRS(("q, r, s"))
+  PT --> L1("&lt; p")
+  PT --> L6("&gt; t")
+  QRS --> L2("p..q")
+  QRS --> L3("q..r")
+  QRS --> L4("r..s")
+  QRS --> L5("s..t")
 </div>
 
+After splitting, `q,r,s` becomes three separate 2-nodes and the middle key `r` moves up into the
+parent:
+
 <div class="mermaid">
 graph TD
-  subgraph After["After: split into three 2-nodes"]
-    direction TB
-    PRT(("p, r, t")) --> Q((q))
-    PRT --> S((s))
-    PRT --> M1("&lt; p")
-    PRT --> M6("&gt; t")
-    Q --> M2("p..q")
-    Q --> M3("q..r")
-    S --> M4("r..s")
-    S --> M5("s..t")
-  end
+  PRT(("p, r, t")) --> Q((q))
+  PRT --> S((s))
+  PRT --> M1("&lt; p")
+  PRT --> M6("&gt; t")
+  Q --> M2("p..q")
+  Q --> M3("q..r")
+  S --> M4("r..s")
+  S --> M5("s..t")
 </div>
 
 The middle key `r` moves up one level into the parent (as `p, r, t`), while `q` and `s` become new
