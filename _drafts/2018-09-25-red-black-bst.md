@@ -226,12 +226,12 @@ graph TD
   O --> U((U))
 </div>
 
-# 7. Insertion
+# 5. Insertion
 
 The strategy is always the same: do a normal BST insert, attach the new node with a **red** link,
 then walk back up the search path fixing any violations using the three operations above.
 
-## 7.1 Case 1: insert into a 2-node
+## 5.1 Case 1: insert into a 2-node
 
 If the new key is smaller, it simply attaches as a red left child - already a valid 3-node, no
 fix-up needed. If it's larger, it attaches as a red _right_ child, which is not allowed to lean
@@ -288,7 +288,7 @@ linkStyle 10 stroke:#c00,stroke-width:3px
 
 No violation reaches `W`, so the insertion is done in a single rotation.
 
-## 7.2 Case 2: insert into a 3-node
+## 5.2 Case 2: insert into a 3-node
 
 This is where a rotation _and_ a color flip usually happen together. Take a standalone 3-node
 `G,O` (`G` is `O`'s red left child):
@@ -337,7 +337,7 @@ graph TD
   G --> O((O))
 </div>
 
-## 7.3 Putting it together
+## 5.3 Putting it together
 
 Walking back up from the newly inserted node, the same three checks are applied at every node on
 the search path:
@@ -350,7 +350,7 @@ Repeating this at each level guarantees the red link either gets absorbed or kee
 exactly as in a 2-3 tree insertion. If it reaches the root and the root ends up red, it's simply
 repainted black - the only case where the tree grows one level taller.
 
-# 8. Performance
+# 6. Performance
 
 <table class="table">
   <thead>
@@ -407,7 +407,7 @@ repainted black - the only case where the tree grows one level taller.
   ever appear in a row, so the height is at most `2 lg N` in the worst case.
 - In typical, non-adversarial use the height tends to be close to `lg N`.
 
-# 9. Why red-black BSTs?
+# 7. Why red-black BSTs?
 
 Because they get almost all of the 2-3 tree's balance guarantees while being just a thin,
 constant-overhead layer on top of an ordinary BST (a single extra color bit per node, three local
