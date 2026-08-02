@@ -308,8 +308,10 @@ This is where a rotation _and_ a color flip usually happen together. Take a stan
 <div class="mermaid">
 graph TD
   O((O)) --> G((G))
+  O ~~~ Opad(( ))
 
 linkStyle 0 stroke:#c00,stroke-width:3px
+style Opad fill:transparent,stroke:transparent
 
 </div>
 
@@ -318,10 +320,14 @@ Insert a key `C` smaller than `G`. It attaches as a red left child of `G`:
 <div class="mermaid">
 graph TD
   O((O)) --> G((G))
+  O ~~~ Opad(( ))
   G --> C((C))
+  G ~~~ Gpad(( ))
 
 linkStyle 0 stroke:#c00,stroke-width:3px
-linkStyle 1 stroke:#c00,stroke-width:3px
+linkStyle 2 stroke:#c00,stroke-width:3px
+style Opad fill:transparent,stroke:transparent
+style Gpad fill:transparent,stroke:transparent
 
 </div>
 
