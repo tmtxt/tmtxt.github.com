@@ -1,12 +1,14 @@
 ---
 layout: post
-title: "Red-black BST"
+title: "Left-leaning Red-black BST"
 description: ""
 categories: [algorithm]
 mermaid: true
 ---
 
 > just a blog post for summarising my algorithm learning course.
+
+[2-3 search trees]({% post_url 2018-09-24-2-3-search-trees %})
 
 # 1. From 2-3 trees to red-black BSTs
 
@@ -18,30 +20,55 @@ mermaid: true
 - A 3-node `p,q` (`p < q`) has three children - for keys smaller than `p`, between `p` and `q`, and
   larger than `q`:
 
-<div class="mermaid">
-graph TD
-  PQ(("p, q")) --> L1("&lt; p")
-  PQ --> L2("p..q")
-  PQ --> L3("&gt; q")
-</div>
+  <div class="mermaid">
+  graph TD
+    PQ(("p, q")) --> L1("&lt; p")
+    PQ --> L2("p..q")
+    PQ --> L3("&gt; q")
+  </div>
 
 - It's encoded as two 2-nodes: `q` becomes a plain black node, and `p` hangs off its left as a
   **red** child. The three original children still hang in the same relative positions - `q` keeps
   the `> q` child, and `p` takes the other two. The red link is just bookkeeping - it says "these
   two nodes are really one 3-node":
 
-<div class="mermaid">
-graph TD
-  Q((q)) --> P((p))
-  Q --> R3("&gt; q")
-  P --> R1("&lt; p")
-  P --> R2("p..q")
+  <div class="mermaid">
+  graph TD
+    Q((q)) --> P((p))
+    Q --> R3("&gt; q")
+    P --> R1("&lt; p")
+    P --> R2("p..q")
 
-linkStyle 0 stroke:#c00,stroke-width:3px
+  linkStyle 0 stroke:#c00,stroke-width:3px
 
-</div>
+  </div>
 
-# 2. An equivalent definition
+- Here's that same idea inside an actual tree. The 2-3 tree below has `H,L` as one of its 3-nodes:
+
+  <div class="mermaid">
+  graph TD
+    R((R)) --> HL(("H, L"))
+    R --> X((X))
+    HL --> A((A))
+    HL --> J((J))
+    HL --> M((M))
+  </div>
+
+- ...and its red-black equivalent, where `L` stays a plain black node and `H` hangs off it as a red
+  left child:
+
+    <div class="mermaid">
+    graph TD
+      R((R)) --> L((L))
+      R --> X((X))
+      L --> H((H))
+      L --> M((M))
+      H --> A((A))
+      H --> J((J))
+
+  linkStyle 2 stroke:#c00,stroke-width:3px
+
+    </div>
 
 A red-black BST is a BST whose links are colored red or black, such that:
 
@@ -49,8 +76,6 @@ A red-black BST is a BST whose links are colored red or black, such that:
 - Every path from the root to a null link has the same number of **black** links ("perfect black
   balance").
 - Red links lean left.
-
-# 3. 1-1 correspondence with 2-3 trees
 
 Every 2-3 tree corresponds to exactly one LLRB tree: 2-nodes stay as they are, and each 3-node
 becomes a black node with a red left child. Take the 2-3 tree from the
