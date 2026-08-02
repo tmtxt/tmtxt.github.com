@@ -8,7 +8,7 @@ mermaid: true
 
 > Nothing special here. It's just a blog post for summarising my algorithm learning course.
 
-# Compare to BST
+# 1. Compare to BST
 
 - [Symbol Tables and Binary Search Trees summary]({% post_url 2018-09-23-symbol-tables-and-binary-search-trees-summary %})
 
@@ -73,7 +73,7 @@ mermaid: true
   </tbody>
 </table>
 
-# 2-3 tree
+# 2. What is a 2-3 tree?
 
 A 2-3 tree is a tree that guarantees `log N` search/insert/delete by allowing a node to hold **1
 or 2 keys** instead of just 1.
@@ -103,7 +103,7 @@ style YZ fill:#fde2e2,stroke:#b33,stroke-width:2px
 the `F,N` node: the left link leads to keys smaller than `F`, the middle link to keys between `F`
 and `N`, and the right link to keys larger than `N` - same idea as a 3-way BST node.
 
-## Search
+# 3. Search
 
 - Compare the search key against the keys in the node.
 - Find the interval containing the search key.
@@ -129,7 +129,7 @@ linkStyle 3 stroke:#e07b00,stroke-width:3px
 
 </div>
 
-## Insertion
+# 4. Insertion
 
 Insertion always happens at the bottom (a leaf). Inserting into a 3-node at the bottom works like
 this:
@@ -141,7 +141,7 @@ this:
 - If the split reaches the root and the root itself is a 4-node, split it into three 2-nodes - this
   is the only way the tree grows taller.
 
-### Splitting a 4-node
+## 4.1 Splitting a 4-node
 
 Splitting a temporary 4-node is a **local** transformation - a constant number of nodes/links
 change, regardless of the size of the tree. Before splitting, `p,t` has a temporary 4-node child
@@ -176,7 +176,7 @@ graph TD
 The middle key `r` moves up one level into the parent (as `p, r, t`), while `q` and `s` become new
 2-nodes hanging below it.
 
-### Worked example
+## 4.2 Worked example
 
 Starting from the tree above, let's insert `C`. First, walk down the tree the same way `Search`
 does, to find the leaf where `C` belongs: `T -> F,N -> B,D`:
@@ -269,22 +269,25 @@ graph TD
   W --> YZ(("Y, Z"))
 </div>
 
-## Global properties
+# 5. Global properties
 
 Since every transformation is local and preserves symmetric order + perfect balance, the whole tree
 stays sorted and balanced no matter where the temporary 4-node appears:
 
 - **Root is a 4-node** - split into three 2-nodes; this is the only case where the tree height grows.
+  Before splitting, the root is a temporary 4-node `p,q,r`:
 
   <div class="mermaid">
   graph TD
-    subgraph RootBefore["root: temporary 4-node"]
-      PQR(("p, q, r"))
-    end
-    subgraph RootAfter["root: split"]
-      Q2((q)) --> P2((p))
-      Q2 --> R2((r))
-    end
+    PQR(("p, q, r"))
+  </div>
+
+  After splitting, the root becomes the 2-node `q`, with `p` and `r` as its two children:
+
+  <div class="mermaid">
+  graph TD
+    Q2((q)) --> P2((p))
+    Q2 --> R2((r))
   </div>
 
 - **Parent is a 2-node** - the 4-node is either the parent's left or right child; the parent simply
@@ -295,7 +298,7 @@ stays sorted and balanced no matter where the temporary 4-node appears:
 Because each split only ever moves one key up per level, an insertion costs at most `O(tree height)`
 splits.
 
-## Performance
+# 6. Performance
 
 - **Worst case height**: `lg N` - a tree made entirely of 2-nodes (behaves like a plain BST).
 - **Best case height**: `log₃ N ≈ 0.631 lg N` - a tree made entirely of 3-nodes.
@@ -303,7 +306,7 @@ splits.
 - Between 18 and 30 for a billion nodes.
 - Guaranteed **logarithmic** performance for both search and insert, no matter the insertion order.
 
-## Why not implement it directly?
+## 7. Why not implement it directly?
 
 Direct implementation is complicated because:
 
@@ -314,4 +317,4 @@ Direct implementation is complicated because:
 
 In practice, 2-3 trees are usually implemented indirectly through **left-leaning red-black BSTs**,
 which encode a 3-node as two 2-nodes joined by a left-leaning red link - same performance
-guarantees, much simpler code. That's a topic for another post.
+guarantees, much simpler code. See next post
