@@ -318,3 +318,5 @@ Direct implementation is complicated because:
 In practice, 2-3 trees are usually implemented indirectly through **left-leaning red-black BSTs**,
 which encode a 3-node as two 2-nodes joined by a left-leaning red link - same performance
 guarantees, much simpler code. See next post
+
+[Left-leaning Red-black BST]({% post_url 2018-09-25-left-leaning-red-black-bst %})
