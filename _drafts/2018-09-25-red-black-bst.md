@@ -103,13 +103,17 @@ graph TD
   F --> D((D))
   F --> K((K))
   D --> B((B))
+  D ~~~ Dpad(( ))
   W --> V((V))
   W --> Z((Z))
   Z --> Y((Y))
+  Z ~~~ Zpad(( ))
 
 linkStyle 2 stroke:#c00,stroke-width:3px
 linkStyle 6 stroke:#c00,stroke-width:3px
-linkStyle 9 stroke:#c00,stroke-width:3px
+linkStyle 10 stroke:#c00,stroke-width:3px
+style Dpad fill:transparent,stroke:transparent
+style Zpad fill:transparent,stroke:transparent
 
 </div>
 
