@@ -89,7 +89,7 @@ Dynamic Connectivity & Union Find
 
 ## General
 
-- [Sorting with 1MB RAM computer]({% post_url 2018-05-05-solutions-to-the-sorting-with-1mb-ram-computer-problem %}})
+- [Sorting with 1MB RAM computer]({% post_url 2018-05-05-solutions-to-the-sorting-with-1mb-ram-computer-problem %})
 - [Egg Drop problem]({% post_url 2018-05-06-solutions-to-egg-drop-problem %})
 - [Find (i->j) sequence by sum]({% post_url 2018-05-12-solution-to-find-i-j-sequence-by-sum %})
 
