@@ -532,6 +532,7 @@ fix-up operations), red-black trees ended up as one of the most widely used bala
 in practice:
 
 - Java's `java.util.TreeMap` / `java.util.TreeSet`.
+- .NET's `System.Collections.Generic.SortedDictionary<TKey, TValue>` / `SortedSet<T>`.
 - C++ STL's `map`, `multimap`, `multiset`.
 - The Linux kernel's completely fair scheduler (`linux/rbtree.h`).
 
