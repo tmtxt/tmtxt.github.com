@@ -86,22 +86,22 @@ or 2 keys** instead of just 1.
 
 <div class="mermaid">
 graph TD
-  M((M)) --> EJ(("E, J"))
-  M --> R((R))
-  EJ --> AC(("A, C"))
-  EJ --> H((H))
-  EJ --> L((L))
-  R --> P((P))
-  R --> SX(("S, X"))
+  T((T)) --> FN(("F, N"))
+  T --> W((W))
+  FN --> BD(("B, D"))
+  FN --> K((K))
+  FN --> Q((Q))
+  W --> V((V))
+  W --> YZ(("Y, Z"))
 
-  style EJ fill:#fde2e2,stroke:#b33,stroke-width:2px
-  style AC fill:#fde2e2,stroke:#b33,stroke-width:2px
-  style SX fill:#fde2e2,stroke:#b33,stroke-width:2px
+  style FN fill:#fde2e2,stroke:#b33,stroke-width:2px
+  style BD fill:#fde2e2,stroke:#b33,stroke-width:2px
+  style YZ fill:#fde2e2,stroke:#b33,stroke-width:2px
 </div>
 
-`E,J`, `A,C` and `S,X` are 3-nodes (2 keys, drawn in red above); the rest are 2-nodes. Following
-the `E,J` node: the left link leads to keys smaller than `E`, the middle link to keys between `E`
-and `J`, and the right link to keys larger than `J` - same idea as a 3-way BST node.
+`F,N`, `B,D` and `Y,Z` are 3-nodes (2 keys, drawn in red above); the rest are 2-nodes. Following
+the `F,N` node: the left link leads to keys smaller than `F`, the middle link to keys between `F`
+and `N`, and the right link to keys larger than `N` - same idea as a 3-way BST node.
 
 ## Search
 
@@ -109,21 +109,21 @@ and `J`, and the right link to keys larger than `J` - same idea as a 3-way BST n
 - Find the interval containing the search key.
 - Follow the associated link, recursively.
 
-Example: searching for `H` walks `M -> E,J -> H`:
+Example: searching for `K` walks `T -> F,N -> K`:
 
 <div class="mermaid">
 graph TD
-  M((M)) --> EJ(("E, J"))
-  M --> R((R))
-  EJ --> AC(("A, C"))
-  EJ --> H((H))
-  EJ --> L((L))
-  R --> P((P))
-  R --> SX(("S, X"))
+  T((T)) --> FN(("F, N"))
+  T --> W((W))
+  FN --> BD(("B, D"))
+  FN --> K((K))
+  FN --> Q((Q))
+  W --> V((V))
+  W --> YZ(("Y, Z"))
 
-  style M fill:#ffd966
-  style EJ fill:#ffd966
-  style H fill:#ffd966
+  style T fill:#ffd966
+  style FN fill:#ffd966
+  style K fill:#ffd966
   linkStyle 0 stroke:#e07b00,stroke-width:3px
   linkStyle 3 stroke:#e07b00,stroke-width:3px
 </div>
@@ -147,15 +147,15 @@ change, regardless of the size of the tree:
 
 <div class="mermaid">
 graph TD
-  subgraph Before["Before: temporary 4-node b,c,d"]
+  subgraph Before["Before: temporary 4-node q,r,s"]
     direction TB
-    AE(("a, e")) --> BCD(("b, c, d"))
-    AE --> L1("&lt; a")
-    AE --> L6("&gt; e")
-    BCD --> L2("a..b")
-    BCD --> L3("b..c")
-    BCD --> L4("c..d")
-    BCD --> L5("d..e")
+    PT(("p, t")) --> QRS(("q, r, s"))
+    PT --> L1("&lt; p")
+    PT --> L6("&gt; t")
+    QRS --> L2("p..q")
+    QRS --> L3("q..r")
+    QRS --> L4("r..s")
+    QRS --> L5("s..t")
   end
 </div>
 
@@ -163,18 +163,18 @@ graph TD
 graph TD
   subgraph After["After: split into three 2-nodes"]
     direction TB
-    ACE(("a, c, e")) --> B((b))
-    ACE --> D((d))
-    ACE --> M1("&lt; a")
-    ACE --> M6("&gt; e")
-    B --> M2("a..b")
-    B --> M3("b..c")
-    D --> M4("c..d")
-    D --> M5("d..e")
+    PRT(("p, r, t")) --> Q((q))
+    PRT --> S((s))
+    PRT --> M1("&lt; p")
+    PRT --> M6("&gt; t")
+    Q --> M2("p..q")
+    Q --> M3("q..r")
+    S --> M4("r..s")
+    S --> M5("s..t")
   end
 </div>
 
-The middle key `c` moves up one level into the parent (as `a, c, e`), while `b` and `d` become new
+The middle key `r` moves up one level into the parent (as `p, r, t`), while `q` and `s` become new
 2-nodes hanging below it.
 
 ## Global properties
@@ -187,11 +187,11 @@ stays sorted and balanced no matter where the temporary 4-node appears:
   <div class="mermaid">
   graph TD
     subgraph RootBefore["root: temporary 4-node"]
-      ABC(("a, b, c"))
+      PQR(("p, q, r"))
     end
     subgraph RootAfter["root: split"]
-      B2((b)) --> A2((a))
-      B2 --> C2((c))
+      Q2((q)) --> P2((p))
+      Q2 --> R2((r))
     end
   </div>
 
