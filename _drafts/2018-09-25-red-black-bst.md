@@ -120,7 +120,7 @@ style Zpad fill:transparent,stroke:transparent
 Each 3-node from the 2-3 tree (`F,N`, `B,D` and `Y,Z`) turned into a black node with a red left
 child (`N`&larr;`F`, `D`&larr;`B`, `Z`&larr;`Y`); every 2-node stayed a plain black node.
 
-# 4. Search
+# 2. Search
 
 Search is exactly the same as in an elementary BST - the colors are simply ignored, it just
 happens to run faster because the tree is better balanced.
@@ -137,14 +137,18 @@ graph TD
   F --> D((D))
   F --> K((K))
   D --> B((B))
+  D ~~~ Dpad(( ))
   W --> V((V))
   W --> Z((Z))
   Z --> Y((Y))
+  Z ~~~ Zpad(( ))
 
 style T fill:#ffd966
 style N fill:#ffd966
 style F fill:#ffd966
 style K fill:#ffd966
+style Dpad fill:transparent,stroke:transparent
+style Zpad fill:transparent,stroke:transparent
 linkStyle 0 stroke:#e07b00,stroke-width:3px
 linkStyle 2 stroke:#e07b00,stroke-width:3px
 linkStyle 5 stroke:#e07b00,stroke-width:3px
@@ -154,7 +158,7 @@ linkStyle 5 stroke:#e07b00,stroke-width:3px
 Most other read-only operations (floor, ceiling, selection, iteration, ...) are also identical to
 a plain BST.
 
-# 5. Node representation
+# 3. Node representation
 
 Since every node is pointed to by exactly one link (from its parent), the color can be stored
 _on the node itself_, as the color of the link coming down from its parent:
@@ -163,20 +167,22 @@ _on the node itself_, as the color of the link coming down from its parent:
 - `color` records whether the link **from the parent** to this node is red or black.
 - Null links are considered black.
 
-# 6. Elementary operations
+# 4. Elementary operations
 
 Every red-black BST operation is built from three tiny local operations. Each one preserves
 symmetric order and perfect black balance.
 
-## 6.1 Rotations
+## 4.1 Rotations
 
 **Left rotation** - orient a (temporarily) right-leaning red link to lean left:
 
 <div class="mermaid">
 graph TD
-  G((G)) --> O((O))
+  G((G)) ~~~ Gpad(( ))
+  G --> O((O))
 
-linkStyle 0 stroke:#c00,stroke-width:3px
+linkStyle 1 stroke:#c00,stroke-width:3px
+style Gpad fill:transparent,stroke:transparent
 
 </div>
 
@@ -185,8 +191,10 @@ becomes
 <div class="mermaid">
 graph TD
   O((O)) --> G((G))
+  O ~~~ Opad(( ))
 
 linkStyle 0 stroke:#c00,stroke-width:3px
+style Opad fill:transparent,stroke:transparent
 
 </div>
 
@@ -194,7 +202,7 @@ linkStyle 0 stroke:#c00,stroke-width:3px
 lean right, turning the "after" picture above back into the "before" one. Both rotations keep the
 subtree's in-order sequence unchanged; only the shape and the position of the red link change.
 
-## 6.2 Color flip
+## 4.2 Color flip
 
 Recolors a node and its two children to split a temporary 4-node. Before the flip, a black node
 has two red children:
