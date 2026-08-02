@@ -248,16 +248,22 @@ graph TD
   F --> D((D))
   F --> K((K))
   D --> B((B))
+  D ~~~ Dpad(( ))
   W --> V((V))
   W --> Z((Z))
   Z --> Y((Y))
+  Z ~~~ Zpad(( ))
+  V ~~~ Vpad(( ))
   V --> X((X))
 
 linkStyle 2 stroke:#c00,stroke-width:3px
 linkStyle 6 stroke:#c00,stroke-width:3px
-linkStyle 9 stroke:#c00,stroke-width:3px
 linkStyle 10 stroke:#c00,stroke-width:3px
+linkStyle 13 stroke:#c00,stroke-width:3px
 style X fill:#ffcccc,stroke:#c00,stroke-width:3px
+style Dpad fill:transparent,stroke:transparent
+style Zpad fill:transparent,stroke:transparent
+style Vpad fill:transparent,stroke:transparent
 
 </div>
 
@@ -274,15 +280,21 @@ graph TD
   F --> D((D))
   F --> K((K))
   D --> B((B))
+  D ~~~ Dpad(( ))
   W --> X((X))
   X --> V((V))
+  X ~~~ Xpad(( ))
   W --> Z((Z))
   Z --> Y((Y))
+  Z ~~~ Zpad(( ))
 
 linkStyle 2 stroke:#c00,stroke-width:3px
 linkStyle 6 stroke:#c00,stroke-width:3px
-linkStyle 8 stroke:#c00,stroke-width:3px
-linkStyle 10 stroke:#c00,stroke-width:3px
+linkStyle 9 stroke:#c00,stroke-width:3px
+linkStyle 12 stroke:#c00,stroke-width:3px
+style Dpad fill:transparent,stroke:transparent
+style Xpad fill:transparent,stroke:transparent
+style Zpad fill:transparent,stroke:transparent
 
 </div>
 
