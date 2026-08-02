@@ -158,6 +158,21 @@ linkStyle 5 stroke:#e07b00,stroke-width:3px
 Most other read-only operations (floor, ceiling, selection, iteration, ...) are also identical to
 a plain BST.
 
+```csharp
+public string Get(int key)
+{
+    Node node = root;
+    while (node != null)
+    {
+        int cmp = key.CompareTo(node.Key);
+        if (cmp < 0) node = node.Left;
+        else if (cmp > 0) node = node.Right;
+        else return node.Value;
+    }
+    return null;
+}
+```
+
 # 3. Node representation
 
 Since every node is pointed to by exactly one link (from its parent), the color can be stored
@@ -166,6 +181,33 @@ _on the node itself_, as the color of the link coming down from its parent:
 - Each node stores its key/value, its two children, and a boolean `color` field.
 - `color` records whether the link **from the parent** to this node is red or black.
 - Null links are considered black.
+
+```csharp
+private const bool Red = true;
+private const bool Black = false;
+
+private class Node
+{
+    public int Key;
+    public string Value;
+    public Node Left;
+    public Node Right;
+    public bool Color; // color of the link from the parent to this node
+
+    public Node(int key, string value, bool color)
+    {
+        Key = key;
+        Value = value;
+        Color = color;
+    }
+}
+
+private static bool IsRed(Node node)
+{
+    if (node == null) return false; // null links are black
+    return node.Color == Red;
+}
+```
 
 # 4. Elementary operations
 
@@ -202,6 +244,28 @@ style Opad fill:transparent,stroke:transparent
 lean right, turning the "after" picture above back into the "before" one. Both rotations keep the
 subtree's in-order sequence unchanged; only the shape and the position of the red link change.
 
+```csharp
+private Node RotateLeft(Node h)
+{
+    Node x = h.Right;
+    h.Right = x.Left;
+    x.Left = h;
+    x.Color = h.Color;
+    h.Color = Red;
+    return x;
+}
+
+private Node RotateRight(Node h)
+{
+    Node x = h.Left;
+    h.Left = x.Right;
+    x.Right = h;
+    x.Color = h.Color;
+    h.Color = Red;
+    return x;
+}
+```
+
 ## 4.2 Color flip
 
 Recolors a node and its two children to split a temporary 4-node. Before the flip, a black node
@@ -225,6 +289,15 @@ graph TD
   O((O)) --> G((G))
   O --> U((U))
 </div>
+
+```csharp
+private void FlipColors(Node h)
+{
+    h.Color = !h.Color;
+    h.Left.Color = !h.Left.Color;
+    h.Right.Color = !h.Right.Color;
+}
+```
 
 # 5. Insertion
 
@@ -367,6 +440,32 @@ the search path:
 Repeating this at each level guarantees the red link either gets absorbed or keeps moving up,
 exactly as in a 2-3 tree insertion. If it reaches the root and the root ends up red, it's simply
 repainted black - the only case where the tree grows one level taller.
+
+All of this fits in a handful of lines on top of a standard recursive BST insert:
+
+```csharp
+public void Put(int key, string value)
+{
+    root = Put(root, key, value);
+    root.Color = Black; // root is always black
+}
+
+private Node Put(Node h, int key, string value)
+{
+    if (h == null) return new Node(key, value, Red); // insert at the bottom, link colored red
+
+    int cmp = key.CompareTo(h.Key);
+    if (cmp < 0) h.Left = Put(h.Left, key, value);
+    else if (cmp > 0) h.Right = Put(h.Right, key, value);
+    else h.Value = value;
+
+    if (IsRed(h.Right) && !IsRed(h.Left)) h = RotateLeft(h);       // lean left
+    if (IsRed(h.Left) && IsRed(h.Left.Left)) h = RotateRight(h);   // balance a 4-node
+    if (IsRed(h.Left) && IsRed(h.Right)) FlipColors(h);            // split a 4-node
+
+    return h;
+}
+```
 
 # 6. Performance
 
