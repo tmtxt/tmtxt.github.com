@@ -3,7 +3,6 @@ layout: post
 title: "2-3 search trees"
 description: ""
 categories: [algorithm]
-thumbnail: /files/2018-09-10-symbol-tables-and-binary-search-trees-summary/bst1.png
 mermaid: true
 ---
 
@@ -82,7 +81,7 @@ or 2 keys** instead of just 1.
 - **2-node**: one key, two children (same as a regular BST node).
 - **3-node**: two keys, three children (smaller, in the middle and larger).
 - **Symmetric order**: an in-order traversal still yields the keys in ascending order.
-- **Perfect balance**: every path from the root to a null link has the *same* length.
+- **Perfect balance**: every path from the root to a null link has the _same_ length.
 
 <div class="mermaid">
 graph TD
@@ -94,9 +93,10 @@ graph TD
   W --> V((V))
   W --> YZ(("Y, Z"))
 
-  style FN fill:#fde2e2,stroke:#b33,stroke-width:2px
-  style BD fill:#fde2e2,stroke:#b33,stroke-width:2px
-  style YZ fill:#fde2e2,stroke:#b33,stroke-width:2px
+style FN fill:#fde2e2,stroke:#b33,stroke-width:2px
+style BD fill:#fde2e2,stroke:#b33,stroke-width:2px
+style YZ fill:#fde2e2,stroke:#b33,stroke-width:2px
+
 </div>
 
 `F,N`, `B,D` and `Y,Z` are 3-nodes (2 keys, drawn in red above); the rest are 2-nodes. Following
@@ -121,11 +121,12 @@ graph TD
   W --> V((V))
   W --> YZ(("Y, Z"))
 
-  style T fill:#ffd966
-  style FN fill:#ffd966
-  style K fill:#ffd966
-  linkStyle 0 stroke:#e07b00,stroke-width:3px
-  linkStyle 3 stroke:#e07b00,stroke-width:3px
+style T fill:#ffd966
+style FN fill:#ffd966
+style K fill:#ffd966
+linkStyle 0 stroke:#e07b00,stroke-width:3px
+linkStyle 3 stroke:#e07b00,stroke-width:3px
+
 </div>
 
 ## Insertion
@@ -134,13 +135,13 @@ Insertion always happens at the bottom (a leaf). Inserting into a 3-node at the 
 this:
 
 - Add the new key to the 3-node, creating a **temporary 4-node**.
-- Move the *middle* key of the 4-node up into the parent.
+- Move the _middle_ key of the 4-node up into the parent.
 - Repeat up the tree, as necessary, since pushing a key into the parent can turn the parent into a
   temporary 4-node too.
 - If the split reaches the root and the root itself is a 4-node, split it into three 2-nodes - this
   is the only way the tree grows taller.
 
-## Local transformation: splitting a 4-node
+### Splitting a 4-node
 
 Splitting a temporary 4-node is a **local** transformation - a constant number of nodes/links
 change, regardless of the size of the tree:
@@ -176,6 +177,99 @@ graph TD
 
 The middle key `r` moves up one level into the parent (as `p, r, t`), while `q` and `s` become new
 2-nodes hanging below it.
+
+### Worked example
+
+Starting from the tree above, let's insert `C`. First, walk down the tree the same way `Search`
+does, to find the leaf where `C` belongs: `T -> F,N -> B,D`:
+
+<div class="mermaid">
+graph TD
+  T((T)) --> FN(("F, N"))
+  T --> W((W))
+  FN --> BD(("B, D"))
+  FN --> K((K))
+  FN --> Q((Q))
+  W --> V((V))
+  W --> YZ(("Y, Z"))
+
+style T fill:#ffd966
+style FN fill:#ffd966
+style BD fill:#ffd966
+linkStyle 0 stroke:#e07b00,stroke-width:3px
+linkStyle 2 stroke:#e07b00,stroke-width:3px
+
+</div>
+
+`C` lands in the `B,D` leaf. Since `B < C < D`, it slots in between them, temporarily turning the
+leaf into a 4-node `B,C,D`:
+
+<div class="mermaid">
+graph TD
+  T((T)) --> FN(("F, N"))
+  T --> W((W))
+  FN --> BCD(("B, C, D"))
+  FN --> K((K))
+  FN --> Q((Q))
+  W --> V((V))
+  W --> YZ(("Y, Z"))
+
+style BCD fill:#ffcccc,stroke:#c00,stroke-width:3px
+
+</div>
+
+The leaf splits: `B` and `D` become plain 2-nodes, and the middle key `C` moves up into the parent
+`F,N`. Since `F,N` is already a 3-node, absorbing `C` turns _it_ into a temporary 4-node `C,F,N`:
+
+<div class="mermaid">
+graph TD
+  T((T)) --> CFN(("C, F, N"))
+  T --> W((W))
+  CFN --> B((B))
+  CFN --> D((D))
+  CFN --> K((K))
+  CFN --> Q((Q))
+  W --> V((V))
+  W --> YZ(("Y, Z"))
+
+style CFN fill:#ffcccc,stroke:#c00,stroke-width:3px
+
+</div>
+
+The split repeats one level up: `C,F,N` splits into 2-nodes `C` and `N`, and the middle key `F`
+moves up into the root. The root `T` was only a 2-node, so it simply absorbs `F` and becomes the
+3-node `F,T` - no further splitting needed, and the tree's height stays the same:
+
+<div class="mermaid">
+graph TD
+  FT(("F, T")) --> C((C))
+  FT --> N((N))
+  FT --> W((W))
+  C --> B((B))
+  C --> D((D))
+  N --> K((K))
+  N --> Q((Q))
+  W --> V((V))
+  W --> YZ(("Y, Z"))
+
+style FT fill:#ffcccc,stroke:#c00,stroke-width:3px
+
+</div>
+
+The final tree, still perfectly balanced and in symmetric order:
+
+<div class="mermaid">
+graph TD
+  FT(("F, T")) --> C((C))
+  FT --> N((N))
+  FT --> W((W))
+  C --> B((B))
+  C --> D((D))
+  N --> K((K))
+  N --> Q((Q))
+  W --> V((V))
+  W --> YZ(("Y, Z"))
+</div>
 
 ## Global properties
 
@@ -223,4 +317,3 @@ Direct implementation is complicated because:
 In practice, 2-3 trees are usually implemented indirectly through **left-leaning red-black BSTs**,
 which encode a 3-node as two 2-nodes joined by a left-leaning red link - same performance
 guarantees, much simpler code. That's a topic for another post.
-
