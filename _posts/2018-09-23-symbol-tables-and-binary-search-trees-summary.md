@@ -3,7 +3,7 @@ layout: post
 title: "Symbol Tables and Binary Search Trees summary"
 description: ""
 categories: [algorithm]
-thumbnail: /files/2018-09-10-symbol-tables-and-binary-search-trees-summary/bst1.png
+thumbnail:
 mermaid: true
 ---
 
@@ -143,7 +143,24 @@ Binary Search Tree is a binary tree in symmetric order. Each node has a key, and
 - Larger than all keys in its left subtree.
 - Smaller than all keys in its right subtree
 
-![BST](/files/2018-09-10-symbol-tables-and-binary-search-trees-summary/bst1.png)
+<div class="mermaid">
+graph TD
+    S["S"] --> E["E"]
+    S --> X["X"]
+    E --> A["A"]
+    E --> R["R"]
+    A ~~~ h1[" "]
+    A --> C["C"]
+    R --> H["H"]
+    R ~~~ h2[" "]
+    H ~~~ h3[" "]
+    H --> M["M"]
+    classDef hidden fill:transparent,stroke:transparent,color:transparent
+    class h1,h2,h3 hidden
+</div>
+
+In the tree above, every key is larger than all keys in its left subtree and smaller than all keys
+in its right subtree (for example `A < C < E < H < M < R < S < X`).
 
 Using BST, we can implement all the operations of Ordered Symbol Tables quite efficiently, as long
 as keys are inserted in random order.
@@ -242,7 +259,32 @@ return the count at the root.
 
 **Rank**. How many keys < k ?
 
-![Rank](/files/2018-09-10-symbol-tables-and-binary-search-trees-summary/bst2.png)
+Store the size of each subtree in its root node. `rank` then walks down the tree, adding up the
+sizes of the left subtrees it skips over:
+
+<div class="mermaid">
+graph TD
+    S["S<br/>size 8"] --> E["E<br/>size 6"]
+    S --> X["X<br/>size 1"]
+    E --> A["A<br/>size 2"]
+    E --> R["R<br/>size 3"]
+    A ~~~ h1[" "]
+    A --> C["C<br/>size 1"]
+    R --> H["H<br/>size 2"]
+    R ~~~ h2[" "]
+    H ~~~ h3[" "]
+    H --> M["M<br/>size 1"]
+    classDef hidden fill:transparent,stroke:transparent,color:transparent
+    class h1,h2,h3 hidden
+</div>
+
+For example, to compute `rank("R")` (the number of keys smaller than `R`):
+
+- `R < S`, go left into `E`.
+- `R > E`, so skip `E` and its whole left subtree: `1 + size(A subtree) = 1 + 2 = 3`, then continue
+  into `E`'s right child `R`.
+- `R == R`, add `size(left subtree of R) = 2`.
+- Total: `3 + 2 = 5`, matching the keys `A, C, E, H, M`.
 
 ```java
 public int rank(Key key) {
@@ -292,7 +334,18 @@ To remove a node with a given key:
 - Set its value to null.
 - Leave key in tree to guide search (but don't consider it equal in search)
 
-![Lazy Deletion](/files/2018-09-10-symbol-tables-and-binary-search-trees-summary/bst3.png)
+Here the key `E` is tombstoned: its value is set to `null`, but the key stays so that searches can
+still be routed correctly to its children `A` and `R`:
+
+<div class="mermaid">
+graph TD
+    S["S"] --> E["E<br/>value = null"]
+    S --> X["X"]
+    E --> A["A"]
+    E --> R["R"]
+    classDef dead fill:#eeeeee,stroke:#9e9e9e,stroke-dasharray:4 3,color:#9e9e9e
+    class E dead
+</div>
 
 Drawback: Tombstone (memory) overload
 
@@ -319,17 +372,89 @@ private Node deleteMin(Node x) {
 
 ## Delete a specific key using Hibbard deletion
 
-To delete a node with key k: search for node t containing key k.
-- **Case 0**: `0 children` Delete t by setting parent link to null
-  ![Case0](/files/2018-09-10-symbol-tables-and-binary-search-trees-summary/bst4.png)
-- **Case 1**: `1 child` Delete t by replacing parent link
-  ![Case1](/files/2018-09-10-symbol-tables-and-binary-search-trees-summary/bst5.png)
-- **Case 2**: `2 children`
-  - Find successor `x` of `t`, find the `x` which can replace the position of the node `t` (the min
-    of `t.right`).
-  - Delete that node `x` out of the BST using the `deleteMin` method, but keep the node `x` in memory.
-  - Put `x` in `t`'s spot
-  ![Case2](/files/2018-09-10-symbol-tables-and-binary-search-trees-summary/bst6.png)
+To delete a node with key `k`, search for the node `t` containing key `k`, then handle three cases.
+
+**Case 0 - `t` has 0 children:** delete `t` by setting its parent link to null. Here we remove the
+leaf `A`:
+
+**Before**
+
+<div class="mermaid" style="border:1px solid #d0d0d0;border-radius:6px;padding:10px;margin-bottom:12px">
+graph TD
+    E["E"] --> A["A"]:::del
+    E --> R["R"]
+    classDef del fill:#ffcdd2,stroke:#c62828,stroke-width:2px
+</div>
+
+**After**
+
+<div class="mermaid" style="border:1px solid #d0d0d0;border-radius:6px;padding:10px;margin-bottom:12px">
+graph TD
+    E["E"] ~~~ h1[" "]
+    E --> R["R"]
+    classDef hidden fill:transparent,stroke:transparent,color:transparent
+    class h1 hidden
+</div>
+
+**Case 1 - `t` has 1 child:** delete `t` by replacing its parent link with `t`'s only child. Here
+we remove `E`, whose only child is `R`:
+
+**Before**
+
+<div class="mermaid" style="border:1px solid #d0d0d0;border-radius:6px;padding:10px;margin-bottom:12px">
+graph TD
+    S["S"] --> E["E"]:::del
+    S ~~~ g1[" "]
+    E ~~~ g2[" "]
+    E --> R["R"]
+    classDef del fill:#ffcdd2,stroke:#c62828,stroke-width:2px
+    classDef hidden fill:transparent,stroke:transparent,color:transparent
+    class g1,g2 hidden
+</div>
+
+**After**
+
+<div class="mermaid" style="border:1px solid #d0d0d0;border-radius:6px;padding:10px;margin-bottom:12px">
+graph TD
+    S["S"] --> R["R"]
+    S ~~~ g1[" "]
+    classDef hidden fill:transparent,stroke:transparent,color:transparent
+    class g1 hidden
+</div>
+
+**Case 2 - `t` has 2 children (Hibbard deletion):**
+
+- Find the successor `x` of `t` - the minimum of `t.right`.
+- Delete `x` out of the BST using the `deleteMin` method, but keep the node `x` in memory.
+- Put `x` in `t`'s spot.
+
+Here we delete `E`; its successor is `H` (the minimum of `E`'s right subtree), which moves up into
+`E`'s position:
+
+**Before**
+
+<div class="mermaid" style="border:1px solid #d0d0d0;border-radius:6px;padding:10px;margin-bottom:12px">
+graph TD
+    E["E"]:::del --> A["A"]
+    E --> R["R"]
+    R --> H["H"]:::succ
+    R --> S["S"]
+    classDef del fill:#ffcdd2,stroke:#c62828,stroke-width:2px
+    classDef succ fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
+</div>
+
+**After**
+
+<div class="mermaid" style="border:1px solid #d0d0d0;border-radius:6px;padding:10px;margin-bottom:12px">
+graph TD
+    H["H"]:::succ --> A["A"]
+    H --> R["R"]
+    R ~~~ h1[" "]
+    R --> S["S"]
+    classDef succ fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
+    classDef hidden fill:transparent,stroke:transparent,color:transparent
+    class h1 hidden
+</div>
 
 ```java
 public void delete(Key key) {

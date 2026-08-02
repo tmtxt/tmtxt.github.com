@@ -5,6 +5,7 @@ description: ""
 categories: [algorithm]
 tags: []
 thumbnail: 
+mermaid: true
 ---
 
 > Leetcode: [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
@@ -18,7 +19,26 @@ Return *the head of the merged linked list*.
 
 **Example 1**:
 
-![Merge](/files/2021-12-10-solution-to-merge-two-sorted-lists-problem/merge_ex1.jpg)
+**list1**
+
+<div class="mermaid">
+flowchart LR
+    a1["1"] --> a2["2"] --> a4["4"] --> anull["null"]
+</div>
+
+**list2**
+
+<div class="mermaid">
+flowchart LR
+    b1["1"] --> b3["3"] --> b4["4"] --> bnull["null"]
+</div>
+
+**Merged**
+
+<div class="mermaid">
+flowchart LR
+    m1["1"] --> m1b["1"] --> m2["2"] --> m3["3"] --> m4["4"] --> m4b["4"] --> mnull["null"]
+</div>
 
 ```
 Input: list1 = [1,2,4], list2 = [1,3,4]

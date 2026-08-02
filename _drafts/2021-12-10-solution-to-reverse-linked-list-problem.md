@@ -5,13 +5,26 @@ description: ""
 categories: [algorithm]
 tags: []
 thumbnail: 
+mermaid: true
 ---
 
 Given the `head` of a singly linked list, reverse the list, and return *the reversed list*.
 
 **Example 1**:
 
-![Reverse1](/files/2021-12-10-solution-to-reverse-linked-list-problem/rev1ex1.jpg)
+**Input**
+
+<div class="mermaid">
+flowchart LR
+    a1["1"] --> a2["2"] --> a3["3"] --> a4["4"] --> a5["5"] --> anull["null"]
+</div>
+
+**Output**
+
+<div class="mermaid">
+flowchart LR
+    b5["5"] --> b4["4"] --> b3["3"] --> b2["2"] --> b1["1"] --> bnull["null"]
+</div>
 
 ```
 Input: head = [1,2,3,4,5]
@@ -20,7 +33,19 @@ Output: [5,4,3,2,1]
 
 **Example 2**:
 
-![Reverse2](/files/2021-12-10-solution-to-reverse-linked-list-problem/rev1ex2.jpg)
+**Input**
+
+<div class="mermaid">
+flowchart LR
+    c1["1"] --> c2["2"] --> cnull["null"]
+</div>
+
+**Output**
+
+<div class="mermaid">
+flowchart LR
+    d2["2"] --> d1["1"] --> dnull["null"]
+</div>
 
 ```
 Input: head = [1,2]

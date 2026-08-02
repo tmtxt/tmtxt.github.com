@@ -3,6 +3,7 @@ layout: post
 title: "Quick Sort summary - Part 1 - Basic Implementation"
 description: ""
 categories: [algorithm]
+mermaid: true
 ---
 
 > Nothing special here. It's just a blog post for summarising my algorithm learning course. Although
@@ -25,7 +26,31 @@ The Idea
   - No smaller entry to the right of pivot item
 - **Sort** each piece recursively.
 
-![Alt Text](/files/2018-05-27-quick-sort-summary/qs1.png)
+After one partitioning step, the array is arranged around the pivot like this:
+
+<div class="mermaid">
+flowchart LR
+    subgraph After["After partitioning around the pivot"]
+        direction LR
+        L["smaller entries<br/>(every value &lt; pivot)"]
+        P["pivot<br/>(now in its final position)"]
+        R["larger entries<br/>(every value &gt; pivot)"]
+        L --- P --- R
+    end
+</div>
+
+The pivot is now in its correct final spot, so we only need to recursively apply the same idea to
+the left and right sub-arrays:
+
+<div class="mermaid">
+flowchart TD
+    A["partition full array"] --> B["left half<br/>(smaller than pivot)"]
+    A --> C["right half<br/>(larger than pivot)"]
+    B --> B1["partition left half"]
+    C --> C1["partition right half"]
+    B1 --> B2["..."]
+    C1 --> C2["..."]
+</div>
 
 <!-- more -->
 
@@ -39,10 +64,22 @@ How to partition the array using the pivot item?
   - Repeat until `i` and `j` pointers cross.
 - Exchange `a[lo]` with `a[j]`
 
-![Alt Text](/files/2018-05-27-quick-sort-summary/animation.gif)
+Here is a full walkthrough on the array `[5, 3, 8, 4, 2, 7, 1, 6]`, using `a[lo] = 5` as the
+pivot. The `i` pointer starts at `lo` and the `j` pointer starts at `hi + 1`:
 
-After finish partitioning, all the items on left are smaller than the pivot item, all the items on
-the right are larger then the pivot, recursively sort each half using quick sort.
+| Step | Action | i | j | Array (**pivot** / `i` / `j` highlighted) |
+|------|--------|---|---|-------------------------------------------|
+| 0 | Initial state | 0 | 8 | **5** 3 8 4 2 7 1 6 |
+| 1 | Scan `i` right until `a[i] >= 5`; scan `j` left until `a[j] <= 5` | 2 | 6 | **5** 3 `8` 4 2 7 `1` 6 |
+| 2 | `i < j`, so exchange `a[i]` and `a[j]` (`8` ↔ `1`) | 2 | 6 | **5** 3 `1` 4 2 7 `8` 6 |
+| 3 | Continue scanning: `i` stops at `7`, `j` stops at `2` | 5 | 4 | **5** 3 1 4 `2` `7` 8 6 |
+| 4 | Pointers crossed (`i >= j`), stop the scan loop | 5 | 4 | **5** 3 1 4 `2` `7` 8 6 |
+| 5 | Exchange pivot `a[lo]` with `a[j]` (`5` ↔ `2`) | - | 4 | `2` 3 1 4 **5** 7 8 6 |
+{: .table }
+
+The pivot `5` now sits at index `4`. Everything to its left (`2 3 1 4`) is smaller and everything
+to its right (`7 8 6`) is larger. `partition` returns `j = 4`, and quick sort then recursively
+sorts the sub-arrays `[2, 3, 1, 4]` and `[7, 8, 6]` the same way.
 
 # Java Implementation
 

@@ -26,7 +26,54 @@ pointer should be set to `NULL`. Initially, all next pointers are set to `NULL`.
 
 **Example 1**:
 
-![116 sample](/files/2021-12-09-solution-to-populating-next-right-pointers-in-each-node-problem/116_sample.png)
+Solid lines are the tree's child links; the dashed red arrows are the `next` pointers we populate,
+connecting each node to the node on its right in the same level (the last node of each level points
+to `NULL`):
+
+<figure style="margin:0">
+<svg width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="18">
+  <!-- tree edges -->
+  <g stroke="#555" stroke-width="2">
+    <line x1="280" y1="50" x2="140" y2="150"/>
+    <line x1="280" y1="50" x2="420" y2="150"/>
+    <line x1="140" y1="150" x2="70"  y2="250"/>
+    <line x1="140" y1="150" x2="210" y2="250"/>
+    <line x1="420" y1="150" x2="350" y2="250"/>
+    <line x1="420" y1="150" x2="490" y2="250"/>
+  </g>
+  <!-- next pointers -->
+  <defs>
+    <marker id="nextArrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#c62828"/>
+    </marker>
+  </defs>
+  <g stroke="#c62828" stroke-width="2" stroke-dasharray="5 4" fill="none" marker-end="url(#nextArrow)">
+    <line x1="164" y1="150" x2="392" y2="150"/>
+    <line x1="94"  y1="250" x2="182" y2="250"/>
+    <line x1="234" y1="250" x2="322" y2="250"/>
+    <line x1="374" y1="250" x2="462" y2="250"/>
+    <line x1="304" y1="50"  x2="345" y2="50"/>
+    <line x1="444" y1="150" x2="485" y2="150"/>
+    <line x1="514" y1="250" x2="555" y2="250"/>
+  </g>
+  <g fill="#c62828" font-size="13">
+    <text x="349" y="54">NULL</text>
+    <text x="489" y="154">NULL</text>
+    <text x="559" y="254">NULL</text>
+  </g>
+  <!-- nodes -->
+  <g fill="#cfe8ff" stroke="#333" stroke-width="1.5">
+    <circle cx="280" cy="50"  r="24"/>
+    <circle cx="140" cy="150" r="24"/><circle cx="420" cy="150" r="24"/>
+    <circle cx="70"  cy="250" r="24"/><circle cx="210" cy="250" r="24"/><circle cx="350" cy="250" r="24"/><circle cx="490" cy="250" r="24"/>
+  </g>
+  <g fill="#333" text-anchor="middle" dominant-baseline="central">
+    <text x="280" y="50">1</text>
+    <text x="140" y="150">2</text><text x="420" y="150">3</text>
+    <text x="70"  y="250">4</text><text x="210" y="250">5</text><text x="350" y="250">6</text><text x="490" y="250">7</text>
+  </g>
+</svg>
+</figure>
 
 ```
 Input: root = [1,2,3,4,5,6,7]

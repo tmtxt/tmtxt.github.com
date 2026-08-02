@@ -5,6 +5,7 @@ description: ""
 categories: [algorithm]
 tags: []
 thumbnail: 
+mermaid: true
 ---
 
 > Leetcode: [Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree/)
@@ -17,7 +18,27 @@ descendants. The tree `tree` could also be considered as a subtree of itself.
 
 **Example 1**:
 
-![Sample1](/files/2022-01-29-solution-to-subtree-of-another-tree-problem/subtree1-tree.jpg)
+The subtree rooted at `4` (highlighted green) has exactly the same structure and values as
+`subRoot`, so the answer is `true`.
+
+**`root`**
+
+<div class="mermaid">
+graph TD
+    a3["3"] --> a4["4"]:::m
+    a3 --> a5["5"]
+    a4 --> a1["1"]:::m
+    a4 --> a2["2"]:::m
+    classDef m fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
+</div>
+
+**`subRoot`**
+
+<div class="mermaid">
+graph TD
+    s4["4"] --> s1["1"]
+    s4 --> s2["2"]
+</div>
 
 ```
 Input: root = [3,4,5,1,2], subRoot = [4,1,2]
@@ -26,7 +47,31 @@ Output: true
 
 **Example 2**:
 
-![Sample2](/files/2022-01-29-solution-to-subtree-of-another-tree-problem/subtree2-tree.jpg)
+The candidate subtree rooted at `4` almost matches, but node `2` has an extra child `0`
+(highlighted red), so it does not match `subRoot` and the answer is `false`.
+
+**`root`**
+
+<div class="mermaid">
+graph TD
+    b3["3"] --> b4["4"]
+    b3 --> b5["5"]
+    b4 --> b1["1"]
+    b4 --> b2["2"]
+    b2 --> b0["0"]:::x
+    b2 ~~~ bh1[" "]
+    classDef x fill:#ffcdd2,stroke:#c62828,stroke-width:2px
+    classDef hidden fill:transparent,stroke:transparent,color:transparent
+    class bh1 hidden
+</div>
+
+**`subRoot`**
+
+<div class="mermaid">
+graph TD
+    t4["4"] --> t1["1"]
+    t4 --> t2["2"]
+</div>
 
 ```
 Input: root = [3,4,5,1,2,null,null,null,null,0], subRoot = [4,1,2]

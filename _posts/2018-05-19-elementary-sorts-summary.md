@@ -3,6 +3,7 @@ layout: post
 title: "Elementary Sorts Summary"
 description: ""
 categories: [algorithm]
+mermaid: true
 thumbnail:
 ---
 
@@ -83,15 +84,62 @@ exchanges.
 
 ## 3.1 h-Sorted Array
 
-An **h-sorted** array is h interleaved sorted sub-sequences. Here is a **4-sorted** array
+An **h-sorted** array is h interleaved sorted sub-sequences. For example, in a **4-sorted**
+array of 12 elements, every 4th element forms its own independent sorted sub-sequence:
 
-![4-sorted array](/files/2018-05-19-elementary-sorts-summary/h-sort.png)
+| Index | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |
+|-------|---|---|---|---|---|---|---|---|---|---|----|----|
+| Group | A | B | C | D | A | B | C | D | A | B | C  | D  |
+{: .table }
+
+<div class="mermaid">
+flowchart LR
+    subgraph A["Group A (indices 0, 4, 8)"]
+        direction LR
+        A0["a[0]"] --> A4["a[4]"] --> A8["a[8]"]
+    end
+    subgraph B["Group B (indices 1, 5, 9)"]
+        direction LR
+        B1["a[1]"] --> B5["a[5]"] --> B9["a[9]"]
+    end
+    subgraph C["Group C (indices 2, 6, 10)"]
+        direction LR
+        C2["a[2]"] --> C6["a[6]"] --> C10["a[10]"]
+    end
+    subgraph D["Group D (indices 3, 7, 11)"]
+        direction LR
+        D3["a[3]"] --> D7["a[7]"] --> D11["a[11]"]
+    end
+</div>
+
+Each arrow means "less than or equal to", so within group A, `a[0] <= a[4] <= a[8]`, and the same
+rule applies to groups B, C and D. The whole array is **4-sorted** once all four interleaved
+sub-sequences are independently sorted this way.
 
 - To **h-sort** an array, use insertion sort with stride length **h**. Which means, for each
   iteration `i`, instead of going back by one step each, go back `h` steps. Here is an example of
-  **3-sorting** an array.
+  **3-sorting** the array `[8, 5, 3, 9, 1, 7, 4, 6, 2]`.
 
-![Shell Sort](/files/2018-05-19-elementary-sorts-summary/h-sort3.png)
+With `h = 3`, the array splits into 3 groups: indices `{0, 3, 6}`, `{1, 4, 7}` and `{2, 5, 8}`.
+Each group is sorted independently, as if running plain insertion sort on just those elements:
+
+| Group       | Before sort | After sort |
+|-------------|-------------|------------|
+| `{0, 3, 6}` | 8, 9, 4     | 4, 8, 9    |
+| `{1, 4, 7}` | 5, 1, 6     | 1, 5, 6    |
+| `{2, 5, 8}` | 3, 7, 2     | 2, 3, 7    |
+{: .table }
+
+Putting the sorted groups back into their original positions gives the **3-sorted** array:
+
+| Index         | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+|---------------|---|---|---|---|---|---|---|---|---|
+| Before 3-sort | 8 | 5 | 3 | 9 | 1 | 7 | 4 | 6 | 2 |
+| After 3-sort  | 4 | 1 | 2 | 8 | 5 | 3 | 9 | 6 | 7 |
+{: .table }
+
+Notice how each group is now internally sorted (e.g. `4 <= 8 <= 9` for `{0, 3, 6}`), even though
+the array as a whole is still far from fully sorted.
 
 ## 3.2 What is Shell Sort?
 
@@ -100,7 +148,15 @@ An **h-sorted** array is h interleaved sorted sub-sequences. Here is a **4-sorte
 - For example, 13-sort the array, 4-sort the result and then 1-sort the array to get the final
   sorted array
 
-![Shell Sort](/files/2018-05-19-elementary-sorts-summary/h-sort2.png)
+<div class="mermaid">
+flowchart LR
+    Start(["Unsorted array"]) --> H13["13-sort"] --> H4["4-sort"] --> H1["1-sort<br/>(regular insertion sort)"] --> Done(["Fully sorted array"])
+</div>
+
+Each step takes the array produced by the previous step and makes it `h`-sorted for a smaller
+value of `h`. By the time `h` reaches `1`, the array only needs a regular insertion sort to
+become fully sorted - and because it is already "almost sorted" by then, that final pass is very
+fast.
 
 - Some increasing of `h` values to use
   - `3x + 1`: 1, 4, 13, 40, 121, 364, ...

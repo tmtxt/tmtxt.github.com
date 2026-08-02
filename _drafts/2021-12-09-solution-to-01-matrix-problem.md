@@ -15,7 +15,42 @@ The distance between two adjacent cells is `1`.
 
 **Example 1**:
 
-![01](/files/2021-12-09-solution-to-01-matrix-problem/01-1-grid.jpg)
+Cells with value `0` are blue; the distance to the nearest `0` is written in every cell (non-zero
+distances are amber in the output).
+
+<div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+<figure style="margin:0;text-align:center">
+<figcaption><strong>Input</strong></figcaption>
+<svg width="184" height="184" viewBox="0 0 184 184" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="24">
+  <g stroke="#333" stroke-width="1">
+    <rect x="2" y="2" width="60" height="60" fill="#cfe8ff"/><rect x="62" y="2" width="60" height="60" fill="#cfe8ff"/><rect x="122" y="2" width="60" height="60" fill="#cfe8ff"/>
+    <rect x="2" y="62" width="60" height="60" fill="#cfe8ff"/><rect x="62" y="62" width="60" height="60" fill="#ffffff"/><rect x="122" y="62" width="60" height="60" fill="#cfe8ff"/>
+    <rect x="2" y="122" width="60" height="60" fill="#cfe8ff"/><rect x="62" y="122" width="60" height="60" fill="#cfe8ff"/><rect x="122" y="122" width="60" height="60" fill="#cfe8ff"/>
+  </g>
+  <g fill="#333" text-anchor="middle">
+    <text x="32" y="40">0</text><text x="92" y="40">0</text><text x="152" y="40">0</text>
+    <text x="32" y="100">0</text><text x="92" y="100">1</text><text x="152" y="100">0</text>
+    <text x="32" y="160">0</text><text x="92" y="160">0</text><text x="152" y="160">0</text>
+  </g>
+</svg>
+</figure>
+<div style="font-size:28px">&rarr;</div>
+<figure style="margin:0;text-align:center">
+<figcaption><strong>Output</strong></figcaption>
+<svg width="184" height="184" viewBox="0 0 184 184" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="24">
+  <g stroke="#333" stroke-width="1">
+    <rect x="2" y="2" width="60" height="60" fill="#cfe8ff"/><rect x="62" y="2" width="60" height="60" fill="#cfe8ff"/><rect x="122" y="2" width="60" height="60" fill="#cfe8ff"/>
+    <rect x="2" y="62" width="60" height="60" fill="#cfe8ff"/><rect x="62" y="62" width="60" height="60" fill="#ffe082"/><rect x="122" y="62" width="60" height="60" fill="#cfe8ff"/>
+    <rect x="2" y="122" width="60" height="60" fill="#cfe8ff"/><rect x="62" y="122" width="60" height="60" fill="#cfe8ff"/><rect x="122" y="122" width="60" height="60" fill="#cfe8ff"/>
+  </g>
+  <g fill="#333" text-anchor="middle">
+    <text x="32" y="40">0</text><text x="92" y="40">0</text><text x="152" y="40">0</text>
+    <text x="32" y="100">0</text><text x="92" y="100">1</text><text x="152" y="100">0</text>
+    <text x="32" y="160">0</text><text x="92" y="160">0</text><text x="152" y="160">0</text>
+  </g>
+</svg>
+</figure>
+</div>
 
 ```
 Input: mat = [[0,0,0],[0,1,0],[0,0,0]]
@@ -24,7 +59,39 @@ Output: [[0,0,0],[0,1,0],[0,0,0]]
 
 **Example 2**:
 
-![02](/files/2021-12-09-solution-to-01-matrix-problem/01-2-grid.jpg)
+<div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+<figure style="margin:0;text-align:center">
+<figcaption><strong>Input</strong></figcaption>
+<svg width="184" height="184" viewBox="0 0 184 184" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="24">
+  <g stroke="#333" stroke-width="1">
+    <rect x="2" y="2" width="60" height="60" fill="#cfe8ff"/><rect x="62" y="2" width="60" height="60" fill="#cfe8ff"/><rect x="122" y="2" width="60" height="60" fill="#cfe8ff"/>
+    <rect x="2" y="62" width="60" height="60" fill="#cfe8ff"/><rect x="62" y="62" width="60" height="60" fill="#ffffff"/><rect x="122" y="62" width="60" height="60" fill="#cfe8ff"/>
+    <rect x="2" y="122" width="60" height="60" fill="#ffffff"/><rect x="62" y="122" width="60" height="60" fill="#ffffff"/><rect x="122" y="122" width="60" height="60" fill="#ffffff"/>
+  </g>
+  <g fill="#333" text-anchor="middle">
+    <text x="32" y="40">0</text><text x="92" y="40">0</text><text x="152" y="40">0</text>
+    <text x="32" y="100">0</text><text x="92" y="100">1</text><text x="152" y="100">0</text>
+    <text x="32" y="160">1</text><text x="92" y="160">1</text><text x="152" y="160">1</text>
+  </g>
+</svg>
+</figure>
+<div style="font-size:28px">&rarr;</div>
+<figure style="margin:0;text-align:center">
+<figcaption><strong>Output</strong></figcaption>
+<svg width="184" height="184" viewBox="0 0 184 184" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="24">
+  <g stroke="#333" stroke-width="1">
+    <rect x="2" y="2" width="60" height="60" fill="#cfe8ff"/><rect x="62" y="2" width="60" height="60" fill="#cfe8ff"/><rect x="122" y="2" width="60" height="60" fill="#cfe8ff"/>
+    <rect x="2" y="62" width="60" height="60" fill="#cfe8ff"/><rect x="62" y="62" width="60" height="60" fill="#ffe082"/><rect x="122" y="62" width="60" height="60" fill="#cfe8ff"/>
+    <rect x="2" y="122" width="60" height="60" fill="#ffe082"/><rect x="62" y="122" width="60" height="60" fill="#ffcc80"/><rect x="122" y="122" width="60" height="60" fill="#ffe082"/>
+  </g>
+  <g fill="#333" text-anchor="middle">
+    <text x="32" y="40">0</text><text x="92" y="40">0</text><text x="152" y="40">0</text>
+    <text x="32" y="100">0</text><text x="92" y="100">1</text><text x="152" y="100">0</text>
+    <text x="32" y="160">1</text><text x="92" y="160">2</text><text x="152" y="160">1</text>
+  </g>
+</svg>
+</figure>
+</div>
 
 ```
 Input: mat = [[0,0,0],[0,1,0],[1,1,1]]

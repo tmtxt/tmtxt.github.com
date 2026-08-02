@@ -5,6 +5,7 @@ description: ""
 categories: [algorithm]
 tags: []
 thumbnail: 
+mermaid: true
 ---
 
 > Leetcode: [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
@@ -16,7 +17,18 @@ down to the farthest leaf node.
 
 **Example 1**:
 
-![Alt Text](/files/2022-01-30-solution-to-maximum-depth-of-binary-tree-problem/tmp-tree.jpg)
+The tree has 3 levels (each a different color), so the maximum depth is `3`:
+
+<div class="mermaid">
+graph TD
+    n3["3"]:::l0 --> n9["9"]:::l1
+    n3 --> n20["20"]:::l1
+    n20 --> n15["15"]:::l2
+    n20 --> n7["7"]:::l2
+    classDef l0 fill:#ffd54f,stroke:#c62828,stroke-width:2px
+    classDef l1 fill:#cfe8ff,stroke:#1565c0,stroke-width:2px
+    classDef l2 fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
+</div>
 
 ```
 Input: root = [3,9,20,null,null,15,7]

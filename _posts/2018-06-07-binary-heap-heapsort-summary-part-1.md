@@ -3,6 +3,7 @@ layout: post
 title: "Binary Heap and Heapsort Summary - Part 1 - Binary Heap"
 description: ""
 categories: [algorithm]
+mermaid: true
 ---
 
 > Nothing special here. It's just a blog post for summarising my algorithm learning course. Probably
@@ -11,14 +12,32 @@ categories: [algorithm]
 
 # Heap-ordered Binary Tree
 
-![Heap-ordered Binary Tree](/files/2018-06-05-binary-heap-heapsort-summary-part-1/binary-heap-1.png)
+<div class="mermaid">
+graph TD
+    T["T (1)"] --> S["S (2)"]
+    T --> R["R (3)"]
+    S --> P["P (4)"]
+    S --> N["N (5)"]
+    R --> O["O (6)"]
+    R --> A["A (7)"]
+    P --> E["E (8)"]
+    P --> I["I (9)"]
+    N --> H["H (10)"]
+    N --> G["G (11)"]
+</div>
 
 - Each node represents a key
 - Parent's key is not smaller than children's keys
 
 # Array Representation
 
-![Array Representation](/files/2018-06-05-binary-heap-heapsort-summary-part-1/binary-heap-2.png)
+Taking the tree above in level order gives the array below. Index `0` is left unused so that the
+parent/child arithmetic stays simple:
+
+| Index `k`  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |
+|------------|---|---|---|---|---|---|---|---|---|----|----|
+| Key `a[k]` | T | S | R | P | N | O | A | E | I | H  | G  |
+{: .table }
 
 <!-- more -->
 
@@ -41,7 +60,36 @@ categories: [algorithm]
   - `T` is still larger than `S` (its parent), exchange
   - Finally, `T` is in the correct order
 
-![Promotion](/files/2018-06-05-binary-heap-heapsort-summary-part-1/binary-heap-3.png)
+`T` starts at index `5`. Since it is larger than its parent `P` (index `2`) it swims up, and it is
+still larger than the new parent `S` (index `1`), so it swims up once more to become the root:
+
+**Before swim:**
+
+<div class="mermaid">
+graph TD
+    bS["S (1)"] --> bP["P (2)"]
+    bS --> bR["R (3)"]
+    bP --> bO["O (4)"]
+    bP --> bT["T (5)"]:::v
+    bR --> bN["N (6)"]
+    bR --> bA["A (7)"]
+    classDef v fill:#ffd54f,stroke:#c62828,stroke-width:2px
+    linkStyle 0,3 stroke:#c62828,stroke-width:3px
+</div>
+
+**After swim:**
+
+<div class="mermaid">
+graph TD
+    aT["T (1)"]:::v --> aS["S (2)"]
+    aT --> aR["R (3)"]
+    aS --> aO["O (4)"]
+    aS --> aP["P (5)"]
+    aR --> aN["N (6)"]
+    aR --> aA["A (7)"]
+    classDef v fill:#ffd54f,stroke:#c62828,stroke-width:2px
+    linkStyle 0,3 stroke:#c62828,stroke-width:3px
+</div>
 
 ```java
 private void swim(int k) {
@@ -57,7 +105,36 @@ private void swim(int k) {
 - Add node at end, then swim it up.
 - **Cost**: At most `1 + lgN` compares.
 
-![Insertion](/files/2018-06-05-binary-heap-heapsort-summary-part-1/binary-heap-4.png)
+Inserting `T` adds it at the next free slot (index `7`), then swims it up until heap order is
+restored:
+
+**New key added at the end:**
+
+<div class="mermaid">
+graph TD
+    xS["S (1)"] --> xR["R (2)"]
+    xS --> xO["O (3)"]
+    xR --> xN["N (4)"]
+    xR --> xE["E (5)"]
+    xO --> xA["A (6)"]
+    xO --> xT["T (7)"]:::v
+    classDef v fill:#ffd54f,stroke:#c62828,stroke-width:2px
+    linkStyle 1,5 stroke:#c62828,stroke-width:3px
+</div>
+
+**After swimming up:**
+
+<div class="mermaid">
+graph TD
+    yT["T (1)"]:::v --> yR["R (2)"]
+    yT --> yS["S (3)"]
+    yR --> yN["N (4)"]
+    yR --> yE["E (5)"]
+    yS --> yA["A (6)"]
+    yS --> yO["O (7)"]
+    classDef v fill:#ffd54f,stroke:#c62828,stroke-width:2px
+    linkStyle 1,5 stroke:#c62828,stroke-width:3px
+</div>
 
 ```java
 public void insert(Key x) {
@@ -77,7 +154,40 @@ public void insert(Key x) {
   - `H` is still smaller than its children, exchange with the larger child `N`
   - Finally, `H` is in the correct order
 
-![Insertion](/files/2018-06-05-binary-heap-heapsort-summary-part-1/binary-heap-5.png)
+`H` starts at index `2`. It is smaller than its children, so it sinks by swapping with the larger
+child `S` (index `4`), and then again with the larger child `N` (index `8`):
+
+**Before sink:**
+
+<div class="mermaid">
+graph TD
+    bT["T (1)"] --> bH["H (2)"]:::v
+    bT --> bR["R (3)"]
+    bH --> bS["S (4)"]
+    bH --> bG["G (5)"]
+    bR --> bO["O (6)"]
+    bR --> bA["A (7)"]
+    bS --> bN["N (8)"]
+    bS --> bE["E (9)"]
+    classDef v fill:#ffd54f,stroke:#c62828,stroke-width:2px
+    linkStyle 2,6 stroke:#c62828,stroke-width:3px
+</div>
+
+**After sink:**
+
+<div class="mermaid">
+graph TD
+    aT["T (1)"] --> aS["S (2)"]
+    aT --> aR["R (3)"]
+    aS --> aN["N (4)"]
+    aS --> aG["G (5)"]
+    aR --> aO["O (6)"]
+    aR --> aA["A (7)"]
+    aN --> aH["H (8)"]:::v
+    aN --> aE["E (9)"]
+    classDef v fill:#ffd54f,stroke:#c62828,stroke-width:2px
+    linkStyle 2,6 stroke:#c62828,stroke-width:3px
+</div>
 
 ```java
 private void sink(int k) {
@@ -99,7 +209,39 @@ private void sink(int k) {
 - Exchange root with node at end, then sink it down.
 - **Cost**: At most `2 lgN` compares.
 
-![Insertion](/files/2018-06-05-binary-heap-heapsort-summary-part-1/binary-heap-6.png)
+The max `T` is swapped with the last node `E`, then removed. `E` now sits at the root and sinks
+down until the heap order is restored:
+
+**Before delMax (swap root with last node):**
+
+<div class="mermaid">
+graph TD
+    bT["T (1)"]:::v --> bS["S (2)"]
+    bT --> bR["R (3)"]
+    bS --> bN["N (4)"]
+    bS --> bG["G (5)"]
+    bR --> bO["O (6)"]
+    bR --> bA["A (7)"]
+    bN --> bH["H (8)"]
+    bN --> bE["E (9)"]:::w
+    classDef v fill:#ffd54f,stroke:#c62828,stroke-width:2px
+    classDef w fill:#90caf9,stroke:#1565c0,stroke-width:2px
+</div>
+
+**After removing T and sinking E:**
+
+<div class="mermaid">
+graph TD
+    aS["S (1)"] --> aN["N (2)"]
+    aS --> aR["R (3)"]
+    aN --> aH["H (4)"]
+    aN --> aG["G (5)"]
+    aR --> aO["O (6)"]
+    aR --> aA["A (7)"]
+    aH --> aE["E (8)"]:::w
+    classDef w fill:#90caf9,stroke:#1565c0,stroke-width:2px
+    linkStyle 0,2,6 stroke:#1565c0,stroke-width:3px
+</div>
 
 ```java
 public Key delMax() {

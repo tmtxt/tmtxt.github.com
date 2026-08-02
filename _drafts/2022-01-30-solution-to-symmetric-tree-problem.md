@@ -5,6 +5,7 @@ description: ""
 categories: [algorithm]
 tags: []
 thumbnail: 
+mermaid: true
 ---
 
 > Leetcode: [Symmetric Tree](https://leetcode.com/problems/symmetric-tree/)
@@ -13,7 +14,17 @@ Given the `root` of a binary tree, check whether it is a mirror of itself (i.e.,
 
 **Example 1**:
 
-![sample1](/files/2022-01-30-solution-to-symmetric-tree-problem/symtree1.jpg)
+This tree is a mirror of itself around the center, so the answer is `true`:
+
+<div class="mermaid">
+graph TD
+    r1["1"] --> l2["2"]
+    r1 --> rr2["2"]
+    l2 --> l3["3"]
+    l2 --> l4["4"]
+    rr2 --> r4["4"]
+    rr2 --> r3["3"]
+</div>
 
 ```
 Input: root = [1,2,2,3,4,4,3]
@@ -22,7 +33,21 @@ Output: true
 
 **Example 2**:
 
-![sample1](/files/2022-01-30-solution-to-symmetric-tree-problem/symtree1.jpg)
+Both `2` nodes have their `3` child on the **right** (highlighted red). A mirror would need them on
+opposite sides, so the tree is not symmetric and the answer is `false`:
+
+<div class="mermaid">
+graph TD
+    r1["1"] --> l2["2"]
+    r1 --> rr2["2"]
+    l2 ~~~ lh1[" "]
+    l2 --> l3["3"]:::x
+    rr2 ~~~ rh1[" "]
+    rr2 --> r3["3"]:::x
+    classDef x fill:#ffcdd2,stroke:#c62828,stroke-width:2px
+    classDef hidden fill:transparent,stroke:transparent,color:transparent
+    class lh1,rh1 hidden
+</div>
 
 ```
 Input: root = [1,2,2,null,3,null,3]

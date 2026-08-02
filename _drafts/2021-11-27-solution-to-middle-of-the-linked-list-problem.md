@@ -5,6 +5,7 @@ description: ""
 categories: [algorithm]
 tags: []
 thumbnail:
+mermaid: true
 ---
 
 > Leetcode: [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
@@ -15,7 +16,11 @@ If there are two middle nodes, return the second middle node.
 
 Example 1
 
-![Alt Text](/files/2021-11-27-solution-to-middle-of-the-linked-list-problem/lc-midlist1.jpg)
+<div class="mermaid">
+flowchart LR
+    n1["1"] --> n2["2"] --> n3["3"]:::mid --> n4["4"] --> n5["5"] --> null["null"]
+    classDef mid fill:#ffd54f,stroke:#c62828,stroke-width:2px
+</div>
 
 ```
 Input: head = [1,2,3,4,5]
@@ -25,7 +30,11 @@ Explanation: The middle node of the list is node 3.
 
 Example 2
 
-![Alt Text](/files/2021-11-27-solution-to-middle-of-the-linked-list-problem/lc-midlist2.jpg)
+<div class="mermaid">
+flowchart LR
+    n1["1"] --> n2["2"] --> n3["3"] --> n4["4"]:::mid --> n5["5"] --> n6["6"] --> null["null"]
+    classDef mid fill:#ffd54f,stroke:#c62828,stroke-width:2px
+</div>
 
 ```
 Input: head = [1,2,3,4,5,6]

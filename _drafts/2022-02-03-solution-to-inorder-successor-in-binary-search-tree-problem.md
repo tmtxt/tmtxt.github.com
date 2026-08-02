@@ -5,12 +5,27 @@ description: ""
 categories: [algorithm]
 tags: []
 thumbnail: 
+mermaid: true
 ---
 
 Write an algorithm to find the **next** node (i.e., in-order successor) of a given node in a binary
 search tree. You may assume that each node has a link to its parent.
 
-![BST](/files/2022-02-03-solution-to-inorder-successor-in-binary-search-tree-problem/1200px-Binary_search_tree.png)
+<div class="mermaid">
+graph TD
+    n8["8"] --> n3["3"]
+    n8 --> n10["10"]
+    n3 --> n1["1"]
+    n3 --> n6["6"]
+    n6 --> n4["4"]
+    n6 --> n7["7"]
+    n10 ~~~ h1[" "]
+    n10 --> n14["14"]
+    n14 --> n13["13"]
+    n14 ~~~ h2[" "]
+    classDef hidden fill:transparent,stroke:transparent,color:transparent
+    class h1,h2 hidden
+</div>
 
 - Next node of `3` is `4`
 - Next node of `7` is `8`

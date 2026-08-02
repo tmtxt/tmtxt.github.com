@@ -5,6 +5,7 @@ description: ""
 categories: [algorithm]
 tags: []
 thumbnail: 
+mermaid: true
 ---
 
 > Leetcode: [Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/)
@@ -17,8 +18,35 @@ node never differs by more than one.
 
 **Example 1**:
 
-![Output1](/files/2022-01-30-solution-to-convert-sorted-array-to-binary-search-tree-problem/btree1.jpg)
-![Output2](/files/2022-01-30-solution-to-convert-sorted-array-to-binary-search-tree-problem/btree2.jpg)
+Both of these height-balanced BSTs are accepted outputs for `nums = [-10,-3,0,5,9]`.
+
+**Output** `[0,-3,9,-10,null,5]`
+
+<div class="mermaid">
+graph TD
+    a0["0"] --> am3["-3"]
+    a0 --> a9["9"]
+    am3 --> am10["-10"]
+    am3 ~~~ ah1[" "]
+    a9 --> a5["5"]
+    a9 ~~~ ah2[" "]
+    classDef hidden fill:transparent,stroke:transparent,color:transparent
+    class ah1,ah2 hidden
+</div>
+
+**Also accepted** `[0,-10,5,null,-3,null,9]`
+
+<div class="mermaid">
+graph TD
+    b0["0"] --> bm10["-10"]
+    b0 --> b5["5"]
+    bm10 ~~~ bh1[" "]
+    bm10 --> bm3["-3"]
+    b5 ~~~ bh2[" "]
+    b5 --> b9["9"]
+    classDef hidden fill:transparent,stroke:transparent,color:transparent
+    class bh1,bh2 hidden
+</div>
 
 ```
 Input: nums = [-10,-3,0,5,9]
@@ -28,7 +56,23 @@ Explanation: [0,-10,5,null,-3,null,9] is also accepted:
 
 **Example 2**:
 
-![Output2](/files/2022-01-30-solution-to-convert-sorted-array-to-binary-search-tree-problem/btree2.jpg)
+For `nums = [1,3]`, both `[3,1]` and `[1,3]` are valid height-balanced BSTs:
+
+<div class="mermaid">
+graph TD
+    c3["3"] --> c1["1"]
+    c3 ~~~ ch1[" "]
+    classDef hidden fill:transparent,stroke:transparent,color:transparent
+    class ch1 hidden
+</div>
+
+<div class="mermaid">
+graph TD
+    d1["1"] ~~~ dh1[" "]
+    d1 --> d3["3"]
+    classDef hidden fill:transparent,stroke:transparent,color:transparent
+    class dh1 hidden
+</div>
 
 ```
 Input: nums = [1,3]

@@ -19,7 +19,48 @@ Return the *maximum* **area** *of an island* in `grid`. If there is no island, r
 
 **Example 1**
 
-![Grid](/files/2021-11-29-solution-to-max-area-of-island-problem/maxarea1-grid.jpg)
+The grid below has several islands. Land cells (`1`) are light blue, water (`0`) is white, and the
+largest island - the one with area `6` (rows 3-5, columns 8-10) - is highlighted in orange.
+
+<figure style="margin:0">
+<svg width="368" height="228" viewBox="0 0 368 228" xmlns="http://www.w3.org/2000/svg">
+  <rect x="2" y="2" width="364" height="224" fill="#ffffff"/>
+  <g fill="#cfe8ff">
+    <rect x="58"  y="2"   width="28" height="28"/><rect x="198" y="2"   width="28" height="28"/>
+    <rect x="198" y="30"  width="28" height="28"/><rect x="226" y="30"  width="28" height="28"/><rect x="254" y="30"  width="28" height="28"/>
+    <rect x="30"  y="58"  width="28" height="28"/><rect x="58"  y="58"  width="28" height="28"/><rect x="114" y="58"  width="28" height="28"/>
+    <rect x="30"  y="86"  width="28" height="28"/><rect x="114" y="86"  width="28" height="28"/><rect x="142" y="86"  width="28" height="28"/>
+    <rect x="30"  y="114" width="28" height="28"/><rect x="114" y="114" width="28" height="28"/><rect x="142" y="114" width="28" height="28"/>
+    <rect x="198" y="170" width="28" height="28"/><rect x="226" y="170" width="28" height="28"/><rect x="254" y="170" width="28" height="28"/>
+    <rect x="198" y="198" width="28" height="28"/><rect x="226" y="198" width="28" height="28"/>
+  </g>
+  <g fill="#ffb74d">
+    <rect x="226" y="86"  width="28" height="28"/><rect x="282" y="86"  width="28" height="28"/>
+    <rect x="226" y="114" width="28" height="28"/><rect x="254" y="114" width="28" height="28"/><rect x="282" y="114" width="28" height="28"/>
+    <rect x="282" y="142" width="28" height="28"/>
+  </g>
+  <g stroke="#bbbbbb" stroke-width="1">
+    <line x1="2"   y1="2" x2="2"   y2="226"/><line x1="30"  y1="2" x2="30"  y2="226"/><line x1="58"  y1="2" x2="58"  y2="226"/>
+    <line x1="86"  y1="2" x2="86"  y2="226"/><line x1="114" y1="2" x2="114" y2="226"/><line x1="142" y1="2" x2="142" y2="226"/>
+    <line x1="170" y1="2" x2="170" y2="226"/><line x1="198" y1="2" x2="198" y2="226"/><line x1="226" y1="2" x2="226" y2="226"/>
+    <line x1="254" y1="2" x2="254" y2="226"/><line x1="282" y1="2" x2="282" y2="226"/><line x1="310" y1="2" x2="310" y2="226"/>
+    <line x1="338" y1="2" x2="338" y2="226"/><line x1="366" y1="2" x2="366" y2="226"/>
+    <line x1="2" y1="2"   x2="366" y2="2"/><line x1="2" y1="30"  x2="366" y2="30"/><line x1="2" y1="58"  x2="366" y2="58"/>
+    <line x1="2" y1="86"  x2="366" y2="86"/><line x1="2" y1="114" x2="366" y2="114"/><line x1="2" y1="142" x2="366" y2="142"/>
+    <line x1="2" y1="170" x2="366" y2="170"/><line x1="2" y1="198" x2="366" y2="198"/><line x1="2" y1="226" x2="366" y2="226"/>
+  </g>
+  <g font-family="sans-serif" font-size="13" fill="#555" text-anchor="middle">
+    <text x="16" y="21">0</text><text x="44" y="21">0</text><text x="72" y="21">1</text><text x="100" y="21">0</text><text x="128" y="21">0</text><text x="156" y="21">0</text><text x="184" y="21">0</text><text x="212" y="21">1</text><text x="240" y="21">0</text><text x="268" y="21">0</text><text x="296" y="21">0</text><text x="324" y="21">0</text><text x="352" y="21">0</text>
+    <text x="16" y="49">0</text><text x="44" y="49">0</text><text x="72" y="49">0</text><text x="100" y="49">0</text><text x="128" y="49">0</text><text x="156" y="49">0</text><text x="184" y="49">0</text><text x="212" y="49">1</text><text x="240" y="49">1</text><text x="268" y="49">1</text><text x="296" y="49">0</text><text x="324" y="49">0</text><text x="352" y="49">0</text>
+    <text x="16" y="77">0</text><text x="44" y="77">1</text><text x="72" y="77">1</text><text x="100" y="77">0</text><text x="128" y="77">1</text><text x="156" y="77">0</text><text x="184" y="77">0</text><text x="212" y="77">0</text><text x="240" y="77">0</text><text x="268" y="77">0</text><text x="296" y="77">0</text><text x="324" y="77">0</text><text x="352" y="77">0</text>
+    <text x="16" y="105">0</text><text x="44" y="105">1</text><text x="72" y="105">0</text><text x="100" y="105">0</text><text x="128" y="105">1</text><text x="156" y="105">1</text><text x="184" y="105">0</text><text x="212" y="105">0</text><text x="240" y="105">1</text><text x="268" y="105">0</text><text x="296" y="105">1</text><text x="324" y="105">0</text><text x="352" y="105">0</text>
+    <text x="16" y="133">0</text><text x="44" y="133">1</text><text x="72" y="133">0</text><text x="100" y="133">0</text><text x="128" y="133">1</text><text x="156" y="133">1</text><text x="184" y="133">0</text><text x="212" y="133">0</text><text x="240" y="133">1</text><text x="268" y="133">1</text><text x="296" y="133">1</text><text x="324" y="133">0</text><text x="352" y="133">0</text>
+    <text x="16" y="161">0</text><text x="44" y="161">0</text><text x="72" y="161">0</text><text x="100" y="161">0</text><text x="128" y="161">0</text><text x="156" y="161">0</text><text x="184" y="161">0</text><text x="212" y="161">0</text><text x="240" y="161">0</text><text x="268" y="161">0</text><text x="296" y="161">1</text><text x="324" y="161">0</text><text x="352" y="161">0</text>
+    <text x="16" y="189">0</text><text x="44" y="189">0</text><text x="72" y="189">0</text><text x="100" y="189">0</text><text x="128" y="189">0</text><text x="156" y="189">0</text><text x="184" y="189">0</text><text x="212" y="189">1</text><text x="240" y="189">1</text><text x="268" y="189">1</text><text x="296" y="189">0</text><text x="324" y="189">0</text><text x="352" y="189">0</text>
+    <text x="16" y="217">0</text><text x="44" y="217">0</text><text x="72" y="217">0</text><text x="100" y="217">0</text><text x="128" y="217">0</text><text x="156" y="217">0</text><text x="184" y="217">0</text><text x="212" y="217">1</text><text x="240" y="217">1</text><text x="268" y="217">0</text><text x="296" y="217">0</text><text x="324" y="217">0</text><text x="352" y="217">0</text>
+  </g>
+</svg>
+</figure>
 
 ```
 Input: grid = [[0,0,1,0,0,0,0,1,0,0,0,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,1,1,0,1,0,0,0,0,0,0,0,0],[0,1,0,0,1,1,0,0,1,0,1,0,0],[0,1,0,0,1,1,0,0,1,1,1,0,0],[0,0,0,0,0,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,0,0,0,0,0,0,1,1,0,0,0,0]]

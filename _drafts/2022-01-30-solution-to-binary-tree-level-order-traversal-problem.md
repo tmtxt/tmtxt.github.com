@@ -5,6 +5,7 @@ description: ""
 categories: [algorithm]
 tags: []
 thumbnail: 
+mermaid: true
 ---
 
 > Leetcode: [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
@@ -14,7 +15,19 @@ from left to right, level by level).
 
 **Example 1**:
 
-![Sample](/files/2022-01-30-solution-to-binary-tree-level-order-traversal-problem/tree1.jpg)
+Each color is one level. Reading the tree level by level (left to right) gives
+`[[3], [9, 20], [15, 7]]`:
+
+<div class="mermaid">
+graph TD
+    n3["3"]:::l0 --> n9["9"]:::l1
+    n3 --> n20["20"]:::l1
+    n20 --> n15["15"]:::l2
+    n20 --> n7["7"]:::l2
+    classDef l0 fill:#ffd54f,stroke:#c62828,stroke-width:2px
+    classDef l1 fill:#cfe8ff,stroke:#1565c0,stroke-width:2px
+    classDef l2 fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
+</div>
 
 ```
 Input: root = [3,9,20,null,null,15,7]

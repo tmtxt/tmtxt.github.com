@@ -5,6 +5,7 @@ description: ""
 categories: [algorithm]
 tags: []
 thumbnail:
+mermaid: true
 ---
 
 > Leetcode: [Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/)
@@ -22,7 +23,47 @@ Return *the merged tree*.
 
 **Example 1**:
 
-![Merge](/files/2021-12-09-solution-to-merge-two-binary-trees-problem/merge.jpg)
+Overlapping nodes are summed; where only one tree has a node, that node is kept as-is.
+
+**Tree 1 (`root1`)**
+
+<div class="mermaid">
+graph TD
+    a1["1"] --> a3["3"]
+    a1 --> a2["2"]
+    a3 --> a5["5"]
+    a3 ~~~ ah1[" "]
+    classDef hidden fill:transparent,stroke:transparent,color:transparent
+    class ah1 hidden
+</div>
+
+**Tree 2 (`root2`)**
+
+<div class="mermaid">
+graph TD
+    b2["2"] --> b1["1"]
+    b2 --> b3["3"]
+    b1 ~~~ bh1[" "]
+    b1 --> b4["4"]
+    b3 ~~~ bh2[" "]
+    b3 --> b7["7"]
+    classDef hidden fill:transparent,stroke:transparent,color:transparent
+    class bh1,bh2 hidden
+</div>
+
+**Merged tree** (`[3,4,5,5,4,null,7]`)
+
+<div class="mermaid">
+graph TD
+    c3["3<br/>(1+2)"] --> c4["4<br/>(3+1)"]
+    c3 --> c5["5<br/>(2+3)"]
+    c4 --> c5b["5"]
+    c4 --> c4b["4"]
+    c5 ~~~ ch1[" "]
+    c5 --> c7["7"]
+    classDef hidden fill:transparent,stroke:transparent,color:transparent
+    class ch1 hidden
+</div>
 
 ```
 Input: root1 = [1,3,2,5], root2 = [2,1,3,null,4,null,7]

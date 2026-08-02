@@ -5,13 +5,29 @@ description: ""
 categories: [algorithm]
 tags: []
 thumbnail:
+mermaid: true
 ---
 
 > Leetcode: [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
 
 Given the `head` of a linked list, remove the `nth` node from the end of the list and return its head.
 
-![Alt Text](/files/2021-11-27-solution-to-remove-nth-node-from-end-of-linked-list-problem/remove_ex1.jpg)
+For Example 1 (`head = [1,2,3,4,5]`, `n = 2`), we remove the 2nd node from the end (value `4`):
+
+**Before**
+
+<div class="mermaid">
+flowchart LR
+    n1["1"] --> n2["2"] --> n3["3"] --> n4["4"]:::del --> n5["5"] --> null["null"]
+    classDef del fill:#ffcdd2,stroke:#c62828,stroke-width:2px
+</div>
+
+**After**
+
+<div class="mermaid">
+flowchart LR
+    n1["1"] --> n2["2"] --> n3["3"] --> n5["5"] --> null["null"]
+</div>
 
 Example 1
 ```

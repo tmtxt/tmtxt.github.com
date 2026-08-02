@@ -5,6 +5,7 @@ description: ""
 categories: [algorithm]
 tags: []
 thumbnail: 
+mermaid: true
 ---
 
 > Leetcode: [Balanced Binary Tree](https://leetcode.com/problems/balanced-binary-tree/)
@@ -17,7 +18,15 @@ For this problem, a height-balanced binary tree is defined as:
 
 **Example 1**:
 
-![Balance1](/files/2022-02-01-solution-to-balanced-binary-tree-problem/balance_1.jpg)
+Every node's left and right subtree heights differ by at most 1, so the tree is balanced (`true`):
+
+<div class="mermaid">
+graph TD
+    n3["3"] --> n9["9"]
+    n3 --> n20["20"]
+    n20 --> n15["15"]
+    n20 --> n7["7"]
+</div>
 
 ```
 Input: root = [3,9,20,null,null,15,7]
@@ -26,7 +35,19 @@ Output: true
 
 **Example 2**:
 
-![Balance2](/files/2022-02-01-solution-to-balanced-binary-tree-problem/balance_2.jpg)
+At the root `1` (highlighted red) the left subtree has height 3 while the right subtree has height
+1 - a difference of 2 - so the tree is not balanced (`false`):
+
+<div class="mermaid">
+graph TD
+    n1["1"]:::x --> l2["2"]
+    n1 --> r2["2"]
+    l2 --> l3a["3"]
+    l2 --> l3b["3"]
+    l3a --> l4a["4"]
+    l3a --> l4b["4"]
+    classDef x fill:#ffcdd2,stroke:#c62828,stroke-width:2px
+</div>
 
 ```
 Input: root = [1,2,2,3,3,null,null,4,4]

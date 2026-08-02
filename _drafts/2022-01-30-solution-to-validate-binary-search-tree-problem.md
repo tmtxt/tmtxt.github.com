@@ -5,6 +5,7 @@ description: ""
 categories: [algorithm]
 tags: []
 thumbnail: 
+mermaid: true
 ---
 
 > Leetcode: [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
@@ -18,7 +19,14 @@ A **valid BST** is defined as follows:
 
 **Example 1**:
 
-![Sample1](/files/2022-01-30-solution-to-validate-binary-search-tree-problem/tree1.jpg)
+Every left child is smaller and every right child is greater than its parent, so this is a valid
+BST (`true`):
+
+<div class="mermaid">
+graph TD
+    n2["2"] --> n1["1"]
+    n2 --> n3["3"]
+</div>
 
 ```
 Input: root = [2,1,3]
@@ -27,7 +35,17 @@ Output: true
 
 **Example 2**:
 
-![Sample2](/files/2022-01-30-solution-to-validate-binary-search-tree-problem/tree2.jpg)
+The root's value is `5` but its right child is `4` (highlighted red), which should be greater than
+`5`, so this is not a valid BST (`false`):
+
+<div class="mermaid">
+graph TD
+    m5["5"] --> m1["1"]
+    m5 --> m4["4"]:::x
+    m4 --> m3["3"]
+    m4 --> m6["6"]
+    classDef x fill:#ffcdd2,stroke:#c62828,stroke-width:2px
+</div>
 
 ```
 Input: root = [5,1,4,null,null,3,6]

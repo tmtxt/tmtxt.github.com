@@ -24,7 +24,56 @@ Return *the modified image after performing the flood fill*.
 
 **Example 1**
 
-![Flood Fill](/files/2021-11-29-solution-to-flood-fill-problem/flood1-grid.jpg)
+Starting from pixel `(sr, sc) = (1, 1)`, every pixel 4-directionally connected to it that shares the
+same starting color (`1`) is repainted to `2`. The bottom-right `1` is left untouched because it is
+not connected to the starting pixel through same-colored pixels. The starting pixel is outlined in
+red.
+
+<div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+<figure style="margin:0;text-align:center">
+<figcaption><strong>Input</strong></figcaption>
+<svg width="184" height="184" viewBox="0 0 184 184" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="24">
+  <g stroke="#333" stroke-width="1">
+    <rect x="2"   y="2"   width="60" height="60" fill="#cfe8ff"/>
+    <rect x="62"  y="2"   width="60" height="60" fill="#cfe8ff"/>
+    <rect x="122" y="2"   width="60" height="60" fill="#cfe8ff"/>
+    <rect x="2"   y="62"  width="60" height="60" fill="#cfe8ff"/>
+    <rect x="122" y="62"  width="60" height="60" fill="#ffffff"/>
+    <rect x="2"   y="122" width="60" height="60" fill="#cfe8ff"/>
+    <rect x="62"  y="122" width="60" height="60" fill="#ffffff"/>
+    <rect x="122" y="122" width="60" height="60" fill="#cfe8ff"/>
+  </g>
+  <rect x="62" y="62" width="60" height="60" fill="#cfe8ff" stroke="#c62828" stroke-width="3"/>
+  <g fill="#333" text-anchor="middle">
+    <text x="32"  y="40">1</text><text x="92"  y="40">1</text><text x="152" y="40">1</text>
+    <text x="32"  y="100">1</text><text x="92"  y="100">1</text><text x="152" y="100">0</text>
+    <text x="32"  y="160">1</text><text x="92"  y="160">0</text><text x="152" y="160">1</text>
+  </g>
+</svg>
+</figure>
+<div style="font-size:28px">&rarr;</div>
+<figure style="margin:0;text-align:center">
+<figcaption><strong>Output</strong></figcaption>
+<svg width="184" height="184" viewBox="0 0 184 184" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="24">
+  <g stroke="#333" stroke-width="1">
+    <rect x="2"   y="2"   width="60" height="60" fill="#ffe082"/>
+    <rect x="62"  y="2"   width="60" height="60" fill="#ffe082"/>
+    <rect x="122" y="2"   width="60" height="60" fill="#ffe082"/>
+    <rect x="2"   y="62"  width="60" height="60" fill="#ffe082"/>
+    <rect x="62"  y="62"  width="60" height="60" fill="#ffe082"/>
+    <rect x="122" y="62"  width="60" height="60" fill="#ffffff"/>
+    <rect x="2"   y="122" width="60" height="60" fill="#ffe082"/>
+    <rect x="62"  y="122" width="60" height="60" fill="#ffffff"/>
+    <rect x="122" y="122" width="60" height="60" fill="#cfe8ff"/>
+  </g>
+  <g fill="#333" text-anchor="middle">
+    <text x="32"  y="40">2</text><text x="92"  y="40">2</text><text x="152" y="40">2</text>
+    <text x="32"  y="100">2</text><text x="92"  y="100">2</text><text x="152" y="100">0</text>
+    <text x="32"  y="160">2</text><text x="92"  y="160">0</text><text x="152" y="160">1</text>
+  </g>
+</svg>
+</figure>
+</div>
 
 ```
 Input: image = [[1,1,1],[1,1,0],[1,0,1]], sr = 1, sc = 1, newColor = 2
