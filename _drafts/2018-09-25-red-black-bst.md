@@ -15,13 +15,27 @@ mermaid: true
   compares to move down, and a bunch of cases for splitting.
 - **Left-leaning red-black BST (LLRB)**: represent a 2-3 tree as an ordinary BST, and use
   "internal" left-leaning links as glue to hold the two keys of a 3-node together.
-- A 3-node `p,q` (`p < q`) is encoded as two 2-nodes: `q` is a plain black node, and `p` hangs off
-  its left as a **red** child. The red link is just bookkeeping - it says "these two nodes are
-  really one 3-node".
+- A 3-node `p,q` (`p < q`) has three children - for keys smaller than `p`, between `p` and `q`, and
+  larger than `q`:
+
+<div class="mermaid">
+graph TD
+  PQ(("p, q")) --> L1("&lt; p")
+  PQ --> L2("p..q")
+  PQ --> L3("&gt; q")
+</div>
+
+- It's encoded as two 2-nodes: `q` becomes a plain black node, and `p` hangs off its left as a
+  **red** child. The three original children still hang in the same relative positions - `q` keeps
+  the `> q` child, and `p` takes the other two. The red link is just bookkeeping - it says "these
+  two nodes are really one 3-node":
 
 <div class="mermaid">
 graph TD
   Q((q)) --> P((p))
+  Q --> R3("&gt; q")
+  P --> R1("&lt; p")
+  P --> R2("p..q")
 
 linkStyle 0 stroke:#c00,stroke-width:3px
 
