@@ -8,7 +8,7 @@ mermaid: true
 
 > just a blog post for summarising my algorithm learning course.
 
-[2-3 search trees]({% post_url 2018-09-24-2-3-search-trees %})
+Previous post: [2-3 search trees]({% post_url 2018-09-24-2-3-search-trees %})
 
 # 1. From 2-3 trees to red-black BSTs
 
@@ -538,5 +538,4 @@ in practice:
 
 `B-trees` take a different route to the same goal - instead of 2 or 3 keys per node, they allow up
 to `M - 1`, which is a much better fit for data that lives on disk (databases, file systems) where
-minimizing the number of page reads matters more than the number of comparisons. That's a topic
-for another post.
+minimizing the number of page reads matters more than the number of comparisons. See my next post
