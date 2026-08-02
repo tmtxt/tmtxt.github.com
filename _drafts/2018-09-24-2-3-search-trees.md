@@ -20,7 +20,6 @@ mermaid: true
       <th colspan="3">worst-case cost<br>(after N inserts)</th>
       <th colspan="3">average case<br>(after N random inserts)</th>
       <th rowspan="2">ordered<br/>iteration?</th>
-      <th rowspan="2">key<br/>interface</th>
     </tr>
     <tr>
       <th>search</th>
@@ -41,7 +40,6 @@ mermaid: true
       <td>N</td>
       <td>N/2</td>
       <td>no</td>
-      <td><code>equals()</code></td>
     </tr>
     <tr>
       <td>binary search (ordered array)</td>
@@ -52,7 +50,6 @@ mermaid: true
       <td>N/2</td>
       <td>N/2</td>
       <td>yes</td>
-      <td><code>compareTo()</code></td>
     </tr>
     <tr>
       <td>BST</td>
@@ -63,18 +60,6 @@ mermaid: true
       <td>1.39 lg N</td>
       <td>?</td>
       <td>yes</td>
-      <td><code>compareTo()</code></td>
-    </tr>
-    <tr>
-      <td>2-3 tree</td>
-      <td>c lg N</td>
-      <td>c lg N</td>
-      <td>c lg N</td>
-      <td>c lg N</td>
-      <td>c lg N</td>
-      <td>c lg N</td>
-      <td>yes</td>
-      <td><code>compareTo()</code></td>
     </tr>
     <tr>
       <td>goal</td>
@@ -85,12 +70,9 @@ mermaid: true
       <td>log N</td>
       <td>log N</td>
       <td>yes</td>
-      <td><code>compareTo()</code></td>
     </tr>
   </tbody>
 </table>
-
-> `c` above is a constant that depends on the implementation (e.g. a red-black BST, see below).
 
 # 2-3 tree
 
@@ -98,8 +80,8 @@ A 2-3 tree is a tree that guarantees `log N` search/insert/delete by allowing a 
 or 2 keys** instead of just 1.
 
 - **2-node**: one key, two children (same as a regular BST node).
-- **3-node**: two keys, three children.
-- **Symmetric order**: an inorder traversal still yields the keys in ascending order.
+- **3-node**: two keys, three children (smaller, in the middle and larger).
+- **Symmetric order**: an in-order traversal still yields the keys in ascending order.
 - **Perfect balance**: every path from the root to a null link has the *same* length.
 
 <div class="mermaid">
