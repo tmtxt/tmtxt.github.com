@@ -4,6 +4,7 @@ title: "Elementary Sorts Summary"
 description: ""
 categories: [algorithm]
 mermaid: true
+mathml: true
 thumbnail:
 ---
 

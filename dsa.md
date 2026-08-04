@@ -73,6 +73,9 @@ graph TD
 - [Symbol Tables and Binary Search Trees summary]({% post_url 2018-09-23-symbol-tables-and-binary-search-trees-summary %})
 - [2-3 search trees]({% post_url 2018-09-24-2-3-search-trees %})
 - [Left-leaning Red-black BST]({% post_url 2018-09-25-left-leaning-red-black-bst %})
+- [B-Trees]({% post_url 2018-09-26-b-trees %})
+- [1D Range Search]({% post_url 2018-09-27-1d-range-search %})
+- [Line segment intersection and Sweep-line idea]({% post_url 2018-09-28-line-segment-intersection-and-sweep-line-idea %})
 
 ## Others
 

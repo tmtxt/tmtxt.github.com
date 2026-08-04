@@ -3,6 +3,7 @@ layout: post
 title: "Priority Queues - Related Questions"
 description: ""
 categories: [algorithm]
+mathml: true
 ---
 
 > Nothing special here. It's just a blog post for summarising my algorithm learning course. Here are
